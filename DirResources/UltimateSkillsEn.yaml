@@ -1,0 +1,16 @@
+KomachiUltA:
+  Title: Shinigami
+  Content: Higan Retour
+  Description: |-
+    |Displace| all enemies to have {Value1} |Distance|.
+    Add a |Manipulate Distance| to your hand for each enemy.
+    Deal {Damage} damage to each enemy. |Accurate|
+
+KomachiUltB:
+  Title: Title
+  Content: Ultimate B
+  Description: |-
+    Deal {Damage} damage.
+    Apply {Value1} |Weak|.
+    |Accurate|
+

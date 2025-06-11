@@ -1,0 +1,16 @@
+KomachiExhibitR:
+  Name: The Titanic
+  Description: |-
+    Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.
+    At the start of the first turn each combat, add a |Manipulate Distance| to the hand.
+    When an enemy is defeated, add |Spider Lily| to the hand.
+    <sprite="Point" name="Gold"> rewards from combat give {Value1}% more <sprite="Point" name="Gold">.
+  FlavorText: Luxury Cruise across the Higan Shores! Limited time offer 10% off.
+
+KomachiExhibitB:
+  Name: Shinigami Eyes
+  Description: |-
+    Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.
+    At the start of combat, gain {Value1} |Spirit|.
+    At the end of your third turn, lose {Value1} |Spirit| and apply {Value2} |Vulnerable| on all enemies.
+  FlavorText: For half your lifespan, you can see the name and date of death of all the people you encounter.

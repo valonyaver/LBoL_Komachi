@@ -1,0 +1,31 @@
+KomachiTurnGainSpiritSe:
+  Name: Turn Gain Spirit
+  Description: At the start of {PlayerName}'s turn, gain {Level} |Spirit|.
+
+
+KomachiDistanceSe:
+  Name: "Distance {Level}: {DistanceString}"
+  Description: Attack Damage inflicted and received by this unit is {MultiplierDescription}.
+
+#Keywords
+KomachiEnhanceSe:
+  Name: Enhance
+  Brief: Target card deal additional damage.
+
+KomachiDistanceKeyword:
+  Name: Distance
+  Brief: |-
+    Distance is a status effect applied to enemies, representing their proximity to the player.
+    The closer an enemy is, the more damage they deal and take. The farther they are, the less damage they deal and take.
+
+    There are 5 Distance levels (default is 3 if no status is applied):
+    - Very Close (1): Deals and takes +100% attack damage.
+    - Close (2): Deals and takes +50% attack damage.
+    - Normal (3): No damage modifier (default).
+    - Far (4): Deals and takes -15% attack damage.
+    - Very Far (5): Deals and takes -30% attack damage.
+
+KomachiDisplacementKeyword:
+  Name: Displace X
+  Brief: |-
+    Change the current |Distance| of the target by X. Enemies with no distance have their distance treated as 3.
