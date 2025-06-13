@@ -69,7 +69,7 @@ namespace KomachiMod.BattleActions
             }
             else if (targetLevel > distance.maxDistance)
             {
-                targetLevel = distance.minDistance;
+                targetLevel = distance.maxDistance;
                 Debug.LogWarning($"Trying to set distance on the target. " +
                                     $"But the target level {targetLevel} is higher than the maximum allowed distance of {distance.maxDistance}.");
             }
@@ -78,8 +78,9 @@ namespace KomachiMod.BattleActions
             // Only change and notify if it actually changed status.
             if (Args.oldLevel != Args.newLevel)
             {
-                distance._level = targetLevel;
-                distance.NotifyChanged();
+                var ApplyDistanceAction = new ApplyStatusEffectAction<KomachiDistanceSe>(target, targetLevel, startAutoDecreasing: false);
+                React(ApplyDistanceAction);
+                // Used to directly change the status effect but I think that forgoes some animation so...
             }
             return;
         }

@@ -1,3 +1,4 @@
+using KomachiMod.BattleActions;
 using KomachiMod.Cards;
 using KomachiMod.GunName;
 using KomachiMod.StatusEffects;
@@ -19,7 +20,7 @@ namespace KomachiMod.KomachiUlt
         public override UltimateSkillConfig MakeConfig()
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
-            config.Damage = 10;
+            config.Damage = 12;
             config.Value1 = 1; // Value of distance set.
             config.RelativeCards = new List<string>() { nameof(KomachiModManDistance) };
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
@@ -44,7 +45,7 @@ namespace KomachiMod.KomachiUlt
         {
             foreach (Unit enemy in selector.GetUnits(base.Battle))
             {
-                yield return KomachiDistanceSe.SetDistanceLevel(enemy, 1);
+                yield return new DistanceChangeAction(enemy, 1);
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
             }
             yield return new DamageAction(base.Owner, selector.GetUnits(base.Battle), this.Damage, base.GunName, GunType.Single);

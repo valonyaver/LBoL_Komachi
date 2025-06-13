@@ -43,17 +43,17 @@ KomachiModShootAndMoveNegative:
 KomachiModRetreat:
   Name: Rowing Retreat
   Description: |-
-    Gain {Block} |Block|.
     |Displace| by +{Value1}.
-  UpgradedDescription: |-
     Gain {Block} |Block|.
+  UpgradedDescription: |-
     |Displace| by +{Value1}. Then, |Displace| all other enemies by +{Value2}.
+    Gain {Block} |Block|.
 
 KomachiModEndlessWay:
   Name: Endless Way
   Description: |-
-    Gain {Block} |Block|.
     |Displace| by +{Value1}. Remove all |Graze| from that target.
+    Gain {Block} |Block|.
 
 KomachiModSweep:
   Name: Sweeping Scythe
@@ -107,6 +107,59 @@ KomachiModScytheFinalJudgment:
   UpgradedDescription: |-
     Deal {Damage} damage. Damage reduction of far distances increases this card's damage instead.
     When this card defeats an enemy, add a |Spider Lily+| to the hand.
+
+KomachiModShinigamiFinesse:
+  Name: Shinigami's Finesse
+  Description: |-
+   Deal {Damage} damage {attackAmount} {attackAmount:plural one='time' other='times'}.
+   The amount of times this card attacks is equal to the distance level of the target.
+
+KomachiModDistanceBlock:
+  Name: Flexible Work Schedule
+  Description: |-
+    Each time an enemy is |Displaced|, gain {Value1} |Block| for each level of distance changed.
+
+KomachiModDistanceGenerator:
+  Name: Hardworking Shinigami
+  Description: |-
+    At the start of {PlayerName}'s turn, if there are no |Manipulate Distances| in the hand, add {Value1} |Manipulate Distance| to your hand.
+  UpgradedDescription: |-
+    Add 1 |Manipulate DIstance| to your hand.
+    At the start of {PlayerName}'s turn, if there are no |Manipulate Distances| in the hand, add {Value1} |Manipulate Distance| to your hand.
+
+KomachiModDistanceFlow:
+  Name: Flow of the Sanzu River
+  Description: |-
+    Each time an enemy is |Displaced|:
+    - If the Distance change was positive, gain {Value1} |Temporary Spirit Up|
+    - If the Distance change was negative, gain {Value1} |Temporary Firepower Up|
+
+KomachiModPushNPull:
+  Name: Push and Pull
+  Description: |-
+    At the start of {PlayerName}'s turn, |Displace| all enemies by -{Value1}.
+    At the end of {PlayerName}'s turn, |Displace| all enemies by {Value1}.
+  UpgradedDescription: |-
+    Add a |Manipulate Distance| to your hand.
+    At the start of {PlayerName}'s turn, |Displace| all enemies by -{Value1}.
+    At the end of {PlayerName}'s turn, |Displace| all enemies by {Value1}.
+
+KomachiModReviveCard:
+  Name: God of Death
+  Description: |-
+    The next time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain 1 |Flawless| instead.
+    Remove {SourceCard.SelfName} from your library when this is applied. You can only revive once with this effect per combat.
+    Whenever an enemy is defeated, if it was a summon, gain {Value1} |Barrier|. Otherwise, gain {Value1} life.
+  DetailText: "{SelfName} cannot be randomly generated in combat, and cannot be copied."
+
+
+KomachiModLowTierShinigami:
+  Name: Low Tier Shinigami
+  Description: |-
+    Deal {Damage} damage.
+    Apply {Value1} |Vulnerable|.
+  FlavorText: "How many times do I have to say it? Nobody is going to care if you commit suicide."
+
 # basic sample character cards
 KomachiAttackB:
   Name: Sample Attack (Black)

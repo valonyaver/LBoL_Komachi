@@ -40,7 +40,7 @@ namespace KomachiMod.Cards
             //Setting Upgrading Keyword only provides the keyword when the card is upgraded.    
             config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
 
-            config.Illustrator = "";
+            config.Illustrator = ""; 
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };

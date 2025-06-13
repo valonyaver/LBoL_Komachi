@@ -7,6 +7,38 @@ KomachiDistanceSe:
   Name: "Distance {Level}: {DistanceString}"
   Description: Attack Damage inflicted and received by this unit is {MultiplierDescription}.
 
+KomachiModDistanceBlockSe:
+  Name: Flexible Work Schedule
+  Description: Each time an enemy's Distance is changed, gain {Level} |Block| for every unit of change.
+
+KomachiModDistanceGeneratorSe:
+  Name: Hardworking Shinigami
+  Description: 'At the start of {PlayerName}''s turn, if there are {Level:plural one=''no''
+    other=''less than %''} |Manipulate Distance| in the hand, add {Level:plural one=''a |Manipulate Distance|
+    '' other=''|Manipulate Distances|''} to the hand{Level:plural one=''.'' other='' until
+    there are %.''}'
+  Brief: 'At the start of {PlayerName}''s turn, if there''s less than a number of
+    |Manipulate Distance| in the hand, add |Manipulate Distances| to the hand until there are that many.'
+
+KomachiModDistanceFlowSe:
+  Name: Flow of the Sanzu River
+  Description: |-
+    Each time an enemy is |Displaced|:
+    - If the Distance change was positive, gain {Level} |Temporary Spirit Up|
+    - If the Distance change was negative, gain {Level} |Temporary Firepower Up|
+
+KomachiModReviveSe:
+  Name: God of Death
+  Description: |-
+    The next {Count} time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain {flawlessTurns} |Flawless| instead.
+    Remove {SelfName} from your Library when this is applied.
+    Whenever an enemy is defeated, if it was a summon, gain {Level} |Barrier|. Otherwise, gain {Level} life.
+
+KomachiModPushNPullSe:
+  Name: Push and Pull
+  Description: |-
+    At the start of {PlayerName}'s turn, |Displace| all enemies by -{Level}.
+    At the end of {PlayerName}'s turn, |Displace| all enemies by {Level}.
 #Keywords
 KomachiEnhanceSe:
   Name: Enhance

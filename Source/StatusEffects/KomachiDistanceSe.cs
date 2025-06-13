@@ -31,7 +31,7 @@ namespace KomachiMod.StatusEffects
                 IsStackable: true,
                 StackActionTriggerLevel: null,
                 HasLevel: true,
-                LevelStackType: StackType.Add,
+                LevelStackType: StackType.Overwrite,
                 HasDuration: false,
                 DurationStackType: StackType.Add,
                 DurationDecreaseTiming: DurationDecreaseTiming.Custom,
@@ -193,19 +193,18 @@ namespace KomachiMod.StatusEffects
 
         /// <summary>
         /// Happens when the status is added to a unit that already has it. Will clamp the status.
-        /// Should probably be changed more thoroughly to display notification text more accurately.
+        /// Unused because everything happens through DistanceChangeAction
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public override bool Stack(StatusEffect other)
-        {
-            _level += other.Level;
-            int clampedLevel = Math.Clamp(Level, 1, 5);
-            _level = clampedLevel;
-            Debug.Log($"Stack is happening. Changing distance. Final distance is {Level}");
-            NotifyChanged();
-            return true;
-        }
+        //public override bool Stack(StatusEffect other)
+        //{
+        //    _level += other.Level;
+        //    ClampLevel();
+        //    Debug.Log($"Stack is happening. Changing distance. Final distance is {Level}");
+        //    NotifyChanged();
+        //    return true;
+        //}
 
         public int ClampLevel()
         {
@@ -214,74 +213,12 @@ namespace KomachiMod.StatusEffects
             return Level;
         }
 
-        /// <summary>
-        /// Use this instead of ApplyStatusEffectAction or DebuffAction. Provides checking for distance being already at max.
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="levelChange"></param>
-        /// <returns></returns>
-        public static BattleAction ChangeDistanceLevel(Unit target, int levelChange)
-        {
-            if (levelChange == 0) return null;
-            KomachiDistanceSe distance;
-            target.TryGetStatusEffect(out distance);
-            if (distance == null)
-            {
-                // If no distance, assume it's three so that level is set to 3 + levelChange.
-                return SetDistanceLevel(target, 3 + levelChange);
-            }
-            else
-            {
-                Debug.Log($"Distance level before checking whether to change level or not is {distance.Level}. Gon be changing it by {levelChange}");
-                // Set distance level clamps the target level and checks before notification.
-                // If for example the current level is 1 and level change is -1,
-                // Then the target level will be clamped to 1. It will equal the current level and won't notify.
-                return SetDistanceLevel(target, distance.Level + levelChange);
-            }
-        }
-
         public static IEnumerable<BattleAction> ChangeDistanceLevel(IEnumerable<Unit> targets, int levelChange)
         {
             foreach (Unit target in targets)
             {
                 yield return new DistanceChangeAction(target, levelChange);
             }
-        }
-
-
-        public static BattleAction SetDistanceLevel(Unit target, int targetLevel)
-        {
-            KomachiDistanceSe distance;
-            target.TryGetStatusEffect(out distance);
-
-            // If first time applying status.
-            if (distance == null)
-            {
-                // Clamps target level.
-                if (targetLevel < 1) targetLevel = 1;
-                if (targetLevel > 5) targetLevel = 5;
-                return new ApplyStatusEffectAction<KomachiDistanceSe>(target, targetLevel, startAutoDecreasing: false);
-            }
-            // Otherwise, clamp the target level and set status level.
-            if (targetLevel < distance.minDistance)
-            {
-                targetLevel = distance.minDistance;
-                Debug.LogWarning($"Trying to set distance on the target. " +
-                    $"But the target level {targetLevel} is lower than the minimum allowed distance of {distance.minDistance}.");
-            }
-            else if (targetLevel > distance.maxDistance)
-            {
-                targetLevel = distance.minDistance;
-                Debug.LogWarning($"Trying to set distance on the target. " +
-                                    $"But the target level {targetLevel} is higher than the maximum allowed distance of {distance.maxDistance}.");
-            }
-            // Only change and notify if it actually changed status.
-            if (targetLevel != distance._level)
-            {
-                distance._level = targetLevel;
-                distance.NotifyChanged();
-            }
-            return null;
         }
 
         /// <summary>

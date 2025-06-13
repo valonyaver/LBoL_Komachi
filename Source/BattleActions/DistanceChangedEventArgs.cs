@@ -6,12 +6,24 @@ using System;
 
 namespace KomachiMod.BattleActions
 {
+    /// <summary>
+    /// Event for changing the distance of a unit. See DistanceChangeAction which changes distance and calls this event.
+    /// </summary>
     public class DistanceChangedEventArgs : GameEventArgs
     {
         public Unit Unit;
         public StatusEffect Effect;
+        /// <summary>
+        /// Distance level before change
+        /// </summary>
         public int oldLevel;
+        /// <summary>
+        /// Amount of attempted level change.
+        /// </summary>
         public int levelChange;
+        /// <summary>
+        /// Distance level after change.
+        /// </summary>
         public int newLevel;
         public int distanceChange
         {
