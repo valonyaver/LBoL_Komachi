@@ -21,6 +21,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
+            config.ImageId = "KomachiAttackR";
             // Other options are 4610, 4051, 6300, 39073, 15111
             // Honorable for other attacks. Putting them here for convenience, 25010
             // Really want something that comes from above.
@@ -55,27 +56,6 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModScytheFinalJudgmentDef))]
     public sealed class KomachiModScytheFinalJudgment : KomachiCard
     {
-        //By default, if config.Damage / config.Block / config.Shield are set:
-        //The card will deal damage or gain Block/Barrier without having to set anything.
-        //Here, this is is equivalent to the following code.
-
-        //public int realDamage
-        //{
-        //    get
-        //    {
-        //        if (base.GameRun != null && base.Battle != null)
-        //        {
-        //            KomachiDistanceSe distance;
-        //            switch (distance.Level)
-        //            {
-        //                case 4:
-        //                    return (int) (Damage.Damage / distance.DamageMultiplier);
-        //                case 5:
-        //                    return (int) (Damage.Damage / distance.DamageMultiplier);
-        //            }
-        //        }
-        //    }
-        //}
 
         protected override void OnEnterBattle(BattleController battle)
         {

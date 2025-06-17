@@ -64,10 +64,7 @@ namespace KomachiMod.Exhibits
         private IEnumerable<BattleAction> OnEnemyDied(DieEventArgs arg)
         {
             base.NotifyActivating();
-            if (!base.Battle.BattleShouldEnd)
-            {
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModSpiderLily>() });
-            }
+            yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModSpiderLily>() });
             yield break;
         }
 

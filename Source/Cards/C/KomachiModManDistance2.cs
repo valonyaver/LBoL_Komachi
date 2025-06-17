@@ -20,8 +20,10 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
+
+            config.ImageId = "KomachiModManDistance";
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
-            config.IsPooled = true;
+            config.IsPooled = false;
             config.HideMesuem = true;
 
             config.Colors = new List<ManaColor>() { ManaColor.Colorless };

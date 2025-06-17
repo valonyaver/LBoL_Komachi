@@ -35,7 +35,7 @@ namespace KomachiMod
             nameof(KomachiAttackB), 
             nameof(KomachiBlockR), 
             nameof(KomachiBlockR), 
-            nameof(KomachiAoeAttack),
+            nameof(KomachiModGrudgingStrike),
         };
 
         public static PlayerUnitConfig playerUnitConfig = new PlayerUnitConfig(
@@ -60,8 +60,8 @@ namespace KomachiMod
             ExhibitB: KomachiLoadouts.ExhibitB,
             DeckA: KomachiLoadouts.DeckA,
             DeckB: KomachiLoadouts.DeckB,
-            DifficultyA: 3,
-            DifficultyB: 2
+            DifficultyA: 2,
+            DifficultyB: 3
         );
     }
 }

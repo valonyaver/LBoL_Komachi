@@ -45,7 +45,7 @@ namespace KomachiMod.StatusEffects
             {
                 base.NotifyActivating();
                 int num = (args.Unit.MaxHp * reviveHeal).RoundToInt();
-                base.GameRun.Player.Heal(num);
+                base.GameRun.Player.Hp = num;
                 args.CancelBy(this);
                 revived = 2;
                 Count = 0;

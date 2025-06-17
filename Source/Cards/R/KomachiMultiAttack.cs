@@ -16,6 +16,9 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
+            config.HideMesuem = true;
+            config.IsPooled = false;
+            config.FindInBattle = false;
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Any = 1, Red = 1 };

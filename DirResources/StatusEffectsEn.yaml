@@ -39,6 +39,46 @@ KomachiModPushNPullSe:
   Description: |-
     At the start of {PlayerName}'s turn, |Displace| all enemies by -{Level}.
     At the end of {PlayerName}'s turn, |Displace| all enemies by {Level}.
+
+KomachiModSpySpiritSe:
+  Name: Spy Spirit
+  Description: |-
+    When {OwnerName}'s |Distance| is changed, {PlayerName} gains {Level} |Barrier|.
+
+KomachiModRiversideGardenSe:
+  Name: Riverside Garden
+  Description: |-
+    Whenever {PlayerName} adds |Spider Lily| during this combat, |Upgrade| it.
+    At the end of combat, gain {Level} life for every |Spider Lily| on the |battlefield|.
+
+KomachiModShinigamiTacticsSe:
+  Name: Shinigami Tactics
+  Description: |-
+    Whenever |Manipulate Distance| is played: 
+    - If it reduced distance, add {Level} random attack card{Level:plural one='' other='s'} to the hand. 
+    - If it increased distance, add {Level} random defence card{Level:plural one='' other='s'} to the hand.
+    {Level:plural one='It |temporarily costs|' other='They |temporarily cost|'} {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
+
+KomachiModBWBridgeSe:
+  Name: Ministry Work
+  Description: At the start of {PlayerName}'s turn, gain {Level} {Mana}.
+  Brief: At the start of {PlayerName}'s turn, gain {Mana}.
+
+KomachiModVengefulSpiritSe:
+  Name: Vengeful Spirits
+  Description: |-
+    At the start of {OwnerName}'s turn, reduce duration of {SelfName} by 1.
+    After {Duration} turns, remove {SelfName} and its owner takes double its level ({damageDealt}) as damage.
+  Brief: |-
+    At the start of the turn, reduce duration of {SelfName} by 1.
+    When this status effect is removed, deal double its current level as damage to its owner.
+
+KomachiModGuidingSpiritSe:
+  Name: Guiding Spirits
+  Description: |-
+    At the end of {PlayerName}'s Turn, deal {Level} damage to the enemy with the lowest life, then lose 1 {SelfName}.
+  Brief: |-
+    At the end of {PlayerName}'s Turn, deal damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
 #Keywords
 KomachiEnhanceSe:
   Name: Enhance
@@ -61,3 +101,15 @@ KomachiDisplacementKeyword:
   Name: Displace X
   Brief: |-
     Change the current |Distance| of the target by X. Enemies with no distance have their distance treated as 3.
+    Displacement also refers generally to any instance of changing distance of an enemy.
+
+KomachiDetonationKeyword:
+  Name: Detonate
+  Brief: |-
+    Remove |Vengeful Spirits| from the enemy, dealing their damage to that enemy.
+
+KomachiModReleaseKeyword:
+  Name: Release X
+  Brief: |-
+    Remove X amount of |Guiding Spirits| from yourself to optionally activate this effect.
+    NOTE: MECHANIC IS NOT IMPLEMENTED YET.

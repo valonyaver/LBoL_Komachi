@@ -6,6 +6,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
@@ -20,7 +21,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.IsPooled = true;
+            config.ImageId = "KomachiBlockR";
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2 };
@@ -41,6 +42,9 @@ namespace KomachiMod.Cards
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
+            config.RelativeCards = new List<string>() { nameof(KomachiModManDistance) };
+            config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModManDistance) };
+
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.Unfinished = true;
@@ -51,9 +55,8 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModRetreatDef))]
     public sealed class KomachiModRetreat : KomachiCard
     {
-        //By default, if config.Damage / config.Block / config.Shield are set:
-        //The card will deal damage or gain Block/Barrier without having to set anything.
-        //Here, this is is equivalent to the following code.
+        protected override int BaseValue3 { get => 5; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 5; set => base.BaseUpgradedValue3 = value; }
          
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -76,6 +79,10 @@ namespace KomachiMod.Cards
                 yield return new DistanceChangeAction(selector.SelectedEnemy, Value1);
             }
             yield return DefenseAction(true);
+            if (KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) == Value3)
+            {
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
+            }
         }
     }
 }

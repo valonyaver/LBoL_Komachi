@@ -27,8 +27,11 @@ namespace KomachiMod.Cards
             config.Type = CardType.Ability;
             config.TargetType = TargetType.Nobody;
 
+            // Heal amount
             config.Value1 = 6;
             config.UpgradedValue1 = 10;
+            // Flawless amount. Only for description purposes really.
+            config.Value2 = 2;
 
             config.Illustrator = "";
 

@@ -18,7 +18,7 @@ namespace KomachiMod.StatusEffects
         public override StatusEffectConfig MakeConfig()
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
-            config.RelativeEffects = new List<string>() { nameof(KomachiDistanceSe) };
+            config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
             config.Type = LBoL.Base.StatusEffectType.Positive;
             return config;
         }

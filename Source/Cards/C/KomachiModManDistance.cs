@@ -24,7 +24,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
-            config.IsPooled = true;
+            config.IsPooled = false;
 
             config.Colors = new List<ManaColor>() { ManaColor.Colorless };
             config.Cost = new ManaGroup() { Any = 0 };
@@ -50,7 +50,7 @@ namespace KomachiMod.Cards
     }
     
     [EntityLogic(typeof(KomachiModManDistanceDef))]
-    public sealed class KomachiModManDistance : KomachiCard
+    public sealed class KomachiModManDistance : KomachiCard 
     {
         /// <summary>
         /// Had to get a little creative to make this give 4 options that apply up to +/-2 displacement when upgraded.
@@ -89,11 +89,15 @@ namespace KomachiMod.Cards
             }
             return new MiniSelectCardInteraction(list1);
         }
-
+        /// <summary>
+        /// This is literally only for shinigami tactics.
+        /// </summary>
+        public int lastDistanceChange = 0;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
+            int originalDistance = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
             if (card != null)
             {
                 // value 1 of mandistance2 is 2. value1 of mandistance 1 is 1
@@ -111,6 +115,8 @@ namespace KomachiMod.Cards
                     yield return new DistanceChangeAction(selector.SelectedEnemy, card.Value1);
                 }
             }
+
+            lastDistanceChange = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) - originalDistance;
             yield break;
         }
     }

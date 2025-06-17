@@ -23,9 +23,11 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(400);
             config.IsPooled = true;
 
+            config.ImageId = "KomachiAttackR";
+
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2 };
-            config.UpgradedCost = new ManaGroup() { Red = 2 };
+            config.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Attack;

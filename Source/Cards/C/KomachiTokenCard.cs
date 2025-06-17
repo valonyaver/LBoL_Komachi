@@ -17,7 +17,9 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
+            config.HideMesuem = true;
             config.IsPooled = false;
+            config.FindInBattle = false;
 
             config.Colors = new List<ManaColor>() { ManaColor.Colorless };
             config.Cost = new ManaGroup() { Any = 2 };

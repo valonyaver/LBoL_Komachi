@@ -60,13 +60,8 @@ namespace KomachiMod.Cards
 
             foreach (var selectedEnemy in base.Battle.AllAliveEnemies)
             {
-                selectedEnemy.TryGetStatusEffect(out enemyDistance);
-                if (enemyDistance == null)
-                {
-                    yield return base.DebuffAction<TempFirepowerNegative>(selectedEnemy, base.Value2, 0, 0, 0, true, 0.2f);
-                    yield return base.DebuffAction<LockedOn>(selectedEnemy, base.Value2, 0, 0, 0, true, 0.2f);
-                }
-                switch(enemyDistance.Level)
+                int distanceLevel = KomachiDistanceSe.GetDistanceLevel(selectedEnemy);
+                switch(distanceLevel)
                 {
                     case 1:
                     case 2:

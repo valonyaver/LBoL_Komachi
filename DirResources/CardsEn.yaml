@@ -1,4 +1,4 @@
-KomachiModManDistance:
+﻿KomachiModManDistance:
   Name: Manipulate Distance
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
@@ -23,7 +23,10 @@ KomachiModManDistance3:
 
 KomachiModSpiderLily:
   Name: Spider Lily
-  Description: Gain {Mana}.
+  Description: |-
+    Gain {Mana}.
+    Gain {Value1} |Temporary Firepower|.
+    Gain {Value2} |Poison|.
 
 KomachiModShootAndMove:
   Name: Shoot and Move
@@ -45,9 +48,11 @@ KomachiModRetreat:
   Description: |-
     |Displace| by +{Value1}.
     Gain {Block} |Block|.
+    If the target's |Distance| is {Value3}, add a |Manipulate Distance| to your hand.
   UpgradedDescription: |-
     |Displace| by +{Value1}. Then, |Displace| all other enemies by +{Value2}.
     Gain {Block} |Block|.
+    If the target's |Distance| is {Value3}, add a |Manipulate Distance| to your hand.
 
 KomachiModEndlessWay:
   Name: Endless Way
@@ -147,11 +152,25 @@ KomachiModPushNPull:
 KomachiModReviveCard:
   Name: God of Death
   Description: |-
-    The next time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain 1 |Flawless| instead.
-    Remove {SourceCard.SelfName} from your library when this is applied. You can only revive once with this effect per combat.
+    The next time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain {Value2} |Flawless| instead.
+    Remove {SelfName} from your library when this is applied. You can only revive once with this effect per combat.
     Whenever an enemy is defeated, if it was a summon, gain {Value1} |Barrier|. Otherwise, gain {Value1} life.
   DetailText: "{SelfName} cannot be randomly generated in combat, and cannot be copied."
 
+KomachiModRiversideGarden:
+  Name: Riverside Garden
+  Description: |-
+    Add {Value1} |Spider Lily| to the hand, draw pile, and discard pile.
+    Whenever {PlayerName} adds |Spider Lily| during this combat, |Upgrade| it.
+    At the end of combat, gain {Value2} life for every |Spider Lily| on the |battlefield|.
+
+KomachiModShinigamiTactics:
+  Name: Shinigami Tactics
+  Description: |-
+    Whenever |Manipulate Distance| is played, if it reduced distance, add a random attack card to the hand. If it increased distance, add a random defence card to the hand.
+    It |temporarily costs| {Mana}, has |Exile| and |Ethereal|.
+    Add {Value2} |Manipulate Distance| to the hand.
+  DetailText: Cards whose original cost is 0 won't have their cost changed.
 
 KomachiModLowTierShinigami:
   Name: Low Tier Shinigami
@@ -160,145 +179,240 @@ KomachiModLowTierShinigami:
     Apply {Value1} |Vulnerable|.
   FlavorText: "How many times do I have to say it? Nobody is going to care if you commit suicide."
 
-# basic sample character cards
-KomachiAttackB:
-  Name: Sample Attack (Black)
-  Description: Deal {Damage} damage.
+KomachiModWeedCutter:
+  Name: Weed Cutter
+  Description: |-
+    Deal {Damage} damage. 
+    Draw {Value1} card.
+    Add a |Manipulate Distance| to your hand.
 
+KomachiModParry:
+  Name: Scythe Parry
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Value1} |Reflection|.
+    Add a |Manipulate Distance| to your hand.
+
+KomachiModCoinThrow:
+  Name: Coin Throw
+  Description: |-
+    Deal {Damage} damage to each enemy.
+    Lose {Value1} <sprite="Point" name="Gold">.
+
+KomachiModIgnoreNagging:
+  Name: Ignore Nagging
+  Description: |-
+    Displace by -{Value1}.
+    Gain {Value2} |Graze| for each enemy whose |Distance| is 1 or 2.
+  UpgradedDescription: |-
+    Displace by up to -{Value1}.
+    Gain {Value2} |Graze| for each enemy whose |Distance| is 1 or 2.
+
+KomachiModRetreatBoat:
+  Name: Retreating Sanzu Boat
+  Description: |-
+    |Displace| by +{Value1}.
+    Gain {Block} |Block|.
+    Gain {Value2} |Barrier| times that target's |Distance|.
+
+KomachiModManipDefence:
+  Name: Moving Defence
+  Description: |-
+    Gain {Block} |Block|.
+    For each enemy whose |Distance| is {Value1} or more, add a |Manipulate Distance| to hand.
+
+KomachiModWorkFocus:
+  Name: Work Focus
+  Description: |-
+    |Exile| up to {Value1} cards from the hand; add that many |Manipulate Distances| to your hand.
+    If an upgraded card was exiled this way, add a |Spider Lily| to your hand.
+  UpgradedDescription: |-
+    |Exile| up to {Value1} cards from the hand, draw pile, and discard pile; add that many |Manipulate Distances| to your hand.
+    If an upgraded card was exiled this way, add a |Spider Lily| to your hand.
+
+KomachiModSpySpirit:
+  Name: Accompanying Spy Spirit
+  Description: |-
+    Deal {Damage} damage. 
+    Whenever that enemy is |Displaced|, gain {Value1} |Barrier|.
+
+KomachiModSliceOfHigan:
+  Name: Slice of Higan
+  Description: |-
+    Deal {Damage} damage {Value1} times.
+    |While in hand|: Whenever an enemy is |Displaced|, increase {SelfName}'s damage by {Value2} this combat for each distance level changed.
+
+KomachiModEqualizeDistance:
+  Name: Equalize Distance
+  Description: |-
+    |Displace| until distance is |3|.
+    Draw {Value1:plural one='% card' other='% cards'} for each level displaced. 
+    If target's distance was already |3|, draw {Value2} cards, then discard {Value3} cards instead.
+
+KomachiModRitualOfEcstasy:
+  Name: Ritual of Ecstasy
+  Description: |-
+    Invert target's |Distance|.
+    If the distance was reduced, draw {Value1} cards. Otherwise, gain {Value2} graze and {Block} block.
+  DetailText: |-
+    Inverts distance around level 3.
+    That is, this is how the displacements will go:
+    - Level 1: Displaced to level 5.
+    - Level 2: Displaced to level 4.
+    - Level 3: No change.
+    - Level 4: Displced to Level 2.
+    - Level 5: Displaced to level 1.
+
+KomachiModExchangeLife:
+  Name: Exchange Life
+  Description: |-
+    If the target's |Current Life| is equal to or lower than your current |Maximum Life|, switch your current lives.
+    If {SelfName} is played to heal {PlayerName}, it is removed from combat and from the library.
+  DetailText: |-
+    The one with lower life is healed, the one with higher life loses life.
+    {SelfName} cannot be randomly generated in combat, and cannot be copied.
+  
+KomachiModGrudgingStrike:
+  Name: Grudging Strike
+  Description: |-
+    Deal {Damage} damage.
+    Apply {Value1} |Vengeful Spirits|.
+
+KomachiModDefendDetonate:
+  Name: No hard feelings
+  Description: |-
+    Gain {Block} |Block|.
+    You can |Detonate| the target, and if you do, apply {Value2} |Temporary Firepower Down| for every {Value3} |Vengeful Spirits| that target had.
+  UpgradedDescription: |-
+    Gain {Block} |Block|.
+    Apply {Value1} |Vengeful Spirits|.
+    You can |Detonate| the target, and if you do, apply {Value2} |Temporary Firepower Down| for every {Value3} |Vengeful Spirits| that target had.
+  ExtraDescription1: "Do not |Detonate|"
+  ExtraDescription2: "|Detonate|"
+
+KomachiModBWBridge:
+  Name: Ministry Work
+  Description: |-
+    Gain {Mana}. At the start of {PlayerName}'s turn, gain {Mana}.
+    Choose up to {Value1} of {Value2} random White/Black hybrid cards to add to the hand.
+  UpgradedDescription: |-
+    Gain {Mana}. Add |Radiance| to your hand.
+    At the start of {PlayerName}'s turn, gain {Mana}.
+    Choose up to {Value1} of {Value2} random White/Black hybrid cards to add to the hand.
+  DetailText: |-
+    These |e:alternate cards| ignore total mana and mana color restrictions.
+
+KomachiModFishing:
+  Name: Double Hooking
+  Description: |-
+    Discard {Value1} card, then target up to {Value2} cards in |Exile| whose total cost is less than {Value3} each; Return them to the hand.
+    They |temporarily cost| {Mana}.
+
+KomachiModGuidingSanzu:
+  Name: Guiding Sanzu
+  Description: |-
+    Gain {Value1} |Guiding Spirits|.
+
+KomachiModBoomBenefits:
+  Name: Boom Benefits
+  Description: |-
+    |Detonate| an Enemy, then |Choose|:
+    - Gain 1 Guided Spirit for every {Value1} detonated |Vengeful Spirit|.
+    - Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
+  ExtraDescription1: Gain 1 Guided Spirit for every {Value1} detonated |Vengeful Spirit|.
+  ExtraDescription2: Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
+
+KomachiModShootGhosts:
+  Name: Shoot Ghosts
+  Description: |-
+    Deal {Damage} damage. {SelfName} deals {Value1} more damage for every |Vengeful Spirit| on the target.
+
+KomachiModSpiritDefence:
+  Name: Ghosts follow You
+  Description: |-
+    Gain {Block} block.
+    Gain {Value1} |Guiding Spirits|.
+
+KomachiModVengefulSweep:
+  Name: Horror movie showing
+  Description: |-
+    Inflict {Value1} |Vengeful Spirits| on all enemies.
+    |Release| {Value2}: Inflict {Value1} more |Vengeful Spirits| on all those enemies.
+
+KomachiModFreeTrauma:
+  Name: Free Trauma?!
+  Description: |-
+    Inflict {Value3} |Vengeful Spirit|.
+    Gain {Mana}.
+    |Release| {Value1} or {Value2}: Gain an Additional {Mana} for every {Value1} Spirits released.
+
+KomachiModVengefulerSweep:
+  Name: Horrorer movie showing
+  Description: |-
+    Deal {Damage} damage to each enemy.
+    Apply {Value1} |Vengeful Spirits| to each enemy.
+    |Release| {Value2}: This becomes |Accurate|.
+
+    
+# basic sample character cards
 KomachiAttackR:
-  Name: Sample Attack (Red)
+  Name: Tip of the Reaper
   Description: Deal {Damage} damage.
 
 KomachiBlockR:
-  Name: Sample Block (Red)
+  Name: Used to scolding.
   Description: Gain {Block} |Block|.
+
+KomachiAttackB:
+  Name: Ghostrick Shot
+  Description: Deal {Damage} damage.
 
 KomachiBlockB:
-  Name: Sample Block (Black)
+  Name: Ghost wall.
   Description: Gain {Block} |Block|.
-
-KomachiBlockAndBarrier:
-  Name: Block and Barrier
-  Description: |-
-    Gain {Block} |Block|.
-    Gain {Shield} |Barrier|.
-
-KomachiToken:
-  Name: Token card
-  Description: |-
-    Deal {Damage} damage. 
-    Draw {Value1} card{Value1:plural one='' other='s'}.
-
-KomachiBonusOnUpgrade:
-  Name: Bonus on Upgrade
-  Description: Deal {Damage} damage.
-  UpgradedDescription: |-
-    Deal {Damage} damage.
-    Draw {Value1} card{Value1:plural one='' other='s'}.
 
 KomachiMultiAttack:
   Name: Multi Attack
   Description: Deal {Damage} damage {Value1} times.
-
-KomachiAccurateAttack:
-  Name: Accurate Attack
-  Description: Deal {Damage} damage.
-
-KomachiAoeAttack:
-  Name: Aoe Attack
-  Description: |-
-    Deal {Damage} damage to each enemy.
-    Apply {Value1} |Lock On| to each enemy.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
 
 KomachiCustomAction:
   Name: Custom Action
   Description: |-
     Choose up to {Value2} |Attack| card{Value2:plural one='' other='s'} in the hand. |Enhance| them by {Value1}.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
+
 
 KomachiCustomReactor:
   Name: Custom Reactor
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}.
     Whenever the player |Enhances|, {SelfName} draw {Value2} additional card{Value2:plural one='' other='s'} this combat.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
 
-KomachiHeal:
-  Name: Heal 
-  Description: |-
-    Gain {Value1} life.
-    Target enemy gains {Value2} life.
-
-KomachiLoseHp:
-  Name: Lose Hp. 
-  Description: |-
-    Lose {Value1} life.
-    Target enemy loses {Value2} life.
-    
-KomachiDebuff:
-  Name: Debuff 
-  Description: |-
-    Apply {Value1} |Weak|.
-    Apply {Value1} |Vulnerable|.
-    Apply {Value2} |Firepower Down|.
-
-KomachiDraw:
-  Name: Draw card 
-  Description: |-
-    Draw {Value1} card{Value1:plural one='' other='s'}.
-    At the start of the next turn, Draw {Value2} card{Value2:plural one='' other='s'}.
-    At the start of each turn, Draw {Value3} card{Value3:plural one='' other='s'}.
 
 KomachiConditional:
   Name: Conditional effect 
   Description: |-
     Gain {Value1} |Reflection|.
     If an enemy intends to attack, gain {Value2} |Static Charge| until the Player's next turn. 
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
 
-KomachiCardGeneration:
-  Name: Card Generation 
-  Description: |-
-    Add a |Token card| to the hand, draw pile and discard pile.
-  UpgradedDescription:
-    Add {Value1} |Token cards| to the hand, draw pile and discard pile.
 
 KomachiDynamicCost:
   Name: Dynamic Cost 
   Description: |-
     Deal {Damage} damage.
     Cost {Mana} less for each card in hand.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
+
 
 KomachiUnplayable:
   Name: Unplayable card 
   Description: |-
     |While in hand|: At the end of each {PlayerName}'s turn, gain {Value1} |Barrier|.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
 
-KomachiMultipleKeywords:
-  Name: Multiple Keywords
-  Description: |-
-    Gain {Value1} |Temporary Firepower|.
-    Apply {Value1} |Temporary Firepower Down|.
-
-KomachiGainMana:
-  Name: Gain Mana Card
-  Description: Gain {Mana}.
-
-KomachiBasicAbility:
-  Name: Basic Ability
-  Description: |-
-    Gain {Value1} |Firepower|.
-    Gain {Value2} |Spirit|.
-
-KomachiCustomAbility:
-  Name: Custom Ability
-  Description: |-
-    At the start of {PlayerName}'s turn, gain {Value1} |Spirit|.
-
-KomachiGraze:
-  Name: Graze Card
-  Description: Gain {Value1} |Graze|.
-
-KomachiHybrid:
-  Name: Hybrid-cost Card
-  Description: At the start of the next turn, Gain {Mana}.
 
 KomachiXCost:
   Name: X-Cost card
@@ -306,17 +420,16 @@ KomachiXCost:
     Deal {Damage} damage.
     |For each {Mana} spent|: Deal {Value1} additional damage.
     |For each {BlueMana} spent|: Gain {Value2} life.
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
 
-KomachiDiscover:
-  Name: Discover
-  Description: |-
-    Choose {Value2} of {Value1} random card{Value2:plural one='' other='s'} to add to the hand. It temporarily costs {Mana} and has |Exile| and |Ethereal|.
 
 KomachiExtraTurn:
   Name: Extra Turn
   Description: |-
     End {PlayerName}'s turn. Then, take an extra turn. 
     |Time Limit| {Mana}
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
+
 
 KomachiTeammate:
   Name: Sample Teammate
@@ -326,3 +439,5 @@ KomachiTeammate:
   UpgradedExtraDescription1: "{ActiveCostIcon}Draw {Value1} card{Value1:plural one='' other='s'}."
   ExtraDescription2: "{UltimateCostIcon}Draw {Value2} card{Value2:plural one='' other='s'}."
   UpgradedExtraDescription2: "{UltimateCostIcon}Draw {Value2} card{Value2:plural one='' other='s'}."
+  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
+

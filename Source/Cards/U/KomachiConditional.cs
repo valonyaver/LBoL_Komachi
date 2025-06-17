@@ -18,6 +18,10 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
+            config.HideMesuem = true;
+            config.IsPooled = false;
+            config.FindInBattle = false;
+
             config.Colors = new List<ManaColor>() { ManaColor.Blue };
             config.Cost = new ManaGroup() { Any = 1, Blue = 1 };
             config.Rarity = Rarity.Uncommon;
