@@ -1,5 +1,4 @@
 using KomachiMod.BattleActions;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.Base.Extensions;
 using LBoL.ConfigData;

@@ -23,8 +23,8 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Black };
-            config.Cost = new ManaGroup() { Red = 2, Black = 2 };
-            config.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 7 };
+            config.Cost = new ManaGroup() { Any = 1, Red = 1, Black = 1 };
+            config.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 7 };
             config.Rarity = Rarity.Rare;
             config.FindInBattle = false;
 

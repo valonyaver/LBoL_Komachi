@@ -34,8 +34,8 @@ namespace KomachiMod.Cards
             config.Value1 = 4;
             config.UpgradedValue1 = 7;
 
-            config.RelativeEffects = new List<string>() { nameof(KomachiModGuidingSpiritSe) };
-            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidingSpiritSe) };
+            config.RelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
+            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
 
             config.Illustrator = "";
 
@@ -50,7 +50,7 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            yield return BuffAction<KomachiModGuidingSpiritSe>(base.Value1, 0, 0, 0, 0.2f);
+            yield return BuffAction<KomachiModGuidedSpiritSe>(base.Value1, 0, 0, 0, 0.2f);
             yield break;
         }
     }

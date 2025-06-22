@@ -21,7 +21,8 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            // Junko 3 (4520) for the "Wind" effect of pulling enemies closer. Possible ids for good slashes are 6162, 7311
+            config.GunName = GunNameID.GetGunFromId(6162);
             config.IsPooled = true;
             config.ImageId = "KomachiAttackR";
 
@@ -92,7 +93,9 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             // GET OVER HERE
+            yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, GunNameID.GetGunFromId(4520), 2.2f);
             yield return new DistanceChangeAction(selector.SelectedEnemy, -Value1);
+            yield return PerformAction.Animation(Battle.Player, "", shakeLevel: 5);
             yield return base.AttackAction(selector, base.GunName);
             yield break;
         }

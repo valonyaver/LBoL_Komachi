@@ -1,6 +1,5 @@
 using KomachiMod.BattleActions;
 using KomachiMod.GunName;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -43,6 +42,7 @@ namespace KomachiMod.StatusEffects
         }
         protected override void OnRemoved(Unit unit)
         {
+            if (Battle.BattleShouldEnd) return;
             React(new DamageAction(Battle.Player, unit, new DamageInfo(Count * 2, DamageType.Reaction, false), GunNameID.GetGunFromId(4081)));
         }
     }

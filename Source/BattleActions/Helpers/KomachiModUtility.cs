@@ -1,0 +1,101 @@
+﻿using KomachiMod.Cards;
+using KomachiMod.StatusEffects;
+using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.Interactions;
+using LBoL.Core.Cards;
+using LBoL.Core.Units;
+using Mono.Cecil.Cil;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace KomachiMod.Source.BattleActions.Helpers
+{
+    public sealed class KomachiModUtility
+    {
+        public static string lessDamageColor = "FF99FF";
+        public static string normalValueColor = "B2FFFF";
+        public static string increasedDamageColor = "FF9400";
+        /// <summary>
+        /// Returns a color depending on the value of value and whether it's less than or higher than comparingValue
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="comparingValue"></param>
+        /// <returns></returns>
+        public static string GetColorFromDamage(float value, float comparingValue)
+        {
+            if (value < comparingValue) return lessDamageColor;
+            else if (value == comparingValue) return normalValueColor;
+            else return increasedDamageColor;
+        }
+
+        /// <summary>
+        /// Returns true if player has an equal or higher level of guided spirits.
+        /// Used for figuring out whether a player can release or not.
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public static bool CanReleaseSpirits(Unit unit, int amount)
+        {
+            KomachiModGuidedSpiritSe spirits;
+            unit.TryGetStatusEffect(out spirits);
+            if (spirits == null) return false;
+            else if (spirits.Level < amount) return false;
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Retuns a mini select card interaction with a don't release, release with cost1, and optionally, release with cost2.
+        /// Cost2 should be higher than cost1.
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="cost1"></param>
+        /// <param name="cost2"></param>
+        /// <returns></returns>
+        public static Interaction ChooseRelease(Card card, int cost1, int cost2 = 0)
+        {
+            var battle = card.Battle;
+            if (!CanReleaseSpirits(battle.Player, cost1))
+            {
+                return null;
+            }
+            // Create list for interaction
+            List<Card> list = new List<Card>();
+            // make the 2 cards
+            KomachiModReleaseNone releaseNone = Library.CreateCard<KomachiModReleaseNone>();
+            var releaseCost1 = Library.CreateCard(card.GetType());
+            Debug.Log($"{releaseCost1.SelfName} has a type of {releaseCost1.GetType()}");
+            releaseCost1.ChoiceCardIndicator = 1; // uses extra description 1
+            // dk what these do tbh.
+            releaseNone.SetBattle(battle);
+            releaseCost1.SetBattle(battle);
+            // add em to the list
+            list.Add(releaseNone);
+            list.Add(releaseCost1);
+            if (cost2 > 0 && CanReleaseSpirits(battle.Player, cost2))
+            {
+                var releaseCost2 = Library.CreateCard(card.GetType());
+                releaseCost2.SetBattle(battle);
+                releaseCost2.ChoiceCardIndicator = 2; // uses extra description 2
+                list.Add(releaseCost2);
+            }
+            return new MiniSelectCardInteraction(list);
+        }
+
+        /// <summary>
+        /// Assumes precondition returns a miniselectcard interaction.
+        /// </summary>
+        /// <param name="precondition"></param>
+        /// <returns></returns>
+        public static Card GetPreconditionCard(Interaction precondition)
+        {
+            MiniSelectCardInteraction miniselect = (MiniSelectCardInteraction)precondition;
+            if (miniselect == null) return null;
+            return miniselect.SelectedCard;
+        }
+    }
+}

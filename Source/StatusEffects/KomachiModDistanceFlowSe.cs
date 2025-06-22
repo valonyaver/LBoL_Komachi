@@ -1,5 +1,5 @@
 using KomachiMod.BattleActions;
-using KomachiMod.Patches;
+using KomachiMod.Source.BattleActions.EventManager;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -30,7 +30,7 @@ namespace KomachiMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent<DistanceChangedEventArgs>
-                (CustomGameEventManager.DistanceChanged, new GameEventHandler<DistanceChangedEventArgs>(this.OnEnemyDistanceChange));
+                (KomachiEventsManager.DistanceChanged, new GameEventHandler<DistanceChangedEventArgs>(this.OnEnemyDistanceChange));
         }
 
         private void OnEnemyDistanceChange(DistanceChangedEventArgs args)

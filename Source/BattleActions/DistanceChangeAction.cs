@@ -1,4 +1,4 @@
-using KomachiMod.Patches;
+using KomachiMod.Source.BattleActions.EventManager;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.Core.Battle;
@@ -89,7 +89,7 @@ namespace KomachiMod.BattleActions
         {
             if (Args.distanceChangeAbs > 0)
             {
-                Trigger(CustomGameEventManager.DistanceChanged);
+                Trigger(KomachiEventsManager.DistanceChanged);
             }
         }
     }

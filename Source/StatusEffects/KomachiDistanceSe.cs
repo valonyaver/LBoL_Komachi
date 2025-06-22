@@ -1,6 +1,5 @@
 ﻿using Cysharp.Threading.Tasks.Triggers;
 using KomachiMod.BattleActions;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -12,6 +11,7 @@ using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.Profiling;
 using UnityEngine;
 using YamlDotNet.Core.Tokens;
 
@@ -235,6 +235,38 @@ namespace KomachiMod.StatusEffects
                 return 3;
             }
             else return distance.Level;
+        }
+
+        public static float GetDistanceDamageMultiplier(int level)
+        {
+            switch (level)
+            {
+                case 1: // Very close distance
+                    {
+                        return 2;
+                    }
+                case 2: // Close distance
+                    {
+                        return 1.5f;
+                    }
+                case 3: // Normal Distance. Takes case 3 into account.
+                    {
+                        return 1;
+                    }
+                case 4: // Far distance
+                    {
+                        return 0.85f;
+                    }
+                case 5: // Very far distance
+                    {
+                        return 0.7f;
+                    }
+                default:
+                    {
+                        Debug.LogError($"Error in the function GetDistanceDamageMultiplier. The argument level {level} is not between 1 and 5.");
+                        return 1;
+                    }
+            }
         }
     }
 }

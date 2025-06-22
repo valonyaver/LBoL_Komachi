@@ -45,7 +45,7 @@ namespace KomachiMod.KomachiUlt
         {
             foreach (Unit enemy in selector.GetUnits(base.Battle))
             {
-                yield return new DistanceChangeAction(enemy, 1);
+                yield return new DistanceChangeAction(enemy, 1 - KomachiDistanceSe.GetDistanceLevel(enemy));
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
             }
             yield return new DamageAction(base.Owner, selector.GetUnits(base.Battle), this.Damage, base.GunName, GunType.Single);

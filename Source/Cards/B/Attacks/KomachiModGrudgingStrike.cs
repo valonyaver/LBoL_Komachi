@@ -1,3 +1,4 @@
+using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.StatusEffects;
@@ -5,6 +6,7 @@ using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,13 +49,12 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModGrudgingStrikeDef))]
     public sealed class KomachiModGrudgingStrike : KomachiCard
     {
-        
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DebuffAction<KomachiModVengefulSpiritSe>(selector.SelectedEnemy, count: Value1, duration: 3, startAutoDecreasing:true);
             yield return base.AttackAction(selector, base.GunName);
+            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
             yield break;
-        } 
+        }
     }
 }
 

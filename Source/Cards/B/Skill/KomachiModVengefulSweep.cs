@@ -1,10 +1,14 @@
+using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.Interactions;
+using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,12 +50,32 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModVengefulSweepDef))]
     public sealed class KomachiModVengefulSweep : KomachiCard
     {
+        public override bool Triggered
+        {
+            get
+            {
+                return KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
+            }
+        }
+        public override Interaction Precondition()
+        {
+            return KomachiModUtility.ChooseRelease(this, Value2);
+        }
         
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             foreach (var enemy in Battle.AllAliveEnemies)
             {
-                yield return DebuffAction<KomachiModVengefulSpiritSe>(enemy, count: Value1, duration: 3, startAutoDecreasing: true);
+                yield return new ApplyVengefulSpiritAction(enemy, Value1);
+            }
+            Card releaseChoice = KomachiModUtility.GetPreconditionCard(precondition);
+            if (releaseChoice != null && releaseChoice.GetType() != typeof(KomachiModReleaseNone))
+            {
+                yield return new KomachiReleaseAction(Battle.Player, Value2);
+                foreach (var enemy in Battle.AllAliveEnemies)
+                {
+                    yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                }
             }
             yield break;
         } 

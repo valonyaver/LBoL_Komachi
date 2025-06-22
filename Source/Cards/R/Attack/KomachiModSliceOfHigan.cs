@@ -1,7 +1,7 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
-using KomachiMod.Patches;
+using KomachiMod.Source.BattleActions.EventManager;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -64,7 +64,7 @@ namespace KomachiMod.Cards
     {
         protected override void OnEnterBattle(BattleController battle)
         {
-            base.HandleBattleEvent<DistanceChangedEventArgs>(CustomGameEventManager.DistanceChanged, new GameEventHandler<DistanceChangedEventArgs>(this.OnDistanceChange), (GameEventPriority)0);
+            base.HandleBattleEvent<DistanceChangedEventArgs>(KomachiEventsManager.DistanceChanged, new GameEventHandler<DistanceChangedEventArgs>(this.OnDistanceChange), (GameEventPriority)0);
         }
 
         private void OnDistanceChange(DistanceChangedEventArgs args)

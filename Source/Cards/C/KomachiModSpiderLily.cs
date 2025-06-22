@@ -19,6 +19,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
+            config.Illustrator = "Valonadthe";
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
             config.IsPooled = false;
 
@@ -52,7 +53,6 @@ namespace KomachiMod.Cards
                 nameof(Poison), nameof(TempFirepower)
             };
 
-            config.Illustrator = "";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -20,7 +20,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 1 };
-            config.UpgradedCost = new ManaGroup() { Any = 1 };
+            config.UpgradedCost = new ManaGroup() { Any = 0 };
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Skill;
@@ -28,8 +28,8 @@ namespace KomachiMod.Cards
 
             config.Value1 = 6;
 
-            config.RelativeEffects = new List<string>() { nameof(KomachiModGuidingSpiritSe) };
-            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidingSpiritSe) };
+            config.RelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
+            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
 
             config.Illustrator = "";
 
@@ -43,7 +43,7 @@ namespace KomachiMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<KomachiModGuidingSpiritSe>(base.Value1, 0, 0, 0, 0.2f);
+            yield return BuffAction<KomachiModGuidedSpiritSe>(base.Value1, 0, 0, 0, 0.2f);
             yield break;
         }
     }

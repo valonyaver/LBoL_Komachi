@@ -1,11 +1,14 @@
+using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,13 +52,30 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModFreeTraumaDef))]
     public sealed class KomachiModFreeTrauma : KomachiCard
     {
+        // Vengeful spirits inflicted.
         protected override int BaseValue3 { get => 3; }
         protected override int BaseUpgradedValue3 { get => 3; }
+
+        public override Interaction Precondition()
+        {
+            return KomachiModUtility.ChooseRelease(this, Value1, Value2);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DebuffAction<KomachiModVengefulSpiritSe>(selector.SelectedEnemy, count: Value3, duration: 3, startAutoDecreasing: true);
+            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value3);
             yield return new GainManaAction(Mana);
-            yield break;
+            Card card = KomachiModUtility.GetPreconditionCard(precondition);
+            if (card == null || card.GetType() == typeof(KomachiModReleaseNone)) yield break;
+            if (card.ChoiceCardIndicator == 1)
+            {
+                yield return new KomachiReleaseAction(Battle.Player, Value1);
+                yield return new GainManaAction(Mana);
+            }
+            else
+            {
+                yield return new KomachiReleaseAction(Battle.Player, Value2);
+                yield return new GainManaAction(Mana *2);
+            } 
         } 
     }
 }

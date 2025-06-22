@@ -73,7 +73,7 @@ KomachiModVengefulSpiritSe:
     At the start of the turn, reduce duration of {SelfName} by 1.
     When this status effect is removed, deal double its current level as damage to its owner.
 
-KomachiModGuidingSpiritSe:
+KomachiModGuidedSpiritSe:
   Name: Guiding Spirits
   Description: |-
     At the end of {PlayerName}'s Turn, deal {Level} damage to the enemy with the lowest life, then lose 1 {SelfName}.
@@ -112,4 +112,3 @@ KomachiModReleaseKeyword:
   Name: Release X
   Brief: |-
     Remove X amount of |Guiding Spirits| from yourself to optionally activate this effect.
-    NOTE: MECHANIC IS NOT IMPLEMENTED YET.

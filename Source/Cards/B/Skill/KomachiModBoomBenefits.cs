@@ -24,8 +24,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 1 };
-            config.UpgradedCost = new ManaGroup() { Any = 0 };
+            config.Cost = new ManaGroup() { Any = 0 };
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Skill;
@@ -40,9 +39,9 @@ namespace KomachiMod.Cards
             config.UpgradedValue2 = 2;
 
             config.RelativeEffects = new List<string>() 
-            { nameof(KomachiDetonationKeyword), nameof(KomachiModGuidingSpiritSe), nameof(KomachiModVengefulSpiritSe) };
+            { nameof(KomachiDetonationKeyword), nameof(KomachiModGuidedSpiritSe), nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() 
-            { nameof(KomachiDetonationKeyword), nameof(KomachiModGuidingSpiritSe), nameof(KomachiModVengefulSpiritSe) };
+            { nameof(KomachiDetonationKeyword), nameof(KomachiModGuidedSpiritSe), nameof(KomachiModVengefulSpiritSe) };
 
             config.Illustrator = "";
 
@@ -74,11 +73,11 @@ namespace KomachiMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
-            Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
-
             // if enemy has no spirits, why are you even using this...?
             if (!selector.SelectedEnemy.HasStatusEffect<KomachiModVengefulSpiritSe>()) yield break;
+
+            MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
+            Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
 
             int vengefulSpiritsAmount = selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Count;
             yield return new RemoveStatusEffectAction(selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>(), true, 0.5f);
@@ -89,7 +88,7 @@ namespace KomachiMod.Cards
                 if (card.ChoiceCardIndicator == 1)
                 {
                     int guidedSpiritsNum = vengefulSpiritsAmount / Value1;
-                    yield return BuffAction<KomachiModGuidingSpiritSe>(guidedSpiritsNum);
+                    yield return BuffAction<KomachiModGuidedSpiritSe>(guidedSpiritsNum);
                 }
                 // Draws 1 for every {value2} detonated Vengeful Spirit
                 else

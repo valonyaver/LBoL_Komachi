@@ -8,7 +8,7 @@ using LBoL.Core;
 using KomachiMod.BattleActions;
 using LBoL.Core.Battle.BattleActions;
 using KomachiMod.StatusEffects;
-using KomachiMod.Patches;
+using KomachiMod.Source.BattleActions.EventManager;
 
 namespace KomachiMod.Cards
 {
@@ -46,7 +46,7 @@ namespace KomachiMod.Cards
     {
         protected override void OnEnterBattle(BattleController battle)
 		{
-            base.ReactBattleEvent<BuffAttackEventArgs>(CustomGameEventManager.PostCustomEvent, new EventSequencedReactor<BuffAttackEventArgs>(this.OnBuffAtack)); 
+            base.ReactBattleEvent<BuffAttackEventArgs>(KomachiEventsManager.PostCustomEvent, new EventSequencedReactor<BuffAttackEventArgs>(this.OnBuffAtack)); 
 		}
 
         private IEnumerable<BattleAction> OnBuffAtack(BuffAttackEventArgs args)

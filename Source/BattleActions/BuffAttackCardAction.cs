@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using LBoL.Base;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
-using KomachiMod.Patches;
+using KomachiMod.Source.BattleActions.EventManager;
 
 namespace KomachiMod.BattleActions
 {
@@ -19,7 +19,7 @@ namespace KomachiMod.BattleActions
 
         public override IEnumerable<Phase> GetPhases()
         {
-            yield return base.CreateEventPhase<BuffAttackEventArgs>("PreCustomEvent", Args, CustomGameEventManager.PreCustomEvent);
+            yield return base.CreateEventPhase<BuffAttackEventArgs>("PreCustomEvent", Args, KomachiEventsManager.PreCustomEvent);
 
             yield return base.CreatePhase("Main", delegate
 			{
@@ -29,7 +29,7 @@ namespace KomachiMod.BattleActions
                 }
             }, hasViewer: true);
     
-            yield return base.CreateEventPhase<BuffAttackEventArgs>("PostCustomEvent", Args, CustomGameEventManager.PostCustomEvent);
+            yield return base.CreateEventPhase<BuffAttackEventArgs>("PostCustomEvent", Args, KomachiEventsManager.PostCustomEvent);
             yield break;
         }
     }

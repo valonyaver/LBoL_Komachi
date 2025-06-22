@@ -1,6 +1,5 @@
 using KomachiMod.BattleActions;
 using KomachiMod.GunName;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.Base.Extensions;
 using LBoL.ConfigData;
@@ -15,18 +14,19 @@ using System.Collections.Generic;
 
 namespace KomachiMod.StatusEffects
 {
-    public sealed class KomachiModGuidingSpiritSeDef : KomachiStatusEffectTemplate
+    public sealed class KomachiModGuidedSpiritSeDef : KomachiStatusEffectTemplate
     {
         public override StatusEffectConfig MakeConfig()
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
+            config.HasLevel = true;
             config.Type = LBoL.Base.StatusEffectType.Positive;
             return config;
         }
     }
 
-    [EntityLogic(typeof(KomachiModGuidingSpiritSeDef))]
-    public sealed class KomachiModGuidingSpiritSe : StatusEffect
+    [EntityLogic(typeof(KomachiModGuidedSpiritSeDef))]
+    public sealed class KomachiModGuidedSpiritSe : StatusEffect
     {
         protected override void OnAdded(Unit unit)
         {

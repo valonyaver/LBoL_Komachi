@@ -91,7 +91,7 @@ namespace KomachiMod.Cards
                     grazeAmount++;
                 }
             }
-            yield return BuffAction<Graze>(grazeAmount);
+            if (grazeAmount > 0) yield return BuffAction<Graze>(grazeAmount);
 
 
             yield break;

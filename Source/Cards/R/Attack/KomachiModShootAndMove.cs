@@ -21,13 +21,12 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
-            config.IsPooled = true;
+            config.IsPooled = false;
 
             config.ImageId = "KomachiAttackR";
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
-            config.Cost = new ManaGroup() { Red = 2 };
-            config.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
+            config.Cost = new ManaGroup() { Red = 1, Any = 1 };
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Attack;
@@ -67,31 +66,38 @@ namespace KomachiMod.Cards
         {
             // Create list for interaction
             List<Card> list1 = new List<Card>();
-            // make the 2 cards
-            KomachiModManDistance manipulateDistancePull = Library.CreateCard<KomachiModManDistance>();
-            KomachiModManDistance manipulateDistancePush = Library.CreateCard<KomachiModManDistance>();
-            // indicate them
-            manipulateDistancePull.ChoiceCardIndicator = 1; // uses extra description 1
-            manipulateDistancePush.ChoiceCardIndicator = 2; // uses extra description 2
-            // dk what these do tbh.
-            manipulateDistancePull.SetBattle(base.Battle);
-            manipulateDistancePush.SetBattle(base.Battle);
-            // add em to the list
-            list1.Add(manipulateDistancePull);
-            list1.Add(manipulateDistancePush);
             if (this.IsUpgraded)
             {
-                // Batch create cards. Could write them same as above if i want to.
-                List<KomachiModManDistance2> list2 = Library.CreateCards<KomachiModManDistance2>(2, upgraded: true).ToList();
                 // notice how they are MAN DISTANCE 2?
-                KomachiModManDistance2 manipulateDistancePullUp = list2[0];
-                KomachiModManDistance2 manipulateDistancePushUp = list2[1];
-                manipulateDistancePullUp.ChoiceCardIndicator = 1; // uses extra description 1 of mandistance2
-                manipulateDistancePushUp.ChoiceCardIndicator = 2; // uses extra description 2
-                manipulateDistancePushUp.SetBattle(base.Battle);
-                manipulateDistancePullUp.SetBattle(base.Battle);
-                list1.AddRange(list2);
+                KomachiModManDistance2 manipulateDistancePull2 = Library.CreateCard<KomachiModManDistance2>(upgraded: true);
+                manipulateDistancePull2.ChoiceCardIndicator = 1; // uses extra description 1 of mandistance2
+                manipulateDistancePull2.SetBattle(base.Battle);
+                list1.Add(manipulateDistancePull2);
             }
+            // make the 2 cards
+            KomachiModManDistance manipulateDistancePull1 = Library.CreateCard<KomachiModManDistance>();
+            KomachiModManDistance0 manipulateDistance0 = Library.CreateCard<KomachiModManDistance0>();
+            KomachiModManDistance manipulateDistancePush1 = Library.CreateCard<KomachiModManDistance>();
+            // indicate them
+            manipulateDistancePull1.ChoiceCardIndicator = 1; // uses extra description 1
+            manipulateDistance0.ChoiceCardIndicator = 1; // uses extra description 1
+            manipulateDistancePush1.ChoiceCardIndicator = 2; // uses extra description 2
+            // dk what these do tbh.
+            manipulateDistancePull1.SetBattle(base.Battle);
+            manipulateDistance0.SetBattle(base.Battle);
+            manipulateDistancePush1.SetBattle(base.Battle);
+            // add em to the list
+            list1.Add(manipulateDistancePull1);
+            list1.Add(manipulateDistance0);
+            list1.Add(manipulateDistancePush1);
+            if (this.IsUpgraded)
+            {
+                KomachiModManDistance2 manipulateDistancePush2 = Library.CreateCard<KomachiModManDistance2>(upgraded: true);
+                manipulateDistancePush2.ChoiceCardIndicator = 2; // uses extra description 2
+                manipulateDistancePush2.SetBattle(base.Battle);
+                list1.Add(manipulateDistancePush2);
+            }
+
             return new MiniSelectCardInteraction(list1);
         }
 
@@ -105,7 +111,7 @@ namespace KomachiMod.Cards
                 yield break;
             }
             // apply the card choice
-            if (card != null)
+            if (card != null && card.GetType() != typeof(KomachiModManDistance0))
             {
                 // value 1 of mandistance2 is 2. value1 of mandistance 1 is 1
                 // so whatever card is picked, take its value1.

@@ -23,7 +23,7 @@ namespace KomachiMod.Exhibits
             exhibitConfig.Value1 = 10; // percent of gold increase
             exhibitConfig.Mana = new ManaGroup() { Red = 1 };
             exhibitConfig.BaseManaColor = ManaColor.Red;
-            exhibitConfig.RelativeCards = new List<string>() { nameof(KomachiModManDistance), nameof(KomachiModSpiderLily) };
+            exhibitConfig.RelativeCards = new List<string>() { nameof(KomachiModSpiderLily), nameof(KomachiModManDistance) };
 
             return exhibitConfig;
         }

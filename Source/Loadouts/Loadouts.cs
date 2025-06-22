@@ -22,8 +22,9 @@ namespace KomachiMod
             nameof(KomachiAttackR),
             nameof(KomachiAttackR), 
             nameof(KomachiBlockB), 
-            nameof(KomachiBlockB), 
-            nameof(KomachiModShootAndMove)
+            nameof(KomachiBlockB),
+            nameof(KomachiModMoveAndShoot),
+            nameof(KomachiModRetreat)
         };
 
         public static List<string> DeckB = new List<string>{
@@ -34,7 +35,8 @@ namespace KomachiMod
             nameof(KomachiAttackB),
             nameof(KomachiAttackB), 
             nameof(KomachiBlockR), 
-            nameof(KomachiBlockR), 
+            nameof(KomachiBlockR),
+            nameof(KomachiBlockR),
             nameof(KomachiModGrudgingStrike),
         };
 

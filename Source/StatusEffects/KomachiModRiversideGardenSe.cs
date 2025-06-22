@@ -1,6 +1,5 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;

@@ -2,24 +2,63 @@
   Name: Manipulate Distance
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
-  ExtraDescription1: "|Displace| by -{Value1}." # Remember that card choice indicator is what causes the description to change to one of these 2
-  ExtraDescription2: "|Displace| by +{Value1}."
-  ExtraDescription3: "|Displace| by -{Value2}." # for some reason these don't work'
-  ExtraDescription4: "|Displace| by +{Value2}."
+  ExtraDescription1: |-
+    |Displace| by -{Value1}. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |Displace| by +{Value1}. {extraDescriptionAddition}
 
 KomachiModManDistance2:
   Name: Manipulate Distance 2
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
-  ExtraDescription1: "|Displace| by -{Value1}."
-  ExtraDescription2: "|Displace| by +{Value1}."
+  ExtraDescription1: |-
+    |Displace| by -{Value1}. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |Displace| by +{Value1}. {extraDescriptionAddition}
 
 KomachiModManDistance3:
   Name: Manipulate Distance 3
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
-  ExtraDescription1: "|Displace| by -{Value1}."
-  ExtraDescription2: "|Displace| by +{Value1}."
+  ExtraDescription1: |-
+    |Displace| by -{Value1}. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |Displace| by +{Value1}. {extraDescriptionAddition}
+
+KomachiModManDistance0:
+  Name: Manipulate no distance
+  Description: "|Displace| by {Value1}."
+  UpgradedDescription: "|Displace| by up to +/-{Value2}."
+  ExtraDescription1: "Do not |Displace|. {extraDescriptionAddition}"
+  ExtraDescription2: "Do not |Displace|. {extraDescriptionAddition}"
+
+KomachiModManDistance1AllExcept:
+  Name: Manipulate Distance b
+  Description: "|Displace| each enemy except target by +/-{Value1}."
+  UpgradedDescription: "|Displace| by up to +/-{Value2}."
+  ExtraDescription1: "|Displace| each other enemy by -{Value1}."
+  ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+
+KomachiModManDistance2AllExcept:
+  Name: Manipulate Distance b2
+  Description: "|Displace| each enemy except target by +/-{Value1}."
+  UpgradedDescription: "|Displace| by up to +/-{Value2}."
+  ExtraDescription1: "|Displace| each other enemy by -{Value1}."
+  ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+
+KomachiModManDistance3AllExcept:
+  Name: Manipulate Distance b3
+  Description: "|Displace| each enemy except target by +/-{Value1}."
+  UpgradedDescription: "|Displace| by up to +/-{Value2}."
+  ExtraDescription1: "|Displace| each other enemy by -{Value1}."
+  ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+
+
+
+KomachiModReleaseNone:
+  Name: Release None
+  Description: |-
+    |Release| no Spirits
 
 KomachiModSpiderLily:
   Name: Spider Lily
@@ -32,27 +71,38 @@ KomachiModShootAndMove:
   Name: Shoot and Move
   Description: |-
     Deal {Damage} damage. 
-    |Displace| by +/-{Value1}.
+    You can |Displace| by +/-{Value1}.
   UpgradedDescription: |-
     Deal {Damage} damage. 
-    |Displace| by up to +/-{Value1}.
+    You can |Displace| by up to +/-{Value1}.
 
-KomachiModShootAndMoveNegative:
-  Name: Shoot and Move (-)
+KomachiModMoveAndShoot:
+  Name: Move and Shoot
   Description: |-
+    You can |Displace| by +/-{Value1}.
     Deal {Damage} damage. 
-    |Displace| by {Value1}.
+  UpgradedDescription: |-
+    You can |Displace| by up to +/-{Value1}.
+    Deal {Damage} damage. 
+  NonbattleBaseDescription: |-
+    You can |Displace| by +/-{Value1}.
+    Deal {Damage} damage..
+  UpgradedNonbattleBaseDescription: |-
+    You can |Displace| by up to +/-{Value1}.
+    Deal {Damage} damage..
 
 KomachiModRetreat:
   Name: Rowing Retreat
   Description: |-
-    |Displace| by +{Value1}.
+    You can |Displace| by +{Value1}.
     Gain {Block} |Block|.
     If the target's |Distance| is {Value3}, add a |Manipulate Distance| to your hand.
   UpgradedDescription: |-
-    |Displace| by +{Value1}. Then, |Displace| all other enemies by +{Value2}.
+    You can |Displace| by +{Value1}. Then, you can |Displace| all other enemies by +{Value2}.
     Gain {Block} |Block|.
     If the target's |Distance| is {Value3}, add a |Manipulate Distance| to your hand.
+  ExtraDescription1: Do not displace target.
+  ExtraDescription2: Do not displace other enemies.
 
 KomachiModEndlessWay:
   Name: Endless Way
@@ -330,14 +380,25 @@ KomachiModShootGhosts:
 KomachiModSpiritDefence:
   Name: Ghosts follow You
   Description: |-
-    Gain {Block} block.
+    Gain {Block} |Block|.
     Gain {Value1} |Guiding Spirits|.
 
 KomachiModVengefulSweep:
-  Name: Horror movie showing
+  Name: Spirits of the Firm
   Description: |-
     Inflict {Value1} |Vengeful Spirits| on all enemies.
     |Release| {Value2}: Inflict {Value1} more |Vengeful Spirits| on all those enemies.
+  ExtraDescription1: |-
+    |Release| {Value2}: Inflict {Value1} more |Vengeful Spirits| on all those enemies.
+
+KomachiModVengefulerSweep:
+  Name: Abundant Floating Spirits
+  Description: |-
+    Deal {Damage} damage to each enemy.
+    Apply {Value1} |Vengeful Spirits| to each enemy.
+    |Release| {Value2}: This attack becomes |Accurate|.
+  ExtraDescription1: |-
+    |Release| {Value2}: This attack becomes |Accurate|.
 
 KomachiModFreeTrauma:
   Name: Free Trauma?!
@@ -345,13 +406,13 @@ KomachiModFreeTrauma:
     Inflict {Value3} |Vengeful Spirit|.
     Gain {Mana}.
     |Release| {Value1} or {Value2}: Gain an Additional {Mana} for every {Value1} Spirits released.
+  ExtraDescription1: |-
+    |Release| {Value1}: Gain {Mana}.
+  ExtraDescription2: |-
+    |Release| {Value2}: Gain {Mana}{Mana}.
+    
+    
 
-KomachiModVengefulerSweep:
-  Name: Horrorer movie showing
-  Description: |-
-    Deal {Damage} damage to each enemy.
-    Apply {Value1} |Vengeful Spirits| to each enemy.
-    |Release| {Value2}: This becomes |Accurate|.
 
     
 # basic sample character cards
@@ -368,7 +429,7 @@ KomachiAttackB:
   Description: Deal {Damage} damage.
 
 KomachiBlockB:
-  Name: Ghost wall.
+  Name: Ghost wall
   Description: Gain {Block} |Block|.
 
 KomachiMultiAttack:

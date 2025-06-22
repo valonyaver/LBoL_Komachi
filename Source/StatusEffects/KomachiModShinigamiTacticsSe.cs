@@ -1,6 +1,5 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards;
-using KomachiMod.Patches;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -21,7 +20,7 @@ namespace KomachiMod.StatusEffects
     public sealed class KomachiModShinigamiTacticsSeDef : KomachiStatusEffectTemplate
     {
         public override StatusEffectConfig MakeConfig()
-        {
+        { 
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.Type = LBoL.Base.StatusEffectType.Positive;
             return config;
