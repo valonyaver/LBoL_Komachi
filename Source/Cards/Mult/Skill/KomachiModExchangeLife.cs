@@ -47,6 +47,12 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModExchangeLifeDef))]
     public sealed class KomachiModExchangeLife : KomachiCard
     {
+        public ManaGroup unupgradedPlentiful = new ManaGroup() { Philosophy = 1 };
+        public ManaGroup upgradedPlentiful = new ManaGroup() { Red = 1, Black = 1 };
+        public override ManaGroup? PlentifulMana
+        {
+            get { if (IsUpgraded) return upgradedPlentiful; else return unupgradedPlentiful; }
+        } 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             int enemyOriginalHP = selector.SelectedEnemy.Hp;

@@ -10,60 +10,60 @@ using LBoL.Core.Battle.BattleActions;
 
 namespace KomachiMod.Cards
 {
-    public sealed class KomachiXCostDef : KomachiCardTemplate
-    {
-        public override CardConfig MakeConfig()
-        {
-            CardConfig config = GetCardDefaultConfig();
-            config.HideMesuem = true;
-            config.IsPooled = false;
-            config.FindInBattle = false;
+	public sealed class KomachiXCostDef : KomachiCardTemplate
+	{
+		public override CardConfig MakeConfig()
+		{
+			CardConfig config = GetCardDefaultConfig();
+			config.HideMesuem = true;
+			config.IsPooled = false;
+			config.FindInBattle = false;
 
-            config.GunName = GunNameID.GetGunFromId(400);
+			config.GunName = GunNameID.GetGunFromId(400);
 
-            config.Colors = new List<ManaColor>() { ManaColor.Blue, ManaColor.Red };
-            //Mana to consume aside from X
-            config.Cost = new ManaGroup() { Blue = 1, Red = 1 };
-            config.Rarity = Rarity.Rare;
+			config.Colors = new List<ManaColor>() { ManaColor.Blue, ManaColor.Red };
+			//Mana to consume aside from X
+			config.Cost = new ManaGroup() { Blue = 1, Red = 1 };
+			config.Rarity = Rarity.Rare;
 
-            //The XCost has to be set.
-            config.IsXCost = true;
+			//The XCost has to be set.
+			config.IsXCost = true;
 
-            config.Type = CardType.Attack;
-            config.TargetType = TargetType.SingleEnemy;
+			config.Type = CardType.Attack;
+			config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 5;
-            config.UpgradedDamage = 8;
+			config.Damage = 5;
+			config.UpgradedDamage = 8;
 
-            config.Value1 = 5;
-            config.UpgradedValue1 = 7;
+			config.Value1 = 5;
+			config.UpgradedValue1 = 7;
 
-            config.Value2 = 2;
+			config.Value2 = 2;
 
-            config.Mana = new ManaGroup() { Red = 1 };
+			config.Mana = new ManaGroup() { Red = 1 };
 
-            config.Illustrator = "";
+			config.Illustrator = "";
 
-            config.Index = CardIndexGenerator.GetUniqueIndex(config);
-            return config;
-        }
-    }
-    
-    [EntityLogic(typeof(KomachiXCostDef))]
-    public sealed class KomachiXCost : KomachiCard
-    {
-        //Create another ManaGroup that can be used to display the UU mana on the card.
-        private ManaGroup _blueMana = new ManaGroup() { Blue = 2 };  
-        public ManaGroup BlueMana
-        {
-            get
-            {
-                return _blueMana;
-            }
-        }
+			config.Index = CardIndexGenerator.GetUniqueIndex(config);
+			return config;
+		}
+	}
+	
+	[EntityLogic(typeof(KomachiXCostDef))]
+	public sealed class KomachiXCost : KomachiCard
+	{
+		//Create another ManaGroup that can be used to display the UU mana on the card.
+		private ManaGroup _blueMana = new ManaGroup() { Blue = 2 };  
+		public ManaGroup BlueMana
+		{
+			get
+			{
+				return _blueMana;
+			}
+		}
 
-        //Get the amount of mana that was pooled for the X-cost card.
-        public override ManaGroup GetXCostFromPooled(ManaGroup pooledMana)
+		//Get the amount of mana that was pooled for the X-cost card.
+		public override ManaGroup GetXCostFromPooled(ManaGroup pooledMana)
 		{
 			return new ManaGroup
 			{
@@ -72,10 +72,10 @@ namespace KomachiMod.Cards
 				Philosophy = pooledMana.Philosophy
 			};
 		}
-        
-        //Calcualte the amount of damage dealt based on the amount of Red mana used.
-        //Outside of combat, displays the base amount of damage.
-        private DamageInfo CalculateDamage(ManaGroup? manaGroup)
+		
+		//Calcualte the amount of damage dealt based on the amount of Red mana used.
+		//Outside of combat, displays the base amount of damage.
+		private DamageInfo CalculateDamage(ManaGroup? manaGroup)
 		{
 			if (manaGroup != null)
 			{
@@ -93,18 +93,18 @@ namespace KomachiMod.Cards
 			}
 		}
 
-    
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+	
+		protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
 		{
-            //Red Mana: Deal damage.
+			//Red Mana: Deal damage.
 			yield return base.AttackAction(selector, this.CalculateDamage(new ManaGroup?(consumingMana)), null);
 
-            //Blue mana: Gain life.
-            int blueMana = base.SynergyAmount(consumingMana, ManaColor.Blue, 2);
-            yield return new HealAction(base.Battle.Player, base.Battle.Player, blueMana * base.Value2);
-            yield break;
+			//Blue mana: Gain life.
+			int blueMana = base.SynergyAmount(consumingMana, ManaColor.Blue, 2);
+			yield return new HealAction(base.Battle.Player, base.Battle.Player, blueMana * base.Value2);
+			yield break;
 		}
-    }
+	}
 }
 
 

@@ -15,7 +15,7 @@ using System.Collections.Generic;
 
 namespace KomachiMod.KomachiUlt
 {
-    public sealed class KomachiUltADef : KomachiUltTemplate
+    public sealed class KomachiModUltADef : KomachiUltTemplate
     {
         public override UltimateSkillConfig MakeConfig()
         {
@@ -32,10 +32,10 @@ namespace KomachiMod.KomachiUlt
     /// <summary>
     /// Shinigami "Higan Retour"
     /// </summary>
-    [EntityLogic(typeof(KomachiUltADef))]
-    public sealed class KomachiUltA : UltimateSkill
+    [EntityLogic(typeof(KomachiModUltADef))]
+    public sealed class KomachiModUltA : UltimateSkill
     {
-        public KomachiUltA()
+        public KomachiModUltA()
         {
             base.TargetType = TargetType.AllEnemies;
             base.GunName = GunNameID.GetGunFromId(4158);
@@ -43,6 +43,7 @@ namespace KomachiMod.KomachiUlt
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
+            yield return PerformAction.Spell(Owner, nameof(KomachiModUltA));
             foreach (Unit enemy in selector.GetUnits(base.Battle))
             {
                 yield return new DistanceChangeAction(enemy, 1 - KomachiDistanceSe.GetDistanceLevel(enemy));

@@ -29,8 +29,8 @@ namespace KomachiMod.Cards
             config.Type = CardType.Defense;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Block = 13;
-            config.UpgradedBlock = 16;
+            config.Block = 10;
+            config.UpgradedBlock = 12;
 
             // Displacement amount
             config.Value1 = 1;

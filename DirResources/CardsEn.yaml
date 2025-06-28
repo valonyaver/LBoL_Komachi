@@ -1,4 +1,5 @@
-﻿KomachiModManDistance:
+﻿# Tokens and choice cards
+KomachiModManDistance:
   Name: Manipulate Distance
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
@@ -18,6 +19,15 @@ KomachiModManDistance2:
 
 KomachiModManDistance3:
   Name: Manipulate Distance 3
+  Description: "|Displace| +/-{Value1}."
+  UpgradedDescription: "|Displace| by up to +/-{Value2}."
+  ExtraDescription1: |-
+    |Displace| by -{Value1}. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |Displace| by +{Value1}. {extraDescriptionAddition}
+
+KomachiModManDistance4:
+  Name: Manipulate Distance 4
   Description: "|Displace| +/-{Value1}."
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
   ExtraDescription1: |-
@@ -53,8 +63,6 @@ KomachiModManDistance3AllExcept:
   ExtraDescription1: "|Displace| each other enemy by -{Value1}."
   ExtraDescription2: "|Displace| each other enemy by +{Value1}."
 
-
-
 KomachiModReleaseNone:
   Name: Release None
   Description: |-
@@ -67,6 +75,16 @@ KomachiModSpiderLily:
     Gain {Value1} |Temporary Firepower|.
     Gain {Value2} |Poison|.
 
+KomachiModManDetonateToken:
+  Name: Detonate
+  Description: |-
+    |Detonate| an enemy.
+  ExtraDescription1: |-
+    Do not |Detonate|.
+  ExtraDescription2: |-
+    |Detonate|.
+
+# Findable cards
 KomachiModShootAndMove:
   Name: Shoot and Move
   Description: |-
@@ -75,6 +93,9 @@ KomachiModShootAndMove:
   UpgradedDescription: |-
     Deal {Damage} damage. 
     You can |Displace| by up to +/-{Value1}.
+  FlavorText: |-
+    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive.
+
 
 KomachiModMoveAndShoot:
   Name: Move and Shoot
@@ -318,6 +339,7 @@ KomachiModExchangeLife:
   Description: |-
     If the target's |Current Life| is equal to or lower than your current |Maximum Life|, switch your current lives.
     If {SelfName} is played to heal {PlayerName}, it is removed from combat and from the library.
+    |Overflow|: Gain {PlentifulMana}.
   DetailText: |-
     The one with lower life is healed, the one with higher life loses life.
     {SelfName} cannot be randomly generated in combat, and cannot be copied.
@@ -410,9 +432,210 @@ KomachiModFreeTrauma:
     |Release| {Value1}: Gain {Mana}.
   ExtraDescription2: |-
     |Release| {Value2}: Gain {Mana}{Mana}.
-    
-    
 
+KomachiModSpiritBarrier:
+  Name: Spirit Barrier
+  Description: |-
+    Gain {Block} |Block|.
+    |Release| all: Gain {Value2} Barrier for every spirit you released.
+  ExtraDescription1: |-
+    |Release| all: Gain {Value2} Barrier for every spirit you released.
+
+KomachiModScytheHeal:
+  Name: Scythe of Wandering Spirit
+  Description: |-
+    Inflict {Damage} Damage.
+    Apply |Vengeful Spirits| equal to the amount of damage dealt.
+    You can |Detonate|. Then, gain {Value1} life for every {Value2} detonated |Vengeful Spirit|.
+  ExtraDescription1: |-
+    Do not |Detonate|.
+  ExtraDescription2: |-
+    |Detonate|. Then, gain {Value1} life for every {Value2} detonated |Vengeful Spirit|.
+
+KomachiModBoundSpiritsOfEarth:
+  Name: Bound Spirits of the Earth
+  Description: |-
+    Apply {Value1} |Vengeful Spirits| to each enemy.
+    At the end of {PlayerName}'s turn, apply {Value2} |Vengeful Spirits| to each enemy that has |Vengeful Spirits|.
+
+KomachiModLonelyBoundSpirit:
+  Name: Lonely Bound Spirit
+  Description: |-
+    Deal {Damage} damage.
+    Apply |Lonely Bound Spirit|.
+
+KomachiModScytheRedLily:
+  Name: Scythe of Exorcism
+  Description: |-
+    Deal {Damage} damage.
+    You can |Detonate|, then if you detonated {Value1} or more |Vengeful Spirits|, add a |Spider Lily| to your hand.
+    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation.
+  ExtraDescription1: |-
+    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation.
+  ExtraDescription2: |-
+    You can |Detonate|, then if you detonated {Value1} or more |Vengeful Spirits|, add a |Spider Lily| to your hand.
+
+KomachiModDetonateFirepower:
+  Name: Grudge of the Dead
+  Description: |-
+    Each time |Vengeful Spirits| are |Detonated|, gain {Value2} |Firepower|.
+    Apply {Value1} |Vengeful Spirit| on each enemy.
+    You can |Detonate| all enemies.
+  ExtraDescription1: |-
+    |Detonate| all enemies.
+
+KomachiModTalkativeFerryman:
+  Name: Talkative Ferryman
+  Description: |-
+    At the start of {PlayerName}'s turn, gain {Value1} |Guided Spirits|.
+    |Release| {Value2}: At the start of {PlayerName}'s next turn, gain {Value3} |Guided Spirits|.
+  ExtraDescription1: "|Release| {Value2}: At the start of {PlayerName}'s next turn, gain {Value3} |Guided Spirits|."
+
+KomachiModDetonateInfinite:
+  Name: Forever Cancelled
+  Description: |-
+    Apply {Value1} |Vengeful Spirits|.
+    Each time |Vengeful Spirits| is |Detonated|, apply {Value2} |Vengeful Spirits| on that target.
+
+KomachiModSpiritualDamage:
+  Name: Spiritual Damage
+  Description: |-
+    Deal {Damage} damage.
+    Apply |Vengeful Spirits| equal to the amount of unblocked damage dealt this way.
+    The duration of |Vengeful Spirits| on that target is increased by {Value1}.
+
+KomachiModSpiritCatalyst:
+  Name: Spirit Catalyst
+  Description: |-
+    Double target's |Vengeful Spirits|,
+    Increase duration of |Vengeful Spirits| on that enemy by 3.
+
+KomachiModEyeOfTheStorm:
+  Name: Eye of the Storm
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Value1} |Vengeful Spirits|.
+    Gain {Value2} |Guided Spirits|.
+    |Release| {Value3}: Gain {Shield} |Barrier|.
+  ExtraDescription1: "|Release| {Value3}: Gain {Shield} |Barrier|."
+
+KomachiModChainDetonation:
+  Name: Chain Reaction
+  Description: |-
+    Apply {Value1} |Vengeful Spirits|.
+    |Detonate| that enemy.
+    Apply |Vengeful Spirits| equal to the amount detonated.
+    |Release| {Value2}: |Detonate| that target again.
+  ExtraDescription1: "|Release| {Value2}: |Detonate| that target again."
+
+KomachiModResidualAether:
+  Name: Residual Aether
+  Description: |-
+    Gain {totalMana}.
+    |While in hand|: Whenever an enemy is |Detonated|, {SelfName} gives an additional {ManaReal}.
+
+KomachiModDivineSpiritDefence:
+  Name: Shinigami's Divine Protection
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Value1} |Divine Spirits|.
+    |Release| {Value2}: Gain {Value1} |Divine Spirits|.
+  ExtraDescription1: "|Release| {Value2}: Gain {Value1} |Divine Spirits|."
+
+KomachiModSpiritReturn:
+  Name: Spirit Return
+  Description: |-
+    At the start of {PlayerName}'s turn, place the rightmost card in the hand at the bottom of the deck, then add up to 1 card from the |Exile| pile with a total cost less than 2 to your hand. It costs {Mana} more and is removed from combat when played.
+
+KomachiModAfterlifePassage:
+  Name: Afterlife Passage
+  Description: |-
+    Exile {Value1} cards from your hand.
+    Gain {Value2} |Guided Spirits| for each exiled |Misfortune|, |Status|, or |Basic| card.
+    Gain {Value2} |Divine Spirits| for each other exiled card.
+  UpgradedDescription: |-
+    Exile up to {Value1} cards from your hand.
+    Gain {Value2} |Guided Spirits| for each exiled |Misfortune|, |Status|, or |Basic| card.
+    Gain {Value2} |Divine Spirits| for each other exiled card.
+
+KomachiModReapersDue:
+  Name: Reaper's due
+  Description: |-
+    |For each {Mana} spent|: Gain {Value1} |Guided Spirits|.
+    |For each {WhiteMana} spent|: Gain {Value2} |Divine Spirits|.
+    |For each {BlackMana} spent|: Apply {Value2} |Vengeful Spirits| to each enemy.
+
+KomachiModCloseQuarterDefence:
+  Name: Close Quarter Technique
+  Description: |-
+    Gain {Block} |Block|.
+    Apply {Value1} |Vengeful Spirits|.
+    If target's |Distance| is less than {distanceLimit}: Gain {additionalBlockString} more |Block| and {Value2} |Guided Spirits|.
+
+KomachiModHalfLife3:
+  Name: Short Life Expectancy
+  Description: |-
+    |Release| {Value1}: Deal half the target's current life ({Damage}) as damage.
+    If the target has a known name, you must |Release| {Value2} instead.
+    Lose {Value3} |Spirit|.
+  UpgradedDescription: |-
+    |Release| {Value1}: Deal half the target's current life ({Damage}) as damage.
+    If the target has a known name, you must |Release| {Value2} instead.
+  ExtraDescription1: |-
+    |Release| {releaseValue}: Deal half the target's current life as damage.
+
+KomachiModDistanceCloser:
+  Name: Ferriage of the Deep Fog
+  Description: |-
+    |Displace| by up to -{Value1}.
+    Inflict {Value2} |Vengeful Spirits| for every level of |Displacement|.
+    |Release| {Value2}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
+
+KomachiModEthicallySourcedBreak:
+  Name: Ethically Sourced Break
+  Description: |-
+    Gain {Shield} |Barrier|. Gain {Value1} Life and {Value2} Firepower
+    End {PlayerName}'s turn. 
+    At the start of {PlayerName}'s next turn, end {PlayerName}'s turn.
+    At the start of {PlayerName}'s next turn after that, gain {Mana}, and draw {Value3} cards.
+
+KomachiModInfernoTempest:
+  Name: Souls at the end of the Road
+  Description: |-
+    |Exile| every card from your hand, draw pile, and discard pile.
+    Gain {Value1} |Divine Spirit{Value1:plural one='' other='s'}| for each card exiled from the hand.
+    Gain {Value1} |Guided Spirit{Value1:plural one='' other='s'}| for each card exiled from the draw pile.
+    Inflict {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}| to each enemy for each card exiled from the discard pile.
+    At the start of {PlayerName}'s next turn, choose up to {Value2} non|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
+    Remove this card from combat after being played.
+  DetailText: |-
+    There will be at least 1 card returned in each the hand, draw pile, and discard pile.
+
+KomachiModGuidedGreen:
+  Name: Guided Greens
+  Description: |-
+    Gain {Value1} |Guided Spirits|.
+    Draw {Value2} card{Value2:plural one='' other='s'}.
+
+KomachiModHellFreeze:
+  Name: Hell's Frozen Warmth
+  Description: |-
+    Deal {Damage} damage.
+    Each time |Vengeful Spirits| are |Detonated| on that target, apply |Cold| to that target. (This effect does not stack)
+    You can |Detonate|, and if you do, gain {Value1} |Frost Armor| for every {Value2} |Vengeful Spirits| detonated.
+  ExtraDescription1: |-
+    Do not |Detonate|
+  ExtraDescription2: |-
+    |Detonate|, and if you do, gain {Value1} |Frost Armor| for every {Value2} |Vengeful Spirits| detonated.
+  FlavorText: "Even hell has seasons of torment."
+
+KomachiModStrongestSpirit:
+  Name: The Strongest Spirit!
+  Description: |-
+    Deal {Damage} damage.
+    Apply |Vengeful Spirits| equal to the amount of unblocked damage dealt this way.
+    |Release| {Value1}: Gain {Value2} |Temporary Firepower|. |Exile| all non-attack cards from the hand.
+  FlavorText: "After getting over her existential crisis when she learned that the sun will explode in 5 billion years, the ice fairy became stronger than ever."
 
     
 # basic sample character cards

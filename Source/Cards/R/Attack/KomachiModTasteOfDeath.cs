@@ -10,6 +10,7 @@ using LBoL.Core.Battle.BattleActions;
 using KomachiMod.StatusEffects;
 using LBoL.Core.Units;
 using KomachiMod.BattleActions;
+using UnityEngine;
 
 namespace KomachiMod.Cards
 {
@@ -75,6 +76,7 @@ namespace KomachiMod.Cards
         {
             if (args.ActionSource == this && args.Targets != null)
             {
+                Debug.Log("Using slice of death");
                 Unit target = args.Targets[0];
                 if (target.HasStatusEffect<KomachiDistanceSe>())
                 {

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using LBoL.Core;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
@@ -25,6 +26,11 @@ namespace KomachiMod.BattleActions
 		/// The target already had spirits. So its count was increased.
 		/// </summary>
 		public bool stacked;
+
+		public bool successful
+		{
+			get => stacked || applied;
+		}
 		protected override string GetBaseDebugString()
 		{
 			return $"The target {Target.SelfName} is being applied with {Amount} vengeful spirits.";

@@ -68,17 +68,83 @@ KomachiModVengefulSpiritSe:
   Name: Vengeful Spirits
   Description: |-
     At the start of {OwnerName}'s turn, reduce duration of {SelfName} by 1.
-    After {Duration} turns, remove {SelfName} and its owner takes double its level ({damageDealt}) as damage.
+    After {Duration} turns, remove {SelfName} and deal double its count as |Accurate| attack damage. 
+    {damageDealt} damage will be dealt.
   Brief: |-
     At the start of the turn, reduce duration of {SelfName} by 1.
-    When this status effect is removed, deal double its current level as damage to its owner.
+    When this status effect is removed, deal double its current count as |Accurate| attack damage to its owner.
+    Note: This attack damage is affected by damage modifiers on both the enemy and player.
 
 KomachiModGuidedSpiritSe:
-  Name: Guiding Spirits
+  Name: Guided Spirits
   Description: |-
-    At the end of {PlayerName}'s Turn, deal {Level} damage to the enemy with the lowest life, then lose 1 {SelfName}.
+    At the end of {PlayerName}'s Turn, deal {damageDealt} |Accurate| attack damage to the enemy with the lowest life ({targetName}), then lose 1 {SelfName}.
   Brief: |-
-    At the end of {PlayerName}'s Turn, deal damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
+    At the end of {PlayerName}'s Turn, deal |Accurate| damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
+
+KomachiModDivineSpiritSe:
+  Name: Divine Spirits
+  Description: |-
+    At the end of {PlayerName}'s turn, gain {Level} |Barrier|, then halve the level of {SelfName}, rounding down.
+  Brief: |-
+    At the end of its owner's turn, that unit gains |Barrier| equal to {SelfName}'s level, then halve the level of {SelfName}, rounding down.
+
+KomachiModBoundSpiritsOfEarthSe:
+  Name: Bound Spirits of the Earth
+  Description: |-
+    At the end of {PlayerName}'s turn, apply {Level} |Vengeful Spirits| to each enemy that has |Vengeful Spirits|.
+
+KomachiModLonelyBoundSpiritSe:
+  Name: Lonely Bound Spirit
+  Description: |-
+    Whenever |Vengeful Spirits| are applied on {OwnerName}, increase the count of |Lonely Bound Spirit| by the same amount * {Level}. 
+    |Lonely Bound Spirit| will only be detonated when |Vengeful Spirits| are detonated on {OwnerName} with a card effect, dealing {damageDealt} damage.
+  Brief: |-
+    Whenever |Vengeful Spirits| are applied on its owner, increase the count of |Lonely Bound Spirit| by the same amount. 
+    |Lonely Bound Spirit| will only be detonated when |Vengeful Spirits| are |Detonated| on its owner with a card effect.
+    If |Lonely Bound Spirit| is detonated at the same time as |Vengeful Spirits|, effects that count the amount of spirits detonated will count both.
+
+KomachiModDetonateFirepowerSe:
+  Name: Grudge of the dead.
+  Description: |-
+    Each time |Vengeful Spirits| are |Detonated|, gain {Level} |Firepower|.
+
+KomachiModTalkativeFerrymanSe:
+  Name: Talkative Ferryman
+  Description: |-
+    At the start of {PlayerName}'s turn, gain {Level} |Guided Spirits|.
+
+KomachiModGuidedGeneratorNextTurnSe:
+  Name: Gain Guided Spirits
+  Description: |-
+    At the start of {PlayerName}'s next turn, gain {Level} |Guided Spirits|.
+
+KomachiModDetonateInfiniteSe:
+  Name: Forever Cancelled
+  Description: |-
+    Each time |Vengeful Spirits| is |Detonated|, apply {Level} |Vengeful Spirits| on that target.
+
+KomachiModSpiritReturnSe:
+  Name: Spirit Return
+  Description: |-
+    At the start of {PlayerName}'s turn, place the {Level} rightmost card{Level:plural one='' other='s'} in the hand at the bottom of the deck, then add up to {Level} card{Level:plural one='' other='s'} from the |Exile| pile with a total cost less than 2 to your hand. It costs {Mana} more and is removed from combat when played.
+
+KomachiModEthicallySourcedBreakSe:
+  Name: Ethically Sourced Break
+  Description: |-
+    At the start of {PlayerName}'s next turn, skip {PlayerName}'s turn.
+    At the start of {PlayerName}'s next turn after that, gain {manaAmount} and draw {Count} cards.
+
+KomachiModInfernoTempestSe:
+  Name: Souls at the end of the Road
+  Description: |-
+    At the start of {PlayerName}'s next turn, choose up to {Value2} non Basic exiled cards. Add them randomly amongst your hand, draw pile, and discard pile.
+    
+KomachiModHellFreezeSe:
+  Name: Hell's Frozen Warmth
+  Description: |-
+    Each time |Vengeful Spirits| are |Detonated| on {OwnerName}, apply |Cold| to {OwnerName}. (This effect does not stack)
+
 #Keywords
 KomachiEnhanceSe:
   Name: Enhance

@@ -1,4 +1,4 @@
-KomachiUltA:
+KomachiModUltA:
   Title: Shinigami
   Content: Higan Retour
   Description: |-
@@ -6,11 +6,17 @@ KomachiUltA:
     Add a |Manipulate Distance| to your hand for each enemy.
     Deal {Damage} damage to each enemy. |Accurate|
 
-KomachiUltB:
-  Title: Title
-  Content: Ultimate B
+KomachiModUltB:
+  Title: Spirit Sign
+  Content: Awakening of the Ancient Earthbound Spirits
   Description: |-
-    Deal {Damage} damage.
-    Apply {Value1} |Weak|.
-    |Accurate|
+    Remove |Amulets| from each enemy.
+    Apply {Value1} |Vengeful Spirits| on each enemy.
+    |Detonate| each enemy.
+    Gain |Divine Spirits| equal to the amount of detonated |Vengeful Spirits|.
 
+KomachiModUltHalfLife:
+  Title: Poor Fate
+  Content: Shot Life Expectancy - Your Days Are Numbered
+  Description: |-
+    Halve the enemy's current life.

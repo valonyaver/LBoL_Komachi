@@ -2,6 +2,7 @@
 using KomachiMod.StatusEffects;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
@@ -51,6 +52,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
         /// <summary>
         /// Retuns a mini select card interaction with a don't release, release with cost1, and optionally, release with cost2.
         /// Cost2 should be higher than cost1.
+        /// Remember to manually call the release action in the card's actions.
         /// </summary>
         /// <param name="card"></param>
         /// <param name="cost1"></param>
@@ -67,8 +69,8 @@ namespace KomachiMod.Source.BattleActions.Helpers
             List<Card> list = new List<Card>();
             // make the 2 cards
             KomachiModReleaseNone releaseNone = Library.CreateCard<KomachiModReleaseNone>();
-            var releaseCost1 = Library.CreateCard(card.GetType());
-            Debug.Log($"{releaseCost1.SelfName} has a type of {releaseCost1.GetType()}");
+            var releaseCost1 = Library.CreateCard(card.GetType(), card.IsUpgraded);
+            Debug.Log($"{releaseCost1.SelfName} has a type of {releaseCost1.GetType()} is having a release interaction with a cost {cost1}");
             releaseCost1.ChoiceCardIndicator = 1; // uses extra description 1
             // dk what these do tbh.
             releaseNone.SetBattle(battle);
@@ -78,11 +80,51 @@ namespace KomachiMod.Source.BattleActions.Helpers
             list.Add(releaseCost1);
             if (cost2 > 0 && CanReleaseSpirits(battle.Player, cost2))
             {
-                var releaseCost2 = Library.CreateCard(card.GetType());
+                var releaseCost2 = Library.CreateCard(card.GetType(), card.IsUpgraded);
                 releaseCost2.SetBattle(battle);
                 releaseCost2.ChoiceCardIndicator = 2; // uses extra description 2
                 list.Add(releaseCost2);
             }
+            return new MiniSelectCardInteraction(list);
+        }
+
+        /// <summary>
+        /// Shortcut bool that is "If this card isnt null or isnt the pick no release option"
+        /// </summary>
+        /// <param name="choiceCard"></param>
+        /// <returns></returns>
+        public static bool ChoseRelease(Card choiceCard)
+        {
+            return choiceCard != null && choiceCard.GetType() != typeof(KomachiModReleaseNone);
+        }
+
+        /// <summary>
+        /// Generic interaction for having an optional detonate option. 
+        /// Choice card indicator is which extra description you want to use for the detonate choice.
+        /// Also when making the if statement you gotta do 
+        /// if (releaseChoice != null && !(releaseChoice.GetType() == typeof(KomachiModManDetonateToken)))
+        /// lmao
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="choiceCardIndicator"></param>
+        /// <returns></returns>
+        public static Interaction ChooseDetonate(Card card, int choiceCardIndicator)
+        {
+            var battle = card.Battle;
+            List<Card> list = new List<Card>();
+            // make the 2 cards
+            KomachiModManDetonateToken dontexplode = Library.CreateCard<KomachiModManDetonateToken>();
+            var explode = Library.CreateCard(card.GetType());
+            // indicate them
+            dontexplode.ChoiceCardIndicator = 1; // uses extra description 1
+            dontexplode.chooseDontDetonate = true;
+            explode.ChoiceCardIndicator = choiceCardIndicator; // uses extra description 2
+            // dk what these do tbh.
+            dontexplode.SetBattle(battle);
+            explode.SetBattle(battle);
+            // add em to the list
+            list.Add(dontexplode);
+            list.Add(explode);
             return new MiniSelectCardInteraction(list);
         }
 

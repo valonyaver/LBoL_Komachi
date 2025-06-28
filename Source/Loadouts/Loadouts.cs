@@ -9,8 +9,8 @@ namespace KomachiMod
 {
     public class KomachiLoadouts
     {
-        public static string UltimateSkillA = nameof(KomachiUltA);
-        public static string UltimateSkillB = nameof(KomachiUltB);
+        public static string UltimateSkillA = nameof(KomachiModUltA);
+        public static string UltimateSkillB = nameof(KomachiModUltB);
 
         public static string ExhibitA = nameof(KomachiExhibitR);
         public static string ExhibitB = nameof(KomachiExhibitB);
@@ -36,8 +36,8 @@ namespace KomachiMod
             nameof(KomachiAttackB), 
             nameof(KomachiBlockR), 
             nameof(KomachiBlockR),
-            nameof(KomachiBlockR),
             nameof(KomachiModGrudgingStrike),
+            nameof(KomachiModSpiritDefence)
         };
 
         public static PlayerUnitConfig playerUnitConfig = new PlayerUnitConfig(

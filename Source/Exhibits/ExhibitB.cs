@@ -6,7 +6,10 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Cards.Enemy;
+using LBoL.EntityLib.EnemyUnits.Normal.Guihuos;
+using LBoL.EntityLib.EnemyUnits.Normal.Shenlings;
 using LBoL.EntityLib.Exhibits;
+using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 
@@ -24,7 +27,13 @@ namespace KomachiMod.Exhibits
             exhibitConfig.Mana = new ManaGroup() { Black = 1 };
             exhibitConfig.BaseManaColor = ManaColor.Black;
 
-            exhibitConfig.RelativeEffects = new List<string>() { nameof(Spirit), nameof(Vulnerable) };
+            exhibitConfig.RelativeEffects = new List<string>() 
+            { 
+                nameof(Spirit), 
+                nameof(Vulnerable), 
+                nameof(Weak),
+                nameof(Amulet)
+            };
             
             return exhibitConfig;
         }
@@ -39,13 +48,26 @@ namespace KomachiMod.Exhibits
             base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnTurnEnding));
         }
 
-        // Token: 0x060003F5 RID: 1013 RVA: 0x0000AED8 File Offset: 0x000090D8
+
         private IEnumerable<BattleAction> OnPlayerTurnStarted(GameEventArgs args)
         {
             if (base.Battle.Player.TurnCounter == 1)
             {
                 base.NotifyActivating();
                 yield return new ApplyStatusEffectAction<Spirit>(base.Owner, Value1, null, null, null, 0f, false);
+                foreach (var enemy in Battle.AllAliveEnemies)
+                {
+                    if (enemy is Shenling || enemy is Guihuo)
+                    {
+                        var amulet = enemy.GetStatusEffect<Amulet>();
+                        if (amulet != null)
+                        {
+                            yield return new RemoveStatusEffectAction(amulet);
+                        }
+                        yield return new ApplyStatusEffectAction<Weak>(enemy, duration: Value3);
+                        yield return new ApplyStatusEffectAction<Vulnerable>(enemy, duration: Value3);
+                    }
+                }
             }
             yield break;
         }

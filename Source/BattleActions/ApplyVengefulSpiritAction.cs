@@ -51,8 +51,10 @@ namespace KomachiMod.BattleActions
                 Args.oldAmount = 0;
                 Args.applying = true;
             }
-            else Args.Amount = spirits.Count;
-            var applyStatus = new ApplyStatusEffectAction<KomachiModVengefulSpiritSe>(Args.Target, count: Args.Amount, duration: 3, startAutoDecreasing: true);
+            else Args.oldAmount = spirits.Count;
+            Debug.Log($"Applying {Args.Amount} spirits");
+            var applyStatus = new ApplyStatusEffectAction<KomachiModVengefulSpiritSe>
+                (Args.Target, count: Args.Amount, duration: 3, startAutoDecreasing: true, occupationTime: 0.5f);
             React(applyStatus);
             Args.Effect = applyStatus.Args.Effect;
             

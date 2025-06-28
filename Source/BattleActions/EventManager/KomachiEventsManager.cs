@@ -13,6 +13,7 @@ namespace KomachiMod.Source.BattleActions.EventManager
         public static GameEvent<DistanceChangedEventArgs> DistanceChanged { get; set; }
         public static GameEvent<ApplyVengefulSpiritEventArgs> AppliedVengefulSpirit;
         public static GameEvent<KomachiReleaseEventArgs> spiritsReleased;
+        public static GameEvent<DetonateVengefulSpiritEventArgs> DetonatedSpirits;
 
         [HarmonyPatch(typeof(GameRunController), nameof(GameRunController.EnterBattle))]
         private static bool Prefix(GameRunController __instance)
@@ -22,6 +23,7 @@ namespace KomachiMod.Source.BattleActions.EventManager
             DistanceChanged = new GameEvent<DistanceChangedEventArgs>();
             AppliedVengefulSpirit = new GameEvent<ApplyVengefulSpiritEventArgs>();
             spiritsReleased = new GameEvent<KomachiReleaseEventArgs>();
+            DetonatedSpirits = new GameEvent<DetonateVengefulSpiritEventArgs>();
             return true;
         }
     }

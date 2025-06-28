@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig() 
         {
             CardConfig config = GetCardDefaultConfig();
-            // 4532 (Junko aura) then 25000 (thunder attack)
+            // 4532 (Junko aura) then 25000 (thunder attack). 6100 also works for thunder.
             config.GunName = GunNameID.GetGunFromId(25000);
             config.GunNameBurst = GunNameID.GetGunFromId(25001);
 
@@ -40,7 +40,7 @@ namespace KomachiMod.Cards
             config.Value1 = 99;
 
             config.Keywords = Keyword.Accuracy | Keyword.Exile;
-            config.UpgradedKeywords = Keyword.Accuracy | Keyword.Exile;
+            config.UpgradedKeywords = Keyword.Accuracy | Keyword.Exile | Keyword.Initial;
             config.RelativeEffects = new List<string>() { nameof(Vulnerable) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(Vulnerable) };
 
@@ -55,7 +55,6 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModLowTierShinigamiDef))]
     public sealed class KomachiModLowTierShinigami : KomachiCard
     {
-
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             // I want Komachi to tell me to kill myself

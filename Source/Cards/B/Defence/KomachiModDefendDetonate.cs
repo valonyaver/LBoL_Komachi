@@ -93,15 +93,18 @@ namespace KomachiMod.Cards
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
             yield return DefenseAction(true);
+            // apply spirits if it has it
             if (Value1 > 0)
             {
                 yield return DebuffAction<KomachiModVengefulSpiritSe>(selector.SelectedEnemy, count: Value1, duration:3, occupationTime: 1f);
             }
-            if (selector.SelectedEnemy.HasStatusEffect<KomachiModVengefulSpiritSe>() && card != null && card.ChoiceCardIndicator == 2)
+            // remove dat
+            if (card != null && card.ChoiceCardIndicator == 2)
             {
-                int vengefulSpiritsAmount = selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Count;
-                yield return new RemoveStatusEffectAction(selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>(), true, 0.5f);
+                var detonation = new DetonateVengefulSpiritAction(this, selector.SelectedEnemy);
+                yield return detonation;
 
+                int vengefulSpiritsAmount = detonation.Args.amountDetonated;
                 int firepowerdownAmount = vengefulSpiritsAmount / 2;
                 yield return DebuffAction<TempFirepowerNegative>(selector.SelectedEnemy, firepowerdownAmount);
             }

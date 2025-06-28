@@ -89,7 +89,7 @@ namespace KomachiMod.Cards
         // This only gives off the base damage of the card.
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
         {
-            if (args.Targets == null) return;
+            if (args.Targets == null || args.ActionSource == null) return;
             if (args.ActionSource == this)
             {
                 lastTargeter = this;

@@ -58,8 +58,8 @@ namespace KomachiMod.Cards
             // Create list for interaction
             List<Card> list = new List<Card>();
             // make the 2 cards
-            KomachiModBoomBenefits guide = Library.CreateCard<KomachiModBoomBenefits>();
-            KomachiModBoomBenefits draw = Library.CreateCard<KomachiModBoomBenefits>();
+            KomachiModBoomBenefits guide = Library.CreateCard<KomachiModBoomBenefits>(upgraded: IsUpgraded);
+            KomachiModBoomBenefits draw = Library.CreateCard<KomachiModBoomBenefits>(upgraded: IsUpgraded);
             // indicate them
             guide.ChoiceCardIndicator = 1; // uses extra description 1
             draw.ChoiceCardIndicator = 2; // uses extra description 2
@@ -74,15 +74,15 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             // if enemy has no spirits, why are you even using this...?
-            if (!selector.SelectedEnemy.HasStatusEffect<KomachiModVengefulSpiritSe>()) yield break;
 
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
 
-            int vengefulSpiritsAmount = selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Count;
-            yield return new RemoveStatusEffectAction(selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>(), true, 0.5f);
+            var detonation = new DetonateVengefulSpiritAction(this, selector.SelectedEnemy);
+            yield return detonation;
+            int vengefulSpiritsAmount = detonation.Args.amountDetonated;
 
-            if (card != null)
+            if (card != null && detonation.Args.noFizzle)
             {
                 // -Gain 1 Guided Spirit for every {value1} detonated Vengeful Spirit.
                 if (card.ChoiceCardIndicator == 1)

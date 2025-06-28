@@ -30,8 +30,8 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             // Spirits inflicted
-            config.Value1 = 4;
-            config.UpgradedValue1 = 6;
+            config.Value1 = 6;
+            config.UpgradedValue1 = 9;
 
             // Release cost
             config.Value2 = 4;
