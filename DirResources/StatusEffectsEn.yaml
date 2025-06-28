@@ -145,6 +145,29 @@ KomachiModHellFreezeSe:
   Description: |-
     Each time |Vengeful Spirits| are |Detonated| on {OwnerName}, apply |Cold| to {OwnerName}. (This effect does not stack)
 
+KomachiModMidsummerLilySe:
+  Name: Lonesome Lily
+  Description: |-
+    After {PlayerName} plays a |Spider Lily|, add {Level} |Midsummer Flower{Level:plural one='' other='s'}| to the hand.
+
+KomachiModLifespanEndSe:
+  Name: Lifespans's End
+  Description: |-
+    At the end of {PlayerName}'s turn: lose half your current life, then take {Level} damage.
+
+KomachiModGoldSarcophagusSe:
+  Name: Gold Sarcopha-Galley
+  Description: |-
+    At the start of {PlayerName}'s turn, reduce the duration of each card in the {SelfName}. When the duration of a card becomes {returnTime}, add it to {PlayerName}'s hand.
+    Cards in the {SelfName}: {SarcophagusContent}
+
+KomachiModExileDoppelgangerSe:
+  Name: Extinct Fauna of the Sanzu River
+  Description: |-
+    Whenever {PlayerName} plays a card:
+    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. It costs {Mana} and is removed from combat after being played. (You can use this {Count} more time{Count:plural one='' other='s'} this turn.)
+    - |If a card with the same name is in the Exile pile|: You can add it to your hand. (You can use this {count2} more time{count2:plural one='' other='s'} this turn.)
+    You can only use each effect of {SelfName} {Level:ordinal one='once' two='twice' few='thrice' other='% times'} per turn.
 #Keywords
 KomachiEnhanceSe:
   Name: Enhance

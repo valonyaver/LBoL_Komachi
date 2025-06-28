@@ -17,6 +17,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
         public static string lessDamageColor = "FF99FF";
         public static string normalValueColor = "B2FFFF";
         public static string increasedDamageColor = "FF9400";
+        public static string KeywordColor = "EFC751";
         /// <summary>
         /// Returns a color depending on the value of value and whether it's less than or higher than comparingValue
         /// </summary>

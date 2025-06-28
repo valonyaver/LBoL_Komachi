@@ -617,6 +617,12 @@ KomachiModGuidedGreen:
     Gain {Value1} |Guided Spirits|.
     Draw {Value2} card{Value2:plural one='' other='s'}.
 
+KomachiModMidsummerLily:
+  Name: Lonesome Lily
+  Description: |-
+    After {PlayerName} plays a |Spider Lily|, add {Value1} |Midsummer Flower{Value1:plural one='' other='s'}| to the hand.
+    Add a |Spider Lily| to the top of the draw pile.
+
 KomachiModHellFreeze:
   Name: Hell's Frozen Warmth
   Description: |-
@@ -637,7 +643,46 @@ KomachiModStrongestSpirit:
     |Release| {Value1}: Gain {Value2} |Temporary Firepower|. |Exile| all non-attack cards from the hand.
   FlavorText: "After getting over her existential crisis when she learned that the sun will explode in 5 billion years, the ice fairy became stronger than ever."
 
-    
+
+KomachiModExchangeDrawExile:
+  Name: Exchange of the Living and the Dead
+  Description: |-
+    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type and an equal or lower total cost to your hand.
+  UpgradedDescription: |-
+    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type and an equal or lower total cost to your hand.
+    If there is no target to pick in the exile pile, draw 1 card instead.
+  DetailText: |-
+    Card type refers to whether the card is an Attack, Defence, Skill, Ability, etc.
+
+KomachiModLifespanEnd:
+  Name: Lifespan's end.
+  Description: |-
+    End the {PlayerName}'s turn. Then, take an extra turn.
+    |Block| is not lost during this extra turn.
+    |At the end of this extra turn|: lose half your current life, then take {Value1} damage.
+  UpgradedDescription: |-
+    End the {PlayerName}'s turn. Then, take an extra turn.
+    |Block| is not lost during this extra turn.
+    |At the start of that extra turn|: Draw {Value2} cards, Gain {Mana}, and Gain {Value2} |Firepower|.
+    |At the end of that extra turn|: lose half your current life, then take {Value1} damage.
+
+KomachiModGoldSarcophagus:
+  Name: Gold Sarcopha-Galley
+  Description: |-
+    Choose 1 card from the draw pile; |Exile| it.
+    At the start of your second turn after this card was played, add that card to your hand and |Upgrade| it.
+
+KomachiModExileDoppelganger:
+  Name: Extinct Fauna of the Sanzu River
+  Description: |-
+    Whenever {PlayerName} plays a card:
+    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. It costs {Mana} and is removed from combat after being played.
+    - |If a card with the same name is in the Exile pile|: You can add it to your hand.
+    You can only use each effect of {SelfName} once per turn.
+  DetailText: |-
+    Copies cannot be copied using the first effect. 
+    Copies of cards with a mana cost of 0 will not have their cost increased by this effect.
+
 # basic sample character cards
 KomachiAttackR:
   Name: Tip of the Reaper

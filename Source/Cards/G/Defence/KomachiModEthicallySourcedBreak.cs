@@ -18,6 +18,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
+            config.ImageId = "KomachiModQuickNap";
             config.Colors = new List<ManaColor>() { ManaColor.Green};
             config.Cost = new ManaGroup() { Green = 1, Any = 2 };
             config.Rarity = Rarity.Uncommon;
@@ -26,7 +27,7 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             config.Shield = 40;
-            config.UpgradedShield = 50;
+            config.UpgradedShield = 50; 
             // Life gain
             config.Value1 = 5;
             config.UpgradedValue1 = 6;
