@@ -53,7 +53,7 @@ namespace KomachiMod
             InitialMana: new ManaGroup() { Black = 2, Red = 2 },
             InitialMoney: 120,
             InitialPower: 0,
-            BasicRingOrder: 0,
+            BasicRingOrder: null,
             LeftColor: ManaColor.Red,
             RightColor: ManaColor.Black,
             UltimateSkillA: KomachiLoadouts.UltimateSkillA,

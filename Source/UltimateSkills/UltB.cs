@@ -22,7 +22,8 @@ namespace KomachiMod.KomachiUlt
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
             config.Damage = 0;
-            config.Value1 = 10;
+            // Applied spirits
+            config.Value1 = 5;
             // Add the relative status effects in the description box.   
             config.RelativeEffects = new List<string>() 
             { 

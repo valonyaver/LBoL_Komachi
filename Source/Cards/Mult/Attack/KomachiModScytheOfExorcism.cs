@@ -69,7 +69,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModScytheRedLilyDef))]
     public sealed class KomachiModScytheRedLily : KomachiCard
     {
-
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
         public override Interaction Precondition()
         {
             return KomachiModUtility.ChooseRelease(this, Value2);

@@ -11,6 +11,6 @@ KomachiExhibitB:
   Name: Shinigami Eyes
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.
-    At the start of combat, gain {Value1} |Spirit|, then remove |Amulet| and apply {Value3} |Weak| and |Vulnerable| on all "|Spirit|" enemies.
-    At the end of your third turn, lose {Value1} |Spirit| and apply {Value2} |Vulnerable| on all enemies.
+    At the start of combat, gain {Value1} |Spirit|, then remove all |Amulets| and apply {Value3} |Weak| and |Vulnerable| on each "|Spirit|" enemy.
+    At the end of {PlayerName}'s third turn, lose {Value1} |Spirit| and apply {Value2} |Vulnerable| on all enemies.
   FlavorText: For half your lifespan, you can see the name and date of death of all the people you encounter.

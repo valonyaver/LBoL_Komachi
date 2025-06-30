@@ -57,6 +57,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModVengefulerSweepDef))]
     public sealed class KomachiModVengefulerSweep : KomachiCard
     {
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
         public override Interaction Precondition()
         {
             return KomachiModUtility.ChooseRelease(this, Value2);

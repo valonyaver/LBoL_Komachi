@@ -55,7 +55,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModChainDetonationDef))]
     public sealed class KomachiModChainDetonation : KomachiCard
     {
-
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
         public override Interaction Precondition()
         {
             return KomachiModUtility.ChooseRelease(this, Value2);

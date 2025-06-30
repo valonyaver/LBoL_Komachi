@@ -64,7 +64,7 @@ namespace KomachiMod.StatusEffects
                 };
                 enemyUnit?.DamageReceiving.Execute(DamageArgs);
 
-                int finalDamage = (int)DamageArgs.DamageInfo.Damage.Round(MidpointRounding.AwayFromZero);
+                int finalDamage = Math.Max((int)DamageArgs.DamageInfo.Damage.Round(MidpointRounding.AwayFromZero), 0);
 
                 string color = KomachiModUtility.GetColorFromDamage(finalDamage, Level);
 

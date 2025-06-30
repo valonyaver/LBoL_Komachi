@@ -18,7 +18,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2, Any = 2 };
-            config.UpgradedCost = new ManaGroup() { Black = 2};
+            config.UpgradedCost = new ManaGroup() { Black = 2, Any = 1};
             config.Rarity = Rarity.Rare;
 
             config.Type = CardType.Ability;

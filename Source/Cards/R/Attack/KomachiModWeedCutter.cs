@@ -1,5 +1,6 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
+using KomachiMod.GunName;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -22,7 +23,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.IsPooled = true;
+            config.GunName = GunNameID.GetGunFromId(25181);
             config.ImageId = "KomachiAttackR";
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };

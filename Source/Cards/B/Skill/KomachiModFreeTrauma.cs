@@ -52,6 +52,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModFreeTraumaDef))]
     public sealed class KomachiModFreeTrauma : KomachiCard
     {
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value1);
         // Vengeful spirits inflicted.
         protected override int BaseValue3 { get => 3; }
         protected override int BaseUpgradedValue3 { get => 3; }

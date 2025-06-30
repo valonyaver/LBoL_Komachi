@@ -10,7 +10,7 @@ KomachiModUltB:
   Title: Spirit Sign
   Content: Awakening of the Ancient Earthbound Spirits
   Description: |-
-    Remove |Amulets| from each enemy.
+    Remove all |Amulets| from each enemy.
     Apply {Value1} |Vengeful Spirits| on each enemy.
     |Detonate| each enemy.
     Gain |Divine Spirits| equal to the amount of detonated |Vengeful Spirits|.

@@ -76,7 +76,7 @@ KomachiModSpiderLily:
     Gain {Value2} |Poison|.
 
 KomachiModManDetonateToken:
-  Name: Detonate
+  Name: Detonation
   Description: |-
     |Detonate| an enemy.
   ExtraDescription1: |-
@@ -130,6 +130,11 @@ KomachiModEndlessWay:
   Description: |-
     |Displace| by +{Value1}. Remove all |Graze| from that target.
     Gain {Block} |Block|.
+    |Release| {Value2} or {Value3}: Apply {Value1} |Lock on| for every {Value2} Spirits released.
+  ExtraDescription1: |-
+    |Release| {Value2}: Apply {lockOnAmount} |Lock on|.
+  ExtraDescription2: |-
+    |Release| {Value3}: Apply {lockOnAmount2} |Lock on|
 
 KomachiModSweep:
   Name: Sweeping Scythe
@@ -389,9 +394,9 @@ KomachiModBoomBenefits:
   Name: Boom Benefits
   Description: |-
     |Detonate| an Enemy, then |Choose|:
-    - Gain 1 Guided Spirit for every {Value1} detonated |Vengeful Spirit|.
+    - Gain 1 |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
     - Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
-  ExtraDescription1: Gain 1 Guided Spirit for every {Value1} detonated |Vengeful Spirit|.
+  ExtraDescription1: Gain 1 |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
   ExtraDescription2: Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
 
 KomachiModShootGhosts:
@@ -437,9 +442,9 @@ KomachiModSpiritBarrier:
   Name: Spirit Barrier
   Description: |-
     Gain {Block} |Block|.
-    |Release| all: Gain {Value2} Barrier for every spirit you released.
+    |Release| all: Gain {Value2} |Barrier| for every spirit you released.
   ExtraDescription1: |-
-    |Release| all: Gain {Value2} Barrier for every spirit you released.
+    |Release| all: Gain {Value2} |Barrier| for every spirit you released.
 
 KomachiModScytheHeal:
   Name: Scythe of Wandering Spirit
@@ -514,7 +519,7 @@ KomachiModEyeOfTheStorm:
   Name: Eye of the Storm
   Description: |-
     Gain {Block} |Block|.
-    Gain {Value1} |Vengeful Spirits|.
+    Apply {Value1} |Vengeful Spirits| on each enemy.
     Gain {Value2} |Guided Spirits|.
     |Release| {Value3}: Gain {Shield} |Barrier|.
   ExtraDescription1: "|Release| {Value3}: Gain {Shield} |Barrier|."

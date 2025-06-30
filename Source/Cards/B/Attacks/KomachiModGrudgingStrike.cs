@@ -18,7 +18,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(7001);
 
             config.ImageId = "KomachiAttackB";
 
@@ -32,8 +32,9 @@ namespace KomachiMod.Cards
             config.Damage = 14;
             config.UpgradedDamage = 16;
 
+            // Spirit apply
             config.Value1 = 4;
-            config.UpgradedValue1 = 6;
+            config.UpgradedValue1 = 7;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };

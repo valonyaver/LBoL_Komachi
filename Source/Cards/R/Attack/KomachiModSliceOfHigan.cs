@@ -24,7 +24,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(6160);
             config.IsPooled = true;
             config.ImageId = "KomachiAttackR";
 

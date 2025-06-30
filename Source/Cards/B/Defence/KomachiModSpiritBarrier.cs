@@ -60,6 +60,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModSpiritBarrierDef))]
     public sealed class KomachiModSpiritBarrier : KomachiCard
     {
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value1);
         public override Interaction Precondition()
         {
             return KomachiModUtility.ChooseRelease(this, Value1);

@@ -66,6 +66,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModStrongestSpiritDef))]
     public sealed class KomachiModStrongestSpirit : KomachiCard
     {
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value1);
         protected override void OnEnterBattle(BattleController battle)
 		{
 			base.ReactBattleEvent<DamageEventArgs>(base.Battle.Player.DamageDealt, new EventSequencedReactor<DamageEventArgs>(this.OnPlayerDamageDealt));

@@ -79,7 +79,11 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector, base.GunName);
-            selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Duration++;
+            var spirit = selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>();
+            if (spirit != null)
+            {
+                selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Duration++;
+            }
             yield break;
         }
     }

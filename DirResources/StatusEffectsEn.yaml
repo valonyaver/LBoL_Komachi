@@ -200,4 +200,5 @@ KomachiDetonationKeyword:
 KomachiModReleaseKeyword:
   Name: Release X
   Brief: |-
-    Remove X amount of |Guiding Spirits| from yourself to optionally activate this effect.
+    Remove X amount of |Guided Spirits| from {PlayerName} when playing* this card to optionally activate this effect.
+    (*If a card gives you |Guided Spirits| as part of its effect, you must still have enough spirits beforehand to release.)

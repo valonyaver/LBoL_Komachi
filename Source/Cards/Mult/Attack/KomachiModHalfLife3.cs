@@ -74,6 +74,22 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModHalfLife3Def))]
     public sealed class KomachiModHalfLife3 : KomachiCard
     {
+        public override bool Triggered
+        {
+            get
+            {
+                foreach (var enemy in Battle.AllAliveEnemies)
+                {
+                    // if any enemy that doesnt have a name exists, take the cheaper cost to glow it
+                    if (!enemy.Config.RealName)
+                    {
+                        return KomachiModUtility.CanReleaseSpirits(Battle.Player, Value1);
+                    }
+                }
+                // otherwise, take the higher cost to glow it
+                return KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
+            }
+        }
         // Spirit Loss
         protected override int BaseValue3 { get => 3; set => base.BaseValue3 = value; }
         protected override int BaseUpgradedValue3 { get => 0; set => base.BaseUpgradedValue3 = value; }

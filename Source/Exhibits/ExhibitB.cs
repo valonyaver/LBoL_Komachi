@@ -21,8 +21,8 @@ namespace KomachiMod.Exhibits
         {
 
             ExhibitConfig exhibitConfig = this.GetDefaultExhibitConfig();
-            exhibitConfig.Value1 = 2; // Spirit Gain
-            exhibitConfig.Value2 = 2; // Vulnerable inflict
+            exhibitConfig.Value1 = 1; // Spirit Gain
+            exhibitConfig.Value2 = 1; // Vulnerable inflict
             exhibitConfig.Value3 = 2; // Debuff on spirits
             exhibitConfig.Mana = new ManaGroup() { Black = 1 };
             exhibitConfig.BaseManaColor = ManaColor.Black;

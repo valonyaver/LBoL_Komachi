@@ -105,8 +105,11 @@ namespace KomachiMod.Cards
                 yield return detonation;
 
                 int vengefulSpiritsAmount = detonation.Args.amountDetonated;
-                int firepowerdownAmount = vengefulSpiritsAmount / 2;
-                yield return DebuffAction<TempFirepowerNegative>(selector.SelectedEnemy, firepowerdownAmount);
+                if (vengefulSpiritsAmount > 0)
+                {
+                    int firepowerdownAmount = vengefulSpiritsAmount / 2;
+                    yield return DebuffAction<TempFirepowerNegative>(selector.SelectedEnemy, firepowerdownAmount);
+                }
             }
         }
     }
