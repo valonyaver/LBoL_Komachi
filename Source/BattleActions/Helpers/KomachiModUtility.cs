@@ -31,24 +31,38 @@ namespace KomachiMod.Source.BattleActions.Helpers
             else return increasedDamageColor;
         }
 
+
+        public static bool CanReleaseSpirits(Card card, int amount)
+        {
+            Unit unit = card.Battle.Player;
+            return CanReleaseSpirits(unit, amount);
+        }
+
         /// <summary>
         /// Returns true if player has an equal or higher level of guided spirits.
         /// Used for figuring out whether a player can release or not.
         /// </summary>
         /// <param name="unit"></param>
-        /// <param name="amount"></param>
+        /// <param name="requiredAmount"></param>
         /// <returns></returns>
-        public static bool CanReleaseSpirits(Unit unit, int amount)
+        public static bool CanReleaseSpirits(Unit unit, int requiredAmount)
         {
             KomachiModGuidedSpiritSe spirits;
+            KomachiModDivineSpiritSe divineSpirits;
             unit.TryGetStatusEffect(out spirits);
-            if (spirits == null) return false;
-            else if (spirits.Level < amount) return false;
+            unit.TryGetStatusEffect(out divineSpirits);
+            int spiritLevel = 0;
+            int divineSpiritLevel = 0;
+            if (spirits != null) spiritLevel = spirits.Level;
+            if (divineSpirits != null) divineSpiritLevel = divineSpirits.Level;
+            int totalAmount = spiritLevel + divineSpiritLevel;
+            if (totalAmount < requiredAmount) return false;
             else
             {
                 return true;
             }
         }
+
 
         /// <summary>
         /// Retuns a mini select card interaction with a don't release, release with cost1, and optionally, release with cost2.
@@ -115,7 +129,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
             List<Card> list = new List<Card>();
             // make the 2 cards
             KomachiModManDetonateToken dontexplode = Library.CreateCard<KomachiModManDetonateToken>();
-            var explode = Library.CreateCard(card.GetType());
+            var explode = Library.CreateCard(card.GetType(), card.IsUpgraded);
             // indicate them
             dontexplode.ChoiceCardIndicator = 1; // uses extra description 1
             dontexplode.chooseDontDetonate = true;
