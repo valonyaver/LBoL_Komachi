@@ -14,6 +14,7 @@ using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Resource;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -32,7 +33,7 @@ namespace KomachiMod.StatusEffects
             config.CountStackType = StackType.Add;
             config.HasDuration = true;
             config.DurationStackType = StackType.Keep;
-            config.DurationDecreaseTiming = DurationDecreaseTiming.TurnStart;
+            config.DurationDecreaseTiming = DurationDecreaseTiming.Custom;
             
             return config;
         }
@@ -83,6 +84,27 @@ namespace KomachiMod.StatusEffects
                 string color = KomachiModUtility.GetColorFromDamage(finalDamage, Count*2);
                 return $"<color=#{color}>{finalDamage}</color>";
             }
+        }
+
+        protected override void OnAdding(Unit unit)
+        {
+            ReactOwnerEvent<UnitEventArgs>(Owner.TurnStarting, new EventSequencedReactor<UnitEventArgs>(OnTurnStarting));
+        }
+
+        IEnumerable<BattleAction> OnTurnStarting(UnitEventArgs args)
+        {
+            if (Battle.BattleShouldEnd) yield break;
+            Duration--;
+            if (Duration == 1) Highlight = true;
+            else if (Duration == 0) yield return new RemoveStatusEffectAction(this);
+        }
+
+        public override bool Stack(StatusEffect other)
+        {
+            bool thing = base.Stack(other);
+            if (Duration <= 1) Highlight = true;
+            else Highlight = false;
+            return thing;
         }
 
         protected override void OnRemoved(Unit unit)
