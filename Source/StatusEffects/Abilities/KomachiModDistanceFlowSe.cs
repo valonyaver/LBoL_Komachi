@@ -39,7 +39,7 @@ namespace KomachiMod.StatusEffects
             {
                 return;
             }
-            if (args.Effect.GetType() == typeof(KomachiDistanceSe))
+            if (args.Effect.GetType() == typeof(KomachiModDistanceSe))
             {
                 base.NotifyActivating();
                 if (args.distanceChange > 0)

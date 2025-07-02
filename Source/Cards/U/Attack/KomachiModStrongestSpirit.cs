@@ -26,7 +26,6 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = "KomachiAttackB";
 
             config.Colors = new List<ManaColor>() { ManaColor.Blue, };
             config.Cost = new ManaGroup() { Blue = 1, Any = 1 };
@@ -56,7 +55,7 @@ namespace KomachiMod.Cards
             { nameof(KomachiModVengefulSpiritSe)};
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "harada (sansei rain)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

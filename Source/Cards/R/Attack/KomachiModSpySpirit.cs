@@ -23,8 +23,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
-            config.IsPooled = true;
-            config.ImageId = "KomachiAttackR";
+            //config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Black };
             config.Cost = new ManaGroup() { Red = 1, Black = 1, Any = 1 };
@@ -46,10 +45,9 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "Lukesaku";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
-            config.Unfinished = true;
             return config;
         }
     }

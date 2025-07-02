@@ -34,8 +34,8 @@ namespace KomachiMod.Cards
             config.Value1 = 1;
 
             // draw if fail
-            config.Value2 = 0;
-            config.UpgradedValue2 = 2;
+            config.Value2 = 2;
+            config.UpgradedValue2 = 3;
 
             config.Illustrator = "";
 
@@ -61,7 +61,7 @@ namespace KomachiMod.Cards
             MiniSelectCardInteraction topcardInteraction = new MiniSelectCardInteraction(new List<Card>() { topCard }) { Source = this };
             yield return new InteractionAction(topcardInteraction);
             yield return new MoveCardAction(topCard, CardZone.Exile);
-            List<Card> list = Battle.ExileZone.Where(card => card.Cost.Amount <= topCard.Cost.Amount && card.CardType == topCard.CardType && card != topCard).ToList();
+            List<Card> list = Battle.ExileZone.Where(card => card.CardType == topCard.CardType && card != topCard).ToList();
             if (list.Count > 0)
             {
                 MiniSelectCardInteraction selectBanishInteraction = new MiniSelectCardInteraction(list, canSkip: true) { Source = this };
@@ -71,7 +71,7 @@ namespace KomachiMod.Cards
                     yield return new MoveCardAction(selectBanishInteraction.SelectedCard, CardZone.Hand);
                 }
             }
-            else if (IsUpgraded)
+            else
             {
                 yield return new DrawManyCardAction(Value2);
             }

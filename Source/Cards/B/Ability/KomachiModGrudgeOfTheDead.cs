@@ -53,7 +53,7 @@ namespace KomachiMod.Cards
             };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "Chocotti";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -76,7 +76,7 @@ namespace KomachiMod.Cards
                 yield return new ApplyVengefulSpiritAction(enemy, Value1);
             }
             Card releaseChoice = KomachiModUtility.GetPreconditionCard(precondition);
-            if (releaseChoice != null && !(releaseChoice.GetType() == typeof(KomachiModManDetonateToken))) // ironicaally ye the detonate token is dont detonte
+            if (releaseChoice != null && !(releaseChoice.GetType() == typeof(KomachiModDetonateToken))) // ironicaally ye the detonate token is dont detonte
             {
                 foreach (var enemy in Battle.AllAliveEnemies)
                 {

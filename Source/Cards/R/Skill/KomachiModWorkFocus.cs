@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -36,7 +36,7 @@ namespace KomachiMod.Cards
             // Amount of displacement
             config.Value1 = 2;
 
-            config.Illustrator = "";
+            config.Illustrator = "白露/浅葱";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

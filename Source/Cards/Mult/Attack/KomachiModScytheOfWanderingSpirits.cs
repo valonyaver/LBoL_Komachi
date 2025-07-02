@@ -24,11 +24,11 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = "KomachiAttackB";
+            // config.ImageId = "KomachiAttackB";
 
             config.Colors = new List<ManaColor>() { ManaColor.Black, ManaColor.Red };
             config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 7, Black = 1, Red = 1 };
-            config.Rarity = Rarity.Uncommon;
+            config.Rarity = Rarity.Rare;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
@@ -49,7 +49,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "ryosios";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -57,7 +57,7 @@ namespace KomachiMod.Cards
     }
     
     [EntityLogic(typeof(KomachiModScytheHealDef))]
-    public sealed class KomachiModScytheHeal : KomachiCard
+    public sealed class KomachiModScytheHeal : KomachiCard 
     {
 
         public override Interaction Precondition()

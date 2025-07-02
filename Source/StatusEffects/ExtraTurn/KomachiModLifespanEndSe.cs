@@ -36,7 +36,7 @@ namespace KomachiMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             base.ReactOwnerEvent<UnitEventArgs>(base.Owner.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnOwnerTurnStarted));
-            base.ReactOwnerEvent<UnitEventArgs>(base.Owner.TurnEnded, new EventSequencedReactor<UnitEventArgs>(this.OnOwnerTurnEnded), GameEventPriority.Lowest);
+            base.ReactOwnerEvent<GameEventArgs>(base.Battle.RoundEnded, new EventSequencedReactor<GameEventArgs>(this.OnRoundEnded), GameEventPriority.Lowest);
 
         }
 
@@ -58,14 +58,14 @@ namespace KomachiMod.StatusEffects
             yield break;
         }
 
-        private IEnumerable<BattleAction> OnOwnerTurnEnded(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnRoundEnded(GameEventArgs args)
         {
             if (base.Battle.BattleShouldEnd || !startOfExtraTurn)
             {
                 yield break;
             }
-            int halfHP = Battle.Player.Hp / 2;
-            yield return new DamageAction(Battle.Player, Battle.Player, new DamageInfo(halfHP, DamageType.HpLose));
+            //int halfHP = Battle.Player.Hp / 2;
+            //yield return new DamageAction(Battle.Player, Battle.Player, new DamageInfo(halfHP, DamageType.HpLose));
             yield return new DamageAction(Battle.Player, Battle.Player, new DamageInfo(Level, DamageType.Reaction));
             yield return new RemoveStatusEffectAction(this);
             yield break;

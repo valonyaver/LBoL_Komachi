@@ -25,7 +25,7 @@ namespace KomachiMod.BattleActions
         protected override void MainPhase()
         {
             if (Args.levelChange == 0) return;
-            KomachiDistanceSe distance;
+            KomachiModDistanceSe distance;
             Args.Unit.TryGetStatusEffect(out distance);
             if (distance == null)
             {
@@ -44,7 +44,7 @@ namespace KomachiMod.BattleActions
 
         public void SetDistanceLevel(Unit target, int targetLevel)
         {
-            KomachiDistanceSe distance;
+            KomachiModDistanceSe distance;
             target.TryGetStatusEffect(out distance);
             Args.Effect = distance;
             // If first time applying status.
@@ -55,7 +55,7 @@ namespace KomachiMod.BattleActions
                 if (targetLevel > 5) targetLevel = 5;
                 Args.oldLevel = 3;
                 Args.newLevel = targetLevel;
-                var ApplyDistanceAction = new ApplyStatusEffectAction<KomachiDistanceSe>(target, targetLevel, startAutoDecreasing: false);
+                var ApplyDistanceAction = new ApplyStatusEffectAction<KomachiModDistanceSe>(target, targetLevel, startAutoDecreasing: false);
                 Args.Effect = ApplyDistanceAction.Args.Effect;
                 React(ApplyDistanceAction);
                 return;
@@ -78,7 +78,7 @@ namespace KomachiMod.BattleActions
             // Only change and notify if it actually changed status.
             if (Args.oldLevel != Args.newLevel)
             {
-                var ApplyDistanceAction = new ApplyStatusEffectAction<KomachiDistanceSe>(target, targetLevel, startAutoDecreasing: false);
+                var ApplyDistanceAction = new ApplyStatusEffectAction<KomachiModDistanceSe>(target, targetLevel, startAutoDecreasing: false);
                 React(ApplyDistanceAction);
                 // Used to directly change the status effect but I think that forgoes some animation so...
             }

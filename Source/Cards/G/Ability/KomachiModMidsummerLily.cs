@@ -28,15 +28,15 @@ namespace KomachiMod.Cards
 
             // Midsummers per card
             config.Value1 = 1;
-            config.UpgradedValue1 = 2;
             // Lily amount
             config.Value2 = 1;
+            config.UpgradedValue2 = 2;
 
 
             config.RelativeCards = new List<string>() { nameof(KomachiModSpiderLily), nameof(SummerFlower) };
             config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModSpiderLily), nameof(SummerFlower) };
 
-            config.Illustrator = "";
+            config.Illustrator = "MARI";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

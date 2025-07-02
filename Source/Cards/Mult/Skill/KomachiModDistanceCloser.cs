@@ -37,7 +37,7 @@ namespace KomachiMod.Cards
             // Release cost and spirit infliction
             config.Value2 = 3;
 
-            config.Illustrator = "";
+            config.Illustrator = "@evermythic";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

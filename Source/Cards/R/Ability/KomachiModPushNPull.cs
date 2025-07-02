@@ -1,4 +1,4 @@
-using KomachiMod.Cards.Template;
+﻿using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -36,7 +36,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             
 
-            config.Illustrator = "";
+            config.Illustrator = "めいじ";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

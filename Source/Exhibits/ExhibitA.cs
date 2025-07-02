@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace KomachiMod.Exhibits
 {
-    public sealed class KomachiExhibitRDef : KomachiExhibitTemplate
+    public sealed class KomachiModExhibitRDef : KomachiExhibitTemplate
     {
         public override ExhibitConfig MakeConfig()
         {
@@ -32,8 +32,8 @@ namespace KomachiMod.Exhibits
     /// <summary>
     /// The titanic
     /// </summary>
-    [EntityLogic(typeof(KomachiExhibitRDef))]
-    public sealed class KomachiExhibitR : ShiningExhibit
+    [EntityLogic(typeof(KomachiModExhibitRDef))]
+    public sealed class KomachiModExhibitR : ShiningExhibit
     {
         protected override void OnEnterBattle()
         {

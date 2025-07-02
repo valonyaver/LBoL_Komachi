@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -37,7 +37,7 @@ namespace KomachiMod.Cards
             // Amount of graze
             config.Value2 = 1;
 
-            config.Illustrator = "";
+            config.Illustrator = "しなぷう";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -85,7 +85,7 @@ namespace KomachiMod.Cards
             int grazeAmount = 0;
             foreach(var enemy in Battle.AllAliveEnemies)
             {
-                int distance = KomachiDistanceSe.GetDistanceLevel(enemy);
+                int distance = KomachiModDistanceSe.GetDistanceLevel(enemy);
                 if (distance < 3)
                 {
                     grazeAmount++;

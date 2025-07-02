@@ -28,7 +28,7 @@ namespace KomachiMod.Cards
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
-            config.TargetType = TargetType.SingleEnemy;
+            config.TargetType = TargetType.Nobody;
 
 
             config.Mana = new ManaGroup() { Black = 1 }; 
@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "chocho (homelessfox)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

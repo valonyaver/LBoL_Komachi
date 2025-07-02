@@ -48,7 +48,7 @@ namespace KomachiMod.Cards
     public sealed class KomachiModExchangeLife : KomachiCard
     {
         public ManaGroup unupgradedPlentiful = new ManaGroup() { Philosophy = 1 };
-        public ManaGroup upgradedPlentiful = new ManaGroup() { Red = 1, Black = 1 };
+        public ManaGroup upgradedPlentiful = new ManaGroup() { Philosophy = 2 };
         public override ManaGroup? PlentifulMana
         {
             get { if (IsUpgraded) return upgradedPlentiful; else return unupgradedPlentiful; }

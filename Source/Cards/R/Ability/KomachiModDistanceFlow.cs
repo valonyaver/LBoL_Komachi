@@ -30,7 +30,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword),
             nameof(TempSpirit), nameof(TempFirepower)};
 
-            config.Illustrator = "";
+            config.Illustrator = "a.a.";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

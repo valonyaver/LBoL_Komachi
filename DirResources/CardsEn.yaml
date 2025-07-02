@@ -75,7 +75,7 @@ KomachiModSpiderLily:
     Gain {Value1} |Temporary Firepower|.
     Gain {Value2} |Poison|.
 
-KomachiModManDetonateToken:
+KomachiModDetonateToken:
   Name: Detonation
   Description: |-
     |Detonate| an enemy.
@@ -113,7 +113,7 @@ KomachiModMoveAndShoot:
     Deal {Damage} damage..
 
 KomachiModRetreat:
-  Name: Rowing Retreat
+  Name: Handy Retreat
   Description: |-
     You can |Displace| by +{Value1}.
     Gain {Block} |Block|.
@@ -183,11 +183,11 @@ KomachiModDistanceAttack:
 KomachiModScytheFinalJudgment:
   Name: Scythe of Final Judgement
   Description: |-
-    Deal {Damage} damage. Damage reduction of far distances increases this card's damage instead.
-    When this card defeats an enemy, add a |Spider Lily| to the hand.
+    Deal {Damage} damage. Deals double damage if the enemy has |Barrier| or |Block|. Damage reduction of far distances increases this card's damage instead.
+    When an enemy is defeated using {SelfName}, add a |Spider Lily| to the hand.
   UpgradedDescription: |-
-    Deal {Damage} damage. Damage reduction of far distances increases this card's damage instead.
-    When this card defeats an enemy, add a |Spider Lily+| to the hand.
+    Deal {Damage} damage. Deals double damage if the enemy has |Barrier| or |Block|. Damage reduction of far distances increases this card's damage instead.
+    When an enemy is defeated using {SelfName}, add 2 |Spider Lilies| to the hand.
 
 KomachiModShinigamiFinesse:
   Name: Shinigami's Finesse
@@ -212,8 +212,8 @@ KomachiModDistanceFlow:
   Name: Flow of the Sanzu River
   Description: |-
     Each time an enemy is |Displaced|:
-    - If the Distance change was positive, gain {Value1} |Temporary Spirit Up|
-    - If the Distance change was negative, gain {Value1} |Temporary Firepower Up|
+    - If the Distance was increased, gain {Value1} |Temporary Spirit Up|
+    - If the Distance was decreased, gain {Value1} |Temporary Firepower Up|
 
 KomachiModPushNPull:
   Name: Push and Pull
@@ -354,9 +354,12 @@ KomachiModGrudgingStrike:
   Description: |-
     Deal {Damage} damage.
     Apply {Value1} |Vengeful Spirits|.
+    |Release| {Value2}: Add |Detonation| to your hand.
+  ExtraDescription1: |-
+    |Release| {Value2}: Add |Detonation| to your hand.
 
 KomachiModDefendDetonate:
-  Name: No hard feelings
+  Name: No Hard Feelings
   Description: |-
     Gain {Block} |Block|.
     You can |Detonate| the target, and if you do, apply {Value2} |Temporary Firepower Down| for every {Value3} |Vengeful Spirits| that target had.
@@ -391,7 +394,7 @@ KomachiModGuidingSanzu:
     Gain {Value1} |Guiding Spirits|.
 
 KomachiModBoomBenefits:
-  Name: Boom Benefits
+  Name: Siren’s Bonus
   Description: |-
     |Detonate| an Enemy, then |Choose|:
     - Gain 1 |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
@@ -400,12 +403,13 @@ KomachiModBoomBenefits:
   ExtraDescription2: Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
 
 KomachiModShootGhosts:
-  Name: Shoot Ghosts
+  Name: Scythe of Roaming Spirits
   Description: |-
     Deal {Damage} damage. {SelfName} deals {Value1} more damage for every |Vengeful Spirit| on the target.
+    When an enemy is defeated using {SelfName}, apply |Vengeful Spirits| equal to the amount that enemy had on each other enemy.
 
 KomachiModSpiritDefence:
-  Name: Ghosts follow You
+  Name: Human Spirits Passing By
   Description: |-
     Gain {Block} |Block|.
     Gain {Value1} |Guiding Spirits|.
@@ -500,7 +504,7 @@ KomachiModDetonateInfinite:
   Name: Forever Cancelled
   Description: |-
     Apply {Value1} |Vengeful Spirits|.
-    Each time |Vengeful Spirits| is |Detonated|, apply {Value2} |Vengeful Spirits| on that target.
+    Each time |Vengeful Spirits| are |Detonated|, apply {Value2} |Vengeful Spirits| on that target.
 
 KomachiModSpiritualDamage:
   Name: Spiritual Damage
@@ -512,7 +516,7 @@ KomachiModSpiritualDamage:
 KomachiModSpiritCatalyst:
   Name: Spirit Catalyst
   Description: |-
-    Double target's |Vengeful Spirits|,
+    Double target's |Vengeful Spirits|.
     Increase duration of |Vengeful Spirits| on that enemy by 3.
 
 KomachiModEyeOfTheStorm:
@@ -611,13 +615,13 @@ KomachiModInfernoTempest:
     Gain {Value1} |Divine Spirit{Value1:plural one='' other='s'}| for each card exiled from the hand.
     Gain {Value1} |Guided Spirit{Value1:plural one='' other='s'}| for each card exiled from the draw pile.
     Inflict {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}| to each enemy for each card exiled from the discard pile.
-    At the start of {PlayerName}'s next turn, choose up to {Value2} non|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
+    At the start of {PlayerName}'s next turn, choose up to {Value2} non-|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
     Remove this card from combat after being played.
   DetailText: |-
-    There will be at least 1 card returned in each the hand, draw pile, and discard pile.
+    There will be at least 1 card returned in each of the hand, draw pile, and discard pile.
 
 KomachiModGuidedGreen:
-  Name: Guided Greens
+  Name: Spirits of a Past Life
   Description: |-
     Gain {Value1} |Guided Spirits|.
     Draw {Value2} card{Value2:plural one='' other='s'}.
@@ -626,7 +630,7 @@ KomachiModMidsummerLily:
   Name: Lonesome Lily
   Description: |-
     After {PlayerName} plays a |Spider Lily|, add {Value1} |Midsummer Flower{Value1:plural one='' other='s'}| to the hand.
-    Add a |Spider Lily| to the top of the draw pile.
+    Add {Value2} |Spider Lil{Value2:plural one='y' other='ies'}| to the top of the draw pile.
 
 KomachiModHellFreeze:
   Name: Hell's Frozen Warmth
@@ -652,10 +656,8 @@ KomachiModStrongestSpirit:
 KomachiModExchangeDrawExile:
   Name: Exchange of the Living and the Dead
   Description: |-
-    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type and an equal or lower total cost to your hand.
-  UpgradedDescription: |-
-    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type and an equal or lower total cost to your hand.
-    If there is no target to pick in the exile pile, draw 1 card instead.
+    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type.
+    If there is no target to pick in the exile pile, draw {Value2} cards instead.
   DetailText: |-
     Card type refers to whether the card is an Attack, Defence, Skill, Ability, etc.
 
@@ -664,12 +666,12 @@ KomachiModLifespanEnd:
   Description: |-
     End the {PlayerName}'s turn. Then, take an extra turn.
     |Block| is not lost during this extra turn.
-    |At the end of this extra turn|: lose half your current life, then take {Value1} damage.
+    |At the end of the round|: Take {Value1} damage.
   UpgradedDescription: |-
     End the {PlayerName}'s turn. Then, take an extra turn.
     |Block| is not lost during this extra turn.
     |At the start of that extra turn|: Draw {Value2} cards, Gain {Mana}, and Gain {Value2} |Firepower|.
-    |At the end of that extra turn|: lose half your current life, then take {Value1} damage.
+    |At the end of the round|: Take {Value1} damage.
 
 KomachiModGoldSarcophagus:
   Name: Gold Sarcopha-Galley
@@ -688,90 +690,42 @@ KomachiModExileDoppelganger:
     Copies cannot be copied using the first effect. 
     Copies of cards with a mana cost of 0 will not have their cost increased by this effect.
 
-# basic sample character cards
-KomachiAttackR:
+KomachiModSpiritDraw:
+  Name: Tour Guide to the Afterworld
+  Description: |-
+    Draw {draw} cards.
+    Apply {Value1} |Vengeful Spirits| on each enemy for every Common card, Gain {Value2} |Guided Spirits| for every Uncommon card, and Gain {Value3} |Divine Spirits| for every Rare card, drawn this way.
+  FlavorText: |-
+    Chain link 1 cir target dante. Chain link 2 dante target cir.
+
+KomachiModEiki:
+  Name: Eiki Shiki, Supreme Judge of Paradise
+  Description: |-
+    {Indent}Gain {RawShield} |Divine Spirits|.
+    {PassiveCostIcon}Choose {Value1} random card{Value1:plural one='' other='s'} from the hand: |If it's a Misfortune or Status card|: |Exile| it, then gain {Value2} |Guided Spirits|. 
+    |Otherwise|: Gain |Guided Spirits| equal to its mana cost. It |temporarily costs| 1 random mana less.
+  ExtraDescription1: |-
+    {ActiveCostIcon}Choose a card in the hand. It |temporarily loses| all its coloured mana cost. |Upgrade| it.
+  UpgradedExtraDescription1: |-
+    {ActiveCostIcon}Choose a card in the hand. It |temporarily costs| {Mana} |Upgrade| it.
+  ExtraDescription3: |-
+    {UltimateCostIcon}Return up to {Value3} exiled cards to the hand. Their cost becomes {Mana} this combat. {PlayerName} doesn't pay the |Release| cost of cards this combat.
+  DetailText: |-
+    The passive effect will never pick a card with 0 mana.
+
+# basic cards
+KomachiModAttackR:
   Name: Tip of the Reaper
   Description: Deal {Damage} damage.
 
-KomachiBlockR:
+KomachiModBlockR:
   Name: Used to scolding.
   Description: Gain {Block} |Block|.
 
-KomachiAttackB:
+KomachiModAttackB:
   Name: Ghostrick Shot
   Description: Deal {Damage} damage.
 
-KomachiBlockB:
+KomachiModBlockB:
   Name: Ghost wall
   Description: Gain {Block} |Block|.
-
-KomachiMultiAttack:
-  Name: Multi Attack
-  Description: Deal {Damage} damage {Value1} times.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-KomachiCustomAction:
-  Name: Custom Action
-  Description: |-
-    Choose up to {Value2} |Attack| card{Value2:plural one='' other='s'} in the hand. |Enhance| them by {Value1}.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiCustomReactor:
-  Name: Custom Reactor
-  Description: |-
-    Draw {Value1} card{Value1:plural one='' other='s'}.
-    Whenever the player |Enhances|, {SelfName} draw {Value2} additional card{Value2:plural one='' other='s'} this combat.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiConditional:
-  Name: Conditional effect 
-  Description: |-
-    Gain {Value1} |Reflection|.
-    If an enemy intends to attack, gain {Value2} |Static Charge| until the Player's next turn. 
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiDynamicCost:
-  Name: Dynamic Cost 
-  Description: |-
-    Deal {Damage} damage.
-    Cost {Mana} less for each card in hand.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiUnplayable:
-  Name: Unplayable card 
-  Description: |-
-    |While in hand|: At the end of each {PlayerName}'s turn, gain {Value1} |Barrier|.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiXCost:
-  Name: X-Cost card
-  Description: |-
-    Deal {Damage} damage.
-    |For each {Mana} spent|: Deal {Value1} additional damage.
-    |For each {BlueMana} spent|: Gain {Value2} life.
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiExtraTurn:
-  Name: Extra Turn
-  Description: |-
-    End {PlayerName}'s turn. Then, take an extra turn. 
-    |Time Limit| {Mana}
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-
-
-KomachiTeammate:
-  Name: Sample Teammate
-  Description: "{Indent}Draw {Value1} card{Value1:plural one='' other='s'}.\n{PassiveCostIcon}Draw {Value1} card."
-  UpgradedDescription: "{Indent}Draw {Value1} card{Value1:plural one='' other='s'}.\n{PassiveCostIcon}Draw {Value1} card."
-  ExtraDescription1: "{ActiveCostIcon}Draw {Value1} card{Value1:plural one='' other='s'}."
-  UpgradedExtraDescription1: "{ActiveCostIcon}Draw {Value1} card{Value1:plural one='' other='s'}."
-  ExtraDescription2: "{UltimateCostIcon}Draw {Value2} card{Value2:plural one='' other='s'}."
-  UpgradedExtraDescription2: "{UltimateCostIcon}Draw {Value2} card{Value2:plural one='' other='s'}."
-  FlavorText: "Sample card from the sample character mod. You aren't supposed to see them as I hid them all lol. Only kept some of them to study later.'"
-

@@ -32,7 +32,7 @@ namespace KomachiMod.Cards
             config.Value1 = 1;
             config.UpgradedValue1 = 3;
 
-            config.Illustrator = "";
+            config.Illustrator = "tokoroten (hmmuk)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -93,7 +93,7 @@ namespace KomachiMod.Cards
             //    drawAmount = distance.Level;
             //}
 
-            yield return new DrawManyCardAction(KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy));
+            yield return new DrawManyCardAction(KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy));
             yield break;
         }
     }

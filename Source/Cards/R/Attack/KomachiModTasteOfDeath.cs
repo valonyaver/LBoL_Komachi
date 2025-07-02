@@ -25,7 +25,7 @@ namespace KomachiMod.Cards
             // Junko 3 (4520) for the "Wind" effect of pulling enemies closer. Possible ids for good slashes are 6162, 7311
             config.GunName = GunNameID.GetGunFromId(6162);
             config.IsPooled = true;
-            config.ImageId = "KomachiAttackR";
+            config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2, Any = 1 };
@@ -76,11 +76,10 @@ namespace KomachiMod.Cards
         {
             if (args.ActionSource == this && args.Targets != null)
             {
-                Debug.Log("Using slice of death");
                 Unit target = args.Targets[0];
-                if (target.HasStatusEffect<KomachiDistanceSe>())
+                if (target.HasStatusEffect<KomachiModDistanceSe>())
                 {
-                    KomachiDistanceSe distance = target.GetStatusEffect<KomachiDistanceSe>();
+                    KomachiModDistanceSe distance = target.GetStatusEffect<KomachiModDistanceSe>();
                     args.DamageInfo = args.DamageInfo.MultiplyBy(2 / distance.DamageMultiplier);
                     args.AddModifier(this);
                 }

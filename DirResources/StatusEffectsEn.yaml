@@ -1,9 +1,4 @@
-KomachiTurnGainSpiritSe:
-  Name: Turn Gain Spirit
-  Description: At the start of {PlayerName}'s turn, gain {Level} |Spirit|.
-
-
-KomachiDistanceSe:
+KomachiModDistanceSe:
   Name: "Distance {Level}: {DistanceString}"
   Description: Attack Damage inflicted and received by this unit is {MultiplierDescription}.
 
@@ -153,7 +148,7 @@ KomachiModMidsummerLilySe:
 KomachiModLifespanEndSe:
   Name: Lifespans's End
   Description: |-
-    At the end of {PlayerName}'s turn: lose half your current life, then take {Level} damage.
+    At the end of {PlayerName}'s turn: Take {Level} damage.
 
 KomachiModGoldSarcophagusSe:
   Name: Gold Sarcopha-Galley
@@ -168,10 +163,12 @@ KomachiModExileDoppelgangerSe:
     - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. It costs {Mana} and is removed from combat after being played. (You can use this {Count} more time{Count:plural one='' other='s'} this turn.)
     - |If a card with the same name is in the Exile pile|: You can add it to your hand. (You can use this {count2} more time{count2:plural one='' other='s'} this turn.)
     You can only use each effect of {SelfName} {Level:ordinal one='once' two='twice' few='thrice' other='% times'} per turn.
+
+KomachiModEikiSe:
+  Name: Lectured Shinigami
+  Description: |-
+    {PlayerName} does not pay the |Release| cost of cards.
 #Keywords
-KomachiEnhanceSe:
-  Name: Enhance
-  Brief: Target card deal additional damage.
 
 KomachiDistanceKeyword:
   Name: Distance
@@ -200,5 +197,6 @@ KomachiDetonationKeyword:
 KomachiModReleaseKeyword:
   Name: Release X
   Brief: |-
-    Remove X amount of |Guided Spirits| from {PlayerName} when playing* this card to optionally activate this effect.
-    (*If a card gives you |Guided Spirits| as part of its effect, you must still have enough spirits beforehand to release.)
+    Remove X amount of |Guided Spirits| and/or |Divine Spirits| from {PlayerName} when playing* this card to optionally activate this effect.
+    |Guided Spirits| are prioritized first.
+    *You must have the required amount before playing the card.

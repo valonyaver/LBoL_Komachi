@@ -23,7 +23,7 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(400);
             config.IsPooled = false;
 
-            config.ImageId = "KomachiAttackR";
+            config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 1 };

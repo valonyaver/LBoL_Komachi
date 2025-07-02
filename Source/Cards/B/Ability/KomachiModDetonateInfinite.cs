@@ -52,7 +52,7 @@ namespace KomachiMod.Cards
             };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "NaufalDreamer";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

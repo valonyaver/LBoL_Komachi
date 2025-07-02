@@ -7,22 +7,22 @@ using KomachiMod.Exhibits;
 using KomachiMod.KomachiUlt;
 namespace KomachiMod
 {
-    public class KomachiLoadouts
+    public class KomachiModLoadouts
     {
         public static string UltimateSkillA = nameof(KomachiModUltA);
         public static string UltimateSkillB = nameof(KomachiModUltB);
 
-        public static string ExhibitA = nameof(KomachiExhibitR);
-        public static string ExhibitB = nameof(KomachiExhibitB);
+        public static string ExhibitA = nameof(KomachiModExhibitR);
+        public static string ExhibitB = nameof(KomachiModExhibitB);
         public static List<string> DeckA = new List<string>{
             nameof(Shoot),
             nameof(Shoot),
             nameof(Boundary),
             nameof(Boundary),
-            nameof(KomachiAttackR),
-            nameof(KomachiAttackR), 
-            nameof(KomachiBlockB), 
-            nameof(KomachiBlockB),
+            nameof(KomachiModAttackR),
+            nameof(KomachiModAttackR), 
+            nameof(KomachiModBlockB), 
+            nameof(KomachiModBlockB),
             nameof(KomachiModMoveAndShoot),
             nameof(KomachiModRetreat)
         };
@@ -32,10 +32,10 @@ namespace KomachiMod
             nameof(Shoot),
             nameof(Boundary),
             nameof(Boundary),
-            nameof(KomachiAttackB),
-            nameof(KomachiAttackB), 
-            nameof(KomachiBlockR), 
-            nameof(KomachiBlockR),
+            nameof(KomachiModAttackB),
+            nameof(KomachiModAttackB), 
+            nameof(KomachiModBlockR), 
+            nameof(KomachiModBlockR),
             nameof(KomachiModGrudgingStrike),
             nameof(KomachiModSpiritDefence)
         };
@@ -56,12 +56,12 @@ namespace KomachiMod
             BasicRingOrder: null,
             LeftColor: ManaColor.Red,
             RightColor: ManaColor.Black,
-            UltimateSkillA: KomachiLoadouts.UltimateSkillA,
-            UltimateSkillB: KomachiLoadouts.UltimateSkillB,
-            ExhibitA: KomachiLoadouts.ExhibitA,
-            ExhibitB: KomachiLoadouts.ExhibitB,
-            DeckA: KomachiLoadouts.DeckA,
-            DeckB: KomachiLoadouts.DeckB,
+            UltimateSkillA: KomachiModLoadouts.UltimateSkillA,
+            UltimateSkillB: KomachiModLoadouts.UltimateSkillB,
+            ExhibitA: KomachiModLoadouts.ExhibitA,
+            ExhibitB: KomachiModLoadouts.ExhibitB,
+            DeckA: KomachiModLoadouts.DeckA,
+            DeckB: KomachiModLoadouts.DeckB,
             DifficultyA: 2,
             DifficultyB: 3
         );

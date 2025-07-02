@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockR";
+            //config.ImageId = nameof(KomachiModBlockR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1 };
@@ -38,7 +38,7 @@ namespace KomachiMod.Cards
             config.Value1 = 8;
             config.UpgradedValue1 = 12;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "きんたろう";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

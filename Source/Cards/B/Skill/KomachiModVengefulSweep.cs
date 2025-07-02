@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.Source.BattleActions.Helpers;
@@ -41,7 +41,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "松岡二";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

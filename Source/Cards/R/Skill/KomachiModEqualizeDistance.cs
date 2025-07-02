@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -45,7 +45,7 @@ namespace KomachiMod.Cards
             config.UpgradedKeywords = Keyword.Echo;
 
 
-            config.Illustrator = "";
+            config.Illustrator = "しなぷう";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -61,7 +61,7 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            int currentDistance = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
+            int currentDistance = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
             if (currentDistance == 3)
             {
                 yield return new DrawManyCardAction(Value2);

@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword), nameof(Graze) };
 
 
-            config.Illustrator = "";
+            config.Illustrator = "Zuo大鴿";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -54,7 +54,7 @@ namespace KomachiMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            int originalDistance = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
+            int originalDistance = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
             if (originalDistance != 3)
             {
                 // Inverts distance

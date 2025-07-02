@@ -25,7 +25,8 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockB";
+
+            config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2 };

@@ -15,14 +15,14 @@ using System.Collections.Generic;
 
 namespace KomachiMod.Exhibits
 {
-    public sealed class KomachiExhibitBDef : KomachiExhibitTemplate
+    public sealed class KomachiModExhibitBDef : KomachiExhibitTemplate
     {   
         public override ExhibitConfig MakeConfig()
         {
 
             ExhibitConfig exhibitConfig = this.GetDefaultExhibitConfig();
             exhibitConfig.Value1 = 1; // Spirit Gain
-            exhibitConfig.Value2 = 1; // Vulnerable inflict
+            exhibitConfig.Value2 = 2; // Vulnerable inflict
             exhibitConfig.Value3 = 2; // Debuff on spirits
             exhibitConfig.Mana = new ManaGroup() { Black = 1 };
             exhibitConfig.BaseManaColor = ManaColor.Black;
@@ -39,8 +39,8 @@ namespace KomachiMod.Exhibits
         }
     }
 
-    [EntityLogic(typeof(KomachiExhibitBDef))]
-    public sealed class KomachiExhibitB : ShiningExhibit
+    [EntityLogic(typeof(KomachiModExhibitBDef))]
+    public sealed class KomachiModExhibitB : ShiningExhibit
     {
         protected override void OnEnterBattle()
         {

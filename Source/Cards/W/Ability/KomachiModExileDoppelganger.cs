@@ -31,7 +31,7 @@ namespace KomachiMod.Cards
 
             config.Mana = new ManaGroup() { Any = 1 };
 
-            config.Illustrator = "";
+            config.Illustrator = "moondisorder";
 
             config.RelativeKeyword = Keyword.Copy;
             config.UpgradedRelativeKeyword = Keyword.Copy;

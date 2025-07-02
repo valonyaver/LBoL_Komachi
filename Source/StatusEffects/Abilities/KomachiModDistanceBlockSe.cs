@@ -39,7 +39,7 @@ namespace KomachiMod.StatusEffects
             {
                 return;
             }
-            if (args.Effect.GetType() == typeof(KomachiDistanceSe))
+            if (args.Effect.GetType() == typeof(KomachiModDistanceSe))
             {
                 base.NotifyActivating();
                 React(new CastBlockShieldAction(base.Battle.Player, base.Level * args.distanceChangeAbs, 0, BlockShieldType.Direct, false));

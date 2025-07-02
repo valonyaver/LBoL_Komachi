@@ -1,4 +1,4 @@
-using BepInEx;
+﻿using BepInEx;
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.Source.BattleActions.Helpers;
@@ -22,7 +22,8 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockB";
+
+            // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 1};
@@ -49,7 +50,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() 
             { nameof(KomachiModDivineSpiritSe), nameof(KomachiModReleaseKeyword) };
 
-            config.Illustrator = "";
+            config.Illustrator = "雪降ノ森(S.F.)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

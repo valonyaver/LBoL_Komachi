@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
             //7 = B/R
             //8 = B/G
             //9 = R/G
-            config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 1, Any = 1 };
+            config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 1};
             config.UpgradedCost = new ManaGroup() { Any = 1 };
             config.Rarity = Rarity.Uncommon;
 

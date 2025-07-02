@@ -68,7 +68,7 @@ namespace KomachiMod.Cards
         {
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
-            int originalDistance = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
+            int originalDistance = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
             if (card != null)
             {
                 // value 1 of mandistance2 is 2. value1 of mandistance 1 is 1
@@ -87,7 +87,7 @@ namespace KomachiMod.Cards
                 }
             }
 
-            lastDistanceChange = KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) - originalDistance;
+            lastDistanceChange = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) - originalDistance;
             yield break;
         }
 

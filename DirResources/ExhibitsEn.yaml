@@ -1,4 +1,4 @@
-KomachiExhibitR:
+KomachiModExhibitR:
   Name: The Titanic
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.
@@ -7,7 +7,7 @@ KomachiExhibitR:
     <sprite="Point" name="Gold"> rewards from combat give {Value1}% more <sprite="Point" name="Gold">.
   FlavorText: Luxury Cruise across the Higan Shores! Limited time offer 10% off.
 
-KomachiExhibitB:
+KomachiModExhibitB:
   Name: Shinigami Eyes
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.

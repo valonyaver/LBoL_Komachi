@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -24,8 +24,8 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Any = 0 };
-            config.Rarity = Rarity.Common;
+            config.Cost = new ManaGroup() { Any = 1 };
+            config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
             config.TargetType = TargetType.SingleEnemy;
@@ -43,7 +43,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() 
             { nameof(KomachiDetonationKeyword), nameof(KomachiModGuidedSpiritSe), nameof(KomachiModVengefulSpiritSe) };
 
-            config.Illustrator = "";
+            config.Illustrator = "卯林";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

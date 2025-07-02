@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
 
-            config.ImageId = "KomachiBlockR";
+            // config.ImageId = nameof(KomachiModBlockR);
 
             config.IsPooled = true;
 
@@ -41,7 +41,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 2;
 
 
-            config.Illustrator = "";
+            config.Illustrator = "銀Silveroid";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -66,7 +66,7 @@ namespace KomachiMod.Cards
 
             foreach(var enemy in Battle.AllAliveEnemies)
             {
-                if (KomachiDistanceSe.GetDistanceLevel(enemy) >= Value1)
+                if (KomachiModDistanceSe.GetDistanceLevel(enemy) >= Value1)
                 {
                     yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
                 }

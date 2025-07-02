@@ -23,11 +23,11 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(801);
 
-            config.ImageId = "KomachiAttackR";
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Any = 1 };
-            config.Rarity = Rarity.Uncommon;
+            config.Rarity = Rarity.Common;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.AllEnemies;
@@ -41,12 +41,12 @@ namespace KomachiMod.Cards
             // config.Keywords = Keyword.Displace;
             // config.UpgradedKeywords = Keyword.Displace;
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "Fujy";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.UpgradedKeywords = Keyword.Echo;
 
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }

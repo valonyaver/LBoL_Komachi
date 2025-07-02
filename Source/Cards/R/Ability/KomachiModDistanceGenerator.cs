@@ -37,7 +37,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModDistanceGeneratorSe) };
             
 
-            config.Illustrator = "";
+            config.Illustrator = "@mirandakeikoku";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

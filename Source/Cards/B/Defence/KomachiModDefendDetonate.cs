@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -24,10 +24,11 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockB";
+
+            // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 2 };
+            config.Cost = new ManaGroup() { Black = 1, Any = 1 };
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Defense;
@@ -43,7 +44,7 @@ namespace KomachiMod.Cards
             // Temp attack down inflicted
             config.Value2 = 1;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "ひでふキタヤン(hidehu kitayan)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -51,7 +52,7 @@ namespace KomachiMod.Cards
             { nameof(KomachiDetonationKeyword), nameof(KomachiModVengefulSpiritSe), nameof(TempFirepowerNegative) };
             config.UpgradedRelativeEffects = new List<string>() 
             { nameof(KomachiDetonationKeyword), nameof(KomachiModVengefulSpiritSe), nameof(TempFirepowerNegative) };
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }

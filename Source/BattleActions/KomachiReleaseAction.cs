@@ -35,6 +35,11 @@ namespace KomachiMod.BattleActions
             };
         }
 
+        protected override void PreEventPhase()
+        {
+            Trigger(KomachiEventsManager.spiritsReleasing);
+        }
+
         protected override void MainPhase()
         {
             // Check if we have any spirits at all

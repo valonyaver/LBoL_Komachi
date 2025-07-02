@@ -1,12 +1,14 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(7001);
 
-            config.ImageId = "KomachiAttackB";
+            // config.ImageId = nameof(KomachiModAttackB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
@@ -36,11 +38,18 @@ namespace KomachiMod.Cards
             config.Value1 = 4;
             config.UpgradedValue1 = 7;
 
+            // Release cost
+            config.Value2 = 4;
+            config.UpgradedValue2 = 2;
+
             config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
 
+            config.RelativeCards = new List<string>() { nameof(KomachiModDetonateToken) };
+            config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModDetonateToken) };
 
-            config.Illustrator = "Wholesome_illustrator";
+
+            config.Illustrator = "北公爵小三";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -50,10 +59,21 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModGrudgingStrikeDef))]
     public sealed class KomachiModGrudgingStrike : KomachiCard
     {
+        public override Interaction Precondition()
+        {
+            return KomachiModUtility.ChooseRelease(this, Value2);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector, base.GunName);
             yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
+
+            Card choiceCard = KomachiModUtility.GetPreconditionCard(precondition);
+            if (KomachiModUtility.ChoseRelease(choiceCard))
+            {
+                Card[] detonate =  { Library.CreateCard<KomachiModDetonateToken>() };
+                yield return new AddCardsToHandAction(detonate);
+            }
             yield break;
         }
     }

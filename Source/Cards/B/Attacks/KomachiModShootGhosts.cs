@@ -1,5 +1,7 @@
+using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -19,29 +21,29 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = "KomachiAttackB";
+            // config.ImageId = nameof(KomachiModAttackB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 2 };
-            config.Rarity = Rarity.Common;
+            config.Cost = new ManaGroup() { Black = 2, Any = 1};
+            config.Rarity = Rarity.Rare;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 13;
-            config.UpgradedDamage = 16;
+            config.Damage = 20;
+            config.UpgradedDamage = 25;
 
-            config.Value1 = 2;
+            config.Value1 = 3;
             config.UpgradedValue1 = 4;
 
-            config.Keywords = Keyword.Accuracy;
-            config.UpgradedKeywords = Keyword.Accuracy;
+            config.Keywords = Keyword.Accuracy | Keyword.Retain | Keyword.Exile;
+            config.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Exile;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "yudaoshan";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -67,17 +69,29 @@ namespace KomachiMod.Cards
             if (args.ActionSource == this && args.Targets != null)
             {
                 Unit target = args.Targets[0];
-                if (target.HasStatusEffect<KomachiModVengefulSpiritSe>())
+                int damageIncrease = KomachiModUtility.GetVengefulCount(target);
+                if (damageIncrease > 0)
                 {
-                    KomachiModVengefulSpiritSe spirits = target.GetStatusEffect<KomachiModVengefulSpiritSe>();
-                    args.DamageInfo = args.DamageInfo.IncreaseBy(Value1 * spirits.Count);
+                    args.DamageInfo = args.DamageInfo.IncreaseBy(Value1 * damageIncrease);
                     args.AddModifier(this);
                 }
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            selector.SelectedEnemy.TryGetStatusEffect<KomachiModVengefulSpiritSe>(out var spirits);
+            int spiritCount = KomachiModUtility.GetVengefulCount(selector.SelectedEnemy);
             yield return base.AttackAction(selector, base.GunName);
+            if (spirits != null && selector.SelectedEnemy.IsDead && !Battle.BattleShouldEnd)
+            {
+                foreach(var enemy in Battle.AllAliveEnemies)
+                {
+                    if (enemy != selector.SelectedEnemy)
+                    {
+                        yield return new ApplyVengefulSpiritAction(enemy, spiritCount);
+                    }
+                }
+            }
             yield break;
         } 
     }

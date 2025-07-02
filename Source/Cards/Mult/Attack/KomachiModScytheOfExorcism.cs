@@ -23,7 +23,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = "KomachiAttackB";
+            // config.ImageId = "KomachiAttackB";
 
             config.Colors = new List<ManaColor>() { ManaColor.Black, ManaColor.Red };
             config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 7, Any = 2 };
@@ -59,7 +59,7 @@ namespace KomachiMod.Cards
 
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "violence kumahina";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -80,7 +80,7 @@ namespace KomachiMod.Cards
             // Create list for interaction
             List<Card> list = new List<Card>();
             // make the 2 cards
-            KomachiModManDetonateToken noBoom = Library.CreateCard<KomachiModManDetonateToken>();
+            KomachiModDetonateToken noBoom = Library.CreateCard<KomachiModDetonateToken>();
             KomachiModScytheRedLily boom = Library.CreateCard<KomachiModScytheRedLily>();
             // indicate them
             noBoom.ChoiceCardIndicator = 1; // uses extra description 1

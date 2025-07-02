@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -35,7 +35,7 @@ namespace KomachiMod.Cards
             // Firepower amount
             config.Value2 = 4;
 
-            config.Illustrator = "Valonadthe";
+            config.Illustrator = "東天紅";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -51,7 +51,6 @@ namespace KomachiMod.Cards
                 nameof(KomachiModVengefulSpiritSe),
                 nameof(KomachiModDivineSpiritSe)
             };
-            config.Unfinished = true;
 
             return config;
         }

@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -40,7 +40,7 @@ namespace KomachiMod.Cards
             config.Value2 = 4;
             config.UpgradedValue2 = 6;
 
-            config.Illustrator = "";
+            config.Illustrator = "きつね丸";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

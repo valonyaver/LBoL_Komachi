@@ -10,7 +10,7 @@ namespace KomachiMod.Enemies
 {
     public sealed class KomachiEnemyUnitDef : KomachiEnemyUnitTemplate
     {
-        public override IdContainer GetId() => nameof(KomachiMod);
+        public override IdContainer GetId() => nameof(KomachiModBoss);
 
         public override EnemyUnitConfig MakeConfig()
         {

@@ -41,7 +41,7 @@ namespace KomachiMod.Cards
 
             config.Mana = new ManaGroup() { Any = 1 };
 
-            config.Illustrator = "";
+            config.Illustrator = "hima (mizu ni tsuyoi)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

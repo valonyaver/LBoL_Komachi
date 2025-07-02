@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
@@ -42,13 +42,13 @@ namespace KomachiMod.Cards
             config.Value2 = 3;
             config.UpgradedValue2 = 2;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "樫の木";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword), nameof(Graze) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword), nameof(Graze) };
-            config.Unfinished = true;
+            config.Unfinished = false;
             return config;
         }
     }
@@ -79,6 +79,9 @@ namespace KomachiMod.Cards
             Card releaseChoice = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(releaseChoice))
             {
+                int releaseAmount = Value2;
+                if (releaseChoice.ChoiceCardIndicator == 2) releaseAmount = Value3;
+                yield return new KomachiReleaseAction(this, releaseAmount);
                 int lockonLevel = releaseChoice.ChoiceCardIndicator * lockOnAmount;
                 yield return DebuffAction<LockedOn>(selector.SelectedEnemy, lockonLevel);
             }

@@ -38,7 +38,7 @@ namespace KomachiMod.Cards
             config.Keywords = Keyword.Battlefield;
             config.UpgradedKeywords = Keyword.Initial | Keyword.Battlefield;
 
-            config.Illustrator = "";
+            config.Illustrator = "BigRed";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockR";
+            // config.ImageId = nameof(KomachiModBlockR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 1 };
@@ -38,7 +38,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 2;
             config.Value2 = 1;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "でるもち";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -47,7 +47,7 @@ namespace KomachiMod.Cards
 
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }
@@ -128,7 +128,7 @@ namespace KomachiMod.Cards
             }
 
             yield return DefenseAction(true);
-            if (KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) == Value3)
+            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) == Value3)
             {
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
             }

@@ -38,7 +38,6 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Illustrator = "";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
@@ -65,7 +64,8 @@ namespace KomachiMod.Cards
                 nameof(KomachiModReleaseKeyword)
             };
 
-            config.Unfinished = true;
+            config.Illustrator = "givuchoko";
+            // config.Unfinished = true;
 
             return config;
         }

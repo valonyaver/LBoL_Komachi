@@ -1,4 +1,4 @@
-using KomachiMod.Cards.Template;
+﻿using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -43,7 +43,7 @@ namespace KomachiMod.Cards
 
             config.RelativeKeyword = Keyword.Exile | Keyword.Ethereal;
 
-            config.Illustrator = "";
+            config.Illustrator = "芋鍋";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

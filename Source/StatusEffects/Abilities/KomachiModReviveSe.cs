@@ -10,6 +10,7 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace KomachiMod.StatusEffects
 {
@@ -34,7 +35,7 @@ namespace KomachiMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent<DieEventArgs>(base.Owner.Dying, new GameEventHandler<DieEventArgs>(this.OnDying));
-            base.ReactOwnerEvent<DieEventArgs>(base.Battle.EnemyDied, new EventSequencedReactor<DieEventArgs>(this.OnEnemyDied));
+            base.ReactOwnerEvent<DieEventArgs>(base.Battle.EnemyDied, new EventSequencedReactor<DieEventArgs>(this.OnEnemyDied), GameEventPriority.Lowest);
             Count = 1;
         }
 
@@ -61,19 +62,18 @@ namespace KomachiMod.StatusEffects
         }
         private IEnumerable<BattleAction> OnEnemyDied(DieEventArgs arg)
         {
-            if (base.Battle.BattleShouldEnd)
-            {
-                yield break;
-            }
+            Debug.Log("Activating God of Death to heal");
             base.NotifyActivating();
             bool isSummon = arg.Unit.HasStatusEffect<Servant>();
             if (isSummon)
             {
+                Debug.Log($"Getting {Level} shield.");
                 yield return new CastBlockShieldAction(base.Battle.Player, new ShieldInfo(base.Level, BlockShieldType.Direct), false);
             }
             else
             {
-                base.Battle.Heal(Owner, base.Level);
+                Debug.Log($"Getting {Level} health.");
+                Owner.Heal(base.Level);
             }
             yield break;
         }

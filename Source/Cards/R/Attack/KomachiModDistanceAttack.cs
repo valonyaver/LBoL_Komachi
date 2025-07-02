@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(7300);
-            config.ImageId = "KomachiAttackR";
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Any = 0 };
@@ -37,12 +37,12 @@ namespace KomachiMod.Cards
             config.Keywords = Keyword.Accuracy;
             config.UpgradedKeywords = Keyword.Accuracy;
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "shimana (cs-ts-az)";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword), nameof(Graze) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword), nameof(Graze) };
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }
@@ -63,7 +63,7 @@ namespace KomachiMod.Cards
             {
                 return;
             }
-            if (args.Effect.GetType() == typeof(KomachiDistanceSe) && base.Zone == CardZone.Discard && base.Battle.HandIsNotFull)
+            if (args.Effect.GetType() == typeof(KomachiModDistanceSe) && base.Zone == CardZone.Discard && base.Battle.HandIsNotFull)
             {
                 React(new MoveCardAction(this, CardZone.Hand));
             }

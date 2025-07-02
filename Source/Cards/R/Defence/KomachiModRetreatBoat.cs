@@ -20,7 +20,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockR";
+            config.ImageId = nameof(KomachiModBlockR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2, Any = 1 };
@@ -60,7 +60,7 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DistanceChangeAction(selector.SelectedEnemy, Value1);
-            yield return DefenseAction(Block.Block, KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy)*Value2);
+            yield return DefenseAction(Block.Block, KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy)*Value2);
         }
     }
 }

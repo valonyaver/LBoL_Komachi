@@ -34,7 +34,7 @@ namespace KomachiMod
 
         public override PlayerUnitConfig MakeConfig()
         {
-            return KomachiLoadouts.playerUnitConfig;
+            return KomachiModLoadouts.playerUnitConfig;
         }
 
         [EntityLogic(typeof(KomachiModDef))]

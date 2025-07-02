@@ -23,7 +23,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
             config.IsPooled = true;
-            config.ImageId = "KomachiAttackR";
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 2 };
@@ -44,7 +44,7 @@ namespace KomachiMod.Cards
             // config.Keywords = Keyword.Displace;
             // config.UpgradedKeywords = Keyword.Displace;
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "Clear Echoes";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
@@ -52,7 +52,7 @@ namespace KomachiMod.Cards
             config.RelativeCards = new List<string>() { nameof(KomachiModManDistance) };
             config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModManDistance) };
 
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }
@@ -71,7 +71,7 @@ namespace KomachiMod.Cards
                 yield break;
             }
             //Apply Displacement to all alive enemies.
-            foreach (BattleAction battleAction in KomachiDistanceSe.ChangeDistanceLevel(base.Battle.AllAliveEnemies, -base.Value1))
+            foreach (BattleAction battleAction in KomachiModDistanceSe.ChangeDistanceLevel(base.Battle.AllAliveEnemies, -base.Value1))
             {
                 yield return battleAction;
             }

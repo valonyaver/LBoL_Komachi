@@ -36,12 +36,12 @@ namespace KomachiMod.Cards
             config.Keywords = Keyword.Exile;
             config.UpgradedKeywords = Keyword.Exile;
 
-            config.Mana = new ManaGroup() { Any = 4 };
+            config.Mana = new ManaGroup() { Colorless = 4 };
 
             config.UpgradedRelativeEffects = new List<string>() { nameof(Firepower) };
             // config.UpgradedRelativeEffects = new List<string>() { nameof(TimeIsLimited) };
 
-            config.Illustrator = "";
+            config.Illustrator = "Aiden Guo";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -35,7 +35,7 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword), nameof(Weak), nameof(FirepowerNegative), nameof(LockedOn), nameof(Vulnerable)  };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword), nameof(Weak), nameof(FirepowerNegative), nameof(LockedOn), nameof(Vulnerable),  };
 
-            config.Illustrator = "";
+            config.Illustrator = "Clear Echoes";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -56,11 +56,11 @@ namespace KomachiMod.Cards
             //Level: Effects that have a fixed duration but that can vary in intensity. 
             //Weak and Vulnerable have a duration, FirepowerNegative has a level.  
             //DebuffAction's 2nd field is the level, the 3rd one is the duration.
-            KomachiDistanceSe enemyDistance;
+            KomachiModDistanceSe enemyDistance;
 
             foreach (var selectedEnemy in base.Battle.AllAliveEnemies)
             {
-                int distanceLevel = KomachiDistanceSe.GetDistanceLevel(selectedEnemy);
+                int distanceLevel = KomachiModDistanceSe.GetDistanceLevel(selectedEnemy);
                 switch(distanceLevel)
                 {
                     case 1:

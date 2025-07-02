@@ -47,6 +47,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
         /// <returns></returns>
         public static bool CanReleaseSpirits(Unit unit, int requiredAmount)
         {
+            if (unit.HasStatusEffect<KomachiModEikiSe>()) return true;
             KomachiModGuidedSpiritSe spirits;
             KomachiModDivineSpiritSe divineSpirits;
             unit.TryGetStatusEffect(out spirits);
@@ -128,7 +129,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
             var battle = card.Battle;
             List<Card> list = new List<Card>();
             // make the 2 cards
-            KomachiModManDetonateToken dontexplode = Library.CreateCard<KomachiModManDetonateToken>();
+            KomachiModDetonateToken dontexplode = Library.CreateCard<KomachiModDetonateToken>();
             var explode = Library.CreateCard(card.GetType(), card.IsUpgraded);
             // indicate them
             dontexplode.ChoiceCardIndicator = 1; // uses extra description 1
@@ -153,6 +154,25 @@ namespace KomachiMod.Source.BattleActions.Helpers
             MiniSelectCardInteraction miniselect = (MiniSelectCardInteraction)precondition;
             if (miniselect == null) return null;
             return miniselect.SelectedCard;
+        }
+
+        public static int GetVengefulCount(Unit enemy, bool countLoneSpirit = true)
+        {
+            int result = 0;
+            enemy.TryGetStatusEffect<KomachiModVengefulSpiritSe>(out var vengeful);
+            if (vengeful != null)
+            {
+                result += vengeful.Count;
+            }
+            if (countLoneSpirit)
+            {
+                enemy.TryGetStatusEffect<KomachiModLonelyBoundSpiritSe>(out var lonely);
+                if (lonely != null)
+                {
+                    result += lonely.Count;
+                }
+            }
+            return result;
         }
     }
 }

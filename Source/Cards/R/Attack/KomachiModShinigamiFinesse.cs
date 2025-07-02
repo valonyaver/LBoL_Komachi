@@ -1,4 +1,4 @@
-using LBoL.Base;
+﻿using LBoL.Base;
 using LBoL.ConfigData;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
-            config.ImageId = "KomachiAttackR";
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 2 };
@@ -31,12 +31,12 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 6;
+            config.Damage = 7;
             config.UpgradedDamage = 9;
             config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "綾川あら";
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }
@@ -62,7 +62,7 @@ namespace KomachiMod.Cards
         {
             if (args.ActionSource == this && args.Targets != null)
             {
-                attackAmount = KomachiDistanceSe.GetDistanceLevel(args.Targets[0]);
+                attackAmount = KomachiModDistanceSe.GetDistanceLevel(args.Targets[0]);
             }
             else attackAmount = 1;
         }

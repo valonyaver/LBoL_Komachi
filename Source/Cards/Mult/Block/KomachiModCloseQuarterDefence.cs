@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.Source.BattleActions.Helpers;
@@ -46,13 +46,13 @@ namespace KomachiMod.Cards
             config.Value2 = 4;
             config.UpgradedValue2 = 8;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "ぺろぽねそす";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDistanceKeyword), nameof(KomachiModGuidedSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDistanceKeyword), nameof(KomachiModGuidedSpiritSe) };
-            config.Unfinished = true;
+            config.Unfinished = false;
             return config;
         }
     }
@@ -123,7 +123,7 @@ namespace KomachiMod.Cards
         public int distanceLimit = 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
+            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
             {
                 getAdditionalBlock = true;
             }
@@ -131,7 +131,7 @@ namespace KomachiMod.Cards
             yield return DefenseAction(true);
             yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
 
-            if (KomachiDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
+            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
             {
                 yield return BuffAction<KomachiModGuidedSpiritSe>(Value2);
             }

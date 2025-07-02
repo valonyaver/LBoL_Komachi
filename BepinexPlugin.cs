@@ -83,7 +83,7 @@ namespace KomachiMod
                 WatermarkWrapper.ActivateWatermark();
 
             Func<Sprite> getSprite = () => ResourceLoader.LoadSprite("BossIcon.png", directorySource);
-            EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiMod), getSprite);
+            EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiModBoss), getSprite);
         }
 
         private void OnDestroy()

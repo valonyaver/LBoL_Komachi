@@ -1,4 +1,4 @@
-using KomachiMod.Cards.Template;
+﻿using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -44,7 +44,7 @@ namespace KomachiMod.Cards
 
             config.UpgradedRelativeCards = new List<string>() { nameof(WManaCard) };
 
-            config.Illustrator = "";
+            config.Illustrator = "9時";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

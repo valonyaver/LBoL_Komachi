@@ -21,7 +21,8 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiBlockB";
+
+            // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2, Any =2 };
@@ -49,7 +50,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() 
             { nameof(KomachiModGuidedSpiritSe), nameof(KomachiModVengefulSpiritSe), nameof(KomachiModReleaseKeyword) };
 
-            config.Illustrator = "";
+            config.Illustrator = "cofepig";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

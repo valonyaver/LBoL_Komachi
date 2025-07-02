@@ -10,7 +10,6 @@ namespace KomachiMod.BattleActions
 		public Unit Unit;
 		public int releaseAmount;
 		public int guidedSpiritReleaseAmount;
-		// Implement later.
 		public int divineSpiritReleaseAmount;
 		public bool successful;
 		public bool removedCompletely;

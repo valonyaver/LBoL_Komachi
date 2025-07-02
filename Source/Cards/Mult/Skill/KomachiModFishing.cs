@@ -1,4 +1,4 @@
-using KomachiMod.Cards.Template;
+﻿using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -35,7 +35,7 @@ namespace KomachiMod.Cards
 
             config.Mana = new ManaGroup() { Any = 0 };
 
-            config.Illustrator = "";
+            config.Illustrator = "ニラ玉@";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

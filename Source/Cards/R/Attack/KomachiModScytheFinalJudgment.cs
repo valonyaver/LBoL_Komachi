@@ -8,8 +8,10 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
+using LBoL.EntityLib.Cards.Neutral.Red;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KomachiMod.Cards
 {
@@ -21,7 +23,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = "KomachiAttackR";
+            // config.ImageId = nameof(KomachiModAttackR);
             // Other options are 4610, 4051, 6300, 39073, 15111
             // Honorable for other attacks. Putting them here for convenience, 25010
             // Really want something that comes from above.
@@ -37,18 +39,21 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
 
             config.Damage = 30;
+            config.UpgradedDamage = 35;
+
+            config.Value1 = 1;
+            config.UpgradedValue1 = 2;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "Xiirus";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.RelativeCards = new List<string>() { nameof(KomachiModSpiderLily) };
             config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModSpiderLily) };
 
-            config.Unfinished = true;
             return config;
         }
     }
@@ -56,7 +61,6 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModScytheFinalJudgmentDef))]
     public sealed class KomachiModScytheFinalJudgment : KomachiCard
     {
-
         protected override void OnEnterBattle(BattleController battle)
         {
             base.HandleBattleEvent<DamageDealingEventArgs>
@@ -72,20 +76,27 @@ namespace KomachiMod.Cards
         {
             if (args.ActionSource == this && args.Targets != null)
             {
+                bool applyModifier = false;
                 Unit target = args.Targets[0];
-                if (target.HasStatusEffect<KomachiDistanceSe>())
+                if (target.Block > 0 || target.Shield > 0)
                 {
-                    KomachiDistanceSe distance = target.GetStatusEffect<KomachiDistanceSe>();
+                    args.DamageInfo = args.DamageInfo.MultiplyBy(2);
+                    applyModifier = true;
+                }
+                if (target.HasStatusEffect<KomachiModDistanceSe>())
+                {
+                    KomachiModDistanceSe distance = target.GetStatusEffect<KomachiModDistanceSe>();
                     switch (distance.Level)
                     {
                         case 4:
                         case 5:
                             // 30 * (2-0.7)/0.7 would become 30*1.3/0.7 and since the distance would multiply by 0.7 it becomes 30*1.3 *0.7/0.7
                             args.DamageInfo = args.DamageInfo.MultiplyBy((2 - distance.DamageMultiplier) / distance.DamageMultiplier);
-                            args.AddModifier(this);
+                            applyModifier = true;
                             break; 
                     }
                 }
+                if (applyModifier) args.AddModifier(this);
             }
         }
 
@@ -96,7 +107,8 @@ namespace KomachiMod.Cards
 
             if (selector.SelectedEnemy.IsDead)
             {
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModSpiderLily>(IsUpgraded) });
+                Card[] lilies = Library.CreateCards<KomachiModSpiderLily>(Value1).ToArray();
+                yield return new AddCardsToHandAction(lilies);
             }
             yield break;
         }

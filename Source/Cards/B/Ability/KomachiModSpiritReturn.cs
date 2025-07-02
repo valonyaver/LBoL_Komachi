@@ -29,7 +29,7 @@ namespace KomachiMod.Cards
 
             config.Mana = new ManaGroup() { Any = 1 };
 
-            config.Illustrator = "";
+            config.Illustrator = "@Chenwei_21";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

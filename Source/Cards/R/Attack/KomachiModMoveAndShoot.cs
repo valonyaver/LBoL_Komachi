@@ -27,7 +27,7 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(6061);
             config.IsPooled = true;
 
-            config.ImageId = "KomachiAttackR";
+            config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 1 };
@@ -104,14 +104,14 @@ namespace KomachiMod.Cards
             if (lastTargeter == this)
             {
                 Unit target = args.Target;
-                int distanceLevel = KomachiDistanceSe.GetDistanceLevel(target);
+                int distanceLevel = KomachiModDistanceSe.GetDistanceLevel(target);
                 int[] distanceLevelPossibilities = new int[5];
                 for (int i = 0; i < 5; i++)
                 {
                     distanceLevelPossibilities[i] = Math.Clamp(distanceLevel + i - 2, 1, 5);
                     damageLevels[i] = Mathf.RoundToInt(
-                        args.DamageInfo.Damage * KomachiDistanceSe.GetDistanceDamageMultiplier(distanceLevelPossibilities[i])
-                        / KomachiDistanceSe.GetDistanceDamageMultiplier(distanceLevel)); // divides the current distance multiplier so that we can apply the hypothetical multiplier by itself.
+                        args.DamageInfo.Damage * KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevelPossibilities[i])
+                        / KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel)); // divides the current distance multiplier so that we can apply the hypothetical multiplier by itself.
                 }
             }
         }

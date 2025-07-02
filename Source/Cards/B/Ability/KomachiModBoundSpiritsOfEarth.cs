@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -18,19 +18,19 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2, Any = 2 };
-            config.UpgradedCost = new ManaGroup() { Black = 2, Any = 1 };
+            config.UpgradedCost = new ManaGroup() { Black = 1, Any = 2 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Ability;
             config.TargetType = TargetType.Nobody;
 
             // Immediate spirits inflicted
-            config.Value1 = 3;
-            config.UpgradedValue1 = 5;
+            config.Value1 = 4;
+            config.UpgradedValue1 = 6;
 
             // Level of buff gained
-            config.Value2 = 3;
-            config.UpgradedValue2 = 5;
+            config.Value2 = 4;
+            config.UpgradedValue2 = 6;
 
             config.RelativeEffects = new List<string>()
             { 
@@ -39,7 +39,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() 
             { nameof(KomachiModVengefulSpiritSe)};
 
-            config.Illustrator = "";
+            config.Illustrator = "市葉葉市";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
