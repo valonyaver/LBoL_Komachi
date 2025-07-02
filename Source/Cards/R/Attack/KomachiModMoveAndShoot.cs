@@ -37,7 +37,7 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
 
             config.Damage = 14;
-            config.UpgradedDamage = 20;
+            config.UpgradedDamage = 17;
 
             // Value of the Displacement. Can displace up to +/- value1
             config.Value1 = 1;

@@ -33,11 +33,11 @@ namespace KomachiMod.Cards
 
             // Amount of Guided Spirits per mana
             config.Value1 = 3;
-            config.UpgradedValue1 = 6;
+            config.UpgradedValue1 = 5;
 
             // Amount of vengeful or divine spirits per mana
             config.Value2 = 4;
-            config.UpgradedValue2 = 8;
+            config.UpgradedValue2 = 6;
 
             config.Mana = new ManaGroup() { Any = 1 };
 

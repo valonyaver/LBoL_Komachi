@@ -72,6 +72,12 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            Card choiceCard = KomachiModUtility.GetPreconditionCard(precondition);
+            
+            if (KomachiModUtility.ChoseRelease(choiceCard))
+            {
+                yield return new KomachiReleaseAction(this, Value3);
+            }
             yield return DefenseAction(Block.Block, 0);
             foreach(var enemy in Battle.AllAliveEnemies)
             {
@@ -79,10 +85,8 @@ namespace KomachiMod.Cards
             }
             yield return BuffAction<KomachiModGuidedSpiritSe>(base.Value2, 0, 0, 0, 0.2f);
 
-            Card choiceCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(choiceCard))
             {
-                yield return new KomachiReleaseAction(this, Value3);
                 yield return DefenseAction(0, Shield.Shield);
             }
             yield break;

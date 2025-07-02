@@ -40,7 +40,7 @@ namespace KomachiMod
         public static bool modelIsFlipped = true;
         //The character's off-color.
         //Used to separate cards in the card collection and put the off-color cards at the end.
-        public static List<ManaColor> offColors = new List<ManaColor>() { ManaColor.Colorless, ManaColor.Green, ManaColor.Blue };
+        public static List<ManaColor> offColors = new List<ManaColor>() { ManaColor.White, ManaColor.Green, ManaColor.Blue, ManaColor.Colorless };
 
         //Whether the Act 1 boss should be enabled.
         //The value can be customized LBoL/BepInEx/config/
