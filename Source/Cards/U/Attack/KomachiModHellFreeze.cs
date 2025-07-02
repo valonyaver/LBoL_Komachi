@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.Source.BattleActions.Helpers;
@@ -50,7 +50,7 @@ namespace KomachiMod.Cards
             { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword), nameof(FrostArmor), nameof(Cold) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "文鳥";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

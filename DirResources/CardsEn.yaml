@@ -696,7 +696,7 @@ KomachiModSpiritDraw:
     Draw {draw} cards.
     Apply {Value1} |Vengeful Spirits| on each enemy for every Common card, Gain {Value2} |Guided Spirits| for every Uncommon card, and Gain {Value3} |Divine Spirits| for every Rare card, drawn this way.
   FlavorText: |-
-    Chain link 1 cir target dante. Chain link 2 dante target cir.
+    Chain link 1 lost in paradise target premature burial. Chain link 2 premature burial target lost in paradise
 
 KomachiModEiki:
   Name: Eiki Shiki, Supreme Judge of Paradise
