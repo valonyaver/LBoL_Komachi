@@ -57,7 +57,7 @@ namespace KomachiMod.Cards
     }
     
     [EntityLogic(typeof(KomachiModScytheHealDef))]
-    public sealed class KomachiModScytheHeal : KomachiCard 
+    public sealed class KomachiModScytheHeal : KomachiCard  
     {
 
         public override Interaction Precondition()

@@ -66,6 +66,7 @@ KomachiModVengefulSpiritSe:
     After {Duration} turns, remove {SelfName} and deal double its count as |Accurate| attack damage. 
     {damageDealt} damage will be dealt.
   Brief: |-
+    A status effect that is almost always applied with a duration of three turns. Further applications on an enemy will not change its duration.
     At the start of the turn, reduce duration of {SelfName} by 1.
     When this status effect is removed, deal double its current count as |Accurate| attack damage to its owner.
     Note: This attack damage is affected by damage modifiers on both the enemy and player.
