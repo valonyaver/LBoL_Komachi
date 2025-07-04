@@ -42,8 +42,9 @@ namespace KomachiMod.Cards
             config.Value2 = 4;
             config.UpgradedValue2 = 2;
 
-            config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
-            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };
+            config.RelativeEffects = new List<string>() 
+            { nameof(KomachiModVengefulSpiritSe), nameof(KomachiModReleaseKeyword) };
+            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe), nameof(KomachiModReleaseKeyword) };
 
             config.RelativeCards = new List<string>() { nameof(KomachiModDetonateToken) };
             config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModDetonateToken) };
@@ -71,6 +72,7 @@ namespace KomachiMod.Cards
             Card choiceCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(choiceCard))
             {
+                yield return new KomachiReleaseAction(this, Value2);
                 Card[] detonate =  { Library.CreateCard<KomachiModDetonateToken>() };
                 yield return new AddCardsToHandAction(detonate);
             }

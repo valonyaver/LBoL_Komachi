@@ -41,6 +41,7 @@ namespace KomachiMod.StatusEffects
         {
             get
             {
+                if (target == null) return 0.ToString();
                 DamageInfo damage = new DamageInfo(Level, DamageType.Attack, isAccuracy: true);
                 EnemyUnit enemyUnit = target;
                 Unit[] array = new Unit[] { enemyUnit };

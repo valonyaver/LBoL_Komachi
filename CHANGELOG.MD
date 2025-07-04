@@ -1,3 +1,7 @@
+## 0.2.1
+- Fixed Grudging Strike not having the release keyword being related to it. (Ie, not explained on the side of the card)
+- Fixed Grudging Strike not removing Guided Spirits when using its release effect.
+
 ## 0.2.0
 - Added Art for all cards
 - Changed names of cards: Retreating Sanzu Boat->Protective Sanzu Boat. Ghost Wall-> Spirit Backing
