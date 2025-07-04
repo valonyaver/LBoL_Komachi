@@ -41,6 +41,7 @@ namespace KomachiMod.Cards
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.RelativeEffects = new List<string>() { nameof(KomachiDetonationKeyword), nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDetonationKeyword), nameof(KomachiModVengefulSpiritSe) };
+            config.Illustrator = "Valonadthe";
             return config;
         }
     }

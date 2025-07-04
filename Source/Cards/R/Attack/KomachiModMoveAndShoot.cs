@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.Source.BattleActions.Helpers;
@@ -27,7 +27,7 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(6061);
             config.IsPooled = true;
 
-            config.ImageId = nameof(KomachiModAttackR);
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 1 };
@@ -46,7 +46,7 @@ namespace KomachiMod.Cards
             // config.Keywords = Keyword.Displace;
             // config.UpgradedKeywords = Keyword.Displace;
 
-            config.Illustrator = "@TheIllustrator";
+            config.Illustrator = "sakimiya@土曜つ28a";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             config.Unfinished = true;

@@ -45,7 +45,7 @@ namespace KomachiMod.Cards
             {nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword), nameof(KomachiModReleaseKeyword) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "@RE_yomawari";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

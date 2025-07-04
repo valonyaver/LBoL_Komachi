@@ -24,7 +24,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = nameof(KomachiModAttackB);
+            // config.ImageId = nameof(KomachiModAttackB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black, };
             config.Cost = new ManaGroup() { Black = 1, Any = 1 };
@@ -44,7 +44,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe)};
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "fuyuno taka";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

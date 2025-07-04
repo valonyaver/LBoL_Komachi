@@ -285,7 +285,7 @@ KomachiModIgnoreNagging:
     Gain {Value2} |Graze| for each enemy whose |Distance| is 1 or 2.
 
 KomachiModRetreatBoat:
-  Name: Retreating Sanzu Boat
+  Name: Protective Sanzu Boat
   Description: |-
     |Displace| by +{Value1}.
     Gain {Block} |Block|.
@@ -727,5 +727,5 @@ KomachiModAttackB:
   Description: Deal {Damage} damage.
 
 KomachiModBlockB:
-  Name: Ghost wall
+  Name: Spirit Backing
   Description: Gain {Block} |Block|.

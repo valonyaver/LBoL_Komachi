@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
@@ -26,7 +26,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
 
-            config.ImageId = nameof(KomachiModBlockB);
+            // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2 };
@@ -45,7 +45,7 @@ namespace KomachiMod.Cards
             config.Value2 = 1;
             config.UpgradedValue2 = 2;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "イセ川";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

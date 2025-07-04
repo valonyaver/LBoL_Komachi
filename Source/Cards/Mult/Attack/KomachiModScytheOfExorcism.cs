@@ -50,11 +50,11 @@ namespace KomachiMod.Cards
 
             config.RelativeCards = new List<string>()
             {
-                nameof(KomachiModScytheRedLily)
+                nameof(KomachiModSpiderLily)
             };
             config.UpgradedRelativeCards = new List<string>()
             {
-                nameof(KomachiModScytheRedLily)
+                nameof(KomachiModSpiderLily)
             };
 
 

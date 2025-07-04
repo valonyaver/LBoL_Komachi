@@ -20,7 +20,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.ImageId = nameof(KomachiModBlockR);
+            // config.ImageId = nameof(KomachiModBlockR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2, Any = 1 };
@@ -39,13 +39,13 @@ namespace KomachiMod.Cards
             config.UpgradedValue2 = 3;
 
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "aloin g";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
-            config.Unfinished = true;
+            // config.Unfinished = true;
             return config;
         }
     }

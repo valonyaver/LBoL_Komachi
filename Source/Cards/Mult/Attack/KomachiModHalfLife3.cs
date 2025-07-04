@@ -51,7 +51,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 7;
 
             // Named release cost
-            config.Value2 = 20;
+            config.Value2 = 18;
             config.UpgradedValue2 = 15;
 
             config.RelativeEffects = new List<string>()

@@ -47,7 +47,7 @@ namespace KomachiMod.Cards
             // turn amount
             config.UpgradedValue2 = 2;
 
-            config.Illustrator = "";
+            config.Illustrator = "Zounose";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

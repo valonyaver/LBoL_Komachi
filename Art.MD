@@ -1,5 +1,11 @@
 Art sources:
 Titanic Exhibit art by Iced Lemon: https://bsky.app/profile/icedlemondraw.bsky.social
+
+Tip of the ReaperL https://www.pixiv.net/en/artworks/5761472
+Used to Scolding: https://x.com/mirandakeikoku/status/1038729698136621056
+Ghostrick Shot: https://www.pixiv.net/en/artworks/7728020
+Spirit Backing: https://www.pixiv.net/en/artworks/21177490
+
 Endless Way: https://www.pixiv.net/en/artworks/12977228
 Flow of the Sanzu River: https://www.pixiv.net/en/artworks/15759896
 Shinigami's Finnese: https://www.pixiv.net/en/artworks/18042750
@@ -57,5 +63,19 @@ Scythe of the Reaper: https://danbooru.donmai.us/posts/1234600
 Lifespan's end: https://www.pixiv.net/en/artworks/55038068
 Coin Throw: https://www.pixiv.net/en/artworks/51594370
 Hell's frozen warmth: https://www.pixiv.net/en/artworks/20039325
+Weed Cutter: https://x.com/makuwauri_uri/status/967440931619155968
+Spiritual Damage: https://safebooru.org/index.php?page=post&s=view&id=621713
+Human Spirits Passing By: https://safebooru.org/index.php?page=post&s=view&id=373753
+Chain Reaction: https://x.com/i/web/status/564423976282112000
+Abundant Floating Spirits: https://www.pixiv.net/en/artworks/22384729
+Move and shoot: https://www.pixiv.net/en/artworks/20288141
+Exchange of the living and the dead: https://www.pixiv.net/en/artworks/63475939
+Lonely Bound Spirit: https://www.pixiv.net/en/artworks/14269911
+Free Trauma: https://safebooru.org/index.php?page=post&s=view&id=293607
+Spirit Barrier: https://www.pixiv.net/en/artworks/23607525
+Protective Sanzu Boat: https://safebooru.org/index.php?page=post&s=view&id=787257
+Exchange Life: https://www.pixiv.net/en/artworks/116442814
+Taste of Death: https://safebooru.org/index.php?page=post&s=view&id=952065
+Gold Sarcophagus: https://x.com/i/web/status/474190711793782790
 
 Everything else is placeholder art by me or the game itself.

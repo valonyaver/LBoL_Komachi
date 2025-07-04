@@ -24,7 +24,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(25181);
-            config.ImageId = nameof(KomachiModAttackR);
+            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1 };
@@ -40,7 +40,7 @@ namespace KomachiMod.Cards
             // Draw amount
             config.Value1 = 1;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "@makuwauri_uri";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

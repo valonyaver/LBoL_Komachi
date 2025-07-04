@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
 
-            config.Illustrator = "Credit_the_artist";
+            config.Illustrator = "@mirandakeikoku";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "hiiroen";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

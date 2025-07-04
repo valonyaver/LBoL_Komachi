@@ -25,7 +25,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = "KomachiAttackB";
+            // config.ImageId = "KomachiAttackB";
 
             config.Colors = new List<ManaColor>() { ManaColor.Blue, ManaColor.Black };
             config.Cost = new ManaGroup() { Blue = 1, Black = 1 };

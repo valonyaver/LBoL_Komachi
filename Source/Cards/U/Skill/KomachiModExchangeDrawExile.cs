@@ -37,14 +37,14 @@ namespace KomachiMod.Cards
             config.Value2 = 2;
             config.UpgradedValue2 = 3;
 
-            config.Illustrator = "";
+            config.Illustrator = "Akyuun";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.Keywords = Keyword.Exile;
             config.UpgradedKeywords = Keyword.Exile;
 
-            config.Unfinished = true;
+            // config.Unfinished = true;
 
             return config;
         }

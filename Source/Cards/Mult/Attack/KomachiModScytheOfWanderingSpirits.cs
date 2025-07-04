@@ -81,38 +81,8 @@ namespace KomachiMod.Cards
         protected override void OnEnterBattle(BattleController battle)
 		{
 			base.ReactBattleEvent<DamageEventArgs>(base.Battle.Player.DamageDealt, new EventSequencedReactor<DamageEventArgs>(this.OnPlayerDamageDealt));
-            //foreach (var enemy in battle.AllAliveEnemies)
-            //{
-            //    base.HandleBattleEvent<DamageEventArgs>
-            //        (enemy.DamageReceiving, new GameEventHandler<DamageEventArgs>(OnEnemyDamageReceiving), GameEventPriority.Lowest);
-            //}
-            //HandleBattleEvent<UnitEventArgs>
-            //    (battle.EnemySpawned, new GameEventHandler<UnitEventArgs>(OnEnemySpawned));
         }
 
-  //      void OnEnemySpawned(UnitEventArgs args)
-  //      {
-  //          base.HandleBattleEvent<DamageEventArgs>
-  //              (args.Unit.DamageReceiving, new GameEventHandler<DamageEventArgs>(OnEnemyDamageReceiving), GameEventPriority.Lowest);
-  //      }
-
-  //      void OnEnemyDamageReceiving(DamageEventArgs args)
-  //      {
-  //          if (base.Battle.BattleShouldEnd)
-  //          {
-  //              return;
-  //          }
-  //          if (args.Cause == ActionCause.Card && args.ActionSource == this)
-  //          {
-  //              DamageInfo damageInfo = args.DamageInfo;
-  //              if (damageInfo.Amount > 0f)
-  //              {
-  //                  React(new ApplyVengefulSpiritAction(args.Target, (int)damageInfo.Amount));
-  //              }
-  //          }
-		//}
-
-		// Token: 0x06000DE3 RID: 3555 RVA: 0x00019DAE File Offset: 0x00017FAE
 		private IEnumerable<BattleAction> OnPlayerDamageDealt(DamageEventArgs args)
 		{
 			if (base.Battle.BattleShouldEnd)

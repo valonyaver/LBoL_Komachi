@@ -1,4 +1,4 @@
-using LBoL.Base;
+﻿using LBoL.Base;
 using LBoL.ConfigData;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace KomachiMod.Cards
             config.Keywords = Keyword.Basic;
             config.UpgradedKeywords = Keyword.Basic;
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "怠惰 フミ";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

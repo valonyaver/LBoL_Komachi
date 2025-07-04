@@ -19,7 +19,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
 
-            config.ImageId = nameof(KomachiModBlockB);
+            // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 2 };
@@ -33,12 +33,12 @@ namespace KomachiMod.Cards
             config.UpgradedBlock = 15;
 
             config.Value1 = 4;
-            config.UpgradedValue1 = 7;
+            config.UpgradedValue1 = 6;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
 
-            config.Illustrator = "";
+            config.Illustrator = "delant";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -1,4 +1,4 @@
-using KomachiMod.Cards.Template;
+﻿using KomachiMod.Cards.Template;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
@@ -31,7 +31,7 @@ namespace KomachiMod.Cards
             config.Type = CardType.Skill;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Illustrator = "";
+            config.Illustrator = "春酒~";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

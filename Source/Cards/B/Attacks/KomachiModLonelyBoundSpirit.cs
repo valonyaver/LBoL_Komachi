@@ -1,4 +1,4 @@
-using KomachiMod.BattleActions;
+﻿using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.StatusEffects;
@@ -20,7 +20,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.GunName = GunNameID.GetGunFromId(400);
 
-            config.ImageId = nameof(KomachiModAttackB);
+            // config.ImageId = nameof(KomachiModAttackB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 2 };
@@ -39,7 +39,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModLonelyBoundSpiritSe), nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword) };
 
 
-            config.Illustrator = "Wholesome_illustrator";
+            config.Illustrator = "みえはる";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

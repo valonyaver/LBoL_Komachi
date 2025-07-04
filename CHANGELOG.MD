@@ -1,3 +1,9 @@
+## 0.2.0
+- Added Art for all cards
+- Changed names of cards: Retreating Sanzu Boat->Protective Sanzu Boat. Ghost Wall-> Spirit Backing
+- Human Spirits passing by+ gives 6 Guided Spirits down from 7.
+- Fixed Scythe of Exorcism relating to itself rather than to spider liies.
+
 ## 0.0.2
 
 Bugfixing
