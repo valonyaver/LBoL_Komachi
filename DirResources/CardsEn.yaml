@@ -406,7 +406,7 @@ KomachiModShootGhosts:
   Name: Scythe of Roaming Spirits
   Description: |-
     Deal {Damage} damage. {SelfName} deals {Value1} more damage for every |Vengeful Spirit| on the target.
-    When an enemy is defeated using {SelfName}, apply |Vengeful Spirits| equal to the amount that enemy had on each other enemy.
+    If the target is defeated, apply |Vengeful Spirits| equal to the amount that enemy had on each other enemy.
 
 KomachiModSpiritDefence:
   Name: Human Spirits Passing By
@@ -451,7 +451,7 @@ KomachiModSpiritBarrier:
     |Release| all: Gain {Value2} |Barrier| for every spirit you released.
 
 KomachiModScytheHeal:
-  Name: Scythe of Wandering Spirit
+  Name: Scythe of Draining Spirit
   Description: |-
     Inflict {Damage} Damage.
     Apply |Vengeful Spirits| equal to the amount of damage dealt.

@@ -99,7 +99,7 @@ namespace KomachiMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new GainManaAction(ManaReal);
+            yield return new GainManaAction(totalMana);
         } 
     }
 }

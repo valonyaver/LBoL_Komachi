@@ -1,6 +1,9 @@
 ## 0.2.1
+- Fixed a bug with Residual Aether not giving the correct amount of Mana shown on the card, only giving 1 mana no matter what.
+- Fixed Gold Sarcopha-galley only showing the top 5 cards of the deck instead of the entire deck.
 - Fixed Grudging Strike not having the release keyword being related to it. (Ie, not explained on the side of the card)
 - Fixed Grudging Strike not removing Guided Spirits when using its release effect.
+- Scythe of Wandering spirit renamed to Scythe of Draining Spirit, to make it clearer from the other card, Scythe of Roaming Spirit
 
 ## 0.2.0
 - Added Art for all cards

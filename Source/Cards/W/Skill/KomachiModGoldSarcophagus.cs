@@ -63,14 +63,17 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModGoldSarcophagusDef))]
     public sealed class KomachiModGoldSarcophagus : KomachiCard
     {
+        public override Interaction Precondition()
+        {
+            return new SelectCardInteraction(1, 1, Battle.DrawZone);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (Battle.DrawZone.Count == 0) yield break;
-            MiniSelectCardInteraction drawPileInteraction = new MiniSelectCardInteraction(Battle.DrawZone) { Source = this };
-            yield return new InteractionAction(drawPileInteraction);
-            yield return new MoveCardAction(drawPileInteraction.SelectedCard, CardZone.Exile);
+            Card choicecard = ((SelectCardInteraction)precondition).SelectedCards[0];
+            yield return new MoveCardAction(choicecard, CardZone.Exile);
             yield return BuffAction<KomachiModGoldSarcophagusSe>(1);
-            Battle.Player.GetStatusEffect<KomachiModGoldSarcophagusSe>().AddCardToCoffin(drawPileInteraction.SelectedCard, 2);
+            Battle.Player.GetStatusEffect<KomachiModGoldSarcophagusSe>().AddCardToCoffin(choicecard, 2);
             yield break;
         }
     }
