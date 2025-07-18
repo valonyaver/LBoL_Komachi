@@ -37,8 +37,8 @@ namespace KomachiMod.Cards
             config.UpgradedBlock = 24;
 
             // Threshhold amount
-            config.Value1 = 3;
-            config.UpgradedValue1 = 2;
+            config.Value1 = 4;
+            config.UpgradedValue1 = 3;
 
 
             config.Illustrator = "銀Silveroid";

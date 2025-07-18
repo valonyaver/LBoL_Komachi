@@ -73,7 +73,7 @@ namespace KomachiMod.Cards
             yield return BuffAction<KomachiModDetonateFirepowerSe>(Value2);
             foreach (var enemy in Battle.AllAliveEnemies)
             {
-                yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                yield return new ApplyVengefulSpiritAction(this, enemy, Value1);
             }
             Card releaseChoice = KomachiModUtility.GetPreconditionCard(precondition);
             if (releaseChoice != null && !(releaseChoice.GetType() == typeof(KomachiModDetonateToken))) // ironicaally ye the detonate token is dont detonte

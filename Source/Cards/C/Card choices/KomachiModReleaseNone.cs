@@ -22,7 +22,7 @@ namespace KomachiMod.Cards
             config.IsPooled = false;
             config.FindInBattle = false;
 
-            config.Colors = new List<ManaColor>() { ManaColor.Colorless };
+            config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 0 };
             config.Rarity = Rarity.Common;
 

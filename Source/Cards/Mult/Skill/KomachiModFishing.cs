@@ -39,8 +39,8 @@ namespace KomachiMod.Cards
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
-            config.Keywords = Keyword.Exile;
-            config.UpgradedKeywords = Keyword.Exile;
+            config.Keywords = Keyword.Exile | Keyword.TempMorph;
+            config.UpgradedKeywords = Keyword.Exile | Keyword.TempMorph;
 
             config.Unfinished = true;
 
@@ -90,13 +90,27 @@ namespace KomachiMod.Cards
             {
                 yield return new DiscardManyAction(base.Battle.HandZone);
             }
+            // Get the cards in hand.
             SelectCardInteraction selectBanishInteraction = (SelectCardInteraction)precondition;
             IReadOnlyList<Card> cards = (selectBanishInteraction).SelectedCards;
 
-            foreach (Card card in cards)
+            // Validate card count
+            if (cards.Count > 0)
             {
-                yield return new MoveCardAction(card, CardZone.Hand);
-                card.SetTurnCost(Mana);
+                // First card always goes to hand (if it exists)
+                yield return new MoveCardAction(cards[0], CardZone.Hand);
+
+                // Only process second card if it exists
+                if (cards.Count > 1)
+                {
+                    yield return new MoveCardAction(cards[1], CardZone.Discard);
+                }
+
+                // Apply cost to all selected cards
+                foreach (Card card in cards)
+                {
+                    card.SetTurnCost(Mana);
+                }
             }
 
             yield break;

@@ -38,7 +38,7 @@ namespace KomachiMod.StatusEffects
                 {
                     if (enemy.HasStatusEffect(typeof(KomachiModVengefulSpiritSe)))
                     {
-                        yield return new ApplyVengefulSpiritAction(enemy, Level);
+                        yield return new ApplyVengefulSpiritAction(this, enemy, Level);
                     }
                 }
             }

@@ -23,14 +23,14 @@ namespace KomachiMod.Cards
             config.Cost = new ManaGroup() { Green = 1, Any = 2 };
             config.Rarity = Rarity.Uncommon;
 
-            config.Type = CardType.Skill;
+            config.Type = CardType.Defense;
             config.TargetType = TargetType.Nobody;
 
             config.Shield = 40;
-            config.UpgradedShield = 50; 
+            config.UpgradedShield = 45; 
             // Life gain
-            config.Value1 = 5;
-            config.UpgradedValue1 = 6;
+            config.Value1 = 10;
+            config.UpgradedValue1 = 15;
 
             // Firepower amount
             config.Value2 = 3;

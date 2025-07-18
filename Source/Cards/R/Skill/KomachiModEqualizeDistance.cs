@@ -26,13 +26,13 @@ namespace KomachiMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 1 };
-            config.Rarity = Rarity.Uncommon;
+            config.Rarity = Rarity.Common;
 
             config.Type = CardType.Skill;
             config.TargetType = TargetType.SingleEnemy;
 
             // Draw per displacement.
-            config.Value1 = 1;
+            config.Value1 = 2;
             config.UpgradedValue1 = 2;
 
             // Draws if Distance = 3
@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
 
-            config.UpgradedKeywords = Keyword.Echo;
+            config.UpgradedKeywords = Keyword.EternalEcho;
 
 
             config.Illustrator = "しなぷう";
@@ -55,6 +55,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModEqualizeDistanceDef))]
     public sealed class KomachiModEqualizeDistance : KomachiCard
     {
+        public int three = 3;
         // Discard if distance = 3
         protected override int BaseValue3 { get => 2; }
         protected override int BaseUpgradedValue3 { get => 2; }

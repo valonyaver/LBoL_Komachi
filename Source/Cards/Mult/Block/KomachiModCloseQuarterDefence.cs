@@ -44,7 +44,7 @@ namespace KomachiMod.Cards
 
             // Guided Spirits gained
             config.Value2 = 4;
-            config.UpgradedValue2 = 8;
+            config.UpgradedValue2 = 6;
 
             config.Illustrator = "ぺろぽねそす";
 
@@ -62,8 +62,8 @@ namespace KomachiMod.Cards
     {
         
         // Additional block amount
-        protected override int BaseValue3 { get => 8; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 11; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseValue3 { get => 10; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 14; set => base.BaseUpgradedValue3 = value; }
         public int additionalBlockMeasure
         {
             get
@@ -129,7 +129,7 @@ namespace KomachiMod.Cards
             }
             else getAdditionalBlock = false;
             yield return DefenseAction(true);
-            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
+            yield return new ApplyVengefulSpiritAction(this,selector.SelectedEnemy, Value1);
 
             if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
             {

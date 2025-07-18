@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
 
             config.Block = 5;
             // Draw
-            config.Value1 = 2;
+            config.Value1 = 3;
 
             // Graze
             config.Value2 = 1;
@@ -52,6 +52,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModRitualOfEcstasyDef))]
     public sealed class KomachiModRitualOfEcstasy : KomachiCard
     {
+        public int three = 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             int originalDistance = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
@@ -72,8 +73,25 @@ namespace KomachiMod.Cards
             }
             else
             {
-                yield return BuffAction<Graze>(Value2);
-                yield return DefenseAction();
+                Card drawChoice = Library.CreateCard<KomachiModRitualOfEcstasy>(IsUpgraded);
+                drawChoice.ChoiceCardIndicator = 1;
+                drawChoice.SetBattle(Battle);
+                Card blockChoice = Library.CreateCard<KomachiModRitualOfEcstasy>(IsUpgraded);
+                blockChoice.ChoiceCardIndicator = 2;
+                blockChoice.SetBattle(Battle);
+                List<Card> choices = new List<Card>() { drawChoice, blockChoice };
+                MiniSelectCardInteraction chooseEffect = new MiniSelectCardInteraction(choices);
+                yield return new InteractionAction(chooseEffect);
+                var choiceCard = chooseEffect.SelectedCard;
+                if (choiceCard.ChoiceCardIndicator == 1)
+                {
+                    yield return new DrawManyCardAction(Value1);
+                }
+                else
+                {
+                    yield return BuffAction<Graze>(Value2);
+                    yield return DefenseAction();
+                }
             }
             yield break;
         }

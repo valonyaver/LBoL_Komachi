@@ -104,6 +104,8 @@ namespace KomachiMod.Cards
                     return Library.CreateCard<KomachiModManDistance2>();
                 case 3:
                     return Library.CreateCard<KomachiModManDistance3>();
+                case 4:
+                    return Library.CreateCard<KomachiModManDistance4>();
             }
         }
     }

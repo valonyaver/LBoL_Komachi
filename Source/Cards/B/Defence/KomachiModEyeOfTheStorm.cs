@@ -81,7 +81,7 @@ namespace KomachiMod.Cards
             yield return DefenseAction(Block.Block, 0);
             foreach(var enemy in Battle.AllAliveEnemies)
             {
-                yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                yield return new ApplyVengefulSpiritAction(this, enemy, Value1);
             }
             yield return BuffAction<KomachiModGuidedSpiritSe>(base.Value2, 0, 0, 0, 0.2f);
 

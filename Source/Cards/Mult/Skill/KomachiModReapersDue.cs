@@ -55,18 +55,30 @@ namespace KomachiMod.Cards
         public ManaGroup WhiteMana = new ManaGroup() { White = 1 };
         public ManaGroup BlackMana = new ManaGroup() { Black = 1 };
 
-
-        //Get the amount of mana that was pooled for the X-cost card.
-  //      public override ManaGroup GetXCostFromPooled(ManaGroup pooledMana)
-		//{
-		//	return new ManaGroup
-		//	{
-  //              Any = pooledMana.Any,
-		//		White = pooledMana.White,
-		//		Black = pooledMana.Black,
-		//		Philosophy = pooledMana.Philosophy
-		//	};
-		//}
+        public int anyManaSpirits
+        {
+            get
+            {
+                if (Battle == null || PendingManaUsage == null) return 0;
+                return SynergyAmount(PendingManaUsage.Value, ManaColor.Any, 1) * Value1;
+            }
+        }
+        public int whiteManaSpirits
+        {
+            get
+            {
+                if (Battle == null || PendingManaUsage == null) return 0;
+                return SynergyAmount(PendingManaUsage.Value, ManaColor.White, 1) * Value2;
+            }
+        }
+        public int blackManaSpirits
+        {
+            get
+            {
+                if (Battle == null || PendingManaUsage == null) return 0;
+                return SynergyAmount(PendingManaUsage.Value, ManaColor.Black, 1) * Value2;
+            }
+        }
 
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
@@ -80,7 +92,7 @@ namespace KomachiMod.Cards
             yield return BuffAction<KomachiModDivineSpiritSe>(whiteMana * Value2);
             foreach (var enemy in Battle.AllAliveEnemies)
             {
-                yield return new ApplyVengefulSpiritAction(enemy, blackMana *Value2);
+                yield return new ApplyVengefulSpiritAction(this, enemy, blackMana *Value2);
             }
             yield break;
 		}

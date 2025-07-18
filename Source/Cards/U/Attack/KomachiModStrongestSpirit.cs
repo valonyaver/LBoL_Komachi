@@ -81,7 +81,7 @@ namespace KomachiMod.Cards
 				DamageInfo damageInfo = args.DamageInfo;
 				if (damageInfo.Damage > 0f)
                 {
-                    yield return new ApplyVengefulSpiritAction(args.Target, (int) damageInfo.Damage);
+                    yield return new ApplyVengefulSpiritAction(this, args.Target, (int) damageInfo.Damage);
                 }
 			}
 			yield break;

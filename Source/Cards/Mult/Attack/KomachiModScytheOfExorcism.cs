@@ -104,7 +104,7 @@ namespace KomachiMod.Cards
             if (preconditionCard != null || preconditionCard.GetType() != typeof(KomachiModReleaseNone))
             {
                 yield return new KomachiReleaseAction(this, Value2);
-                yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
+                yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, Value1);
             }
 
             // End if has no spirits to speak of

@@ -88,7 +88,7 @@ namespace KomachiMod.Cards
                 {
                     if (enemy != selector.SelectedEnemy)
                     {
-                        yield return new ApplyVengefulSpiritAction(enemy, spiritCount);
+                        yield return new ApplyVengefulSpiritAction(this, enemy, spiritCount);
                     }
                 }
             }

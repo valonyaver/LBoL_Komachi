@@ -62,24 +62,34 @@ namespace KomachiMod.Cards
         // Code stolen from purify the land lol
         public override Interaction Precondition()
         {
-            List<Card> hand = base.Battle.HandZone.Where((Card card) => card != this).ToList<Card>();
-            if (!hand.Empty<Card>())
+            if (this.IsUpgraded)
             {
-                int minAmount = Value1;
-                if (IsUpgraded)
+                List<Card> list = (from card in base.Battle.HandZone.Concat(base.Battle.DiscardZone)
+                                   where card != this
+                                   select card).ToList<Card>();
+                if (!list.Empty<Card>())
                 {
-                    minAmount = 0;
+                    return new SelectCardInteraction(0, base.Value1, list, SelectedCardHandling.DoNothing);
                 }
-                return new SelectHandInteraction(minAmount, base.Value1, hand);
+                return null;
             }
-            return null;
+            else
+            {
+                List<Card> list2 = base.Battle.HandZone.Where((Card card) => card != this).ToList<Card>();
+                if (!list2.Empty<Card>())
+                {
+                    return new SelectHandInteraction(Value1,base.Value1, list2);
+                }
+                return null;
+            }
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (precondition != null)
             {
-                IReadOnlyList<Card> cards = ((SelectHandInteraction)precondition).SelectedCards;
+                // If upgraded it's a normaal select card otherwise it's a select hand interaction
+                IReadOnlyList<Card> cards = (this.IsUpgraded ? ((SelectCardInteraction)precondition).SelectedCards : ((SelectHandInteraction)precondition).SelectedCards);
                 if (cards.Count > 0)
                 {
                     yield return new ExileManyCardAction(cards);

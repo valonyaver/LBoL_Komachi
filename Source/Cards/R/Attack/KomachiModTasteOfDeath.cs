@@ -29,13 +29,12 @@ namespace KomachiMod.Cards
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 2, Any = 1 };
-            config.UpgradedCost = new ManaGroup() { Red = 1, Any = 2 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 16;
+            config.Damage = 15;
             config.UpgradedDamage = 20;
 
             // Value of the Displacement. Can displace up to +/- value1
@@ -49,7 +48,7 @@ namespace KomachiMod.Cards
             config.Illustrator = "mixarumixa";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
-            config.Unfinished = true;
+            config.Unfinished = false;
             return config;
         }
     }

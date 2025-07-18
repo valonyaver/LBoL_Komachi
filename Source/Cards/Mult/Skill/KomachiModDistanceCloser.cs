@@ -114,7 +114,7 @@ namespace KomachiMod.Cards
                 yield return new DistanceChangeAction(selector.SelectedEnemy, -card.Value1);
             }
 
-            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, displaceAmount * Value2);
+            yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, displaceAmount * Value2);
 
             Card releaseCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(releaseCard))

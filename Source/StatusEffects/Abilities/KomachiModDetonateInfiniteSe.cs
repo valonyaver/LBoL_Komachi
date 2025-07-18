@@ -46,7 +46,7 @@ namespace KomachiMod.StatusEffects
         {
             if (args.noFizzle)
             {
-                React(new ApplyVengefulSpiritAction(args.Target, Level));
+                React(new ApplyVengefulSpiritAction(this, args.Target, Level));
             }
         }
     }

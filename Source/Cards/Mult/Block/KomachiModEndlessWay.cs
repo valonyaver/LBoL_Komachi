@@ -26,7 +26,7 @@ namespace KomachiMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Black };
             //Hybrid color 7 = B/R
             config.Cost = new ManaGroup() { Red = 1, Black = 1 };
-            config.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 7, Any = 1};
+            config.UpgradedCost = new ManaGroup() { Hybrid = 2, HybridColor = 7};
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Defense;

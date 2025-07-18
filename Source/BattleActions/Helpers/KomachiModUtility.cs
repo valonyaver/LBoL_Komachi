@@ -1,5 +1,8 @@
 ﻿using KomachiMod.Cards;
+using KomachiMod.GunName;
 using KomachiMod.StatusEffects;
+using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
@@ -7,7 +10,10 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using Mono.Cecil.Cil;
+using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
+using Unity.Profiling;
 using UnityEngine;
 
 namespace KomachiMod.Source.BattleActions.Helpers
@@ -31,12 +37,26 @@ namespace KomachiMod.Source.BattleActions.Helpers
             else return increasedDamageColor;
         }
 
+        public static string GetColorFromDamage(DamageInfo damage, float comparingValue)
+        {
+            float value = damage.Damage;
+            if (value < comparingValue) return lessDamageColor;
+            else if (value == comparingValue) return normalValueColor;
+            else return increasedDamageColor;
+        }
+
+        public static string GetColoredText(string text, string color)
+        {
+            return $"<color=#{color}>{text}</color>";
+        }
+
 
         public static bool CanReleaseSpirits(Card card, int amount)
         {
             Unit unit = card.Battle.Player;
             return CanReleaseSpirits(unit, amount);
         }
+
 
         /// <summary>
         /// Returns true if player has an equal or higher level of guided spirits.
@@ -115,6 +135,30 @@ namespace KomachiMod.Source.BattleActions.Helpers
         }
 
         /// <summary>
+        /// Shortcut function for releases that have 2 release costs. If the release happens, outsources the actual release cost to costResult.
+        /// </summary>
+        /// <param name="choiceCard"></param>
+        /// <returns></returns>
+        public static bool ChoseRelease(Card choiceCard, int cost1, int cost2, out int costResult)
+        {
+            bool choseReleaseResult = ChoseRelease(choiceCard);
+            if (!choseReleaseResult)
+            {
+                costResult = 0;
+                return false;
+            }
+            else if (choiceCard.ChoiceCardIndicator == 1)
+            {
+                costResult = cost1;
+            }
+            else
+            {
+                costResult = cost2;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Generic interaction for having an optional detonate option. 
         /// Choice card indicator is which extra description you want to use for the detonate choice.
         /// Also when making the if statement you gotta do 
@@ -173,6 +217,32 @@ namespace KomachiMod.Source.BattleActions.Helpers
                 }
             }
             return result;
+        }
+
+        public static float FindDamageDealt(GameEntity source, Unit target, DamageInfo damage, BattleController Battle)
+        {
+            EnemyUnit enemyUnit = (EnemyUnit) target;
+            Unit[] array = new Unit[] { enemyUnit };
+            DamageDealingEventArgs DealingArgs = new DamageDealingEventArgs
+            {
+                Source = Battle.Player,
+                Targets = array,
+                DamageInfo = damage,
+                ActionSource = source
+            };
+            Battle.Player?.DamageDealing.Execute(DealingArgs);
+            DamageInfo damage2 = DealingArgs.DamageInfo;
+            DamageEventArgs DamageArgs = new DamageEventArgs
+            {
+                Source = Battle.Player,
+                Target = enemyUnit,
+                DamageInfo = damage2,
+                ActionSource = source
+            };
+            enemyUnit?.DamageReceiving.Execute(DamageArgs);
+
+            int finalDamage = Math.Max((int)DamageArgs.DamageInfo.Damage.Round(MidpointRounding.AwayFromZero), 0);
+            return finalDamage;
         }
     }
 }

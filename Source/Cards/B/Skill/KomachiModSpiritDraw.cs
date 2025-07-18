@@ -75,7 +75,7 @@ namespace KomachiMod.Cards
             {
                 foreach(var enemy in Battle.AllAliveEnemies)
                 {
-                    yield return new ApplyVengefulSpiritAction(enemy, Value1 * common);
+                    yield return new ApplyVengefulSpiritAction(this,enemy, Value1 * common);
                 }
             }
             if (uncommon > 0)

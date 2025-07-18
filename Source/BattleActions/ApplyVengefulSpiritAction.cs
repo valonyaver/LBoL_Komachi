@@ -21,7 +21,8 @@ namespace KomachiMod.BattleActions
             { 
                 Card = source,
                 Target = target,
-                Amount = amount
+                Amount = amount,
+                ActionSource = source
 			};
 		}
         internal ApplyVengefulSpiritAction(StatusEffect source, Unit target, int amount)
@@ -30,7 +31,8 @@ namespace KomachiMod.BattleActions
             {
                 statusEffect = source,
                 Target = target,
-                Amount = amount
+                Amount = amount,
+                ActionSource = source
             };
         }
         internal ApplyVengefulSpiritAction(Unit target, int amount)

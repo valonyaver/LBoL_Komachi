@@ -7,6 +7,8 @@ KomachiModManDistance:
     |Displace| by -{Value1}. {extraDescriptionAddition}
   ExtraDescription2: |-
     |Displace| by +{Value1}. {extraDescriptionAddition}
+  FlavorText: |-
+    Going the extra Mile.
 
 KomachiModManDistance2:
   Name: Manipulate Distance 2
@@ -16,6 +18,8 @@ KomachiModManDistance2:
     |Displace| by -{Value1}. {extraDescriptionAddition}
   ExtraDescription2: |-
     |Displace| by +{Value1}. {extraDescriptionAddition}
+  FlavorText: |-
+    Going the extra Decamile.
 
 KomachiModManDistance3:
   Name: Manipulate Distance 3
@@ -25,6 +29,8 @@ KomachiModManDistance3:
     |Displace| by -{Value1}. {extraDescriptionAddition}
   ExtraDescription2: |-
     |Displace| by +{Value1}. {extraDescriptionAddition}
+  FlavorText: |-
+    Going the extra Hectomile.
 
 KomachiModManDistance4:
   Name: Manipulate Distance 4
@@ -34,6 +40,8 @@ KomachiModManDistance4:
     |Displace| by -{Value1}. {extraDescriptionAddition}
   ExtraDescription2: |-
     |Displace| by +{Value1}. {extraDescriptionAddition}
+  FlavorText: |-
+    Going the extra Kilomile.
 
 KomachiModManDistance0:
   Name: Manipulate no distance
@@ -41,6 +49,8 @@ KomachiModManDistance0:
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
   ExtraDescription1: "Do not |Displace|. {extraDescriptionAddition}"
   ExtraDescription2: "Do not |Displace|. {extraDescriptionAddition}"
+  FlavorText: |-
+    Going the extra Smile :)
 
 KomachiModManDistance1AllExcept:
   Name: Manipulate Distance b
@@ -48,6 +58,9 @@ KomachiModManDistance1AllExcept:
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
   ExtraDescription1: "|Displace| each other enemy by -{Value1}."
   ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+  FlavorText: |-
+    Going the roundway Mile.
+
 
 KomachiModManDistance2AllExcept:
   Name: Manipulate Distance b2
@@ -55,6 +68,8 @@ KomachiModManDistance2AllExcept:
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
   ExtraDescription1: "|Displace| each other enemy by -{Value1}."
   ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+  FlavorText: |-
+    Going the roundway Decaile.
 
 KomachiModManDistance3AllExcept:
   Name: Manipulate Distance b3
@@ -62,11 +77,15 @@ KomachiModManDistance3AllExcept:
   UpgradedDescription: "|Displace| by up to +/-{Value2}."
   ExtraDescription1: "|Displace| each other enemy by -{Value1}."
   ExtraDescription2: "|Displace| each other enemy by +{Value1}."
+  FlavorText: |-
+    Going the roundway Hectamile.
 
 KomachiModReleaseNone:
   Name: Release None
   Description: |-
     |Release| no Spirits
+  FlavorText: |-
+    "My own pace. My own pace."
 
 KomachiModSpiderLily:
   Name: Spider Lily
@@ -74,6 +93,8 @@ KomachiModSpiderLily:
     Gain {Mana}.
     Gain {Value1} |Temporary Firepower|.
     Gain {Value2} |Poison|.
+  FlavorText: |-
+    Take all the grudges of mankind within you.
 
 KomachiModDetonateToken:
   Name: Detonation
@@ -83,6 +104,8 @@ KomachiModDetonateToken:
     Do not |Detonate|.
   ExtraDescription2: |-
     |Detonate|.
+  FlavorText: |-
+    With enough TNT you will lag the game.
 
 # Findable cards
 KomachiModShootAndMove:
@@ -94,7 +117,7 @@ KomachiModShootAndMove:
     Deal {Damage} damage. 
     You can |Displace| by up to +/-{Value1}.
   FlavorText: |-
-    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive.
+    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive. Undraftable ingame.
 
 
 KomachiModMoveAndShoot:
@@ -107,10 +130,15 @@ KomachiModMoveAndShoot:
     Deal {Damage} damage. 
   NonbattleBaseDescription: |-
     You can |Displace| by +/-{Value1}.
-    Deal {Damage} damage..
+    Deal {Damage} damage.
   UpgradedNonbattleBaseDescription: |-
     You can |Displace| by up to +/-{Value1}.
-    Deal {Damage} damage..
+    Deal {Damage} damage.
+  FlavorText: |-
+    "Move and I'll shoot! 
+    I messed up.
+    I mean, shoot and I'll move. Right away.
+    (I don't really mean it)"
 
 KomachiModRetreat:
   Name: Handy Retreat
@@ -183,10 +211,12 @@ KomachiModDistanceAttack:
 KomachiModScytheFinalJudgment:
   Name: Scythe of Final Judgement
   Description: |-
-    Deal {Damage} damage. Deals double damage if the enemy has |Barrier| or |Block|. Damage reduction of far distances increases this card's damage instead.
+    |Displace| to any distance.
+    Deal {Damage} damage. Damage reduction of far distances increases this card's damage by double the amount instead.
     When an enemy is defeated using {SelfName}, add a |Spider Lily| to the hand.
   UpgradedDescription: |-
-    Deal {Damage} damage. Deals double damage if the enemy has |Barrier| or |Block|. Damage reduction of far distances increases this card's damage instead.
+    |Displace| to any distance.
+    Deal {Damage} damage. Damage reduction of far distances increases this card's damage by double the amount instead.
     When an enemy is defeated using {SelfName}, add 2 |Spider Lilies| to the hand.
 
 KomachiModShinigamiFinesse:
@@ -218,12 +248,12 @@ KomachiModDistanceFlow:
 KomachiModPushNPull:
   Name: Push and Pull
   Description: |-
-    At the start of {PlayerName}'s turn, |Displace| all enemies by -{Value1}.
-    At the end of {PlayerName}'s turn, |Displace| all enemies by {Value1}.
+    At the start of {PlayerName}'s turn, |Displace| each enemy by -{Value1}.
+    At the end of {PlayerName}'s turn, |Displace| each enemy by {Value1}.
   UpgradedDescription: |-
     Add a |Manipulate Distance| to your hand.
-    At the start of {PlayerName}'s turn, |Displace| all enemies by -{Value1}.
-    At the end of {PlayerName}'s turn, |Displace| all enemies by {Value1}.
+    At the start of {PlayerName}'s turn, |Displace| each enemy by -{Value1}.
+    At the end of {PlayerName}'s turn, |Displace| each enemy by {Value1}.
 
 KomachiModReviveCard:
   Name: God of Death
@@ -244,9 +274,8 @@ KomachiModShinigamiTactics:
   Name: Shinigami Tactics
   Description: |-
     Whenever |Manipulate Distance| is played, if it reduced distance, add a random attack card to the hand. If it increased distance, add a random defence card to the hand.
-    It |temporarily costs| {Mana}, has |Exile| and |Ethereal|.
+    Its cost is |temporarily reduced| to {Mana} and has |Exile| and |Ethereal|.
     Add {Value2} |Manipulate Distance| to the hand.
-  DetailText: Cards whose original cost is 0 won't have their cost changed.
 
 KomachiModLowTierShinigami:
   Name: Low Tier Shinigami
@@ -321,15 +350,20 @@ KomachiModSliceOfHigan:
 KomachiModEqualizeDistance:
   Name: Equalize Distance
   Description: |-
-    |Displace| until distance is |3|.
+    |Displace| until distance is {three}.
     Draw {Value1:plural one='% card' other='% cards'} for each level displaced. 
     If target's distance was already |3|, draw {Value2} cards, then discard {Value3} cards instead.
 
 KomachiModRitualOfEcstasy:
   Name: Ritual of Ecstasy
   Description: |-
-    Invert target's |Distance|.
-    If the distance was reduced, draw {Value1} cards. Otherwise, gain {Value2} graze and {Block} block.
+    Invert target's |Distance|, then apply 1 of these effects.
+    If the target's distance is {three}, you can choose the effect.
+    If the distance was reduced, draw {Value1} cards. If it was increased, gain {Value2} graze and {Block} block.
+  ExtraDescription1: |-
+    Draw {Value1} cards.
+  ExtraDescription2: |-
+    Gain {Value2} graze and {Block} block.
   DetailText: |-
     Inverts distance around level 3.
     That is, this is how the displacements will go:
@@ -385,7 +419,7 @@ KomachiModBWBridge:
 KomachiModFishing:
   Name: Double Hooking
   Description: |-
-    Discard {Value1} card, then target up to {Value2} cards in |Exile| whose total cost is less than {Value3} each; Return them to the hand.
+    Discard {Value1} card, then target up to {Value2} cards in |Exile| whose total cost is less than {Value3} each; Return the first to the hand and return the second to the discard pile.
     They |temporarily cost| {Mana}.
 
 KomachiModGuidingSanzu:
@@ -417,19 +451,29 @@ KomachiModSpiritDefence:
 KomachiModVengefulSweep:
   Name: Spirits of the Firm
   Description: |-
-    Inflict {Value1} |Vengeful Spirits| on all enemies.
-    |Release| {Value2}: Inflict {Value1} more |Vengeful Spirits| on all those enemies.
+    Apply {Value1} |Vengeful Spirits| on each enemy.
+    |Release| {Value2}: Apply {Value1} more |Vengeful Spirits| on all those enemies.
+    |Release| {Value3}: Do the above, then add |Detonation| to your hand.
   ExtraDescription1: |-
-    |Release| {Value2}: Inflict {Value1} more |Vengeful Spirits| on all those enemies.
+    |Release| {Value2}: Apply {Value1} more |Vengeful Spirits| on each enemies.
+  ExtraDescription2: |-
+    |Release| {Value3}: Apply {Value1} more |Vengeful Spirits| on each enemies, then add |Detonation| to your hand.
 
 KomachiModVengefulerSweep:
   Name: Abundant Floating Spirits
   Description: |-
     Deal {Damage} damage to each enemy.
     Apply {Value1} |Vengeful Spirits| to each enemy.
-    |Release| {Value2}: This attack becomes |Accurate|.
+    |Release| {releaseCost1}: |Choose|: This attack becomes |Accurate| or Apply {Value1} more |Vengeful Spirits| to each enemy.
+    |Release| {releaseCost2}: Deal {Damage2} |Accurate| damage {attackTimes} times to each enemy, then apply {Value2} |Vengeful Spirits| to each enemy instead.
   ExtraDescription1: |-
-    |Release| {Value2}: This attack becomes |Accurate|.
+    |Release| {releaseCost1}: |Choose|: This attack becomes |Accurate| or Apply {Value1} more |Vengeful Spirits| to each enemy.
+  ExtraDescription2: |-
+    |Release| {releaseCost2}: Deal {Damage2} |Accurate| damage {attackTimes} times to each enemy, then apply {Value2} |Vengeful Spirits| to each enemy instead.
+  ExtraDescription3: |-
+    This attack becomes |Accurate|.
+  ExtraDescription4: |-
+    Apply {Value1} more |Vengeful Spirits| to each enemy.
 
 KomachiModFreeTrauma:
   Name: Free Trauma?!
@@ -535,7 +579,9 @@ KomachiModChainDetonation:
     |Detonate| that enemy.
     Apply |Vengeful Spirits| equal to the amount detonated.
     |Release| {Value2}: |Detonate| that target again.
+    |Release| {Value3}: Apply |Vengeful Spirits| equal to the amount detonated, again.
   ExtraDescription1: "|Release| {Value2}: |Detonate| that target again."
+  ExtraDescription2: "|Release| {Value3}: |Detonate| that target again, then apply |Vengeful Spirits| equal to the amount detonated, again."
 
 KomachiModResidualAether:
   Name: Residual Aether
@@ -548,8 +594,8 @@ KomachiModDivineSpiritDefence:
   Description: |-
     Gain {Block} |Block|.
     Gain {Value1} |Divine Spirits|.
-    |Release| {Value2}: Gain {Value1} |Divine Spirits|.
-  ExtraDescription1: "|Release| {Value2}: Gain {Value1} |Divine Spirits|."
+    |Release| {Value2}: Gain {Value1} more |Divine Spirits|.
+  ExtraDescription1: "|Release| {Value2}: Gain {Value1} more |Divine Spirits|."
 
 KomachiModSpiritReturn:
   Name: Spirit Return
@@ -563,16 +609,16 @@ KomachiModAfterlifePassage:
     Gain {Value2} |Guided Spirits| for each exiled |Misfortune|, |Status|, or |Basic| card.
     Gain {Value2} |Divine Spirits| for each other exiled card.
   UpgradedDescription: |-
-    Exile up to {Value1} cards from your hand.
+    Exile up to {Value1} cards from your hand or discard pile.
     Gain {Value2} |Guided Spirits| for each exiled |Misfortune|, |Status|, or |Basic| card.
     Gain {Value2} |Divine Spirits| for each other exiled card.
 
 KomachiModReapersDue:
   Name: Reaper's due
   Description: |-
-    |For each {Mana} spent|: Gain {Value1} |Guided Spirits|.
-    |For each {WhiteMana} spent|: Gain {Value2} |Divine Spirits|.
-    |For each {BlackMana} spent|: Apply {Value2} |Vengeful Spirits| to each enemy.
+    |For each {Mana} spent|: Gain {Value1} |Guided Spirits|. ({anyManaSpirits})
+    |For each {WhiteMana} spent|: Gain {Value2} |Divine Spirits|. ({whiteManaSpirits})
+    |For each {BlackMana} spent|: Apply {Value2} |Vengeful Spirits| to each enemy. ({blackManaSpirits})
 
 KomachiModCloseQuarterDefence:
   Name: Close Quarter Technique
@@ -599,6 +645,8 @@ KomachiModDistanceCloser:
     |Displace| by up to -{Value1}.
     Inflict {Value2} |Vengeful Spirits| for every level of |Displacement|.
     |Release| {Value2}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
+  ExtraDescription1: |-
+    |Release| {Value2}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
 
 KomachiModEthicallySourcedBreak:
   Name: Ethically Sourced Break
@@ -616,7 +664,6 @@ KomachiModInfernoTempest:
     Gain {Value1} |Guided Spirit{Value1:plural one='' other='s'}| for each card exiled from the draw pile.
     Inflict {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}| to each enemy for each card exiled from the discard pile.
     At the start of {PlayerName}'s next turn, choose up to {Value2} non-|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
-    Remove this card from combat after being played.
   DetailText: |-
     There will be at least 1 card returned in each of the hand, draw pile, and discard pile.
 
@@ -656,7 +703,7 @@ KomachiModStrongestSpirit:
 KomachiModExchangeDrawExile:
   Name: Exchange of the Living and the Dead
   Description: |-
-    |Exile| the top card of your draw pile. Then, add up to {Value1} other card from the exile pile with the same card type.
+    |Exile| the top card of your draw pile. Then, return up to {Value1} other card from the exile pile with the same card type to the hand.
     If there is no target to pick in the exile pile, draw {Value2} cards instead.
   DetailText: |-
     Card type refers to whether the card is an Attack, Defence, Skill, Ability, etc.
@@ -683,12 +730,11 @@ KomachiModExileDoppelganger:
   Name: Extinct Fauna of the Sanzu River
   Description: |-
     Whenever {PlayerName} plays a card:
-    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. It costs {Mana} and is removed from combat after being played.
+    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. Its cost is reduced to {Mana} and is removed from combat after being played.
     - |If a card with the same name is in the Exile pile|: You can add it to your hand.
     You can only use each effect of {SelfName} once per turn.
   DetailText: |-
-    Copies cannot be copied using the first effect. 
-    Copies of cards with a mana cost of 0 will not have their cost increased by this effect.
+    Copies cannot be copied using the first effect.
 
 KomachiModSpiritDraw:
   Name: Tour Guide to the Afterworld
@@ -709,7 +755,7 @@ KomachiModEiki:
   UpgradedExtraDescription1: |-
     {ActiveCostIcon}Choose a card in the hand. It |temporarily costs| {Mana} |Upgrade| it.
   ExtraDescription3: |-
-    {UltimateCostIcon}Return up to {Value3} exiled cards to the hand. Their cost becomes {Mana} this combat. {PlayerName} doesn't pay the |Release| cost of cards this combat.
+    {UltimateCostIcon}Choose up to {Value3} card{Value3:plural one='' other='s'} in the |battlefield| and add {Value3:plural one='it' other='them'} to the hand. {Value3:plural one='Its' other='Their'} cost becomes {Mana} this combat. {PlayerName} doesn't pay the |Release| cost of cards this combat.
   DetailText: |-
     The passive effect will never pick a card with 0 mana.
 
@@ -721,10 +767,14 @@ KomachiModAttackR:
 KomachiModBlockR:
   Name: Used to scolding.
   Description: Gain {Block} |Block|.
+  FlavorText: |-
+    The mental fortitude received from surviving an endless amount of lectures.
 
 KomachiModAttackB:
   Name: Ghostrick Shot
   Description: Deal {Damage} damage.
+  FlavorText: |-
+    Flip the Jiangshi for 20 turns to win the game!
 
 KomachiModBlockB:
   Name: Spirit Backing

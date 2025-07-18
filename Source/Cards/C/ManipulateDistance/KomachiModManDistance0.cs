@@ -44,7 +44,7 @@ namespace KomachiMod.Cards
             config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
 
 
-            config.Index = CardIndexGenerator.GetUniqueIndex(config);
+            config.Index = CardIndexGenerator.GetUniqueIndex(config); 
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             return config;

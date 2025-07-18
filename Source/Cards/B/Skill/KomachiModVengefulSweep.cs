@@ -7,6 +7,7 @@ using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
@@ -40,6 +41,14 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
 
+            config.RelativeCards = new List<string>()
+            {
+                nameof(KomachiModDetonateToken)
+            };
+            config.UpgradedRelativeCards = new List<string>()
+            {
+                nameof(KomachiModDetonateToken)
+            };
 
             config.Illustrator = "松岡二";
 
@@ -51,6 +60,8 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModVengefulSweepDef))]
     public sealed class KomachiModVengefulSweep : KomachiCard
     {
+        protected override int BaseValue3 { get => 7; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 6; set => base.BaseUpgradedValue3 = value; }
         public override bool Triggered
         {
             get
@@ -60,22 +71,29 @@ namespace KomachiMod.Cards
         }
         public override Interaction Precondition()
         {
-            return KomachiModUtility.ChooseRelease(this, Value2);
+            return KomachiModUtility.ChooseRelease(this, Value2, Value3);
         }
         
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             foreach (var enemy in Battle.AllAliveEnemies)
             {
-                yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                yield return new ApplyVengefulSpiritAction(this, enemy, Value1);
             }
             Card releaseChoice = KomachiModUtility.GetPreconditionCard(precondition);
-            if (releaseChoice != null && releaseChoice.GetType() != typeof(KomachiModReleaseNone))
+            if (KomachiModUtility.ChoseRelease(releaseChoice))
             {
-                yield return new KomachiReleaseAction(Battle.Player, Value2);
+                int releaseAmount = Value2;
+                if (releaseChoice.ChoiceCardIndicator == 2) releaseAmount = Value3;
+                yield return new KomachiReleaseAction(Battle.Player, releaseAmount);
                 foreach (var enemy in Battle.AllAliveEnemies)
                 {
-                    yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                    yield return new ApplyVengefulSpiritAction(this, enemy, Value1);
+                }
+                if (releaseAmount == Value3)
+                {
+                    Card[] detonate = { Library.CreateCard<KomachiModDetonateToken>() };
+                    yield return new AddCardsToHandAction(detonate);
                 }
             }
             yield break;

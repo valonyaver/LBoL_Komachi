@@ -63,7 +63,7 @@ namespace KomachiMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value3);
+            yield return new ApplyVengefulSpiritAction(this,selector.SelectedEnemy, Value3);
             yield return new GainManaAction(Mana);
             Card card = KomachiModUtility.GetPreconditionCard(precondition);
             if (card == null || card.GetType() == typeof(KomachiModReleaseNone)) yield break;

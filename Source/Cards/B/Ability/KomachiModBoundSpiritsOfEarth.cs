@@ -53,7 +53,7 @@ namespace KomachiMod.Cards
         {
             foreach(var enemy in Battle.AllAliveEnemies)
             {
-                yield return new ApplyVengefulSpiritAction(enemy, Value1);
+                yield return new ApplyVengefulSpiritAction(this, enemy, Value1);
             }
             yield return BuffAction<KomachiModBoundSpiritsOfEarthSe>(base.Value2, 0, 0, 0, 0.2f);
             yield break;

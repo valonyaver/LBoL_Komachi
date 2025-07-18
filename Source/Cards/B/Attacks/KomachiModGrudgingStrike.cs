@@ -39,7 +39,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 7;
 
             // Release cost
-            config.Value2 = 4;
+            config.Value2 = 3;
             config.UpgradedValue2 = 2;
 
             config.RelativeEffects = new List<string>() 
@@ -67,7 +67,7 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector, base.GunName);
-            yield return new ApplyVengefulSpiritAction(selector.SelectedEnemy, Value1);
+            yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, Value1);
 
             Card choiceCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(choiceCard))

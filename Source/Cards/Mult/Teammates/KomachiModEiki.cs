@@ -43,7 +43,7 @@ namespace KomachiMod.Cards.B
             config.Shield = 10;
             config.UpgradedShield = 14;
 
-            // Amount of cards chosen
+            // Amount of cards chosen from the hand
             config.Value1 = 1;
             config.UpgradedValue1 = 2;
             // Guided Spirits if junk card
@@ -51,8 +51,8 @@ namespace KomachiMod.Cards.B
 
             config.Mana = new ManaGroup() { Any = 0 };
 
-            config.RelativeKeyword = Keyword.TempMorph;
-            config.UpgradedRelativeKeyword = Keyword.TempMorph;
+            config.RelativeKeyword = Keyword.TempMorph | Keyword.Battlefield;
+            config.UpgradedRelativeKeyword = Keyword.TempMorph | Keyword.Battlefield;
 
             config.RelativeEffects = new List<string>()
             {
@@ -101,9 +101,9 @@ namespace KomachiMod.Cards.B
                 return string.Format("<indent=0><sprite=\"Ultimate\" name=\"{0}\">{1}", base.UltimateCost, Indent);
             }
         }
-        // Recurred exile cards.
-        protected override int BaseValue3 { get => 2; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 3; set => base.BaseUpgradedValue3 = value; }
+        // Searched cards
+        protected override int BaseValue3 { get => 1; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 2; set => base.BaseUpgradedValue3 = value; }
 
         //Effect to trigger at the start of the end.
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
@@ -194,12 +194,17 @@ namespace KomachiMod.Cards.B
 			{
 				base.Loyalty += base.UltimateCost;
                 base.UltimateUsed = true;
-                List<Card> exileZone = Battle.ExileZone.ToList();
-                var interaction = new SelectCardInteraction(0, Value3, exileZone);
+                List<Card> battlefield = (from card in Battle.HandZone.Concat(Battle.DrawZoneToShow).Concat(Battle.DiscardZone).Concat(Battle.ExileZone)
+                                   where card != this
+                                   select card).ToList();
+                var interaction = new SelectCardInteraction(0, Value3, battlefield);
                 yield return new InteractionAction(interaction);
                 foreach(var card in interaction.SelectedCards)
                 {
-                    yield return new MoveCardAction(card, CardZone.Hand);
+                    if (card.Zone != CardZone.Hand)
+                    {
+                        yield return new MoveCardAction(card, CardZone.Hand);
+                    }
                     card.SetBaseCost(Mana);
                 }
                 yield return BuffAction<KomachiModEikiSe>(1);
