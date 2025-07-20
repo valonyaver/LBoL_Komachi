@@ -1,4 +1,4 @@
-using LBoL.Base;
+﻿using LBoL.Base;
 using LBoL.ConfigData;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.Illustrator = "";
+            config.Illustrator = "柿木みかん(仮)";
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
             config.HideMesuem = true;
             config.IsPooled = false;

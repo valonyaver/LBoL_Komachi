@@ -1,3 +1,12 @@
+## 0.3.1
+- Added a new keyword, **Auto-Discard**. If your hand would reach its limit, discard auto discard cards before that happens!
+- Spider Lily now has Auto-Discard.
+*It's also the only card that's gonna use it lmao. Your hands won't be clogged by flowers any longer.*
+- Talkative Ferryman now gives you the correct amount of the buff. Used to give you 4 regardless of upgrade.
+- Fixed a bug where the guided spirits tooltip would give out an error under niche circumstances.
+
+That's all folks.
+
 ## 0.3
 ### Bug fixes
 - Fixed a bug with Reaper's due that stopped you from spending non W, B, or P mana from using it. Added a QoL number to the card text that shows the spirits you will gain from your pending mana.

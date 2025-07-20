@@ -13,6 +13,7 @@ using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KomachiMod.StatusEffects
 {
@@ -75,7 +76,14 @@ namespace KomachiMod.StatusEffects
 
         public EnemyUnit target
         {
-            get => base.Battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp);
+            get
+            {
+                if (base.Battle.EnemyGroup == null || base.Battle.EnemyGroup.Alives == null || base.Battle.EnemyGroup.Alives.Count() == 0)
+                {
+                    return null;
+                }
+                return base.Battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp);
+            }
         }
          
         public string targetName

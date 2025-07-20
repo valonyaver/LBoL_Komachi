@@ -201,3 +201,10 @@ KomachiModReleaseKeyword:
     Remove X amount of |Guided Spirits| and/or |Divine Spirits| from {PlayerName} when playing* this card to optionally activate this effect.
     |Guided Spirits| are prioritized first.
     *You must have the required amount before playing the card.
+
+KomachiAutoDiscardKeyword:
+  Name: Auto Discard
+  Brief: |-
+    When you're about to fill* your hand size, |Discard| this card.
+    The leftmost card in the hand with |Auto-Discard| is |Discarded| first.
+    *<i>Due to modding limitations, this works differently from auto-exile where the discard happens when filling the hand rather than exceeding it.

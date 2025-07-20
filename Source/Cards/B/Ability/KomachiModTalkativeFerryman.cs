@@ -59,7 +59,7 @@ namespace KomachiMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<KomachiModTalkativeFerrymanSe>(base.Value2, 0, 0, 0, 0.2f);
+            yield return BuffAction<KomachiModTalkativeFerrymanSe>(base.Value1, 0, 0, 0, 0.2f);
 
             Card choice = KomachiModUtility.GetPreconditionCard(precondition);
             if (choice != null && choice.GetType() != typeof(KomachiModReleaseNone))

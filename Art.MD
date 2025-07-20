@@ -77,5 +77,6 @@ Protective Sanzu Boat: https://safebooru.org/index.php?page=post&s=view&id=78725
 Exchange Life: https://www.pixiv.net/en/artworks/116442814
 Taste of Death: https://safebooru.org/index.php?page=post&s=view&id=952065
 Gold Sarcophagus: https://x.com/i/web/status/474190711793782790
+Release none choice card: https://www.pixiv.net/en/artworks/59227476
 
 Everything else is placeholder art by me or the game itself.

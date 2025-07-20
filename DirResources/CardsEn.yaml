@@ -93,6 +93,7 @@ KomachiModSpiderLily:
     Gain {Mana}.
     Gain {Value1} |Temporary Firepower|.
     Gain {Value2} |Poison|.
+    |Auto-Discard|.
   FlavorText: |-
     Take all the grudges of mankind within you.
 

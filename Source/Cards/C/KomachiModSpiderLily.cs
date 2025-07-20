@@ -1,16 +1,20 @@
-using LBoL.Base;
-using LBoL.ConfigData;
-using LBoLEntitySideloader.Attributes;
-using System.Collections.Generic;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
-using LBoL.Core.Battle;
+using KomachiMod.StatusEffects;
+using LBoL.Base;
+using LBoL.ConfigData;
 using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.EntityLib.Cards.Neutral.NoColor;
-using LBoL.EntityLib.Cards.Character.Marisa;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
+using LBoL.EntityLib.Cards.Character.Marisa;
+using LBoL.EntityLib.Cards.Neutral.Black;
+using LBoL.EntityLib.Cards.Neutral.NoColor;
 using LBoL.EntityLib.StatusEffects.Others;
+using LBoLEntitySideloader.Attributes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace KomachiMod.Cards
 {
@@ -46,11 +50,11 @@ namespace KomachiMod.Cards
 
             config.RelativeEffects = new List<string>()
             {
-                nameof(Poison), nameof(TempFirepower)
+                nameof(Poison), nameof(TempFirepower), nameof(KomachiAutoDiscardKeyword)
             };
             config.UpgradedRelativeEffects = new List<string>()
             {
-                nameof(Poison), nameof(TempFirepower)
+                nameof(Poison), nameof(TempFirepower), nameof(KomachiAutoDiscardKeyword)
             };
 
 
@@ -62,6 +66,61 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModSpiderLilyDef))]
     public sealed class KomachiModSpiderLily : KomachiCard
     {
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            base.HandleBattleEvent<CardEventArgs>
+                (base.Battle.Predraw,
+                new GameEventHandler<CardEventArgs>(this.OnPlayerDrawing), GameEventPriority.ConfigDefault);
+            base.HandleBattleEvent<CardsEventArgs>
+                (base.Battle.CardsAddingToHand,
+                new GameEventHandler<CardsEventArgs>(this.OnPlayerAddingMany), GameEventPriority.ConfigDefault);
+            base.HandleBattleEvent<CardMovingEventArgs>
+                (base.Battle.CardMoving,
+                new GameEventHandler<CardMovingEventArgs>(this.OnPlayerAdding), GameEventPriority.ConfigDefault);
+        }
+
+        void OnPlayerDrawing(CardEventArgs args)
+        {
+            AutoDiscard(1);
+        }
+        void OnPlayerAddingMany(CardsEventArgs args)
+        {
+            AutoDiscard(args.Cards.Length);
+        }
+
+        void OnPlayerAdding(CardMovingEventArgs args)
+        {
+            if (args.DestinationZone == CardZone.Hand)
+            {
+                AutoDiscard(1);
+            }
+        }
+
+
+
+        void AutoDiscard(int cardAmount)
+        {
+            int projectedHandsize = Battle.HandZone.Count + cardAmount;
+            if (projectedHandsize >= Battle.MaxHand && Zone == CardZone.Hand)
+            {
+                // Get all Spider Lily cards in hand
+                var spiderLiliesInHand = Battle.HandZone
+                    .Where(card => card is KomachiModSpiderLily)
+                    .Take(cardAmount) // Only consider first 'cardAmount' lilies
+                    .ToList();
+
+                // Check if this card is in the first 'cardAmount' lilies
+                if (spiderLiliesInHand.Contains(this))
+                {
+                    React(new DiscardAction(this) { Cause = ActionCause.AutoExile});
+                }
+            }
+            //new DrawCardAction();
+            //new AddCardsToHandAction();
+            //new MoveCardAction();
+            //RemiliaFate
+        }
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
 		{
 			yield return new GainManaAction(base.Mana);
