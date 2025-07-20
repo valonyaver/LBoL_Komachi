@@ -13,6 +13,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace KomachiMod.Cards
 {
@@ -91,6 +92,7 @@ namespace KomachiMod.Cards
             // add em to the list
             list.Add(noBoom);
             list.Add(boom);
+            Debug.Log("End of boom precon");
             return new MiniSelectCardInteraction(list) { Source = this };
         }
 
@@ -101,7 +103,7 @@ namespace KomachiMod.Cards
             // look above for vengeful spirit attack
 
             Card preconditionCard = KomachiModUtility.GetPreconditionCard(precondition);
-            if (preconditionCard != null || preconditionCard.GetType() != typeof(KomachiModReleaseNone))
+            if (KomachiModUtility.ChoseRelease(preconditionCard))
             {
                 yield return new KomachiReleaseAction(this, Value2);
                 yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, Value1);
@@ -114,6 +116,7 @@ namespace KomachiMod.Cards
                 yield break;
             }
 
+            Debug.Log("Before scythe of exorcism precon");
             MiniSelectCardInteraction precon2 = (MiniSelectCardInteraction) BoomCondition();
             yield return new InteractionAction(precon2);
 

@@ -8,6 +8,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.StatusEffects.Cirno;
 using LBoL.EntityLib.StatusEffects.Neutral.Blue;
+using LBoL.Presentation.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 
@@ -53,6 +54,7 @@ namespace KomachiMod.Cards
         
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            Battle.Player.GetView<UnitView>().Chat("Zzzzzz", 2);
             yield return base.HealAction(base.Value1);
             yield return new GainTurnManaAction(base.Mana);
             yield return new RequestEndPlayerTurnAction();

@@ -8,6 +8,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.StatusEffects.Cirno;
 using LBoL.EntityLib.StatusEffects.Neutral.Blue;
+using LBoL.Presentation.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 
@@ -62,6 +63,7 @@ namespace KomachiMod.Cards
         protected override int BaseUpgradedValue3 { get => 3; set => base.BaseUpgradedValue3 = value; }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            Battle.Player.GetView<UnitView>().Chat("Mimimimimimimimi", 2);
             yield return DefenseAction();
             yield return base.HealAction(base.Value1);
             yield return BuffAction<Firepower>(Value2);

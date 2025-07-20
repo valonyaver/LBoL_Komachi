@@ -10,6 +10,7 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Cards.Character.Sakuya;
 using LBoL.EntityLib.Cards.Neutral.NoColor;
+using LBoL.Presentation.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,7 @@ namespace KomachiMod.StatusEffects
                 yield break;
             }
             yield return new RequestEndPlayerTurnAction();
+            Battle.Player.GetView<UnitView>().Chat("Mimimimimimimimimimimimimimimimi", 2);
             yield break;
         }
 

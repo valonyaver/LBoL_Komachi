@@ -1,3 +1,6 @@
+## 0.3.2
+- Fixed Equalize Distance not drawing the correct amount of cards.
+
 ## 0.3.1
 - Added a new keyword, **Auto-Discard**. If your hand would reach its limit, discard auto discard cards before that happens!
 - Spider Lily now has Auto-Discard.

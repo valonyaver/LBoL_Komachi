@@ -89,7 +89,7 @@ namespace KomachiMod.Cards
             {
                 int displacementAmount = 3 - currentDistance;
                 yield return new DistanceChangeAction(selector.SelectedEnemy, displacementAmount);
-                yield return new DrawManyCardAction(Mathf.Abs(displacementAmount));
+                yield return new DrawManyCardAction(Mathf.Abs(displacementAmount) * Value1);
             }
             yield break;
         }
