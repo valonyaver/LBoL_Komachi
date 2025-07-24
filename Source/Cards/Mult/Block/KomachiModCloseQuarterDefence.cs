@@ -61,9 +61,12 @@ namespace KomachiMod.Cards
     public sealed class KomachiModCloseQuarterDefence : KomachiCard 
     {
         
-        // Additional block amount
-        protected override int BaseValue3 { get => 10; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 14; set => base.BaseUpgradedValue3 = value; }
+        // Temp firedown amount
+        protected override int BaseValue3 { get => 5; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 7; set => base.BaseUpgradedValue3 = value; }
+
+        // This card used to give block rather than apply firepower down. With the assumption that value3 was the block amount.
+        // This is all the calculation for it.
         public int additionalBlockMeasure
         {
             get
@@ -107,7 +110,7 @@ namespace KomachiMod.Cards
             }
         }
         // Additional block from close smooching
-        bool getAdditionalBlock;
+        bool getAdditionalBlock = false;
         protected override int AdditionalBlock
         {
             get
@@ -123,19 +126,20 @@ namespace KomachiMod.Cards
         public int distanceLimit = 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
-            {
-                getAdditionalBlock = true;
-            }
-            else getAdditionalBlock = false;
-            yield return DefenseAction(true);
+            //if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < distanceLimit)
+            //{
+            //    getAdditionalBlock = true;
+            //}
+            //else getAdditionalBlock = false;
+            yield return DefenseAction();
             yield return new ApplyVengefulSpiritAction(this,selector.SelectedEnemy, Value1);
 
-            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < 3)
+            if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) < distanceLimit)
             {
+                yield return DebuffAction<TempFirepowerNegative>(selector.SelectedEnemy, Value3);
                 yield return BuffAction<KomachiModGuidedSpiritSe>(Value2);
             }
-            getAdditionalBlock = false;
+            //getAdditionalBlock = false;
         }
     }
 }

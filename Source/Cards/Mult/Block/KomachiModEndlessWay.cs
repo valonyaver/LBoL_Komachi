@@ -35,10 +35,10 @@ namespace KomachiMod.Cards
             config.Block = 14;
             config.UpgradedBlock = 18;
 
-            // Push Amount and lock on amount
+            // Push Amount
             config.Value1 = 2;
 
-            // Release cost1
+            // Release cost 1
             config.Value2 = 3;
             config.UpgradedValue2 = 2;
 
@@ -57,10 +57,11 @@ namespace KomachiMod.Cards
     public sealed class KomachiModEndlessWay : KomachiCard
     {
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(this, Value2);
+        // Release cost 2
         protected override int BaseValue3 { get => 6; set => base.BaseValue3 = value; }
         protected override int BaseUpgradedValue3 { get => 4; set => base.BaseUpgradedValue3 = value; }
 
-        int lockOnAmount = 2;
+        int lockOnAmount = 3;
         // For description
         int lockOnAmount2 => lockOnAmount * 2;
         public override Interaction Precondition()

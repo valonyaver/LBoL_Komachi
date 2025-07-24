@@ -10,6 +10,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +23,8 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(7010);
+            config.GunNameBurst = GunNameID.GetGunFromId(7011);
 
             // config.ImageId = "KomachiAttackB";
 
@@ -45,9 +47,19 @@ namespace KomachiMod.Cards
 
 
             config.RelativeEffects = new List<string>() 
-            { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword), nameof(KomachiModReleaseKeyword) };
-            config.UpgradedRelativeEffects = new List<string>() 
-            { nameof(KomachiModVengefulSpiritSe), nameof(KomachiDetonationKeyword), nameof(KomachiModReleaseKeyword) };
+            { 
+                nameof(KomachiModVengefulSpiritSe), 
+                nameof(KomachiDetonationKeyword), 
+                nameof(KomachiModReleaseKeyword),
+                nameof(Amulet)
+            };
+            config.UpgradedRelativeEffects = new List<string>()
+            {
+                nameof(KomachiModVengefulSpiritSe),
+                nameof(KomachiDetonationKeyword),
+                nameof(KomachiModReleaseKeyword),
+                nameof(Amulet)
+            };
 
             config.RelativeCards = new List<string>()
             {
@@ -70,6 +82,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModScytheRedLilyDef))]
     public sealed class KomachiModScytheRedLily : KomachiCard
     {
+        public int one = 1;
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
         public override Interaction Precondition()
         {
@@ -107,6 +120,7 @@ namespace KomachiMod.Cards
             {
                 yield return new KomachiReleaseAction(this, Value2);
                 yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, Value1);
+                yield return BuffAction<Amulet>(1);
             }
 
             // End if has no spirits to speak of

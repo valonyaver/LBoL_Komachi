@@ -24,8 +24,9 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            // Possible candidates: 7131, 39051 (Big Reimu hectagon), 7061, 4721
-            config.GunName = GunNameID.GetGunFromId(4721);
+            // Possible candidates: 7131 (Fire from behind), 39051 (Big Reimu hectagon), 7061, 4721
+            config.GunName = GunNameID.GetGunFromId(7080);
+            config.GunNameBurst = GunNameID.GetGunFromId(7081);
 
             // config.ImageId = nameof(KomachiModAttackB);
 
@@ -71,6 +72,7 @@ namespace KomachiMod.Cards
         public int releaseCost2 = 12;
 
 
+        public string GunName2 = GunNameID.GetGunFromId(4002);
         public DamageInfo Damage2 => DamageInfo.Attack(RawDamage2, true);
         public int RawDamage2 => ConfigDamage2 + AdditionalDamage + DeltaDamage;
         public int BaseDamage2 => 12;
@@ -195,7 +197,9 @@ namespace KomachiMod.Cards
                 // If you chose the second one.
                 else
                 {
-                    base.CardGuns = new Guns(base.GunName, attackTimes, true);
+                    yield return new KomachiReleaseAction(this, costResult);
+                    base.CardGuns = new Guns(base.GunName, 1, true);
+                    CardGuns.Add(GunName2);
                     EnemyUnit[] enemies = selector.GetEnemies(Battle);
                     if (enemies.Length != 0)
                     {

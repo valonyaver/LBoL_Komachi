@@ -21,7 +21,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(6162);
             // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
@@ -36,6 +36,9 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
 
+            config.RelativeKeyword = Keyword.Accuracy;
+            config.UpgradedRelativeKeyword = Keyword.Accuracy;
+
             config.Illustrator = "綾川あら";
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -46,6 +49,7 @@ namespace KomachiMod.Cards
     public sealed class KomachiModShinigamiFinesse : KomachiCard
     {
         int attackAmount = 1;
+        public int three = 3;
 
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -69,9 +73,15 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            int distance = KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy);
+            bool accuracy = IsAccuracy;
+            if (distance < 3)
+            {
+                accuracy = true;
+            }
             for (int i = 0; i < attackAmount; i++)
             {
-                yield return base.AttackAction(selector, base.GunName);
+                yield return base.AttackAction(selector.SelectedEnemy, DamageInfo.Attack(Damage.Damage, accuracy), base.GunName);
             }
             yield break;
         }

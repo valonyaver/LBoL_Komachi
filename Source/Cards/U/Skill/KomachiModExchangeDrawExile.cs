@@ -56,22 +56,28 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            // If the draw zone is empty get wreckt lmao
             if (Battle.DrawZone.Count == 0) yield break;
+            // Check the top card
             Card topCard = Battle.DrawZone.FirstOrDefault();
+            // Interaction that does nothing but show you what the top card is.
             MiniSelectCardInteraction topcardInteraction = new MiniSelectCardInteraction(new List<Card>() { topCard }) { Source = this };
             yield return new InteractionAction(topcardInteraction);
             yield return new MoveCardAction(topCard, CardZone.Exile);
+            // Get the list of exiled cards that are of the same card type
             List<Card> list = Battle.ExileZone.Where(card => card.CardType == topCard.CardType && card != topCard).ToList();
             if (list.Count > 0)
             {
-                MiniSelectCardInteraction selectBanishInteraction = new MiniSelectCardInteraction(list, canSkip: true) { Source = this };
+                // Select them.
+                SelectCardInteraction selectBanishInteraction = new SelectCardInteraction(0, 1, list) { Source = this };
                 yield return new InteractionAction(selectBanishInteraction);
-                if (selectBanishInteraction.SelectedCard != null)
+                // Get the card if picked
+                if (selectBanishInteraction.SelectedCards.Count > 0)
                 {
-                    yield return new MoveCardAction(selectBanishInteraction.SelectedCard, CardZone.Hand);
+                    yield return new MoveCardAction(selectBanishInteraction.SelectedCards[0], CardZone.Hand);
                 }
             }
-            else
+            else // If no card in banish. Vanish.
             {
                 yield return new DrawManyCardAction(Value2);
             }

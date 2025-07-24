@@ -1,3 +1,11 @@
+## 0.3.3
+- Scythe of Exorcism's release effect now gives you an amulet.
+- Shinigami's Finesse now gains accurate on close distances.
+- Fixed a bug with Abundant Floating Spirits.
+- Lock on amount applied by Endless Way increased from 2/4 to 3/6.
+- Close Quarter Defence now applies temporary firepower down on a close target rather than giving you additional block.
+- Fixed a bug with Exchange of the living and the dead.
+
 ## 0.3.2
 - Fixed Equalize Distance not drawing the correct amount of cards.
 

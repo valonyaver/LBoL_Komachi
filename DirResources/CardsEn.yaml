@@ -159,7 +159,7 @@ KomachiModEndlessWay:
   Description: |-
     |Displace| by +{Value1}. Remove all |Graze| from that target.
     Gain {Block} |Block|.
-    |Release| {Value2} or {Value3}: Apply {Value1} |Lock on| for every {Value2} Spirits released.
+    |Release| {Value2} or {Value3}: Apply {lockOnAmount} |Lock on| for every {Value2} Spirits released.
   ExtraDescription1: |-
     |Release| {Value2}: Apply {lockOnAmount} |Lock on|.
   ExtraDescription2: |-
@@ -225,6 +225,7 @@ KomachiModShinigamiFinesse:
   Description: |-
    Deal {Damage} damage {attackAmount} {attackAmount:plural one='time' other='times'}.
    The amount of times this card attacks is equal to the distance level of the target.
+   If the target's distance is less than {three}, this attack becomes |Accurate|.
 
 KomachiModDistanceBlock:
   Name: Flexible Work Schedule
@@ -243,8 +244,8 @@ KomachiModDistanceFlow:
   Name: Flow of the Sanzu River
   Description: |-
     Each time an enemy is |Displaced|:
-    - If the Distance was increased, gain {Value1} |Temporary Spirit Up|
-    - If the Distance was decreased, gain {Value1} |Temporary Firepower Up|
+    - If the Distance was increased, gain {Value1} |Temporary Spirit|
+    - If the Distance was decreased, gain {Value1} |Temporary Firepower|
 
 KomachiModPushNPull:
   Name: Push and Pull
@@ -470,7 +471,7 @@ KomachiModVengefulerSweep:
   ExtraDescription1: |-
     |Release| {releaseCost1}: |Choose|: This attack becomes |Accurate| or Apply {Value1} more |Vengeful Spirits| to each enemy.
   ExtraDescription2: |-
-    |Release| {releaseCost2}: Deal {Damage2} |Accurate| damage {attackTimes} times to each enemy, then apply {Value2} |Vengeful Spirits| to each enemy instead.
+    |Release| {releaseCost2}: Deal {Damage2} |Accurate| damage {attackTimes} times to each enemy, then apply {Value2} |Vengeful Spirits| to each enemy.
   ExtraDescription3: |-
     This attack becomes |Accurate|.
   ExtraDescription4: |-
@@ -523,9 +524,9 @@ KomachiModScytheRedLily:
   Description: |-
     Deal {Damage} damage.
     You can |Detonate|, then if you detonated {Value1} or more |Vengeful Spirits|, add a |Spider Lily| to your hand.
-    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation.
+    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation. Gain {one} |Amulet|.
   ExtraDescription1: |-
-    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation.
+    |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation. Gain {one} |Amulet|.
   ExtraDescription2: |-
     You can |Detonate|, then if you detonated {Value1} or more |Vengeful Spirits|, add a |Spider Lily| to your hand.
 
@@ -626,7 +627,7 @@ KomachiModCloseQuarterDefence:
   Description: |-
     Gain {Block} |Block|.
     Apply {Value1} |Vengeful Spirits|.
-    If target's |Distance| is less than {distanceLimit}: Gain {additionalBlockString} more |Block| and {Value2} |Guided Spirits|.
+    If target's |Distance| is less than {distanceLimit}: Apply {Value3} |Temporary Firepower Down| and gain {Value2} |Guided Spirits|.
 
 KomachiModHalfLife3:
   Name: Short Life Expectancy
