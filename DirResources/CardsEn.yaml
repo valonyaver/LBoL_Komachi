@@ -187,7 +187,7 @@ KomachiModTasteOfDeath:
     Deal {Damage} damage.
 
 KomachiModPushDraw:
-  Name: Pusback Draw
+  Name: Pushback Draw
   Description: |-
     You can |Displace| by +{Value1}.
     Draw cards equal to that enemy's |Distance|.
@@ -646,9 +646,9 @@ KomachiModDistanceCloser:
   Description: |-
     |Displace| by up to -{Value1}.
     Inflict {Value2} |Vengeful Spirits| for every level of |Displacement|.
-    |Release| {Value2}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
+    |Release| {releaseCost}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
   ExtraDescription1: |-
-    |Release| {Value2}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
+    |Release| {releaseCost}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
 
 KomachiModEthicallySourcedBreak:
   Name: Ethically Sourced Break
@@ -662,7 +662,7 @@ KomachiModInfernoTempest:
   Name: Souls at the end of the Road
   Description: |-
     |Exile| every card from your hand, draw pile, and discard pile.
-    Gain {Value1} |Divine Spirit{Value1:plural one='' other='s'}| for each card exiled from the hand.
+    Gain {Value3} |Divine Spirit{Value1:plural one='' other='s'}| for each card exiled from the hand.
     Gain {Value1} |Guided Spirit{Value1:plural one='' other='s'}| for each card exiled from the draw pile.
     Inflict {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}| to each enemy for each card exiled from the discard pile.
     At the start of {PlayerName}'s next turn, choose up to {Value2} non-|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.

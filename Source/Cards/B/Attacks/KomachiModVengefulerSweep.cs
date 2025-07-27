@@ -68,7 +68,7 @@ namespace KomachiMod.Cards
         public string ExtraDescription4 => LocalizeProperty("ExtraDescription4", decorated: true, required: false);
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, releaseCost1);
         public int attackTimes = 2;
-        public int releaseCost1 = 6;
+        public int releaseCost1 = 4;
         public int releaseCost2 = 12;
 
 

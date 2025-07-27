@@ -1,3 +1,20 @@
+## 0.3.5
+- Added Spanish translation. Thanks to xerox asutnima for making it!
+- Some english text mistakes were fixed.
+- Changed Abundant Floating Spirits' first release cost from 6 -> 4.
+- No hard feelings block changed from 14 (17) -> 14 (18).
+- Eye of the storm block changed from 14 (18) -> 16 (20).
+- Spirit Barrier upgraded cost changed from BB -> 1B.
+- The divine spirits gained from Souls at the end of the Road for each card in hand changed from 1 (2) -> 2 (3).
+- Scythe of Exorcism damage changed from 16 (22) -> 18 (24).
+- Endless Way block changed from 14 (18) -> 13 (17).
+- Ferriage of the deep fog Vengeful Spirits applied per distance level changed from 3 -> 3 (4).
+
+
+
+## 0.3.4
+- Fixed Souls at the end of the road returning the exiled cards to your deck *after* the draw step. Meaning you draw nothing unless the enemy gave you statuses that turn. It should let you draw cards normally now.
+
 ## 0.3.3
 - Scythe of Exorcism's release effect now gives you an amulet.
 - Shinigami's Finesse now gains accurate on close distances.

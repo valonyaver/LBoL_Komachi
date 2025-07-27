@@ -4,7 +4,7 @@ KomachiModDistanceSe:
 
 KomachiModDistanceBlockSe:
   Name: Flexible Work Schedule
-  Description: Each time an enemy's Distance is changed, gain {Level} |Block| for every unit of change.
+  Description: Each time an enemy's Distance is changed, gain {Level} |Block| for every level of change.
 
 KomachiModDistanceGeneratorSe:
   Name: Hardworking Shinigami
@@ -19,8 +19,8 @@ KomachiModDistanceFlowSe:
   Name: Flow of the Sanzu River
   Description: |-
     Each time an enemy is |Displaced|:
-    - If the Distance change was positive, gain {Level} |Temporary Spirit Up|
-    - If the Distance change was negative, gain {Level} |Temporary Firepower Up|
+    - If the Distance was increased, gain {Level} |Temporary Spirit|
+    - If the Distance was decreased, gain {Level} |Temporary Firepower|
 
 KomachiModReviveSe:
   Name: God of Death
@@ -52,7 +52,7 @@ KomachiModShinigamiTacticsSe:
     Whenever |Manipulate Distance| is played: 
     - If it reduced distance, add {Level} random attack card{Level:plural one='' other='s'} to the hand. 
     - If it increased distance, add {Level} random defence card{Level:plural one='' other='s'} to the hand.
-    {Level:plural one='It |temporarily costs|' other='They |temporarily cost|'} {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
+    {Level:plural one='Their cost' other='Their cost'} is |temporarily reduced| to {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
 
 KomachiModBWBridgeSe:
   Name: Ministry Work
@@ -101,7 +101,7 @@ KomachiModLonelyBoundSpiritSe:
     If |Lonely Bound Spirit| is detonated at the same time as |Vengeful Spirits|, effects that count the amount of spirits detonated will count both.
 
 KomachiModDetonateFirepowerSe:
-  Name: Grudge of the dead.
+  Name: Grudge of the dead
   Description: |-
     Each time |Vengeful Spirits| are |Detonated|, gain {Level} |Firepower|.
 

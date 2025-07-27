@@ -12,7 +12,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(823);
             config.IsPooled = false;
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };

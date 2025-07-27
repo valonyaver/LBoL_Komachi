@@ -60,6 +60,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModGrudgingStrikeDef))]
     public sealed class KomachiModGrudgingStrike : KomachiCard
     {
+        public override bool Triggered => KomachiModUtility.CanReleaseSpirits(this, Value2);
         public override Interaction Precondition()
         {
             return KomachiModUtility.ChooseRelease(this, Value2);

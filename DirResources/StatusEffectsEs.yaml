@@ -1,0 +1,210 @@
+KomachiModDistanceSe:
+  Name: "Distancia {Level}: {DistanceString}"
+  Description: El daño del ataque infligido y recibido por esta unidad es de {MultiplierDescription}.
+
+KomachiModDistanceBlockSe:
+  Name: Horario de Trabajo Flexible
+  Description: Cada vez que se cambia la Distancia de un enemigo, gana {Level} de |Bloqueo| por cada unidad cambiada.
+
+KomachiModDistanceGeneratorSe:
+  Name: Esfuerzo del Shinigami
+  Description: 'Al comienzo del turno de {PlayerName}, si {Level:plural one=''no hay''
+    other=''hay menos de %''} |Manipular Distancia| en la mano, agrega {Level:plural one=''un |Manipular Distancia|
+    '' other=''|Manipular Distancias|''} a la mano{Level:plural one=''.'' other='' hasta
+    que haya %.''}'
+  Brief: 'Al comienzo del turno de {PlayerName} si hay menos de una cantidad de
+    |Manipular Distancias| en la mano, agrega |Manipular Distancia| a la mano hasta que haya tantos.'
+
+KomachiModDistanceFlowSe:
+  Name: Flujo del Río Sanzu
+  Description: |-
+    Cada vez que un enemigo es |Desplazado|:
+    - Si el cambio de distancia es positivo, gana {Level} de |Espíritu Temporal|
+    - Si el cambio de distancia es negativo, gana {Level} de |Poder Temporal|
+
+KomachiModReviveSe:
+  Name: Diosa de la Muerte
+  Description: |-
+    La próxima vez que {PlayerName} sea derrotado en este combate, se curará a la mitad de su vida máxima y gana {flawlessTurns} |Perfección| en su lugar.
+    Se remueve {SelfName} de la biblioteca cuando se aplique el efecto.
+    Siempre que un enemigo sea derrotado, si fue una invocación, gana {Level} de |Barrera|. De lo contrario, cura {Level} de vida.
+
+KomachiModPushNPullSe:
+  Name: Empujar y Tirar
+  Description: |-
+    Al comienzo del turno de {PlayerName}, |Desplaza| a todos los enemigos en -{Level}.
+    Al final del turno de {PlayerName}, |Desplaza| a todos los enemigos en {Level}.
+
+KomachiModSpySpiritSe:
+  Name: Espíritu Espía
+  Description: |-
+    Cuando se cambia la |Distancia| de {OwnerName}, {PlayerName} gana {Level} de |Barrera|.
+
+KomachiModRiversideGardenSe:
+  Name: Jardín de la Ribera
+  Description: |-
+    Siempre que {PlayerName} agrega |Lirios de Araña| durante este combate, se |Mejora|.
+    Al final del combate, cura {Level} de vida por cada |Lirio de Araña| en el |campo de batalla|.
+
+KomachiModShinigamiTacticsSe:
+  Name: Tácticas de Shinigami
+  Description: |-
+    Siempre que se juegue un |Manipular distancia|: 
+    - Si se redujo la distancia, agrega {Level} carta{Level:plural one=' de ataque aleatorio' other='s de ataques aleatorios'} a la mano. 
+    - Si se aumentó la distancia, agrega {Level} carta{Level:plural one=' de defensa aleatorio' other='s de defensa aleatorios'} a la mano.
+    {Level:plural one=' |Cuesta temporalmente|' other='|Cuestan Temporalmente|'} {Mana}, tiene{Level:plural one='' other='n'} |Exilio| y |Etéreo|.
+
+KomachiModBWBridgeSe:
+  Name: Ministerio del Trabajo
+  Description: Al comienzo del turno de {PlayerName}, gana {Level} {Mana}.
+  Brief: Al comienzo del turno de {PlayerName}, gana {Mana}.
+
+KomachiModVengefulSpiritSe:
+  Name: Espíritu Vengativo
+  Description: |-
+    Al comienzo del turno de {OwnerName}, reduce la duración de {SelfName} en 1.
+    Después de {Duration} turnos, se remueve {SelfName} e inflige el doble de su valor como daño de ataque |Certero|. 
+    Inflige {damageDealt} de daño.
+  Brief: |-
+    Un efecto de estado que casi siempre se aplica durante tres turnos. Aplicarlo posteriormente a un enemigo no modificará su duración..
+    Al comienzo del turno, reduce la duración de {SelfName} en 1.
+    Cuando se elimina este efecto de estado, inflige el doble de su valor actual como daño de ataque |Certero| a su propietario.
+    Nota: Este daño de ataque se ve afectado por los modificadores de daño tanto del enemigo como del jugador.
+
+KomachiModGuidedSpiritSe:
+  Name: Espíritu Guiado
+  Description: |-
+    Al final del turno de {PlayerName}, inflige {damageDealt} de daño de ataque |Certero| al enemigo con menos vida ({targetName}) y luego pierde 1 {SelfName}.
+  Brief: |-
+    Al final del turno de {PlayerName}, inflige daño |Certero| al enemigo con menos vida igual al nivel de {SelfName}, luego pierde 1 {SelfName}.
+
+KomachiModDivineSpiritSe:
+  Name: Espíritu Divino
+  Description: |-
+    Al final del turno de {PlayerName}, gana {Level} de |Barrera|, luego reduce a la mitad el nivel de {SelfName}, redondeado hacia abajo.
+  Brief: |-
+    Al final del turno del propietario, esa unidad gana |Barrera| igual al nivel de {SelfName} y luego reduce a la mitad el nivel de {SelfName}, redondeado hacia abajo.
+
+KomachiModBoundSpiritsOfEarthSe:
+  Name: Espíritus Ligados a la Tierra
+  Description: |-
+    Al final del turno de {PlayerName}, aplica {Level} |Espíritus Vengativos| a cada enemigo que tenga |Espíritus Vengativos|.
+
+KomachiModLonelyBoundSpiritSe:
+  Name: Espíritu Solitario Atado
+  Description: |-
+    Siempre que se apliquen |Espíritus Vengativos| a {OwnerName}, se aumenta el conteo de |Espíritu Solitario Atado| en la misma cantidad * {Level}. 
+    |Espíritu Solitario Atado| solo se detonará cuando los |Espíritus Vengativos| se detonen en {OwnerName} con un efecto de carta, lo que inflige {damageDealt} de daño.
+  Brief: |-
+    Siempre que se apliquen |Espíritus Vengativos| sobre su propietario, se aumenta el conteo de |Espíritu Solitario Atado| en la misma cantidad. 
+    |Espíritu Solitario Atado| solo se detonará cuando los |Espíritus Vengativos| son |Detonados| del propietario con el efecto de una carta.
+    Si un |Espíritu Solitario Atado| se detona al mismo tiempo que los |Espíritus Vengativos|, los efectos que cuentan la cantidad de espíritus detonados contarán para ambos.
+
+KomachiModDetonateFirepowerSe:
+  Name: El Rencor de los Muertos
+  Description: |-
+    Cada vez que los |Espíritus Vengativos| son |Detonados|, gana {Level} de |Poder|.
+
+KomachiModTalkativeFerrymanSe:
+  Name: Barquera Conversadora
+  Description: |-
+    Al comienzo del turno de {PlayerName}, gana {Level} |Espíritus Guiados|.
+
+KomachiModGuidedGeneratorNextTurnSe:
+  Name: Gana Espíritus Guiados
+  Description: |-
+    Al comienzo del siguiente turno de {PlayerName}, gana {Level} |Espíritus Guiados|.
+
+KomachiModDetonateInfiniteSe:
+  Name: Cancelado para Siempre
+  Description: |-
+    Cada vez que un |Espíritu Vengativo| es |Detonado|, aplica {Level} |Espíritus Vengativos| a ese objetivo.
+
+KomachiModSpiritReturnSe:
+  Name: Retorno de los Espíritus
+  Description: |-
+    Al comienzo del turno de {PlayerName}, coloca la {Level} carta{Level:plural one='' other='s'} más a la derecha de la mano en la parte inferior de la pila de robo, luego agrega a la mano hasta {Level} carta{Level:plural one='' other='s'} de la pila de |Exilio| con un coste total menor a 2. Cuesta {Mana} maná más y se retira del combate al jugarla.
+
+KomachiModEthicallySourcedBreakSe:
+  Name: Descanso de Procedencia Ética
+  Description: |-
+    Al comienzo del próximo turno de {PlayerName}, se omite el turno de {PlayerName}.
+    Después de eso, al comienzo del siguiente turno de {PlayerName}, gana {manaAmount} y roba {Count} cartas.
+
+KomachiModInfernoTempestSe:
+  Name: Almas al Final del Camino
+  Description: |-
+    Al comienzo del siguiente turno de {PlayerName}, elige hasta {Value2} cartas exiliadas no Básicas. Se agrega{Level:plural one='' other='n'} aleatoriamente a la mano, pila de robo y pila de descartes.
+    
+KomachiModHellFreezeSe:
+  Name: Calor Gélido del Infierno
+  Description: |-
+    Cada vez que se detonan |Espíritus Vengativos| a {OwnerName}, aplica |Frío| a {OwnerName}. (Este efecto no se acumula)
+
+KomachiModMidsummerLilySe:
+  Name: Lirio Solitario
+  Description: |-
+    Después de que {PlayerName} juegue un |Lirio de Araña|, agrega {Level} |Flor{Level:plural one='' other='es'} de Verano| a la mano.
+
+KomachiModLifespanEndSe:
+  Name: Fin del Ciclo de la Vida
+  Description: |-
+    Al final del turno de {PlayerName}: Recibe {Level} de daño.
+
+KomachiModGoldSarcophagusSe:
+  Name: Sarcófago-Galera de Oro
+  Description: |-
+    Al comienzo del turno de {PlayerName} reduce la duración de cada carta de la {SelfName}. Cuando la duración de una carta llegue a {returnTime}, agrega a la mano de {PlayerName}.
+    Cartas en la {SelfName}: {SarcophagusContent}
+
+KomachiModExileDoppelgangerSe:
+  Name: Fauna Extinta del Río Sanzu
+  Description: |-
+    Siempre que {PlayerName} juegue una carta:
+    - |Si una carta con el mismo nombre no está en la pila del Exilio|: Agrega una |Copia| a la pila de exilio. Cuesta {Mana} y se retira del combate tras ser jugada. (Puedes usar {Count} ve{Count:plural one='z' other='ces'} más en este turno.)
+    - |Si una carta con el mismo nombre está en la pila del Exilio|: Puedes agregarlo a la mano. (Puedes usar {count2} ve{count2:plural one='z' other='ces'} más en este turno.)
+    Solo puedes usar cada efecto de {SelfName} {Level:ordinal one='una vez' two='dos veces' few='tres veces' other='% veces'} por turno.
+
+KomachiModEikiSe:
+  Name: Shinigami Sermoneado
+  Description: |-
+    {PlayerName} no paga el coste de |Liberar| de las cartas.
+#Keywords
+
+KomachiDistanceKeyword:
+  Name: Distancia
+  Brief: |-
+    La distancia es un efecto de estado que se aplica a los enemigos y representa su proximidad al jugador.
+    Cuanto más cerca esté un enemigo, más daño infligirá y recibirá. Cuanto más lejos esté, menos daño infligirá y recibirá.
+
+    Hay 5 niveles de distancia (el valor predeterminado es 3 si no se aplica ningún estado):
+    - Muy Cerca (1): Inflige y recibe +100% de daño por ataques.
+    - Cerca (2): Inflige y recibe +50% de daño por ataques.
+    - Normal (3): Sin modificador de daño (por defecto).
+    - Lejos (4): Inflige y recibe -15% de daño por ataques.
+    - Muy Lejos (5): Inflige y recibe -30% de daño por ataques.
+
+KomachiDisplacementKeyword:
+  Name: Desplazar X
+  Brief: |-
+    Cambia la |Distancia| actual del objetivo en X. Los enemigos sin distancia tienen su distancia tratada como 3
+    El desplazamiento también se refiere en general a cualquier instancia de cambio de distancia de un enemigo.
+
+KomachiDetonationKeyword:
+  Name: Detonar
+  Brief: |-
+    Remueve los |Espíritus Vengativos| del enemigo y le inflige daño.
+
+KomachiModReleaseKeyword:
+  Name: Liberar X
+  Brief: |-
+    Remueve X cantidad de |Espíritus Guiados| y/o |Espíritus Divinos| de {PlayerName} al jugar* esta carta para activar opcionalmente este efecto.
+    Los |Espíritus Guiados| tienen prioridad primero.
+    *Debes tener la cantidad requerida antes de jugar la carta.
+    
+KomachiAutoDiscardKeyword:
+  Name: Auto-Descarte
+  Brief: |-
+    Cuando estés a punto de *llenar* la mano, |Descarta| esta carta.
+    La carta más a la izquierda de la mano con |Auto-Descarte| se |Descarta| primero.
+    *<i>Debido a las limitaciones del mod, esto funciona de forma diferente al autoexilio, donde el descarte ocurre al completar la mano en lugar de al excederla.

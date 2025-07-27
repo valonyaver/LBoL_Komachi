@@ -1,0 +1,22 @@
+KomachiModUltA:
+  Title: Shinigami
+  Content: Retorno del Higan
+  Description: |-
+    |Desplaza| a todos los enemigos para que tengan {Value1} de |Distancia|.
+    Agrega una |Manipular Distancia| a la mano por cada enemigo.
+    Inflige {Damage} de daño a cada enemigo. |Certero|
+
+KomachiModUltB:
+  Title: Signo de Espíritu
+  Content: El Despertar de los Antiguos Espíritus Terrenales
+  Description: |-
+    Remueve todos los |Amuletos| de cada enemigo
+    Aplica {Value1} |Espíritus Vengativos| a cada enemigo.
+    |Detona| a cada enemigo.
+    Gana |Espíritus Divinos| igual a la cantidad de |Espíritus Vengativos| detonados.
+
+KomachiModUltHalfLife:
+  Title: Trágico Destino
+  Content: Corta Esperanza de Vida - tus Días están Contados
+  Description: |-
+    Reduce a la mitad la vida actual del enemigo.

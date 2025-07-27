@@ -34,8 +34,9 @@ namespace KomachiMod.Cards
             config.Value1 = 2;
             config.UpgradedValue1 = 4;
 
-            // Release cost and spirit infliction
+            // Spirit infliction
             config.Value2 = 3;
+            config.UpgradedValue2 = 4;
 
             config.Illustrator = "@evermythic";
 
@@ -67,9 +68,11 @@ namespace KomachiMod.Cards
         public int firepowerValue = 1;
         public int firepowerCond = 6;
 
+        public int releaseCost = 3;
+
         public override Interaction Precondition()
         {
-            return KomachiModUtility.ChooseRelease(this, Value2);
+            return KomachiModUtility.ChooseRelease(this, releaseCost);
         }
         public Interaction Precondition2()
         {
@@ -119,6 +122,7 @@ namespace KomachiMod.Cards
             Card releaseCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(releaseCard))
             {
+                yield return new KomachiReleaseAction(this, releaseCost);
                 KomachiModVengefulSpiritSe spirits;
                 selector.SelectedEnemy.TryGetStatusEffect(out spirits);
                 if (spirits != null)

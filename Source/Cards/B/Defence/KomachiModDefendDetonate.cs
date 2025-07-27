@@ -35,7 +35,7 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
 
             config.Block = 14;
-            config.UpgradedBlock = 17;
+            config.UpgradedBlock = 18;
 
             // Amount of vengeful spirits inflicted
             config.Value1 = 0;

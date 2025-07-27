@@ -55,9 +55,9 @@ As a Shinigami and a ferry of the dead, Komachi has the ability to connect with 
 This is mainly a black Komachi ability, however, opening up the white pool will give you access to stronger Black/White cards for this mechanic. There is also an ability that lets you add a random B/W card to your hand without ever having white mana in your pool.
 
 # Shortcomings and other notes
-many cards and status effects will have missing art, or have placeholder art made by yours truly. Many attack cards also lack an animation, but I tried to add animations to the more impactful attacks at least. I hope you can forgive this.
+Some cards and status effects will have missing art, or have placeholder art made by yours truly. Many attack cards also lack an animation, but I tried to add animations to the more impactful attacks at least. I hope you can forgive this.
 
-As this is only the first public version of the mod, and I only began modding 1 month ago, the balance of the mod might be a bit wack. I tried to keep the balance of the cards close to vanilla characters, but Komachi might still be a lot stronger simply due to the fact that I focused most cards on synergy with the mechanic rather than having lots of random generic cards like in vanilla. Also, distance giving a 100% attack bonus, and stacking multiplicatively with vulnerable (Distance of 1 + vulnerable will give a 300% damage bonus on enemies rather than 250%, due to... reason), is just strong as hell no matter how much I try to balance it. But I rather have a strong and fun mod rather than a miserably unfun weak character.
+As this is only the first public version of the mod, and I only began modding 1 month ago, the balance of the mod might be a bit wack. And any of it is subject to change. I tried to keep the balance of the cards close to vanilla characters, but Komachi might still be a lot stronger simply due to the fact that I focused most cards on synergy with the mechanic rather than having lots of random generic cards like in vanilla. Also, distance giving a 100% attack bonus, and stacking multiplicatively with vulnerable (Distance of 1 + vulnerable will give a 300% damage bonus on enemies rather than 250%, due to... reason), is just strong as hell no matter how much I try to balance it. But I rather have a strong and fun mod rather than a miserably unfun weak character.
 
 By the words of my fellow modder rm -rf Maxx "c": `"keeping it balanced" This game is less balanced than a Jenga tower in the middle of a magnitude 8.5 earthquake, give up all hope.`
 
@@ -76,6 +76,7 @@ All art is credited under `Art.MD`. If Art.MD isnt in the mod files, then you ca
 Thanks in particular to IcedLemon for making the icon for the Titanic exhibit for this mod. Thanks to the every touhou artist who has drawn wonderful art of my beloved.
 
 # Special Thanks
+- xerox asutnima: For making the Spanish translation.
 - rm -rf Maxx "c": For making the sample character template that made it so easy to develop this mod.
 - Vengyre: Providing me a spreadsheet template that made it much easier to organize my cards. Also programming help
 - Worldsoul: Making a mod for my other favourite character, Shou, which encouraged me to make this mod. Also having his github repository public was helpful for referencing how some effects are implemented in a mod.

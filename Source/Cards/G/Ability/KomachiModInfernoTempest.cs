@@ -32,8 +32,9 @@ namespace KomachiMod.Cards
             config.Value1 = 1;
             config.UpgradedValue1 = 2;
 
-            // Firepower amount
+            // Cards chosen
             config.Value2 = 4;
+            config.UpgradedValue2 = 6;
 
             config.Illustrator = "東天紅";
 
@@ -59,6 +60,9 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModInfernoTempestDef))]
     public sealed class KomachiModInfernoTempest : KomachiCard
     {
+        // Divine Spirit Amount
+        protected override int BaseValue3 { get => 2; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 3; set => base.BaseUpgradedValue3 = value; }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             Card[] discardPile = Battle.DiscardZone.ToArray();
@@ -78,7 +82,7 @@ namespace KomachiMod.Cards
                 yield return new ApplyVengefulSpiritAction(this, enemy, di * Value1);
             }
             yield return BuffAction<KomachiModGuidedSpiritSe>(dr * Value1);
-            yield return BuffAction<KomachiModDivineSpiritSe>(hn * Value1);
+            yield return BuffAction<KomachiModDivineSpiritSe>(hn * Value3);
             yield return BuffAction<KomachiModInfernoTempestSe>(Value2);
 
             yield break;

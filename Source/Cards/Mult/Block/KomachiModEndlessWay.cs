@@ -32,8 +32,8 @@ namespace KomachiMod.Cards
             config.Type = CardType.Defense;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Block = 14;
-            config.UpgradedBlock = 18;
+            config.Block = 13;
+            config.UpgradedBlock = 17;
 
             // Push Amount
             config.Value1 = 2;

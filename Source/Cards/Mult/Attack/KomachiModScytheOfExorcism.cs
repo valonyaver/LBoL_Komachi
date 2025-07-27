@@ -35,8 +35,8 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 16;
-            config.UpgradedDamage = 22;
+            config.Damage = 18;
+            config.UpgradedDamage = 24;
 
             // Amount needed and generated on release.
             config.Value1 = 4;

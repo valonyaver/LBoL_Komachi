@@ -1,0 +1,16 @@
+KomachiModExhibitR:
+  Name: El Titanic
+  Description: |-
+    Agrega {BaseMana} al maná base. Cartas exclusivas de |Koamchi| se agregan al grupo de cartas.
+    Al comienzo del primer turno de cada combate, agrega una |Manipular Distancia| a la mano.
+    Cuando un enemigo es derrotado, agrega |Lirio de Araña| a la mano.
+    Las recompensas de <sprite="Point" name="Gold"> del combate otorgan {Value1}% más de <sprite="Point" name="Gold">.
+  FlavorText: ¡Crucero de lujo por las costas del Higan! ¡Oferta por tiempo limitado con un 10 % de descuento!
+
+KomachiModExhibitB:
+  Name: Ojos de Shinigami
+  Description: |-
+    Agrega {BaseMana} al maná base. Cartas exclusivas de |Komachi| se agregan al grupo de cartas.
+    Al comienzo del combate, gana {Value1} de |Espíritu|, luego retira todos los |Amuletos| y aplica {Value3} de |Débil| y |Vulnerable| en cada "|Espíritu|" enemigo.
+    Al final del tercer turno de {PlayerName}, pierde {Value1} de |Espíritu| y aplica {Value2} de |Vulnerable| a todos los enemigos.
+  FlavorText: A costa de la mitad de tu vida, puedes ver el nombre y la fecha de fallecimiento de todas las personas con las que te cruzas.
