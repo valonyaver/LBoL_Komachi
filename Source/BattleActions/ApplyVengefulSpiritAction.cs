@@ -1,6 +1,7 @@
 using KomachiMod.Source.BattleActions.EventManager;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
@@ -14,60 +15,61 @@ using static UnityEngine.GraphicsBuffer;
 namespace KomachiMod.BattleActions
 {
     public sealed class ApplyVengefulSpiritAction : SimpleEventBattleAction<ApplyVengefulSpiritEventArgs>
-    {             
-        internal ApplyVengefulSpiritAction(Card source, Unit target, int amount)
-		{
-			Args = new ApplyVengefulSpiritEventArgs
-            { 
-                Card = source,
-                Target = target,
-                Amount = amount,
-                ActionSource = source
-			};
-		}
-        internal ApplyVengefulSpiritAction(StatusEffect source, Unit target, int amount)
+    {
+        internal ApplyVengefulSpiritAction(GameEntity source, Unit target, int amount, int duration = 0)
         {
             Args = new ApplyVengefulSpiritEventArgs
             {
-                statusEffect = source,
                 Target = target,
                 Amount = amount,
-                ActionSource = source
+                ActionSource = source,
+                Duration = duration
             };
         }
-        internal ApplyVengefulSpiritAction(Unit target, int amount)
+
+        internal ApplyVengefulSpiritAction(Unit target, int amount, int duration = 0)
         {
             Args = new ApplyVengefulSpiritEventArgs
             {
                 Target = target,
-                Amount = amount
+                Amount = amount,
+                Duration = duration
             };
         }
 
         protected override void MainPhase()
         {
-            KomachiModVengefulSpiritSe spirits;
-            Args.Target.TryGetStatusEffect(out spirits);
-            if (spirits == null)
+            if (Args.Target.TryGetStatusEffect<KomachiModVengefulSpiritSe>(out var spirits))
+            {
+                Args.oldAmount = spirits.Count;
+            }
+            else
             {
                 Args.oldAmount = 0;
                 Args.applying = true;
             }
-            else Args.oldAmount = spirits.Count;
             Debug.Log($"Applying {Args.Amount} spirits");
             var applyStatus = new ApplyStatusEffectAction<KomachiModVengefulSpiritSe>
                 (Args.Target, count: Args.Amount, duration: 3, startAutoDecreasing: true, occupationTime: 0.5f);
             React(applyStatus);
-            Args.Effect = applyStatus.Args.Effect;
-            
         }
 
         protected override void PostEventPhase()
         {
-            if (Args.Target.HasStatusEffect<KomachiModVengefulSpiritSe>())
+            if (Args.Target.TryGetStatusEffect<KomachiModVengefulSpiritSe>(out var spirits))
             {
+                Args.Effect = spirits;
                 if (Args.applying) Args.applied = true;
                 else Args.stacked = true;
+                if (Args.Duration > 0)
+                {
+                    Debug.Log($"Increase duration of spirits by {Args.Duration}");
+                    spirits.Duration += Args.Duration;
+                    if (spirits.Duration > 1)
+                    {
+                        Args.Effect.Highlight = false;
+                    }
+                }
             }
             Trigger(KomachiEventsManager.AppliedVengefulSpirit);
         }

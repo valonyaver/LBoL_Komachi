@@ -10,9 +10,11 @@ namespace KomachiMod.BattleActions
 	{
         public Unit Target;
         public StatusEffect Effect;
-        public Card Card { get; internal set; }
-		public StatusEffect statusEffect;
         public int Amount { get; internal set; }
+		/// <summary>
+		/// Increases duration of vengeful spirits by its amount.
+		/// </summary>
+		public int Duration;
 		public int oldAmount;
 		/// <summary>
 		/// First time applying effect. As target doesn't have it.

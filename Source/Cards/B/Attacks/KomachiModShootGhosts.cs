@@ -1,12 +1,14 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.KomachiUlt;
 using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections;
@@ -79,6 +81,7 @@ namespace KomachiMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return PerformAction.Spell(Battle.Player, nameof(KomachiModUltShootGhosts));
             selector.SelectedEnemy.TryGetStatusEffect<KomachiModVengefulSpiritSe>(out var spirits);
             int spiritCount = KomachiModUtility.GetVengefulCount(selector.SelectedEnemy);
             yield return base.AttackAction(selector, base.GunName);

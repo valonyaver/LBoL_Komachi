@@ -110,7 +110,7 @@ namespace KomachiMod.StatusEffects
 
         public void OnDetonatingVengefulSpirits(DetonateVengefulSpiritEventArgs args)
         {
-            if (args.Target == Owner && args.Card != null && args.Effect.GetType() == typeof(KomachiModVengefulSpiritSe))
+            if (args.Target == Owner && args.detonatedByEffect && args.Effect.GetType() == typeof(KomachiModVengefulSpiritSe))
             {
                 args.amountDetonated += Count;
                 var action = new RemoveStatusEffectAction(this);

@@ -1,6 +1,7 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using KomachiMod.KomachiUlt;
 using KomachiMod.Source.BattleActions.Helpers;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
@@ -42,7 +43,7 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 21;
+            config.Damage = 22;
             config.UpgradedDamage = 28;
 
             config.Value1 = 1;
@@ -198,6 +199,7 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return PerformAction.Spell(Battle.Player, nameof(KomachiModUltFinalJudgement));
             Card card = KomachiModUtility.GetPreconditionCard(precondition);
             if (card != null || card.GetType() != typeof(KomachiModManDistance0))
             {

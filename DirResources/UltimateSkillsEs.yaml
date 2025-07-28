@@ -20,3 +20,18 @@ KomachiModUltHalfLife:
   Content: Corta Esperanza de Vida - tus Días están Contados
   Description: |-
     Reduce a la mitad la vida actual del enemigo.
+
+KomachiModUltShootGhosts: # Replace with Spanish later
+  Title: Soul Sign
+  Content: Scythe of Roaming Spirits
+  Description: |-
+    Deal {Damage} damage. {SelfName} deals {Value1} more damage for every |Vengeful Spirit| on the target.
+    If the target is defeated, apply |Vengeful Spirits| equal to the amount that enemy had on each other enemy.
+
+KomachiModUltFinalJudgement:
+  Title: Death Sign
+  Content: Scythe of Final Judgement
+  Description: |-
+    |Displace| to any distance.
+    Deal {Damage} damage. Damage reduction of far distances increases this card's damage by double the amount instead.
+    When an enemy is defeated using {SelfName}, add a |Spider Lily| to the hand.

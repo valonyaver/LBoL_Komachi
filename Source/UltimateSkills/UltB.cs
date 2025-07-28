@@ -62,7 +62,7 @@ namespace KomachiMod.KomachiUlt
             int divineSpiritAmount = 0;
             foreach (var enemy in selector.GetEnemies(Battle))
             {
-                var detonateAction = new DetonateVengefulSpiritAction(enemy);
+                var detonateAction = new DetonateVengefulSpiritAction(enemy, true);
                 yield return detonateAction;
                 divineSpiritAmount += detonateAction.Args.amountDetonated;
             }

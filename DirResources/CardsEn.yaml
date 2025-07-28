@@ -427,7 +427,7 @@ KomachiModFishing:
 KomachiModGuidingSanzu:
   Name: Guiding Sanzu
   Description: |-
-    Gain {Value1} |Guiding Spirits|.
+    Gain {Value1} |Guided Spirits|.
 
 KomachiModBoomBenefits:
   Name: Siren’s Bonus
@@ -448,7 +448,7 @@ KomachiModSpiritDefence:
   Name: Human Spirits Passing By
   Description: |-
     Gain {Block} |Block|.
-    Gain {Value1} |Guiding Spirits|.
+    Gain {Value1} |Guided Spirits|.
 
 KomachiModVengefulSweep:
   Name: Spirits of the Firm

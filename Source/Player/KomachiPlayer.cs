@@ -9,6 +9,9 @@ using LBoLEntitySideloader.Resource;
 using UnityEngine;
 using KomachiMod.ImageLoader;
 using KomachiMod.Localization;
+using LBoL.Core.Battle;
+using LBoL.EntityLib.EnemyUnits.Character;
+using LBoL.Presentation.Units;
 //using KomachiMod.BattleActions;
 
 namespace KomachiMod
@@ -40,6 +43,17 @@ namespace KomachiMod
         [EntityLogic(typeof(KomachiModDef))]
         public sealed class KomachiMod : PlayerUnit 
         {
+            protected override void OnEnterBattle(BattleController battle)
+            {
+                foreach(var enemy in battle.AllAliveEnemies)
+                {
+                    if (enemy.GetType() == typeof(Siji))
+                    {
+                        UnitView view = GetView<UnitView>();
+                        view.Chat("Ah! Miss Eiki! I swear I'm not slacking off!", 2, LBoL.Presentation.UI.Widgets.ChatWidget.CloudType.LeftTalk);
+                    }
+                }
+            }
         }
     }
 }

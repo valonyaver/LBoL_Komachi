@@ -69,7 +69,7 @@ namespace KomachiMod.Cards
 				DamageInfo damageInfo = args.DamageInfo;
 				if (damageInfo.Damage > 0f)
                 {
-                    yield return new ApplyVengefulSpiritAction(this, args.Target, (int) damageInfo.Damage);
+                    yield return new ApplyVengefulSpiritAction(this, args.Target, (int) damageInfo.Damage, 1);
                 }
 			}
 			yield break;
@@ -79,11 +79,6 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector, base.GunName);
-            var spirit = selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>();
-            if (spirit != null)
-            {
-                selector.SelectedEnemy.GetStatusEffect<KomachiModVengefulSpiritSe>().Duration++;
-            }
             yield break;
         }
     }

@@ -59,8 +59,7 @@ namespace KomachiMod.Cards
             }
             else
             {
-                yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, spirits.Count);
-                spirits.Duration += 3;
+                yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, spirits.Count, 3);
             }
         }
     }

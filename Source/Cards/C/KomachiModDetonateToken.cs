@@ -52,7 +52,7 @@ namespace KomachiMod.Cards
         public bool chooseDontDetonate;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new DetonateVengefulSpiritAction(selector.SelectedEnemy);
+            yield return new DetonateVengefulSpiritAction(this, selector.SelectedEnemy);
         }
     }
 }

@@ -27,11 +27,12 @@ namespace KomachiMod.BattleActions
         /// MAKE SURE THAT IF YOU ARE CALLING THIS FROM A CARD, YOU USE THE OTHER OVERRIDE VERSION.
         /// </summary>
         /// <param name="target"></param>
-        internal DetonateVengefulSpiritAction(Unit target)
+        internal DetonateVengefulSpiritAction(Unit target, bool detonateByEffect = false)
         {
             Args = new DetonateVengefulSpiritEventArgs
             {
-                Target = target
+                Target = target,
+                detonatedByEffect = detonateByEffect
             };
         }
 
