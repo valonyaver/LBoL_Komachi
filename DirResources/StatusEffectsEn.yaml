@@ -1,6 +1,6 @@
 KomachiModDistanceSe:
   Name: "Distance {Level}: {DistanceString}"
-  Description: Attack Damage inflicted and received by this unit is {MultiplierDescription}.
+  Description: Attack Damage inflicted and received by this enemy is changed by {MultiplierDescription}.
 
 KomachiModDistanceBlockSe:
   Name: Flexible Work Schedule
@@ -49,7 +49,7 @@ KomachiModRiversideGardenSe:
 KomachiModShinigamiTacticsSe:
   Name: Shinigami Tactics
   Description: |-
-    Whenever |Manipulate Distance| is played: 
+    After a |Manipulate Distance| is played: 
     - If it reduced distance, add {Level} random attack card{Level:plural one='' other='s'} to the hand. 
     - If it increased distance, add {Level} random defence card{Level:plural one='' other='s'} to the hand.
     {Level:plural one='Their cost' other='Their cost'} is |temporarily reduced| to {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
@@ -149,7 +149,7 @@ KomachiModMidsummerLilySe:
 KomachiModLifespanEndSe:
   Name: Lifespans's End
   Description: |-
-    At the end of {PlayerName}'s turn: Take {Level} damage.
+    At the end of the round: Take {Level} damage.
 
 KomachiModGoldSarcophagusSe:
   Name: Gold Sarcopha-Galley
@@ -161,7 +161,7 @@ KomachiModExileDoppelgangerSe:
   Name: Extinct Fauna of the Sanzu River
   Description: |-
     Whenever {PlayerName} plays a card:
-    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. It costs {Mana} and is removed from combat after being played. (You can use this {Count} more time{Count:plural one='' other='s'} this turn.)
+    - |If a card with the same name is not in the Exile pile|: Add a |Copy| of it to the exile pile. Its cost is reduced to {Mana} and is removed from combat after being played. (You can use this {Count} more time{Count:plural one='' other='s'} this turn.)
     - |If a card with the same name is in the Exile pile|: You can add it to your hand. (You can use this {count2} more time{count2:plural one='' other='s'} this turn.)
     You can only use each effect of {SelfName} {Level:ordinal one='once' two='twice' few='thrice' other='% times'} per turn.
 
@@ -169,6 +169,24 @@ KomachiModEikiSe:
   Name: Lectured Shinigami
   Description: |-
     {PlayerName} does not pay the |Release| cost of cards.
+
+KomachiModLilyHugSe:
+  Name: Lily's Embrace
+  Description: |-
+    After {PlayerName} plays a |Spider Lily|, gain {Level} |Amulet{Level:plural one='' other='s'}|.
+
+KomachiModDisplaceNextTurnSe:
+  Name: Displace Next Turn
+  Description: |-
+    At the start of {OwnerName}'s next turn, displace them by {displaceAmount}.
+
+KomachiModRiversideViewSe:
+  Name: Riverside View
+  Description: |-
+    At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand.
+    |Spider Lilies| apply {Count} less |Poison| to the Player.
+    After {PlayerName} plays a |Spider Lily|, apply {poisonApply} |Poison| to each enemy, then gain {Level} |Firepower|.
+
 #Keywords
 
 KomachiDistanceKeyword:

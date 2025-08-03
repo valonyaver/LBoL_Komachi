@@ -36,6 +36,8 @@ namespace KomachiMod.StatusEffects
         ManaGroup Mana = new ManaGroup() { Any = 1 };
         protected override void OnAdded(Unit unit)
         {
+            Count = Level;
+            count2 = Level;
             base.HandleOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, delegate (UnitEventArgs _)
             {
                 base.Count = base.Level;

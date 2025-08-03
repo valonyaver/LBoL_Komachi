@@ -20,5 +20,7 @@ namespace KomachiMod.Cards.Template
                 return BaseValue3;
             }
         }
+
+        public virtual bool farDistanceInverseDamage => false;
     }
 }

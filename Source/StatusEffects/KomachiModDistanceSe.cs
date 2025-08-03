@@ -1,10 +1,12 @@
 ﻿using Cysharp.Threading.Tasks.Triggers;
 using KomachiMod.BattleActions;
+using KomachiMod.Cards.Template;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
@@ -112,6 +114,26 @@ namespace KomachiMod.StatusEffects
                 }
             }
         }
+        /// <summary>
+        /// Returns double the inverse of the far distance multiplier. 0.85 becomes 1.3, 0.7 becomes 1.6
+        /// </summary>
+        /// <param name="distanceLevel"></param>
+        /// <returns></returns>
+        public static float GetInverseDistanceMultiplier(int distanceLevel)
+        {
+            switch (distanceLevel)
+            {
+                case 4:
+                case 5:
+                    // 1 - 0.7 becomes 0.3, multiply by 2 becomes 0.6. Add it to 1 it becomes 1.6.
+                    float distanceMultiplier = KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel);
+                    float inverseMultiplier = (1 + (1 - distanceMultiplier) * 2);
+                    return inverseMultiplier;
+                default:
+                    Debug.LogWarning("You are trying to use the inverse distance multiplier on an enemy whose distance isn't far.");
+                    return GetDistanceDamageMultiplier(distanceLevel);
+            }
+        }
 
         public string MultiplierPercentage // unused
         {
@@ -133,15 +155,15 @@ namespace KomachiMod.StatusEffects
 
                 if (DamageMultiplier > 1)
                 {
-                    return $"increased by {percentage:0}%";
+                    return $"+{percentage:0}%";
                 }
                 else if (DamageMultiplier < 1)
                 {
-                    return $"reduced by {-percentage:0}%"; // (Quick effect); Negate to avoid double negative ("-30%" to "Reduced by 30%")
+                    return $"−{-percentage:0}%"; // (Quick effect); Negate to avoid double negative ("-30%" to "Reduced by 30%")
                 }
                 else
                 {
-                    return "unchanged";
+                    return "+0%";
                 }
             }
         }
@@ -172,9 +194,19 @@ namespace KomachiMod.StatusEffects
         private void OnDamageReceiving(DamageEventArgs args)
         {
             DamageInfo damageInfo = args.DamageInfo;
+            float damageReceiveMultiplier = DamageMultiplier;
+            if (args.ActionSource is KomachiCard)
+            {
+                var cardSource = args.ActionSource as KomachiCard;
+                if (Level > 3 && cardSource.farDistanceInverseDamage)
+                {
+                    damageReceiveMultiplier = GetInverseDistanceMultiplier(Level);
+                }
+            }
+            
             if (damageInfo.DamageType == DamageType.Attack)
             {
-                damageInfo.Damage = damageInfo.Amount * DamageMultiplier;
+                damageInfo.Damage = damageInfo.Amount * damageReceiveMultiplier;
                 args.DamageInfo = damageInfo;
                 args.AddModifier(this);
             }

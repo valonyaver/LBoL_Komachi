@@ -114,7 +114,7 @@ namespace KomachiMod.StatusEffects
             {
                 args.amountDetonated += Count;
                 var action = new RemoveStatusEffectAction(this);
-                React(action);
+                React(action); 
             }
         }
 

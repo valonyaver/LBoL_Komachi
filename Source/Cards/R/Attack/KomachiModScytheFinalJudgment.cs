@@ -18,6 +18,8 @@ using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using static LBoL.Core.GameMap;
 
 namespace KomachiMod.Cards
 {
@@ -68,7 +70,7 @@ namespace KomachiMod.Cards
     {
         public static Card lastTargeter;
         public Unit lastTargetedEnemy;
-
+        public override bool farDistanceInverseDamage => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.HandleBattleEvent<DamageDealingEventArgs>
@@ -82,7 +84,7 @@ namespace KomachiMod.Cards
         /// <param name="args"></param>
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
         {
-            if (args.ActionSource == this && args.Targets != null)
+            if (args.ActionSource == this && args.Targets != null && args.Cause == ActionCause.OnlyCalculate)
             {
                 bool applyModifier = false;
                 lastTargetedEnemy = args.Targets[0];
@@ -99,31 +101,15 @@ namespace KomachiMod.Cards
                         case 4:
                         case 5:
                             // Divide the multiplier by 0.7 so that when later it gets multiplied by 0.7, it will cancel out. Damage * 1.6 * (0.7 / 0.7)
-                            float inverseMultiplier = GetDoubleInverseDistanceMultiplier(distanceLevel.Level);
+                            float inverseMultiplier = KomachiModDistanceSe.GetInverseDistanceMultiplier(distanceLevel.Level);
                             args.DamageInfo = args.DamageInfo.MultiplyBy(
                                 inverseMultiplier / KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel.Level
                                 ));
                             applyModifier = true;
-                            break; 
+                            break;
                     }
                 }
                 if (applyModifier) args.AddModifier(this);
-            }
-        }
-
-        // Returns double the inverse of the far distance multiplier. 0.85 becomes 1.3, 0.7 becomes 1.6
-        public float GetDoubleInverseDistanceMultiplier(int distanceLevel)
-        {
-            switch (distanceLevel)
-            {
-                case 4:
-                case 5:
-                    // 1 - 0.7 becomes 0.3, multiply by 2 becomes 0.6. Add it to 1 it becomes 1.6.
-                    float distanceMultiplier = KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel);
-                    float inverseMultiplier = (1 + (1 - distanceMultiplier) * 2);
-                    return inverseMultiplier;
-                default:
-                    return 1;
             }
         }
 
@@ -137,7 +123,7 @@ namespace KomachiMod.Cards
             // If distance high, divide by the inverse multiplier since that will be what's applied rather than distance.
             if (currentDistance >= 4)
             {
-                regularDamage = regularDamage / GetDoubleInverseDistanceMultiplier(currentDistance);
+                regularDamage = regularDamage / KomachiModDistanceSe.GetInverseDistanceMultiplier(currentDistance);
             }
             else // Else divide normally.
             {
@@ -175,7 +161,7 @@ namespace KomachiMod.Cards
                 // Get the right multiplications for the target distance.
                 if (targetDistance >= 4)
                 {
-                    damage = damage * GetDoubleInverseDistanceMultiplier(targetDistance);
+                    damage = damage * KomachiModDistanceSe.GetInverseDistanceMultiplier(targetDistance);
                 }
                 else
                 {
@@ -215,8 +201,11 @@ namespace KomachiMod.Cards
                     // otherwise push them away like an introvert
                     yield return new DistanceChangeAction(selector.SelectedEnemy, card.Value1);
                 }
+                yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, GunNameID.GetGunFromId(510), 0.2f);
             }
-            yield return base.AttackAction(selector.SelectedEnemy);
+            var enemies = Battle.EnemyGroup.Alives.ToArray();
+            yield return AttackAction(selector);
+            // yield return new DamageAction(Battle.Player, enemies, Damage, GunName, GunType.Single);
 
             if (selector.SelectedEnemy.IsDead)
             {

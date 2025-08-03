@@ -38,7 +38,7 @@ namespace KomachiMod.KomachiUlt
         public KomachiModUltA()
         {
             base.TargetType = TargetType.AllEnemies;
-            base.GunName = GunNameID.GetGunFromId(4158);
+            base.GunName = GunNameID.GetGunFromId(4650);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)

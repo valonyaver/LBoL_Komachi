@@ -1,0 +1,7 @@
+KomachiModBoss:
+  Title: "테스트"
+  Move:
+    - "공격 a"
+    - "공격 b"
+    - "공격 c"
+    - "공격 d"

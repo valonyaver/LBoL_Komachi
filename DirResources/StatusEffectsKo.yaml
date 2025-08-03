@@ -1,0 +1,214 @@
+KomachiModDistanceSe:
+  Name: "거리 {Level}: {DistanceString}"
+  Description: 이 유닛이 주고받는 공격 피해가 {MultiplierDescription}입니다.
+
+KomachiModDistanceBlockSe:
+  Name: 탄력적 근무
+  Description: 적의 |거리|가 변경될 때마다, 변경된 단계 수만큼 |방어|를 {Level} 얻습니다.
+
+KomachiModDistanceGeneratorSe:
+  Name: 근면한 사신
+  Description: |-
+    {PlayerName}의 턴 시작 시, 손에 있는 |거리 조작|이 {Level} 미만이라면
+    |거리 조작|을 {Level}장 손에 넣습니다.
+
+KomachiModDistanceFlowSe:
+  Name: 삼도천의 흐름
+  Description: |-
+    적이 |이동|할 때마다:
+    - |거리|가 증가했다면 |일시 영력|을 {Level} 얻습니다.
+    - |거리|가 감소했다면 |일시 화력|을 {Level} 얻습니다.
+
+KomachiModReviveSe:
+  Name: 죽음의 신
+  Description: |-
+    이 전투 중 {PlayerName}이 쓰러질 경우, 다음 {Count}번까지 최대 체력의 절반만큼 회복하고 |천의무봉|을 {flawlessTurns} 얻습니다.
+    발동 시 이 능력을 덱에서 제거합니다.
+    적이 쓰러질 때마다, 그것이 소환수였다면 |보호막|을 {Level} 얻고, 아니라면 체력을 {Level} 회복합니다.
+
+KomachiModPushNPullSe:
+  Name: 밀고 당기기
+  Description: |-
+    {PlayerName}의 턴 시작 시, 모든 적을 -{Level} |이동|시킵니다.
+    {PlayerName}의 턴 종료 시, 모든 적을 {Level} |이동|시킵니다.
+
+KomachiModSpySpiritSe:
+  Name: 염탐하는 영혼
+  Description: |-
+    {OwnerName}의 |거리|가 변경될 때마다, {PlayerName}는 |보호막|을 {Level} 얻습니다.
+
+KomachiModRiversideGardenSe:
+  Name: 강변의 정원
+  Description: |-
+    이 전투 중 {PlayerName}이 |피안화|를 얻을 때마다 그것을 |강화|합니다.
+    전투 종료 시, 전장에 있는 |피안화| 1개마다 체력을 {Level} 회복합니다.
+
+KomachiModShinigamiTacticsSe:
+  Name: 사신의 전술
+  Description: |-
+    |거리 조작|을 사용할 때마다:
+    - 거리를 줄였으면 무작위 공격 카드 {Level}장을 손에 넣습니다.
+    - 거리를 늘렸으면 무작위 방어 카드 {Level}장을 손에 넣습니다.
+    해당 카드들은 |일시적으로| 비용이 {Mana}가 되며, |소멸|과 |휘발성|이 붙습니다.
+
+KomachiModBWBridgeSe:
+  Name: 관청 업무
+  Description: |-
+    {PlayerName}의 턴 시작 시, {Mana}를 {Level}개 얻습니다.
+  Brief: 턴 시작 시 {Mana}를 얻습니다.
+
+KomachiModVengefulSpiritSe:
+  Name: 원령
+  Description: |-
+    {OwnerName}의 턴 시작 시 {SelfName}의 지속시간을 1 줄입니다.
+    {Duration}턴 후 이 효과는 제거되며, 현재 수치의 두 배만큼 |명중| 피해를 받습니다.
+    {damageDealt}의 피해를 받습니다.
+  Brief: |-
+    일반적으로 3턴 지속되는 상태이상입니다. 중복 적용 시 지속시간은 갱신되지 않습니다.
+    효과가 제거될 때, 현재 수치의 두 배만큼 |명중| 피해를 대상에게 가합니다.
+    이 피해는 플레이어와 적 양쪽의 피해 증감 효과의 영향을 받습니다.
+
+KomachiModGuidedSpiritSe:
+  Name: 인도된 영혼
+  Description: |-
+    {PlayerName}의 턴 종료 시, 체력이 가장 낮은 적({targetName})에게 |명중| 피해를 {damageDealt} 주고, {SelfName}을 1 잃습니다.
+  Brief: |-
+    턴 종료 시, {SelfName}의 수치만큼 |명중| 피해를 가장 체력이 낮은 적에게 주고 1을 잃습니다.
+
+KomachiModDivineSpiritSe:
+  Name: 신령
+  Description: |-
+    {PlayerName}의 턴 종료 시 |보호막|을 {Level} 얻고, {SelfName}의 수치를 절반(내림)으로 줄입니다.
+  Brief: |-
+    턴 종료 시, {SelfName}의 수치만큼 |보호막|을 얻고, 수치를 절반(내림)으로 줄입니다.
+
+KomachiModBoundSpiritsOfEarthSe:
+  Name: 대지에 묶인 영혼
+  Description: |-
+    {PlayerName}의 턴 종료 시, |원령|이 있는 모든 적에게 |원령|을 {Level} 추가로 줍니다.
+
+KomachiModLonelyBoundSpiritSe:
+  Name: 외로운 망령
+  Description: |-
+    {OwnerName}에게 |원령|이 부여될 때마다, 그 수치 × {Level}만큼 |외로운 망령|이 증가합니다.
+    {OwnerName}에게 카드 효과로 |원령|이 |기폭|될 경우에 |외로운 망령|도 함께 |기폭|되어 피해를 {damageDealt} 줍니다.
+  Brief: |-
+    |원령|이 {OwnerName}에게 부여될 때마다 같은 수치만큼 |외로운 망령|이 증가합니다.
+    |원령|이 카드 효과로 |기폭|될 때에만 함께 발동됩니다.
+    |원령|과 동시에 |기폭|될 경우, 영혼 개수에 따라 피해를 계산하는 효과에 함께 포함됩니다.
+
+KomachiModDetonateFirepowerSe:
+  Name: 망자의 원념
+  Description: |-
+    |원령|이 |기폭|될 때마다 |화력|을 {Level} 얻습니다.
+
+KomachiModTalkativeFerrymanSe:
+  Name: 수다쟁이 뱃사공
+  Description: |-
+    {PlayerName}의 턴 시작 시, |인도된 영혼|을 {Level} 얻습니다.
+
+KomachiModGuidedGeneratorNextTurnSe:
+  Name: 인도된 영혼 획득
+  Description: |-
+    다음 턴 시작 시, |인도된 영혼|을 {Level} 얻습니다.
+
+KomachiModDetonateInfiniteSe:
+  Name: 끝없는 취소
+  Description: |-
+    |원령|이 |기폭|될 때마다, 해당 대상에게 |원령|을 {Level} 부여합니다.
+
+KomachiModSpiritReturnSe:
+  Name: 영혼의 귀환
+  Description: |-
+    {PlayerName}의 턴 시작 시, 손의 오른쪽 {Level}장 카드를 뽑을 카드 더미 맨 아래에 넣고,
+    |소멸| 구역에서 총 비용이 2 미만인 카드를 최대 {Level}장 손에 넣습니다.
+    해당 카드는 비용이 {Mana} 증가하고 사용 시 전투에서 제거됩니다.
+
+KomachiModEthicallySourcedBreakSe:
+  Name: 윤리적인 휴식
+  Description: |-
+    다음 턴 시작 시, {PlayerName}의 턴을 건너뜁니다.
+    그 다음 턴 시작 시, {manaAmount}를 얻고 카드를 {Count}장 뽑습니다.
+
+KomachiModInfernoTempestSe:
+  Name: 길 끝의 영혼
+  Description: |-
+    다음 턴 시작 시, 기본 카드가 아닌 |소멸|된 카드 중 최대 {Value2}장을 선택하여
+    무작위로 손패, 뽑을 카드 더미, 버린 카드 더미에 분산하여 넣습니다.
+
+KomachiModHellFreezeSe:
+  Name: 지옥의 얼어붙은 온기
+  Description: |-
+    {OwnerName}에게 |원령|이 |기폭|될 때마다 {OwnerName}에게 |빙결|을 부여합니다.
+    (이 효과는 중첩되지 않습니다)
+
+KomachiModMidsummerLilySe:
+  Name: 외로운 백합
+  Description: |-
+    {PlayerName}이 |피안화|를 사용한 후, |한여름의 꽃|을 {Level}장 손에 넣습니다.
+
+KomachiModLifespanEndSe:
+  Name: 수명의 끝
+  Description: |-
+    턴 종료 시, 체력을 {Level} 잃습니다.
+
+KomachiModGoldSarcophagusSe:
+  Name: 황금 관선
+  Description: |-
+    {PlayerName}의 턴 시작 시, {SelfName}에 있는 각 카드의 지속시간을 줄입니다.
+    지속시간이 {returnTime}이 되면, 그 카드를 손으로 가져옵니다.
+    {SelfName}에 있는 카드: {SarcophagusContent}
+
+KomachiModExileDoppelgangerSe:
+  Name: 삼도천의 멸종된 생물
+  Description: |-
+    {PlayerName}이 카드를 사용할 때마다:
+    - |같은 이름의 카드가 소멸 구역에 없다면|: 해당 카드의 |복사본|을 소멸구역으로 보냅니다. 해당 카드의 비용은 {Mana}만큼 감소하고 사용 시 전투에서 제거됩니다.
+      (이번 턴에 이 효과는 최대 {Count}번 사용할 수 있습니다.)
+    - |같은 이름의 카드가 소멸 구역에 있다면|: 그것을 손에 넣을 수 있습니다.
+      (이번 턴에 이 효과는 최대 {count2}번 사용할 수 있습니다.)
+    {SelfName}의 각 효과는 턴당 {Level}번까지만 사용할 수 있습니다.
+
+KomachiModEikiSe:
+  Name: 설교 들은 사신
+  Description: |-
+    {PlayerName}은 카드의 |해방| 비용을 지불하지 않습니다.
+
+KomachiDistanceKeyword:
+  Name: 거리
+  Brief: |-
+    거리는 적에게 적용되는 상태이상으로, 플레이어와의 물리적 거리를 나타냅니다.
+    가까울수록 피해를 더 주고 더 받으며, 멀수록 피해를 덜 주고 덜 받습니다.
+
+    거리 단계는 총 5단계이며 (기본은 3입니다):
+    - 매우 가까움 (1): 공격 피해 +100%
+    - 가까움 (2): 공격 피해 +50%
+    - 보통 (3): 변화 없음 (기본값)
+    - 멀다 (4): 공격 피해 -15%
+    - 매우 멀다 (5): 공격 피해 -30%
+
+KomachiDisplacementKeyword:
+  Name: 이동 X
+  Brief: |-
+    대상의 현재 |거리|를 X만큼 변경합니다.
+    거리 상태가 없는 적은 기본적으로 거리 3으로 간주합니다.
+    이동은 일반적으로 적의 거리를 조절하는 모든 행위를 포함합니다.
+
+KomachiDetonationKeyword:
+  Name: 기폭
+  Brief: |-
+    적에게 부여된 |원령|을 제거하고, 그 수치에 따라 대상에게 피해를 줍니다.
+
+KomachiModReleaseKeyword:
+  Name: 해방 X
+  Brief: |-
+    이 카드를 사용할 때 {PlayerName}의 |인도된 영혼| 및/또는 |신령|을 X만큼 제거하여 효과를 발동합니다.
+    |인도된 영혼|이 우선적으로 사용됩니다.
+    ※ 발동 전 필요한 수치를 갖고 있어야 합니다.
+
+KomachiAutoDiscardKeyword:
+  Name: 자동 버림
+  Brief: |-
+    손패가 가득 차기 직전에 이 카드를 |버립니다|.
+    자동 버림이 붙은 카드 중 가장 왼쪽에 있는 카드가 우선 버려집니다.
+    ※ 모드 제한으로 인해 자동 소멸과 달리, 손이 가득 찼을 때가 아니라 가득 차기 "직전"에 발동됩니다.

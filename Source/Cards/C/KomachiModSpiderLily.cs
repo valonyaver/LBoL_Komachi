@@ -125,7 +125,15 @@ namespace KomachiMod.Cards
 		{
 			yield return new GainManaAction(base.Mana);
             yield return BuffAction<TempFirepower>(Value1);
-            yield return new ApplyStatusEffectAction<Poison>(Battle.Player, level: Value2);
+            int poisonAmount = Value2;
+            if (Battle.Player.TryGetStatusEffect<KomachiModRiversideViewSe>(out var riversideView))
+            {
+                poisonAmount -= riversideView.Count;
+            }
+            if (poisonAmount > 0)
+            {
+                yield return new ApplyStatusEffectAction<Poison>(Battle.Player, level: poisonAmount);
+            }
 			yield break;
 		}
     }

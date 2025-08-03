@@ -1,0 +1,791 @@
+﻿# Tokens and choice cards
+KomachiModManDistance:
+  Name: 거리 조작
+  Description: "±{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: |-
+    -{Value1} |이동|. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    +{Value1} |이동|. {extraDescriptionAddition}
+  FlavorText: |-
+    한 발짝 더 나아가는 마음.
+
+KomachiModManDistance2:
+  Name: 거리 조작 2
+  Description: "±{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: |-
+    -{Value1} |이동|. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    +{Value1} |이동|. {extraDescriptionAddition}
+  FlavorText: |-
+    열 발짝 더 나아가는 마음.
+
+KomachiModManDistance3:
+  Name: 거리 조작 3
+  Description: "±{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: |-
+    -{Value1} |이동|. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    +{Value1} |이동|. {extraDescriptionAddition}
+  FlavorText: |-
+    백 발짝 더 나아가는 마음.
+
+KomachiModManDistance4:
+  Name: 거리 조작 4
+  Description: "±{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: |-
+    -{Value1} |이동|. {extraDescriptionAddition}
+  ExtraDescription2: |-
+    +{Value1} |이동|. {extraDescriptionAddition}
+  FlavorText: |-
+    천 발짝 더 나아가는 마음.
+
+KomachiModManDistance0:
+  Name: 거리 조작 없음
+  Description: "{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: "이동하지 않음. {extraDescriptionAddition}"
+  ExtraDescription2: "이동하지 않음. {extraDescriptionAddition}"
+  FlavorText: |-
+    마지막엔 웃는 얼굴로 :)
+
+KomachiModManDistance1AllExcept:
+  Name: 거리 조작 b
+  Description: "대상 외의 모든 적을 ±{Value1} |이동|."
+  UpgradedDescription: "최대 ±{Value2} |이동|."
+  ExtraDescription1: "대상 외 모든 적을 -{Value1} |이동|."
+  ExtraDescription2: "대상 외 모든 적을 +{Value1} |이동|."
+  FlavorText: |-
+    돌아가는 길이라도 괜찮아.
+
+KomachiModManDistance2AllExcept:
+  Name: 거리 조작 b2
+  Description: "대상 외의 모든 적을 ±{Value1} |이동|."
+  UpgradedDescription: "|이동| 최대 ±{Value2}."
+  ExtraDescription1: "대상 외 모든 적을 -{Value1} |이동|."
+  ExtraDescription2: "대상 외 모든 적을 +{Value1} |이동|."
+  FlavorText: |-
+    열 번 돌아가더라도.
+
+KomachiModManDistance3AllExcept:
+  Name: 거리 조작 b3
+  Description: "대상 외의 모든 적을 ±{Value1} |이동|."
+  UpgradedDescription: "|이동| 최대 ±{Value2}."
+  ExtraDescription1: "대상 외 모든 적을 -{Value1} |이동|."
+  ExtraDescription2: "대상 외 모든 적을 +{Value1} |이동|."
+  FlavorText: |-
+    백 번 돌아가도 괜찮아.
+
+KomachiModReleaseNone:
+  Name: 해방 없음
+  Description: |-
+    |해방|할 영혼 없음
+  FlavorText: |-
+    "내 속도대로. 내 방식대로."
+
+KomachiModSpiderLily:
+  Name: 피안화
+  Description: |-
+    {Mana}를 얻습니다.
+    |일시 화력|을 {Value1} 얻습니다.
+    |중독|을 {Value2} 얻습니다.
+    |자동 버림|.
+  FlavorText: |-
+    인간의 원념을 모아 피어난 붉은 꽃.
+
+KomachiModDetonateToken:
+  Name: 기폭
+  Description: |-
+    적 하나를 |기폭|합니다.
+  ExtraDescription1: |-
+    |기폭|하지 않습니다.
+  ExtraDescription2: |-
+    |기폭|합니다.
+  FlavorText: |-
+    TNT만 충분하면 게임이 멈출 수도 있지.
+
+KomachiModShootAndMove:
+  Name: 사격 후 이동
+  Description: |-
+    피해를 {Damage} 줍니다. 
+    ±{Value1} |이동|시킬 수 있습니다.
+  UpgradedDescription: |-
+    피해를 {Damage} 줍니다. 
+    최대 ±{Value1} |이동|시킬 수 있습니다.
+  FlavorText: |-
+    초기 버전은 이거였지만, Act 1 코마치가 덜 수세적으로 보이도록 바꾸었습니다. 인게임에서는 선택 불가.
+
+KomachiModMoveAndShoot:
+  Name: 이동 후 사격
+  Description: |-
+    ±{Value1} |이동|시킬 수 있습니다.
+    피해를 {Damage} 줍니다.
+  UpgradedDescription: |-
+    최대 ±{Value1} |이동|시킬 수 있습니다.
+    피해를 {Damage} 줍니다.
+  NonbattleBaseDescription: |-
+    ±{Value1} |이동|시킬 수 있습니다.
+    피해를 {Damage} 줍니다.
+  UpgradedNonbattleBaseDescription: |-
+    최대 ±{Value1} |이동|시킬 수 있습니다.
+    피해를 {Damage} 줍니다.
+  FlavorText: |-
+    "움직이면 쏜다!
+    …아니, 쏘면 움직일게. 당장.
+    (사실 진심은 아님)"
+
+KomachiModRetreat:
+  Name: 손쉬운 후퇴
+  Description: |-
+    {Value1} |이동|시킬 수 있습니다.
+    |방어|를 {Block} 얻습니다.
+    대상의 |거리|가 {Value3}일 경우 |거리 조작|을 한 장 손에 넣습니다.
+  UpgradedDescription: |-
+    {Value1} |이동|시킬 수 있습니다. 이후 다른 적 모두를 {Value2} |이동|시킬 수 있습니다.
+    |방어|를 {Block} 얻습니다.
+    대상의 |거리|가 {Value3}일 경우 |거리 조작|을 한 장 손에 넣습니다.
+  ExtraDescription1: 대상을 |이동|시키지 않음.
+  ExtraDescription2: 다른 적들을 |이동|시키지 않음.
+
+KomachiModEndlessWay:
+  Name: 끝없는 여로
+  Description: |-
+    {Value1} |이동|시킨 후, 해당 적의 |그레이즈|를 제거합니다.
+    |방어|를 {Block} 얻습니다.
+    |해방| {Value2} 또는 {Value3}: {Value2}개의 영혼을 |해방|하면 |록온| {lockOnAmount} 부여.
+  ExtraDescription1: |-
+    |해방| {Value2}: |록온| {lockOnAmount} 부여.
+  ExtraDescription2: |-
+    |해방| {Value3}: |록온| {lockOnAmount2} 부여.
+
+KomachiModSweep:
+  Name: 쓸어내리는 낫
+  Description: |-
+    모든 적을 -{Value1} |이동|시킵니다.
+    모든 적에게 피해를 {Damage} 줍니다.
+    |거리 조작|을 {Value2}장 손에 넣습니다.
+
+KomachiModDistanceTax:
+  Name: 거리세
+  Description: |-
+    각 적의 |거리|에 따라 다음 효과를 줍니다:
+    1–2: |허약| {Value1}
+    3: |록온| {Value2}, |일시 화력 저하| {Value2}
+    4–5: |취약| {Value3}
+
+KomachiModTasteOfDeath:
+  Name: 죽음의 맛
+  Description: |-
+    -{Value1} |이동|.
+    피해를 {Damage} 줍니다.
+
+KomachiModPushDraw:
+  Name: 밀치고 뽑기
+  Description: |-
+    {Value1} |이동|시킬 수 있습니다.
+    대상 적의 |거리|만큼 카드를 뽑습니다.
+  UpgradedDescription: |-
+    최대 {Value1} |이동|시킬 수 있습니다.
+    대상 적의 |거리|만큼 카드를 뽑습니다.
+  ExtraDescription1: "이동하지 않음."
+
+KomachiModQuickNap:
+  Name: 짧은 낮잠
+  Description: |-
+    체력을 {Value1} 회복합니다.  
+    다음 턴 시작 시 {Mana}를 얻습니다.  
+    {PlayerName}의 턴을 종료합니다.
+
+KomachiModDistanceAttack:
+  Name: 사신의 낫
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    적의 |거리|가 변경될 때마다 버린 카드 더미에 있는 {SelfName}을 손으로 되돌립니다.
+
+KomachiModScytheFinalJudgment:
+  Name: 최후의 판결의 낫
+  Description: |-
+    원하는 거리로 |이동|합니다.  
+    피해를 {Damage} 줍니다.  
+    먼 거리로 인한 피해 감소는 이 카드에 한해 두 배의 피해 증가로 전환됩니다.  
+    이 카드로 적을 처치하면 |피안화|를 손에 넣습니다.
+  UpgradedDescription: |-
+    원하는 거리로 |이동|합니다.  
+    피해를 {Damage} 줍니다.  
+    먼 거리로 인한 피해 감소는 이 카드에 한해 두 배의 피해 증가로 전환됩니다.  
+    이 카드로 적을 처치하면 |피안화|를 2장 손에 넣습니다.
+
+KomachiModShinigamiFinesse:
+  Name: 사신의 기량
+  Description: |-
+    피해를 {Damage}씩 {attackAmount}번 가합니다.  
+    이 카드의 공격 횟수는 대상의 |거리| 단계와 같습니다.  
+    대상의 거리 단계가 {three} 미만이면, 이 공격은 |명중|으로 처리됩니다.
+
+KomachiModDistanceBlock:
+  Name: 유연한 근무 시간표
+  Description: |-
+    적이 |이동|될 때마다, 거리 변화 수치 1단계당 |방어|를 {Value1} 얻습니다.
+
+KomachiModDistanceGenerator:
+  Name: 근면한 사신
+  Description: |-
+    {PlayerName}의 턴 시작 시 손에 |거리 조작|이 없다면  
+    |거리 조작|을 {Value1}장 손에 넣습니다.
+  UpgradedDescription: |-
+    |거리 조작| 1장을 손에 넣습니다.  
+    이후 {PlayerName}의 턴 시작 시 손에 |거리 조작|이 없다면  
+    |거리 조작|을 {Value1}장 손에 넣습니다.
+
+KomachiModDistanceFlow:
+  Name: 삼도천의 흐름
+  Description: |-
+    적이 |이동|될 때마다:  
+    - 거리가 증가했으면 |일시 영력| {Value1} 획득  
+    - 거리가 감소했으면 |일시 화력| {Value1} 획득
+
+KomachiModPushNPull:
+  Name: 밀고 당기기
+  Description: |-
+    {PlayerName}의 턴 시작 시 모든 적을 -{Value1} |이동|시킵니다.  
+    턴 종료 시, 모든 적을 다시 {Value1} |이동|시킵니다.
+  UpgradedDescription: |-
+    |거리 조작|을 손에 1장 넣습니다.  
+    {PlayerName}의 턴 시작 시 모든 적을 -{Value1} |이동|시킵니다.  
+    턴 종료 시, 모든 적을 다시 {Value1} |이동|시킵니다.
+
+KomachiModReviveCard:
+  Name: 죽음의 신
+  Description: |-
+    이번 전투에서 {PlayerName}가 쓰러질 경우 한 번에 한해  
+    최대 체력의 절반만큼 회복하고 |천의무봉|을 {Value2} 얻습니다.  
+    이 효과가 발동되면 {SelfName}은 덱에서 제거됩니다.  
+    적을 처치할 때, 그것이 소환된 적이였다면 |보호막|을 {Value1}, 아니면 체력을 {Value1} 회복합니다.
+  DetailText: "{SelfName}은 전투 중 무작위로 등장하지 않으며 복사될 수 없습니다."
+
+KomachiModRiversideGarden:
+  Name: 강가의 정원
+  Description: |-
+    |피안화|를 손, 뽑을 카드 더미, 버린 카드 더미에 각각 {Value1}장 추가합니다.  
+    이 전투 중 |피안화|를 손에 넣을 때마다 |강화|됩니다.  
+    전투 종료 시 전장에 남아 있는 |피안화| 1장당 체력을 {Value2} 회복합니다.
+
+KomachiModShinigamiTactics:
+  Name: 사신 전술
+  Description: |-
+    |거리 조작|을 사용할 때:  
+    - 거리를 줄였다면 무작위 공격 카드를 손에 1장 추가  
+    - 거리를 늘렸다다면 무작위 방어 카드를 손에 1장 추가  
+    해당 카드는 |일시적으로| 코스트가 {Mana}가 되고, |소멸|과 |휘발성|을 가집니다.  
+    또한 |거리 조작|을 {Value2}장 손에 넣습니다.
+
+KomachiModLowTierShinigami:
+  Name: 하급 사신
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    |취약| {Value1} 부여.
+  FlavorText: "몇 번이나 말해야 알아들어? 네가 죽든 말든 아무도 신경 안 써."
+
+KomachiModWeedCutter:
+  Name: 잡초 제거기
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    카드를 {Value1}장 뽑습니다.  
+    |거리 조작|을 손에 1장 넣습니다.
+
+KomachiModParry:
+  Name: 낫으로 받아내기
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    |반사|를 {Value1} 얻습니다.  
+    |거리 조작|을 1장 손에 넣습니다.
+
+KomachiModCoinThrow:
+  Name: 동전 던지기
+  Description: |-
+    모든 적에게 피해를 {Damage} 줍니다.  
+    <sprite="Point" name="Gold">를 {Value1} 잃습니다.
+
+KomachiModIgnoreNagging:
+  Name: 잔소리 무시
+  Description: |-
+    -{Value1} |이동|합니다.  
+    |거리|가 1 또는 2인 적마다 |그레이즈|를 {Value2} 얻습니다.
+  UpgradedDescription: |-
+    최대 {Value1} |이동|합니다.  
+    |거리|가 1 또는 2인 적마다 |그레이즈|를 {Value2} 얻습니다.
+
+KomachiModRetreatBoat:
+  Name: 보호의 삼도선
+  Description: |-
+    {Value1} |이동|합니다.  
+    |방어|를 {Block} 얻습니다.  
+    대상의 |거리| × {Value2}만큼 |보호막|을 얻습니다.
+
+KomachiModManipDefence:
+  Name: 이동식 방어
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    |거리|가 {Value1} 이상인 적마다 |거리 조작|을 1장 손에 넣습니다.
+
+KomachiModWorkFocus:
+  Name: 업무 집중
+  Description: |-
+    손패에서 최대 {Value1}장까지 |소멸|시키고, 그 수만큼 |거리 조작|을 손에 넣습니다.  
+    이때 강화된 카드를 소멸했다면 |피안화|를 1장 손에 넣습니다.
+  UpgradedDescription: |-
+    손패, 뽑을 카드 더미, 버린 카드 더미에서 최대 {Value1}장을 |소멸|하고, 그 수만큼 |거리 조작|을 손에 넣습니다.  
+    이때 강화된 카드를 소멸했다면 |피안화|를 1장 손에 넣습니다.
+
+KomachiModSpySpirit:
+  Name: 따라다니는 첩자령
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    해당 적이 |이동|할 때마다 |보호막|을 {Value1} 얻습니다.
+
+KomachiModSliceOfHigan:
+  Name: 피안 베기
+  Description: |-
+    피해를 {Damage}씩 {Value1}회 가합니다.  
+    |손패에 있을 때|: 적이 |이동|할 때마다, 이동한 단계 수만큼 이번 전투에서 이 카드의 피해가 {Value2} 증가합니다.
+
+KomachiModEqualizeDistance:
+  Name: 거리 평준화
+  Description: |-
+    |거리|가 3이 될 때까지 |이동|합니다.  
+    이동한 단계마다 카드를 {Value1}장 뽑습니다.  
+    대상의 |거리|가 이미 3이라면, 카드를 {Value2}장 뽑고 {Value3}장 버립니다.
+
+KomachiModRitualOfEcstasy:
+  Name: 도취의 의식
+  Description: |-
+    대상의 |거리|를 반전시키고, 다음 효과 중 하나를 줍니다.  
+    거리 단계가 3이라면 효과를 선택할 수 있습니다.  
+    거리가 감소했으면 카드를 {Value1}장 뽑고,  
+    거리가 증가했으면 |그레이즈| {Value2}, |방어| {Block}을 얻습니다.
+  ExtraDescription1: |-
+    카드를 {Value1}장 뽑습니다.
+  ExtraDescription2: |-
+    |그레이즈| {Value2}, |방어| {Block}을 얻습니다.
+  DetailText: |-
+    거리를 3을 기준으로 반전시킵니다. 예:  
+    - 거리 1 → 5  
+    - 거리 2 → 4  
+    - 거리 3 → 변화 없음  
+    - 거리 4 → 2  
+    - 거리 5 → 1
+
+KomachiModExchangeLife:
+  Name: 생명 교환
+  Description: |-
+    대상의 현재 체력이 {PlayerName}의 최대 체력 이하라면, 서로의 현재 체력을 교환합니다.  
+    이 카드로 {PlayerName}가 회복되면, 전투와 덱에서 제거됩니다.  
+    |충원|: {PlentifulMana}를 얻습니다.
+  DetailText: |-
+    체력이 낮은 쪽은 회복되고, 높은 쪽은 체력을 잃습니다.  
+    {SelfName}은 전투 중 무작위로 등장하지 않으며 복사될 수 없습니다.
+
+KomachiModGrudgingStrike:
+  Name: 원한의 일격
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    |원령| {Value1}을 줍니다.  
+    |해방| {Value2}: |기폭| 카드를 손에 넣습니다.
+  ExtraDescription1: |-
+    |해방| {Value2}: |기폭| 카드를 손에 넣습니다.
+
+KomachiModDefendDetonate:
+  Name: 섭섭한 건 아니야
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    대상에게 |기폭|을 선택할 수 있습니다. 그렇게 하면, 그 대상이 가진 |원령| {Value3}마다 |일시 화력 저하|를 {Value2} 줍니다.
+  UpgradedDescription: |-
+    |방어|를 {Block} 얻습니다.  
+    |원령| {Value1}을 줍니다.  
+    대상에게 |기폭|을 선택할 수 있습니다. 그렇게 하면, 그 대상이 가진 |원령| {Value3}마다 |일시 화력 저하|를 {Value2} 줍니다.
+  ExtraDescription1: "|기폭|하지 않음"
+  ExtraDescription2: "|기폭|"
+
+KomachiModBWBridge:
+  Name: 관청 업무
+  Description: |-
+    {Mana}를 얻습니다. {PlayerName}의 턴 시작 시 {Mana}를 추가로 얻습니다.  
+    무작위 백/흑 하이브리드 카드 {Value2}장 중 최대 {Value1}장을 선택하여 손에 넣습니다.
+  UpgradedDescription: |-
+    {Mana}를 얻습니다. |광휘|를 손에 넣습니다.  
+    {PlayerName}의 턴 시작 시 {Mana}를 추가로 얻습니다.  
+    무작위 백/흑 하이브리드 카드 {Value2}장 중 최대 {Value1}장을 선택하여 손에 넣습니다.
+  DetailText: |-
+    |e:대체 카드|는 총 마나와 색상 제한을 무시합니다.
+
+KomachiModFishing:
+  Name: 이중 낚시질
+  Description: |-
+    카드를 {Value1}장 버린 후, |소멸| 구역에서 총 비용이 {Value3} 미만인 카드 중 최대 {Value2}장을 골라  
+    하나는 손에, 하나는 버린 더미로 되돌립니다.  
+    해당 카드는 |일시적으로| 비용이 {Mana}가 됩니다.
+
+KomachiModGuidingSanzu:
+  Name: 삼도천의 인도
+  Description: |-
+    |인도된 영혼| {Value1}을 얻습니다.
+
+KomachiModBoomBenefits:
+  Name: 사이렌의 보너스
+  Description: |-
+    적 하나를 |기폭|합니다. 그런 다음 |선택|합니다:  
+    - {Value1}개의 |기폭|된 |원령|마다 |인도된 영혼| 1 획득  
+    - {Value2}개의 |기폭|된 |원령|마다 카드 1장 뽑기
+  ExtraDescription1: |-
+    {Value1}개의 |기폭|된 |원령|마다 |인도된 영혼| 1 획득
+  ExtraDescription2: |-
+    {Value2}개의 |기폭|된 |원령|마다 카드 1장 뽑기
+
+KomachiModShootGhosts:
+  Name: 떠도는 영의 낫
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    대상이 가진 |원령| 1개마다 {SelfName}의 피해가 {Value1}만큼 증가합니다.  
+    대상을 처치하면, 그 적이 가지고 있던 만큼의 |원령|을 다른 모든 적에게 줍니다.
+
+KomachiModSpiritDefence:
+  Name: 스쳐가는 혼백
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    |인도된 영혼| {Value1}을 얻습니다.
+
+KomachiModVengefulSweep:
+  Name: 회사의 혼백들
+  Description: |-
+    모든 적에게 |원령|을 {Value1} 줍니다.  
+    |해방| {Value2}: 모든 적에게 |원령|을 {Value1} 더 줍니다.  
+    |해방| {Value3}: 위 효과를 수행하고, |기폭| 카드를 손에 넣습니다.
+  ExtraDescription1: |-
+    |해방| {Value2}: 모든 적에게 |원령|을 {Value1} 더 줍니다.
+  ExtraDescription2: |-
+    |해방| {Value3}: 모든 적에게 |원령|을 {Value1} 더 주고, |기폭| 카드를 손에 넣습니다.
+
+KomachiModVengefulerSweep:
+  Name: 넘실대는 혼백들
+  Description: |-
+    모든 적에게 피해를 {Damage} 줍니다.  
+    모든 적에게 |원령|을 {Value1} 줍니다.  
+    |해방| {releaseCost1}: |선택|: 이 공격을 |명중|으로 바꾸거나, |원령|을 {Value1} 더 줍니다.  
+    |해방| {releaseCost2}: 모든 적에게 |명중|피해를 {Damage2}씩 {attackTimes}번 주고, |원령|을 {Value2} 줍니다.
+  ExtraDescription1: |-
+    |해방| {releaseCost1}: |선택|: 공격을 |명중|으로 바꾸거나, |원령| {Value1}을 더 부여
+  ExtraDescription2: |-
+    |해방| {releaseCost2}: |명중|피해를 {Damage2}씩 {attackTimes}번 주고, |원령| {Value2} 부여
+  ExtraDescription3: 이 공격은 |명중|으로 처리됩니다.
+  ExtraDescription4: 모든 적에게 |원령| {Value1}을 추가 줍니다.
+
+KomachiModFreeTrauma:
+  Name: 공짜 트라우마?!
+  Description: |-
+    |원령|을 {Value3} 줍니다.  
+    {Mana}를 얻습니다.  
+    |해방| {Value1} 또는 {Value2}: |해방|한 {Value1}개의 영혼마다 {Mana} 추가 획득.
+  ExtraDescription1: |-
+    |해방| {Value1}: {Mana} 획득.
+  ExtraDescription2: |-
+    |해방| {Value2}: {Mana}{Mana} 획득.
+
+KomachiModSpiritBarrier:
+  Name: 영혼 장벽
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    |전부 해방| 시: 해방한 영혼 1개당 |보호막| {Value2} 획득.
+  ExtraDescription1: |-
+    |전부 해방| 시: 해방한 영혼 1개당 |보호막| {Value2} 획득.
+
+KomachiModScytheHeal:
+  Name: 영혼을 흡수하는 낫
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    가한 피해만큼 |원령|을 줍니다.  
+    |기폭|할 수 있으며, 이후 |기폭|된 |원령| {Value2}개당 체력 {Value1} 회복.
+  ExtraDescription1: |-
+    |기폭|하지 않음.
+  ExtraDescription2: |-
+    |기폭|. 이후 |기폭|된 |원령| {Value2}개당 체력 {Value1} 회복.
+
+KomachiModBoundSpiritsOfEarth:
+  Name: 대지에 묶인 영혼
+  Description: |-
+    모든 적에게 |원령| {Value1}을 줍니다.  
+    {PlayerName}의 턴 종료 시, |원령|이 있는 적에게 |원령| {Value2}를 추가 줍니다.
+
+KomachiModLonelyBoundSpirit:
+  Name: 외로운 망령
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    |외로운 망령|을 줍니다.
+
+KomachiModScytheRedLily:
+  Name: 퇴마의 낫
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    |기폭|할 수 있으며, |기폭|된 |원령|이 {Value1} 이상이면 |피안화|를 손에 넣습니다.  
+    |해방| {Value2}: |기폭| 전에 |원령| {Value1}을 주고, |부적| 1개를 얻습니다.
+  ExtraDescription1: |-
+    |해방| {Value2}: |기폭| 전에 |원령| {Value1} 부여, |부적| 1개 획득.
+  ExtraDescription2: |-
+    |기폭|할 수 있으며, |기폭|된 |원령|이 {Value1} 이상이면 |피안화|를 손에 넣습니다.
+
+KomachiModDetonateFirepower:
+  Name: 망자의 원념
+  Description: |-
+    |원령|이 |기폭|될 때마다 |화력|을 {Value2} 얻습니다.  
+    모든 적에게 |원령| {Value1}을 줍니다.  
+    모든 적을 |기폭|할 수 있습니다.
+  ExtraDescription1: |-
+    모든 적을 |기폭|합니다.
+
+KomachiModTalkativeFerryman:
+  Name: 수다쟁이 뱃사공
+  Description: |-
+    {PlayerName}의 턴 시작 시 |인도된 영혼| {Value1}을 얻습니다.  
+    |해방| {Value2}: 다음 턴 시작 시 |인도된 영혼| {Value3}을 추가 획득.
+  ExtraDescription1: "|해방| {Value2}: 다음 턴 시작 시 |인도된 영혼| {Value3} 획득."
+
+KomachiModDetonateInfinite:
+  Name: 끝없는 취소
+  Description: |-
+    |원령|을 {Value1} 줍니다.  
+    |원령|이 |기폭|될 때마다 해당 대상에게 |원령| {Value2} 추가 부여.
+
+KomachiModSpiritualDamage:
+  Name: 영혼 손상
+  Description: |-
+    피해를 {Damage} 줍니다.  
+    막히지 않은 피해만큼 |원령|을 줍니다.  
+    해당 대상에게 부여된 |원령|의 지속 시간을 {Value1} 증가시킵니다.
+
+KomachiModSpiritCatalyst:
+  Name: 영혼 촉진제
+  Description: |-
+    대상의 |원령|을 2배로 만듭니다.  
+    해당 적의 |원령| 지속 시간을 3 증가시킵니다.
+
+KomachiModEyeOfTheStorm:
+  Name: 폭풍의 눈
+  Description: |-
+    |방어|를 {Block} 얻습니다.  
+    모든 적에게 |원령| {Value1}을 줍니다.  
+    |인도된 영혼| {Value2}를 얻습니다.  
+    |해방| {Value3}: |보호막|을 {Shield} 얻습니다.
+  ExtraDescription1: "|해방| {Value3}: |보호막| {Shield} 획득."
+
+KomachiModChainDetonation:
+  Name: 연쇄 반응
+  Description: |-
+    |원령|을 {Value1} 줍니다.
+    그 적을 |기폭|합니다.
+    기폭한 수만큼 |원령|을 다시 줍니다.
+    |해방| {Value2}: 해당 적을 다시 |기폭|합니다.
+    |해방| {Value3}: 위와 같이 |기폭|한 수만큼 |원령|을 다시 줍니다.
+  ExtraDescription1: "|해방| {Value2}: 해당 적을 다시 |기폭|합니다."
+  ExtraDescription2: "|해방| {Value3}: 해당 적을 다시 |기폭|한 수만큼 |원령|을 다시 줍니다."
+
+KomachiModResidualAether:
+  Name: 잔존하는 마력
+  Description: |-
+    {totalMana}를 얻습니다.
+    |손에 있을 때|: 적이 |기폭|될 때마다 {SelfName}이 추가로 {ManaReal}을 줍니다.
+
+KomachiModDivineSpiritDefence:
+  Name: 사신의 신성한 가호
+  Description: |-
+    |방어|를 {Block} 얻습니다.
+    |신령|을 {Value1} 얻습니다.
+    |해방| {Value2}: |신령|을 {Value1} 더 얻습니다.
+  ExtraDescription1: "|해방| {Value2}: |신령|을 {Value1} 더 얻습니다."
+
+KomachiModSpiritReturn:
+  Name: 영혼의 귀환
+  Description: |-
+    {PlayerName}의 턴 시작 시, 손에서 가장 오른쪽 카드를 덱 맨 아래에 넣고,
+    |소멸| 더미에서 총 비용이 2 미만인 카드를 최대 1장 손에 넣습니다.
+    그 카드는 비용이 {Mana} 증가하고 사용 시 전투에서 제거됩니다.
+
+KomachiModAfterlifePassage:
+  Name: 사후의 관문
+  Description: |-
+    손에서 카드 {Value1}장을 소멸시킵니다.
+    소멸된 |액운|, |상태|, |기본| 카드 1장마다 |인도된 영혼|을 {Value2} 얻습니다.
+    그 외 카드 1장마다 |신령|을 {Value2} 얻습니다.
+  UpgradedDescription: |-
+    손 또는 버린 카드 더미에서 카드 최대 {Value1}장을 소멸시킵니다.
+    소멸된 |액운|, |상태|, |기본| 카드 1장마다 |인도된 영혼|을 {Value2} 얻습니다.
+    그 외 카드 1장마다 |신령|을 {Value2} 얻습니다.
+
+KomachiModReapersDue:
+  Name: 사신의 몫
+  Description: |-
+    |{Mana}를 지불할 때마다|: |인도된 영혼|을 {Value1} 얻습니다. ({anyManaSpirits})
+    |{WhiteMana}를 지불할 때마다|: |신령|을 {Value2} 얻습니다. ({whiteManaSpirits})
+    |{BlackMana}를 지불할 때마다|: 모든 적에게 |원령|을 {Value2} 줍니다. ({blackManaSpirits})
+
+KomachiModCloseQuarterDefence:
+  Name: 근거리 전법
+  Description: |-
+    |방어|를 {Block} 얻습니다.
+    |원령|을 {Value1} 줍니다.
+    대상의 |거리|가 {distanceLimit} 미만일 경우:
+    |일시 화력 저하|를 {Value3} 주고 |인도된 영혼|을 {Value2} 얻습니다.
+
+KomachiModHalfLife3:
+  Name: 짧은 여생
+  Description: |-
+    |해방| {Value1}: 대상의 현재 체력의 절반({Damage})만큼 피해를 줍니다.
+    대상이 이름이 알려진 적일 경우, 대신 |해방| {Value2}가 필요합니다.
+    |영력|을 {Value3} 잃습니다.
+  UpgradedDescription: |-
+    |해방| {Value1}: 대상의 현재 체력의 절반({Damage})만큼 피해를 줍니다.
+    대상이 이름이 알려진 적일 경우, 대신 |해방| {Value2}가 필요합니다.
+  ExtraDescription1: |-
+    |해방| {releaseValue}: 대상의 현재 체력의 절반만큼 피해를 줍니다.
+
+KomachiModDistanceCloser:
+  Name: 깊은 안개의 도항
+  Description: |-
+    최대 -{Value1} |이동|합니다.
+    |이동|한 거리 마다 |원령|을 {Value2} 줍니다.
+    |해방| {releaseCost}: 그 대상의 |원령| {firepowerCond}마다 |일시 화력|을 {firepowerValue} 얻습니다.
+  ExtraDescription1: |-
+    |해방| {releaseCost}: 해당 대상의 |원령| {firepowerCond}마다 |일시 화력|을 {firepowerValue} 얻습니다.
+
+KomachiModEthicallySourcedBreak:
+  Name: 윤리적 휴식
+  Description: |-
+    |보호막| {Shield}, 체력 {Value1}, 화력 {Value2}을 얻습니다.
+    {PlayerName}의 턴을 종료합니다.
+    다음 턴 시작 시, {PlayerName}의 턴을 종료합니다.
+    그 다음 턴 시작 시, {Mana}를 얻고 카드를 {Value3}장 뽑습니다.
+
+KomachiModInfernoTempest:
+  Name: 길의 끝에서 부유하는 영혼들
+  Description: |-
+    손패, 뽑을 카드 더미, 버린 카드 더미의 모든 카드를 |소멸|시킵니다.
+    손에서 소멸된 카드 1장마다 |신령|을 {Value3} 얻습니다.
+    뽑을 카드 더미에서 소멸된 카드 1장마다 |인도된 영혼|을 {Value1} 얻습니다.
+    버린 카드 더미에서 소멸된 카드 1장마다 모든 적에게 |원령|을 {Value1} 줍니다.
+    다음 턴 시작 시, |기본|이 아닌 소멸된 카드 중 최대 {Value2}장을 무작위로 손패, 뽑을 카드 더미, 버린 카드 더미 중 하나에 되돌립니다. 이후 모든 |기본| 및 |액운| 카드를 뽑을 카드 더미로 되돌립니다.
+  DetailText: |-
+    손패, 뽑을 카드 더미, 버린 카드 더미에 각각 최소 1장씩 돌아갑니다.
+
+KomachiModGuidedGreen:
+  Name: 전생의 기억
+  Description: |-
+    |인도된 영혼|을 {Value1} 얻습니다.
+    카드를 {Value2}장 뽑습니다.
+
+KomachiModMidsummerLily:
+  Name: 외로운 피안화
+  Description: |-
+    {PlayerName}가 |피안화|를 사용한 후, |한여름의 꽃|을 {Value1}장 손에 넣습니다.
+    |피안화|를 {Value2}장 뽑을 카드 더미 맨 위에 넣습니다.
+
+KomachiModHellFreeze:
+  Name: 지옥의 얼어붙은 온기
+  Description: |-
+    피해를 {Damage} 줍니다.
+    이 적에게 |원령|이 |기폭|될 때마다 |빙결|을 줍니다. (이 효과는 중첩되지 않음)
+    |기폭|할 수 있으며, 그렇게 하면 기폭된 |원령| {Value2}마다 |얼음 갑옷|을 {Value1} 얻습니다.
+  ExtraDescription1: |-
+    |기폭|하지 않음
+  ExtraDescription2: |-
+    |기폭|하고, 기폭된 |원령| {Value2}마다 |얼음 갑옷|을 {Value1} 얻습니다.
+  FlavorText: "지옥에도 계절은 찾아온다."
+
+KomachiModStrongestSpirit:
+  Name: 최강의 요정!
+  Description: |-
+    피해를 {Damage} 줍니다.
+    이 방식으로 막히지 않은 피해만큼 |원령|을 줍니다.
+    |해방| {Value1}: |임시 화력|을 {Value2} 얻고, 손에 있는 모든 비공격 카드를 |소멸|합니다.
+  FlavorText: "태양이 50억 년 뒤에 폭발한다는 사실을 알고 정체성 위기를 극복한 얼음 요정은 그 누구보다 강해졌다."
+
+KomachiModExchangeDrawExile:
+  Name: 생자와 사자의 교환
+  Description: |-
+    뽑을 카드 더미 맨 위의 카드를 |소멸|합니다. 이후 |소멸| 구역에서 같은 유형의 카드를 최대 {Value1}장까지 손에 되돌립니다.
+    만약 대상 카드가 없다면 카드를 {Value2}장 뽑습니다.
+  DetailText: |-
+    카드 유형은 공격, 방어, 스킬, 능력 등의 종류를 의미합니다.
+
+KomachiModLifespanEnd:
+  Name: 수명의 끝
+  Description: |-
+    {PlayerName}의 턴을 종료합니다. 그 후 추가 턴을 가집니다.
+    이 추가 턴에서는 |방어|를 잃지 않습니다.
+    |턴 종료 시|: 피해를 {Value1} 받습니다.
+  UpgradedDescription: |-
+    {PlayerName}의 턴을 종료합니다. 그 후 추가 턴을 가집니다.
+    이 추가 턴에서는 |방어|를 잃지 않습니다.
+    |그 추가 턴 시작 시|: 카드를 {Value2}장 뽑고, {Mana}를 얻으며, |화력|을 {Value2} 얻습니다.
+    |턴 종료 시|: 피해를 {Value1} 받습니다.
+
+KomachiModGoldSarcophagus:
+  Name: 황금 관선
+  Description: |-
+    뽑을 카드 더미에서 카드 1장을 선택해 |소멸|시킵니다.
+    이 카드를 사용한 후 두 번째 턴 시작 시, 해당 카드를 손에 넣고 |강화|합니다.
+
+KomachiModExileDoppelganger:
+  Name: 삼도천의 멸종된 생물
+  Description: |-
+    {PlayerName}가 카드를 사용할 때마다:
+    - |같은 이름의 카드가 소멸 구역에 없다면|: 해당 카드의 |복사본|을 소멸구역으로 보냅니다. 해당 카드의 비용은 {Mana}만큼 감소하고 사용 시 전투에서 제거됩니다.
+    - |같은 이름의 카드가 소멸 구역에 있다면|: 그것을 손에 넣을 수 있습니다.
+    {SelfName}의 각 효과는 턴마다 한 번씩만 사용할 수 있습니다.
+  DetailText: |-
+    복사된 카드는 첫 번째 효과로 다시 복사할 수 없습니다.
+
+KomachiModSpiritDraw:
+  Name: 저승길 안내인
+  Description: |-
+    카드를 {draw}장 뽑습니다.
+    이 방식으로 뽑은 카드 중 일반 카드는 적 전체에 |원령|을 {Value1} 주고, 특수 카드는 |인도된 영혼|을 {Value2} 얻으며, 희귀 카드는 |신령| {Value3} 얻습니다.
+  FlavorText: |-
+    체인 1 몽아몽중 → 성급한 매장 대상 지정. 체인 2 성급한 매장 → 몽아몽중 대상 지정.
+
+KomachiModEiki:
+  Name: 시키에이키 야마자나두, 낙원의 대심판자
+  Description: |-
+    {Indent}|신령|을 {RawShield} 얻습니다.
+    {PassiveCostIcon}손에 있는 무작위 카드 {Value1}장을 선택합니다: |그것이 액운 또는 상태 카드일 경우|: |소멸|시키고 |인도된 영혼|을 {Value2} 얻습니다. 
+    |그 외일 경우|: 마나 비용만큼 |인도된 영혼|를 얻고, 비용이 임시로 무작위 색 하나 줄어듭니다.
+  ExtraDescription1: |-
+    {ActiveCostIcon}손에 있는 카드 1장을 선택합니다. 그 카드의 마나 비용 색이 모두 사라지고 |강화|됩니다.
+  UpgradedExtraDescription1: |-
+    {ActiveCostIcon}손에 있는 카드 1장을 선택합니다. 그 카드의 비용이 임시로 {Mana}가 되고 |강화|됩니다.
+  ExtraDescription3: |-
+    {UltimateCostIcon}|전장|의 카드 {Value3}장을 선택해 손에 넣습니다. 이 카드들의 비용은 이번 전투 동안 {Mana}가 되며, 이번 전투 동안 {PlayerName}는 |해방| 비용을 지불하지 않습니다.
+  DetailText: |-
+    패시브 효과는 마나 비용이 0인 카드는 절대 선택하지 않습니다.
+
+KomachiModAttackR:
+  Name: 사신의 날끝
+  Description: 피해를 {Damage} 줍니다.
+
+KomachiModBlockR:
+  Name: 잔소리에 익숙해졌다
+  Description: |-
+    |방어|를 {Block} 얻습니다.
+  FlavorText: |-
+    끝없는 잔소리를 견뎌낸 정신력.
+
+KomachiModAttackB:
+  Name: 유령 속임수 사격
+  Description: 피해를 {Damage} 줍니다.
+  FlavorText: |-
+    강시를 20턴 동안 뒤집으면 승리합니다!
+
+KomachiModBlockB:
+  Name: 영혼의 지원
+  Description: |-
+    |방어|를 {Block} 얻습니다.

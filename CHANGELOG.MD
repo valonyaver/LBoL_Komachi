@@ -1,3 +1,15 @@
+## 0.3.7
+- Added Korean translation. Thanks to coward_montblanc for making it!
+- More english text mistakes were fixed.
+- Lonesome Lily's cost changed from G (0) to just G. Its upgrade no longer changes its cost.
+- Extinct Fauna now lets you use its effects on the same turn that you play the ability.
+- Changed some attack animations.
+
+## 0.3.6
+- Fixed Vengeful Spirits' highlighting not wearing off when its duration is increased from 1 (Due to cards like Spirit Catalyst).
+- Fixed Lonely bound Spirit not being detonated by the detonate token or by Komachi B's ultimate.
+- Scythe of Final Judgement unupgraded damage changed from 21 -> 22.
+
 ## 0.3.5
 - Added Spanish translation. Thanks to xerox asutnima for making it!
 - Some english text mistakes were fixed.

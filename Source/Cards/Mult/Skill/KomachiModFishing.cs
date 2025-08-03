@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.Keywords = Keyword.Exile | Keyword.TempMorph;
             config.UpgradedKeywords = Keyword.Exile | Keyword.TempMorph;
 
-            config.Unfinished = true;
+            config.Unfinished = false;
 
             return config;
         }

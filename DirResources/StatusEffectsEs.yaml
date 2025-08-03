@@ -1,6 +1,6 @@
 KomachiModDistanceSe:
   Name: "Distancia {Level}: {DistanceString}"
-  Description: El daño del ataque infligido y recibido por esta unidad es de {MultiplierDescription}.
+  Description: El daño del ataque infligido y recibido por esta unidad se modifica en {MultiplierDescription}.
 
 KomachiModDistanceBlockSe:
   Name: Horario de Trabajo Flexible

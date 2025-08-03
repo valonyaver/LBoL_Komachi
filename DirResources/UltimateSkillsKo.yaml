@@ -1,0 +1,37 @@
+KomachiModUltA:
+  Title: 사신
+  Content: 피안 르투르
+  Description: |-
+    모든 적의 |거리|를 {Value1}로 |이동|시킵니다.
+    적마다 |거리 조작|을 한 장 손에 넣습니다.
+    모든 적에게 피해를 {Damage} 줍니다. |명중|
+
+KomachiModUltB:
+  Title: 영부
+  Content: 오랜 지박령의 기상
+  Description: |-
+    모든 적에게서 |부적|을 제거합니다.
+    각 적에게 |원령|을 {Value1} 부여합니다.
+    모든 적을 |기폭|시킵니다.
+    기폭된 |원령| 수만큼 |신령|을 얻습니다.
+
+KomachiModUltHalfLife:
+  Title: 박명
+  Content: 얼마 남지 않은 여생
+  Description: |-
+    대상 적의 현재 체력을 절반으로 줄입니다.
+
+KomachiModUltShootGhosts:
+  Title: 혼부
+  Content: 생혼유리의 낫
+  Description: |-
+    피해를 {Damage} 줍니다. 대상의 |원령|마다 {SelfName}의 피해가 {Value1} 증가합니다.
+    대상이 처치되면, 그 대상이 가진 |원령| 수만큼 모든 다른 적에게 |원령|을 부여합니다.
+
+KomachiModUltFinalJudgement:
+  Title: 사부
+  Content: 죽은 자를 선별하는 낫
+  Description: |-
+    원하는 거리로 |이동|합니다.
+    피해를 {Damage} 줍니다. 먼 거리에서의 피해 감소 효과는 이 카드에 두 배로 반영되어 피해가 증가합니다.
+    {SelfName}으로 적을 처치하면, |피안화|를 손에 넣습니다.

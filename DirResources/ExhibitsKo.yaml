@@ -1,0 +1,16 @@
+KomachiModExhibitR:
+  Name: 거대한 여객선
+  Description: |-
+    마나 기본값에 {Mana}를 추가합니다. |코마치| 고유 카드가 카드 풀에 추가됩니다.
+    전투 시작 시 첫 턴에 |거리 조작|을 손에 넣습니다.
+    적이 처치될 때마다 |피안화|를 손에 넣습니다.
+    전투 보상으로 받는 <sprite="Point" name="Gold">가 {Value1}% 증가합니다.
+  FlavorText: 피안의 해안을 항해하는 호화 유람선! 지금 한정 10% 할인 중.
+
+KomachiModExhibitB:
+  Name: 시귀의 눈
+  Description: |-
+    마나 기본값에 {Mana}를 추가합니다. |코마치| 고유 카드가 카드 풀에 추가됩니다.
+    전투 시작 시, |영력|을 {Value1} 얻고 모든 |령| 적에게 있는 |부적|을 제거한 뒤 |허약|과 |취약|을 {Value3} 부여합니다.
+    {PlayerName}의 3번째 턴 종료 시, |영력|을 {Value1} 잃고 모든 적에게 |취약|을 {Value2} 부여합니다.
+  FlavorText: 수명의 반을 대가로, 만나는 모든 사람의 이름과 사망일을 알 수 있습니다.
