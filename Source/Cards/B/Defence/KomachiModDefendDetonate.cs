@@ -34,12 +34,12 @@ namespace KomachiMod.Cards
             config.Type = CardType.Defense;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Block = 14;
-            config.UpgradedBlock = 18;
+            config.Block = 12;
+            config.UpgradedBlock = 16;
 
             // Amount of vengeful spirits inflicted
-            config.Value1 = 0;
-            config.UpgradedValue1 = 2;
+            config.Value1 = 2;
+            config.UpgradedValue1 = 4;
 
             // Temp attack down inflicted
             config.Value2 = 1;

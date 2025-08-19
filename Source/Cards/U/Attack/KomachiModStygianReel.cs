@@ -24,8 +24,8 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             // Junko 3 (4520) for the "Wind" effect of pulling enemies closer. Possible ids for good slashes are 6162, 7311
             config.GunName = GunNameID.GetGunFromId(13130);
-            config.IsPooled = false;
-            config.HideMesuem = true;
+            //config.IsPooled = false;
+            //config.HideMesuem = true;
            // config.ImageId = nameof(KomachiModAttackR);
 
             config.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Blue };

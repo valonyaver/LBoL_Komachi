@@ -54,7 +54,7 @@ namespace KomachiMod.Cards
             { nameof(KomachiModGuidedSpiritSe), nameof(KomachiModReleaseKeyword) };
             config.UpgradedRelativeEffects = new List<string>()
             { nameof(KomachiModGuidedSpiritSe), nameof(KomachiModReleaseKeyword) };
-            config.Unfinished = true;
+            config.Unfinished = false;
             return config;
         }
     }

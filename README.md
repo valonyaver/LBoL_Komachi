@@ -77,6 +77,7 @@ Thanks in particular to IcedLemon for making the icon for the Titanic exhibit fo
 
 # Special Thanks
 - xerox asutnima: For making the Spanish translation.
+- coward_montblanc: For making the Korean translation.
 - rm -rf Maxx "c": For making the sample character template that made it so easy to develop this mod.
 - Vengyre: Providing me a spreadsheet template that made it much easier to organize my cards. Also programming help
 - Worldsoul: Making a mod for my other favourite character, Shou, which encouraged me to make this mod. Also having his github repository public was helpful for referencing how some effects are implemented in a mod.

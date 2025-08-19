@@ -113,6 +113,15 @@ namespace KomachiMod.Cards
             }
         }
 
+        public int RawDamageRaw
+        {
+            get
+            {
+                var dam = Damage;
+                return RawDamage;
+            }
+        }
+
         public override Interaction Precondition()
         {
             List<Card> distanceOptions = new List<Card>();
@@ -132,8 +141,6 @@ namespace KomachiMod.Cards
             // Create cards for all 5 possible distances (1-5)
             for (int targetDistance = 1; targetDistance <= 5; targetDistance++)
             {
-                
-
                 // Get appropriate card type using the template
                 KomachiModManDistanceTemplate distanceCard;
 
@@ -153,6 +160,8 @@ namespace KomachiMod.Cards
                     distanceCard.ChoiceCardIndicator = (targetDistance < currentDistance) ? 1 : 2;
                 }
 
+                distanceCard.Keywords = Keyword.None;
+
                 // Set card
                 distanceCard.SetBattle(base.Battle);
 
@@ -171,10 +180,11 @@ namespace KomachiMod.Cards
                 int finalDamage = damage.RoundToInt(MidpointRounding.AwayFromZero);
                 // Get the colour if the damage is higher or lower.
                 string damageColor = KomachiModUtility.GetColorFromDamage(finalDamage, Damage.Damage);
+                string damageColoredText = KomachiModUtility.GetColoredText(finalDamage.ToString(), damageColor);
+                string damageText = ExtraDescription1.Replace("VALUE", damageColoredText);
 
                 // Finally write the description WOO
-                distanceCard.extraDescriptionAddition =
-                    $"Deal {KomachiModUtility.GetColoredText(finalDamage.ToString(), damageColor)} damage.";
+                distanceCard.extraDescriptionAddition = damageText;
 
                 distanceOptions.Add(distanceCard);
             }
@@ -204,8 +214,8 @@ namespace KomachiMod.Cards
                 yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, GunNameID.GetGunFromId(510), 0.2f);
             }
             var enemies = Battle.EnemyGroup.Alives.ToArray();
-            yield return AttackAction(selector);
-            // yield return new DamageAction(Battle.Player, enemies, Damage, GunName, GunType.Single);
+            // yield return AttackAction(selector);
+            yield return new DamageAction(Battle.Player, enemies, Damage, GunName, GunType.Single);
 
             if (selector.SelectedEnemy.IsDead)
             {

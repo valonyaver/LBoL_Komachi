@@ -42,8 +42,8 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 6;
 
             // Guided Spirits gained
-            config.Value2 = 6;
-            config.UpgradedValue2 = 8;
+            config.Value2 = 8;
+            config.UpgradedValue2 = 10;
 
             config.RelativeEffects = new List<string>() 
             { nameof(KomachiModGuidedSpiritSe), nameof(KomachiModVengefulSpiritSe), nameof(KomachiModReleaseKeyword) };

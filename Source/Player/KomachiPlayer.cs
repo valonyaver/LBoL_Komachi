@@ -1,17 +1,18 @@
 ﻿using Cysharp.Threading.Tasks;
+using KomachiMod.ImageLoader;
+using KomachiMod.Localization;
 //using DG.Tweening;
 using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Units;
+using LBoL.EntityLib.EnemyUnits.Character;
+using LBoL.Presentation.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using UnityEngine;
-using KomachiMod.ImageLoader;
-using KomachiMod.Localization;
-using LBoL.Core.Battle;
-using LBoL.EntityLib.EnemyUnits.Character;
-using LBoL.Presentation.Units;
 //using KomachiMod.BattleActions;
 
 namespace KomachiMod
@@ -30,6 +31,11 @@ namespace KomachiMod
             return KomachiLocalization.PlayerUnitBatchLoc.AddEntity(this);
         }
 
+        public override EikiSummonInfo AssociateEikiSummon()
+        {
+            return new EikiSummonInfo(typeof(Enemies.KomachiMod));
+        }
+
         public override PlayerImages LoadPlayerImages()
         {
             return KomachiImageLoader.LoadPlayerImages(BepinexPlugin.playerName);
@@ -43,6 +49,13 @@ namespace KomachiMod
         [EntityLogic(typeof(KomachiModDef))]
         public sealed class KomachiMod : PlayerUnit 
         {
+            public string EikiDialogue
+            {
+                get
+                {
+                    return this.LocalizeProperty("EikiDialogue", true, true);
+                }
+            }
             protected override void OnEnterBattle(BattleController battle)
             {
                 foreach(var enemy in battle.AllAliveEnemies)
@@ -50,7 +63,7 @@ namespace KomachiMod
                     if (enemy.GetType() == typeof(Siji))
                     {
                         UnitView view = GetView<UnitView>();
-                        view.Chat("Ah! Miss Eiki! I swear I'm not slacking off!", 2, LBoL.Presentation.UI.Widgets.ChatWidget.CloudType.LeftTalk);
+                        view.Chat(EikiDialogue, 2, LBoL.Presentation.UI.Widgets.ChatWidget.CloudType.LeftTalk);
                     }
                 }
             }

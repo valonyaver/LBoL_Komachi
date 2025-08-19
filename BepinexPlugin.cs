@@ -69,7 +69,7 @@ namespace KomachiMod
             log = Logger;
             ///Load the custom config entry.
             enableAct1Boss = Config.Bind(enableAct1BossEntry.Section, enableAct1BossEntry.Key, enableAct1BossEntry.Value, enableAct1BossEntry.Description);
-
+            Debug.Log($"Enabling komachi boss is {enableAct1Boss.Value}");
             // very important. Without this the entry point MonoBehaviour gets destroyed
             DontDestroyOnLoad(gameObject);
             gameObject.hideFlags = HideFlags.HideAndDontSave;
@@ -83,7 +83,7 @@ namespace KomachiMod
                 WatermarkWrapper.ActivateWatermark();
 
             Func<Sprite> getSprite = () => ResourceLoader.LoadSprite("BossIcon.png", directorySource);
-            EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiModBoss), getSprite);
+            EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiMod), getSprite);
         }
 
         private void OnDestroy()

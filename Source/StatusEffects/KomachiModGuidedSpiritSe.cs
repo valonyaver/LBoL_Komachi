@@ -35,6 +35,14 @@ namespace KomachiMod.StatusEffects
         {
             get => GunNameID.GetGunFromId(6061);
         }
+
+        public string EnemyDescription => LocalizeProperty("EnemyDescription");
+        protected override string GetBaseDescription()
+        {
+            if (Owner is PlayerUnit) return BaseDescription;
+            return EnemyDescription;
+        }
+
         /// <summary>
         /// Calls both damage dealing of player and damage receiving of target to get the correct damage on the UI.
         /// </summary>
@@ -42,47 +50,32 @@ namespace KomachiMod.StatusEffects
         {
             get
             {
+                int calculatedDamage = Battle.CalculateDamage(this, Owner, target, new DamageInfo(Level, DamageType.Attack, isAccuracy: isAccurate));
                 if (target == null) return 0.ToString();
-                DamageInfo damage = new DamageInfo(Level, DamageType.Attack, isAccuracy: true);
-                EnemyUnit enemyUnit = target;
-                Unit[] array = new Unit[] { enemyUnit };
-                DamageDealingEventArgs DealingArgs = new DamageDealingEventArgs
-                {
-                    Source = Battle.Player,
-                    Targets = array,
-                    GunName = gunName,
-                    DamageInfo = damage,
-                    ActionSource = this
-                };
-                Battle.Player?.DamageDealing.Execute(DealingArgs);
-                DamageInfo damage2 = DealingArgs.DamageInfo;
-                DamageEventArgs DamageArgs = new DamageEventArgs
-                {
-                    Source = Battle.Player,
-                    Target = enemyUnit,
-                    GunName = gunName,
-                    DamageInfo = damage2,
-                    ActionSource = this
-                };
-                enemyUnit?.DamageReceiving.Execute(DamageArgs);
-
-                int finalDamage = Math.Max((int)DamageArgs.DamageInfo.Damage.Round(MidpointRounding.AwayFromZero), 0);
-
-                string color = KomachiModUtility.GetColorFromDamage(finalDamage, Level);
-
-                return $"<color=#{color}>{finalDamage}</color>"; 
+                string color = KomachiModUtility.GetColorFromDamage(calculatedDamage, Level);
+                return $"<color=#{color}>{calculatedDamage}</color>"; 
             }
         }
 
-        public EnemyUnit target
+        public bool isAccurate
         {
             get
             {
-                if (base.Battle.EnemyGroup == null || base.Battle.EnemyGroup.Alives == null || base.Battle.EnemyGroup.Alives.Count() == 0)
+                if (Owner is PlayerUnit) return true;
+                return false;
+            }
+        }
+
+        public Unit target
+        {
+            get
+            {
+                if (Battle.BattleShouldEnd) return null;
+                if (Owner is PlayerUnit) return base.Battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp);
+                else
                 {
-                    return null;
+                    return Battle.Player;
                 }
-                return base.Battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp);
             }
         }
          
@@ -93,17 +86,20 @@ namespace KomachiMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             base.ReactOwnerEvent<UnitEventArgs>
-                (base.Battle.Player.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnPlayerTurnEnding));
+                (Owner.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnUnitTurnEnding));
         }
 
-        private IEnumerable<BattleAction> OnPlayerTurnEnding(GameEventArgs args)
+        private IEnumerable<BattleAction> OnUnitTurnEnding(GameEventArgs args)
         {
             if (!base.Battle.BattleShouldEnd && base.Battle.EnemyGroup.Alives != null)
             {
                 base.NotifyActivating();
-                EnemyUnit enemyUnit = target;
+                // Get the target
+                Unit unit = target;
+                // Shoot damaage
                 yield return new 
-                    DamageAction(base.Owner, enemyUnit, DamageInfo.Attack(base.Level, isAccuracy:true), gunName);
+                    DamageAction(base.Owner, unit, DamageInfo.Attack(base.Level, isAccuracy:isAccurate), gunName);
+                // Reduce level and remove it if 0
                 int num = base.Level - 1;
                 base.Level = num;
                 if (base.Level == 0)

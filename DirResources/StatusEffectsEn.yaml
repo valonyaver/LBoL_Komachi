@@ -1,11 +1,18 @@
 KomachiModDistanceSe:
   Name: "Distance {Level}: {DistanceString}"
   Description: Attack Damage inflicted and received by this enemy is changed by {MultiplierDescription}.
+  # The distance strings depending on the level.
+  VeryClose: "Very Close"
+  Close: "Close"
+  Normal: "Normal Distance"
+  Far: "Far"
+  VeryFar: "Very Far"
 
 KomachiModDistanceBlockSe:
   Name: Flexible Work Schedule
   Description: Each time an enemy's Distance is changed, gain {Level} |Block| for every level of change.
 
+# I'm sorry for this formatting.
 KomachiModDistanceGeneratorSe:
   Name: Hardworking Shinigami
   Description: 'At the start of {PlayerName}''s turn, if there are {Level:plural one=''no''
@@ -25,8 +32,11 @@ KomachiModDistanceFlowSe:
 KomachiModReviveSe:
   Name: God of Death
   Description: |-
-    The next {Count} time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain {flawlessTurns} |Flawless| instead.
+    The next time {PlayerName} would be defeated this combat, heal to half the maximum HP and gain {flawlessTurns} |Flawless| instead.
     Remove {SelfName} from your Library when this is applied.
+    Whenever an enemy is defeated, if it was a summon, gain {Level} |Barrier|. Otherwise, gain {Level} life.
+  ExtraDescription: |-
+    {PlayerName} has already been revived by this effect.
     Whenever an enemy is defeated, if it was a summon, gain {Level} |Barrier|. Otherwise, gain {Level} life.
 
 KomachiModPushNPullSe:
@@ -74,9 +84,12 @@ KomachiModVengefulSpiritSe:
 KomachiModGuidedSpiritSe:
   Name: Guided Spirits
   Description: |-
-    At the end of {PlayerName}'s Turn, deal {damageDealt} |Accurate| attack damage to the enemy with the lowest life ({targetName}), then lose 1 {SelfName}.
+    At the end of {OwnerName}'s Turn, deal {damageDealt} |Accurate| attack damage to the enemy with the lowest life ({targetName}), then lose 1 {SelfName}.
   Brief: |-
-    At the end of {PlayerName}'s Turn, deal |Accurate| damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
+    At the end of its owner's Turn, deal attack damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
+    If the owner of this status effect is the player, this damage becomes |Accurate|.
+  EnemyDescription: |-
+    At the end of {OwnerName}'s Turn, deal {damageDealt} attack damage to {PlayerName}, then lose 1 {SelfName}.
 
 KomachiModDivineSpiritSe:
   Name: Divine Spirits
@@ -118,7 +131,7 @@ KomachiModGuidedGeneratorNextTurnSe:
 KomachiModDetonateInfiniteSe:
   Name: Forever Cancelled
   Description: |-
-    Each time |Vengeful Spirits| is |Detonated|, apply {Level} |Vengeful Spirits| on that target.
+    Each time |Vengeful Spirits| are |Detonated| on an enemy, apply {Level} |Vengeful Spirits| on that target.
 
 KomachiModSpiritReturnSe:
   Name: Spirit Return
@@ -154,8 +167,10 @@ KomachiModLifespanEndSe:
 KomachiModGoldSarcophagusSe:
   Name: Gold Sarcopha-Galley
   Description: |-
-    At the start of {PlayerName}'s turn, reduce the duration of each card in the {SelfName}. When the duration of a card becomes {returnTime}, add it to {PlayerName}'s hand.
+    At the start of {PlayerName}'s turn, reduce the duration of each card in the {SelfName}. When the duration of a card becomes {returnTime}, add it to {PlayerName}'s hand and upgrade it.
     Cards in the {SelfName}: {SarcophagusContent}
+  ExtraDescription: |-
+    - CARDNAME: returns to the hand in DURATION turns.
 
 KomachiModExileDoppelgangerSe:
   Name: Extinct Fauna of the Sanzu River
@@ -186,6 +201,38 @@ KomachiModRiversideViewSe:
     At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand.
     |Spider Lilies| apply {Count} less |Poison| to the Player.
     After {PlayerName} plays a |Spider Lily|, apply {poisonApply} |Poison| to each enemy, then gain {Level} |Firepower|.
+
+KomachiModPosessedArmamentSe:
+  Name: Posessed Armament
+  Description: |-
+    Whenever {PlayerName} deals unblocked attack damage, also apply {Level} |Vengeful Spirit{Level:plural one='' other='s'}|.
+  
+
+#Boss status effects
+KomachiModBossDistanceGeneratorSe:
+  Name: Moving
+  Description: 'At the start of {PlayerName}''s turn, if there is {Level:plural one=''no''
+    other=''less than %''} |Move!| in the hand, add {Level:plural one=''a |Move!|'' other=''|Move!|''} to the hand{Level:plural one=''.'' other='' until
+    there are %.''}'
+
+KomachiModBossTempFirepowerSe:
+  Name: Incoming Temporary Firepower
+  Description: |-
+    At the start of the round, {OwnerName} gains {Level} |Temporary Firepower|.
+
+KomachiModBossGuidedEndTurnSe:
+  Name: Gain Guided Spirits
+  Description: |-
+    At the end of {OwnerName}'s turn, gain {Level} |Guided Spirits|.
+
+KomachiModBossReviveSe:
+  Name: God of Death
+  Description: |-
+    {OwnerName} is a Shinigami. She will use her powers to manipulate the distance of the fight depending on her next action.
+  ExtraDescription: |-
+    {OwnerName} has temporarily cheated death using her powers as a Shinigami! 
+    She will make her final stand this turn before departing the battle.
+
 
 #Keywords
 

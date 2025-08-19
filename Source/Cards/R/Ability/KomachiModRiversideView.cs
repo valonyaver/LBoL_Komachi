@@ -21,8 +21,8 @@ namespace KomachiMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 3, Any = 2 };
             config.Rarity = Rarity.Rare; 
-            config.IsPooled = false;
-            config.HideMesuem = true;
+            //config.IsPooled = false;
+            //config.HideMesuem = true;
 
             config.Type = CardType.Ability;
             config.TargetType = TargetType.Nobody;

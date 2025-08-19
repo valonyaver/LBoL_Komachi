@@ -22,8 +22,8 @@ namespace KomachiMod.Cards
             config.Cost = new ManaGroup() { Red = 1, Green =1, Any = 1 };
             config.UpgradedCost = new ManaGroup() { HybridColor = 9, Hybrid = 1, Any = 1 };
             config.Rarity = Rarity.Uncommon; 
-            config.IsPooled = false;
-            config.HideMesuem = true;
+            //config.IsPooled = false;
+            //config.HideMesuem = true;
 
             config.Type = CardType.Ability;
             config.TargetType = TargetType.Nobody;

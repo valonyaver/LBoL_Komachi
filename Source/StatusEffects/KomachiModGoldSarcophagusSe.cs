@@ -33,14 +33,23 @@ namespace KomachiMod.StatusEffects
         {
             get
             {
+                if (coffinedCards.Count == 0)
+                    return "";
+
                 string result = "";
                 string keywordColor = KomachiModUtility.KeywordColor;
                 string valueColor = KomachiModUtility.normalValueColor;
-                foreach(CoffinedCard coffin in coffinedCards)
+
+                foreach (CoffinedCard coffin in coffinedCards)
                 {
-                    string coffinString = $"\n- {coffin.chosenCard.SelfName}: returns to the hand in <color=#{valueColor}>{coffin.duration}</color> turns.";
-                    result += coffinString;
+                    // Replace placeholders in the template
+                    string coffinString = ExtraDescription
+                        .Replace("CARDNAME", KomachiModUtility.GetColoredText(coffin.chosenCard.SelfName, keywordColor))
+                        .Replace("DURATION", KomachiModUtility.GetColoredText(coffin.duration.ToString(), valueColor));
+
+                    result += "\n" + coffinString;
                 }
+
                 return result;
             }
         }

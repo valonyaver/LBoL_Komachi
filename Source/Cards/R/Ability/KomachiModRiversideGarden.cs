@@ -18,7 +18,7 @@ namespace KomachiMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Red };
-            config.Cost = new ManaGroup() { Red = 2, Any = 2 };
+            config.Cost = new ManaGroup() { Red = 3, Any = 1 };
             config.UpgradedCost = new ManaGroup() { Red = 2, Any = 1 };
             config.Rarity = Rarity.Rare;
 
@@ -56,7 +56,7 @@ namespace KomachiMod.Cards
             yield return new AddCardsToDrawZoneAction(Library.CreateCards<KomachiModSpiderLily>(base.Value1, false), DrawZoneTarget.Random, AddCardsType.Normal);
             //Add a token card to the discard pile.
             yield return new AddCardsToDiscardAction(Library.CreateCards<KomachiModSpiderLily>(base.Value1, false), AddCardsType.Normal);
-            yield break;
+            yield break; 
         }
     }
 }

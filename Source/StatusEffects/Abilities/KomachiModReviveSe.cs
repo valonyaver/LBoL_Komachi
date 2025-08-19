@@ -29,9 +29,15 @@ namespace KomachiMod.StatusEffects
     [EntityLogic(typeof(KomachiModReviveSeDef))]
     public sealed class KomachiModReviveSe : StatusEffect
     {
-        int revived = 1;
+        bool revived = false;
         float reviveHeal = 0.5f;
-        int flawlessTurns = 2;
+        int flawlessTurns = 1;
+
+        protected override string GetBaseDescription()
+        {
+            if (revived) return ExtraDescription;
+            return base.GetBaseDescription();
+        }
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent<DieEventArgs>(base.Owner.Dying, new GameEventHandler<DieEventArgs>(this.OnDying));
@@ -41,17 +47,17 @@ namespace KomachiMod.StatusEffects
 
         private void OnDying(DieEventArgs args)
         {
-            if (revived == 1)
+            if (!revived)
             {
                 base.NotifyActivating();
                 int num = (args.Unit.MaxHp * reviveHeal).RoundToInt();
                 base.GameRun.Player.Hp = num;
                 args.CancelBy(this);
-                revived = 2;
+                revived = true;
                 Count = 0;
                 if (base.GameRun.Battle != null)
                 {
-                    this.React(new ApplyStatusEffectAction<Invincible>(base.Owner, 0, new int?(flawlessTurns), null, null, 0f, true));
+                    this.React(new ApplyStatusEffectAction<Invincible>(base.Owner, 0, new int?(flawlessTurns), null, null, 0f, false));
                 }
                 Card deckCardByInstanceId = base.GameRun.GetDeckCardByInstanceId(SourceCard.InstanceId);
                 if (deckCardByInstanceId != null)

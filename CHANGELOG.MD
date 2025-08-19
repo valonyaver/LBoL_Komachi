@@ -1,3 +1,22 @@
+## 0.4.0
+### - Added an Act 1 boss. Now you can fight Komachi as other characters and get access to her cards and exhibits.
+Five new cards, mostly to expand on the Spider Lily playstyle:
+-- Storm of the grieving dead: An X cost aoe attack that takes advantage of your Spider lilies.
+-- Riverside View: A rare RRR ability that constantly generates red lilies and gives more upsides to playing them
+-- Lily's Embrace: A Red-Green off colour ability that gives you amulets every time you play a Spider Lily
+-- Stygian Reel: The first off colour card to interact with distance. It's a Red-blue attack that pulls the enemies then pushes them back at the end of the turn.
+-- Posessed Armament: A black ability that's basically just dark dancer, but for vengeful spirits instead.
+-- Parasitic Pollen: A *neutral* Red-Green attack that interacts with poison and spider lilies.
+If you want more specificity about what these cards do, check them out in the collection.
+
+- Card changes:
+-- Scythe of Final Judgement is now an aoe attack.
+-- No hard feelings buffed: now applies vengeful spirits when unupgraded.
+-- Eye of the storm's release effect changed from giving 6 (8) barrier to 8 (10) barrier.
+-- Riverside Garden's unupgraded cost changed from 2RR to 1RRR. This is to prevent it from being shown to KomachiB.
+
+- Fixed a lot of text mistakes.
+
 ## 0.3.7
 - Added Korean translation. Thanks to coward_montblanc for making it!
 - More english text mistakes were fixed.

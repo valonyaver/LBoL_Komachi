@@ -1,7 +1,38 @@
-KomachiModBoss:
-  Title: 'Test'
+KomachiMod:
+  Name: 'Komachi Onozuka'
+  Title: 'Guide of the Sanzu River'
   Move:
-  - 'Attack a'
-  - 'Attack b'
-  - 'Attack c'
-  - 'Attack d'
+  - 'Bound Spirits of the Earth'
+  - 'Scythe of the Reaper'
+  - 'Taste of Death'
+  - 'Indolent Strike'
+  - 'Quick Nap'
+  - 'Distance Tax'
+  - 'Death Sign'
+  - 'Scythe of Final Judgement'
+  - 'Last Word - Shinigami'
+  - 'Higan Retour'
+  KomaEscape1: |-
+    Okay! This should be enough to convince Eiki that I tried my hardest to stop ya.
+  KomaEscape2: |-
+    I'll get going now <size=50%>to get a nice nap<size=100%>. Hope you find the culprit b<size=90%>y<size=80%>e<size=70%>e<size=60%>e<size=50%>e<size=40%>e!
+  LastWordChat1: |-
+    Gah! You're really overworking me, you know!
+  LastWordChat2: |-
+    But I can't let that slide!
+# These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
+
+KomachiModDivineSpiritEnemy:
+  Name: "Divine Spirit"
+  Default: 'Divine Spirit'
+  FlawlessMove: "Bodhisattva's Nap"
+  Move:
+  - 'Dazzling Flash'
+
+KomachiModVengefulSpiritEnemy:
+  Name: 'Vengeful Spirit'
+  Default: 'Vengeful Spirit'
+  Move:
+  - 'Foul Flame'
+  - 'Cripple'
+  - 'Self-Destruct'

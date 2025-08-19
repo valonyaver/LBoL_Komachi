@@ -31,7 +31,7 @@ namespace KomachiMod.Cards
             config.Value1 = 6;
             config.UpgradedValue1 = 10;
             // Flawless amount. Only for description purposes really.
-            config.Value2 = 2;
+            config.Value2 = 1;
 
             config.Illustrator = "";
 

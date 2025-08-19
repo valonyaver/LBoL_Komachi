@@ -1,0 +1,8 @@
+KomachiBossDisplaceIntention:
+  Name: Displace
+  Description: |-
+    {OwnerName} intends to displace their positions by an unknown amount.
+  PositiveDisplacementDescription: |-
+    {OwnerName} intends to displace their positions by {displacementAmount}.
+  NegativeDisplacementDescription: |-
+    {OwnerName} intends to displace their positions by {displacementAmount}.

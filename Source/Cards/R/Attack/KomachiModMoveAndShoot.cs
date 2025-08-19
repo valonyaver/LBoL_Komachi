@@ -60,7 +60,6 @@ namespace KomachiMod.Cards
     public sealed class KomachiModMoveAndShoot : KomachiCard
     {
         public static Card lastTargeter;
-        int[] damageLevels = new int[5];
 
         // Bruh all this work just to have correct damage calculations for enemies when selecting the distance
         protected override void OnEnterBattle(BattleController battle)
@@ -70,20 +69,6 @@ namespace KomachiMod.Cards
                 (base.Battle.Player.DamageDealing,
                 new GameEventHandler<DamageDealingEventArgs>(this.OnPlayerDamageDealing), GameEventPriority.Lowest);
 
-            // attach to enemy being targeted
-            foreach (var enemy in battle.AllAliveEnemies)
-            {
-                base.HandleBattleEvent<DamageEventArgs>
-                    (enemy.DamageReceiving, new GameEventHandler<DamageEventArgs>(OnEnemyDamageReceiving), GameEventPriority.Lowest);
-            }
-            HandleBattleEvent<UnitEventArgs>
-                (battle.EnemySpawned, new GameEventHandler<UnitEventArgs>(OnEnemySpawned));
-        }
-        // attach again to enemies being spawned
-        void OnEnemySpawned(UnitEventArgs args)
-        {
-            base.HandleBattleEvent<DamageEventArgs>
-                (args.Unit.DamageReceiving, new GameEventHandler<DamageEventArgs>(OnEnemyDamageReceiving), GameEventPriority.Lowest);
         }
         // You see, I want the damage when the card is targeting an enemy, including all the modifications
         // This only gives off the base damage of the card.
@@ -92,30 +77,11 @@ namespace KomachiMod.Cards
             if (args.Targets == null || args.ActionSource == null) return;
             if (args.ActionSource == this)
             {
-                lastTargeter = this;
-            }
-            else if (args.ActionSource.GetType() != typeof(KomachiModMoveAndShoot)) lastTargeter = null;
-        }
-        // BUT FOR SOME REASON, THIS ONE DOESNT HAVE AN ACTION CAUSE. its cause is "only calculating". tf do you mean only calculating?
-        // SO i have to make sure this class remembers that the last card that targeted an enemy is this card, and if this card is deadling the damage
-        // we store that damage in the array
-        private void OnEnemyDamageReceiving(DamageEventArgs args)
-        {
-            if (lastTargeter == this)
-            {
-                Unit target = args.Target;
-                int distanceLevel = KomachiModDistanceSe.GetDistanceLevel(target);
-                int[] distanceLevelPossibilities = new int[5];
-                for (int i = 0; i < 5; i++)
-                {
-                    distanceLevelPossibilities[i] = Math.Clamp(distanceLevel + i - 2, 1, 5);
-                    damageLevels[i] = Mathf.RoundToInt(
-                        args.DamageInfo.Damage * KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevelPossibilities[i])
-                        / KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel)); // divides the current distance multiplier so that we can apply the hypothetical multiplier by itself.
-                }
+                lastTarget = args.Targets[0];
             }
         }
-        
+
+        Unit lastTarget;
 
         /// <summary>
         /// From the damages we got in the array, we calculate what the damage will be in every possible distance that this card can bring the enemy to.
@@ -124,51 +90,56 @@ namespace KomachiMod.Cards
         /// <returns></returns>
         public override Interaction Precondition()
         {
-            // Create list for interaction
             List<Card> list1 = new List<Card>();
+
+            // Create arrays of card types, indicators, and damage levels
+            // Indicator 1 is pull, 2 is push
+            var cardConfigs = new List<(Type cardType, int indicator, int damageIndex, bool upgraded)>
+            {
+              (typeof(KomachiModManDistance), 1, 1, false),   // Pull 1
+              (typeof(KomachiModManDistance0), 1, 2, false), // Distance 0
+              (typeof(KomachiModManDistance), 2, 3, false)   // Push 1
+            };
+
+            // Add upgraded cards if applicable
             if (this.IsUpgraded)
             {
-                // notice how they are MAN DISTANCE 2?
-                KomachiModManDistance2 manipulateDistancePull2 = Library.CreateCard<KomachiModManDistance2>(upgraded: true);
-                manipulateDistancePull2.ChoiceCardIndicator = 1; // uses extra description 1 of mandistance2
-                manipulateDistancePull2.SetBattle(base.Battle);
-                string damageColor0 = KomachiModUtility.GetColorFromDamage(damageLevels[0], Damage.Damage);
-                manipulateDistancePull2.extraDescriptionAddition = $"Deal <color=#{damageColor0}>{damageLevels[0]}</color> damage.";
-                list1.Add(manipulateDistancePull2);
+                cardConfigs.Insert(0, (typeof(KomachiModManDistance2), 1, 0, true)); // Pull 2
+                cardConfigs.Add((typeof(KomachiModManDistance2), 2, 4, true));      // Push 2
             }
-            // make the 2 cards
-            KomachiModManDistance manipulateDistancePull1 = Library.CreateCard<KomachiModManDistance>();
-            KomachiModManDistance0 manipulateDistance0 = Library.CreateCard<KomachiModManDistance0>();
-            KomachiModManDistance manipulateDistancePush1 = Library.CreateCard<KomachiModManDistance>();
-            // indicate them
-            manipulateDistancePull1.ChoiceCardIndicator = 1; // uses extra description 1
-            manipulateDistance0.ChoiceCardIndicator = 1; // uses extra description 1
-            manipulateDistancePush1.ChoiceCardIndicator = 2; // uses extra description 2
-            // extra description
-            string damageColor1 = KomachiModUtility.GetColorFromDamage(damageLevels[1], Damage.Damage);
-            manipulateDistancePull1.extraDescriptionAddition = $"Deal <color=#{damageColor1}>{damageLevels[1]}</color> damage.";
-            string damageColor2 = KomachiModUtility.GetColorFromDamage(damageLevels[2], Damage.Damage);
-            manipulateDistance0.extraDescriptionAddition = $"Deal <color=#{damageColor2}>{damageLevels[2]}</color> damage.";
-            string damageColor3 = KomachiModUtility.GetColorFromDamage(damageLevels[3], Damage.Damage);
-            manipulateDistancePush1.extraDescriptionAddition = $"Deal <color=#{damageColor3}>{damageLevels[3]}</color> damage.";
-            // dk what these do tbh.
-            manipulateDistancePull1.SetBattle(base.Battle);
-            manipulateDistance0.SetBattle(base.Battle);
-            manipulateDistancePush1.SetBattle(base.Battle);
-            // add em to the list
-            list1.Add(manipulateDistancePull1);
-            list1.Add(manipulateDistance0);
-            list1.Add(manipulateDistancePush1);
-            if (this.IsUpgraded)
+
+            Unit target = lastTarget;
+            int distanceLevel = KomachiModDistanceSe.GetDistanceLevel(target);
+
+            int baseDamageDealt = Battle.CalculateDamage(this, Battle.Player, target, DamageInfo.Attack(Damage.Damage));
+
+            // Process all cards in a loop
+            foreach (var config in cardConfigs)
             {
-                KomachiModManDistance2 manipulateDistancePush2 = Library.CreateCard<KomachiModManDistance2>(upgraded: true);
-                manipulateDistancePush2.ChoiceCardIndicator = 2; // uses extra description 2
-                string damageColor4 = KomachiModUtility.GetColorFromDamage(damageLevels[4], Damage.Damage);
-                manipulateDistancePush2.extraDescriptionAddition = $"Deal <color=#{damageColor4}>{damageLevels[4]}</color> damage.";
-                manipulateDistancePush2.SetBattle(base.Battle);
-                list1.Add(manipulateDistancePush2);
+                Card card;
+
+                card = Library.CreateCard(config.cardType, upgraded: config.upgraded);
+
+                card.Keywords = Keyword.None;
+
+                int distanceLevelPossibility = Math.Clamp(distanceLevel + config.damageIndex - 2, 1, 5);
+                // divides the current distance multiplier so that we can apply the hypothetical multiplier by itself.
+                float realDamage = MathF.Round(
+                    baseDamageDealt * KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevelPossibility)
+                    / KomachiModDistanceSe.GetDistanceDamageMultiplier(distanceLevel)
+                    , MidpointRounding.AwayFromZero); 
+
+                card.ChoiceCardIndicator = config.indicator;
+                string damageColor = KomachiModUtility.GetColorFromDamage(realDamage, Damage.Damage);
+                string damageColoredText = KomachiModUtility.GetColoredText(realDamage.ToString(), damageColor);
+                string damageText = ExtraDescription1;
+                damageText = damageText.Replace("VALUE", damageColoredText);
+
+                ((KomachiModManDistanceTemplate)card).extraDescriptionAddition = damageText;
+                card.SetBattle(base.Battle);
+                list1.Add(card);
             }
-            
+
             return new MiniSelectCardInteraction(list1);
         }
 

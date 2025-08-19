@@ -64,27 +64,34 @@ namespace KomachiMod.StatusEffects
                 {
                     case 1: // Very close distance
                         {
-                            return "Very close";
+                            return VeryCloseDistance;
                         }
                     case 2: // Close distance
                         {
-                            return "Close";
+                            return CloseDistance;
                         }
                     default: // Normal Distance. Takes case 3 into account.
                         {
-                            return "Normal Distance";
+                            return NormalDistance;
                         }
                     case 4: // Far distance
                         {
-                            return "Far";
+                            return FarDistance;
                         }
                     case 5: // Very far distance
                         {
-                            return "Very far";
+                            return VeryFarDistance;
                         }
                 }
             }
         }
+
+        public string VeryCloseDistance => LocalizeProperty("VeryClose");
+        public string CloseDistance => LocalizeProperty("Close");
+        public string NormalDistance => LocalizeProperty("Normal");
+        public string FarDistance => LocalizeProperty("Far");
+        public string VeryFarDistance => LocalizeProperty("VeryFar");
+
         public float DamageMultiplier
         {
             get

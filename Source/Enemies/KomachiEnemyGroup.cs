@@ -9,14 +9,14 @@ namespace KomachiMod.Enemies
 {
     public sealed class KomachiEnemyGroupDef : KomachiEnemyGroupTemplate
     {
-        public override IdContainer GetId() => nameof(KomachiModBoss);
+        public override IdContainer GetId() => nameof(KomachiMod);
 
         public override EnemyGroupConfig MakeConfig()
         {
             EnemyGroupConfig config = GetEnemyGroupDefaultConfig();
-            config.Name = nameof(KomachiModBoss);
-            config.FormationName = VanillaFormations.Single;
-            config.Enemies = new List<string>() { nameof(KomachiModBoss) };
+            config.Name = nameof(KomachiMod);
+            config.FormationName = VanillaFormations.Triangle2;
+            config.Enemies = new List<string>() { "Empty", "Empty", nameof(KomachiMod) };
             config.EnemyType = EnemyType.Boss;
             config.RollBossExhibit = true;
 

@@ -22,5 +22,21 @@ namespace KomachiMod.Cards.Template
         }
 
         public virtual bool farDistanceInverseDamage => false;
+
+
+        public string CardDialogue1
+        {
+            get
+            {
+                return this.LocalizeProperty("CardDialogue1", true, true);
+            }
+        }
+        public string CardDialogue2
+        {
+            get
+            {
+                return this.LocalizeProperty("CardDialogue2", true, true);
+            }
+        }
     }
 }
