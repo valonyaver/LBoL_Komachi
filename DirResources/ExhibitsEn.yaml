@@ -6,6 +6,7 @@ KomachiModExhibitR:
     When an enemy is defeated, add |Spider Lily| to the hand.
     <sprite="Point" name="Gold"> rewards from combat give {Value1}% more <sprite="Point" name="Gold">.
   FlavorText: Luxury Cruise across the Higan Shores! Limited time offer 10% off.
+# ^Taken from her pofv dialogue in Reimu's route.
 
 KomachiModExhibitB:
   Name: Shinigami Eyes
@@ -14,3 +15,5 @@ KomachiModExhibitB:
     At the start of combat, gain {Value1} |Spirit|, then remove all |Amulets| and apply {Value3} |Weak| and |Vulnerable| on each "|Spirit|" enemy.
     At the end of {PlayerName}'s third turn, lose {Value1} |Spirit| and apply {Value2} |Vulnerable| on all enemies.
   FlavorText: For half your lifespan, you can see the name and date of death of all the people you encounter.
+# ^Obvious death note reference.
+# "Spirit" enemies, are Shenling and Guihou in the game's code. Check the localization file of the base game for what they are called and try to mention them both in the effect if they are different.

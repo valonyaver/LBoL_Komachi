@@ -1,6 +1,12 @@
 KomachiModDistanceSe:
   Name: "Distancia {Level}: {DistanceString}"
-  Description: El daño del ataque infligido y recibido por esta unidad se modifica en {MultiplierDescription}.
+  Description: El daño del ataque infligido y recibido por este enemigo se modifica en {MultiplierDescription}.
+  # The distance strings depending on the level.
+  VeryClose: "Muy Cerca"
+  Close: "Cerca"
+  Normal: "Distancia Normal"
+  Far: "Lejos"
+  VeryFar: "Muy Lejos"
 
 KomachiModDistanceBlockSe:
   Name: Horario de Trabajo Flexible
@@ -28,6 +34,9 @@ KomachiModReviveSe:
     La próxima vez que {PlayerName} sea derrotado en este combate, se curará a la mitad de su vida máxima y gana {flawlessTurns} |Perfección| en su lugar.
     Se remueve {SelfName} de la biblioteca cuando se aplique el efecto.
     Siempre que un enemigo sea derrotado, si fue una invocación, gana {Level} de |Barrera|. De lo contrario, cura {Level} de vida.
+    ExtraDescription: |-
+    {PlayerName} ya ha sido revivido por este efecto.
+    Al derrotar a un enemigo, si fue una invocación, gana {Level} de |Barrera|. De lo contrario, cura {Level} de vida.
 
 KomachiModPushNPullSe:
   Name: Empujar y Tirar
@@ -49,7 +58,7 @@ KomachiModRiversideGardenSe:
 KomachiModShinigamiTacticsSe:
   Name: Tácticas de Shinigami
   Description: |-
-    Siempre que se juegue un |Manipular distancia|: 
+    Después de jugar un |Manipular distancia|: 
     - Si se redujo la distancia, agrega {Level} carta{Level:plural one=' de ataque aleatorio' other='s de ataques aleatorios'} a la mano. 
     - Si se aumentó la distancia, agrega {Level} carta{Level:plural one=' de defensa aleatorio' other='s de defensa aleatorios'} a la mano.
     {Level:plural one=' |Cuesta temporalmente|' other='|Cuestan Temporalmente|'} {Mana}, tiene{Level:plural one='' other='n'} |Exilio| y |Etéreo|.
@@ -74,9 +83,12 @@ KomachiModVengefulSpiritSe:
 KomachiModGuidedSpiritSe:
   Name: Espíritu Guiado
   Description: |-
-    Al final del turno de {PlayerName}, inflige {damageDealt} de daño de ataque |Certero| al enemigo con menos vida ({targetName}) y luego pierde 1 {SelfName}.
-  Brief: |-
-    Al final del turno de {PlayerName}, inflige daño |Certero| al enemigo con menos vida igual al nivel de {SelfName}, luego pierde 1 {SelfName}.
+    Al final del turno de {OwnerName}, inflige {damageDealt} de daño de ataque |Certero| al enemigo con menos vida ({targetName}) y luego pierde 1 {SelfName}.
+  Brief: |-   
+    Al final del turno del usuario, inflige daño al enemigo con la vida más baja igual al nivel de {SelfName} y luego pierde 1 {SelfName}.
+    Si el usuario de este efecto de estado es el jugador, este daño se vuelve |Certero|.
+  EnemyDescription: |-
+    Al final del turno de {OwnerName}, inflige {damageDealt} de daño a {PlayerName} y luego pierde 1 {SelfName}.
 
 KomachiModDivineSpiritSe:
   Name: Espíritu Divino
@@ -116,9 +128,9 @@ KomachiModGuidedGeneratorNextTurnSe:
     Al comienzo del siguiente turno de {PlayerName}, gana {Level} |Espíritus Guiados|.
 
 KomachiModDetonateInfiniteSe:
-  Name: Cancelado para Siempre
+  Name: Arruinado para Siempre
   Description: |-
-    Cada vez que un |Espíritu Vengativo| es |Detonado|, aplica {Level} |Espíritus Vengativos| a ese objetivo.
+    Cada vez que los |Espíritu Vengativo| son |Detonados|, aplica {Level} |Espíritus Vengativos| a ese objetivo.
 
 KomachiModSpiritReturnSe:
   Name: Retorno de los Espíritus
@@ -149,19 +161,21 @@ KomachiModMidsummerLilySe:
 KomachiModLifespanEndSe:
   Name: Fin del Ciclo de la Vida
   Description: |-
-    Al final del turno de {PlayerName}: Recibe {Level} de daño.
+    Al final del turno: Recibe {Level} de daño.
 
 KomachiModGoldSarcophagusSe:
   Name: Sarcófago-Galera de Oro
   Description: |-
-    Al comienzo del turno de {PlayerName} reduce la duración de cada carta de la {SelfName}. Cuando la duración de una carta llegue a {returnTime}, agrega a la mano de {PlayerName}.
+    Al comienzo del turno de {PlayerName} reduce la duración de cada carta de la {SelfName}. Cuando la duración de una carta llegue a {returnTime}, agrega a la mano de {PlayerName} y se mejora.
     Cartas en la {SelfName}: {SarcophagusContent}
+  ExtraDescription: |-
+    - CARDNAME: vuelve a la mano en la DURATIÓN de los turnos.
 
 KomachiModExileDoppelgangerSe:
   Name: Fauna Extinta del Río Sanzu
   Description: |-
     Siempre que {PlayerName} juegue una carta:
-    - |Si una carta con el mismo nombre no está en la pila del Exilio|: Agrega una |Copia| a la pila de exilio. Cuesta {Mana} y se retira del combate tras ser jugada. (Puedes usar {Count} ve{Count:plural one='z' other='ces'} más en este turno.)
+    - |Si una carta con el mismo nombre no está en la pila del Exilio|: Agrega una |Copia| a la pila de exilio. Su coste se reduce a {Mana} y se retira del combate tras ser jugada. (Puedes usar {Count} ve{Count:plural one='z' other='ces'} más en este turno.)
     - |Si una carta con el mismo nombre está en la pila del Exilio|: Puedes agregarlo a la mano. (Puedes usar {count2} ve{count2:plural one='z' other='ces'} más en este turno.)
     Solo puedes usar cada efecto de {SelfName} {Level:ordinal one='una vez' two='dos veces' few='tres veces' other='% veces'} por turno.
 
@@ -169,6 +183,55 @@ KomachiModEikiSe:
   Name: Shinigami Sermoneado
   Description: |-
     {PlayerName} no paga el coste de |Liberar| de las cartas.
+
+KomachiModLilyHugSe:
+  Name: Abrazo de Lirios
+  Description: |-
+    Después de que {PlayerName} juegue un |Lirio de Araña|, gana {Level} |Amuleto{Level:plural one='' other='s'}|.
+
+KomachiModDisplaceNextTurnSe:
+  Name: Desplazarse en el Siguiente Turno
+  Description: |-
+    Al comienzo del próximo turno de {OwnerName}, Se desplaza en {displaceAmount}.
+
+KomachiModRiversideViewSe:
+  Name: Vistas del Río
+  Description: |-
+    Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano.
+    Los |Lirios de Araña| aplican {Count} menos de |Veneno| al jugador.
+    Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {poisonApply} de |Veneno| a cada enemigo y luego gana {Level} de |Poder|.
+    
+KomachiModPosessedArmamentSe:
+  Name: Armamento Poseído
+  Description: |-
+    Siempre que {PlayerName} inflige daño de ataque no bloqueado, también aplica {Level} |Espíritu{Level:plural one=' Vengativo' other='s Vengativos'}|.
+  
+
+#Boss status effects
+KomachiModBossDistanceGeneratorSe:
+  Name: Desplazamiento
+  Description: 'Al comienzo del turno de {PlayerName}, si {Level:plural one=''no hay''
+    other=''hay menos de %''} |¡Mover!| en la mano, agrega {Level:plural one=''un |¡Mover!|'' other=''|Mover!|''} a la mano{Level:plural one=''.'' other='' hasta
+    que haya %.''}'
+
+KomachiModBossTempFirepowerSe:
+  Name: Poder Temporal Inminente
+  Description: |-
+    Al comienzo de la ronda, {OwnerName} gana {Level} de |Poder Temporal|.
+
+KomachiModBossGuidedEndTurnSe:
+  Name: Ganar Espíritus Guiados
+  Description: |-
+    Al final del turno de {OwnerName}, gana {Level} |Espíritus Guiados|.
+
+KomachiModBossReviveSe:
+  Name: Diosa de la Muerte
+  Description: |-
+    {OwnerName} es una shinigami. Usará sus poderes para manipular la distancia del combate según su próxima intención.
+  ExtraDescription: |-
+    ¡{OwnerName} ha burlado temporalmente a la muerte usando sus poderes de Shinigami!
+    En este turno será su último acto de resistencia antes de retirarse del combate.
+    
 #Keywords
 
 KomachiDistanceKeyword:

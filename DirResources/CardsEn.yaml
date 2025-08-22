@@ -145,6 +145,7 @@ KomachiModMoveAndShoot:
     I mean, shoot and I'll move. Right away.
     (I don't really mean it)"
 # ^ reference to touhou 8's stage 4 dialogue with Marisa
+# Keep the VALUE as is, same for any full caps word. It's used similarly to {bracketed} words.
 
 KomachiModRetreat:
   Name: Handy Retreat
@@ -811,8 +812,8 @@ KomachiModStygianReel:
   Name: Stygian Reel
   Description: |-
     Deal {Damage} damage.
-    Displace by -{Value1}.
-    At the start of that enemy's turn, displace them by +{Value1}.
+    |Displace| by -{Value1}.
+    At the start of that enemy's turn, |Displace| them by +{Value1}.
 
 # Komachi's theme
 KomachiModRiversideView:

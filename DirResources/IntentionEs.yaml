@@ -1,0 +1,8 @@
+KomachiBossDisplaceIntention:
+  Name: Desplazar
+  Description: |-
+    {OwnerName} pretende desplazar sus posiciones en una cantidad desconocida.
+  PositiveDisplacementDescription: |-
+    {OwnerName} pretende desplazar sus posiciones en {displacementAmount}.
+  NegativeDisplacementDescription: |-
+    {OwnerName} pretende desplazar sus posiciones en {displacementAmount}.

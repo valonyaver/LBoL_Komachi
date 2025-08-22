@@ -1,0 +1,8 @@
+KomachiBossDisplaceIntention:
+  Name: 위치 변경
+  Description: |-
+    {OwnerName}가 위치를 알 수 없는 만큼 이동하려 합니다.
+  PositiveDisplacementDescription: |-
+    {OwnerName}가 위치를 {displacementAmount}만큼 이동하려 합니다.
+  NegativeDisplacementDescription: |-
+    {OwnerName}가 위치를 {displacementAmount}만큼 이동하려 합니다.

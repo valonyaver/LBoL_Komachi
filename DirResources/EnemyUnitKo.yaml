@@ -1,7 +1,37 @@
-KomachiModBoss:
-  Title: "테스트"
+KomachiMod:
+  Name: 오노즈카 코마치
+  Title: 삼도천의 물길 안내인
   Move:
-    - "공격 a"
-    - "공격 b"
-    - "공격 c"
-    - "공격 d"
+    - "대지의 원령"
+    - "사신의 낫"
+    - "죽음의 맛"
+    - "게으른 일격"
+    - "짧은 낮잠"
+    - "거리세"
+    - "사망 예고"
+    - "최후의 판결의 낫"
+    - "라스트 워드 - 사신"
+    - "피안 귀환"
+  KomaEscape1: |-
+    좋아! 이 정도면 내가 열심히 널 막으려 했다고 에이키님에게 변명할 수 있겠지.
+  KomaEscape2: |-
+    그럼 난 이만 <size=50%>낮잠 좀 자러<size=100%> 가볼게. 범인 꼭 찾길 바라 그<size=90%>럼<size=80%>이<size=70%>마<size=60%>아<size=50%>아<size=40%>안!
+  LastWordChat1: |-
+    으아! 넌 정말 날 너무 혹사시키는구나!
+  LastWordChat2: |-
+    하지만 그냥 넘어갈 순 없지!
+
+KomachiModDivineSpiritEnemy:
+  Name: "신령"
+  Default: "신령"
+  FlawlessMove: "보살의 낮잠"
+  Move:
+    - "눈부신 섬광"
+
+KomachiModVengefulSpiritEnemy:
+  Name: "원령"
+  Default: "원령"
+  Move:
+    - "사악한 불길"
+    - "불구"
+    - "자폭"
