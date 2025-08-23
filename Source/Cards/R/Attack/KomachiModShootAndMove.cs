@@ -58,6 +58,11 @@ namespace KomachiMod.Cards
         //By default, if config.Damage / config.Block / config.Shield are set:
         //The card will deal damage or gain Block/Barrier without having to set anything.
 
+        protected override string GetBaseDescription()
+        {
+            return base.GetBaseDescription();
+        }
+
         /// <summary>
         /// Copied straight from KomachiManDistance.cs
         /// </summary>
@@ -99,6 +104,7 @@ namespace KomachiMod.Cards
             }
 
             return new MiniSelectCardInteraction(list1);
+            base.Precondition();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

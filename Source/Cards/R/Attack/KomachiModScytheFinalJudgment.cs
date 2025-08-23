@@ -159,12 +159,9 @@ namespace KomachiMod.Cards
                     // Set direction indicator (1 = reduce distance, 2 = increase distance)
                     distanceCard.ChoiceCardIndicator = (targetDistance < currentDistance) ? 1 : 2;
                 }
-
                 distanceCard.Keywords = Keyword.None;
-
                 // Set card
                 distanceCard.SetBattle(base.Battle);
-
                 // Copy the regular damage.
                 float damage = regularDamage;
                 // Get the right multiplications for the target distance.
@@ -182,13 +179,10 @@ namespace KomachiMod.Cards
                 string damageColor = KomachiModUtility.GetColorFromDamage(finalDamage, Damage.Damage);
                 string damageColoredText = KomachiModUtility.GetColoredText(finalDamage.ToString(), damageColor);
                 string damageText = ExtraDescription1.Replace("VALUE", damageColoredText);
-
                 // Finally write the description WOO
                 distanceCard.extraDescriptionAddition = damageText;
-
                 distanceOptions.Add(distanceCard);
             }
-
             return new MiniSelectCardInteraction(distanceOptions);
         }
 

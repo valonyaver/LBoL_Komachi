@@ -4,6 +4,8 @@ using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
+using LBoL.Core.Battle;
+using LBoL.Core;
 
 namespace KomachiMod.Cards
 {
@@ -42,13 +44,13 @@ namespace KomachiMod.Cards
         //By default, if config.Damage / config.Block / config.Shield are set:
         //The card will deal damage or gain Block/Barrier without having to set anything.
         //Here, this is is equivalent to the following code.
-         
-        /*
+
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector, base.GunName);
             yield break;
-        }*/
+        }
     }
 }
 
