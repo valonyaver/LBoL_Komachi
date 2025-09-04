@@ -76,6 +76,7 @@ All art is credited under `Art.MD`. If Art.MD isnt in the mod files, then you ca
 Thanks in particular to IcedLemon for making the icon for the Titanic exhibit for this mod. Thanks to the every touhou artist who has drawn wonderful art of my beloved.
 
 # Special Thanks
+- Iced_Lemon: For making some of the arts specifically for the mod.
 - xerox asutnima: For making the Spanish translation.
 - coward_montblanc: For making the Korean translation.
 - rm -rf Maxx "c": For making the sample character template that made it so easy to develop this mod.
