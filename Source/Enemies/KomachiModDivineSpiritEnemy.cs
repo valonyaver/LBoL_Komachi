@@ -56,13 +56,13 @@ namespace KomachiMod.Enemies
 
             // Block gained from the defend action
             config.Defend = 5;
-            config.DefendHard = 6;
-            config.DefendLunatic = 7;
+            config.DefendHard = 7;
+            config.DefendLunatic = 10;
             
             // FP Buff amount
             config.Count1 = 1;
             config.Count1Hard = 1;
-            config.Count1Lunatic = 1;
+            config.Count1Lunatic = 2;
 
             // Start of flawless counter
             config.Count2 = 3;
@@ -132,15 +132,18 @@ namespace KomachiMod.Enemies
             {
                 switch (Next)
                 {
+                    // Shoots twice
                     case MoveType.DoubleShoot:
                         yield return AttackMove(GetMove(0), base.Gun1, base.Damage1, 2);
                         Last = MoveType.DoubleShoot;
                         break;
+                        // Shoots then buffs everyone, permanent FP for summons and temporary for others.
                     case MoveType.ShootAndBuff:
                         yield return new SimpleEnemyMove(Intention.Attack(Damage2), ShootAndBuff());
                         yield return new SimpleEnemyMove(Intention.PositiveEffect());
                         Last = MoveType.ShootAndBuff;
                         break;
+                        // Gives block to self and barrier to non summons
                     case MoveType.Defend:
                         yield return new SimpleEnemyMove(Intention.Defend(), DefendKoma());
                         Last = MoveType.Defend;
@@ -159,7 +162,7 @@ namespace KomachiMod.Enemies
                 yield return new DamageAction(this, Battle.Player, DamageInfo.Attack(Damage2), Gun2);
                 foreach(var enemy in Battle.AllAliveEnemies)
                 {
-                    if (enemy == this)
+                    if (enemy.IsServant)
                     {
                         yield return new ApplyStatusEffectAction<Firepower>(enemy, Count1);
                     }
@@ -174,12 +177,24 @@ namespace KomachiMod.Enemies
             {
                 Debug.Log("Applying defence to Komachi");
                 yield return new CastBlockShieldAction(this, Defend, 0, cast: false);
-                yield return new CastBlockShieldAction(komachi, 0, Defend, cast: false);
+                foreach (var enemy in Battle.AllAliveEnemies)
+                {
+                    if (!enemy.IsServant)
+                    {
+                        yield return new CastBlockShieldAction(komachi, 0, Defend, cast: false);
+                    }
+                }
             }
             public string FlawlessMove => LocalizeProperty("FlawlessMove");
             IEnumerable<BattleAction> FlawlessBuff()
             {
-                yield return new ApplyStatusEffectAction<Invincible>(komachi, duration: 1, startAutoDecreasing: false);
+                foreach(var enemy in Battle.AllAliveEnemies)
+                {
+                    if (!enemy.IsServant)
+                    {
+                        yield return new ApplyStatusEffectAction<Invincible>(enemy, duration: 1, startAutoDecreasing: false);
+                    }
+                }
             }
             #endregion
 

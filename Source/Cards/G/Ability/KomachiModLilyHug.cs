@@ -40,7 +40,7 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(Amulet) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(Amulet) };
 
-            config.Illustrator = "";
+            config.Illustrator = "Iced_Lemon";
             config.Unfinished = true;
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);

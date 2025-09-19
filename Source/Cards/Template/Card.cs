@@ -1,4 +1,8 @@
+using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using System.Linq;
 
 namespace KomachiMod.Cards.Template
 {
@@ -38,5 +42,59 @@ namespace KomachiMod.Cards.Template
                 return this.LocalizeProperty("CardDialogue2", true, true);
             }
         }
+
+        #region AUTO EXILE CODE
+        public virtual bool isAutoDiscard => false;
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            if (isAutoDiscard)
+            {
+                base.HandleBattleEvent<CardEventArgs>
+                    (base.Battle.Predraw,
+                    new GameEventHandler<CardEventArgs>(this.OnPlayerDrawing), GameEventPriority.ConfigDefault);
+                base.HandleBattleEvent<CardsEventArgs>
+                    (base.Battle.CardsAddingToHand,
+                    new GameEventHandler<CardsEventArgs>(this.OnPlayerAddingMany), GameEventPriority.ConfigDefault);
+                base.HandleBattleEvent<CardMovingEventArgs>
+                    (base.Battle.CardMoving,
+                    new GameEventHandler<CardMovingEventArgs>(this.OnPlayerAdding), GameEventPriority.ConfigDefault);
+            }
+        }
+
+        void OnPlayerDrawing(CardEventArgs args)
+        {
+            AutoDiscard(1);
+        }
+        void OnPlayerAddingMany(CardsEventArgs args)
+        {
+            AutoDiscard(args.Cards.Length);
+        }
+
+        void OnPlayerAdding(CardMovingEventArgs args)
+        {
+            if (args.DestinationZone == CardZone.Hand)
+            {
+                AutoDiscard(1);
+            }
+        }
+        void AutoDiscard(int cardAmount)
+        {
+            int projectedHandsize = Battle.HandZone.Count + cardAmount;
+            if (projectedHandsize >= Battle.MaxHand + 1 && Zone == CardZone.Hand)
+            {
+                // Get all Spider Lily cards in hand
+                var autoDiscardInHand = Battle.HandZone
+                    .Where(card => card is KomachiCard && (card as KomachiCard).isAutoDiscard)
+                    .Take(cardAmount) // Only consider first 'cardAmount' lilies
+                    .ToList();
+
+                // Check if this card is in the first 'cardAmount' lilies
+                if (autoDiscardInHand.Contains(this))
+                {
+                    React(new DiscardAction(this) { Cause = ActionCause.AutoExile });
+                }
+            }
+        }
     }
+    #endregion
 }

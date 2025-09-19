@@ -36,7 +36,7 @@ namespace KomachiMod.Cards
                 nameof(KomachiModVengefulSpiritSe)
             };
 
-            config.Illustrator = "";
+            config.Illustrator = "yuuki eishi";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

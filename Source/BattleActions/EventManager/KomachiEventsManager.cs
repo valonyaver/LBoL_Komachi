@@ -1,11 +1,14 @@
 using HarmonyLib;
 using KomachiMod.BattleActions;
 using KomachiMod.Cards;
+using KomachiMod.Cards.Template;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
+using LBoL.Presentation;
+using LBoLEntitySideloader.CustomKeywords;
 using System.Linq;
 
 namespace KomachiMod.Source.BattleActions.EventManager
@@ -44,36 +47,22 @@ namespace KomachiMod.Source.BattleActions.EventManager
             return true;
         }
 
-        //static void OnPlayerDrawing(CardEventArgs args)
-        //{
-        //    AutoDiscard(args.Card);
-        //}
-        //static void OnPlayerAddingMany(CardsEventArgs args)
-        //{
-        //    AutoDiscard(args.Cards.First());
-        //}
+        [HarmonyPatch(typeof(BattleController), "get_HandIsFull")]
+        static void Postfix(ref bool __result, BattleController __instance)
+        {
+            // If hand is physically full
+            if (__instance.HandZone.Count == __instance.MaxHand)
+            {
+                // Check if there are any auto-discard cards
+                bool hasAutoDiscard = __instance.HandZone.Any(card =>
+                    card is KomachiCard && (card as KomachiCard).isAutoDiscard);
 
-        //static void OnPlayerAdding(CardMovingEventArgs args)
-        //{
-        //    AutoDiscard(args.Card);
-        //}
-        //static void AutoDiscard(Card cause)
-        //{
-        //    if (Battle.HandZone.Count == Battle.MaxHand)
-        //    {
-        //        while (Battle.HandZone.Count == Battle.MaxHand && Battle.HandZone.Any((Card card) => card is KomachiModSpiderLily))
-        //        {
-        //            Card firstSpiderLily = Battle.HandZone.FirstOrDefault(card => card is KomachiModSpiderLily);
-        //            if (firstSpiderLily != null)
-        //            {
-        //               Battle.React(new DiscardAction(firstSpiderLily), cause, ActionCause.AutoExile);
-        //            }
-        //        }
-        //    }
-        //    return;
-        //    //new DrawCardAction();
-        //    //new AddCardsToHandAction();
-        //    //new MoveCardAction();
-        //}
+                // If auto-discard cards exist, return false (hand is not "full" for game logic)
+                if (hasAutoDiscard)
+                {
+                    __result = false;
+                }
+            }
+        }
     }
 }

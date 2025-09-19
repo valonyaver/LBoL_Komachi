@@ -66,7 +66,7 @@ namespace KomachiMod.Cards
                 nameof(TempFirepower)
             };
 
-            config.Illustrator = "";
+            config.Illustrator = "Akyuun";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -45,6 +45,7 @@ namespace KomachiMod.Cards
             config.UpgradedRelativeEffects = new List<string>() { nameof(Vulnerable) };
 
             config.Illustrator = "マッペ";
+            config.SubIllustrator = new List<string>() { "Iced_Lemon" };
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             // config.Unfinished = true;

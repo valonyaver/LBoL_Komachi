@@ -47,8 +47,8 @@ namespace KomachiMod.Enemies
             
             // Detonation amount
             config.Count1 = 5;
-            config.Count1Hard = 6;
-            config.Count1Lunatic = 6;
+            config.Count1Hard = 7;
+            config.Count1Lunatic = 9;
             
             // Randomize how much higher it will be
             config.Count2 = 1;

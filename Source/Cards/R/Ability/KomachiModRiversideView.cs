@@ -47,7 +47,7 @@ namespace KomachiMod.Cards
                 nameof(Firepower)
             };
 
-            config.Illustrator = "BigRed";
+            config.Illustrator = "‘“âu@ˆ¨ˆß";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -78,5 +78,12 @@ Exchange Life: https://www.pixiv.net/en/artworks/116442814
 Taste of Death: https://safebooru.org/index.php?page=post&s=view&id=952065
 Gold Sarcophagus: https://x.com/i/web/status/474190711793782790
 Release none choice card: https://www.pixiv.net/en/artworks/59227476
+Riverside View: https://www.pixiv.net/en/artworks/6602182
+Stygian Reel: https://x.com/o11_yori/status/1772070830421229976
+Storm of the Grieving Dead: https://www.pixiv.net/en/artworks/87263030
+Posessed Armament: https://safebooru.org/index.php?page=post&s=view&id=32733
+Move!: https://x.com/60mai/status/566193614015852544
+Sanzu Fare: https://x.com/o11_yori/status/1961636129699946822
+
 
 Everything else is placeholder art by me or the game itself.

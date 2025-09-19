@@ -33,10 +33,10 @@ namespace KomachiMod.Cards
 
             // Spirits inflicted
             config.Value1 = 6;
-            config.UpgradedValue1 = 9;
+            config.UpgradedValue1 = 8;
 
             // Release cost
-            config.Value2 = 4;
+            config.Value2 = 6;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModReleaseKeyword), nameof(KomachiModVengefulSpiritSe) };
@@ -60,8 +60,8 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModVengefulSweepDef))]
     public sealed class KomachiModVengefulSweep : KomachiCard
     {
-        protected override int BaseValue3 { get => 7; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 6; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseValue3 { get => Value2 + 3; set => base.BaseValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => Value2 + 2; set => base.BaseUpgradedValue3 = value; }
         public override bool Triggered
         {
             get

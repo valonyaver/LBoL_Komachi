@@ -1,5 +1,6 @@
 ﻿using KomachiMod.Config;
 using LBoL.ConfigData;
+using LBoL.Presentation.Bullet;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
@@ -18,6 +19,7 @@ namespace KomachiMod.Source.GunName
             //Debug.Log($"Id of the piece is {id}");
             //return id;
             return MakeConfig().Id;
+            GunManager reference;
         }
 
 
@@ -33,20 +35,45 @@ namespace KomachiMod.Source.GunName
         /// Projectile: The bullets used. See BulletConfig when dumping the configs of the game.
         /// ShootType: I'm not sure? Something to do with animation. Keep it at 0.
         /// HitAmount: I have no idea. It doesn't seem to dictate the amount of "Hits" that an enemy is taking.
-        /// Color: Colour. Duh. Change the number and you get a different one. Idk why it's an array though.
         /// StartTime: Time until you begin shooting
         /// Group: "Rows" of bullets shot.
         /// GInterval: Interval between each row of bullet being shot, I assume in frames.
-        /// Way: Amount of bullet change per group. 
-        /// First row always has 1 bullet. Second row has Way1+Way2 bullets. Subsequent rows have Way1+(Way2*N) bullets.
-        /// (2, 3) means that first row has 1 bullet. Second has 2+3 bullets. Third has 2 + 3 + 3 bullets. 
-        /// There are probably other combinations if you mess with how the array is made.
+        /// 
+        /// Way: Determines the amount of bullets by group. How many "lanes" or "Columns" it has. Its maximum bound is a 2x2 matrix.
+        /// Assuming the first row is X1, X2. The second row is Y1, Y2. And the group id is I
+        /// The amount of bullets in each group will = (X1 + Random(-X2+X2)) + ((Y1 + Random(-Y2, Y2)) * I)
+        /// 
+        /// GAngle: The angle of the center bullet of each group.
+        /// Its limit is a 4x2 angle. 4 rows 2 columns. I'll split them this time into X1Y1, X2Y2, X3Y3, X4Y4
+        /// X1 determines the base angle of the group.
+        /// X2 is a linear growth multiplier.
+        /// X3 is a quadratic growth multiplier.
+        /// X4 changes the angle depending on the wayID of the bullet, rather than the groupID.
+        /// the Y for each, similar to way above, is just a randomizer. It has the same formula. 
+        /// So the final center angle becomes, assuming groupID is N, and wayID is M:
+        /// X1 + X2 * N + X3 * N * N + X4 * M
+        /// 
+        /// Range: The spread angle. Determines the angle of the furthest bullet in either direction. 
+        /// It works similarly to GAngle, a 4x2 matrix, but more research is needed as to exactly how the range is calculated.
+        /// X1 is the base range. If it's 10 and the pattern has a way of 3, the 3 bullets angles will be 10, 0, -10.
+        /// X2 increases the range for every group.
+        /// X3 increases the range for every group quadratically.
+        /// X4 is... weird. It changes the range depending on the way id, similarly to GAngle, but I don't know the exacts of how it works.
+        /// 
         /// StartSpeed: Starting speed of the bullets.
         /// Ev Properties: Evolution of the bullet's speed over time.
         /// EvStart: Time in frames until the Ev puberty hits.
         /// EvNumber: The speed change. The bullets' speed eventually end up being StartingSpeed+EvNumber
         /// EvDuration: How much time it takes for the speed to reach its final value.
         /// EvType: I have no idea. Type of interpolation? Keep it at 1 unless testing.
+        /// 
+        /// Color: Determines the colours of bullets. Its function depends on how many subarrays it has. I'll call them rows.
+        /// If there is one row, then the colour of all the bullets will just be the ID of the first element in that row.
+        /// If there are 2 rows, then the element in the first row (I'll call it M) determines the mode of the colour spread, all the IDs being taken from row2.
+        /// Assuming colours red, blue, green.
+        /// If M = 1, the colours will cycle through the IDs in row2 by the groupID. First group is red, second is blue, third is green, fourth is red.
+        /// If M = 2, the colours will cycle by the WayID. The first "Lane" of bullets will be red, second blue, third green, fourth red.
+        /// If M = 3, the colours will be completely random per bullet.
         /// Other values need a lot more testing.
         /// </summary>
         /// <returns></returns>

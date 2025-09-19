@@ -270,6 +270,7 @@ KomachiModReleaseKeyword:
 KomachiAutoDiscardKeyword:
   Name: Auto Discard
   Brief: |-
-    When you're about to fill* your hand size, |Discard| this card.
+    When you're about to exceed your hand size, |Discard| this card.
     The leftmost card in the hand with |Auto-Discard| is |Discarded| first.
-    *<i>Due to modding limitations, this works differently from auto-exile where the discard happens when filling the hand rather than exceeding it.
+    |Auto-Exile| cards will get processed before |Auto-Discard| cards.
+# Fixed Auto discard so that it works exactly like auto exile.

@@ -26,20 +26,22 @@ namespace KomachiMod.GunName
             PieceConfig config = GetDefaultGunConfig();
             config.Id = PieceTemplate.ConvertGunId(80003);
             config.ShootType = 0;
-            config.GInterval = 2;
-            config.Group = 6;
-            config.Way = new int[][] { new int[] { 2 }, new int[] { 2 } };
+            config.GInterval = 4;
+            config.Group = 10;
+            config.Way = new int[][] { new int[] { 5 }, new int[] { 1 } };
 
-            config.StartTime = 120;
-            config.StartSpeed = new float[][] { new float[] { 3 } };
+            config.StartTime = 6;
+            config.StartSpeed = new float[][] { new float[] { 5 } };
             config.EvStart = new int[][][] { new int[][] { new int[] { 60 } } };
             config.EvDuration = new int[][][] { new int[][] { new int[] { 60 } } };
             config.EvNumber = new float[][][] { new float[][] { new float[] { 4 } } };
             config.EvType = new int[][] { new int[] { 1 } };
-            config.HitAmount = 1;
-            config.HitInterval = 60;
 
-            config.Color = new int[][] { new int[] { 4 } };
+
+            config.Aim = 0;
+            config.Range = new float[][] { new float[] { 0 }, new float[] { 0 }, new float[] { 0 }, new float[] { 15 } };
+
+            config.Color = new int[][] { new int[] { 3 }, new int[] { 1, 2, 3, 4, 5 } };
 
             return config;
         }

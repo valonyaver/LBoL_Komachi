@@ -28,7 +28,7 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.Illustrator = "";
+            config.Illustrator = "@o11_yori";
             //If IsPooled is false then the card cannot be discovered or added to the library at the end of combat.
             config.IsPooled = false;
 
