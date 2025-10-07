@@ -18,7 +18,8 @@ namespace KomachiMod
 {
     [BepInPlugin(KomachiMod.PInfo.GUID, KomachiMod.PInfo.Name, KomachiMod.PInfo.version)]
     [BepInDependency(LBoLEntitySideloader.PluginInfo.GUID, BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency(AddWatermark.API.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    // No longer need watermark for 1.8
+    //[BepInDependency(AddWatermark.API.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInProcess("LBoL.exe")]
     public class BepinexPlugin : BaseUnityPlugin
     {
@@ -79,8 +80,8 @@ namespace KomachiMod
 
             harmony.PatchAll();
 
-            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
-                WatermarkWrapper.ActivateWatermark();
+            //if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
+            //    WatermarkWrapper.ActivateWatermark();
 
             Func<Sprite> getSprite = () => ResourceLoader.LoadSprite("BossIcon.png", directorySource);
             EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiMod), getSprite);

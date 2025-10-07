@@ -89,6 +89,7 @@ namespace KomachiMod.Config
                UpgradedRelativeCards: new List<string>() { },
 
                Owner: OwnerName,
+               Pack: null,
                ImageId: "",
                UpgradeImageId: "",
 

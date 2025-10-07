@@ -1,7 +1,7 @@
 {
   "name": "ValonadsKomachiMod",
-  "version_number": "0.3.7",
+  "version_number": "0.4",
   "website_url": "https://github.com/valonyaver/LBoL_Komachi",
   "description": "Adds a Red/Black Komachi Onozuka as a playable character.",
-  "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.9.7601"]
+  "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.9.7849"]
 }
