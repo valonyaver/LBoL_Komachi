@@ -17,12 +17,12 @@ namespace KomachiMod.Enemies
             EnemyUnitConfig config = GetEnemyUnitDefaultConfig();
             //Whether the boss should be enabled.
             config.IsPreludeOpponent = BepinexPlugin.enableAct1Boss.Value;
+            config.Type = EnemyType.Boss;
             config.NarrativeColor = "#e58c27";
 
             //Color(s) of the exhibits the boss can drop (right-most exhibit).
             config.BaseManaColor = new List<ManaColor>() { ManaColor.Red, ManaColor.Black };
 
-            config.Type = EnemyType.Boss;
 
             //Boss properties
             config.MaxHp = 250;

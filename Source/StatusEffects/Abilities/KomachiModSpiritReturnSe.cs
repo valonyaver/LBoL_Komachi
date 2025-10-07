@@ -40,10 +40,10 @@ namespace KomachiMod.StatusEffects
             {
                 base.NotifyActivating();
                 // bottom out the cards in hand
-                for (int i = 1; i <= Level; i++)
-                {
-                    yield return new MoveCardToDrawZoneAction(Battle.HandZone[^i], DrawZoneTarget.Bottom);
-                }
+                //for (int i = 1; i <= Level; i++)
+                //{
+                //    yield return new MoveCardToDrawZoneAction(Battle.HandZone[^i], DrawZoneTarget.Bottom);
+                //}
                 // if exile is empty end effect
                 if (base.Battle.ExileZone.Count <= 0)
                 {

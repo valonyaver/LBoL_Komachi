@@ -117,7 +117,7 @@ namespace KomachiMod.Cards
                 MiniSelectCardInteraction miniSelectCardInteraction2 = (MiniSelectCardInteraction)Precondition2();
                 yield return new InteractionAction(miniSelectCardInteraction2);
                 Card aoepushcard = ((miniSelectCardInteraction2 != null) ? miniSelectCardInteraction2.SelectedCard : null);
-                if (aoepushcard != null && singlepushcard.GetType() != typeof(KomachiModRetreat))
+                if (aoepushcard != null && aoepushcard.GetType() != typeof(KomachiModRetreat))
                 {
                     foreach (var enemy in Battle.AllAliveEnemies)
                     {

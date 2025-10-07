@@ -110,14 +110,13 @@ namespace KomachiMod.Cards
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)Precondition2();
             yield return new InteractionAction(miniSelectCardInteraction);
             Card card = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
-            if (card != null)
-            {
-                // apply the card choice
-                displaceAmount = card.Value1;
-                yield return new DistanceChangeAction(selector.SelectedEnemy, -card.Value1);
-            }
+            DistanceChangeAction distanceAction;
+            // apply the card choice
+            displaceAmount = card.Value1;
+            distanceAction = new DistanceChangeAction(selector.SelectedEnemy, -card.Value1);
+            yield return distanceAction;
 
-            yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, displaceAmount * Value2);
+            yield return new ApplyVengefulSpiritAction(this, selector.SelectedEnemy, distanceAction.Args.distanceChangeAbs * Value2);
 
             Card releaseCard = KomachiModUtility.GetPreconditionCard(precondition);
             if (KomachiModUtility.ChoseRelease(releaseCard))

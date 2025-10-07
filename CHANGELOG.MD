@@ -10,11 +10,13 @@ Five new cards, mostly to expand on the Spider Lily playstyle:
 If you want more specificity about what these cards do, check them out in the collection.
 
 ### Card changes:
+- Spirit Return no longer reduces your amount of draws. I realized this effect was too harsh on a 4 mana rare, even if the exile recursion is strong. So now the card should be more pickable.
 - Scythe of Final Judgement is now an aoe attack.
 - No hard feelings buffed: now applies vengeful spirits when unupgraded.
-- Eye of the storm's release effect changed from giving 6 (8) barrier to 8 (10) barrier.
+- Eye of the storm's release effect changed from giving 6 (8) barrier to 10 (12) barrier.
 - Riverside Garden's unupgraded cost changed from 2RR to 1RRR. This is to prevent it from being shown to KomachiB.
 - Spirits of the firm's release costs increased from 4/7(6) to 6/9(8)
+- Spirit Catalyst now costs 1BB (B) -> BBB (B). To compensate, the unupgraded version now has retain similar to its upgrade.
 
 ### Other:
 - Fixed a lot of text mistakes.

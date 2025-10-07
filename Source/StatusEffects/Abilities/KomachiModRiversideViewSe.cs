@@ -61,7 +61,7 @@ namespace KomachiMod.StatusEffects
             if (list.Count < 1)
             {
                 base.NotifyActivating();
-                yield return new AddCardsToHandAction(Library.CreateCards<KomachiModSpiderLily>(base.Level - list.Count, false), AddCardsType.Normal);
+                yield return new AddCardsToHandAction(Library.CreateCards<KomachiModSpiderLily>(1, false), AddCardsType.Normal);
             }
             yield break;
         }

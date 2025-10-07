@@ -46,8 +46,16 @@ namespace KomachiMod.Cards
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
-            config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword), nameof(Graze) };
-            config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword), nameof(Graze) };
+            config.RelativeEffects = new List<string>() { 
+                nameof(KomachiDisplacementKeyword), 
+                nameof(KomachiDistanceKeyword), 
+                nameof(KomachiModReleaseKeyword),
+                nameof(Graze) };
+            config.UpgradedRelativeEffects = new List<string>() { 
+                nameof(KomachiDisplacementKeyword), 
+                nameof(KomachiDistanceKeyword),
+                nameof(KomachiModReleaseKeyword),
+                nameof(Graze) };
             config.Unfinished = false;
             return config;
         }

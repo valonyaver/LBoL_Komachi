@@ -23,7 +23,7 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(400);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 2, Any = 1 };
+            config.Cost = new ManaGroup() { Black = 3 };
             config.UpgradedCost = new ManaGroup() { Black = 1 };
             config.Rarity = Rarity.Rare;
 
@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
             // Duration increase
             config.Value1 = 3;
 
-            config.Keywords = Keyword.Exile;
+            config.Keywords = Keyword.Exile | Keyword.Retain;
             config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModVengefulSpiritSe) };

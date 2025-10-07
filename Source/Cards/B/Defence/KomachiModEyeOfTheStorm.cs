@@ -34,8 +34,8 @@ namespace KomachiMod.Cards
             config.Block = 16;
             config.UpgradedBlock = 20;
 
-            config.Shield = 6;
-            config.UpgradedShield = 8;
+            config.Shield = 10;
+            config.UpgradedShield = 12;
 
             // Vengeful Spirits inflicted
             config.Value1 = 4;

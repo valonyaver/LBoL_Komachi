@@ -36,6 +36,7 @@ namespace KomachiMod.Enemies
 
             config.Type = EnemyType.Normal;
             config.ModleName = nameof(ShenlingWhite);
+            config.IsPreludeOpponent = false;
 
             //Boss properties
             config.MaxHp = 25;
