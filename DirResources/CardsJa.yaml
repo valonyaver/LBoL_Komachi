@@ -1,0 +1,890 @@
+﻿# Tokens and choice cards
+KomachiModManDistance:
+  Name: 距離操作
+  Description: "|変位| +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: |-
+    |変位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |変位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    さらに一マイル先
+
+KomachiModManDistance2:
+  Name: 距離操作 2
+  Description: "|変位| +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: |-
+    |変位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |変位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    さらに十マイル先
+
+KomachiModManDistance3:
+  Name: 距離操作 3
+  Description: "|変位| +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: |-
+    |変位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |変位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    さらに百マイル先
+
+KomachiModManDistance4:
+  Name: 距離操作 4
+  Description: "|変位| +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: |-
+    |変位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |変位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    さらに千マイル先
+
+KomachiModManDistance0:
+  Name: 距離操作なし
+  Description: "|変位| {Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: "|変位|させない。 {extraDescriptionAddition}"
+  ExtraDescription2: "|変位|させない。 {extraDescriptionAddition}"
+  FlavorText: |-
+    さらに笑顔で進む :)
+
+KomachiModManDistance1AllExcept:
+  Name: 距離操作 b
+  Description: "|変位| ターゲット以外 +/-{Value1}。"
+  UpgradedDescription: "|変位| +/-{Value2}まで。"
+  ExtraDescription1: "|変位| ターゲット以外 -{Value1}。"
+  ExtraDescription2: "|変位| ターゲット以外 +{Value1}。"
+  FlavorText: |-
+    さらに遠回りして進む。
+
+
+KomachiModManDistance2AllExcept:
+  Name: 距離操作 b2
+  Description: "|変位| ターゲット以外 +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: "|変位| ターゲット以外 -{Value1}。"
+  ExtraDescription2: "|変位| ターゲット以外 +{Value1}。"
+  FlavorText: |-
+    巡回するデカイル。
+
+KomachiModManDistance3AllExcept:
+  Name: 距離操作 b3
+  Description: "|変位| ターゲット以外 +/-{Value1}。"
+  UpgradedDescription: "|変位| 最大+/-{Value2}まで。"
+  ExtraDescription1: "|変位| ターゲット以外 -{Value1}。"
+  ExtraDescription2: "|変位| ターゲット以外 +{Value1}。"
+  FlavorText: |-
+    巡回するヘクタマイル。
+
+KomachiModReleaseNone:
+  Name: リリースなし
+  Description: |-
+    |解放| 霊に何もしない
+  FlavorText: |-
+    "マイペース、マイペース。"
+
+KomachiModSpiderLily:
+  Name: 彼岸花
+  Description: |-
+    {Mana}を得る。
+    |臨時火力|{Value1}を得る。
+    |毒|{Value2}を得る。
+    |自動捨札|。
+  FlavorText: |-
+    人類のあらゆる怨念を自らの内に宿せ。
+
+KomachiModDetonateToken:
+  Name: 爆破スイッチ
+  Description: |-
+    敵一体を|爆破|する。
+  ExtraDescription1: |-
+    |爆破|しない。
+  ExtraDescription2: |-
+    |爆破|。
+  FlavorText: |-
+    TNTがたくさんあるとゲームがラグくなるだろう。
+
+# Findable cards
+KomachiModShootAndMove:
+  Name: 射撃移動
+  Description: |-
+    {Damage}ダメージを与える。 
+    |変位|可能 +/-{Value1}。
+  UpgradedDescription: |-
+    {Damage}ダメージを与える。 
+    |変位|可能 最大+/-{Value1}まで。
+  FlavorText: |-
+    これは初期のの「移動して撃つ」のバージョン。「移動して撃つ」だと Act1小町が防御的になりすぎないように仕様を変更した。
+    ゲーム中ではドラフト不可。
+
+KomachiModMoveAndShoot:
+  Name: 移動射撃
+  Description: |-
+    |変位|可能 +/-{Value1}。
+    {Damage}ダメージを与える。 
+  UpgradedDescription: |-
+    |変位|可能 最大+/-{Value1}まで。
+    {Damage}ダメージを与える。 
+  NonbattleBaseDescription: |-
+    |変位|可能 +/-{Value1}。
+    {Damage}ダメージを与える。
+  UpgradedNonbattleBaseDescription: |-
+    |変位|可能 最大+/-{Value1}まで。
+    {Damage}ダメージを与える。
+  ExtraDescription1: |-
+    VALUEダメージを与える。
+  FlavorText: |-
+    動いたら撃つ！
+    やっちまった。
+    つまり、撃って、すぐに動くってこと。
+    （本気じゃないけど）
+
+KomachiModRetreat:
+  Name: お手軽退却
+  Description: |-
+    |変位|可能 +{Value1}。
+    {Block}|ブロック|を得る。
+    もし対象の|距離|が{Value3}ならば、手札に|距離操作|を1枚加える。
+  UpgradedDescription: |-
+    |変位|可能 +{Value1}。それ以外の全ての敵に|変位|可能 +{Value2}。
+    {Block}|ブロック|を得る。
+    もし対象の|距離|が{Value3}ならば、手札に|距離操作|を1枚加える。
+  ExtraDescription1: 対象を変位しない。
+  ExtraDescription2: 対象以外を変位しない。
+
+KomachiModEndlessWay:
+  Name: 無間の道
+  Description: |-
+    |変位| +{Value1}。対象から|グレイズ|をすべて取り除く。
+    {Block}|ブロック|を得る。
+    |解放|{Value2}又は{Value3}: 解放された霊{Value2}ごとに、|ロックオン|{lockOnAmount}を与える。
+  ExtraDescription1: |-
+    |解放|{Value2}: |ロックオン|{lockOnAmount}を与える。
+  ExtraDescription2: |-
+    |解放|{Value3}: |ロックオン|{lockOnAmount2}を与える。
+
+KomachiModSweep:
+  Name: 一掃の大鎌
+  Description: |-
+    |変位| 敵全体 -{Value1}。
+    敵全体に{Damage}ダメージを与える。 
+    手札に|距離操作|を{Value2}枚加える。
+
+KomachiModDistanceTax:
+  Name: 間合い徴収
+  Description: |-
+    敵全体に以下の効果を与える、それは|距離|に依存する。
+    1-2: |脱力|{Value1}。
+    3: |ロックオン|{Value2}と|臨時火力ダウン|{Value2}。
+    4-5: |弱体|{Value3}。
+
+KomachiModTasteOfDeath:
+  Name: 死の味
+  Description: |-
+    |変位| -{Value1}。
+    {Damage}ダメージを与える。
+
+KomachiModPushDraw:
+  Name: 反撃の引き
+  Description: |-
+    |変位|可能 +{Value1}。
+    敵の|距離|に等しい枚数を引く。
+  UpgradedDescription: |-
+    |変位|可能 +{Value1}まで。
+    敵の|距離|に等しい枚数を引く。
+  ExtraDescription1: "|変位|しない。"
+
+KomachiModQuickNap:
+  Name: 仮眠
+  Description: |-
+    ライフ{Value1}を得る。
+    次の{PlayerName}のターン開始時、{Mana}を得る。
+    {PlayerName}のターンを終了する。
+
+KomachiModDistanceAttack:
+  Name: 死神の大鎌
+  Description: |-
+    {Damage}ダメージを与える。 
+    敵の|距離|が変わるたびに、捨て札から手札に{SelfName}を戻す。
+
+KomachiModScytheFinalJudgment:
+  Name: 死者選別の鎌
+  Description: |-
+    |変位| どんな距離にでも。
+    敵全体に{Damage}ダメージを与える。
+    遠距離によるダメージ軽減は、代わりにこのカードのダメージをその2倍分増加させる。
+    {SelfName}で敵を倒した場合、手札に|彼岸花|を1枚加える。
+  UpgradedDescription: |-
+    |変位| どんな距離にでも。
+    敵全体に{Damage}ダメージを与える。
+    遠距離によるダメージ軽減は、代わりにこのカードのダメージをその2倍分増加させる。
+    {SelfName}で敵を倒した場合、手札に|彼岸花|を2枚加える。
+  ExtraDescription1: |-
+    この敵にVALUEダメージを与える。
+  DetailText: |-
+    このカードのダメージは、距離が4のときに30％、距離が5のときに60％増加する。
+    ダメージは敵ごとに個別に計算される。
+
+KomachiModShinigamiFinesse:
+  Name: 死神の妙技
+  Description: |-
+   {Damage}ダメージを{attackAmount}回与える。
+   攻撃回数は対象の距離レベルに等しい。
+   対象の距離が{three}<b>未満の場合</b>、この攻撃は|精密|になる。
+
+KomachiModDistanceBlock:
+  Name: 波乗り勤務
+  Description: |-
+    敵が|変位|される度に、変化した距離レベル1ごとに{Value1}|ブロック|を得る。
+
+KomachiModDistanceGenerator:
+  Name: 真面目な死神
+  Description: |-
+    {PlayerName}のターン開始時、手札に|距離操作|がなければ、手札に|距離操作|を{Value1}枚加える。
+  UpgradedDescription: |-
+    手札に|距離操作|を1枚加える。
+    {PlayerName}のターン開始時、手札に|距離操作|がなければ、手札に|距離操作|を{Value1}枚加える。
+
+KomachiModDistanceFlow:
+  Name: 河の流れのように
+  Description: |-
+    敵が|変位|される度に:
+    - もし距離が増加すれば、|臨時霊力|{Value1}を得る。
+    - もし距離が減少すれば、|臨時火力|{Value1}を得る。
+
+KomachiModPushNPull:
+  Name: 押して引いて
+  Description: |-
+    {PlayerName}のターン開始時、 |変位| 敵全体 -{Value1}。
+    {PlayerName}のターン終了時、 |変位| 敵全体 +{Value1}。
+  UpgradedDescription: |-
+    手札に|距離操作|を1枚加える。
+    {PlayerName}のターン開始時、 |変位| 敵全体 -{Value1}。
+    {PlayerName}のターン終了時、 |変位| 敵全体 +{Value1}。
+
+KomachiModReviveCard:
+  Name: 死の神
+  Description: |-
+    次に{PlayerName}がこの戦闘で倒される時、代わりに最大HPの半分まで回復し、|天衣無縫|{Value2}を得る。  
+    この効果が適用されたら、{SelfName}をデッキから除外する。この効果による復活は戦闘中1回のみ。  
+    敵が倒されるたび、もしそれが召喚されたものなら、{Value1}の|バリア|を得る。  
+    それ以外の場合は、{Value1}のライフを得る。
+  DetailText: |-
+    {SelfName}は戦闘中にランダム生成されず、コピーもできない。
+    最初にプレイした"{SelfName}だけがデッキから削除される。"
+
+KomachiModRiversideGarden:
+  Name: 水辺の庭
+  Description: |-
+    この戦闘中{PlayerName}が|彼岸花|を加える度、それを|アップグレード|する。
+    手札、山札、捨て札に|彼岸花|を{Value1}枚加える。
+    戦闘終了時、|フィールド|に存在する|彼岸花|1枚ごとに、ライフ{Value2}を得る。
+
+KomachiModShinigamiTactics:
+  Name: 死神流戦法
+  Description: |-
+    |距離操作|カードを使用した後、距離が縮まった場合はランダムな攻撃カードを手札に加える。  
+    距離が伸びた場合はランダムな防御カードを手札に加える。  
+    このカードのコストは一時的に{Mana}に|減少|し、|廃棄|および|虚無|を持つ。
+    手札に|距離操作|を{Value2}枚加える。
+
+KomachiModLowTierShinigami:
+  Name: 下っ端死神
+  Description: |-
+    {Damage}ダメージを与える。
+    |弱体|{Value1}を与える。
+  FlavorText: "何度言わせるんだい？ 自殺したって誰も気にしやしないよ。"
+
+KomachiModWeedCutter:
+  Name: 雑草狩り
+  Description: |-
+    {Damage}ダメージを与える。 
+    カードを{Value1}枚引く。
+    手札に|距離操作|を1枚加える。
+
+KomachiModParry:
+  Name: 大鎌パリィ
+  Description: |-
+    {Block}|ブロック|を得る。
+    |反射|{Value1}を得る。
+    手札に|距離操作|を1枚加える。
+
+KomachiModCoinThrow:
+  Name: 死神の投げ銭
+  Description: |-
+    敵全体に{Damage}ダメージを与える。
+    <sprite="Point" name="Gold">{Value1}を失う。
+
+KomachiModIgnoreNagging:
+  Name: 小言聞き流し
+  Description: |-
+    |変位| -{Value1}。
+    |距離|が1か2の敵1体ごとに、|グレイズ|{Value2}を得る。
+  UpgradedDescription: |-
+    |変位| 最大-{Value1}まで。
+    |距離|が1か2の敵1体ごとに、|グレイズ|{Value2}を得る。
+
+KomachiModRetreatBoat:
+  Name: 三途の舟
+  Description: |-
+    |変位| +{Value1}。
+    {Block}|ブロック|を得る。
+    |距離|×{Value2}の|バリア|を得る。
+
+KomachiModManipDefence:
+  Name: 移動ガード
+  Description: |-
+    {Block}|ブロック|を得る。
+    |距離|が{Value1}以上の敵1体につき、手札に|距離操作|を1枚加える。
+
+KomachiModWorkFocus:
+  Name: 全集中
+  Description: |-
+    手札から{Value1}枚までのカードを|廃棄|し、それに等しい枚数の|距離操作|を手札に加える。
+    もしこの方法でアップグレード済みのカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
+  UpgradedDescription: |-
+    手札、捨て札、山札から{Value1}枚までのカードを|廃棄|し、それに等しい枚数の|距離操作|を手札に加える。
+    もしこの方法でアップグレード済みのカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
+
+KomachiModSpySpirit:
+  Name: 同行偵察霊
+  Description: |-
+    {Damage}ダメージを与える。 
+    敵が|変位|される度に、{Value1}|バリア|を得る。
+  FlavorText: |-
+    無給のインターン。それでも、この仕事が好きらしい。
+
+KomachiModSliceOfHigan:
+  Name: 彼岸の刃
+  Description: |-
+    {Damage}ダメージを{Value1}回与える。
+    |手札効果|: 敵が|変位|される度に、この戦闘中{SelfName}のダメージが{Value2}増加する。
+
+KomachiModEqualizeDistance:
+  Name: 距離均衡
+  Description: |-
+    |変位|{three}。
+    変位させられた距離ごとに、カードを{Value1}枚引く。
+    もし対象の|距離|が既に|3|ならば、代わりに{Value2}枚カードを引き、それから{Value3}枚カードを捨てる。
+
+KomachiModRitualOfEcstasy:
+  Name: 脱魂の儀
+  Description: |-
+    対象の|距離|を反転させ、以下の効果のうち1つを適用する。
+    対象の距離が{three}の場合、効果を選択できる。
+    距離が減少した場合、カードを{Value1}枚引く。距離が増加した場合、|グレイズ|{Value2}と{Block}|ブロック|を得る。
+  ExtraDescription1: |-
+    カードを{Value1}枚引く。
+  ExtraDescription2: |-
+    |グレイズ|{Value2}と{Block}|ブロック|を得る。
+  DetailText: |-
+    距離をレベル3を中心に反転させる。
+    つまり、変位は次のようになる:
+    - レベル1: レベル5へ変位。
+    - レベル2: レベル4へ変位。
+    - レベル3: 変化なし。
+    - レベル4: レベル2へ変位。
+    - レベル5: レベル1へ変位。
+
+KomachiModExchangeLife:
+  Name: 換命「不惜身命、可惜身命」
+  Description: |-
+    対象の|現在のライフ|があなたの|最大ライフ|以下の場合、現在のライフを交換する。
+    {SelfName}が{PlayerName}を回復するために使用された場合、このカードは戦闘とデッキから除外される。
+    |充填|: {PlentifulMana}を得る。
+  DetailText: |-
+    ライフが低い方は回復し、高い方はライフを失う。
+    {SelfName}は戦闘中にランダム生成されず、コピーもできない。
+    
+KomachiModGrudgingStrike:
+  Name: 怨霊撃
+  Description: |-
+    {Damage}ダメージを与える。
+    |怨霊|{Value1}を与える。
+    |解放|{Value2}: 手札に|爆破スイッチ|を1枚加える。
+  ExtraDescription1: |-
+    |解放|{Value2}: 手札に|爆破スイッチ|を1枚加える。
+
+KomachiModDefendDetonate:
+  Name: 悪気はないよ
+  Description: |-
+    {Block}|ブロック|を得る。
+    |怨霊|{Value1}を与える。
+    対象を|爆破|でき、そうした場合、対象が持っていた|怨霊|{Value3}ごとに|臨時火力ダウン|{Value2}を与える。
+  ExtraDescription1: "|爆破|させない"
+  ExtraDescription2: "|爆破|"
+
+KomachiModBWBridge:
+  Name: 閻魔庁の仕事
+  Description: |-
+    {Mana}を得る。 {PlayerName}のターン開始時、{Mana}を得る。
+    ランダムな白/黒のハイブリッドカード{Value2}枚の中から{Value1}枚まで選び、手札に加える。
+  UpgradedDescription: |-
+    {Mana}を得る。 手札に|光明|を1枚加える。
+    {PlayerName}のターン開始時、{Mana}を得る。
+    ランダムな白/黒のハイブリッドカード{Value2}枚の中から{Value1}枚まで選び、手札に加える。
+  DetailText: |-
+    これらの|e:代替カード|は総マナとマナ色の制限を無視する。
+
+KomachiModFishing:
+  Name: 二重釣り
+  Description: |-
+    カードを{Value1}枚捨て、|廃棄場|にあるコストがそれぞれ{Value3}<b>未満</b>のカードを{Value2}枚まで対象とする。
+    最初のカードは手札に、2枚目のカードは捨て札に戻す。それらの|臨時コスト|は一時的に{Mana}になる。
+
+KomachiModGuidingSanzu:
+  Name: 三途の導き
+  Description: |-
+    |導霊|{Value1}を得る。
+
+KomachiModBoomBenefits:
+  Name: セイレーンの恵み
+  Description: |-
+    敵1体を|爆破|し、以下から|選択|する:
+    - 爆破された|怨霊|{Value1}ごとに|導霊|を1得る。
+    - 爆破された|怨霊|{Value2}ごとにカードを1枚引く。
+  ExtraDescription1: 爆破された|怨霊|{Value1}ごとに|導霊|を1得る。
+  ExtraDescription2: 爆破された|怨霊|{Value2}ごとにカードを1枚引く。
+
+KomachiModShootGhosts:
+  Name: 彷徨う魂の鎌
+  Description: |-
+    {Damage}ダメージを与える。{SelfName}は対象の|怨霊|1ごとに追加で{Value1}ダメージを与える。
+    対象を倒した場合、その敵が持っていた量の|怨霊|を他の全ての敵に与える。
+
+KomachiModSpiritDefence:
+  Name: 通りすがりの人霊
+  Description: |-
+    {Block}|ブロック|を得る。
+    |導霊|{Value1}を得る。
+
+KomachiModVengefulSweep:
+  Name: 迷わず生きた人霊
+  Description: |-
+    敵全体に|怨霊|{Value1}を与える。
+    |解放|{Value2}: それらの敵全体にさらに|怨霊|{Value1}を与える。
+    |解放|{Value3}: 上記を行い、その後手札に|爆破スイッチ|を加える。
+  ExtraDescription1: |-
+    |解放|{Value2}: それらの敵全体にさらに|怨霊|{Value1}を与える。
+  ExtraDescription2: |-
+    |解放|{Value3}: 各敵にさらに|怨霊|{Value1}を与え、その後手札に|爆破スイッチ|を加える。
+
+KomachiModVengefulerSweep:
+  Name: 何処にでもいる浮遊霊
+  Description: |-
+    敵全体に{Damage}ダメージを与える。
+    敵全体に|怨霊|{Value1}を与える。
+    |解放|{releaseCost1}: |チョイス|: この攻撃は|精密|になるか、敵全体にさらに|怨霊|{Value1}を与える。
+    |解放|{releaseCost2}: 敵全体に{Damage2}の|精密|ダメージを{attackTimes}回与え、代わりに|怨霊|{Value2}を敵全体に与える。
+  ExtraDescription1: |-
+    |解放|{releaseCost1}: |チョイス|: この攻撃は|精密|になるか、敵全体にさらに|怨霊|{Value1}を与える。
+  ExtraDescription2: |-
+    |解放|{releaseCost2}: 敵全体に{Damage2}の|精密|ダメージを{attackTimes}回与え、その後|怨霊|{Value2}を敵全体に与える。
+  ExtraDescription3: |-
+    この攻撃は|精密|になる。
+  ExtraDescription4: |-
+    敵全体にさらに|怨霊|{Value1}を与える。
+
+KomachiModFreeTrauma:
+  Name: 解き放たれた？！
+  Description: |-
+    |怨霊|{Value3}を与える。
+    {Mana}を得る。
+    |解放|{Value1}または{Value2}: 解放された霊{Value1}ごとに、追加で{Mana}を得る。
+  ExtraDescription1: |-
+    |解放|{Value1}: {Mana}を得る。
+  ExtraDescription2: |-
+    |解放|{Value2}: {Mana}{Mana}を得る。
+
+KomachiModSpiritBarrier:
+  Name: 霊的バリア
+  Description: |-
+    {Block}|ブロック|を得る。
+    |解放|全て: 解放した霊1体ごとに{Value2}|バリア|を得る。
+  ExtraDescription1: |-
+    |解放|全て: 解放した霊1体ごとに{Value2}|バリア|を得る。
+
+KomachiModScytheHeal:
+  Name: 吸魂の鎌
+  Description: |-
+    {Damage}ダメージを与える。
+    与えたダメージ量に等しい|怨霊|を与える。
+    |爆破|できる。その後、爆破された|怨霊|{Value2}ごとにライフを{Value1}得る。
+  ExtraDescription1: |-
+    |爆破|しない。
+  ExtraDescription2: |-
+    |爆破|する。その後、爆破された|怨霊|{Value2}ごとにライフを{Value1}得る。
+
+KomachiModBoundSpiritsOfEarth:
+  Name: 浮かばれない地縛霊
+  Description: |-
+    敵全体に|怨霊|{Value1}を与える。
+    {PlayerName}のターン終了時、|怨霊|を持つ敵全体に|怨霊|{Value2}を与える。
+
+KomachiModLonelyBoundSpirit:
+  Name: 寂しがり屋の緊縛霊
+  Description: |-
+    {Damage}ダメージを与える。
+    |寂しがり屋の緊縛霊|を与える。
+  FlavorText: |-
+    寂しかった霊がやっと友達を見つけたと思ったら、友達ごと爆発してしまう。
+
+
+KomachiModScytheRedLily:
+  Name: 離魂の鎌
+  Description: |-
+    {Damage}ダメージを与える。
+    |爆破|できる、|怨霊|{Value1}以上を爆破した場合、手札に|彼岸花|を1枚加える。
+    |解放|{Value2}: 爆破前に|怨霊|{Value1}を与える。|加護|{one}を得る。
+  ExtraDescription1: |-
+    |解放|{Value2}: 爆破前に|怨霊|{Value1}を与える。|加護|{one}を得る。
+  ExtraDescription2: |-
+    |爆破|できる、|怨霊|{Value1}以上を爆破した場合、手札に|彼岸花|を1枚加える。
+
+KomachiModDetonateFirepower:
+  Name: 死者の怨念
+  Description: |-
+    |怨霊|が|爆破|されるたび、|火力|{Value2}を得る。
+    敵全体に|怨霊|{Value1}を与える。
+    全ての敵を|爆破|できる。
+  ExtraDescription1: "全ての敵を|爆破|する。"
+
+KomachiModTalkativeFerryman:
+  Name: おしゃべりな渡し守
+  Description: |-
+    {PlayerName}のターン開始時、|導霊|{Value1}を得る。
+    |解放|{Value2}: {PlayerName}の次のターン開始時、|導霊|{Value3}を得る。
+  ExtraDescription1: "|解放|{Value2}: {PlayerName}の次のターン開始時、|導霊|{Value3}を得る。"
+
+KomachiModDetonateInfinite:
+  Name: 永劫の終止符
+  Description: |-
+    |怨霊|{Value1}を与える。
+    敵の|怨霊|が|爆破|されるたび、その敵に|怨霊|{Value2}を与える。
+
+KomachiModSpiritualDamage:
+  Name: 霊的ダメージ
+  Description: |-
+    {Damage}ダメージを与える。
+    この方法で与えたブロックされなかったダメージ量に等しい|怨霊|を与える。
+    その対象の|怨霊|の持続時間を{Value1}増加させる。
+
+KomachiModSpiritCatalyst:
+  Name: 霊媒
+  Description: |-
+    対象の|怨霊|を2倍にする。
+    対象の|怨霊|の持続時間を3増加させる。
+
+KomachiModEyeOfTheStorm:
+  Name: 嵐の目
+  Description: |-
+    {Block}|ブロック|を得る。
+    敵全体に|怨霊|{Value1}を与える。
+    |導霊|{Value2}を得る。
+    |解放|{Value3}: {Shield}|バリア|を得る。
+  ExtraDescription1: "|解放|{Value3}: {Shield}|バリア|を得る。"
+
+KomachiModChainDetonation:
+  Name: 連鎖反応
+  Description: |-
+    |怨霊|{Value1}を与える。
+    その敵を|爆破|する。
+    爆破された量に等しい|怨霊|を与える。
+    |解放|{Value2}: その対象を再度|爆破|する。
+    |解放|{Value3}: 爆破された量に等しい|怨霊|を再度与える。
+  ExtraDescription1: "|解放|{Value2}: その対象を再度|爆破|する。"
+  ExtraDescription2: "|解放|{Value3}: その対象を再度|爆破|し、その後爆破された量に等しい|怨霊|を再度与える。"
+  FlavorText: |-
+    冥界名物「1個買うともう1個おまけ」セール。
+
+KomachiModResidualAether:
+  Name: 残留エーテル
+  Description: |-
+    {totalMana}を得る。
+    |手札効果|: 敵が|爆破|されるたび、{SelfName}は追加で{ManaReal}を与える。
+
+KomachiModDivineSpiritDefence:
+  Name: 死神の加護
+  Description: |-
+    {Block}|ブロック|を得る。
+    |神霊|{Value1}を得る。
+    |解放|{Value2}: 追加で|神霊|{Value1}を得る。
+  ExtraDescription1: "|解放|{Value2}: 追加で|神霊|{Value1}を得る。"
+
+KomachiModSpiritReturn:
+  Name: 魂還り
+  Description: |-
+    {PlayerName}のターン開始時、手札の右端のカードを山札の一番下に置き、その後|廃棄場|からコスト2<b>未満</b>のカードを1枚まで手札に加える。そのカードはコストが{Mana}増加し、使用時に戦闘から除外される。
+
+KomachiModAfterlifePassage:
+  Name: 冥途の渡し
+  Description: |-
+    手札からカードを{Value1}枚廃棄する。
+    廃棄された|厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
+    廃棄されたその他のカード1枚ごとに|神霊|{Value2}を得る。
+  UpgradedDescription: |-
+    手札または捨て札からカードを{Value1}枚まで廃棄する。
+    廃棄された|厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
+    廃棄されたその他のカード1枚ごとに|神霊|{Value2}を得る。
+
+KomachiModReapersDue:
+  Name: 死神の徴税
+  Description: |-
+    |{Mana}消費ごと|: |導霊|{Value1}を得る。({anyManaSpirits})
+    |{WhiteMana}消費ごと|: |神霊|{Value2}を得る。({whiteManaSpirits})
+    |{BlackMana}消費ごと|: 敵全体に|怨霊|{Value2}を与える。({blackManaSpirits})
+
+KomachiModCloseQuarterDefence:
+  Name: 近接戦闘術
+  Description: |-
+    {Block}|ブロック|を得る。
+    |怨霊|{Value1}を与える。
+    対象の|距離|が{distanceLimit}<b>未満</b>の場合: |臨時火力ダウン|{Value3}を与え、|導霊|{Value2}を得る。
+
+KomachiModHalfLife3:
+  Name: 薄命「余命幾許も無し」
+  Description: |-
+    |解放|{Value1}: 対象の現在ライフの半分({Damage})をダメージとして与える。
+    対象が既知の名前を持つ場合、代わりに|解放|{Value2}する必要がある。
+    |霊力|{Value3}を失う。
+  UpgradedDescription: |-
+    |解放|{Value1}: 対象の現在ライフの半分({Damage})をダメージとして与える。
+    対象が既知の名前を持つ場合、代わりに|解放|{Value2}する必要がある。
+  ExtraDescription1: |-
+    |解放|{releaseValue}: 対象の現在ライフの半分をダメージとして与える。
+
+KomachiModDistanceCloser:
+  Name: 八重霧の渡し
+  Description: |-
+    |変位| 最大 -{Value1}まで。
+    |変位|のレベルごとに|怨霊|{Value2}を与える。
+    |解放|{releaseCost}: 対象の|怨霊|{firepowerCond}ごとに|臨時火力|{firepowerValue}を得る。
+  ExtraDescription1: |-
+    |解放|{releaseCost}: 対象の|怨霊|{firepowerCond}ごとに|臨時火力|{firepowerValue}を得る。
+
+KomachiModEthicallySourcedBreak:
+  Name: 正義のブレイクタイム
+  Description: |-
+    {Shield}|バリア|を得る。ライフ{Value1}と|火力|{Value2}を得る。
+    {PlayerName}のターンを終了する。
+    {PlayerName}の次のターン開始時、{PlayerName}のターンを終了する。
+    その次の{PlayerName}のターン開始時、{Mana}を得て、カードを{Value3}枚引く。
+
+KomachiModInfernoTempest:
+  Name: 路の果ての魂
+  Description: |-
+    手札、山札、捨て札の全てのカードを|廃棄|する。
+    手札から廃棄されたカード1枚ごとに|神霊|{Value3}得る。
+    山札から廃棄されたカード1枚ごとに|導霊|{Value1}を得る。
+    捨て札から廃棄されたカード1枚ごとに敵全体に|怨霊|{Value1}を与える。
+    {PlayerName}の次のターン開始時、廃棄された|基本|でないカードを{Value2}枚まで選び、手札、山札、捨て札にランダムに戻す。その後、廃棄された全ての|基本|と|厄災|カードを山札に戻す。
+  DetailText: |-
+    手札、山札、捨て札のそれぞれに少なくとも1枚のカードが戻される。
+
+KomachiModGuidedGreen:
+  Name: 前世の霊
+  Description: |-
+    |導霊|{Value1}を得る。
+    カードを{Value2}枚引く。
+
+KomachiModMidsummerLily:
+  Name: 孤独な彼岸花
+  Description: |-
+    {PlayerName}が|彼岸花|を使用した後、手札に|厄災|を{Value1}枚数加える。
+    山札の一番上に|彼岸花|を{Value2}枚加える。
+
+KomachiModHellFreeze:
+  Name: 地獄の凍てつく温もり
+  Description: |-
+    {Damage}ダメージを与える。
+    対象の|怨霊|が|爆破|されるたび、対象に|冷気|を与える。(この効果は重複しない)
+    |爆破|でき、そうした場合、爆破された|怨霊|{Value2}ごとに|フロストアーマー|{Value1}を得る。
+  ExtraDescription1: |-
+    |爆破|しない
+  ExtraDescription2: |-
+    |爆破|し、そうした場合、爆破された|怨霊|{Value2}ごとに|フロストアーマー|{Value1}を得る。
+  FlavorText: "地獄にだって、責め苦の季節はあるんだ"
+
+KomachiModStrongestSpirit:
+  Name: 最強の霊！
+  Description: |-
+    {Damage}ダメージを与える。
+    この方法で与えたブロックされなかったダメージ量に等しい|怨霊|を与える。
+    |解放|{Value1}: |臨時火力|{Value2}を得る。手札から攻撃以外の全てのカードを|廃棄|する。
+  FlavorText: "50億年後に太陽が爆発すると知った時の実存的危機を乗り越えた後、氷の妖精はかつてないほど強くなった。"
+
+KomachiModExchangeDrawExile:
+  Name: 生者と死者の交換
+  Description: |-
+    山札の一番上のカードを|廃棄|する。その後、|廃棄場|から同じカードタイプの他のカードを{Value1}枚まで手札に戻す。
+    |廃棄場|に対象となるカードがない場合、代わりにカードを{Value2}枚引く。
+  DetailText: |-
+    カードタイプとは、カードが攻撃、防御、スキル、能力などであるかを指す。
+
+KomachiModLifespanEnd:
+  Name: 生の終焉
+  Description: |-
+    {PlayerName}のターンを終了する。その後、追加のターンを得る。
+    この追加ターン中、|ブロック|は失われない。
+    |ラウンド終了時|: {Value1}ダメージを受ける。
+  UpgradedDescription: |-
+    {PlayerName}のターンを終了する。その後、追加のターンを得る。
+    この追加ターン中、|ブロック|は失われない。
+    |その追加ターンの開始時|: カードを{Value2}枚引き、{Mana}を得て、|火力|{Value2}を得る。
+    |ラウンド終了時|: {Value1}ダメージを受ける。
+
+KomachiModGoldSarcophagus:
+  Name: 黄金の石棺船
+  Description: |-
+    山札からカードを1枚選び、|廃棄|する。
+    このカードを使用してから2ターン目の開始時、そのカードを手札に加え、|アップグレード|する
+
+KomachiModExileDoppelganger:
+  Name: 三途川の絶えた魂獣
+  Description: |-
+    {PlayerName}がカードを使用するたび:
+    - |廃棄場に同じ名前のカードがない場合|: そのカードの|コピー|を|廃棄場|に加える。そのコストは{Mana}に減少し、使用後に戦闘から除外される。
+    - |廃棄場に同じ名前のカードがある場合|: それを手札に加えることができる。
+    {SelfName}の各効果はターンに1度しか使用できない。
+  DetailText: |-
+    コピーは最初の効果でコピーできない
+
+KomachiModSpiritDraw:
+  Name: あの世へのツアーガイド
+  Description: |-
+    カードを{draw}枚引く。
+    この方法で引いたコモンカード1枚ごとに敵全体に|怨霊|{Value1}を与え、アンコモンカード1枚ごとに|導霊|{Value2}を得て、レアカード1枚ごとに|神霊|{Value3}を得る。
+  FlavorText: |-
+    コース1:楽園で迷子になった場合、対象地点は 早すぎる埋葬。
+    コース2:早すぎる埋葬に行った場合、対象地点は楽園で迷子になる
+
+KomachiModEiki:
+  Name: 楽園の最高裁判長、四季映姫
+  Description: |-
+    {Indent}|神霊|{RawShield}を得る。
+    {PassiveCostIcon}手札からランダムなカードを{Value1}枚選ぶ: |厄災または状態異常ドの場合|: |廃棄|し、|導霊|{Value2}を得る。
+    |それ以外の場合|: そのマナコストに等しい|導霊|を得る。そのコストは一時的にランダムなマナ1つ分少なくなる。
+  ExtraDescription1: |-
+    {ActiveCostIcon}手札のカードを1枚選ぶ。そのカードは一時的に全ての色付きマナコストを失い、|アップグレード|される。
+  UpgradedExtraDescription1: |-
+    {ActiveCostIcon}手札のカードを1枚選ぶ。そのコストは一時的に{Mana}になり、|アップグレード|される。
+  ExtraDescription3: |-
+    {UltimateCostIcon}|フィールド|にあるカードを{Value3}枚まで選び、手札に加える。この戦闘中、{Value3:plural one='その' other='それらの'}コストは{Mana}になる。この戦闘中、{PlayerName}はカードの|解放|コストを支払わない。
+  DetailText: |-
+    パッシブ効果はマナコストが0のカードを選ばない。
+
+KomachiModLilyHug:
+  Name: 彼岸花の抱擁
+  Description: |-
+    手札に|彼岸花|を1枚加える。
+    {PlayerName}が|彼岸花|を使用した後、|加護|{Value2}を得る。
+
+KomachiModStygianReel:
+  Name: 冥府の巻き取り
+  Description: |-
+    {Damage}ダメージを与える。
+    |変位| -{Value1}。
+    その敵のターン開始時、彼らを|変位|+{Value1}。
+
+KomachiModRiversideView:
+  Name: 川辺の景色
+  Description: |-
+    ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
+    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。
+    {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
+  UpgradedDescription: |-
+    手札に|彼岸花|を1枚加える。
+    ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
+    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。
+    {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
+
+KomachiModRedLilyStorm:
+  Name: 哀悼の嵐
+  Description: |-
+    手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
+    |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを与える。
+    |{Mana}を1点消費するごと|：{Value1}の|臨時火力|を得て、{Damage}のダメージを与える。
+    消費したマナが3点以上なら、|e:彼岸花|を捨て札に1枚加える。
+  UpgradedDescription: |-
+    手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
+    |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを2回与える。
+    |{Mana}を1点消費するごと|：{Value1}の|臨時火力|を得て、{Damage}のダメージを与える。
+    |e:彼岸花|を捨て札に1枚加える。
+  DetailText: |-
+    火力は攻撃が始まる前に全てまとめて得られる。
+  ExtraDescription1: |-
+    |彼岸花|を廃棄しない。
+  ExtraDescription2: |-
+    手札と捨て札にある全ての|e:彼岸花|を廃棄する。
+  
+KomachiModPosessedArmament:
+  Name: 憑霊兵器
+  Description: |-
+    {PlayerName}がブロックされなかった攻撃ダメージを与えるたび、{Value1}体の|怨霊|を追加で付与する。
+
+KomachiModParasiticPollen:
+  Name: 寄生胞子
+  Description: |-
+    {Damage}のダメージを与える。
+    対象が|毒|状態なら、|彼岸花|を手札に1枚加える。
+    そうでなければ、この方法で与えたブロックされなかったダメージ分の|毒|を付与する。
+
+
+# basic cards
+KomachiModAttackR:
+  Name: 大鎌の先端
+  Description: "{Damage}ダメージを与える。"
+
+KomachiModBlockR:
+  Name: 叱られ慣れ
+  Description: "{Block}|ブロック|を得る。"
+  FlavorText: |-
+    終わりなき説教を耐え抜いて得た精神力。
+
+KomachiModAttackB:
+  Name: ゴーストリックショット
+  Description: "{Damage}ダメージを与える。"
+  FlavorText: |-
+    ジャンシーを20ターンひっくり返せば勝利！
+
+KomachiModBlockB:
+  Name: 霊の援護
+  Description: "{Block}|ブロック|を得る。"
+  
+## cards during komachi's boss fight
+  
+KomachiModSanzuFare:
+  Name: 三途の川の運賃
+  Description: |-
+    {MoneyCost} <sprite="Point" name="Gold"> を支払う。
+    <color=#e58c27>小町</color>はこの戦闘を少し手加減してくれる。
+  FlavorText: |-
+    「お金を集めれば、永遠寺に仕事をしてると思わせられる。
+    だから払ってくれれば手加減してあげる。」
+  CardDialogue1: "ちゃんと向こう岸まで安全に送り届けるよ。"
+  CardDialogue2: "あんた、すっごく気前がいいね。天界に行けるように山の神に良い話しておくから。"
+
+KomachiModMoveToken:
+  Name: 動け！
+  Description: |-
+    |変位| 敵全体 +/-{Value1}。
+    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。
+  UpgradedDescription: |-
+    |変位| 敵全体 +/-{Value2}。
+    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。
+  ExtraDescription1: |-
+    接近！
+    |変位| -{displaceAmount}。
+  ExtraDescription2: |-
+    退避！
+    |変位| +{displaceAmount}。
+
+KomachiModWeatheredLily:
+  Name: 乾燥した彼岸花
+  Description: |-
+    {Mana}を得る。
+    |ターン終了時|：|毒|{Value1}を得る。

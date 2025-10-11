@@ -1,0 +1,283 @@
+KomachiModDistanceSe:
+  Name: "距離 {Level}: {DistanceString}"
+  Description: この敵が与えるおよび受ける攻撃ダメージは{MultiplierDescription}によって変化します。
+  VeryClose: "とても近い"
+  Close: "近い"
+  Normal: "普通の距離"
+  Far: "遠い"
+  VeryFar: "とても遠い"
+
+
+KomachiModDistanceBlockSe:
+  Name: 波乗り勤務
+  Description: 敵が|変位|される度に、変化した距離レベル1ごとに{Level}|ブロック|を得る。
+
+KomachiModDistanceGeneratorSe:
+  Name: 真面目な死神
+  Description: |-
+    {PlayerName} のターン開始時、手札に |距離操作| が {Level:plural one='1枚もない' other='%枚未満'} 場合、手札に {Level:plural one='1枚の |距離操作|' other='|距離操作|'} を追加します{Level:plural one='。' other='。手札が%枚になるまで繰り返します。'}
+  Brief: |-
+    {PlayerName} のターン開始時、手札に |距離操作| が一定枚数未満の場合、手札に |距離操作| を追加し、指定枚数になるまで繰り返します。
+
+KomachiModDistanceFlowSe:
+  Name: 河の流れのように
+  Description: |-
+    敵が|変位|される度に:
+    - もし距離が増加すれば、|臨時霊力|{Level}を得る。
+    - もし距離が減少すれば、|臨時火力|{Level}を得る。
+
+KomachiModReviveSe:
+  Name: 死の神
+  Description: |-
+    次に{PlayerName}がこの戦闘で倒される時、代わりに最大HPの半分まで回復し、|天衣無縫|{flawlessTurns}を得る。
+    この効果が適用されたら、{SelfName}をデッキから除外する。
+    敵が倒されるたび、もしそれが召喚されたものなら、{Level}|バリア|を得る。
+    それ以外の場合は、{Level}のライフを回復する。
+  ExtraDescription: |-
+    {PlayerName}はこの効果で既に復活済み。
+    敵を倒すたび、その敵が召喚されたものであれば{Level}の|バリア|を得る。
+    そうでなければライフ{Level}を回復する。
+
+KomachiModPushNPullSe:
+  Name: 押して引いて
+  Description: |-
+    {PlayerName}のターン開始時、 |変位| 敵全体 -{Level}。
+    {PlayerName}のターン終了時、 |変位| 敵全体 +{Level}。
+
+KomachiModSpySpiritSe:
+  Name: 同行偵察霊
+  Description: |-
+    {OwnerName}が|変位|される度に、{PlayerName}は{Level}|バリア|を得る。
+
+KomachiModRiversideGardenSe:
+  Name: 水辺の庭
+  Description: |-
+    この戦闘中{PlayerName}が|彼岸花|を加える度、それを|アップグレード|する。
+    戦闘終了時、|フィールド|に存在する|彼岸花|1枚ごとに、ライフ{Level}を得る。
+
+KomachiModShinigamiTacticsSe:
+  Name: 死神流戦法
+  Description: |-
+    |距離操作|カードをプレイした後:
+    - 距離が縮まった場合はランダムな攻撃カードを{Level}枚手札に加える。
+    - 距離が伸びた場合はランダムな防御カードを{Level}枚手札に加える。
+    これらカードのコストは|一時的|に{Mana}に|減少|し、|廃棄|および|虚無|を持つ。
+
+
+KomachiModBWBridgeSe:
+  Name: 閻魔庁の仕事
+  Description: "{PlayerName}のターン開始時、{Level}{Mana}を得る。"
+  Brief: "{PlayerName}のターン開始時、{Mana}を得る。"
+
+KomachiModVengefulSpiritSe:
+  Name: 怨霊
+  Description: |-
+    {OwnerName}のターン開始時、{SelfName}の残りターンを1減らす。
+    {Duration}ターン後、{SelfName}を除去し、そのカウントの2倍の|精密|攻撃ダメージを与える。
+    {damageDealt}のダメージが発生する。
+  Brief: |-
+    ほぼ常に3ターンの持続で付与されるステータス効果。敵に再度付与しても持続ターンは変わらない。
+    ターン開始時に{SelfName}の残りターンを1減らす。
+    この効果が解除されると、その時点のカウントの2倍の|精密|攻撃ダメージを所有者に与える。
+    ※この攻撃ダメージは敵とプレイヤー両方のダメージ補正の影響を受ける。
+
+KomachiModGuidedSpiritSe:
+  Name: 導霊
+  Description: |-
+    {OwnerName}のターン終了時、ライフが最も低い敵({targetName})に{damageDealt}の|精密|攻撃ダメージを与え、その後{SelfName}を1失う。
+  Brief: |-
+    所有者のターン終了時、ライフが最も低い敵に{SelfName}のレベル分の攻撃ダメージを与え、その後{SelfName}を1つ失う。
+    この効果の所有者がプレイヤーの場合、このダメージは|精密|扱いになる。
+  EnemyDescription: |-
+    {OwnerName}のターン終了時、{PlayerName}に{damageDealt}の攻撃ダメージを与え、その後{SelfName}を1つ失う。
+
+KomachiModDivineSpiritSe:
+  Name: 神霊
+  Description: |-
+    {PlayerName}のターン終了時、{Level}|バリア|を得た後、{SelfName}のレベルを半分(切り捨て)にする。
+  Brief: |-
+    所有者のターン終了時、このユニットは{SelfName}のレベル分の|バリア|を得た後、{SelfName} のレベルを半分(切り捨て)にする。
+
+KomachiModBoundSpiritsOfEarthSe:
+  Name: 浮かばれない地縛霊
+  Description: |-
+    {PlayerName}のターン終了時、|怨霊|を持つ敵全体に|怨霊|{Level}を与える。
+
+KomachiModLonelyBoundSpiritSe:
+  Name: 寂しがり屋の緊縛霊
+  Description: |-
+    {OwnerName}に|怨霊|が付与されるたび、|寂しがり屋の緊縛霊|のカウントを同じ量×{Level}増加させる。
+    |寂しがり屋の緊縛霊|は、{OwnerName}に|怨霊|がカード効果で|爆破|されたときのみ起爆し、{damageDealt} のダメージを与える
+  Brief: |-
+    所有者に|怨霊|が付与されるたび、|寂しがり屋の緊縛霊|のカウントを同じ量だけ増やす。
+    |寂しがり屋の緊縛霊|は、所有者に付与された|怨霊|がカード効果で|爆破|されたときのみ起爆する。
+    もし|寂しがり屋の緊縛霊|が|怨霊|と同時に起爆した場合、起爆した霊の数を数える効果は両方をカウントする。
+
+KomachiModDetonateFirepowerSe:
+  Name: 死者の怨念
+  Description: |-
+    |怨霊|が|爆破|される度に、|火力|{Level}を得る。
+
+KomachiModTalkativeFerrymanSe:
+  Name: おしゃべりな渡し守
+  Description: |-
+    {PlayerName}のターン開始時、|導霊|{Level}を得る。
+
+KomachiModGuidedGeneratorNextTurnSe:
+  Name: 導霊増加
+  Description: |-
+    {PlayerName}の次のターン開始時、|導霊|{Level}を得る。
+
+KomachiModDetonateInfiniteSe:
+  Name: 永劫の終止符
+  Description: |-
+    敵の|怨霊|が|爆破|されるたび、その対象に|怨霊|{Level}を与える。
+
+KomachiModSpiritReturnSe:
+  Name: 魂還り
+  Description: |-
+    {PlayerName}のターン開始時、手札の右から{Level}枚のカードをデッキの一番下に置き、その後|廃棄場|から合計コストが 2未満のカードを最大{Level}枚まで手札に加える。
+    これらのカードは使用時に{Mana}多く消費し、プレイすると戦闘から除外される。
+
+KomachiModEthicallySourcedBreakSe:
+  Name: 正義のブレイクタイム
+  Description: |-
+    次の{PlayerName}のターン開始時、{PlayerName}のターンをスキップする。
+    その次の{PlayerName}のターン開始時、{manaAmount}を得て {Count}枚のカードを引く。
+
+KomachiModInfernoTempestSe:
+  Name: 路の果ての魂
+  Description: |-
+    次の{PlayerName}のターン開始時、基本カード以外の廃棄されたカードを最大{Value2}枚まで選ぶ。
+    それらを手札、山札、捨て札のいずれかにランダムに加える。
+
+KomachiModHellFreezeSe:
+  Name: 地獄の凍てつく温もり
+  Description: |-
+    {OwnerName}の|怨霊|が|爆破|されるたび、{OwnerName}に|冷気|を与える。(この効果は重複しない)
+
+KomachiModMidsummerLilySe:
+  Name: 孤独な彼岸花
+  Description: |-
+    {PlayerName}が|彼岸花|を使用した後、手札に|厄災|を{Level}枚数加える。
+
+KomachiModLifespanEndSe:
+  Name: 生の終焉
+  Description: |-
+    ラウンド終了時: {Level}ダメージを受ける。
+
+KomachiModGoldSarcophagusSe:
+  Name: 黄金の石棺船
+  Description: |-
+    {PlayerName}のターン開始時、{SelfName}にある各カードの残りターンを1減らす。
+    カードの残りターンが{returnTime}になったら、{PlayerName}の手札に加えそれをアップグレードする。
+    {SelfName} にあるカード: {SarcophagusContent}
+  ExtraDescription: |-
+    - CARDNAME：DURATIONターン後に手札に戻る。
+
+KomachiModExileDoppelgangerSe:
+  Name: 三途川の絶えた魂獣
+  Description: |-
+    {PlayerName} がカードをプレイするたび：
+    - |廃棄場に同じ名前のカードがない場合|: そのカードの|コピー|を|廃棄場|に加える。そのコストは{Mana}に減少し、使用後に戦闘から除外される。
+    (このターン、あと{Count}回使用可能)
+    - |廃棄場に同じ名前のカードがある場合|: それを手札に加えることができる。
+    (このターン、あと{Count2}回使用可能)
+    {SelfName}の各効果は、ターンごとに{Level:ordinal one='1回' two='2回' few='3回' other='% 回'} までしか使用できない。
+
+KomachiModEikiSe:
+  Name: 説教された死神
+  Description: |-
+    {PlayerName}はカードの|解放|コストを支払わない。
+
+KomachiModLilyHugSe:
+  Name: 彼岸花の抱擁
+  Description: |-
+    {PlayerName}が|彼岸花|を使用した後、|加護|{Level}を得る。
+
+KomachiModDisplaceNextTurnSe:
+  Name: 次の五ターン変位
+  Description: |-
+    {OwnerName}の次のターン開始時、それらを{displaceAmount}変位させる。
+
+KomachiModRiversideViewSe:
+  Name: 川辺の景色
+  Description: |-
+    自分のターン開始時、手札に|彼岸花|がない場合、|彼岸花|を1枚手札に加える。
+    |彼岸花|がプレイヤーに付与する|毒|を{Count}減らす。
+    {PlayerName}が|彼岸花|をプレイした後、敵全体に{poisonApply}の|毒|を与え、その後|火力|{Level}を得る。
+
+KomachiModPosessedArmamentSe:
+  Name: 憑霊兵器
+  Description: |-
+    {PlayerName}がブロックされない攻撃ダメージを与えるたび、|怨霊|{Level}を追加で付与する。
+
+  
+
+#Boss status effects
+KomachiModBossDistanceGeneratorSe:
+  Name: 移動中
+  Description: |-
+    {PlayerName}ターン開始時、手札に|動け!|が無いまたは{Level}枚未満の場合、|動け!|を{Level}枚手札に加える。
+    {Level}枚になるまで繰り返す。
+
+KomachiModBossTempFirepowerSe:
+  Name: ラウンド開始時の臨時火力
+  Description: |-
+    ラウンド開始時、{OwnerName}は{Level}の|一時的火力|を得る。
+
+KomachiModBossGuidedEndTurnSe:
+  Name: 導霊を呼ぶ
+  Description: |-
+    {OwnerName}のターン終了時、|導霊|{Level}を得る。
+
+KomachiModBossReviveSe:
+  Name: 死神
+  Description: |-
+    {OwnerName}は死神である。次の行動に応じて戦闘の距離を操作する能力を使用する。
+  ExtraDescription: |-
+    {OwnerName}は死神としての力で一時的に死を逃れた！  
+    このターンで最後の抵抗を行った後、戦闘から退場する。
+
+
+#Keywords
+
+KomachiDistanceKeyword:
+  Name: 距離
+  Brief: |-
+    距離は敵に付与されるステータス効果で、プレイヤーからの接近度を表す。
+    敵が近いほど、与えるダメージも受けるダメージも増加し、遠いほど与えるダメージも受けるダメージも減少する。
+    
+    距離には5段階のレベルがあり(ステータス未適用時のデフォルトは3):
+
+    非常に近い(1):与える・受ける攻撃ダメージ +100%。
+    近い(2):与える・受ける攻撃ダメージ +50%。
+    普通(3):ダメージ補正なし（デフォルト）。
+    遠い(4):与える・受ける攻撃ダメージ -15%。
+    非常に遠い(5):与える・受ける攻撃ダメージ -30%。
+
+
+KomachiDisplacementKeyword:
+  Name: 変位 X
+  Brief: |-
+    対象の現在の|距離|をXだけ変化させる。距離が設定されていない敵は距離3として扱う。
+    変位は一般的に、敵の距離を変更するすべての行為を指す。
+
+KomachiDetonationKeyword:
+  Name: 爆破
+  Brief: |-
+    敵から|怨霊|を除去し、そのダメージを敵に与える。
+
+KomachiModReleaseKeyword:
+  Name: 解放 X
+  Brief: |-
+    このカードをプレイするとき、任意で{PlayerName}からX個の|導霊|および/または|神霊|を除去してこの効果を発動できる。
+    |導霊|が優先的に除去される。
+    ※カードをプレイする前に必要な数を所有している必要がある。
+
+KomachiAutoDiscardKeyword:
+  Name: 自動捨札
+  Brief: |-
+    手札を満たそうとする際、このカードを|捨てる|。
+    手札の左端にある|自動捨札|が付いたカードが最初に捨てられる。
+    ※<i>mod制限により、通常の自動除外とは動作が異なる。</i>

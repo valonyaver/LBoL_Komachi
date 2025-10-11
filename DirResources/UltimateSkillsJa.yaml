@@ -1,0 +1,38 @@
+KomachiModUltA:
+  Title: 死神
+  Content: ヒガンルトゥール
+  Description: |-
+    |変位| 全ての敵の|距離|を{Value1}にする。
+    敵1体につき、|距離操作|を1枚手札に加える。
+    敵全体に{Damage}ダメージを与える。 |精密|
+
+KomachiModUltB:
+  Title: 霊符
+  Content: 古き地縛霊の目覚め
+  Description: |-
+    敵全体の|加護|を取り除く。
+    敵全体に|怨霊|{Value1}を与える。
+    |爆破| 敵全体。
+    爆破された|怨霊|の数だけ|神霊|を得る。
+
+KomachiModUltHalfLife:
+  Title: 薄命
+  Content: 余命幾許も無し
+  Description: |-
+    敵の現在の体力を半分にする。
+
+KomachiModUltShootGhosts:
+  Title: 魂符
+  Content: 生魂流離の鎌
+  Description: |-
+    {Damage}ダメージを与える。{SelfName}は、対象の|怨霊|1につき追加で{Value1}ダメージを与える。
+    対象が撃破された場合、その敵が持っていた|怨霊|の数だけ、他の全ての敵に|怨霊|を与える。
+
+
+KomachiModUltFinalJudgement:
+  Title: 死符
+  Content: 死者選別の鎌
+  Description: |-
+    |変位| どんな距離にでも。
+    遠距離によるダメージ軽減は、このカードのダメージをその2倍分増加させる。  
+    {SelfName}で敵を倒した場合、手札に|彼岸花|を1枚加える。

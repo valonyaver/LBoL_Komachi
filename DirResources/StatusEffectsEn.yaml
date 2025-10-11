@@ -136,7 +136,7 @@ KomachiModDetonateInfiniteSe:
 KomachiModSpiritReturnSe:
   Name: Spirit Return
   Description: |-
-    At the start of {PlayerName}'s turn, place the {Level} rightmost card{Level:plural one='' other='s'} in the hand at the bottom of the deck, then add up to {Level} card{Level:plural one='' other='s'} from the |Exile| pile with a total cost less than 2 to your hand. It costs {Mana} more and is removed from combat when played.
+    At the start of {PlayerName}'s turn, add up to {Level} card{Level:plural one='' other='s'} from the |Exile| pile with a total cost less than 2 to your hand. It costs {Mana} more and is removed from combat when played.
 
 KomachiModEthicallySourcedBreakSe:
   Name: Ethically Sourced Break
@@ -207,6 +207,13 @@ KomachiModPosessedArmamentSe:
   Description: |-
     Whenever {PlayerName} deals unblocked attack damage, also apply {Level} |Vengeful Spirit{Level:plural one='' other='s'}|.
   
+
+KomachiModPoisonNegativeSe:
+  Name: Lose Poison
+  Description: |-
+    Lose {Level} |Poison|.
+    This should not be shown in gameplay.
+
 
 #Boss status effects
 KomachiModBossDistanceGeneratorSe:

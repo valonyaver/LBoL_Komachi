@@ -1,4 +1,8 @@
 ﻿## Tokens and choice cards
+
+# IMPORTANT NOTE REGARDING DISPLACE WORDING:
+# If a card says "You can displace" (by x or up to x), that means you can choose not to displace.
+# If a card simply says "Displace by X" or "Displace up to X", that means you must displace, 
 KomachiModManDistance:
   Name: Manipulate Distance
   Description: "|Displace| +/-{Value1}."
@@ -635,7 +639,7 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: Spirit Return
   Description: |-
-    At the start of {PlayerName}'s turn, place the rightmost card in the hand at the bottom of the deck, then add up to 1 card from the |Exile| pile with a total cost <b>less than</b> 2 to your hand. It costs {Mana} more and is removed from combat when played.
+    At the start of {PlayerName}'s turn, add up to 1 card from the |Exile| pile with a total cost <b>less than</b> 2 to your hand. It costs {Mana} more and is removed from combat when played.
 
 KomachiModAfterlifePassage:
   Name: Afterlife Passage
@@ -684,6 +688,9 @@ KomachiModDistanceCloser:
     |Release| {releaseCost}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
   ExtraDescription1: |-
     |Release| {releaseCost}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
+  DetailText: |-
+    The amount of |Vengeful Spirits| applied is equal to the actual amount of displacement, rather than the choice.
+# NOTE TO SELF. TEST THIS CARD FOR ITS DETAILTEXT.
 
 KomachiModEthicallySourcedBreak:
   Name: Ethically Sourced Break
@@ -733,6 +740,8 @@ KomachiModStrongestSpirit:
   Description: |-
     Deal {Damage} damage.
     Apply |Vengeful Spirits| equal to the amount of unblocked damage dealt this way.
+    |Release| {Value1}: Gain {Value2} |Temporary Firepower|. |Exile| all non-attack cards from the hand.
+  ExtraDescription1: |-
     |Release| {Value1}: Gain {Value2} |Temporary Firepower|. |Exile| all non-attack cards from the hand.
   FlavorText: "After getting over her existential crisis when she learned that the sun will explode in 5 billion years, the ice fairy became stronger than ever."
 
@@ -819,8 +828,8 @@ KomachiModStygianReel:
 KomachiModRiversideView:
   Name: Riverside View
   Description: |-
-    At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand. This effect does not stack.
-    |Spider Lilies| apply {Value3} less |Poison| to the Player.
+    At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand. 
+    |Spider Lilies| apply {Value3} less |Poison| to the Player. The above two effects do not stack.
     After {PlayerName} plays a |Spider Lily|, apply {Value2} |Poison| to each enemy, then gain {Value1} |Firepower|.
   UpgradedDescription: |-
     Add a |Spider Lily| to the hand.
@@ -859,8 +868,9 @@ KomachiModPosessedArmament:
 KomachiModParasiticPollen:
   Name: Parasitic Pollen
   Description: |-
-    Deal {Damage} damage.
-    If the target is |Poisoned|, add a |Spider Lily| to the hand. Otherwise, apply |Poison| equal to the unblocked damage dealt this way.
+    Deal {Damage} damage {Value1} times.
+    If the target is |Poisoned|, add a |Spider Lily| to the hand. Otherwise, Apply {Value2} |Poison|. 
+    If {PlayerName} is |Poisoned|, Lose {Value2} |Poison|, then apply |Poison| equal to the unblocked damage dealt.
 
 ## basic cards
 KomachiModAttackR:

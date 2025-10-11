@@ -20,6 +20,31 @@ KomachiMod:
     Gah! You're really overworking me, you know!
   LastWordChat2: |-
     But I can't let that slide!
+  EikiMirrorChat1: |-
+    I look forward to executing my shinigami duties with maximum efficiency and to file the appropriate post-engagement report for you to review, Esteemed Lady Eiki!
+  EikiMirrorChat2: |-
+    I don't sound like that! Who looks forward to paperwork?
+  EikiMirrorChat3: |-
+    That's how a proper Shinigami conducts herself. Perhaps you should take notes.
+  EikiAltWinChat1: |-
+    Okay Okay, Miss- I mean, Esteemed Lady Eiki.
+  EikiAltWinChat2: |-
+    I understand your point, and I'll work harder! But I promise you that I really am not slacking this time! You're misunderstanding the situation! 
+  EikiAltWinChat3: |-
+    I didn't steal any of these exhibits! I'm looking for the actual culprit who did, and doing what I can recovering them for Kaguya-Sama!
+  EikiAltWinChat4: |-
+    Hmph! Is that really the case?
+  EikiAltWinChat5: |-
+    Well, I suppose you <i>are</i> properly guiding some spirits during this venture. (Not just sleeping on your boat for once...)
+  EikiAltWinChat6: |-
+    Fine, I will let you go for now. You are permitted to continue your investigation.
+  EikiAltWinChat7: |-
+    Yipee! :D
+  EikiAltWinChat8: |-
+    But your backlog of 21 unferried spirits awaits after this. No dozing off.
+  EikiAltWinChat9: |-
+    Agh- I mean, fine. I'll... promise not to sleep on the job later.
+
 # These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
 
 KomachiModDivineSpiritEnemy:

@@ -48,10 +48,17 @@ namespace KomachiMod
         public static ConfigEntry<bool> enableAct1Boss;
 
         public static CustomConfigEntry<bool> enableAct1BossEntry = new CustomConfigEntry<bool>(
-            value: false,
+            value: true,
             section: "EnableAct1Boss",
             key: "EnableAct1Boss",
-            description: "Toggle the Act 1 boss. Default: Off");
+            description: "Toggle the Act 1 boss. Default: On");
+
+
+        public static ConfigEntry<float> distanceMultiplier1;
+        public static ConfigEntry<float> distanceMultiplier2;
+        public static ConfigEntry<float> distanceMultiplier3;
+        public static ConfigEntry<float> distanceMultiplier4;
+        public static ConfigEntry<float> distanceMultiplier5;
 
         private static readonly Harmony harmony = KomachiMod.PInfo.harmony;
 
@@ -71,6 +78,24 @@ namespace KomachiMod
             ///Load the custom config entry.
             enableAct1Boss = Config.Bind(enableAct1BossEntry.Section, enableAct1BossEntry.Key, enableAct1BossEntry.Value, enableAct1BossEntry.Description);
             Debug.Log($"Enabling komachi boss is {enableAct1Boss.Value}");
+
+            // Configure distance multipliers
+            distanceMultiplier1 = Config.Bind("Distance Multipliers", "Distance1_Multiplier", 2.0f,
+                "Damage multiplier for Distance 1 (Very Close). Default: 2.0");
+
+            distanceMultiplier2 = Config.Bind("Distance Multipliers", "Distance2_Multiplier", 1.5f,
+                "Damage multiplier for Distance 2 (Close). Default: 1.5");
+
+            distanceMultiplier3 = Config.Bind("Distance Multipliers", "Distance3_Multiplier", 1.0f,
+                "Damage multiplier for Distance 3 (Normal). Default: 1.0");
+
+            distanceMultiplier4 = Config.Bind("Distance Multipliers", "Distance4_Multiplier", 0.85f,
+                "Damage multiplier for Distance 4 (Far). Default: 0.85");
+
+            distanceMultiplier5 = Config.Bind("Distance Multipliers", "Distance5_Multiplier", 0.7f,
+                "Damage multiplier for Distance 5 (Very Far). Default: 0.7");
+
+            Debug.Log($"Distance multipliers loaded: {distanceMultiplier1.Value}, {distanceMultiplier2.Value}, {distanceMultiplier3.Value}, {distanceMultiplier4.Value}, {distanceMultiplier5.Value}");
             // very important. Without this the entry point MonoBehaviour gets destroyed
             DontDestroyOnLoad(gameObject);
             gameObject.hideFlags = HideFlags.HideAndDontSave;

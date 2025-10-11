@@ -1,0 +1,8 @@
+KomachiBossDisplaceIntention:
+  Name: 変位
+  Description: |-
+    {OwnerName}は位置を不明な距離だけずらそうとしている。
+  PositiveDisplacementDescription: |-
+    {OwnerName}は位置を前方に{displacementAmount}だけずらそうとしている。
+  NegativeDisplacementDescription: |-
+    {OwnerName}は位置を後方に{displacementAmount}だけずらそうとしている。

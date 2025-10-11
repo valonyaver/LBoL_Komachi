@@ -96,28 +96,21 @@ namespace KomachiMod.StatusEffects
         {
             get
             {
+
                 switch (Level)
                 {
                     case 1: // Very close distance
-                        {
-                            return 2;
-                        }
+                        return BepinexPlugin.distanceMultiplier1.Value;
                     case 2: // Close distance
-                        {
-                            return 1.5f;
-                        }
-                    default: // Normal Distance. Takes case 3 into account.
-                        {
-                            return 1;
-                        }
+                        return BepinexPlugin.distanceMultiplier2.Value;
+                    case 3: // Normal distance
+                        return BepinexPlugin.distanceMultiplier3.Value;
                     case 4: // Far distance
-                        {
-                            return 0.85f;
-                        }
+                        return BepinexPlugin.distanceMultiplier4.Value;
                     case 5: // Very far distance
-                        {
-                            return 0.7f;
-                        }
+                        return BepinexPlugin.distanceMultiplier5.Value;
+                    default: // Fallback
+                        return BepinexPlugin.distanceMultiplier3.Value; // Use normal distance as default
                 }
             }
         }

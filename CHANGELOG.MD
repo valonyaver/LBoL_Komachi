@@ -1,12 +1,13 @@
 ## 0.4.0
 ### - Added an Act 1 boss. Now you can fight Komachi as other characters and get access to her cards and exhibits.
+## New Cards
 Five new cards, mostly to expand on the Spider Lily playstyle:
 - Storm of the grieving dead: An X cost aoe attack that takes advantage of your Spider lilies.
 - Riverside View: A rare RRR ability that constantly generates red lilies and gives more upsides to playing them
 - Lily's Embrace: A Red-Green off colour ability that gives you amulets every time you play a Spider Lily
 - Stygian Reel: The first off colour card to interact with distance. It's a Red-blue attack that pulls the enemies then pushes them back at the end of the turn.
 - Posessed Armament: A black ability that's basically just dark dancer, but for vengeful spirits instead.
-- Parasitic Pollen: A *neutral* Red-Green attack that interacts with poison and spider lilies.
+- Parasitic Pollen: A Red-Green attack that interacts with poison and spider lilies.
 If you want more specificity about what these cards do, check them out in the collection.
 
 ### Card changes:
@@ -19,6 +20,7 @@ If you want more specificity about what these cards do, check them out in the co
 - Spirit Catalyst now costs 1BB (B) -> BBB (B). To compensate, the unupgraded version now has retain similar to its upgrade.
 
 ### Other:
+- Distance Damage modifiers are now configurable in bepinex/config.
 - Fixed a lot of text mistakes.
 - Fixed Auto-Discard. Now it works like Auto-Exile (discard on exceeding the hand rather than discard on reaching the hand limit).
 

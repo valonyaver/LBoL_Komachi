@@ -1,0 +1,38 @@
+KomachiMod:
+  Name: '小野塚小町'
+  Title: '三途の水先案内人'
+  Move:
+  - '浮かばれない地縛霊'
+  - '死神の大鎌'
+  - '死の味'
+  - '怠惰な一撃'
+  - '仮眠'
+  - '間合い徴収'
+  - '死の味'
+  - '死者選別の鎌'
+  - 'ラストワード - 死神'
+  - '花映塚'
+  KomaEscape1: |-
+    よし！　これだけやれば、映姫様にもちゃんと止めようとしたって言い訳できるでしょ。
+  KomaEscape2: |-
+    じゃ、そろそろ行くね<size=50%>昼寝の時間だし<size=100%>。犯人が見つかるといいね b<size=90%>y<size=80%>e<size=70%>e<size=60%>e<size=50%>e<size=40%>e！
+  LastWordChat1: |-
+    も～、あんたホントに私を働かせすぎ！
+  LastWordChat2: |-
+    でも、ここは見逃せないね！
+# These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
+
+KomachiModDivineSpiritEnemy:
+  Name: "神霊"
+  Default: '神霊'
+  FlawlessMove: "菩薩のうたた寝"
+  Move:
+  - 'まばゆい閃光'
+
+KomachiModVengefulSpiritEnemy:
+  Name: '怨霊'
+  Default: '怨霊'
+  Move:
+  - '穢れの炎'
+  - '呪縛'
+  - '自爆'

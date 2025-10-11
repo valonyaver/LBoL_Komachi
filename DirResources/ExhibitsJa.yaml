@@ -1,0 +1,16 @@
+KomachiModExhibitR:
+  Name: タイタニック
+  Description: |-
+    マナ基盤に{BaseMana}を加える。|小町|固有のカードが出現するようになる。
+    各戦闘の最初の1ターン目開始時、|距離操作|を手札に1枚加える。
+    敵を倒したとき、手札に|彼岸花|を加える。
+    戦闘報酬の<sprite="Point" name="Gold">が{Value1}%増える。
+  FlavorText: 彼岸の岸辺を巡る豪華クルーズ！期間限定で一割引き。
+
+KomachiModExhibitB:
+  Name: 死神の眼
+  Description: |-
+    マナ基盤に{BaseMana}を加える。|小町|固有のカードが出現するようになる。
+    戦闘開始時、|霊力|{Value1}を得る。敵が|神霊|か|怨霊|ならば|加護|を取り除き|脱力|{Value3}と|弱体|{Value3}を与える。
+    {PlayerName}の3ターン目終了値、|霊力|{Value1}を失い、敵全体に|弱体|{Value2}を与える。
+  FlavorText: 寿命の半分と引き換えに、出会った人すべての名前と死期が見えるようになる。
