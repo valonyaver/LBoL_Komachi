@@ -1,6 +1,11 @@
 Art sources:
-Titanic Exhibit art by Iced Lemon: https://bsky.app/profile/icedlemondraw.bsky.social
+The following arts were specifically requested for this mod by Iced Lemon: https://bsky.app/profile/icedlemondraw.bsky.social
+-Titanic Exhibit
+-Parastic Pollen
+-Lily's Embrace
+-Low Tier Shinigami
 
+Other art in the mod was sourced from already existing fanart:
 Tip of the ReaperL https://www.pixiv.net/en/artworks/5761472
 Used to Scolding: https://x.com/mirandakeikoku/status/1038729698136621056
 Ghostrick Shot: https://www.pixiv.net/en/artworks/7728020
@@ -30,7 +35,8 @@ Double Hooking: https://www.pixiv.net/en/artworks/77940125
 Spirits of a Past Life: https://www.pixiv.net/en/artworks/99298030
 Eiki Shiki, Judge of Paradise: https://www.pixiv.net/en/artworks/50257234
 Souls at the end of the road: https://www.pixiv.net/en/artworks/39094445
-LowTierShinigami: https://www.pixiv.net/en/artworks/58589340
+The status effect icon for Souls at the end of the road is the art for the yugioh card "Inferno Tempest"
+LowTierShinigami alt art: https://www.pixiv.net/en/artworks/58589340
 Extinct Fauna: https://www.pixiv.net/en/artworks/79625124
 Ministry WorK: https://www.pixiv.net/en/artworks/7765481
 God of Death: https://danbooru.donmai.us/posts/1232189 (Original source is dead)
@@ -87,3 +93,5 @@ Sanzu Fare: https://x.com/o11_yori/status/1961636129699946822
 
 
 Everything else is placeholder art by me or the game itself.
+
+If there is something I missed please tell me so I can source it.
