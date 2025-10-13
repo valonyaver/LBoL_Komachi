@@ -57,6 +57,7 @@ namespace KomachiMod.StatusEffects
 
         protected override void OnRemoved(Unit unit)
         {
+            if (Battle.BattleShouldEnd) return;
             React(new DrawManyCardAction(Count));
             React(new GainManaAction(manaAmount));
         }

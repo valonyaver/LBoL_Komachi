@@ -31,12 +31,12 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 14;
-            config.UpgradedDamage = 16;
+            config.Damage = 12;
+            config.UpgradedDamage = 15;
 
             // Spirit apply
-            config.Value1 = 4;
-            config.UpgradedValue1 = 7;
+            config.Value1 = 5;
+            config.UpgradedValue1 = 8;
 
             // Release cost
             config.Value2 = 3;

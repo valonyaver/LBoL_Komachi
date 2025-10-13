@@ -121,15 +121,33 @@ namespace KomachiMod.Enemies
             GetStatusEffect<KomachiModBossReviveSe>().Activating += OnRevival;
         }
 
+
+
         public override void OnSpawn(EnemyUnit spawner)
         {
             Last = MoveType.AttackAccurate;
             Next = MoveType.Summon;
             NextNext = MoveType.AttackMulti;
+            EikiBoss = Battle.AllAliveEnemies.Where(u  => u is Siji).FirstOrDefault();
             React(new ApplyStatusEffectAction<MirrorImage>(this));
+            React(SpawnDialogue());
             // Updates the defence intention
             HandleBattleEvent(KomachiEventsManager.DistanceChanged, OnDistanceChanged);
         }
+
+        public Unit EikiBoss;
+
+        public string EikiMirrorChat1 => LocalizeProperty("EikiMirrorChat1");
+        public string EikiMirrorChat2 => LocalizeProperty("EikiMirrorChat2");
+        public string EikiMirrorChat3 => LocalizeProperty("EikiMirrorChat3");
+
+
+        IEnumerable<BattleAction> SpawnDialogue()
+        {
+            yield return PerformAction.Chat(this, EikiMirrorChat1, 6f, waitTime: 3f);
+            yield return PerformAction.Chat(Battle.Player, EikiMirrorChat2, 2.5f, waitTime: 2f);
+            yield return PerformAction.Chat(EikiBoss, EikiMirrorChat3, 2, waitTime: 2f);
+        } 
 
         public void OnRevival()
         {
@@ -350,6 +368,7 @@ namespace KomachiMod.Enemies
                     }
                 case MoveType.Defend:
                     {
+                        if (Difficulty == GameDifficulty.Lunatic) return 2;
                         return 1;
                     }
                 case MoveType.Debuff:

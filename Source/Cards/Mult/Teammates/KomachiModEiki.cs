@@ -8,7 +8,13 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
+using LBoL.Core.Stations;
+using LBoL.Core.Units;
+using LBoL.EntityLib.EnemyUnits.Character;
+using LBoL.EntityLib.EnemyUnits.Normal;
+using LBoL.EntityLib.Stages;
 using LBoLEntitySideloader.Attributes;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -192,13 +198,25 @@ namespace KomachiMod.Cards.B
             // Ultimate ability.
 			else
 			{
-				base.Loyalty += base.UltimateCost;
+                base.Loyalty += base.UltimateCost;
                 base.UltimateUsed = true;
+                // If Fighting Eiki
+                if (Battle.AllAliveEnemies.Any(u => u is Siji))
+                {
+                    yield return base.SkillAnime;
+                    foreach(BattleAction action in CoolFunction())
+                    {
+                        yield return action;
+                    }
+                    yield break;
+                }
+                // Choose card to add to hand.
                 List<Card> battlefield = (from card in Battle.HandZone.Concat(Battle.DrawZoneToShow).Concat(Battle.DiscardZone).Concat(Battle.ExileZone)
                                    where card != this
                                    select card).ToList();
                 var interaction = new SelectCardInteraction(0, Value3, battlefield);
                 yield return new InteractionAction(interaction);
+                // Change card cost
                 foreach(var card in interaction.SelectedCards)
                 {
                     if (card.Zone != CardZone.Hand)
@@ -207,11 +225,54 @@ namespace KomachiMod.Cards.B
                     }
                     card.SetBaseCost(Mana);
                 }
+                // Get buff
                 yield return BuffAction<KomachiModEikiSe>(1);
                 yield return base.SkillAnime;
 			}
 			yield break;
 		}
+
+        public string[] EikiAltWinChats => new string[]
+            {
+            LocalizeProperty("EikiAltWinChat1"),
+            LocalizeProperty("EikiAltWinChat2"),
+            LocalizeProperty("EikiAltWinChat3"),
+            LocalizeProperty("EikiAltWinChat4"),
+            LocalizeProperty("EikiAltWinChat5"),
+            LocalizeProperty("EikiAltWinChat5.5"),
+            LocalizeProperty("EikiAltWinChat6"),
+            LocalizeProperty("EikiAltWinChat7"),
+            LocalizeProperty("EikiAltWinChat8"),
+            LocalizeProperty("EikiAltWinChat9")
+            };
+        IEnumerable<BattleAction> CoolFunction()
+        {
+            Unit player = Battle.Player;
+            Unit Eiki = Battle.AllAliveEnemies.Where(u => u is Siji).FirstOrDefault();
+            yield return PerformAction.Chat(player, EikiAltWinChats[0], 3f, waitTime: 3f);
+            yield return PerformAction.Chat(player, EikiAltWinChats[1], 4f, waitTime: 4f);
+            yield return PerformAction.Chat(player, EikiAltWinChats[2], 4f, waitTime: 4f);
+            yield return PerformAction.Chat(Eiki, EikiAltWinChats[3], 2f, waitTime: 2f);
+            yield return PerformAction.Chat(Eiki, EikiAltWinChats[4], 3f, waitTime: 3f);
+            yield return PerformAction.Chat(Eiki, EikiAltWinChats[5], 2f, waitTime: 2f);
+            yield return PerformAction.Chat(Eiki, EikiAltWinChats[6], 3f, waitTime: 3f);
+            yield return PerformAction.Chat(player, EikiAltWinChats[7], 2f, waitTime: 1f);
+            yield return PerformAction.Chat(Eiki, EikiAltWinChats[8], 3f, waitTime: 3f);
+            yield return BuffAction<KomachiModEikiSe>(1);
+            yield return PerformAction.Chat(player, EikiAltWinChats[9], 3f, waitTime: 3f);
+
+
+            GameRun.CurrentStation.Rewards.Add(StationReward.CreateExhibit(base.GameRun.CurrentStage.GetEliteEnemyExhibit()));
+            yield return new EscapeAction(Eiki);
+            var dyingUnits = Battle.AllAliveEnemies
+            .Where(unit => !(unit is Siji))
+            .Select(unit => (unit as Unit, DieCause.ServantDie));
+
+            if (dyingUnits.Count() > 0){
+                yield return new DieAction(dyingUnits, Battle.Player, this);
+            }
+            yield break;
+        }
     }
 }
 

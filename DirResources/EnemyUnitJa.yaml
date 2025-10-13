@@ -20,6 +20,13 @@ KomachiMod:
     も～、あんたホントに私を働かせすぎ！
   LastWordChat2: |-
     でも、ここは見逃せないね！
+  EikiMirrorChat1: |-
+    <size=80%>死神としての職務を最大限効率的に遂行し、戦闘後の報告書も適切に提出して、閻魔様にご確認いただけるよう努めます！
+  EikiMirrorChat2: |-
+    <size=85%>そんな言い方しないわよ！書類仕事を楽しみにしてる人なんているわけないでしょ！？
+  EikiMirrorChat3: |-
+    それが本来あるべき死神の姿です。少しは見習いなさい。
+
 # These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
 
 KomachiModDivineSpiritEnemy:

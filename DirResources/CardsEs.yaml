@@ -278,7 +278,8 @@ KomachiModReviveCard:
 
 KomachiModRiversideGarden:
   Name: Jardin de la Ribera
-  Description:Agrega {Value1} |Lirio de Araña| a la mano, pila de robo,y pila de descarte.
+  Description: |-
+    Agrega {Value1} |Lirio de Araña| a la mano, pila de robo,y pila de descarte.
     Siempre que {PlayerName} agregue |Lirios de Araña| durante este combate, se |Mejora|.
     Al final del combate, cura {Value2} de vida por cada |Lirio de Araña| en el |Campo de Batalla|.
 
@@ -596,7 +597,7 @@ KomachiModChainDetonation:
   ExtraDescription1: "|Liberar| {Value2}: |Detona| a ese objetivo otra vez."
   ExtraDescription2: "|Liberar| {Value3}: |Detona| a ese objetivo otra vez, luego aplica |Espíritus Vengativos| igual a la cantidad detonada, otra vez."
   FlavorText: |-
-La oferta de "compra uno y llévate otro gratis" del inframundo.
+    La oferta de "compra uno y llévate otro gratis" del inframundo.
 
 KomachiModResidualAether:
   Name: Etér Residual
@@ -615,7 +616,7 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: Retorno de los Espíritus
   Description: |-
-    Al comienzo del turno de {PlayerName}, coloca la carta más a la derecha de la mano en la parte inferior de la pila de robo. Luego, agrega a tu mano hasta 1 carta de la pila del |Exilio| con un coste total menor a 2. Cuesta {Mana} más y se retira del combate al jugarla.
+    Al comienzo del turno de {PlayerName}, agrega a tu mano hasta 1 carta de la pila del |Exilio| con un coste total menor a 2. Cuesta {Mana} más y se retira del combate al jugarla.
 
 KomachiModAfterlifePassage:
   Name: Pasaje del Más Allá
@@ -712,6 +713,8 @@ KomachiModStrongestSpirit:
     Inflige {Damage} de daño.
     Aplica |Espíritus Vengativos | igual a la cantidad de daño infligido que no ha bloqueado de esta manera.
     |Liberar| {Value1}: Gana {Value2} de |Poder Temporal|. |Exilia| todas las cartas que no sean de ataque de la mano.
+  ExtraDescription1: |-
+    |Liberar| {Value1}: Gana {Value2} de |Poder Temporal|. |Exilia| todas las cartas que no sean de ataque de la mano.
   FlavorText: "Después de superar su crisis existencial al enterarse de que el sol explotará dentro de 5 mil millones de años, la hada del hielo se volvió más fuerte que nunca."
 
 
@@ -773,6 +776,26 @@ KomachiModEiki:
     {UltimateCostIcon}Elige hasta {Value3} carta{Value3:plural one='' other='s'} en el |campo de batalla| y agrega{Value3:plural one='' other='los'} a la mano. Su coste se convierte en {Mana} en este combate. No se paga el costo de |Liberar| las cartas en este combate.
   DetailText: |-
     El efecto pasivo nunca elegirá una carta con 0 de maná.
+  EikiAltWinChat1: |- # PK
+    Okay Okay, Miss- I mean, Esteemed Lady Eiki.
+  EikiAltWinChat2: |- # PK
+    <size=90%>I understand your point, and I'll work harder! But I promise you that I really am not slacking this time! You're misunderstanding the situation! 
+  EikiAltWinChat3: |- # PK
+    <size=90%>I didn't steal any of these exhibits! I'm looking for the actual culprit who did, and doing what I can recovering them for Kaguya-Sama!
+  EikiAltWinChat4: |- # E
+    Hmph! Is that really the case?
+  EikiAltWinChat5: |- # E
+    Well, I suppose you <i>are</i> properly guiding some spirits during this venture. 
+  EikiAltWinChat5.5: |- # E
+    (Not just sleeping on your boat for once...)
+  EikiAltWinChat6: |- # E
+    Fine, I will let you go for now. You are permitted to continue your investigation.
+  EikiAltWinChat7: |- # PK
+    Yipee! :D
+  EikiAltWinChat8: |- # E
+    But your backlog of 21 unferried spirits awaits after this. No dozing off.
+  EikiAltWinChat9: |- # PK
+    Agh- I mean, fine. I'll... promise not to sleep on the job later.
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -793,12 +816,12 @@ KomachiModRiversideView:
   Name: Vistas del Río
   Description: |-
     Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano. Este efecto no se acumula.
-    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador.
+    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Este efecto no se acumula.
     Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
   UpgradedDescription: |-
     Agrega un |Lirio de Araña| a la mano.
     Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano. Este efecto no se acumula.
-    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador.
+    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Este efecto no se acumula.
     Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
 
 KomachiModRedLilyStorm:
@@ -832,9 +855,10 @@ KomachiModPosessedArmament:
 KomachiModParasiticPollen:
   Name: Polen Parasitario
   Description: |-
-    Inflige {Damage} de daño.
-    Si el objetivo está |Envenenado|, añade un |Lirio Araña| a la mano. De lo contrario, inflige |Veneno| equivalente al daño no bloqueado causado.
-    
+    Inflige {Damage} de daño {Value1} veces.
+    Si el objetivo está |Envenenado|, añade un |Lirio Araña| a la mano. De lo contrario, inflige {Value2} de |Veneno|.
+    Si {PlayerName} está |Envenenado|, pierde {Value2} de |Veneno|, luego inflige |Veneno| equivalente al daño no bloqueado causado.
+
 # basic cards
 KomachiModAttackR:
   Name: Moneda de la Segadora

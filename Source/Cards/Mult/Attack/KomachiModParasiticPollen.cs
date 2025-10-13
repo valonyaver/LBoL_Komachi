@@ -57,7 +57,7 @@ namespace KomachiMod.Cards
             config.RelativeCards = new List<string>() { nameof(KomachiModSpiderLily) };
             config.UpgradedRelativeCards = new List<string>() { nameof(KomachiModSpiderLily) };
 
-            config.UpgradedKeywords = Keyword.Accuracy;
+            // config.UpgradedKeywords = Keyword.Accuracy;
 
 
             config.Illustrator = "Iced_Lemon";
@@ -117,7 +117,13 @@ namespace KomachiMod.Cards
 
             if (Battle.Player.TryGetStatusEffect<Poison>(out var playerPoison))
             {
-                yield return new ApplyStatusEffectAction<KomachiModPoisonNegativeSe>(Battle.Player, Value2);
+                playerPoison._level -= 3;
+                playerPoison.NotifyChanged();
+                if (playerPoison._level <= 0)
+                {
+                    yield return new RemoveStatusEffectAction(playerPoison);
+                }
+                // yield return new ApplyStatusEffectAction<KomachiModPoisonNegativeSe>(Battle.Player, Value2);
 
                 yield return new ApplyStatusEffectAction<Poison>
                     (selector.SelectedEnemy, (poisonApplied).RoundToInt(MidpointRounding.AwayFromZero));

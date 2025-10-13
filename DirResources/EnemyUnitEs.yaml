@@ -20,6 +20,15 @@ KomachiMod:
     ¡Gah! ¡Me estás haciendo trabajar demasiado, ¿sabes?
   LastWordChat2: |-
     ¡Pero no puedo tolerar eso!
+# Mirror Koma (MK)
+  EikiMirrorChat1: |-
+    <size=85%>I look forward to executing my shinigami duties with maximum efficiency and to file the appropriate post-engagement report for you to review, Esteemed Lady Eiki!
+# player koma (PK)
+  EikiMirrorChat2: |-
+    I don't sound like that! Who looks forward to paperwork?
+# Eiki (E)
+  EikiMirrorChat3: |-
+    That's how a proper Shinigami conducts herself. Perhaps you should take notes.
 # These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
 
 KomachiModDivineSpiritEnemy:

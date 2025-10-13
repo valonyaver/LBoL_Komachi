@@ -57,12 +57,12 @@ namespace KomachiMod.Enemies
             // Spellcard Firepower
             config.Count1 = 1;
             config.Count1Hard = 2;
-            config.Count1Lunatic = 3;
+            config.Count1Lunatic = 2;
             
             // Amount of guided spirits the boss gets
             config.Count2 = 4; 
-            config.Count2Hard = 5;
-            config.Count2Lunatic = 6;
+            config.Count2Hard = 6;
+            config.Count2Lunatic = 8;
 
             config.RealName = true;
             

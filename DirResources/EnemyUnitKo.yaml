@@ -20,6 +20,12 @@ KomachiMod:
     으아! 넌 정말 날 너무 혹사시키는구나!
   LastWordChat2: |-
     하지만 그냥 넘어갈 순 없지!
+  EikiMirrorChat1: |-
+    <size=75%>존귀하신 에이키님, 저는 사신의 임무를 최대한 효율적으로 수행하고, 교전 후 보고서를 정식으로 제출해 검토받을 수 있도록 하겠습니다!
+  EikiMirrorChat2: |-
+    난 그렇게 말 안 해! 누가 서류 작업을 기대해?!
+  EikiMirrorChat3: |-
+    그게 올바른 사신의 자세랍니다. 메모라도 좀 해두는 게 어떠신지요?
 
 KomachiModDivineSpiritEnemy:
   Name: "신령"

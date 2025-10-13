@@ -618,7 +618,8 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: 魂還り
   Description: |-
-    {PlayerName}のターン開始時、手札の右端のカードを山札の一番下に置き、その後|廃棄場|からコスト2<b>未満</b>のカードを1枚まで手札に加える。そのカードはコストが{Mana}増加し、使用時に戦闘から除外される。
+    {PlayerName}のターン開始時、|廃棄場|から合計コストが<b>2未満</b>のカードを最大1枚手札に加える。それはコストが {Mana} 多くなり、使用後はこの戦闘から除外される。
+
 
 KomachiModAfterlifePassage:
   Name: 冥途の渡し
@@ -665,6 +666,8 @@ KomachiModDistanceCloser:
     |解放|{releaseCost}: 対象の|怨霊|{firepowerCond}ごとに|臨時火力|{firepowerValue}を得る。
   ExtraDescription1: |-
     |解放|{releaseCost}: 対象の|怨霊|{firepowerCond}ごとに|臨時火力|{firepowerValue}を得る。
+  DetailText: |-
+    付与される|怨霊|の数は、選択した値ではなく、実際に発生した移動量に等しい。
 
 KomachiModEthicallySourcedBreak:
   Name: 正義のブレイクタイム
@@ -714,6 +717,8 @@ KomachiModStrongestSpirit:
   Description: |-
     {Damage}ダメージを与える。
     この方法で与えたブロックされなかったダメージ量に等しい|怨霊|を与える。
+    |解放|{Value1}: |臨時火力|{Value2}を得る。手札から攻撃以外の全てのカードを|廃棄|する。
+  ExtraDescription1: |-
     |解放|{Value1}: |臨時火力|{Value2}を得る。手札から攻撃以外の全てのカードを|廃棄|する。
   FlavorText: "50億年後に太陽が爆発すると知った時の実存的危機を乗り越えた後、氷の妖精はかつてないほど強くなった。"
 
@@ -776,6 +781,26 @@ KomachiModEiki:
     {UltimateCostIcon}|フィールド|にあるカードを{Value3}枚まで選び、手札に加える。この戦闘中、{Value3:plural one='その' other='それらの'}コストは{Mana}になる。この戦闘中、{PlayerName}はカードの|解放|コストを支払わない。
   DetailText: |-
     パッシブ効果はマナコストが0のカードを選ばない。
+  EikiAltWinChat1: |-
+    はいはい、お嬢──じゃなくて、映姫様
+  EikiAltWinChat2: |-
+    <size=80%>おっしゃることはわかりました、もっと頑張ります！でも今回は本当にサボってないんです！誤解ですよ！
+  EikiAltWinChat3: |-
+    <size=80%>この展示品は盗んでません！犯人を探してるんです！それで、輝夜様のために取り戻そうとしてるだけなんですよ！
+  EikiAltWinChat4: |-
+    ふん、本当にそうかしら？
+  EikiAltWinChat5: |-
+    <size=90%>まあ、今回の件ではあなた<i>は</i>ちゃんと何体か魂を導いているようね。
+  EikiAltWinChat5.5: |-
+    <size=90%>（いつもみたいに舟で昼寝してばかりではないようだし・・・）
+  EikiAltWinChat6: |-
+    <size=95%>よろしいわ。今のところは見逃してあげます。調査を続けることを許可します。
+  EikiAltWinChat7: |-
+    やったー！ :D
+  EikiAltWinChat8: |-
+    <size=95%>ですが、まだ21体の未送達の魂が残っていますよ。居眠りは禁止です。
+  EikiAltWinChat9: |-
+    <size=95%>あっ──わかりましたよ。ええと、あとで仕事中に寝ないって約束します……。
 
 KomachiModLilyHug:
   Name: 彼岸花の抱擁
@@ -794,12 +819,12 @@ KomachiModRiversideView:
   Name: 川辺の景色
   Description: |-
     ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
-    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。
+    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。これらの効果は重複しない。
     {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
   UpgradedDescription: |-
     手札に|彼岸花|を1枚加える。
     ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
-    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。
+    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。これらの効果は重複しない。
     {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
 
 KomachiModRedLilyStorm:
@@ -829,10 +854,9 @@ KomachiModPosessedArmament:
 KomachiModParasiticPollen:
   Name: 寄生胞子
   Description: |-
-    {Damage}のダメージを与える。
-    対象が|毒|状態なら、|彼岸花|を手札に1枚加える。
-    そうでなければ、この方法で与えたブロックされなかったダメージ分の|毒|を付与する。
-
+    {Damage}ダメージを{Value1}回与える。
+    対象が|毒|状態の場合、|彼岸花|を手札に1枚加える。そうでない場合、|毒|{Value2}を付与する。
+    {PlayerName}が|毒|状態の場合、|毒|{Value2}を失い、その後、この方法で与えたブロックされなかったダメージ分の|毒|を付与する。
 
 # basic cards
 KomachiModAttackR:

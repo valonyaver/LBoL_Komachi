@@ -49,7 +49,7 @@ namespace KomachiMod.Cards
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             // config.Unfinished = true;
-            return config;
+            return config; 
         }
     }
     

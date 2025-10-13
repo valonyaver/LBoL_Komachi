@@ -51,7 +51,7 @@ namespace KomachiMod
             IsSelectable: true,
             MaxHp: 70,
             InitialMana: new ManaGroup() { Black = 2, Red = 2 },
-            InitialMoney: 120,
+            InitialMoney: 104,
             InitialPower: 0,
             BasicRingOrder: null,
             LeftColor: ManaColor.Red,

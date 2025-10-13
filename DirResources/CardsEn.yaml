@@ -809,6 +809,27 @@ KomachiModEiki:
     {UltimateCostIcon}Choose up to {Value3} card{Value3:plural one='' other='s'} in the |battlefield| and add {Value3:plural one='it' other='them'} to the hand. {Value3:plural one='Its' other='Their'} cost becomes {Mana} this combat. {PlayerName} doesn't pay the |Release| cost of cards this combat.
   DetailText: |-
     The passive effect will never pick a card with 0 mana.
+  EikiAltWinChat1: |- # PK
+    Okay Okay, Miss- I mean, Esteemed Lady Eiki.
+  EikiAltWinChat2: |- # PK
+    <size=90%>I understand your point, and I'll work harder! But I promise you that I really am not slacking this time! You're misunderstanding the situation! 
+  EikiAltWinChat3: |- # PK
+    <size=90%>I didn't steal any of these exhibits! I'm looking for the actual culprit who did, and doing what I can recovering them for Kaguya-Sama!
+  EikiAltWinChat4: |- # E
+    Hmph! Is that really the case?
+  EikiAltWinChat5: |- # E
+    Well, I suppose you <i>are</i> properly guiding some spirits during this venture. 
+  EikiAltWinChat5.5: |- # E
+    (Not just sleeping on your boat for once...)
+  EikiAltWinChat6: |- # E
+    Fine, I will let you go for now. You are permitted to continue your investigation.
+  EikiAltWinChat7: |- # PK
+    Yipee! :D
+  EikiAltWinChat8: |- # E
+    But your backlog of 21 unferried spirits awaits after this. No dozing off.
+  EikiAltWinChat9: |- # PK
+    Agh- I mean, fine. I'll... promise not to sleep on the job later.
+
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -833,8 +854,8 @@ KomachiModRiversideView:
     After {PlayerName} plays a |Spider Lily|, apply {Value2} |Poison| to each enemy, then gain {Value1} |Firepower|.
   UpgradedDescription: |-
     Add a |Spider Lily| to the hand.
-    At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand. This effect does not stack.
-    |Spider Lilies| apply {Value3} less |Poison| to the Player.
+    At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand.
+    |Spider Lilies| apply {Value3} less |Poison| to the Player. The above two effects do not stack.
     After {PlayerName} plays a |Spider Lily|, apply {Value2} |Poison| to each enemy, then gain {Value1} |Firepower|.
 
 KomachiModRedLilyStorm:
@@ -871,6 +892,8 @@ KomachiModParasiticPollen:
     Deal {Damage} damage {Value1} times.
     If the target is |Poisoned|, add a |Spider Lily| to the hand. Otherwise, Apply {Value2} |Poison|. 
     If {PlayerName} is |Poisoned|, Lose {Value2} |Poison|, then apply |Poison| equal to the unblocked damage dealt.
+  FlavorText: |-
+    She got an unexpected fever right on her day off.
 
 ## basic cards
 KomachiModAttackR:

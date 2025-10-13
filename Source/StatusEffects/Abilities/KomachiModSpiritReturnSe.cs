@@ -48,8 +48,8 @@ namespace KomachiMod.StatusEffects
                 if (base.Battle.ExileZone.Count <= 0)
                 {
                     yield break;
-                }
-                // filter cards to pick out
+                } 
+                // filter cards to pick out 
                 List<Card> list = Battle.ExileZone.Where(card => card.Cost.Amount < 2).ToList();
                 // pick the cards
                 var interaction = new SelectCardInteraction(0, Level, list, SelectedCardHandling.DoNothing);

@@ -135,7 +135,7 @@ KomachiModDetonateInfiniteSe:
 KomachiModSpiritReturnSe:
   Name: Retorno de los Espíritus
   Description: |-
-    Al comienzo del turno de {PlayerName}, coloca la {Level} carta{Level:plural one='' other='s'} más a la derecha de la mano en la parte inferior de la pila de robo, luego agrega a la mano hasta {Level} carta{Level:plural one='' other='s'} de la pila de |Exilio| con un coste total menor a 2. Cuesta {Mana} maná más y se retira del combate al jugarla.
+    Al comienzo del turno de {PlayerName}, agrega a la mano hasta {Level} carta{Level:plural one='' other='s'} de la pila de |Exilio| con un coste total menor a 2. Cuesta {Mana} maná más y se retira del combate al jugarla.
 
 KomachiModEthicallySourcedBreakSe:
   Name: Descanso de Procedencia Ética

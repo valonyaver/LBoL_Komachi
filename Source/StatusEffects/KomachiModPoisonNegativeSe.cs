@@ -32,7 +32,12 @@ namespace KomachiMod.StatusEffects
     {
         public OpposeResult Oppose(Poison other)
         {
-            other.Level = Math.Max(0, other.Level - base.Level);
+            var result = other.Level - base.Level;
+            if (result <= 0)
+            {
+                return OpposeResult.Neutralize;
+            }
+            other.Level = result;
             return OpposeResult.KeepOther;
         }
     }

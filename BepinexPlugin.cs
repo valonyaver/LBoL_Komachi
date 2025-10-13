@@ -71,6 +71,7 @@ namespace KomachiMod
         // add this for audio loading
         internal static DirectorySource directorySource = new DirectorySource(KomachiMod.PInfo.GUID, "");
 
+        private static bool hasRegistered = false;
 
         private void Awake()
         {
@@ -99,23 +100,26 @@ namespace KomachiMod
             // very important. Without this the entry point MonoBehaviour gets destroyed
             DontDestroyOnLoad(gameObject);
             gameObject.hideFlags = HideFlags.HideAndDontSave;
-
             CardIndexGenerator.PromiseClearIndexSet();
             EntityManager.RegisterSelf();
 
             harmony.PatchAll();
-
-            //if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
-            //    WatermarkWrapper.ActivateWatermark();
-
-            Func<Sprite> getSprite = () => ResourceLoader.LoadSprite("BossIcon.png", directorySource);
-            EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiMod), getSprite);
+            try
+            {
+                Func<Sprite> getSprite = () => ResourceLoader.LoadSprite("BossIcon.png", directorySource);
+                EnemyUnitTemplate.AddBossNodeIcon(nameof(KomachiMod.Enemies.KomachiMod), getSprite);
+            }
+            catch (ArgumentException ex) when (ex.Message.Contains("same key"))
+            {
+                log.LogWarning("Boss icon already registered");
+            }
         }
 
         private void OnDestroy()
         {
             if (harmony != null)
                 harmony.UnpatchSelf();
+
         }
     }
 }

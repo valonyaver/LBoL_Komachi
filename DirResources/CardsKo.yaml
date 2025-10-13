@@ -1,4 +1,8 @@
 ﻿## Tokens and choice cards
+
+# IMPORTANT NOTE REGARDING DISPLACE WORDING:
+# If a card says "You can displace" (by x or up to x), that means you can choose not to displace.
+# If a card simply says "Displace by X" or "Displace up to X", that means you must displace,
 KomachiModManDistance:
   Name: 거리 조작
   Description: "±{Value1} |이동|."
@@ -636,8 +640,7 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: 영혼의 귀환
   Description: |-
-    {PlayerName}의 턴 시작 시, 손에서 가장 오른쪽 카드를 덱 맨 아래에 넣고,
-    |소멸| 더미에서 총 비용이 2 <b>미만</b>인 카드를 최대 1장 손에 넣습니다.
+    {PlayerName}의 턴 시작 시, |소멸| 더미에서 총 비용이 2 <b>미만</b>인 카드를 최대 1장 손에 넣습니다.
     그 카드는 비용이 {Mana} 증가하고 사용 시 전투에서 제거됩니다.
 
 KomachiModAfterlifePassage:
@@ -688,6 +691,8 @@ KomachiModDistanceCloser:
     |해방| {releaseCost}: 그 대상의 |원령| {firepowerCond}마다 |일시 화력|을 {firepowerValue} 얻습니다.
   ExtraDescription1: |-
     |해방| {releaseCost}: 해당 대상의 |원령| {firepowerCond}마다 |일시 화력|을 {firepowerValue} 얻습니다.
+  DetailText: |-
+    적용되는 |원령|의 수치는 선택된 거리값이 아니라, 실제로 이동한 거리만큼에 비례합니다.
 
 KomachiModEthicallySourcedBreak:
   Name: 윤리적 휴식
@@ -737,6 +742,8 @@ KomachiModStrongestSpirit:
   Description: |-
     피해를 {Damage} 줍니다.
     이 방식으로 막히지 않은 피해만큼 |원령|을 줍니다.
+    |해방| {Value1}: |임시 화력|을 {Value2} 얻고, 손에 있는 모든 비공격 카드를 |소멸|합니다.
+  ExtraDescription1: |-
     |해방| {Value1}: |임시 화력|을 {Value2} 얻고, 손에 있는 모든 비공격 카드를 |소멸|합니다.
   FlavorText: "태양이 50억 년 뒤에 폭발한다는 사실을 알고 정체성 위기를 극복한 얼음 요정은 그 누구보다 강해졌다."
 
@@ -803,6 +810,26 @@ KomachiModEiki:
     {UltimateCostIcon}|전장|의 카드 {Value3}장을 선택해 손에 넣습니다. 이 카드들의 비용은 이번 전투 동안 {Mana}가 되며, 이번 전투 동안 {PlayerName}는 |해방| 비용을 지불하지 않습니다.
   DetailText: |-
     패시브 효과는 마나 비용이 0인 카드는 절대 선택하지 않습니다.
+  EikiAltWinChat1: |-
+    알겠어요 알겠어요, 에이키님… 아니, 존귀하신 에이키님.
+  EikiAltWinChat2: |-
+    <size=80%>말씀하신 뜻은 이해했습니다! 더 열심히 하겠습니다! 하지만 이번엔 정말로 게으름 피운 게 아니에요! 상황을 잘못 이해하신 거예요!
+  EikiAltWinChat3: |-
+    <size=90%>이 전시품들, 제가 훔친 게 아니에요! 범인을 찾아서 카구야님께 돌려드리려는 중이라니까요!
+  EikiAltWinChat4: |-
+    흠, 정말 그런가요?
+  EikiAltWinChat5: |-
+    뭐, 이번엔 최소한 몇몇 혼이라도 제대로 인도하고 있는 것 같긴 하네요. 
+  EikiAltWinChat5.5: |-  
+    (항상 배 위에서 낮잠만 자는 건 아니네…)
+  EikiAltWinChat6: |-
+    좋아, 이번만은 넘어가드리죠. 조사를 계속하도록 허락합니다.
+  EikiAltWinChat7: |-
+    야호! :D
+  EikiAltWinChat8: |-
+    <size=85%>하지만 이번 일 끝나면 아직 인도하지 못한 21명의 혼이 널 기다리고 있단 걸 잊지 마세요. 낮잠은 금지입니다.
+  EikiAltWinChat9: |-
+    으윽— 알겠어요. 다음엔… 일하다가 안 잘게요.
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -822,13 +849,13 @@ KomachiModStygianReel:
 KomachiModRiversideView:
   Name: 피안귀항
   Description: |-
-    내 턴 시작 시, 손에 |피안화|가 없으면 |피안화|를 1장 얻습니다. (이 효과는 중첩되지 않습니다)
-    |피안화|가 플레이어에게 주는 |중독|이 {Value3} 감소합니다.
+    내 턴 시작 시, 손에 |피안화|가 없으면 |피안화|를 1장 얻습니다.
+    |피안화|가 플레이어에게 주는 |중독|이 {Value3} 감소합니다. 위의 두 효과는 중복되지 않습니다.
     {PlayerName}가 |피안화|를 사용할 때마다 모든 적에게 |중독|을 {Value2} 주고, |화력|을 {Value1} 얻습니다.
   UpgradedDescription: |-
     |피안화|를 1장 얻습니다.
-    내 턴 시작 시, 손에 |피안화|가 없으면 |피안화|를 1장 얻습니다. (이 효과는 중첩되지 않습니다)
-    |피안화|가 플레이어에게 주는 |중독|이 {Value3} 감소합니다.
+    내 턴 시작 시, 손에 |피안화|가 없으면 |피안화|를 1장 얻습니다.
+    |피안화|가 플레이어에게 주는 |중독|이 {Value3} 감소합니다. 위의 두 효과는 중복되지 않습니다.
     {PlayerName}가 |피안화|를 사용할 때마다 모든 적에게 |중독|을 {Value2} 주고, |화력|을 {Value1} 얻습니다.
 
 KomachiModRedLilyStorm:
@@ -862,9 +889,10 @@ KomachiModPosessedArmament:
 KomachiModParasiticPollen:
   Name: 기생 꽃가루
   Description: |-
-    피해를 {Damage} 줍니다.
+    피해를 {Damage}씩 {Value1}번 줍니다.
     대상이 |중독| 상태라면, |피안화|를 1장 얻습니다.
-    그렇지 않다면, 막히지 않은 피해만큼 |중독|을 부여합니다.
+    아니라면, |중독|을 {Value2} 줍니다.
+    {PlayerName}이 |중독| 상태라면, |중독| {Value2}를 잃은 뒤, 막히지 않은 피해량만큼 |중독|을 다시 적용합니다.
 
 ## basic cards
 KomachiModAttackR:
@@ -907,10 +935,10 @@ KomachiModMoveToken:
   Name: 움직여!
   Description: |-
     모든 적의 위치를 ±{Value1}만큼 |위치 변경|합니다.
-    |이번 턴에 사용한 카드 마다|: 이 카드의 비용이 {Mana} 증가합니다.
+    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다.
   UpgradedDescription: |-
     모든 적의 위치를 최대 ±{Value2}만큼 |위치 변경|합니다.
-    |이번 턴에 사용한 카드 마다|: 이 카드의 비용이 {Mana} 증가합니다.
+    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다.
   ExtraDescription1: |-
     바짝 붙어라!
     |위치 변경| -{displaceAmount}.

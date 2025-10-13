@@ -136,7 +136,7 @@ KomachiModDetonateInfiniteSe:
 KomachiModSpiritReturnSe:
   Name: 魂還り
   Description: |-
-    {PlayerName}のターン開始時、手札の右から{Level}枚のカードをデッキの一番下に置き、その後|廃棄場|から合計コストが 2未満のカードを最大{Level}枚まで手札に加える。
+    {PlayerName}のターン開始時、|廃棄場|から合計コストが2未満のカードを最大{Level}枚手札に加える。
     これらのカードは使用時に{Mana}多く消費し、プレイすると戦闘から除外される。
 
 KomachiModEthicallySourcedBreakSe:
@@ -212,7 +212,12 @@ KomachiModPosessedArmamentSe:
   Description: |-
     {PlayerName}がブロックされない攻撃ダメージを与えるたび、|怨霊|{Level}を追加で付与する。
 
-  
+KomachiModPoisonNegativeSe:
+  Name: 解毒作用
+  Description: |-
+    |毒|{Level}を失う。
+    これはゲームプレイでは表示されない。
+
 
 #Boss status effects
 KomachiModBossDistanceGeneratorSe:
@@ -276,8 +281,8 @@ KomachiModReleaseKeyword:
     ※カードをプレイする前に必要な数を所有している必要がある。
 
 KomachiAutoDiscardKeyword:
-  Name: 自動捨札
+  Name:  自動捨札
   Brief: |-
-    手札を満たそうとする際、このカードを|捨てる|。
-    手札の左端にある|自動捨札|が付いたカードが最初に捨てられる。
-    ※<i>mod制限により、通常の自動除外とは動作が異なる。</i>
+    手札の上限を超えそうなとき、このカードを|捨てる|。
+    手札の左端にある|自動捨札|付きのカードが最初に|捨てられる|。
+    |自動廃棄|付きのカードは、|自動捨札|付きのカードより先に処理される。

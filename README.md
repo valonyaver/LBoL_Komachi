@@ -1,5 +1,6 @@
 # KomachiMod
-A mod for Lost Branch of Legends that adds Komachi as a playable character. Made by Nolavthe/Valonad
+A mod for Lost Branch of Legends that adds Komachi as a playable character. Made by Nolavthe/Valonad.
+Available languages: En, JP, Es, and Ko.
 
 # Overview
 - Colours: Red and Black.
@@ -77,6 +78,7 @@ Thanks in particular to IcedLemon for making the icon for the Titanic exhibit fo
 
 # Special Thanks
 - Iced_Lemon: For making some of the arts specifically for the mod.
+- Neff: For making the Japanese translation.
 - xerox asutnima: For making the Spanish translation.
 - coward_montblanc: For making the Korean translation.
 - rm -rf Maxx "c": For making the sample character template that made it so easy to develop this mod.

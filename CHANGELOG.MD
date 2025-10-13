@@ -18,11 +18,13 @@ If you want more specificity about what these cards do, check them out in the co
 - Riverside Garden's unupgraded cost changed from 2RR to 1RRR. This is to prevent it from being shown to KomachiB.
 - Spirits of the firm's release costs increased from 4/7(6) to 6/9(8)
 - Spirit Catalyst now costs 1BB (B) -> BBB (B). To compensate, the unupgraded version now has retain similar to its upgrade.
+- Extinct Fauna of the Sanzu River's cost lowered from 5 (4) total mana to 4 (3) total mana.
 
 ### Other:
 - Distance Damage modifiers are now configurable in bepinex/config.
-- Fixed a lot of text mistakes.
+- Komachi's starting money is now lowered from 120 to 104.
 - Fixed Auto-Discard. Now it works like Auto-Exile (discard on exceeding the hand rather than discard on reaching the hand limit).
+- Fixed a lot of text mistakes.
 
 ## 0.3.7
 - Added Korean translation. Thanks to coward_montblanc for making it!
