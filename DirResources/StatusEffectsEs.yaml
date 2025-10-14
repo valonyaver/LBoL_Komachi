@@ -135,7 +135,7 @@ KomachiModDetonateInfiniteSe:
 KomachiModSpiritReturnSe:
   Name: Retorno de los Espíritus
   Description: |-
-    Al comienzo del turno de {PlayerName}, agrega a la mano hasta {Level} carta{Level:plural one='' other='s'} de la pila de |Exilio| con un coste total menor a 2. Cuesta {Mana} maná más y se retira del combate al jugarla.
+    Al comienzo del turno de {PlayerName}, agrega a la mano hasta {Level} carta{Level:plural one='' other='s'} de la pila del |Exilio| con un coste total menor a 2. Cuesta {Mana} maná más y se retira del combate al jugarla.
 
 KomachiModEthicallySourcedBreakSe:
   Name: Descanso de Procedencia Ética
@@ -205,7 +205,12 @@ KomachiModPosessedArmamentSe:
   Name: Armamento Poseído
   Description: |-
     Siempre que {PlayerName} inflige daño de ataque no bloqueado, también aplica {Level} |Espíritu{Level:plural one=' Vengativo' other='s Vengativos'}|.
-  
+
+KomachiModPoisonNegativeSe:
+  Name: Perder Veneno
+  Description: |-
+    Pierde {Level} de |Veneno|.
+    Esto no debería mostrarse en el juego.
 
 #Boss status effects
 KomachiModBossDistanceGeneratorSe:
@@ -268,6 +273,6 @@ KomachiModReleaseKeyword:
 KomachiAutoDiscardKeyword:
   Name: Auto-Descarte
   Brief: |-
-    Cuando estés a punto de *llenar* la mano, |Descarta| esta carta.
+    Cuando estés a punto de exceder el tamaño de la mano, |Descarta| esta carta.
     La carta más a la izquierda de la mano con |Auto-Descarte| se |Descarta| primero.
-    *<i>Debido a las limitaciones del mod, esto funciona de forma diferente al autoexilio, donde el descarte ocurre al completar la mano en lugar de al excederla.
+    Las cartas con |Auto-exilio| se procesan antes que las cartas con autodescarte.

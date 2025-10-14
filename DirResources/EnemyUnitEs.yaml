@@ -20,15 +20,21 @@ KomachiMod:
     ¡Gah! ¡Me estás haciendo trabajar demasiado, ¿sabes?
   LastWordChat2: |-
     ¡Pero no puedo tolerar eso!
-# Mirror Koma (MK)
+  KomaEscape1: |-
+    ¡OK! Esto debería ser suficiente para convencer a Eiki de que hice todo lo posible por detenerte.
+  KomaEscape2: |-
+    Me voy a echar una <size=50%>buena siesta<size=100%>. Espero que encuentres al culpable a<size=90%>d<size=80%>i<size=70%>ó<size=60%>o<size=50%>o<size=40%>s!
+  LastWordChat1: |-
+    ¡Gah! ¡Me estás haciendo trabajar demasiado, ¿sabes?
+  LastWordChat2: |-
+    ¡Pero no puedo tolerar eso!
   EikiMirrorChat1: |-
-    <size=85%>I look forward to executing my shinigami duties with maximum efficiency and to file the appropriate post-engagement report for you to review, Esteemed Lady Eiki!
-# player koma (PK)
+    <size=85%>¡Cumpliré mis tareas de shinigami con la mayor eficiencia posible y entregaré el informe después del combate para que lo revise, honorable Lady Eiki!
   EikiMirrorChat2: |-
-    I don't sound like that! Who looks forward to paperwork?
-# Eiki (E)
+    ¡Oye, yo no sueno así! ¡Nadie en su sano juicio disfruta del papeleo!
   EikiMirrorChat3: |-
-    That's how a proper Shinigami conducts herself. Perhaps you should take notes.
+    Así es como se comporta un Shinigami como es debido. Quizás deberías tomar nota.
+    
 # These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
 
 KomachiModDivineSpiritEnemy:

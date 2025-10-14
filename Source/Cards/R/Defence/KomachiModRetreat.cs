@@ -12,6 +12,7 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KomachiMod.Cards
 {
@@ -105,6 +106,7 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            // Initial interaction to choose on pushing enemy away
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card singlepushcard = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
             if (singlepushcard != null && singlepushcard.GetType() != typeof(KomachiModRetreat))
@@ -112,7 +114,8 @@ namespace KomachiMod.Cards
                 yield return new DistanceChangeAction(selector.SelectedEnemy, singlepushcard.Value1);
             }
 
-            if (IsUpgraded)
+            // Second interaction
+            if (IsUpgraded && Battle.AllAliveEnemies.Count() > 1)
             {
                 MiniSelectCardInteraction miniSelectCardInteraction2 = (MiniSelectCardInteraction)Precondition2();
                 yield return new InteractionAction(miniSelectCardInteraction2);

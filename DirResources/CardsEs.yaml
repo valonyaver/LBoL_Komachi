@@ -616,7 +616,7 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: Retorno de los Espíritus
   Description: |-
-    Al comienzo del turno de {PlayerName}, agrega a tu mano hasta 1 carta de la pila del |Exilio| con un coste total menor a 2. Cuesta {Mana} más y se retira del combate al jugarla.
+    Al comienzo del turno de {PlayerName}, agrega a la mano hasta 1 carta de la pila del |Exilio| con un coste total <b>menor</b> a 2. Cuesta {Mana} más y se retira del combate al jugarla.
 
 KomachiModAfterlifePassage:
   Name: Pasaje del Más Allá
@@ -663,6 +663,8 @@ KomachiModDistanceCloser:
     |Liberar| {releaseCost}: Gana {firepowerValue} de |Poder Temporal| por cada {firepowerCond} |Espíritus Vengativos| en el objetivo.
   ExtraDescription1: |-
     |Liberar| {releaseCost}: Gana {firepowerValue} de |Poder Temporal| por cada {firepowerCond} |Espíritus Vengativos| en el objetivo.
+  DetailText: |-
+    La cantidad de |Espíritus Vengativos| aplicada es igual a la cantidad real de desplazamiento, en lugar de la elección.
 
 KomachiModEthicallySourcedBreak:
   Name: Descanso de Procedencia Ética
@@ -776,26 +778,26 @@ KomachiModEiki:
     {UltimateCostIcon}Elige hasta {Value3} carta{Value3:plural one='' other='s'} en el |campo de batalla| y agrega{Value3:plural one='' other='los'} a la mano. Su coste se convierte en {Mana} en este combate. No se paga el costo de |Liberar| las cartas en este combate.
   DetailText: |-
     El efecto pasivo nunca elegirá una carta con 0 de maná.
-  EikiAltWinChat1: |- # PK
-    Okay Okay, Miss- I mean, Esteemed Lady Eiki.
-  EikiAltWinChat2: |- # PK
-    <size=90%>I understand your point, and I'll work harder! But I promise you that I really am not slacking this time! You're misunderstanding the situation! 
-  EikiAltWinChat3: |- # PK
-    <size=90%>I didn't steal any of these exhibits! I'm looking for the actual culprit who did, and doing what I can recovering them for Kaguya-Sama!
-  EikiAltWinChat4: |- # E
-    Hmph! Is that really the case?
-  EikiAltWinChat5: |- # E
-    Well, I suppose you <i>are</i> properly guiding some spirits during this venture. 
-  EikiAltWinChat5.5: |- # E
-    (Not just sleeping on your boat for once...)
-  EikiAltWinChat6: |- # E
-    Fine, I will let you go for now. You are permitted to continue your investigation.
-  EikiAltWinChat7: |- # PK
-    Yipee! :D
-  EikiAltWinChat8: |- # E
-    But your backlog of 21 unferried spirits awaits after this. No dozing off.
-  EikiAltWinChat9: |- # PK
-    Agh- I mean, fine. I'll... promise not to sleep on the job later.
+  EikiAltWinChat1: |-
+    Está bien, está bien, señorita... quiero decir, honorable Lady Eiki.
+  EikiAltWinChat2: |-
+    <size=85%>¡Sí, sí, ya lo entendí, me voy a esforzar más! ¡Pero le juro que esta vez no estoy vagueando! ¡Estás malinterpretando la situación!
+  EikiAltWinChat3: |-
+    <size=85%>¡No robé ninguna de estas exhibiciones! Estoy buscando a la verdadera culpable y haciendo lo que puedo para recuperarlas para Kaguya-Sama.
+  EikiAltWinChat4: |-
+    ¡Hmph! ¿En serio pretendes que te crea?
+  EikiAltWinChat5: |-
+    Bueno, supongo que <i>estás</i> guiando a algunos espíritus en esta aventura. 
+  EikiAltWinChat5.5: |-
+    (No solo durmiendo en tu barco, por esta vez...)
+  EikiAltWinChat6: |-
+    Bien, te dejaré ir por ahora. Puedes continuar con tu investigación.
+  EikiAltWinChat7: |-
+    ¡Yupiiii! :D
+  EikiAltWinChat8: |-
+    <size=90%>Pero aún tienes 21 espíritus sin transportar esperándote después de esto. Nada de dormirse.
+  EikiAltWinChat9: |-
+    Agh... Bueno, está bien... Prometo no dormirme en el trabajo más tarde.
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -815,13 +817,13 @@ KomachiModStygianReel:
 KomachiModRiversideView:
   Name: Vistas del Río
   Description: |-
-    Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano. Este efecto no se acumula.
-    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Este efecto no se acumula.
+    Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano.
+    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Los dos efectos anteriores no se acumulan.
     Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
   UpgradedDescription: |-
     Agrega un |Lirio de Araña| a la mano.
     Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano. Este efecto no se acumula.
-    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Este efecto no se acumula.
+    Los |Lirios de Araña| aplica {Value3} menos de |Veneno| al jugador. Los dos efectos anteriores no se acumulan.
     Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
 
 KomachiModRedLilyStorm:
@@ -856,9 +858,9 @@ KomachiModParasiticPollen:
   Name: Polen Parasitario
   Description: |-
     Inflige {Damage} de daño {Value1} veces.
-    Si el objetivo está |Envenenado|, añade un |Lirio Araña| a la mano. De lo contrario, inflige {Value2} de |Veneno|.
-    Si {PlayerName} está |Envenenado|, pierde {Value2} de |Veneno|, luego inflige |Veneno| equivalente al daño no bloqueado causado.
-
+    Si el objetivo está |Envenenado|, añade un |Lirio Araña| a la mano. De lo contrario, aplica {Value2} de |Veneno|.
+    Si {PlayerName} está |Envenenado|, pierdes {Value2} de |Veneno|, luego aplica |Veneno| igual al daño que no ha sido bloqueado.
+    
 # basic cards
 KomachiModAttackR:
   Name: Moneda de la Segadora

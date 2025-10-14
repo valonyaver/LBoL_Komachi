@@ -1,11 +1,12 @@
 # KomachiMod
 A mod for Lost Branch of Legends that adds Komachi as a playable character. Made by Nolavthe/Valonad.
-Available languages: En, JP, Es, and Ko.
+Available languages: EN (English), JP (日本語), ES (Español), and KO (한국어)
 
 # Overview
 - Colours: Red and Black.
-- Cards: 74 draftable cards + 3 tokens you'll be regularly generating
-- Exhibits: 2 exhibits for each of her starting decks
+- Cards: 85 draftable cards excluding tokens.
+- Exhibits: 2 exhibits for each of her starting loadouts
+- Act 1 boss. Which can be disabled in the mod's configs (See: Configurable options below)
 
 # Main Themes
 
@@ -23,9 +24,15 @@ The effects of the 5 Distance levels on enemies are:
 - Far (4): Deals and takes -15% attack damage.
 - Very Far (5): Deals and takes -30% attack damage.
 
+These values can be configured in the mod's configs (See: Configurable options below)
+
 The keyword "**Displace**", refers to the act of changing the distance of an enemy.
 
 Her cards focus on dancing between the different distance levels, providing bonuses the more you displace enemies, pulling enemies in before attacks, then pushing them back at the end of the turn when defending.
+
+### Notes
+- If you want to easily calculate the distance modifiers yourself, simply multiply your damage by 2/1.5/1/0.85/0.7 for distances 1/2/3/4/5.
+- These damage multipliers stack multiplicatively rather than additively with other modifiers. Meaning that distance 1 (+100%) + vulnerable (+50%) multiplies your damage by 2 * 1.5 = 3. Rather than 2.5.
 
 ## Spirit Manipulation
 The main theme of Black Komachi.
@@ -55,10 +62,17 @@ As a Shinigami and a ferry of the dead, Komachi has the ability to connect with 
 
 This is mainly a black Komachi ability, however, opening up the white pool will give you access to stronger Black/White cards for this mechanic. There is also an ability that lets you add a random B/W card to your hand without ever having white mana in your pool.
 
-# Shortcomings and other notes
-Some cards and status effects will have missing art, or have placeholder art made by yours truly. Many attack cards also lack an animation, but I tried to add animations to the more impactful attacks at least. I hope you can forgive this.
+# Configurable Options
+You can disable the Komachi act 1 boss or configure the values for distance through the configuration files of the mod.
+To change these configs: 
+If you're on the steam workshop: Open the mod launcher, go to your mod management list and click on Bepinex. Click View Folder. This should take you to the installation folder for bepinex. From there, the configuration file will be at BepInEx\config\valon.LBoL.character.Komachi.cfg
+Everything else should be self explanatory.
 
-As this is only the first public version of the mod, and I only began modding 1 month ago, the balance of the mod might be a bit wack. And any of it is subject to change. I tried to keep the balance of the cards close to vanilla characters, but Komachi might still be a lot stronger simply due to the fact that I focused most cards on synergy with the mechanic rather than having lots of random generic cards like in vanilla. Also, distance giving a 100% attack bonus, and stacking multiplicatively with vulnerable (Distance of 1 + vulnerable will give a 300% damage bonus on enemies rather than 250%, due to... reason), is just strong as hell no matter how much I try to balance it. But I rather have a strong and fun mod rather than a miserably unfun weak character.
+
+# Shortcomings and other notes
+Some cards and status effects will have missing art, or have placeholder art made by yours truly. Many attack cards also lack an animation while others just reuse existing animations. I hope you can forgive this. I hope to learn how to make custom attack animations eventually.
+
+As this is only my first mod, the balance of the mod might be a bit wack. Any card or effect is subject to change. I tried to keep the balance of the cards as close to vanilla characters as I can. She might be stronger than vanilla characters since I focused on having almost every card synergize with her mechanics or being independently strong, unlike vanilla which has a lot of filler "generic" cards for some of its characters.
 
 By the words of my fellow modder rm -rf Maxx "c": `"keeping it balanced" This game is less balanced than a Jenga tower in the middle of a magnitude 8.5 earthquake, give up all hope.`
 
@@ -77,7 +91,7 @@ All art is credited under `Art.MD`. If Art.MD isnt in the mod files, then you ca
 Thanks in particular to IcedLemon for making the icon for the Titanic exhibit for this mod. Thanks to the every touhou artist who has drawn wonderful art of my beloved.
 
 # Special Thanks
-- Iced_Lemon: For making some of the arts specifically for the mod.
+- Iced_Lemon: For making some art specifically for the mod.
 - Neff: For making the Japanese translation.
 - xerox asutnima: For making the Spanish translation.
 - coward_montblanc: For making the Korean translation.
