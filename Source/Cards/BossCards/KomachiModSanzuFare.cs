@@ -44,6 +44,7 @@ namespace KomachiMod.Cards
             config.UpgradedKeywords = Keyword.Exile | Keyword.Ethereal;
 
             config.MoneyCost = 25;
+            config.IsUpgradable = false;
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

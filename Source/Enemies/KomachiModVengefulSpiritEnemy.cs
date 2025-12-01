@@ -42,9 +42,9 @@ namespace KomachiMod.Enemies
             config.Damage1Lunatic = 7;
 
             // Barrier gained from the defend action
-            config.Defend = 10;
-            config.DefendHard = 12;
-            config.DefendLunatic = 14;
+            config.Defend = 8;
+            config.DefendHard = 10;
+            config.DefendLunatic = 12;
             
             // Detonation amount
             config.Count1 = 5;

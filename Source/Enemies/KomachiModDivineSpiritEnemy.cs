@@ -46,14 +46,14 @@ namespace KomachiMod.Enemies
             config.MaxHpAdd = 2;
 
             // Double shoot
-            config.Damage1 = 4;
-            config.Damage1Hard = 5;
-            config.Damage1Lunatic = 6;
+            config.Damage1 = 3;
+            config.Damage1Hard = 4;
+            config.Damage1Lunatic = 5;
 
             // Shoot and buff
-            config.Damage2 = 8;
-            config.Damage2Hard = 9;
-            config.Damage2Lunatic = 10;
+            config.Damage2 = 6;
+            config.Damage2Hard = 7;
+            config.Damage2Lunatic = 8;
 
             // Block gained from the defend action
             config.Defend = 5;

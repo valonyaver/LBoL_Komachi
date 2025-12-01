@@ -4,14 +4,6 @@
 
 A few general tips and guidelines on how to make a character and break down the main game practices. 
 
-### General tips 
-
-* Take it a step at a time. Rome wasn't built in a day. 
-* Write your ideas down to have a better scope of your project and minimize the mental load in the long run.
-* Give yourself reasonable objectives to achieve (i.e "Today I will design 3 cards", "I want to code 5~10 cards this week"). Those numbers may vary depending on your free time and programming experience.
-* If you are not making any progress, take a break for as long as necessary. 
-* Set your priorities. Having a functional mod is much more important than worrying about smaller details that would take considerable times to adjust or implement.
-
 ### Cost-value ranges
 
 #### Base values

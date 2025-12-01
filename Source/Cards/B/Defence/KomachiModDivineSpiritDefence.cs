@@ -33,10 +33,10 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             config.Block = 4;
-            config.UpgradedBlock = 8;
+            config.UpgradedBlock = 6;
 
             // Divine spirit gain
-            config.Value1 = 4;
+            config.Value1 = 6;
             config.UpgradedValue1 = 8;
 
             // Release cost

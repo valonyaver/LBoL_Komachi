@@ -66,6 +66,7 @@ This is mainly a black Komachi ability, however, opening up the white pool will 
 You can disable the Komachi act 1 boss or configure the values for distance through the configuration files of the mod.
 To change these configs: 
 If you're on the steam workshop: Open the mod launcher, go to your mod management list and click on Bepinex. Click View Folder. This should take you to the installation folder for bepinex. From there, the configuration file will be at BepInEx\config\valon.LBoL.character.Komachi.cfg
+If you're on r2modman: Go to config editor, and just search either "valon" or "komachi", you should see something like `Bepinex\config\valon.LBOL.character.Komachi.cfg`. Click it to see the configs.
 Everything else should be self explanatory.
 
 

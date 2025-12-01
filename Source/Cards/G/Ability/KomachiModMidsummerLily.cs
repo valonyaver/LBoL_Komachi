@@ -29,6 +29,7 @@ namespace KomachiMod.Cards
             config.Value1 = 1;
             // Lily amount
             config.Value2 = 1;
+            config.UpgradedValue2 = 2;
 
 
             config.RelativeCards = new List<string>() { nameof(KomachiModSpiderLily), nameof(SummerFlower) };

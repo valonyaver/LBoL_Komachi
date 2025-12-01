@@ -53,11 +53,14 @@ namespace KomachiMod.Source.GunName
         /// X4 is... weird. It changes the range depending on the way id, similarly to GAngle, but I don't know the exacts of how it works.
         /// 
         /// StartSpeed: Starting speed of the bullets.
-        /// Ev Properties: Evolution of the bullet's speed over time.
+        /// Ev Properties: These thingies are bullet events. They let you define specific behaviour to bullet properties at specific times.
+        /// EvType: The event type. What property gets changed depends on this number. For example, 1 changes the bullet's speed.
         /// EvStart: Time in frames until the Ev puberty hits.
-        /// EvNumber: The speed change. The bullets' speed eventually end up being StartingSpeed+EvNumber
-        /// EvDuration: How much time it takes for the speed to reach its final value.
-        /// EvType: I have no idea. Type of interpolation? Keep it at 1 unless testing.
+        /// EvNumber: The number change. The bullets' number related to the EvType eventually end up being originalNumber+EvNumber
+        /// EvDuration: How much time it takes for the number to reach its final value.
+        /// 
+        /// StartAcc: Acceleration speed of the bullet. The bullet's speed changes by X per second. It's a 4x2 matrix.
+        /// StartAccAngle: Acceleration of the bullet's angle. Changes bullet's rotation over time by X degrees per second. It's a 4x2 matrix.
         /// 
         /// Color: Determines the colours of bullets. Its function depends on how many subarrays it has. I'll call them rows.
         /// If there is one row, then the colour of all the bullets will just be the ID of the first element in that row.

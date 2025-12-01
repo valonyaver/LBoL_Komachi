@@ -26,19 +26,30 @@ namespace KomachiMod.GunName
             PieceConfig config = GetDefaultGunConfig();
             config.Id = PieceTemplate.ConvertGunId(80004);
             config.ShootType = 0;
-            config.GInterval = 4;
-            config.Group = 20;
-            config.Way = new int[][] { new int[] { 5 }, new int[] { 1 } };
+            config.GInterval = 10;
+            config.Group = 10;
+            config.Way = new int[][] { new int[] { 3 }, new int[] { 0 } };
 
             config.StartTime = 6;
-            config.StartSpeed = new float[][] { new float[] { 5 } };
+            config.StartSpeed = new float[][] { new float[] { 3 } };
             config.EvStart = new int[][][] { new int[][] { new int[] { 60 } } };
-            config.EvDuration = new int[][][] { new int[][] { new int[] { 60 } } };
-            config.EvNumber = new float[][][] { new float[][] { new float[] { 4 } } };
-            config.EvType = new int[][] { new int[] { 1 } };
+            config.EvDuration = new int[][][] { new int[][] { new int[] { 999 } } };
+            config.EvNumber = new float[][][] { new float[][] { new float[] { 0.05f } } };
+            config.EvType = new int[][] { new int[] { 99 } };
 
-            config.Aim = 0;
-            config.Range = new float[][] { new float[] { 0 }, new float[] { 0 }, new float[] { 0 } , new float[] { 15 } };
+
+            //config.StartAcc = new float[][] { new float[] { -2 } };
+            //config.StartAccAngle = new float[][] { new float[] { -30 }, new float[] { }, new float[] { }, new float[] { 10f } };
+            //config.X = new float[][] { new float[] { 0 } };
+            //config.Y = new float[][] { new float[] { -2 }, new float[] { 0 }, new float[] { 0f }, new float[] { 0.5f } };
+            //config.Radius = new float[][] { new float[] { -2 }, new float[] { 0.5f } };
+            //config.RadiusA = new float[][] { new float[] { 1 }
+            //, new float[] { 5f }, new float[] { }, new float[] { 0f } 
+            //};
+
+            config.ZeroHitNotDie = true;
+
+            config.Range = new float[][] { new float[] { 30 }, new float[] { 0 }, new float[] { 0 } };
 
             config.Color = new int[][] { new int[] { 4 } };
 

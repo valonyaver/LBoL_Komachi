@@ -37,8 +37,8 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 6;
 
             // Buff amount
-            config.Value2 = 2;
-            config.UpgradedValue2 = 4;
+            config.Value2 = 4;
+            config.UpgradedValue2 = 6;
 
             config.RelativeEffects = new List<string>()
             { 

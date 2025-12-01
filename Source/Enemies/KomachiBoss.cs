@@ -153,12 +153,23 @@ namespace KomachiMod.Enemies
         {
             foreach(var enemy in AllAliveEnemies)
             {
-                if (enemy.IsServant) React(new ForceKillAction(this, enemy));
+                if (enemy.IsServant){
+                    if (enemy.TryGetStatusEffect<DeathExplode>(out var deathExplode))
+                    {
+                        React(new RemoveStatusEffectAction(deathExplode));
+                    }
+                    React(new ForceKillAction(this, enemy));
+                }
             }
             Next = MoveType.Nothing;
             NextNext = MoveType.LastWord;
             hasRevived = true;
             UpdateTurnMoves();
+            // To make sure the player doesn't get unnecessary damage from the turn skip
+            if (TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var spirits))
+            {
+                React(new RemoveStatusEffectAction(spirits));
+            }
             React(SkipTurns);
         }
 
@@ -452,7 +463,14 @@ namespace KomachiMod.Enemies
             }
             else
             {
-                yield return new CastBlockShieldAction(this, 12, Defend);
+                yield return new CastBlockShieldAction(this, 8, Defend);
+            }
+            foreach (var enemy in Battle.AllAliveEnemies)
+            {
+                if (!enemy.IsServant)
+                {
+                    yield return new ApplyStatusEffectAction<KomachiModDistanceBlockSe>(enemy, Count1);
+                }
             }
         }
 

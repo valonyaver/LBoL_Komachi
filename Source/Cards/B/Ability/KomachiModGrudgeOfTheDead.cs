@@ -33,8 +33,8 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             // Spirits inflicted
-            config.Value1 = 2;
-            config.UpgradedValue1 = 4;
+            config.Value1 = 4;
+            config.UpgradedValue1 = 5;
 
             // Firepower gain
             config.Value2 = 1;

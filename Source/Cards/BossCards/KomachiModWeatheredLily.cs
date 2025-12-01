@@ -58,6 +58,7 @@ namespace KomachiMod.Cards
             {
                 nameof(Poison)
             };
+            config.IsUpgradable = false;
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

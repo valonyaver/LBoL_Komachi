@@ -31,8 +31,8 @@ namespace KomachiMod.Enemies
 
             // Multi attack
             config.Damage1 = 6;
-            config.Damage1Hard = 7;
-            config.Damage1Lunatic = 8;
+            config.Damage1Hard = 6;
+            config.Damage1Lunatic = 7;
             
             // Accurate attack
             config.Damage2 = 16;
@@ -40,9 +40,9 @@ namespace KomachiMod.Enemies
             config.Damage2Lunatic = 17;
             
             // Buff attack
-            config.Damage3 = 20;
-            config.Damage3Hard = 20;
-            config.Damage3Lunatic = 22;
+            config.Damage3 = 18;
+            config.Damage3Hard = 18;
+            config.Damage3Lunatic = 20;
 
             // Spellcard damage
             config.Damage4 = 21;
@@ -50,9 +50,9 @@ namespace KomachiMod.Enemies
             config.Damage4Lunatic = 25;
 
             // Barrier gained from the defend action
-            config.Defend = 10;
-            config.DefendHard = 12;
-            config.DefendLunatic = 14;
+            config.Defend = 6;
+            config.DefendHard = 8;
+            config.DefendLunatic = 10;
             
             // Spellcard Firepower
             config.Count1 = 1;
@@ -61,8 +61,8 @@ namespace KomachiMod.Enemies
             
             // Amount of guided spirits the boss gets
             config.Count2 = 4; 
-            config.Count2Hard = 6;
-            config.Count2Lunatic = 8;
+            config.Count2Hard = 5;
+            config.Count2Lunatic = 6;
 
             config.RealName = true;
             
