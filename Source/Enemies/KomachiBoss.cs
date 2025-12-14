@@ -32,6 +32,7 @@ using static KomachiMod.Enemies.KomachiModDivineSpiritEnemyDef;
 using static KomachiMod.Enemies.KomachiModVengefulSpiritEnemyDef;
 using static LBoL.EntityLib.EnemyUnits.Character.Rin;
 using static LBoL.EntityLib.EnemyUnits.Opponent.Reimu;
+using static LBoL.EntityLib.EnemyUnits.Opponent.Marisa;
 using static LBoL.EntityLib.EnemyUnits.Character.Siji;
 using KomachiMod.KomachiUlt;
 
@@ -310,7 +311,7 @@ namespace KomachiMod.Enemies
                     }
                 case MoveType.Debuff:
                     {
-                        yield return new SimpleEnemyMove(Intention.NegativeEffect().WithMoveName(GetMove(5)), KomachiDebuff());
+                        yield return new SimpleEnemyMove(KomachiBossDistanceTaxIntention.Intention().WithMoveName(GetMove(5)), KomachiDebuff());
                         yield return new SimpleEnemyMove(Intention.AddCard());
                         Last = MoveType.Debuff;
                         break;
@@ -580,6 +581,11 @@ namespace KomachiMod.Enemies
 
         List<MoveType> fillerMovesUsed = new List<MoveType>();
 
+        /// <summary>
+        /// Chooses next move depending on the last move. Then changes the next move accordingly.
+        /// </summary>
+        /// <param name="lastMove"></param>
+        /// <param name="nextMove"></param>
         void ChooseNextMove(MoveType lastMove, out MoveType nextMove)
         {
             if (lastMove == MoveType.Nothing)
@@ -605,6 +611,11 @@ namespace KomachiMod.Enemies
                 fillerMovesUsed.Add(lastMove);
                 var availableMoves = fillerMoves.Except(fillerMovesUsed).ToList();
 
+                // Forces debuff move to be used 3 turns before the spellcard, to prevent the player from getting vulnerable on it.
+                if (availableMoves.Count == 3 && availableMoves.Contains(MoveType.Debuff))
+                {
+                    nextMove = MoveType.Debuff;
+                }
                 // If all moves used in this cycle, trigger Spellcard
                 if (availableMoves.Count == 0)
                 {
@@ -631,6 +642,7 @@ namespace KomachiMod.Enemies
                 return;
             }
         }
+        // After Komachi Acts, her next move becomes her next next move. Then, her next next move is calculated.
         protected override void UpdateMoveCounters()
 		{
             Next = NextNext;

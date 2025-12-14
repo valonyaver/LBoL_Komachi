@@ -31,7 +31,7 @@ namespace KomachiMod.StatusEffects
         ManaGroup Mana = new ManaGroup() { Any = 1 };
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnTurnStarted));
+            base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnTurnStarted), GameEventPriority.Highest);
         }
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)

@@ -60,9 +60,9 @@ namespace KomachiMod.Enemies
             config.Count1Lunatic = 2;
             
             // Amount of guided spirits the boss gets
-            config.Count2 = 4; 
-            config.Count2Hard = 5;
-            config.Count2Lunatic = 6;
+            config.Count2 = 3; 
+            config.Count2Hard = 4;
+            config.Count2Lunatic = 4;
 
             config.RealName = true;
             

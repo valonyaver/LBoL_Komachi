@@ -31,7 +31,7 @@ namespace KomachiMod.StatusEffects
     {
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent<UnitEventArgs>(base.Owner.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnOwnerTurnStarted));
+            base.ReactOwnerEvent<UnitEventArgs>(base.Owner.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.OnOwnerTurnStarted));
         }
 
         // Token: 0x06000032 RID: 50 RVA: 0x00002598 File Offset: 0x00000798

@@ -124,7 +124,7 @@ KomachiModShootAndMove:
     Deal {Damage} damage. 
     You can |Displace| by up to +/-{Value1}.
   FlavorText: |-
-    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive. Undraftable ingame.
+    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive. Undraftable in-game.
 
 
 KomachiModMoveAndShoot:

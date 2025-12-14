@@ -30,7 +30,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 14;
 
             config.Value2 = 1;
-            config.UpgradedValue2 = 3;
+            config.UpgradedValue2 = 2;
 
             config.RelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiModGuidedSpiritSe) };

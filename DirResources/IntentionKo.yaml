@@ -6,3 +6,9 @@ KomachiBossDisplaceIntention:
     {OwnerName}가 위치를 {displacementAmount}만큼 이동하려 합니다.
   NegativeDisplacementDescription: |-
     {OwnerName}가 위치를 {displacementAmount}만큼 이동하려 합니다.
+
+KomachiBossDistanceTaxIntention:
+  Name: Distance Tax Debuff
+  Description: |-
+    {OwnerName} intends to apply a |negative effect| to {PlayerName}.
+    This negative effect will depend on {OwnerName}'s distance from {PlayerName}.

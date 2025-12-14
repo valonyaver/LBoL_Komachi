@@ -8,6 +8,7 @@ using LBoL.Core.Battle;
 using LBoL.Core;
 using KomachiMod.Source.GunName.GunTests;
 using LBoL.Presentation.Bullet;
+using UnityEngine;
 
 namespace KomachiMod.GunName
 {
@@ -16,6 +17,7 @@ namespace KomachiMod.GunName
     {
         public override GunConfig MakeConfig()
         {
+            Debug.Log("Logging the config for gunpiece1");
             GunConfig config = DefaultGunConfig();
             // The Only thing that matters for the guns themselves is the id. Everything else is in the pieces.
             config.Id = 80001;

@@ -23,6 +23,7 @@ namespace KomachiMod.GunName
     {
         public override PieceConfig MakeConfig()
         {
+            Debug.Log("Logging the config for testpiece1");
             PieceConfig config = GetDefaultGunConfig();
 
             config.Id = PieceTemplate.ConvertGunId(80001);

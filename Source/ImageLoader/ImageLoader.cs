@@ -1,7 +1,10 @@
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace KomachiMod.ImageLoader
 {
@@ -27,6 +30,70 @@ namespace KomachiMod.ImageLoader
             var exhibitSprites = new ExhibitSprites();
             exhibitSprites.main = ResourceLoader.LoadSprite(exhibit.GetId() + file_extension, BepinexPlugin.embeddedSource);;
             return exhibitSprites;
+        }
+
+        public static GameObject effectParent;
+        public static Dictionary<string, GameObject> effectObjects = new Dictionary<string, GameObject>();
+        public static GameObject LoadEffectGameObject(string imageName)
+        {
+            if (effectParent == null)
+            {
+                GameObject parent = new GameObject("EffectParent");
+                effectParent = parent;
+                effectParent.transform.position = new Vector3(-10, 0, 0);
+            }
+
+            if (effectObjects.TryGetValue(imageName, out var effectGOExists))
+            {
+                return effectGOExists;
+            }
+            string imagePath = imageName + file_extension;
+
+            Sprite effectSprite = ResourceLoader.LoadSprite(imagePath, BepinexPlugin.embeddedSource, ppu: 256);
+
+            Debug.Log($"Trying to load {imageName}");
+
+            if (effectSprite == null)
+            {
+                // Handle error: log a warning if the sprite couldn't be loaded
+                Debug.LogWarning($"Failed to load effect sprite at path: {imagePath}");
+                return new GameObject(imageName + "_Failed");
+            }
+
+            
+            GameObject effectGO = new GameObject(imageName + "_Effect");
+            effectGO.transform.parent = effectParent.transform;
+            effectGO.AddComponent<EffectHider>();
+
+            SpriteRenderer renderer = effectGO.AddComponent<SpriteRenderer>();
+            renderer.sprite = effectSprite;
+
+            ParticleSystem ps = effectGO.AddComponent<ParticleSystem>();
+            var main = ps.main;
+            main.playOnAwake = false;
+            main.stopAction = ParticleSystemStopAction.Disable; 
+
+            var emission = ps.emission;
+            emission.enabled = false; 
+
+            effectGO.AddComponent<ParticleSystemRenderer>();
+            return effectGO;
+        }
+
+        public class EffectHider :MonoBehaviour
+        {
+            void Start()
+            {
+                if (!name.Contains("Clone")){
+                    StartCoroutine(HideAfterFrame());
+                }
+            }
+
+            IEnumerator HideAfterFrame()
+            {
+                yield return null;
+                transform.localPosition = new Vector3(0,0,0);
+            }
         }
 
         public static Sprite LoadUltLoader(UltimateSkillTemplate ult)

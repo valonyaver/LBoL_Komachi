@@ -24,25 +24,26 @@ namespace KomachiMod.GunName
         public override PieceConfig MakeConfig()
         {
             PieceConfig config = GetDefaultGunConfig();
+            // config.Projectile = "KomachiModTestBullet1";
             config.Id = PieceTemplate.ConvertGunId(80002);
             config.ShootType = 0;
             config.GInterval = 10;
             config.Group = 5;
             config.Way = new int[][] { new int[] { 3 }, new int[] { 0 } };
             config.StartTime = 0;
-            config.StartSpeed = new float[][] { new float[] { 1 } };
+            config.StartSpeed = new float[][] { new float[] { 2 } };
             // Events
-            config.EvType = new int[][]
-            { new int[] { 2 }, new int[] { 1 }, new int[] { 2 } };
-            config.EvStart = new int[][][] 
-            { new int[][] { new int[] { 0 } }, new int[][] { new int[] { 90 } }, new int[][] { new int[] { 90 } } };
-            config.EvDuration = new int[][][] 
-            { new int[][] { new int[] { 30 } }, new int[][] { new int[] { 30 } }, new int[][] { new int[] { 30 } }  };
-            config.EvNumber = new float[][][] 
-            { new float[][] { new float[] { 30 } }, new float[][] { new float[] { 0 }, new float[] { 1 } }, new float[][] { new float[] { -60 } } };
+            //config.EvType = new int[][]
+            //{ new int[] { 2 }, new int[] { 1 }, new int[] { 2 } };
+            //config.EvStart = new int[][][] 
+            //{ new int[][] { new int[] { 0 } }, new int[][] { new int[] { 90 } }, new int[][] { new int[] { 90 } } };
+            //config.EvDuration = new int[][][] 
+            //{ new int[][] { new int[] { 30 } }, new int[][] { new int[] { 30 } }, new int[][] { new int[] { 30 } }  };
+            //config.EvNumber = new float[][][] 
+            //{ new float[][] { new float[] { 30 } }, new float[][] { new float[] { 0 }, new float[] { 1 } }, new float[][] { new float[] { -60 } } };
             
 
-            config.StartAcc = new float[][] { new float[] { 1 } };
+            // config.StartAcc = new float[][] { new float[] { 1 } };
             // config.StartAccAngle = new float[][] { new float[] { 30 }, new float[] { 0 }, new float[] { }, new float[] { -10f } };
             //config.X = new float[][] { new float[] { 0 }, new float[] { 1f } };
             //config.Y = new float[][] { new float[] { 0 }, new float[] { 1 } };
@@ -54,8 +55,6 @@ namespace KomachiMod.GunName
             config.ShootEnd = 60;
             config.Life = new int[][] { new int[] { 600 } };
 
-            config.RootType = 0;
-            config.Aim = 2;
 
             config.Range = new float[][] { new float[] { 45 }, new float[] { 0 }, new float[] { 0 } };
 

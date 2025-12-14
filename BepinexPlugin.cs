@@ -1,17 +1,22 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
+using DG.Tweening.Plugins.Core;
 using HarmonyLib;
+using KomachiMod.Cards.Template;
+using KomachiMod.Config;
 using LBoL.Base;
+using LBoL.ConfigData;
 using LBoL.EntityLib.EnemyUnits.Character;
+using LBoL.Presentation.UI;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using KomachiMod.Cards.Template;
-using KomachiMod.Config;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 
 namespace KomachiMod
@@ -103,6 +108,7 @@ namespace KomachiMod
             CardIndexGenerator.PromiseClearIndexSet();
             EntityManager.RegisterSelf();
 
+            // InitializeCustomInput();
             harmony.PatchAll();
             try
             {
@@ -112,6 +118,49 @@ namespace KomachiMod
             catch (ArgumentException ex) when (ex.Message.Contains("same key"))
             {
                 log.LogWarning("Boss icon already registered");
+            }
+        }
+
+        private static InputAction myF10Action;
+        private void InitializeCustomInput()
+        {
+            // Create a new action with the name you want
+            myF10Action = new InputAction("MyF10Action", InputActionType.Button);
+
+            // Bind the F10 key to this action
+            myF10Action.AddBinding("<Keyboard>/f10");
+
+            // Enable the action so it starts listening for input events
+            myF10Action.Enable();
+
+            // Note: We don't subscribe to 'performed' here because we will poll in Update().
+
+            Logger.LogInfo("Custom Input Action 'MyF10Action' bound to F10 and enabled.");
+        }
+
+        // Enable this and call it in awake whenever you want to make custom input.
+        //private void Update()
+        //{
+        //    // The direct polling equivalent to Input.GetKeyDown(KeyCode.F10)
+        //    if (myF10Action != null && myF10Action.WasPressedThisFrame())
+        //    {
+        //        // Call your action logic directly
+        //        OnMyCustomActionPerformed();
+        //    }
+        //}
+
+        private static void OnMyCustomActionPerformed()
+        {
+            Debug.Log($"Attempting to check boolets");
+            if (BulletConfig._NameTable.ContainsKey("Knife"))
+            {
+                Debug.Log($"The nametable contains knife");
+                Debug.Log($"Original bullet is named {BulletConfig._NameTable["Knife"].Name} and its widget is {BulletConfig._NameTable["Knife"].Widget}");
+
+            }
+            if (BulletConfig._NameTable.ContainsKey("KomachiModTestBullet1"))
+            {
+                Debug.Log($"Custom bullet is named {BulletConfig._NameTable["KomachiModTestBullet1"].Name} and its widget is {BulletConfig._NameTable["KomachiModTestBullet1"].Widget}");
             }
         }
 

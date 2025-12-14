@@ -1,3 +1,7 @@
+Music Sources:
+The music for Komachi's boss fight was made by Rowster.
+www.youtube.com/watch?v=0eGHlCiKHGg
+
 Art sources:
 The following arts were specifically requested for this mod by Iced Lemon: https://bsky.app/profile/icedlemondraw.bsky.social
 -Titanic Exhibit
