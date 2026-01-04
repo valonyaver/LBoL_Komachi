@@ -1,3 +1,11 @@
+## 0.4.3
+### More act 1 boss changes
+- Guided Spirits on the boss will now show up as an additional intention on the boss, so you won't have to keep hovering over the status effect.
+- Komachi will no longer skip your turn when she charges her last turn. She will just become invulnerable instead.
+- Act 1 boss will no longer get Flexible Work Schedule, but the Eiki mirror version will.
+- The distance change intention on lunatic will now show you how much the distance will be changed.
+- Some slight number changes.
+
 ## 0.4.2
 ### Boss changes
 - Added Music to Komachi's boss fight. Remix made by Rowster: www.youtube.com/watch?v=0eGHlCiKHGg

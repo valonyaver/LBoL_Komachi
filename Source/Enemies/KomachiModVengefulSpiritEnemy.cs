@@ -39,7 +39,7 @@ namespace KomachiMod.Enemies
 
             config.Damage1 = 5;
             config.Damage1Hard = 6;
-            config.Damage1Lunatic = 7;
+            config.Damage1Lunatic = 8;
 
             // Barrier gained from the defend action
             config.Defend = 8;
@@ -48,8 +48,8 @@ namespace KomachiMod.Enemies
             
             // Detonation amount
             config.Count1 = 5;
-            config.Count1Hard = 7;
-            config.Count1Lunatic = 9;
+            config.Count1Hard = 6;
+            config.Count1Lunatic = 7;
             
             // Randomize how much higher it will be
             config.Count2 = 1;
@@ -82,7 +82,7 @@ namespace KomachiMod.Enemies
             {
                 SetFirstTurn();
                 React(PerformAction.Sfx("GhostSpawn"));
-                React(new ApplyStatusEffectAction<DeathExplodeCount>(this, base.Count1 + base.EnemyBattleRng.NextInt(0, base.Count2), limit: detonationCount));
+                React(new ApplyStatusEffectAction<DeathExplodeCount>(this, base.Count1, limit: detonationCount));
             }
         }
     }

@@ -155,17 +155,16 @@ namespace KomachiMod.Enemies
             foreach(var enemy in AllAliveEnemies)
             {
                 if (enemy.IsServant){
-                    if (enemy.TryGetStatusEffect<DeathExplode>(out var deathExplode))
+                    foreach(var item in enemy.StatusEffects)
                     {
-                        React(new RemoveStatusEffectAction(deathExplode));
+                        if (item is DeathExplode)
+                        {
+                            React(new RemoveStatusEffectAction(item));
+                        }
                     }
                     React(new ForceKillAction(this, enemy));
                 }
             }
-            Next = MoveType.Nothing;
-            NextNext = MoveType.LastWord;
-            hasRevived = true;
-            UpdateTurnMoves();
             // To make sure the player doesn't get unnecessary damage from the turn skip
             if (TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var spirits))
             {
@@ -185,12 +184,17 @@ namespace KomachiMod.Enemies
             yield return PerformAction.Chat(this, LastWordChat1, 3, waitTime:3);
             yield return PerformAction.Chat(this, LastWordChat2, 3, waitTime: 3.5f);
 
+            Next = MoveType.Nothing;
+            NextNext = MoveType.LastWord;
+            hasRevived = true;
+            UpdateTurnMoves();
 
-            if (Battle.Player.IsInTurn)
-            {
-                yield return new RequestEndPlayerTurnAction();
-            }
-            GameRun.SetEnemyHpAndMaxHp(4, MaxHp, this, true);
+
+            //if (Battle.Player.IsInTurn)
+            //{
+            //    yield return new RequestEndPlayerTurnAction();
+            //}
+            //GameRun.SetEnemyHpAndMaxHp(4, MaxHp, this, true);
         }
 
         
@@ -331,7 +335,7 @@ namespace KomachiMod.Enemies
                     }
                 case MoveType.Nothing:
                     {
-                        yield return new SimpleEnemyMove(Intention.Charge());
+                        yield return new SimpleEnemyMove(Intention.Charge(), Charge());
                         Last = MoveType.Nothing;
                         break;
                     }
@@ -342,20 +346,49 @@ namespace KomachiMod.Enemies
                         break;
                     }
             }
+            // Turns guided spirits into an intention
+            if (TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var guided) && (Last != MoveType.Nothing || Last != MoveType.LastWord))
+            {
+                yield return new SimpleEnemyMove(Intention.Attack(guided.Level), GuidedSpiritAttack());
+            }
             if (Last == MoveType.Summon || Next == MoveType.Escape || Last == MoveType.LastWord) yield break;
             // Displacement shown to the player.
             int displaceKnowledge;
             // Actual displacement for the next move.
             int displaceActual = GetNextMoveDisplacement(NextNext);
             // If lunatic, the displacement is unknown. Otherwise, it's shown.
-            if (GameRun.Difficulty == GameDifficulty.Lunatic)
-            {
-                displaceKnowledge = 0;
-            }
-            else displaceKnowledge = displaceActual;
+            //if (GameRun.Difficulty == GameDifficulty.Lunatic)
+            //{
+            //    displaceKnowledge = 0;
+            //}
+            //else 
+                displaceKnowledge = displaceActual;
             // Add the displacement intention to Komachi.
             yield return new SimpleEnemyMove(KomachiBossDisplaceIntention.Intention(displaceKnowledge), KomachiDisplace(displaceActual));
             yield break;
+        }
+
+        IEnumerable<BattleAction> GuidedSpiritAttack()
+        {
+            if (TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var guidedSpirits))
+            {
+                foreach (var action in AttackActions("", KomachiModGuidedSpiritSe.gunName, guidedSpirits.Level))
+                {
+                    yield return action;
+                }
+                int num = guidedSpirits.Level - 1;
+                guidedSpirits.Level = num;
+                if (guidedSpirits.Level == 0)
+                {
+                    yield return new RemoveStatusEffectAction(guidedSpirits, true, 0.1f);
+                }
+            }
+        }
+
+        IEnumerable<BattleAction> Charge()
+        {
+            GameRun.SetEnemyHpAndMaxHp(4, MaxHp, this, true);
+            yield return PerformAction.Effect(this, "UnitLongCharge");
         }
 
         public int GetNextMoveDisplacement(MoveType next)
@@ -407,6 +440,7 @@ namespace KomachiMod.Enemies
         #region MOVES
         //Perform a custom action
         public int summonVacancy;
+
         IEnumerable<BattleAction> Summon1Action()
         {
             Debug.Log("Komachi sumon");
@@ -466,6 +500,7 @@ namespace KomachiMod.Enemies
             {
                 yield return new CastBlockShieldAction(this, 8, Defend);
             }
+            if (!isSummon) yield break;
             foreach (var enemy in Battle.AllAliveEnemies)
             {
                 if (!enemy.IsServant)
@@ -481,6 +516,10 @@ namespace KomachiMod.Enemies
             {
                 foreach (var enemy in Battle.AllAliveEnemies)
                 {
+                    if (enemy is Siji)
+                    {
+                        yield return new ApplyStatusEffectAction<TempFirepower>(enemy, 2);
+                    }
                     if (enemy != this)
                     {
                         yield return new ApplyStatusEffectAction<Firepower>(enemy, 1);

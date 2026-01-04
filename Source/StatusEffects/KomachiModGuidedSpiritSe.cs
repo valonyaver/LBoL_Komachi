@@ -31,7 +31,7 @@ namespace KomachiMod.StatusEffects
     [EntityLogic(typeof(KomachiModGuidedSpiritSeDef))]
     public sealed class KomachiModGuidedSpiritSe : StatusEffect
     {
-        public string gunName
+        public static string gunName
         {
             get => GunNameID.GetGunFromId(6061);
         }
@@ -91,7 +91,7 @@ namespace KomachiMod.StatusEffects
 
         private IEnumerable<BattleAction> OnUnitTurnEnding(GameEventArgs args)
         {
-            if (!base.Battle.BattleShouldEnd && base.Battle.EnemyGroup.Alives != null)
+            if ((!base.Battle.BattleShouldEnd && Battle.EnemyGroup.Alives != null) && Owner == Battle.Player)
             {
                 base.NotifyActivating();
                 // Get the target

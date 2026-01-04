@@ -8,6 +8,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using LBoL.EntityLib.EnemyUnits.Character;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 
@@ -43,6 +44,11 @@ namespace KomachiMod.StatusEffects
             {
                 base.NotifyActivating();
                 React(new CastBlockShieldAction(Owner, base.Level * args.distanceChangeAbs, 0, BlockShieldType.Direct, false));
+                // Special condition for Eiki fight. If she gets distance change during mirror Komachi's turn, she won't lose her block.
+                //if (Owner is Siji && !Battle.Player.IsInTurn && !Owner.HasStatusEffect<TurnStartDontLoseBlock>())
+                //{
+                //    React(new ApplyStatusEffectAction<TurnStartDontLoseBlock>(Owner, 1));
+                //}
             }
         }
     }

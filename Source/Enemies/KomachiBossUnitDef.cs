@@ -40,9 +40,9 @@ namespace KomachiMod.Enemies
             config.Damage2Lunatic = 17;
             
             // Buff attack
-            config.Damage3 = 18;
-            config.Damage3Hard = 18;
-            config.Damage3Lunatic = 20;
+            config.Damage3 = 16;
+            config.Damage3Hard = 16;
+            config.Damage3Lunatic = 18;
 
             // Spellcard damage
             config.Damage4 = 21;
@@ -50,9 +50,9 @@ namespace KomachiMod.Enemies
             config.Damage4Lunatic = 25;
 
             // Barrier gained from the defend action
-            config.Defend = 6;
-            config.DefendHard = 8;
-            config.DefendLunatic = 10;
+            config.Defend = 10;
+            config.DefendHard = 10;
+            config.DefendLunatic = 15;
             
             // Spellcard Firepower
             config.Count1 = 1;
