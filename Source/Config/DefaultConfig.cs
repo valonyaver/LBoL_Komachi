@@ -12,10 +12,14 @@ namespace KomachiMod.Config
     public sealed class KomachiDefaultConfig
     {
         private static readonly string OwnerName = BepinexPlugin.modUniqueID;
+        /// <summary>
+        /// Removes the Def at the end of the entity (class name) to get the ID. 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public static string DefaultID(EntityDefinition entity)
         {
             string IDdef = entity.GetType().Name;
-            //Remove the Def at the end of the entity (class name) to get the ID. 
             //string ID = IDdef.Replace(@"Def", "");
             string ID = IDdef.Remove(IDdef.Length - 3);
             return ID;

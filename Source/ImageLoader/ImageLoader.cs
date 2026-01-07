@@ -32,6 +32,13 @@ namespace KomachiMod.ImageLoader
             return exhibitSprites;
         }
 
+        public static IntentionImages LoadIntentionLoader(IntentionTemplate intention)
+        {
+            var imgs = new IntentionImages();
+            imgs.main = LoadSprite(intention.GetId());
+            return imgs;
+        }
+
         public static GameObject effectParent;
         public static Dictionary<string, GameObject> effectObjects = new Dictionary<string, GameObject>();
         public static GameObject LoadEffectGameObject(string imageName)

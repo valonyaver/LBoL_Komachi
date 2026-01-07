@@ -65,9 +65,12 @@ namespace KomachiMod.Cards
             {
                 if (Battle == null) return base.AdditionalCost;
                 int cardsUsed = Battle.TurnCardUsageHistory.Count;
-                return ManaGroup.Anys(cardsUsed);
+                if (cardsUsed > 0) return ManaGroup.Anys(1);
+                else return base.AdditionalCost;
             }
         }
+
+        public override bool Triggered => Battle.TurnCardUsageHistory.Count == 0;
         /// <summary>
         /// This is just a dummy card for rowingRetreat
         /// </summary>

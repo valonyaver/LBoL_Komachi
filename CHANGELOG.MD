@@ -1,3 +1,12 @@
+## 0.4.4
+### Even more boss changes
+- The Move! Token's cost now maxes out at 1 mana. Hopefully, this will make actually interacting with the distance mechanic for the boss less difficult. It also glows when its cost is 0 to remind you to use it.-
+- Added custom icons for Komachi's new distance-based intentions.
+- Slightly nerfed the spirits' health for the fight.
+- Duration for applied vulnerable from distance tax reduced to 1. 
+
+Some changes might be an overbalance but since so many people struggled with the boss, especially due to its complexity, I'm hoping these changes will make her more forgiving. I might go back on some if she ends up being too easy.
+
 ## 0.4.3
 ### More act 1 boss changes
 - Guided Spirits on the boss will now show up as an additional intention on the boss, so you won't have to keep hovering over the status effect.

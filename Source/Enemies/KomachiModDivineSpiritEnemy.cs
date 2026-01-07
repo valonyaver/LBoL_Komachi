@@ -39,11 +39,11 @@ namespace KomachiMod.Enemies
             config.IsPreludeOpponent = false;
 
             //Boss properties
-            config.MaxHp = 25;
-            config.MaxHpHard = 27;
-            config.MaxHpLunatic = 30;
+            config.MaxHp = 23;
+            config.MaxHpHard = 25;
+            config.MaxHpLunatic = 27;
 
-            config.MaxHpAdd = 2;
+            config.MaxHpAdd = 0;
 
             // Double shoot
             config.Damage1 = 3;
@@ -63,7 +63,7 @@ namespace KomachiMod.Enemies
             // FP Buff amount
             config.Count1 = 1;
             config.Count1Hard = 1;
-            config.Count1Lunatic = 2;
+            config.Count1Lunatic = 1;
 
             // Start of flawless counter
             config.Count2 = 3;
@@ -114,9 +114,9 @@ namespace KomachiMod.Enemies
             public override void OnSpawn(EnemyUnit spawner)
             {
                 counter = Count2;
-                Debug.Log($"{Name} has spawned. its special move is {FlawlessMove}. The counter is at {counter}");
+                // Debug.Log($"{Name} has spawned. its special move is {FlawlessMove}. The counter is at {counter}");
                 React(new ApplyStatusEffectAction<Amulet>(this, 1));
-                React(new CastBlockShieldAction(this, this, 0, base.MaxHp/2, BlockShieldType.Normal, cast: false));
+                React(new CastBlockShieldAction(this, this, 0, 10, BlockShieldType.Normal, cast: false));
 
                 if (spawner is KomachiMod)
                 {
@@ -182,7 +182,7 @@ namespace KomachiMod.Enemies
                 {
                     if (!enemy.IsServant)
                     {
-                        yield return new CastBlockShieldAction(komachi, 0, Defend, cast: false);
+                        yield return new CastBlockShieldAction(enemy, 0, Defend, cast: false);
                     }
                 }
             }
@@ -217,13 +217,13 @@ namespace KomachiMod.Enemies
             // KomachiTurnEnded makes sure shoot and buff doesn't get used at a turn where komachi isn't gonna attack.
             void ChooseRandomNextMove(MoveType lastMove, out MoveType nextMove)
             {
-                Debug.Log($"Divine spirit counter is at {counter}. Reducing by 1 to {counter-1}.");
+                // Debug.Log($"Divine spirit counter is at {counter}. Reducing by 1 to {counter-1}.");
                 counter--;
                 // Either the counter is 0,
                 // or the next move is spellcard and the move wasn't just used last turn
                 if ((komachi.NextNext == KomachiMod.MoveType.Spellcard && counter < Count2 - 1) || counter <= 0)
                 {
-                    Debug.Log($"Divine spirit intention will be flawless");
+                    // Debug.Log($"Divine spirit intention will be flawless");
                     nextMove = MoveType.FlawlessBuff;
                     counter = Count2;
                     return;
@@ -254,7 +254,7 @@ namespace KomachiMod.Enemies
             {
                 if (komachi.GetNextMoveDisplacement(komachi.NextNext) >= 0 && Next == MoveType.ShootAndBuff)
                 {
-                    Debug.Log($"Removing shoot and buff.");
+                    // Debug.Log($"Removing shoot and buff.");
                     counter++;
                     ChooseRandomNextMove(Next, out Next);
                     fillerMovesUsed.Remove(MoveType.ShootAndBuff);

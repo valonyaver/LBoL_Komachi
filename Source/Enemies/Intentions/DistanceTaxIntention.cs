@@ -1,4 +1,5 @@
 ﻿using KomachiMod.Config;
+using KomachiMod.ImageLoader;
 using KomachiMod.Localization;
 using LBoL.Core;
 using LBoL.Core.Intentions;
@@ -31,10 +32,11 @@ namespace KomachiMod.Source.Enemies.Intentions
         // Token: 0x060001EC RID: 492 RVA: 0x00008BA4 File Offset: 0x00006DA4
         public override IntentionImages LoadSprites()
         {
-            return new IntentionImages
-            {
-                main = ResourcesHelper.TryGetIntention(nameof(NegativeEffectIntention), null)
-            };
+            //return new IntentionImages
+            //{
+            //    main = ResourcesHelper.TryGetIntention(nameof(NegativeEffectIntention), null)
+            //};
+            return KomachiImageLoader.LoadIntentionLoader(this);
         }
 
         

@@ -31,11 +31,11 @@ namespace KomachiMod.Enemies
             config.IsPreludeOpponent = false;
 
             //Boss properties
-            config.MaxHp = 25;
-            config.MaxHpHard = 27;
-            config.MaxHpLunatic = 30;
+            config.MaxHp = 23;
+            config.MaxHpHard = 25;
+            config.MaxHpLunatic = 27;
 
-            config.MaxHpAdd = 2;
+            config.MaxHpAdd = 0;
 
             config.Damage1 = 5;
             config.Damage1Hard = 6;

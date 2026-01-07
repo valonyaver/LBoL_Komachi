@@ -547,7 +547,7 @@ namespace KomachiMod.Enemies
                     break;
                 case 4:
                 case 5:
-                    yield return new ApplyStatusEffectAction<EnemyVulnerable>(this, level: 2);
+                    yield return new ApplyStatusEffectAction<EnemyVulnerable>(this, level: 1);
                     break;
             }
             var card = Library.CreateCard<KomachiModWeatheredLily>();
