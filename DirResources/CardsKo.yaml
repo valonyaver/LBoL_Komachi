@@ -935,10 +935,10 @@ KomachiModMoveToken:
   Name: 움직여!
   Description: |-
     모든 적의 위치를 ±{Value1}만큼 |위치 변경|합니다.
-    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다.
+    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다. (최대: 1)
   UpgradedDescription: |-
     모든 적의 위치를 최대 ±{Value2}만큼 |위치 변경|합니다.
-    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다.
+    |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다. (최대: 1)
   ExtraDescription1: |-
     바짝 붙어라!
     |위치 변경| -{displaceAmount}.

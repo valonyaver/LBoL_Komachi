@@ -12,7 +12,7 @@ namespace KomachiMod.Source.GunName.GunTests
     {
         public override IdContainer GetId()
         {
-            return KomachiDefaultConfig.DefaultID(this);
+            return MakeConfig().Name;
         }
 
         public override GunConfig MakeConfig()
@@ -35,7 +35,7 @@ namespace KomachiMod.Source.GunName.GunTests
         public static GunConfig DefaultGunConfig()
         {
             return new GunConfig(
-                Id: 120000, 
+                Id: 444000, // This id will be the id range for KomachiMod
                 Name: "", 
                 Spell: "", 
                 Sequence: "", 

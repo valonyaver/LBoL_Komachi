@@ -34,7 +34,7 @@ namespace KomachiMod.Cards
 
             // Spirits inflicted
             config.Value1 = 4;
-            config.UpgradedValue1 = 5;
+            config.UpgradedValue1 = 6;
 
             // Firepower gain
             config.Value2 = 1;

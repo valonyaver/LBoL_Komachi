@@ -1,3 +1,12 @@
+## 0.4.5
+### Minor Stuff
+- Forever Cancelled cost changed from 1BB to 2B.
+- Lonely Bound Spirit cost changed from 1BB (2B) to BB (1B). Accordingly, its damage reduced from 16 (21) to 14 (18).
+- Spirit Barrier cost changed from BB (1B) to B. Accordingly, its Block reduced from 14 (17) to 8 (10).
+- Chain Detonation cost changed from 1B to BB (1B).
+- Fixed a bug with Low Tier Shinigami applying Vulnerable before dealing damage, rather than after.
+- Added some custom guns to a few attacks.
+
 ## 0.4.4
 ### Even more boss changes
 - The Move! Token's cost now maxes out at 1 mana. Hopefully, this will make actually interacting with the distance mechanic for the boss less difficult. It also glows when its cost is 0 to remind you to use it.-

@@ -29,15 +29,15 @@ namespace KomachiMod.Cards
             // config.ImageId = nameof(KomachiModBlockB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 2 };
-            config.UpgradedCost = new ManaGroup() { Black = 1, Any = 1 };
+            config.Cost = new ManaGroup() { Black = 1 };
+            config.UpgradedCost = new ManaGroup() { Black = 1 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Defense;
             config.TargetType = TargetType.Nobody;
 
-            config.Block = 14;
-            config.UpgradedBlock = 17;
+            config.Block = 8;
+            config.UpgradedBlock = 10;
 
             // Minimum amount of release needed
             config.Value1 = 1;

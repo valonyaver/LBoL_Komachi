@@ -889,17 +889,17 @@ KomachiModSanzuFare:
   FlavorText: |-
     「お金を集めれば、永遠寺に仕事をしてると思わせられる。
     だから払ってくれれば手加減してあげる。」
-  CardDialogue1: "ちゃんと向こう岸まで安全に送り届けるよ。"
+  CardDialogue1: "ちゃんと向こう岸まで、無事に送り届けてあげるからさ。"
   CardDialogue2: "あんた、すっごく気前がいいね。天界に行けるように山の神に良い話しておくから。"
 
 KomachiModMoveToken:
   Name: 動け！
   Description: |-
     |変位| 敵全体 +/-{Value1}。
-    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。
+    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。(最大: 1)
   UpgradedDescription: |-
     |変位| 敵全体 +/-{Value2}。
-    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。
+    |このターンに使ったカード1枚ごと|：このカードのコストは{Mana}増加する。(最大: 1)
   ExtraDescription1: |-
     接近！
     |変位| -{displaceAmount}。

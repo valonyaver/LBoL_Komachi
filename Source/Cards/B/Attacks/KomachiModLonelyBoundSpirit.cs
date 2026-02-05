@@ -18,20 +18,20 @@ namespace KomachiMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = GunNameID.GetGunFromId(400);
+            config.GunName = GunNameID.GetGunFromId(444003);
 
             // config.ImageId = nameof(KomachiModAttackB);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Any = 1, Black = 2 };
-            config.UpgradedCost = new ManaGroup() { Any = 2, Black = 1 };
+            config.Cost = new ManaGroup() { Black = 2 };
+            config.UpgradedCost = new ManaGroup() { Any = 1, Black = 1 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
 
-            config.Damage = 16;
-            config.UpgradedDamage = 21;
+            config.Damage = 14;
+            config.UpgradedDamage = 18;
 
             config.Value1 = 1;
 

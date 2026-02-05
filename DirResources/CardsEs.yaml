@@ -898,10 +898,10 @@ KomachiModMoveToken:
   Name: ¡Mover!
   Description: |-
     |Desplaza| a cada enemigo en +/-{Value1}.
-    |Por cada carta usada en este turno|: Esta carta cuesta {Mana} maná mas.
+    |Por cada carta usada en este turno|: Esta carta cuesta {Mana} maná mas (Max: 1).
   UpgradedDescription: |-
     |Desplaza| a cada enemigo hasta +/-{Value2}.
-    |Por cada carta usada en este turnon|: Esta carta cuesta {Mana} maná mas.
+    |Por cada carta usada en este turnon|: Esta carta cuesta {Mana} maná mas (Max: 1).
   ExtraDescription1: |-
     ¡Acercarse!
     |Desplaza| en -{displaceAmount}.

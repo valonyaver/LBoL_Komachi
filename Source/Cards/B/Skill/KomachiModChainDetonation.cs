@@ -23,7 +23,9 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(400);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 1, Any = 1 };
+            config.Cost = new ManaGroup() { Black = 2 };
+            config.UpgradedCost = new ManaGroup() { Black = 1, Any = 1 };
+
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;

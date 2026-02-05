@@ -60,8 +60,8 @@ namespace KomachiMod.Cards
         {
             // I want Komachi to tell me to kill myself
             yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, GunNameID.GetGunFromId(4532));
-            yield return DebuffAction<Vulnerable>(selector.SelectedEnemy, 0, Value1, occupationTime:1);
             yield return base.AttackAction(selector, base.GunName);
+            yield return DebuffAction<Vulnerable>(selector.SelectedEnemy, 0, Value1, occupationTime: 1);
             yield break;
         }
     }
