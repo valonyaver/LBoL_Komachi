@@ -54,7 +54,8 @@ KomachiModRiversideGardenSe:
   Name: Riverside Garden
   Description: |-
     Whenever {PlayerName} adds |Spider Lily| during this combat, |Upgrade| it.
-    At the end of combat, gain {Level} life for every |Spider Lily| on the |battlefield|.
+    At the end of combat, gain {Level} life for every |Spider Lily| on the |battlefield|, up to {healCeiling} health. 
+    There are currently {SpiderLilyCount} |Spider Lilies| on the battlefield.
 
 KomachiModShinigamiTacticsSe:
   Name: Shinigami Tactics
@@ -131,7 +132,7 @@ KomachiModGuidedGeneratorNextTurnSe:
 KomachiModDetonateInfiniteSe:
   Name: Forever Cancelled
   Description: |-
-    Each time |Vengeful Spirits| are |Detonated| on an enemy, apply {Level} |Vengeful Spirits| on that target.
+    Each time |Vengeful Spirits| are |Detonated| on an enemy, apply |Vengeful Spirits| on that target equal to |e:{multiplier}| times the amount (rounding up).
 
 KomachiModSpiritReturnSe:
   Name: Spirit Return

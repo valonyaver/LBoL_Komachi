@@ -53,6 +53,7 @@ namespace KomachiMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DetonateVengefulSpiritAction(this, selector.SelectedEnemy);
+            yield return new DrawCardAction();
         }
     }
 }

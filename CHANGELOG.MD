@@ -1,3 +1,55 @@
+## 0.5
+- New card pogchamp new card.
+  Name: Oasis of Passing Souls
+W (0)
+  Description:
+    Choose |e:1| card in |Exile| whose total cost equals 2 (3) or less. Add a |Copy| of it to the hand. |Retain| it this turn. Exile.
+
+Komachi's White Pool is quite shallow rn so this is just a new addition to help with her exile recursion. Copy makes it synergize with Extinct Fauna.
+
+- Forever Cancelled Reworked:
+"Each time |Vengeful Spirits| are |Detonated| on an enemy, apply 4 (6) |Vengeful Spirits| on that enemy." -> "Each time |Vengeful Spirits| are |Detonated| on an enemy, apply half the detonated amount (rounding up) on that enemy."
+Its cost changed from 2B (B) -> 2BB (2B)
+
+For a rare, Forever cancelled's effect was kinda underwhelming in practice. This new effect should give it a more exciting feel. Cost might be adjusted if it turns out too high.
+
+- Shinigami Finesse+ changed from increasing damage to increasing amount of attacks by 1.
+Meaning it now does 7 Damage n+1 times (where n is the target's distance) rather than just doing 9 damage n times.
+
+This should make it scale much more nicely with firepower while also, making its damage in one distance become not so pathetic. It becomes an all rounder attack for all distance levels.
+
+- Detonate now draws a card.
+
+This is just small utility to encourage you to use it as a detonation option over other card effects.
+
+- Increased possessed Armament's application of Vengeful Spirit per unblocked attack from 1 (2) -> 2 (3)
+
+Old numbers made it essentially a delayed +2 Firepower, which wasn't that impactful. This should maake the card much more pickable.
+
+- Free Trauma?!+ is no longer free. Instead, it increases the vengeful application to 5 and reduces the release costs to 3/6.
+
+0 cost give mana on a card without exile was... I don't know what I was thinking tbh. It should be a much more balanced card now.
+
+- Riverside Garden now has a cap on how much it can heal you, equal to your HP when you play it + 6 (9).
+
+This card is such a design headache because I wanted it to heal you from the poison you took from playing the flowers, and also work with the Titanic exhibit to give you extra heals from the lilies you get right before battle ends. However, the effect itself restricted me from implementing any recurring spider lily generating card because it would promote stalling to heal. A cap isn't the most ideal solution, but hopefully it lets me have more freedom with card design in the future. On the plus side, it does make its innate on upgrade much more in theme.
+
+- Lifespan's end+ no longer gives 4 Firepower.
+
+The upgrade is kinda a ridiculous jump in power. This is just to reign it in.
+
+- The synergy effect of Storm of the Grieving Dead changed:
+Old:    |For each RR (R) spent|: Gain 1 |Temporary Firepower| and deal 12 (5) damage.
+New:    |For each RR (R) spent|: Deal 15 (10) damage, then gain 1 |Temporary Firepower|.
+
+This card's damage scaled way too much with red mana generation. It should be a lot more reasonable now and not turn runs into a joke.
+- Equalize Distance+ now has regular echo instead of permanent echo.
+
+Too much draw...
+- Reduced Spiritual Damage+'s damage from 14->13.
+- Added a bunch of flavor text.
+
+
 ## 0.4.5
 ### Minor Stuff
 - Forever Cancelled cost changed from 1BB to 2B.
@@ -6,6 +58,7 @@
 - Chain Detonation cost changed from 1B to BB (1B).
 - Fixed a bug with Low Tier Shinigami applying Vulnerable before dealing damage, rather than after.
 - Added some custom guns to a few attacks.
+- Updated icon cuz why not
 
 ## 0.4.4
 ### Even more boss changes

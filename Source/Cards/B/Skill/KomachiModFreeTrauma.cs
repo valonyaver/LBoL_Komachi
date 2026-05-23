@@ -24,7 +24,6 @@ namespace KomachiMod.Cards
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1 };
-            config.UpgradedCost = new ManaGroup() { Any = 0 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
@@ -32,9 +31,11 @@ namespace KomachiMod.Cards
 
             // Release cost1
             config.Value1 = 4;
+            config.UpgradedValue1 = 3;
 
             // Release cost2
             config.Value2 = 8;
+            config.UpgradedValue2 = 6;
 
             config.Mana = new ManaGroup() { Black = 1 };
 
@@ -55,7 +56,7 @@ namespace KomachiMod.Cards
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value1);
         // Vengeful spirits inflicted.
         protected override int BaseValue3 { get => 3; }
-        protected override int BaseUpgradedValue3 { get => 3; }
+        protected override int BaseUpgradedValue3 { get => 5; }
 
         public override Interaction Precondition()
         {

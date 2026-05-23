@@ -14,9 +14,6 @@ using LBoL.Core.StatusEffects;
 
 namespace KomachiMod.Cards
 {
-    /// <summary>
-    /// Unused card. Used for early testing of the distance mechanic.
-    /// </summary>
     public sealed class KomachiModLowTierShinigamiDef : KomachiCardTemplate
     {
         public override CardConfig MakeConfig() 

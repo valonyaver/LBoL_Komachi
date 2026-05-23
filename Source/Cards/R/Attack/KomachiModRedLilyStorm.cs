@@ -39,8 +39,8 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.AllEnemies;
 
-            config.Damage = 12;
-            config.UpgradedDamage = 5;
+            config.Damage = 15;
+            config.UpgradedDamage = 10;
 
             // Amount of firepower per X mana cost
             config.Value1 = 1;
@@ -117,47 +117,57 @@ namespace KomachiMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            // Exile lilies
             Card precon = KomachiModUtility.GetPreconditionCard(precondition);
             int redliliesCount = 0;
             int redLiliesFP = 0;
+
+            // 1. Exile lilies and calculate IMMEDIATE Firepower
             if (precon != null && precon.ChoiceCardIndicator == 2)
             {
                 List<Card> lilies = Battle.HandZone.Concat(Battle.DiscardZone)
                   .Where(card => card.GetType() == typeof(KomachiModSpiderLily)).ToList();
 
-                foreach (var lily in lilies)
+                foreach (KomachiModSpiderLily lily in lilies)
                 {
-                    if (lily.IsUpgraded)
-                    {
-                        redLiliesFP += 3;
-                    }
-                    else redLiliesFP++;
+                    // Lily values: Upgraded = 3, Normal = 1
+                    redLiliesFP += lily.Value1;
                     redliliesCount++;
                     yield return new ExileCardAction(lily);
                 }
-                //yield return new ExileManyCardAction(lilies);
             }
 
-            if (IsUpgraded) redliliesCount *= 2;
+            // Upgraded effect: Double the number of hits from lilies
+            int lilyHitCount = IsUpgraded ? redliliesCount * 2 : redliliesCount;
 
-            // Get the synergy
-            int synergyCost = Mana.Total;
+            // 2. Calculate Mana Synergy
+            int redManaSpent = base.SynergyAmount(consumingMana, ManaColor.Red, Mana.Total);
 
-            int red = base.SynergyAmount(consumingMana, ManaColor.Red, synergyCost);
+            // 3. APPLY LILY FIREPOWER BEFORE ATTACK
+            if (redLiliesFP > 0)
+            {
+                yield return BuffAction<TempFirepower>(redLiliesFP * Value1);
+            }
 
-            // For every synergy and for every lily banished do the thingy thing
-            yield return BuffAction<TempFirepower>((red + redLiliesFP) * Value1);
-            Guns guns = new Guns(base.GunName, red + redliliesCount);
+            // 4. PERFORM ATTACK
+            // Total hits = (Hits from lilies) + (Hits from Red Mana)
+            Guns guns = new Guns(base.GunName, lilyHitCount + redManaSpent);
             foreach (GunPair gunPair in guns.GunPairs)
             {
                 yield return AttackAction(selector, gunPair);
             }
-            if (consumingMana.Total > 3 || IsUpgraded)
+
+            // 5. APPLY MANA-BASED FIREPOWER AFTER ATTACK (The Nerf)
+            if (redManaSpent > 0)
             {
-                var discardLily = Library.CreateCard<KomachiModSpiderLily>();
-                yield return new AddCardsToDiscardAction(discardLily);
+                yield return BuffAction<TempFirepower>(redManaSpent * Value1);
             }
+
+            // 6. Post-combat lily generation
+            if (consumingMana.Total >= 3 || IsUpgraded)
+            {
+                yield return new AddCardsToDiscardAction(Library.CreateCard<KomachiModSpiderLily>());
+            }
+
             yield break;
         }
     }

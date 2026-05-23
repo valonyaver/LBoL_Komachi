@@ -42,7 +42,7 @@ namespace KomachiMod.Cards
             config.RelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDisplacementKeyword), nameof(KomachiDistanceKeyword) };
 
-            config.UpgradedKeywords = Keyword.EternalEcho;
+            config.UpgradedKeywords = Keyword.Echo;
 
 
             config.Illustrator = "しなぷう";

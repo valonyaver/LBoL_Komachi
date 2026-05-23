@@ -50,7 +50,7 @@ namespace KomachiMod.StatusEffects
             startOfExtraTurn = true;
             if (Count > 0)
             {
-                yield return new ApplyStatusEffectAction<Firepower>(Owner, Count);
+                // yield return new ApplyStatusEffectAction<Firepower>(Owner, Count);
                 manaAmount += new ManaGroup() { Colorless = Count };
                 yield return new GainManaAction(manaAmount);
                 yield return new DrawManyCardAction(Count);

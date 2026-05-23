@@ -48,6 +48,7 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModRiversideGardenDef))]
     public sealed class KomachiModRiversideGarden : KomachiCard
     {
+        int maxHeal => Value2 * 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return BuffAction<KomachiModRiversideGardenSe>(base.Value2, 0, 0, 0, 0.2f);

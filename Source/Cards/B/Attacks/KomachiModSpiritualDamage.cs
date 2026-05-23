@@ -34,7 +34,7 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
         
             config.Damage = 10;
-            config.UpgradedDamage = 14;
+            config.UpgradedDamage = 13;
 
             // duration increase
             config.Value1 = 1;

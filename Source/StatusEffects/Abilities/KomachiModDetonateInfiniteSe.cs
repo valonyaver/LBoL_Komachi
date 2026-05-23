@@ -35,7 +35,7 @@ namespace KomachiMod.StatusEffects
     [EntityLogic(typeof(KomachiModDetonateInfiniteSeDef))]
     public sealed class KomachiModDetonateInfiniteSe : StatusEffect
     {
-
+        public float multiplier => Level / 2.0f;
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent<DetonateVengefulSpiritEventArgs>
@@ -46,7 +46,10 @@ namespace KomachiMod.StatusEffects
         {
             if (args.noFizzle)
             {
-                React(new ApplyVengefulSpiritAction(this, args.Target, Level));
+                // Calculate total first, then round up once.
+                int reapplyAmount = Math.Max(1, (args.amountDetonated * multiplier).CeilingToInt());
+
+                React(new ApplyVengefulSpiritAction(this, args.Target, reapplyAmount));
             }
         }
     }

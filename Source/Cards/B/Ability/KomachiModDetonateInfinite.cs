@@ -24,8 +24,8 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(400);
 
             config.Colors = new List<ManaColor>() { ManaColor.Black };
-            config.Cost = new ManaGroup() { Black = 1, Any = 2 };
-            config.UpgradedCost = new ManaGroup() { Black = 1 };
+            config.Cost = new ManaGroup() { Black = 2, Any = 2 };
+            config.UpgradedCost = new ManaGroup() { Black = 1, Any = 2 };
 
             config.Rarity = Rarity.Rare;
 
@@ -37,8 +37,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 6;
 
             // Buff amount
-            config.Value2 = 4;
-            config.UpgradedValue2 = 6;
+            config.Value2 = 1;
 
             config.RelativeEffects = new List<string>()
             { 

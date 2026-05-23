@@ -10,6 +10,7 @@ using LBoL.Core.Battle.BattleActions;
 using KomachiMod.StatusEffects;
 using LBoL.Core.Units;
 using KomachiMod.BattleActions;
+using LBoL.EntityLib.StatusEffects.Reimu;
 
 namespace KomachiMod.Cards
 {
@@ -32,7 +33,6 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
 
             config.Damage = 7;
-            config.UpgradedDamage = 9;
             config.RelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(KomachiDistanceKeyword) };
 
@@ -48,7 +48,15 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModShinigamiFinesseDef))]
     public sealed class KomachiModShinigamiFinesse : KomachiCard
     {
-        int attackAmount = 1;
+        int attackGetter = 1;
+        public int attackAmount
+        {
+            get
+            {
+                if (IsUpgraded) return attackGetter + 1;
+                else return attackGetter;
+            }
+        }
         public int three = 3;
 
         protected override void OnEnterBattle(BattleController battle)
@@ -66,9 +74,9 @@ namespace KomachiMod.Cards
         {
             if (args.ActionSource == this && args.Targets != null)
             {
-                attackAmount = KomachiModDistanceSe.GetDistanceLevel(args.Targets[0]);
+                attackGetter = KomachiModDistanceSe.GetDistanceLevel(args.Targets[0]);
             }
-            else attackAmount = 1;
+            else attackGetter = 1;
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

@@ -24,8 +24,8 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             // spirits inflicted
-            config.Value1 = 1;
-            config.UpgradedValue1 = 2;
+            config.Value1 = 2;
+            config.UpgradedValue1 = 3;
 
             config.RelativeEffects = new List<string>()
             { 

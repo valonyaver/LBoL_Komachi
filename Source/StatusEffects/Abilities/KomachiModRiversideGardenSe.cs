@@ -9,6 +9,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,8 +40,12 @@ namespace KomachiMod.StatusEffects
                 return base.Battle.EnumerateAllCards().Count((Card card) => card is KomachiModSpiderLily);
             }
         }
+
+        int playerLifeOnRecord;
+        int healCeiling => playerLifeOnRecord + Level * 3;
         protected override void OnAdded(Unit unit)
         {
+            playerLifeOnRecord = Owner.Hp;
             // Card upgrade stuffs
             base.ReactOwnerEvent<CardsEventArgs>(base.Battle.CardsAddedToDiscard, new EventSequencedReactor<CardsEventArgs>(this.OnAddCard));
             base.ReactOwnerEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new EventSequencedReactor<CardsEventArgs>(this.OnAddCard));
@@ -78,10 +83,21 @@ namespace KomachiMod.StatusEffects
 
         private IEnumerable<BattleAction> OnBattleEnding(GameEventArgs args)
         {
-            if (base.Battle.Player.IsAlive)
+            var player = base.Battle.Player;
+
+            if (player.IsAlive)
             {
                 base.NotifyActivating();
-                yield return new HealAction(base.Battle.Player, base.Battle.Player, base.Level * SpiderLilyCount, HealType.Normal, 0.2f);
+                int rawHealAmount = base.Level * SpiderLilyCount;
+
+                // Ensure the total life after healing does not exceed the ceiling
+                // Final Heal = Min(Raw Heal, Ceiling - Current Life)
+                int finalHeal = Math.Min(rawHealAmount, Math.Max(0, healCeiling - player.Hp));
+
+                if (finalHeal > 0)
+                {
+                    yield return new HealAction(player, player, finalHeal, HealType.Normal, 0.2f);
+                }
             }
             yield break;
         }

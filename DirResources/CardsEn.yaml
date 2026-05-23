@@ -105,6 +105,7 @@ KomachiModDetonateToken:
   Name: Detonation
   Description: |-
     |Detonate| an enemy.
+    Draw |e:1| card.
   ExtraDescription1: |-
     Do not |Detonate|.
   ExtraDescription2: |-
@@ -163,6 +164,9 @@ KomachiModRetreat:
     If the target's |Distance| is {Value3}, add a |Manipulate Distance| to your hand.
   ExtraDescription1: Do not displace target.
   ExtraDescription2: Do not displace other enemies.
+  FlavorText: |-
+    Make sure to practice some social distancing.
+# Pun
 
 # One of her soku skills
 KomachiModEndlessWay:
@@ -175,6 +179,10 @@ KomachiModEndlessWay:
     |Release| {Value2}: Apply {lockOnAmount} |Lock on|.
   ExtraDescription2: |-
     |Release| {Value3}: Apply {lockOnAmount2} |Lock on|
+  FlavorText: |-
+    Make sure to avoid Perpetual Motion Machines.
+# Reference to chainsawman, where he defeats the eternity devil that traps them in an infinite hallway 
+# by using its blood to heal himself infinitely as he kills it, naming himself a perpetual motion machine.
 
 KomachiModSweep:
   Name: Sweeping Scythe
@@ -182,6 +190,8 @@ KomachiModSweep:
     |Displace| each enemy by -{Value1}.
     Deal {Damage} damage to each enemy. 
     Add {Value2:plural one='a |Manipulate Distance|' other='% |Manipulate Distance|'} to the hand.
+  FlavorText: |-
+    Sweep!
 
 KomachiModDistanceTax:
   Name: Distance Tax
@@ -190,6 +200,10 @@ KomachiModDistanceTax:
     1-2: {Value1} |Weak|.
     3: {Value2} |Lock on| and |Temporary Firepower down|.
     4-5: {Value3} |Vulnerable|.
+  FlavorText: |-
+    Death and taxes are certain, but the Ministry charges extra for the shipping and handling.
+# The phrase "Death and Taxes"
+    
 
 # One of her soku skills
 KomachiModTasteOfDeath:
@@ -197,6 +211,9 @@ KomachiModTasteOfDeath:
   Description: |-
     |Displace| by -{Value1}.
     Deal {Damage} damage.
+  FlavorText: |-
+    It’s an acquired taste. Usually, people only try it once.
+# cuz... taste.
 
 KomachiModPushDraw:
   Name: Pushback Draw
@@ -207,6 +224,9 @@ KomachiModPushDraw:
     You can |Displace| by up +{Value1}.
     Draw cards equal to that enemy's |Distance|.
   ExtraDescription1: "Do not |Displace|."
+  FlavorText: |-
+    I find that withdrawing from the situation really helps me draw better conclusions.
+# Pun on draw.
 
 KomachiModQuickNap:
   Name: Quick Nap
@@ -214,6 +234,9 @@ KomachiModQuickNap:
     Gain {Value1} life. 
     At the start of {PlayerName}'s next turn, gain {Mana}.
     End {PlayerName}'s turn.
+  FlavorText: |-
+    Zzz...
+# the Zs of sleep.
 
 # One of her soku skills
 KomachiModDistanceAttack:
@@ -221,6 +244,9 @@ KomachiModDistanceAttack:
   Description: |-
     Deal {Damage} damage. 
     Whenever an enemy's |Distance| is changed, return {SelfName} from the discard pile to the hand.
+  FlavorText: |-
+    Ground combo into 236B. Air combo into 236B. Corner pressure into 236B. Long Nap into 236B.
+# Reference to how the skill is one of her most useful in Soku (supposedly. I'm too bad at fighting games to actually know for sure.)
 
 # one of her soku spellcards
 KomachiModScytheFinalJudgment:
@@ -238,6 +264,9 @@ KomachiModScytheFinalJudgment:
   DetailText: |-
     This card's damage will be increased by 30% and 60% for distances 4 and 5 respectively.
     The damage will be calculated separately for each enemy.
+  FlavorText: |-
+    "On days where Ms. Eiki's sick, I have to serve as the judge, jury, and executioner. It's very bothersome to my <s>sleeping</s> schedule. They don't even pay extra!"
+# A play on the phrase "Judge, Jury, Executionor". <s> gives a strikethrough effect.
 
 KomachiModShinigamiFinesse:
   Name: Shinigami's Finesse
@@ -245,11 +274,17 @@ KomachiModShinigamiFinesse:
    Deal {Damage} damage {attackAmount} {attackAmount:plural one='time' other='times'}.
    The amount of times this card attacks is equal to the distance level of the target.
    If the target's distance is <b>less than</b> {three}, this attack becomes |Accurate|.
+  UpgradedDescription: |-
+   Deal {Damage} damage {attackAmount} {attackAmount:plural one='time' other='times'}.
+   The amount of times this card attacks is equal to the distance level of the target+1.
+   If the target's distance is <b>less than</b> {three}, this attack becomes |Accurate|.
 
 KomachiModDistanceBlock:
   Name: Flexible Work Schedule
   Description: |-
     Each time an enemy is |Displaced|, gain {Value1} |Block| for each level of distance changed.
+  FlavorText: |-
+   "Working a 9 to 5 isn't so bad when you can doze off for most of it."
 
 KomachiModDistanceGenerator:
   Name: Hardworking Shinigami
@@ -259,12 +294,16 @@ KomachiModDistanceGenerator:
     Add 1 |Manipulate DIstance| to your hand.
     At the start of {PlayerName}'s turn, if there are no |Manipulate Distances| in the hand, add {Value1} |Manipulate Distance| to your hand.
 
+
 KomachiModDistanceFlow:
   Name: Flow of the Sanzu River
   Description: |-
     Each time an enemy is |Displaced|:
     - If the Distance was increased, gain {Value1} |Temporary Spirit|
     - If the Distance was decreased, gain {Value1} |Temporary Firepower|
+  FlavorText: |-
+    If you see two fish fighting in the water, you can be sure a Taoist passed by five minutes ago
+# An old proverb. The original says englishman instead of taoist.
 
 KomachiModPushNPull:
   Name: Push and Pull
@@ -291,7 +330,7 @@ KomachiModRiversideGarden:
   Description: |-
     Whenever {PlayerName} adds |Spider Lily| during this combat, |Upgrade| it.
     Add {Value1} |Spider Lily| to the hand, draw pile, and discard pile.
-    At the end of combat, gain {Value2} life for every |Spider Lily| on the |battlefield|.
+    At the end of combat, gain {Value2} life for every |Spider Lily| on the |battlefield| (up to {PlayerName}'s current life + {maxHeal}).
 
 
 # Note that it "reduces" the cost, not changes it. To imply that 0 cost cards do not get more expensive (since mana here is 1)
@@ -316,6 +355,8 @@ KomachiModWeedCutter:
     Deal {Damage} damage. 
     Draw {Value1} card.
     Add a |Manipulate Distance| to your hand.
+  FlavorText: "If you treat your enemies like plants, scythes no longer become impractical weapons."
+# Scythes are famous for being impractical weapons due to being originally farming tools. But if your enemies are plants, then they become practical again!
 
 KomachiModParry:
   Name: Scythe Parry
@@ -329,6 +370,7 @@ KomachiModCoinThrow:
   Description: |-
     Deal {Damage} damage to each enemy.
     Lose {Value1} <sprite="Point" name="Gold">.
+  FlavorText: "That's someone with a lot of disposable income."
 
 KomachiModIgnoreNagging:
   Name: Ignore Nagging
@@ -356,10 +398,10 @@ KomachiModWorkFocus:
   Name: Work Focus
   Description: |-
     |Exile| up to {Value1} cards from the hand; add that many |Manipulate Distances| to your hand.
-    If an upgraded card was exiled this way, add a |Spider Lily| to your hand.
+    If an |Upgraded| card was exiled this way, add a |Spider Lily| to your hand.
   UpgradedDescription: |-
     |Exile| up to {Value1} cards from the hand, draw pile, and discard pile; add that many |Manipulate Distances| to your hand.
-    If an upgraded card was exiled this way, add a |Spider Lily| to your hand.
+    If an |Upgraded| card was exiled this way, add a |Spider Lily| to your hand.
 
 KomachiModSpySpirit:
   Name: Accompanying Spy Spirit
@@ -385,8 +427,8 @@ KomachiModEqualizeDistance:
 KomachiModRitualOfEcstasy:
   Name: Ritual of Ecstasy
   Description: |-
-    Invert target's |Distance|, then apply 1 of these effects.
-    If the target's distance is {three}, you can choose the effect.
+    Invert target's |Distance|, then apply 1 of the following effects.
+    If the target's distance is {three}, you can choose the effect instead.
     If the distance was reduced, draw {Value1} cards. If it was increased, gain {Value2} |Graze| and {Block} |Block|.
   ExtraDescription1: |-
     Draw {Value1} cards.
@@ -457,10 +499,10 @@ KomachiModBoomBenefits:
   Name: Siren’s Bounty
   Description: |-
     |Detonate| an Enemy, then |Choose|:
-    - Gain 1 |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
-    - Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
-  ExtraDescription1: Gain 1 |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
-  ExtraDescription2: Draw 1 card for every {Value2} detonated |Vengeful Spirit|.
+    - Gain |e:1| |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
+    - Draw |e:1| card for every {Value2} detonated |Vengeful Spirit|.
+  ExtraDescription1: Gain |e:1| |Guided Spirit| for every {Value1} detonated |Vengeful Spirit|.
+  ExtraDescription2: Draw |e:1| card for every {Value2} detonated |Vengeful Spirit|.
 
 # Soku spell
 KomachiModShootGhosts:
@@ -487,6 +529,8 @@ KomachiModVengefulSweep:
     |Release| {Value2}: Apply {Value1} more |Vengeful Spirits| on each enemy.
   ExtraDescription2: |-
     |Release| {Value3}: Apply {Value1} more |Vengeful Spirits| on each enemy, then add |Detonation| to your hand.
+  FlavorText: |-
+    Vengeful Sweep!
 
 # Soku
 KomachiModVengefulerSweep:
@@ -504,6 +548,9 @@ KomachiModVengefulerSweep:
     This attack becomes |Accurate|.
   ExtraDescription4: |-
     Apply {Value1} more |Vengeful Spirits| to each enemy.
+  FlavorText: |-
+    Vengefuler Sweep!
+# I found my internal names for the three sweep cards to be funny so I just put them as the flavor text.
 
 KomachiModFreeTrauma:
   Name: Free Trauma?!
@@ -515,6 +562,9 @@ KomachiModFreeTrauma:
     |Release| {Value1}: Gain {Mana}.
   ExtraDescription2: |-
     |Release| {Value2}: Gain {Mana}{Mana}.
+  FlavorText: |-
+    In this economy?
+# Free trauma?! In this economy?
 
 KomachiModSpiritBarrier:
   Name: Spirit Barrier
@@ -523,6 +573,9 @@ KomachiModSpiritBarrier:
     |Release| all: Gain {Value2} |Barrier| for every spirit you released.
   ExtraDescription1: |-
     |Release| all: Gain {Value2} |Barrier| for every spirit you released.
+  FlavorText: |-
+    Protected by the power of Friendship!
+# The spirits you are releasing are your friends, at least that's what Komachi says.
 
 KomachiModScytheHeal:
   Name: Scythe of Draining Spirit
@@ -583,7 +636,7 @@ KomachiModDetonateInfinite:
   Name: Forever Cancelled
   Description: |-
     Apply {Value1} |Vengeful Spirits|.
-    Each time |Vengeful Spirits| are |Detonated| on an enemy, apply {Value2} |Vengeful Spirits| on that enemy.
+    Each time |Vengeful Spirits| are |Detonated| on an enemy, apply half the detonated amount (rounding up) on that enemy.
 
 # Can also mean mental damage
 KomachiModSpiritualDamage:
@@ -678,6 +731,9 @@ KomachiModHalfLife3:
     If the target has a known name, you must |Release| {Value2} instead.
   ExtraDescription1: |-
     |Release| {releaseValue}: Deal half the target's current life as damage.
+  FlavorText: |-
+    Due to breakthroughs in modern medicine, dietary improvements, and the recent unsealing of a goddess of permanance, the Hieda lifespan is no longer so short.
+# referring to Ariya Iwanaga's unsealing in Touhou 20 (to which Akyuu prays to) potentially leading to akyuu living longer.
 
 # Soku
 KomachiModDistanceCloser:
@@ -690,7 +746,6 @@ KomachiModDistanceCloser:
     |Release| {releaseCost}: Gain {firepowerValue} |Temporary Firepower| for every {firepowerCond} |Vengeful Spirits| on that target.
   DetailText: |-
     The amount of |Vengeful Spirits| applied is equal to the actual amount of displacement, rather than the choice.
-# NOTE TO SELF. TEST THIS CARD FOR ITS DETAILTEXT.
 
 KomachiModEthicallySourcedBreak:
   Name: Ethically Sourced Break
@@ -699,6 +754,9 @@ KomachiModEthicallySourcedBreak:
     End {PlayerName}'s turn. 
     At the start of {PlayerName}'s next turn, end {PlayerName}'s turn.
     At the start of {PlayerName}'s next turn after that, gain {Mana}, and draw {Value3} cards.
+  FlavorText: |-
+    "ZZZZzzzzzzzz...."
+# Like quick nap's flavor text but longer
 
 KomachiModInfernoTempest:
   Name: Souls at the end of the Road
@@ -710,18 +768,26 @@ KomachiModInfernoTempest:
     At the start of {PlayerName}'s next turn, choose up to {Value2} non-|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
   DetailText: |-
     There will be at least 1 card returned in each of the hand, draw pile, and discard pile.
+  FlavorText: |-
+    Wait where is my deck?
 
 KomachiModGuidedGreen:
   Name: Spirits of a Past Life
   Description: |-
     Gain {Value1} |Guided Spirits|.
     Draw {Value2} card{Value2:plural one='' other='s'}.
+  FlavorText: |-
+    "I can only hope your previous incarnation had a better work ethic."
+# Eiki scolding komachi.
 
 KomachiModMidsummerLily:
   Name: Lonesome Lily
   Description: |-
     After {PlayerName} plays a |Spider Lily|, add {Value1} |Midsummer Flower{Value1:plural one='' other='s'}| to the hand.
     Add {Value2} |Spider Lil{Value2:plural one='y' other='ies'}| to the top of the draw pile.
+  FlavorText: |-
+    A lone orphan, not realizing it had died, possessed the flower.
+# In PoFV, the flowers are possessed by spirits that did not know that they had died yet.
 
 KomachiModHellFreeze:
   Name: Hell's Frozen Warmth
@@ -763,8 +829,11 @@ KomachiModLifespanEnd:
   UpgradedDescription: |-
     End the {PlayerName}'s turn. Then, take an extra turn.
     |Block| is not lost during this extra turn.
-    |At the start of that extra turn|: Draw {Value2} cards, Gain {Mana}, and Gain {Value2} |Firepower|.
+    |At the start of that extra turn|: Draw {Value2} cards, Gain {Mana}.
     |At the end of the round|: Take {Value1} damage.
+  FlavorText: |-
+    Wait, whose lifespan is supposed to be ending here?!
+# Komachi asking whoever named the card why she is taking the damage.
 
 # Reference to the yugioh card gold sarcophagus. Try to put a ship pun in there if you can, otherwise just name it gold sarcophagus.
 KomachiModGoldSarcophagus:
@@ -783,6 +852,9 @@ KomachiModExileDoppelganger:
     You can only use each effect of {SelfName} once per turn.
   DetailText: |-
     Copies cannot be copied using the first effect.
+  FlavorText: |-
+    Why has no one thought of selling the rare fish from the Sanzu for profit?
+# The sanzu river contains extinct fish from the outside world.
 
 # Reference to the yugioh card tour guide from the underworld
 KomachiModSpiritDraw:
@@ -829,7 +901,9 @@ KomachiModEiki:
     But your backlog of 21 unferried spirits awaits after this. No dozing off.
   EikiAltWinChat9: |- # PK
     Agh- I mean, fine. I'll... promise not to sleep on the job later.
-
+  FlavorText: |-
+    "If you finally decide to work hard, I'll let you go."
+# Supposed to be a hint that playing the ultimate against eiki gives you an alt wincon.
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -837,6 +911,9 @@ KomachiModLilyHug:
   Description: |-
     Add a |Spider Lily| to your hand.
     After {PlayerName} plays a |Spider Lily|, gain {Value2} |Amulet|.
+  FlavorText: |-
+    Too haru for desu yo...
+# card art shows Lily White tightly hugging komachi. Too tightly. Haru desu yo is Lily's signature catch phrase. Idk if what I wrote even makes sense though lol.
 
 KomachiModStygianReel:
   Name: Stygian Reel
@@ -863,15 +940,15 @@ KomachiModRedLilyStorm:
   Description: |-
     You can exile all |e:Spider Lilies| in the hand and discard pile.
     |For each ||e:Spider Lily|| exiled|: Gain |Temporary Firepower| equal to the amount you would gain from playing them and Deal {Damage} damage.
-    |For each {Mana} spent|: Gain {Value1} |Temporary Firepower| and deal {Damage} damage.
+    |For each {Mana} spent|: Deal {Damage} damage, then gain {Value1} |Temporary Firepower|.
     If at least 3 mana was spent, Add a |e:Spider Lily| to the discard pile.
   UpgradedDescription: |-
     You can exile all |e:Spider Lilies| in the hand and discard pile.
     |For each ||e:Spider Lily|| exiled|: Gain |Temporary Firepower| equal to the amount you would gain from playing them and Deal {Damage} damage twice.
-    |For each {Mana} spent|: Gain {Value1} |Temporary Firepower| and deal {Damage} damage.
+    |For each {Mana} spent|: Deal {Damage} damage, then Gain {Value1} |Temporary Firepower|.
     Add a |e:Spider Lily| to the discard pile.
   DetailText: |-
-    The Firepower is gained all at once before any of the attack.
+    The Firepower from the Spider Lilies is gained all at once before any of the attacks.
   ExtraDescription1: |-
     Do not exile the |Spider Lilies|.
   ExtraDescription2: |-
@@ -885,20 +962,32 @@ KomachiModPosessedArmament:
   Name: Posessed Armament
   Description: |-
     Whenever {PlayerName} deals unblocked attack damage, also apply {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}|.
+  FlavorText: |-
+    If it's possessed, shouldn't it turn into an auto battler?
+# As in, if the weapon is possessed, it becomes autonomous enough to fight on its own. Auto battler being a game genre.
 
 KomachiModParasiticPollen:
   Name: Parasitic Pollen
   Description: |-
     Deal {Damage} damage {Value1} times.
     If the target is |Poisoned|, add a |Spider Lily| to the hand. Otherwise, Apply {Value2} |Poison|. 
-    If {PlayerName} is |Poisoned|, Lose {Value2} |Poison|, then apply |Poison| equal to the unblocked damage dealt.
+    If {PlayerName} is |Poisoned|, lose {Value2} |Poison|, then apply |Poison| equal to the unblocked damage dealt.
   FlavorText: |-
-    She got an unexpected fever right on her day off.
+    An unexplained fever right on her day off.
+# The lbol card "Unexplained fever". "her" being komachi.
+
+# Reference to the yugioh card, oasis of dragon souls.
+KomachiModOasis:
+  Name: Oasis of Passing Souls
+  Description: |-
+    Choose |e:1| card in |Exile| whose total cost equals {Value1} or less. Add a |Copy| of it to the hand. |Retain| it this turn.
 
 ## basic cards
 KomachiModAttackR:
   Name: Tip of the Reaper
   Description: Deal {Damage} damage.
+  FlavorText: "It stabs."
+# Reference to a very obscure tumblr screenshot about scythes.
 
 # The dot is accidental but intentionally kept in lol
 KomachiModBlockR:
@@ -913,10 +1002,13 @@ KomachiModAttackB:
   Description: Deal {Damage} damage.
   FlavorText: |-
     Flip the Jiangshi for 20 turns to win the game!
+# Reference to a strategy that ghostrick decks in yugioh utilized Ghostrick Jiangshi's flip effect to mill out the opponent.
 
 KomachiModBlockB:
   Name: Spirit Backing
   Description: Gain {Block} |Block|.
+  FlavorText: "Backup your spirits in the clouds of heaven, for a subscription of only 2 mana a month!"
+# As in, back up your folders. Cloud as in cloud storage.
 
 ## cards during komachi's boss fight
 KomachiModSanzuFare:
@@ -934,19 +1026,25 @@ KomachiModMoveToken:
   Name: Move!
   Description: |-
     |Displace| each enemy by +/-{Value1}.
-    |For each card used this turn|: This card costs {Mana} more.
+    |For each card used this turn|: This card costs {Mana} more (Max: 1). 
   UpgradedDescription: |-
     |Displace| each enemy by up to +/-{Value2}.
-    |For each card used this turn|: This card costs {Mana} more.
+    |For each card used this turn|: This card costs {Mana} more (Max: 1).
   ExtraDescription1: |-
     Close in!
     |Displace| by -{displaceAmount}.
   ExtraDescription2: |-
     Run away!
     |Displace| by +{displaceAmount}.
+  FlavorText: |-
+    Why are you running?
+# That one meme soundclip.
 
 KomachiModWeatheredLily:
   Name: Weathered Lily
   Description: |-
     Gain {Mana}.
     |At the end of the turn|: Gain {Value1} |Poison|.
+  FlavorText: |-
+    Take all the sins of mankind within you.
+# Same exact flavor text as spider lily. Except replace "grudge" with "sins"
