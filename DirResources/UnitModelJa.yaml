@@ -1,3 +1,11 @@
 KomachiMod:
   Default: 小野塚　小町
   Short: 小町
+
+KomachiModDivineSpiritEnemy:
+  Name: "神霊"
+  Default: '神霊'
+
+KomachiModVengefulSpiritEnemy:
+  Name: '怨霊'
+  Default: '怨霊'

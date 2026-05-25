@@ -1,3 +1,11 @@
 KomachiMod:
   Default: 오노즈카 코마치
   Short: 코마치
+
+KomachiModDivineSpiritEnemy:
+  Name: "신령"
+  Default: "신령"
+
+KomachiModVengefulSpiritEnemy:
+  Name: "원령"
+  Default: "원령"

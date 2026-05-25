@@ -1,3 +1,11 @@
 KomachiMod:
   Default: Komachi Onozuka
   Short: Komachi
+  
+KomachiModDivineSpiritEnemy:
+  Name: "Espíritu Divino"
+  Default: 'Divine Spirit'
+
+KomachiModVengefulSpiritEnemy:
+  Name: 'Espíritu Vengativo'
+  Default: 'Espíritu Vengativo'

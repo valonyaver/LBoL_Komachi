@@ -104,6 +104,7 @@ KomachiModDetonateToken:
   Name: 기폭
   Description: |-
     적 하나를 |기폭|합니다.
+    카드를 |e:1|장 뽑습니다.
   ExtraDescription1: |-
     |기폭|하지 않습니다.
   ExtraDescription2: |-
@@ -156,6 +157,8 @@ KomachiModRetreat:
     대상의 |거리|가 {Value3}일 경우 |거리 조작|을 한 장 손에 넣습니다.
   ExtraDescription1: 대상을 |이동|시키지 않음.
   ExtraDescription2: 다른 적들을 |이동|시키지 않음.
+  FlavorText: |-
+    사회적 거리두기를 꼭 실천하세요.
 
 # One of her soku skills
 KomachiModEndlessWay:
@@ -168,6 +171,10 @@ KomachiModEndlessWay:
     |해방| {Value2}: |록온| {lockOnAmount} 부여.
   ExtraDescription2: |-
     |해방| {Value3}: |록온| {lockOnAmount2} 부여.
+  FlavorText: |-
+    영구기관은 꼭 피하세요.
+# Reference to chainsawman, where he defeats the eternity devil that traps them in an infinite hallway 
+# by using its blood to heal himself infinitely as he kills it, naming himself a perpetual motion machine.
 
 KomachiModSweep:
   Name: 쓸어내리는 낫
@@ -175,6 +182,8 @@ KomachiModSweep:
     모든 적을 -{Value1} |이동|시킵니다.
     모든 적에게 피해를 {Damage} 줍니다.
     |거리 조작|을 {Value2}장 손에 넣습니다.
+  FlavorText: |-
+    슉!
 
 KomachiModDistanceTax:
   Name: 거리세
@@ -183,6 +192,9 @@ KomachiModDistanceTax:
     1–2: |허약| {Value1}
     3: |록온| {Value2}, |일시 화력 저하| {Value2}
     4–5: |취약| {Value3}
+  FlavorText: |-
+    죽음과 세금은 피할 수 없다지만, 청에서는 배송 및 취급 수수료를 별도로 청구합니다.
+# The phrase "Death and Taxes"
 
 # One of her soku skills
 KomachiModTasteOfDeath:
@@ -190,6 +202,9 @@ KomachiModTasteOfDeath:
   Description: |-
     -{Value1} |이동|.
     피해를 {Damage} 줍니다.
+  FlavorText: |-
+    익숙해져야 제맛입니다. 보통은 한 번밖에 못 맛보지만요.
+# cuz... taste.
 
 KomachiModPushDraw:
   Name: 밀치고 뽑기
@@ -200,6 +215,9 @@ KomachiModPushDraw:
     최대 {Value1} |이동|시킬 수 있습니다.
     대상 적의 |거리|만큼 카드를 뽑습니다.
   ExtraDescription1: "이동하지 않음."
+  FlavorText: |-
+    상황에서 한발 물러나 보면, 더 나은 결론도 뽑아낼 수 있더군요.
+# Pun on draw.
 
 KomachiModQuickNap:
   Name: 짧은 낮잠
@@ -207,6 +225,9 @@ KomachiModQuickNap:
     체력을 {Value1} 회복합니다.  
     다음 턴 시작 시 {Mana}를 얻습니다.  
     {PlayerName}의 턴을 종료합니다.
+  FlavorText: |-
+    Zzz...
+# the Zs of sleep.
 
 # One of her soku skills
 KomachiModDistanceAttack:
@@ -214,6 +235,9 @@ KomachiModDistanceAttack:
   Description: |-
     피해를 {Damage} 줍니다.  
     적의 |거리|가 변경될 때마다 버린 카드 더미에 있는 {SelfName}을 손으로 되돌립니다.
+  FlavorText: |-
+    지상 콤보는 236B로. 공중 콤보도 236B로. 구석 압박도 236B로. 긴 낮잠도 236B로.
+# Reference to how the skill is one of her most useful in Soku (supposedly. I'm too bad at fighting games to actually know for sure.)
 
 # one of her soku spellcards
 KomachiModScytheFinalJudgment:
@@ -233,18 +257,27 @@ KomachiModScytheFinalJudgment:
   DetailText: |-
     이 카드의 피해는 거리 4에서 30%, 거리 5에서 60% 증가합니다.
     피해는 적마다 개별적으로 계산됩니다.
+  FlavorText: |-
+    "에이키 님이 아프신 날에는 제가 판사이자 배심원이자 집행인 노릇을 해야 해요. 제 <s>수면</s> 일정에 아주 방해된다니까요. 추가 수당도 안 준다니까요!"
+# A play on the phrase "Judge, Jury, Executionor". <s> gives a strikethrough effect.
 
 KomachiModShinigamiFinesse:
   Name: 사신의 기량
   Description: |-
-    피해를 {Damage}씩 {attackAmount}번 가합니다.  
+    피해를 {Damage}씩 {attackAmount}번 줍니다.  
     이 카드의 공격 횟수는 대상의 |거리| 단계와 같습니다.  
-    대상의 거리 단계가 {three} <b>미만</b>이면, 이 공격은 |명중|으로 처리됩니다.
+    대상의 거리 단계가 {three} <b>미만</b>이면, 이 공격에 |명중|이 붙습니다.
+  UpgradedDescription: |-
+    피해를 {Damage}씩 {attackAmount}번 줍니다.
+    이 카드의 공격 횟수는 대상의 |거리| 단계에 1을 더한 값과 같습니다.
+    대상의 거리 단계가 {three} <b>미만</b>이면, 이 공격에 |명중|이 붙습니다.
 
 KomachiModDistanceBlock:
   Name: 유연한 근무 시간표
   Description: |-
     적이 |이동|될 때마다, 거리 변화 수치 1단계당 |방어|를 {Value1} 얻습니다.
+  FlavorText: |-
+   "대부분 졸면서 보낼 수 있다면, 9시부터 5시까지 일하는 것도 그리 나쁘진 않아요."
 
 KomachiModDistanceGenerator:
   Name: 근면한 사신
@@ -262,6 +295,9 @@ KomachiModDistanceFlow:
     적이 |이동|될 때마다:  
     - 거리가 증가했으면 |일시 영력| {Value1} 획득  
     - 거리가 감소했으면 |일시 화력| {Value1} 획득
+  FlavorText: |-
+    물속에서 두 물고기가 싸우는 걸 보았다면, 틀림없이 5분 전에 도사가 지나간 것이다.
+# An old proverb. The original says englishman instead of taoist.
 
 KomachiModPushNPull:
   Name: 밀고 당기기
@@ -287,9 +323,9 @@ KomachiModReviveCard:
 KomachiModRiversideGarden:
   Name: 강가의 정원
   Description: |-
-    |피안화|를 손, 뽑을 카드 더미, 버린 카드 더미에 각각 {Value1}장 추가합니다.  
-    이 전투 중 |피안화|를 손에 넣을 때마다 |강화|됩니다.  
-    전투 종료 시 전장에 남아 있는 |피안화| 1장당 체력을 {Value2} 회복합니다.
+    이 전투 중 {PlayerName}가 |피안화|를 추가할 때마다, 그 카드를 |강화|합니다.
+    |피안화|를 손, 뽑을 카드 더미, 버린 카드 더미에 각각 {Value1}장 추가합니다.
+    전투 종료 시 |전장|의 |피안화| 1장마다 체력을 {Value2} 회복합니다. (최대 {PlayerName}의 현재 체력 + {maxHeal}까지)
 
 # Note that it "reduces" the cost, not changes it. To imply that 0 cost cards do not get more expensive (since mana here is 1)
 KomachiModShinigamiTactics:
@@ -315,6 +351,7 @@ KomachiModWeedCutter:
     피해를 {Damage} 줍니다.  
     카드를 {Value1}장 뽑습니다.  
     |거리 조작|을 손에 1장 넣습니다.
+  FlavorText: "적을 식물처럼 대하면, 낫도 더 이상 비실용적인 무기가 아니게 됩니다."
 
 KomachiModParry:
   Name: 낫으로 받아내기
@@ -328,6 +365,7 @@ KomachiModCoinThrow:
   Description: |-
     모든 적에게 피해를 {Damage} 줍니다.  
     <sprite="Point" name="Gold">를 {Value1} 잃습니다.
+  FlavorText: "여윳돈이 참 많나 보군요."
 
 KomachiModIgnoreNagging:
   Name: 잔소리 무시
@@ -354,11 +392,11 @@ KomachiModManipDefence:
 KomachiModWorkFocus:
   Name: 업무 집중
   Description: |-
-    손패에서 최대 {Value1}장까지 |소멸|시키고, 그 수만큼 |거리 조작|을 손에 넣습니다.  
-    이때 강화된 카드를 소멸했다면 |피안화|를 1장 손에 넣습니다.
+    손에서 카드를 최대 {Value1}장 |소멸|시키고, 그 수만큼 |거리 조작|을 손에 넣습니다.
+    이때 |강화|된 카드를 |소멸|했다면 |피안화|를 손에 넣습니다.
   UpgradedDescription: |-
-    손패, 뽑을 카드 더미, 버린 카드 더미에서 최대 {Value1}장을 |소멸|하고, 그 수만큼 |거리 조작|을 손에 넣습니다.  
-    이때 강화된 카드를 소멸했다면 |피안화|를 1장 손에 넣습니다.
+    손, 뽑을 카드 더미, 버린 카드 더미에서 카드를 최대 {Value1}장 |소멸|시키고, 그 수만큼 |거리 조작|을 손에 넣습니다.
+    이때 |강화|된 카드를 |소멸|했다면 |피안화|를 손에 넣습니다.
 
 KomachiModSpySpirit:
   Name: 따라다니는 첩자령
@@ -384,10 +422,10 @@ KomachiModEqualizeDistance:
 KomachiModRitualOfEcstasy:
   Name: 도취의 의식
   Description: |-
-    대상의 |거리|를 반전시키고, 다음 효과 중 하나를 줍니다.  
-    거리 단계가 3이라면 효과를 선택할 수 있습니다.  
-    거리가 감소했으면 카드를 {Value1}장 뽑고,  
-    거리가 증가했으면 |그레이즈| {Value2}, |방어| {Block}을 얻습니다.
+    대상의 |거리|를 반전시킨 뒤, 다음 효과 중 하나를 적용합니다.
+    대상의 |거리|가 {three}라면 대신 효과를 선택할 수 있습니다.
+    거리가 감소했다면 카드를 {Value1}장 뽑습니다.
+    거리가 증가했다면 |그레이즈|를 {Value2}, |방어|를 {Block} 얻습니다.
   ExtraDescription1: |-
     카드를 {Value1}장 뽑습니다.
   ExtraDescription2: |-
@@ -456,13 +494,14 @@ KomachiModGuidingSanzu:
 KomachiModBoomBenefits:
   Name: 사이렌의 선물
   Description: |-
-    적 하나를 |기폭|합니다. 그런 다음 |선택|합니다:  
-    - {Value1}개의 |기폭|된 |원령|마다 |인도된 영혼| 1 획득  
-    - {Value2}개의 |기폭|된 |원령|마다 카드 1장 뽑기
+    적 하나를 |기폭|합니다.
+    그런 다음 |선택|합니다:
+    - |기폭|된 |원령| {Value1}개마다 |인도된 영혼|을 |e:1| 얻습니다.
+    - |기폭|된 |원령| {Value2}개마다 카드를 |e:1|장 뽑습니다.
   ExtraDescription1: |-
-    {Value1}개의 |기폭|된 |원령|마다 |인도된 영혼| 1 획득
+    |기폭|된 |원령| {Value1}개마다 |인도된 영혼|을 |e:1| 얻습니다.
   ExtraDescription2: |-
-    {Value2}개의 |기폭|된 |원령|마다 카드 1장 뽑기
+    |기폭|된 |원령| {Value2}개마다 카드를 |e:1|장 뽑습니다.
 
 # Soku spell
 KomachiModShootGhosts:
@@ -490,6 +529,8 @@ KomachiModVengefulSweep:
     |해방| {Value2}: 모든 적에게 |원령|을 {Value1} 더 줍니다.
   ExtraDescription2: |-
     |해방| {Value3}: 모든 적에게 |원령|을 {Value1} 더 주고, |기폭| 카드를 손에 넣습니다.
+  FlavorText: |-
+    원령 싹쓸이!
 
 # Soku
 KomachiModVengefulerSweep:
@@ -505,6 +546,8 @@ KomachiModVengefulerSweep:
     |해방| {releaseCost2}: |명중|피해를 {Damage2}씩 {attackTimes}번 주고, |원령| {Value2} 부여
   ExtraDescription3: 이 공격은 |명중|으로 처리됩니다.
   ExtraDescription4: 모든 적에게 |원령| {Value1}을 추가 줍니다.
+  FlavorText: |-
+    더 원령 싹쓸이!
 
 KomachiModFreeTrauma:
   Name: 공짜 트라우마?!
@@ -516,6 +559,8 @@ KomachiModFreeTrauma:
     |해방| {Value1}: {Mana} 획득.
   ExtraDescription2: |-
     |해방| {Value2}: {Mana}{Mana} 획득.
+  FlavorText: |-
+    이 불경기에?
 
 KomachiModSpiritBarrier:
   Name: 영혼 장벽
@@ -524,6 +569,8 @@ KomachiModSpiritBarrier:
     |전부 해방| 시: 해방한 영혼 1개당 |보호막| {Value2} 획득.
   ExtraDescription1: |-
     |전부 해방| 시: 해방한 영혼 1개당 |보호막| {Value2} 획득.
+  FlavorText: |-
+    우정의 힘으로 보호받고 있습니다!
 
 KomachiModScytheHeal:
   Name: 영혼을 흡수하는 낫
@@ -583,8 +630,8 @@ KomachiModTalkativeFerryman:
 KomachiModDetonateInfinite:
   Name: 끝없는 취소
   Description: |-
-    |원령|을 {Value1} 줍니다.  
-    |원령|이 |기폭|될 때마다 해당 대상에게 |원령| {Value2} 추가 부여.
+    |원령|을 {Value1} 줍니다.
+    적의 |원령|이 |기폭|될 때마다, |기폭|된 양의 절반(올림)만큼 그 적에게 |원령|을 다시 줍니다.
 
 # Can also mean mental damage
 KomachiModSpiritualDamage:
@@ -681,6 +728,8 @@ KomachiModHalfLife3:
     대상이 이름이 알려진 적일 경우, 대신 |해방| {Value2}가 필요합니다.
   ExtraDescription1: |-
     |해방| {releaseValue}: 대상의 현재 체력의 절반만큼 피해를 줍니다.
+  FlavorText: |-
+    현대 의학의 발전과 식생활 개선, 그리고 최근 봉인에서 풀려난 영원의 여신 덕분에, 히에다의 수명은 이제 그리 짧지만은 않다.
 
 # Soku
 KomachiModDistanceCloser:
@@ -701,6 +750,8 @@ KomachiModEthicallySourcedBreak:
     {PlayerName}의 턴을 종료합니다.
     다음 턴 시작 시, {PlayerName}의 턴을 종료합니다.
     그 다음 턴 시작 시, {Mana}를 얻고 카드를 {Value3}장 뽑습니다.
+  FlavorText: |-
+    "ZZZZzzzzzzzz...."
 
 KomachiModInfernoTempest:
   Name: 길의 끝에서 부유하는 영혼들
@@ -712,18 +763,24 @@ KomachiModInfernoTempest:
     다음 턴 시작 시, |기본|이 아닌 소멸된 카드 중 최대 {Value2}장을 무작위로 손패, 뽑을 카드 더미, 버린 카드 더미 중 하나에 되돌립니다. 이후 모든 |기본| 및 |액운| 카드를 뽑을 카드 더미로 되돌립니다.
   DetailText: |-
     손패, 뽑을 카드 더미, 버린 카드 더미에 각각 최소 1장씩 돌아갑니다.
+  FlavorText: |-
+    잠깐, 내 덱 어디 갔어?
 
 KomachiModGuidedGreen:
   Name: 전생의 기억
   Description: |-
     |인도된 영혼|을 {Value1} 얻습니다.
     카드를 {Value2}장 뽑습니다.
+  FlavorText: |-
+    "전생의 당신은 근무 태도가 조금이라도 나았길 바랄 뿐입니다."
 
 KomachiModMidsummerLily:
   Name: 외로운 피안화
   Description: |-
     {PlayerName}가 |피안화|를 사용한 후, |한여름의 꽃|을 {Value1}장 손에 넣습니다.
     |피안화|를 {Value2}장 뽑을 카드 더미 맨 위에 넣습니다.
+  FlavorText: |-
+    자신이 죽은 줄도 모르는 외로운 고아의 혼이 그 꽃에 깃들었다.
 
 KomachiModHellFreeze:
   Name: 지옥의 얼어붙은 온기
@@ -762,10 +819,13 @@ KomachiModLifespanEnd:
     이 추가 턴에서는 |방어|를 잃지 않습니다.
     |턴 종료 시|: 피해를 {Value1} 받습니다.
   UpgradedDescription: |-
-    {PlayerName}의 턴을 종료합니다. 그 후 추가 턴을 가집니다.
+    {PlayerName}의 턴을 종료합니다.
+    그 후 추가 턴을 가집니다.
     이 추가 턴에서는 |방어|를 잃지 않습니다.
-    |그 추가 턴 시작 시|: 카드를 {Value2}장 뽑고, {Mana}를 얻으며, |화력|을 {Value2} 얻습니다.
-    |턴 종료 시|: 피해를 {Value1} 받습니다.
+    |그 추가 턴 시작 시|: 카드를 {Value2}장 뽑고, {Mana}를 얻습니다.
+    |라운드 종료 시|: 피해를 {Value1} 받습니다.
+  FlavorText: |-
+    잠깐, 누구 수명이 끝난다는 거야?!
 
 # Reference to the yugioh card gold sarcophagus. Try to put a ship pun in there if you can, otherwise just name it gold sarcophagus.
 KomachiModGoldSarcophagus:
@@ -784,6 +844,8 @@ KomachiModExileDoppelganger:
     {SelfName}의 각 효과는 턴마다 한 번씩만 사용할 수 있습니다.
   DetailText: |-
     복사된 카드는 첫 번째 효과로 다시 복사할 수 없습니다.
+  FlavorText: |-
+    삼도천의 희귀 물고기를 팔아 돈 벌 생각은 왜 아무도 못 한 걸까?
 
 # Reference to the yugioh card tour guide from the underworld
 KomachiModSpiritDraw:
@@ -830,6 +892,8 @@ KomachiModEiki:
     <size=85%>하지만 이번 일 끝나면 아직 인도하지 못한 21명의 혼이 널 기다리고 있단 걸 잊지 마세요. 낮잠은 금지입니다.
   EikiAltWinChat9: |-
     으윽— 알겠어요. 다음엔… 일하다가 안 잘게요.
+  FlavorText: |-
+    "드디어 성실하게 일하기로 마음먹었다면, 보내드리죠."
 
 # Embrace or hug
 KomachiModLilyHug:
@@ -837,6 +901,8 @@ KomachiModLilyHug:
   Description: |-
     |피안화|를 손에 1장 얻습니다.
     {PlayerName}가 |피안화|를 사용할 때마다 |부적|을 {Value2} 얻습니다.
+  FlavorText: |-
+    봄이에요!가 너무 세잖아...
 
 KomachiModStygianReel:
   Name: 저승의 낚싯줄
@@ -862,16 +928,16 @@ KomachiModRedLilyStorm:
   Name: 비애망자의 폭풍
   Description: |-
     손과 버린 카드 더미의 모든 |e:피안화|를 |소멸|시킬 수 있습니다.
-    |소멸된 |e:피안화|마다|: 그것을 사용했을 때 얻을 |일시 화력|을 얻고, 피해를 {Damage} 줍니다.
-    |{Mana}를 지불할 시|: |일시 화력|을 {Value1} 얻고 피해를 {Damage} 줍니다.
-    3 이상의 마나를 지불했다면, |e:피안화|를 버린 카드 더미에 1장 넣습니다.
+    |소멸된 ||e:피안화||마다|: 그것을 사용했을 때 얻을 양만큼 |일시 화력|을 얻고, 피해를 {Damage} 줍니다.
+    |{Mana}를 지불할 시|: 피해를 {Damage} 준 뒤, |일시 화력|을 {Value1} 얻습니다.
+    마나를 3 이상 지불했다면, |e:피안화|를 버린 카드 더미에 1장 넣습니다.
   UpgradedDescription: |-
     손과 버린 카드 더미의 모든 |e:피안화|를 |소멸|시킬 수 있습니다.
-    |소멸된 |e:피안화|마다|: 그것을 사용했을 때 얻을 |일시 화력|을 얻고, 피해를 {Damage} 두 번 줍니다.
-    |{Mana}를 지불할 시|: |일시 화력|을 {Value1} 얻고 피해를 {Damage} 줍니다.
+    |소멸된 ||e:피안화||마다|: 그것을 사용했을 때 얻을 양만큼 |일시 화력|을 얻고, 피해를 {Damage}씩 두 번 줍니다.
+    |{Mana}를 지불할 시|: 피해를 {Damage} 준 뒤, |일시 화력|을 {Value1} 얻습니다.
     |e:피안화|를 버린 카드 더미에 1장 넣습니다.
   DetailText: |-
-    |화력|은 모든 공격 전에 한 번에 얻습니다.
+    |피안화|로 얻는 |일시 화력|은 모든 공격 전에 한 번에 얻습니다.
   ExtraDescription1: |-
     |피안화|를 소멸시키지 않습니다.
   ExtraDescription2: |-
@@ -885,19 +951,30 @@ KomachiModPosessedArmament:
   Name: 빙의된 무장
   Description: |-
     {PlayerName}가 방어되지 않은 공격 피해를 줄 때마다, |원령|을 {Value1} 줍니다.
+  FlavorText: |-
+    빙의된 거라면 오토 배틀러가 되어야 하는 거 아닌가요?
 
 KomachiModParasiticPollen:
   Name: 기생 꽃가루
   Description: |-
     피해를 {Damage}씩 {Value1}번 줍니다.
-    대상이 |중독| 상태라면, |피안화|를 1장 얻습니다.
+    대상이 |중독| 상태라면, |피안화|를 손에 넣습니다.
     아니라면, |중독|을 {Value2} 줍니다.
     {PlayerName}이 |중독| 상태라면, |중독| {Value2}를 잃은 뒤, 막히지 않은 피해량만큼 |중독|을 다시 적용합니다.
+  FlavorText: |-
+    하필 쉬는 날에 찾아온 원인불명의 열병.
+
+KomachiModOasis:
+  Name: 망혼의 오아시스
+  Description: |-
+    |소멸| 구역에서 총 비용이 {Value1} 이하인 카드 |e:1|장을 선택합니다.
+    그 카드의 |복사본|을 손에 넣고, 이번 턴 동안 |보존|합니다.
 
 ## basic cards
 KomachiModAttackR:
   Name: 사신의 날끝
   Description: 피해를 {Damage} 줍니다.
+  FlavorText: "찌릅니다."
 
 # The dot is accidental but intentionally kept in lol
 KomachiModBlockR:
@@ -918,6 +995,7 @@ KomachiModBlockB:
   Name: 영혼의 지원
   Description: |-
     |방어|를 {Block} 얻습니다.
+  FlavorText: "월 2마나 구독만으로, 천국 클라우드에 당신의 영혼을 백업하세요!"
 
 ## cards during komachi's boss fight
 KomachiModSanzuFare:
@@ -939,6 +1017,8 @@ KomachiModMoveToken:
   UpgradedDescription: |-
     모든 적의 위치를 최대 ±{Value2}만큼 |위치 변경|합니다.
     |이번 턴에 카드를 사용할 때마다|: 이 카드의 비용이 {Mana} 증가합니다. (최대: 1)
+  FlavorText: |-
+    왜 도망가는 거야?
   ExtraDescription1: |-
     바짝 붙어라!
     |위치 변경| -{displaceAmount}.
@@ -951,3 +1031,5 @@ KomachiModWeatheredLily:
   Description: |-
     {Mana}를 얻습니다.
     |턴 종료 시|: |중독|을 {Value1} 얻습니다.
+  FlavorText: |-
+    인간의 죄악을 모아 피어난 붉은 꽃.

@@ -50,8 +50,9 @@ KomachiModSpySpiritSe:
 KomachiModRiversideGardenSe:
   Name: 강변의 정원
   Description: |-
-    이 전투 중 {PlayerName}이 |피안화|를 얻을 때마다 그것을 |강화|합니다.
-    전투 종료 시, 전장에 있는 |피안화| 1개마다 체력을 {Level} 회복합니다.
+    이 전투 중 {PlayerName}가 |피안화|를 추가할 때마다, 그 카드를 |강화|합니다.
+    전투 종료 시 |전장|의 |피안화| 1장마다 체력을 {Level} 회복합니다. 회복 후 체력은 최대 {healCeiling}입니다.
+    현재 |전장|에 |피안화|가 {SpiderLilyCount}장 있습니다.
 
 KomachiModShinigamiTacticsSe:
   Name: 사신의 전술
@@ -128,7 +129,7 @@ KomachiModGuidedGeneratorNextTurnSe:
 KomachiModDetonateInfiniteSe:
   Name: 끝없는 취소
   Description: |-
-    적의 |원령|이 |기폭|될 때마다, 해당 대상에게 |원령|을 {Level} 부여합니다.
+    적의 |원령|이 |기폭|될 때마다, |기폭|된 양의 |e:{multiplier}|배(올림)만큼 해당 대상에게 |원령|을 다시 부여합니다.
 
 KomachiModSpiritReturnSe:
   Name: 영혼의 귀환

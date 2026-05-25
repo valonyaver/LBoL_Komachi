@@ -9,7 +9,7 @@ KomachiBossDisplaceIntention:
 
 
 KomachiBossDistanceTaxIntention:
-  Name: Distance Tax Debuff
+  Name: Desventaja de impuesto por distancia
   Description: |-
-    {OwnerName} intends to apply a |negative effect| to {PlayerName}.
-    This negative effect will depend on {OwnerName}'s distance from {PlayerName}.
+    {OwnerName} pretende aplicar un |efecto negativo| a {PlayerName}.
+    Este efecto negativo dependerá de la distancia entre {OwnerName} y {PlayerName}.

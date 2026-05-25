@@ -53,7 +53,9 @@ KomachiModRiversideGardenSe:
   Name: 水辺の庭
   Description: |-
     この戦闘中{PlayerName}が|彼岸花|を加える度、それを|アップグレード|する。
-    戦闘終了時、|フィールド|に存在する|彼岸花|1枚ごとに、ライフ{Level}を得る。
+    戦闘終了時、|フィールド|に存在する|彼岸花|1枚ごとに、ライフ{Level}を回復する。
+    ({healCeiling}まで)
+    現在|フィールド|には|彼岸花|が{SpiderLilyCount}存在する。
 
 KomachiModShinigamiTacticsSe:
   Name: 死神流戦法
@@ -131,7 +133,7 @@ KomachiModGuidedGeneratorNextTurnSe:
 KomachiModDetonateInfiniteSe:
   Name: 永劫の終止符
   Description: |-
-    敵の|怨霊|が|爆破|されるたび、その対象に|怨霊|{Level}を与える。
+    敵の|怨霊|が|爆破|されるたび、その爆破された量の|e:{multiplier}|倍(端数切り上げ)の|怨霊|をその対象に与える。
 
 KomachiModSpiritReturnSe:
   Name: 魂還り

@@ -101,6 +101,7 @@ KomachiModDetonateToken:
   Name: 爆破スイッチ
   Description: |-
     敵一体を|爆破|する。
+    カードを|e:1|枚引く。
   ExtraDescription1: |-
     |爆破|しない。
   ExtraDescription2: |-
@@ -155,6 +156,8 @@ KomachiModRetreat:
     もし対象の|距離|が{Value3}ならば、手札に|距離操作|を1枚加える。
   ExtraDescription1: 対象を変位しない。
   ExtraDescription2: 対象以外を変位しない。
+  FlavorText: |-
+    適切なソーシャルディスタンスを心がけましょう。
 
 KomachiModEndlessWay:
   Name: 無間の道
@@ -166,6 +169,8 @@ KomachiModEndlessWay:
     |解放|{Value2}: |ロックオン|{lockOnAmount}を与える。
   ExtraDescription2: |-
     |解放|{Value3}: |ロックオン|{lockOnAmount2}を与える。
+  FlavorText: |-
+    永久機関にならないように注意。
 
 KomachiModSweep:
   Name: 一掃の大鎌
@@ -173,6 +178,8 @@ KomachiModSweep:
     |変位| 敵全体 -{Value1}。
     敵全体に{Damage}ダメージを与える。 
     手札に|距離操作|を{Value2}枚加える。
+  FlavorText: |-
+    薙ぎ払い！
 
 KomachiModDistanceTax:
   Name: 間合い徴収
@@ -181,12 +188,16 @@ KomachiModDistanceTax:
     1-2: |脱力|{Value1}。
     3: |ロックオン|{Value2}と|臨時火力ダウン|{Value2}。
     4-5: |弱体|{Value3}。
+  FlavorText: |-
+    死と税は避けられない。ただし発送・手数料は別途請求される。
 
 KomachiModTasteOfDeath:
   Name: 死の味
   Description: |-
     |変位| -{Value1}。
     {Damage}ダメージを与える。
+  FlavorText: |-
+    これは慣れが必要な味だ。たいていの人は一度で十分だと思う。
 
 KomachiModPushDraw:
   Name: 反撃の引き
@@ -197,6 +208,8 @@ KomachiModPushDraw:
     |変位|可能 +{Value1}まで。
     敵の|距離|に等しい枚数を引く。
   ExtraDescription1: "|変位|しない。"
+  FlavorText: |-
+    状況から引くことで、より良い結論を引き出せると感じている。
 
 KomachiModQuickNap:
   Name: 仮眠
@@ -204,12 +217,16 @@ KomachiModQuickNap:
     ライフ{Value1}を得る。
     次の{PlayerName}のターン開始時、{Mana}を得る。
     {PlayerName}のターンを終了する。
+  FlavorText: |-
+    Zzz...(すやすや)
 
 KomachiModDistanceAttack:
   Name: 死神の大鎌
   Description: |-
     {Damage}ダメージを与える。 
     敵の|距離|が変わるたびに、捨て札から手札に{SelfName}を戻す。
+  FlavorText: |-
+    地上コンボでも236B。空中でも236B。端でも236B。寝てても236B。
 
 KomachiModScytheFinalJudgment:
   Name: 死者選別の鎌
@@ -228,6 +245,8 @@ KomachiModScytheFinalJudgment:
   DetailText: |-
     このカードのダメージは、距離が4のときに30％、距離が5のときに60％増加する。
     ダメージは敵ごとに個別に計算される。
+  FlavorText: |-
+    "閻魔様が休みの日は、私が裁判官も陪審員も執行人もやらされる。私の<s>睡眠</s>スケジュールには本当に迷惑な話だ。しかも手当も出ない！"
 
 KomachiModShinigamiFinesse:
   Name: 死神の妙技
@@ -235,11 +254,17 @@ KomachiModShinigamiFinesse:
    {Damage}ダメージを{attackAmount}回与える。
    攻撃回数は対象の距離レベルに等しい。
    対象の距離が{three}<b>未満の場合</b>、この攻撃は|精密|になる。
+  UpgradedDescription: |-
+   {Damage}ダメージを{attackAmount}回与える。
+   攻撃回数は対象の距離レベル+1に等しい。
+   対象の距離が{three}<b>未満の場合</b>、この攻撃は|精密|になる。
 
 KomachiModDistanceBlock:
   Name: 波乗り勤務
   Description: |-
     敵が|変位|される度に、変化した距離レベル1ごとに{Value1}|ブロック|を得る。
+　FlavorText: |-
+    "9時から5時まで働くのも、ほとんど居眠りしてていいなら悪くないさ。"
 
 KomachiModDistanceGenerator:
   Name: 真面目な死神
@@ -255,6 +280,8 @@ KomachiModDistanceFlow:
     敵が|変位|される度に:
     - もし距離が増加すれば、|臨時霊力|{Value1}を得る。
     - もし距離が減少すれば、|臨時火力|{Value1}を得る。
+  FlavorText: |-
+    水の中で魚が喧嘩していたら、五分前に道士が通りかかったと思え。
 
 KomachiModPushNPull:
   Name: 押して引いて
@@ -281,8 +308,9 @@ KomachiModRiversideGarden:
   Name: 水辺の庭
   Description: |-
     この戦闘中{PlayerName}が|彼岸花|を加える度、それを|アップグレード|する。
-    手札、山札、捨て札に|彼岸花|を{Value1}枚加える。
+    手札、山札、捨て札に|彼岸花|を{Value1}枚ずつ加える。
     戦闘終了時、|フィールド|に存在する|彼岸花|1枚ごとに、ライフ{Value2}を得る。
+    (最大で{PlayerName}の現在体力 + {maxHeal}まで)
 
 KomachiModShinigamiTactics:
   Name: 死神流戦法
@@ -305,6 +333,8 @@ KomachiModWeedCutter:
     {Damage}ダメージを与える。 
     カードを{Value1}枚引く。
     手札に|距離操作|を1枚加える。
+  FlavorText: |-
+    「敵を雑草だと思えば、鎌だって立派な武器になる。」
 
 KomachiModParry:
   Name: 大鎌パリィ
@@ -318,6 +348,8 @@ KomachiModCoinThrow:
   Description: |-
     敵全体に{Damage}ダメージを与える。
     <sprite="Point" name="Gold">{Value1}を失う。
+  FlavorText: |-
+    "ずいぶん景気のいい奴だな。"
 
 KomachiModIgnoreNagging:
   Name: 小言聞き流し
@@ -345,10 +377,10 @@ KomachiModWorkFocus:
   Name: 全集中
   Description: |-
     手札から{Value1}枚までのカードを|廃棄|し、それに等しい枚数の|距離操作|を手札に加える。
-    もしこの方法でアップグレード済みのカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
+    もしこの方法で|アップグレード済み|のカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
   UpgradedDescription: |-
     手札、捨て札、山札から{Value1}枚までのカードを|廃棄|し、それに等しい枚数の|距離操作|を手札に加える。
-    もしこの方法でアップグレード済みのカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
+    もしこの方法で|アップグレード済み|のカードが廃棄されたのならば、|彼岸花|を手札に1枚加える。
 
 KomachiModSpySpirit:
   Name: 同行偵察霊
@@ -445,10 +477,10 @@ KomachiModBoomBenefits:
   Name: セイレーンの恵み
   Description: |-
     敵1体を|爆破|し、以下から|選択|する:
-    - 爆破された|怨霊|{Value1}ごとに|導霊|を1得る。
-    - 爆破された|怨霊|{Value2}ごとにカードを1枚引く。
-  ExtraDescription1: 爆破された|怨霊|{Value1}ごとに|導霊|を1得る。
-  ExtraDescription2: 爆破された|怨霊|{Value2}ごとにカードを1枚引く。
+    - 爆破された|怨霊|{Value1}ごとに|導霊|を|e:1|得る。
+    - 爆破された|怨霊|{Value2}ごとにカードを|e:1|枚引く。
+  ExtraDescription1: 爆破された|怨霊|{Value1}ごとに|導霊|を|e:1|得る。
+  ExtraDescription2: 爆破された|怨霊|{Value2}ごとにカードを|e:1|枚引く。
 
 KomachiModShootGhosts:
   Name: 彷徨う魂の鎌
@@ -472,6 +504,9 @@ KomachiModVengefulSweep:
     |解放|{Value2}: それらの敵全体にさらに|怨霊|{Value1}を与える。
   ExtraDescription2: |-
     |解放|{Value3}: 各敵にさらに|怨霊|{Value1}を与え、その後手札に|爆破スイッチ|を加える。
+  FlavorText: |-
+    怨念薙ぎ払い！
+
 
 KomachiModVengefulerSweep:
   Name: 何処にでもいる浮遊霊
@@ -488,9 +523,11 @@ KomachiModVengefulerSweep:
     この攻撃は|精密|になる。
   ExtraDescription4: |-
     敵全体にさらに|怨霊|{Value1}を与える。
+  FlavorText: |-
+    超怨念薙ぎ払い！
 
 KomachiModFreeTrauma:
-  Name: 解き放たれた？！
+  Name: 無料トラウマ！？
   Description: |-
     |怨霊|{Value3}を与える。
     {Mana}を得る。
@@ -499,6 +536,9 @@ KomachiModFreeTrauma:
     |解放|{Value1}: {Mana}を得る。
   ExtraDescription2: |-
     |解放|{Value2}: {Mana}{Mana}を得る。
+  FlavorText: |-
+    このご時世に！？
+# Free trauma?! In this economy?
 
 KomachiModSpiritBarrier:
   Name: 霊的バリア
@@ -507,6 +547,9 @@ KomachiModSpiritBarrier:
     |解放|全て: 解放した霊1体ごとに{Value2}|バリア|を得る。
   ExtraDescription1: |-
     |解放|全て: 解放した霊1体ごとに{Value2}|バリア|を得る。
+  FlavorText: |-
+    友情パワーで守られてるのさ！
+# The spirits you are releasing are your friends, at least that's what Komachi says.
 
 KomachiModScytheHeal:
   Name: 吸魂の鎌
@@ -564,7 +607,7 @@ KomachiModDetonateInfinite:
   Name: 永劫の終止符
   Description: |-
     |怨霊|{Value1}を与える。
-    敵の|怨霊|が|爆破|されるたび、その敵に|怨霊|{Value2}を与える。
+    敵の|怨霊|が|爆破|されるたび、その爆破された数の半分(端数切り上げ)の|怨霊|を再びその敵に与える。
 
 KomachiModSpiritualDamage:
   Name: 霊的ダメージ
@@ -657,6 +700,10 @@ KomachiModHalfLife3:
     対象が既知の名前を持つ場合、代わりに|解放|{Value2}する必要がある。
   ExtraDescription1: |-
     |解放|{releaseValue}: 対象の現在ライフの半分をダメージとして与える。
+  FlavorText: |-
+    医療技術の発展と食生活の改善、さらに近頃「永遠」を司る神が復活した影響か、稗田家も以前ほど短命ではなくなったという。
+# referring to Ariya Iwanaga's unsealing in Touhou 20 (to which Akyuu prays to) potentially leading to akyuu living longer.
+
 
 KomachiModDistanceCloser:
   Name: 八重霧の渡し
@@ -676,6 +723,9 @@ KomachiModEthicallySourcedBreak:
     {PlayerName}のターンを終了する。
     {PlayerName}の次のターン開始時、{PlayerName}のターンを終了する。
     その次の{PlayerName}のターン開始時、{Mana}を得て、カードを{Value3}枚引く。
+  FlavorText: |-
+    "ZZZZzzzzzzzz...."
+# Like quick nap's flavor text but longer
 
 KomachiModInfernoTempest:
   Name: 路の果ての魂
@@ -687,18 +737,27 @@ KomachiModInfernoTempest:
     {PlayerName}の次のターン開始時、廃棄された|基本|でないカードを{Value2}枚まで選び、手札、山札、捨て札にランダムに戻す。その後、廃棄された全ての|基本|と|厄災|カードを山札に戻す。
   DetailText: |-
     手札、山札、捨て札のそれぞれに少なくとも1枚のカードが戻される。
+  FlavorText: |-
+    あれ、私のデッキどこ行った？
 
 KomachiModGuidedGreen:
   Name: 前世の霊
   Description: |-
     |導霊|{Value1}を得る。
     カードを{Value2}枚引く。
+  FlavorText: |-
+    "前世のあなたが、もう少し真面目に働いていたことを願うばかりです。
+# Eiki scolding komachi.
 
 KomachiModMidsummerLily:
   Name: 孤独な彼岸花
   Description: |-
     {PlayerName}が|彼岸花|を使用した後、手札に|厄災|を{Value1}枚数加える。
     山札の一番上に|彼岸花|を{Value2}枚加える。
+  FlavorText: |-
+    ひとりきりで彷徨っていた孤魂が、自分がすでに死んでいることにも気づかぬまま、その花に憑依した。
+# In PoFV, the flowers are possessed by spirits that did not know that they had died yet.
+
 
 KomachiModHellFreeze:
   Name: 地獄の凍てつく温もり
@@ -739,8 +798,11 @@ KomachiModLifespanEnd:
   UpgradedDescription: |-
     {PlayerName}のターンを終了する。その後、追加のターンを得る。
     この追加ターン中、|ブロック|は失われない。
-    |その追加ターンの開始時|: カードを{Value2}枚引き、{Mana}を得て、|火力|{Value2}を得る。
+    |その追加ターンの開始時|: カードを{Value2}枚引き、{Mana}を得る。
     |ラウンド終了時|: {Value1}ダメージを受ける。
+  FlavorText: |-
+    ちょっと待て、これ誰の寿命が終わるって話なの！？
+# Komachi asking whoever named the card why she is taking the damage.
 
 KomachiModGoldSarcophagus:
   Name: 黄金の石棺船
@@ -757,6 +819,9 @@ KomachiModExileDoppelganger:
     {SelfName}の各効果はターンに1度しか使用できない。
   DetailText: |-
     コピーは最初の効果でコピーできない
+  FlavorText: |-
+    三途の川の絶滅種の魚、売れば結構儲かると思うんだけどなあ。
+# The sanzu river contains extinct fish from the outside world.
 
 KomachiModSpiritDraw:
   Name: あの世へのツアーガイド
@@ -801,12 +866,18 @@ KomachiModEiki:
     <size=95%>ですが、まだ21体の未送達の魂が残っていますよ。居眠りは禁止です。
   EikiAltWinChat9: |-
     <size=95%>あっ──わかりましたよ。ええと、あとで仕事中に寝ないって約束します……。
+  FlavorText: |-
+    "ようやく働く気になったようですね……では、特別に見逃してあげましょう。"
+# Supposed to be a hint that playing the ultimate against eiki gives you an alt wincon.
 
 KomachiModLilyHug:
   Name: 彼岸花の抱擁
   Description: |-
     手札に|彼岸花|を1枚加える。
     {PlayerName}が|彼岸花|を使用した後、|加護|{Value2}を得る。
+  FlavorText: |-
+    春すぎますよ……リリーさん……
+# card art shows Lily White tightly hugging komachi. Too tightly. Haru desu yo is Lily's signature catch phrase. Idk if what I wrote even makes sense though lol.
 
 KomachiModStygianReel:
   Name: 冥府の巻き取り
@@ -832,24 +903,32 @@ KomachiModRedLilyStorm:
   Description: |-
     手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
     |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを与える。
-    |{Mana}を1点消費するごと|：{Value1}の|臨時火力|を得て、{Damage}のダメージを与える。
+    |{Mana}を1点消費するごと|：{Damage}のダメージを与え、{Value1}の|臨時火力|を得る。
     消費したマナが3点以上なら、|e:彼岸花|を捨て札に1枚加える。
   UpgradedDescription: |-
     手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
     |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを2回与える。
-    |{Mana}を1点消費するごと|：{Value1}の|臨時火力|を得て、{Damage}のダメージを与える。
+    |{Mana}を1点消費するごと|：{Damage}のダメージを与え、{Value1}の|臨時火力|を得る。
     |e:彼岸花|を捨て札に1枚加える。
   DetailText: |-
-    火力は攻撃が始まる前に全てまとめて得られる。
+    彼岸花による火力上昇は、すべての攻撃より前にまとめて得る。
   ExtraDescription1: |-
-    |彼岸花|を廃棄しない。
+    |彼岸花|を|廃棄|しない。
   ExtraDescription2: |-
-    手札と捨て札にある全ての|e:彼岸花|を廃棄する。
+    手札と捨て札のすべての|e:彼岸花|を|廃棄|する。
+    |廃棄された||e:彼岸花||1枚につき|: 本来それを使用した時に得られる量の|臨時火力|を得て、{Damage}ダメージを与える。
+  UpgradedExtraDescription2: |-
+    手札と捨て札のすべての|e:彼岸花|を|廃棄|する。
+    |廃棄された||e:彼岸花||1枚につき|: 本来それを使用した時に得られる量の|臨時火力|を得て、{Damage}ダメージを2回与える。
   
 KomachiModPosessedArmament:
   Name: 憑霊兵器
   Description: |-
     {PlayerName}がブロックされなかった攻撃ダメージを与えるたび、{Value1}体の|怨霊|を追加で付与する。
+  FlavorText: |-
+    憑りつかれてるなら、そのままオートバトラーにならない？
+# As in, if the weapon is possessed, it becomes autonomous enough to fight on its own. Auto battler being a game genre.
+
 
 KomachiModParasiticPollen:
   Name: 寄生胞子
@@ -857,11 +936,25 @@ KomachiModParasiticPollen:
     {Damage}ダメージを{Value1}回与える。
     対象が|毒|状態の場合、|彼岸花|を手札に1枚加える。そうでない場合、|毒|{Value2}を付与する。
     {PlayerName}が|毒|状態の場合、|毒|{Value2}を失い、その後、この方法で与えたブロックされなかったダメージ分の|毒|を付与する。
+  FlavorText: |-
+    せっかくの休みの日に限って、原因不明の発熱。
+# The lbol card "Unexplained fever". "her" being komachi.
+
+
+# Reference to the yugioh card, oasis of dragon souls.
+KomachiModOasis:
+  Name: 竜魂の幻泉
+  Description: |-
+    |廃棄場|から合計コストが{Value1}以下のカードを|e:1|枚選ぶ。
+    その|コピー|を手札に加える。このターン、そのカードに|保留|を与える。
+
 
 # basic cards
 KomachiModAttackR:
   Name: 大鎌の先端
   Description: "{Damage}ダメージを与える。"
+  FlavorText: "刺さる。"
+# Reference to a very obscure tumblr screenshot about scythes.
 
 KomachiModBlockR:
   Name: 叱られ慣れ
@@ -887,8 +980,8 @@ KomachiModSanzuFare:
     {MoneyCost} <sprite="Point" name="Gold"> を支払う。
     <color=#e58c27>小町</color>はこの戦闘を少し手加減してくれる。
   FlavorText: |-
-    「お金を集めれば、永遠寺に仕事をしてると思わせられる。
-    だから払ってくれれば手加減してあげる。」
+    "お金を集めれば、永遠寺に仕事をしてると思わせられる。
+    だから払ってくれれば手加減してあげる。"
   CardDialogue1: "ちゃんと向こう岸まで、無事に送り届けてあげるからさ。"
   CardDialogue2: "あんた、すっごく気前がいいね。天界に行けるように山の神に良い話しておくから。"
 
@@ -906,9 +999,15 @@ KomachiModMoveToken:
   ExtraDescription2: |-
     退避！
     |変位| +{displaceAmount}。
+  FlavorText: |-
+   なんで逃げるんだよ
+# That one meme soundclip.
 
 KomachiModWeatheredLily:
   Name: 乾燥した彼岸花
   Description: |-
     {Mana}を得る。
     |ターン終了時|：|毒|{Value1}を得る。
+  FlavorText: |-
+    人類のすべての罪を、その身に背負え。
+# Same exact flavor text as spider lily. Except replace "grudge" with "sins"

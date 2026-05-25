@@ -8,7 +8,7 @@ KomachiBossDisplaceIntention:
     {OwnerName}가 위치를 {displacementAmount}만큼 이동하려 합니다.
 
 KomachiBossDistanceTaxIntention:
-  Name: Distance Tax Debuff
+  Name: 거리세 약화
   Description: |-
-    {OwnerName} intends to apply a |negative effect| to {PlayerName}.
-    This negative effect will depend on {OwnerName}'s distance from {PlayerName}.
+    {OwnerName}이 {PlayerName}에게 |부정적 효과|를 부여하려 합니다.
+    이 |부정적 효과|는 {OwnerName}과 {PlayerName} 사이의 |거리|에 따라 달라집니다.

@@ -265,7 +265,7 @@ KomachiModScytheFinalJudgment:
     This card's damage will be increased by 30% and 60% for distances 4 and 5 respectively.
     The damage will be calculated separately for each enemy.
   FlavorText: |-
-    "On days where Ms. Eiki's sick, I have to serve as the judge, jury, and executioner. It's very bothersome to my <s>sleeping</s> schedule. They don't even pay extra!"
+    "On days where Ms. Eiki's sick, I have to serve as the judge, jury, and executioner. It's very bothersome for my <s>sleep</s> schedule. They don't even pay extra!"
 # A play on the phrase "Judge, Jury, Executionor". <s> gives a strikethrough effect.
 
 KomachiModShinigamiFinesse:
@@ -355,7 +355,7 @@ KomachiModWeedCutter:
     Deal {Damage} damage. 
     Draw {Value1} card.
     Add a |Manipulate Distance| to your hand.
-  FlavorText: "If you treat your enemies like plants, scythes no longer become impractical weapons."
+  FlavorText: "If you think of your enemy as a plant, scythes no longer become impractical weapons."
 # Scythes are famous for being impractical weapons due to being originally farming tools. But if your enemies are plants, then they become practical again!
 
 KomachiModParry:
@@ -762,7 +762,7 @@ KomachiModInfernoTempest:
   Name: Souls at the end of the Road
   Description: |-
     |Exile| every card from your hand, draw pile, and discard pile.
-    Gain {Value3} |Divine Spirit{Value1:plural one='' other='s'}| for each card exiled from the hand.
+    Gain {Value3} |Divine Spirit{Value3:plural one='' other='s'}| for each card exiled from the hand.
     Gain {Value1} |Guided Spirit{Value1:plural one='' other='s'}| for each card exiled from the draw pile.
     Apply {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}| to each enemy for each card exiled from the discard pile.
     At the start of {PlayerName}'s next turn, choose up to {Value2} non-|Basic| exiled cards. Return them randomly amongst your hand, draw pile, and discard pile. Then, return all exiled |Basic| and |Misfortune| cards to your draw pile.
