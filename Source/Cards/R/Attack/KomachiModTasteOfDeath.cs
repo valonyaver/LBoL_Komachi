@@ -56,9 +56,6 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModTasteOfDeathDef))]
     public sealed class KomachiModTasteOfDeath : KomachiCard
     {
-        //By default, if config.Damage / config.Block / config.Shield are set:
-        //The card will deal damage or gain Block/Barrier without having to set anything.
-        //Here, this is is equivalent to the following code.
 
         protected override void OnEnterBattle(BattleController battle)
         {

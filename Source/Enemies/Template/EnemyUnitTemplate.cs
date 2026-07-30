@@ -35,7 +35,5 @@ namespace KomachiMod.Enemies.Template
         {
             return KomachiDefaultConfig.EnemyUnitDefaultConfig();
         }
-
-
     }
 }

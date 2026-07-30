@@ -97,8 +97,6 @@ namespace KomachiMod.Enemies
 
             public KomachiMod komachi;
 
-            public override string Name => LocalizeProperty("Name");
-
             protected override void OnEnterBattle(BattleController battle)
             {
                 Next = MoveType.Defend;

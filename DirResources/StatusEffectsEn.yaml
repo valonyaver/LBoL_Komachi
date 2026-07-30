@@ -26,8 +26,8 @@ KomachiModDistanceFlowSe:
   Name: Flow of the Sanzu River
   Description: |-
     Each time an enemy is |Displaced|:
-    - If the Distance was increased, gain {Level} |Temporary Spirit|
-    - If the Distance was decreased, gain {Level} |Temporary Firepower|
+    - If the |Distance| was increased, gain {Level} |Temporary Spirit|
+    - If the |Distance| was decreased, gain {Level} |Temporary Firepower|
 
 KomachiModReviveSe:
   Name: God of Death
@@ -85,9 +85,9 @@ KomachiModVengefulSpiritSe:
 KomachiModGuidedSpiritSe:
   Name: Guided Spirits
   Description: |-
-    At the end of {OwnerName}'s Turn, deal {damageDealt} |Accurate| attack damage to the enemy with the lowest life ({targetName}), then lose 1 {SelfName}.
+    At the end of {OwnerName}'s turn, deal {damageDealt} |Accurate| attack damage to the enemy with the lowest life ({targetName}), then lose 1 {SelfName}.
   Brief: |-
-    At the end of its owner's Turn, deal attack damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
+    At the end of its owner's turn, deal attack damage to the enemy with the lowest life equal to {SelfName}'s level, then lose 1 {SelfName}.
     If the owner of this status effect is the player, this damage becomes |Accurate|.
   EnemyDescription: |-
     At the end of {OwnerName}'s Turn, deal {damageDealt} attack damage to {PlayerName}, then lose 1 {SelfName}.

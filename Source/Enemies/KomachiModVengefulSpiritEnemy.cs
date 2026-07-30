@@ -71,7 +71,6 @@ namespace KomachiMod.Enemies
         public sealed class KomachiModVengefulSpiritEnemy : Guihuo
         {
             protected override string SkillVFX => "GuihuoUskill";
-            public override string Name => LocalizeProperty("Name");
             protected override Type DebuffType => typeof(Fragil);
 
             public KomachiMod komachi;

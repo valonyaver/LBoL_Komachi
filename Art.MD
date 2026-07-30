@@ -10,14 +10,14 @@ The following arts were specifically requested for this mod by Iced Lemon: https
 -Low Tier Shinigami
 
 Other art in the mod was sourced from already existing fanart:
-Tip of the ReaperL https://www.pixiv.net/en/artworks/5761472
+Tip of the Reaper: https://www.pixiv.net/en/artworks/5761472
 Used to Scolding: https://x.com/mirandakeikoku/status/1038729698136621056
 Ghostrick Shot: https://www.pixiv.net/en/artworks/7728020
 Spirit Backing: https://www.pixiv.net/en/artworks/21177490
 
 Endless Way: https://www.pixiv.net/en/artworks/12977228
 Flow of the Sanzu River: https://www.pixiv.net/en/artworks/15759896
-Shinigami's Finnese: https://www.pixiv.net/en/artworks/18042750
+Shinigami's Finesse: https://www.pixiv.net/en/artworks/18042750
 Riverside Garden: https://www.pixiv.net/en/artworks/13364566
 The strongest spirit: https://safebooru.org/index.php?page=post&s=view&id=192443 (Original source is dead)
 Guiding Sanzu: https://www.pixiv.net/en/artworks/29127901
@@ -31,7 +31,7 @@ Ferriage of the deep fog: https://x.com/evermythic/status/1843430707965898943
 Grudging Strike: https://www.pixiv.net/en/artworks/68053532
 Afterlife Passage: https://www.pixiv.net/en/artworks/57353361
 Eye of the Storm: https://safebooru.org/index.php?page=post&s=view&id=20618 (Original source is dead)
-Ritual of Ecstasy: https://www.pixiv.net/en/artworks/124862006
+Ritual of Ecstasy: https://danbooru.donmai.us/posts/8529740
 Ignore nagging: https://www.pixiv.net/en/artworks/40810334
 Equalize Distance: https://www.pixiv.net/en/artworks/40762663
 Spirit Catalyst: https://safebooru.org/index.php?page=post&s=view&id=2122377
@@ -66,7 +66,7 @@ Accompanying Spy Spirit: https://www.pixiv.net/en/artworks/84751080
 Siren's Bonus: https://www.pixiv.net/en/artworks/69260731
 Scythe of Final Judgment: https://www.pixiv.net/en/artworks/128069904
 Scythe of Roaming Spirits: https://safebooru.org/index.php?page=post&s=view&id=917982
-Scythe of Wandering Spirits: https://www.pixiv.net/en/artworks/18613744
+Scythe of Draining Spirits: https://www.pixiv.net/en/artworks/18613744
 Slice of Higan: https://www.pixiv.net/en/artworks/1061459
 Scythe of Exorcism: https://danbooru.donmai.us/posts/1060110 (You know the drill at this point)
 Scythe of the Reaper: https://danbooru.donmai.us/posts/1234600
@@ -94,6 +94,8 @@ Storm of the Grieving Dead: https://www.pixiv.net/en/artworks/87263030
 Posessed Armament: https://safebooru.org/index.php?page=post&s=view&id=32733
 Move!: https://x.com/60mai/status/566193614015852544
 Sanzu Fare: https://x.com/o11_yori/status/1961636129699946822
+Oasis of Passing souls: https://safebooru.org/index.php?page=post&s=view&id=71165
+Short Life Expectancy: https://safebooru.org/index.php?page=post&s=view&id=809535
 
 
 Everything else is placeholder art by me or the game itself.

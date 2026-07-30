@@ -41,7 +41,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 3;
 
 
-            config.Illustrator = "銀Silveroid";
+            config.Illustrator = "きんたろう";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

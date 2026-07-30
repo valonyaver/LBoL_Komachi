@@ -36,7 +36,7 @@ namespace KomachiMod.Cards
 
             config.Mana = new ManaGroup() { Any = 0 };
 
-            config.Illustrator = "ニラ玉@";
+            config.Illustrator = "kotobuki ryou";
 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 

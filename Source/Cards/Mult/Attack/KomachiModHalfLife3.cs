@@ -64,7 +64,7 @@ namespace KomachiMod.Cards
                 nameof(KomachiModReleaseKeyword)
             };
 
-            config.Illustrator = "givuchoko";
+            config.Illustrator = "gibuchoko";
             // config.Unfinished = true;
 
             return config;

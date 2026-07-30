@@ -397,11 +397,11 @@ KomachiModManipDefence:
 KomachiModWorkFocus:
   Name: Work Focus
   Description: |-
-    |Exile| up to {Value1} cards from the hand; add that many |Manipulate Distances| to your hand.
-    If an |Upgraded| card was exiled this way, add a |Spider Lily| to your hand.
+    |Exile| up to {Value1} cards from the hand; add that many |Manipulate Distances| to the hand.
+    If an |Upgraded| card was exiled this way, add a |Spider Lily| to the hand.
   UpgradedDescription: |-
-    |Exile| up to {Value1} cards from the hand, draw pile, and discard pile; add that many |Manipulate Distances| to your hand.
-    If an |Upgraded| card was exiled this way, add a |Spider Lily| to your hand.
+    |Exile| up to {Value1} cards from the hand, draw pile, and discard pile; add that many |Manipulate Distances| to the hand.
+    If an |Upgraded| card was exiled this way, add a |Spider Lily| to the hand.
 
 KomachiModSpySpirit:
   Name: Accompanying Spy Spirit
@@ -608,7 +608,7 @@ KomachiModScytheRedLily:
   Name: Scythe of Exorcism
   Description: |-
     Deal {Damage} damage.
-    You can |Detonate|, then if you detonated {Value1} or more |Vengeful Spirits|, add a |Spider Lily| to your hand.
+    You can |Detonate|, then if {Value1} or more |Vengeful Spirits| were |Detonated|, add a |Spider Lily| to your hand.
     |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation. Gain {one} |Amulet|.
   ExtraDescription1: |-
     |Release| {Value2}: Apply {Value1} |Vengeful Spirits| before detonation. Gain {one} |Amulet|.
@@ -840,7 +840,7 @@ KomachiModGoldSarcophagus:
   Name: Gold Sarcopha-Galley
   Description: |-
     Choose 1 card from the draw pile; |Exile| it.
-    At the start of your second turn after this card was played, add that card to your hand and |Upgrade| it.
+    At the start of the second turn after this card was played, add that card to the hand and |Upgrade| it.
 
 # Note that it "reduces" the cost, not changes it. To imply that 0 cost cards do not get more expensive (since mana here is 1)
 KomachiModExileDoppelganger:
@@ -959,7 +959,7 @@ KomachiModRedLilyStorm:
     |For each ||e:Spider Lily|| exiled|: Gain |Temporary Firepower| equal to the amount you would gain from playing them and Deal {Damage} damage twice.
   
 KomachiModPosessedArmament:
-  Name: Posessed Armament
+  Name: Possessed Armament
   Description: |-
     Whenever {PlayerName} deals unblocked attack damage, also apply {Value1} |Vengeful Spirit{Value1:plural one='' other='s'}|.
   FlavorText: |-
@@ -981,6 +981,18 @@ KomachiModOasis:
   Name: Oasis of Passing Souls
   Description: |-
     Choose |e:1| card in |Exile| whose total cost equals {Value1} or less. Add a |Copy| of it to the hand. |Retain| it this turn.
+    
+# Unimplemented yet
+KomachiModTies:
+  Name: Ties with the Deceased
+  Description: |-
+    Deal {damage} damage.
+    Choose 1 card in the discard pile. Return it to the hand, it gains exile and retain, then add a copy of it to the exile pile that costs {Mana}.
+
+KomachiModGenerator:
+  Name: Card generator
+  Description: |-
+    At the start of {PlayerName}'s turn, add a copy of the last card played last turn to the hand. It has |Exile| and |Ethereal|.
 
 ## basic cards
 KomachiModAttackR:

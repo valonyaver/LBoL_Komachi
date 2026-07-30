@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
             // Flawless amount. Only for description purposes really.
             config.Value2 = 1;
 
-            config.Illustrator = "";
+            config.Illustrator = "hima (mizu ni tsuyoi)";
 
             config.RelativeEffects = new List<string>() { nameof(Invincible) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(Invincible) };
