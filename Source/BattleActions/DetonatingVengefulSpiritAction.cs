@@ -1,5 +1,5 @@
 using KomachiMod.Source.BattleActions.EventManager;
-using KomachiMod.StatusEffects;
+using KomachiMod.Source.StatusEffects.Spirits;
 using LBoL.Base;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;

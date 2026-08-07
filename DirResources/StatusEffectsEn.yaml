@@ -7,6 +7,9 @@ KomachiModDistanceSe:
   Normal: "Normal Distance"
   Far: "Far"
   VeryFar: "Very Far"
+  Preview: |- 
+    Distance changes the enemy's attack damage.
+    Current distance is {Level}. The enemy will attack for a total of {ownerDamage} damage at this distance.
 
 KomachiModDistanceBlockSe:
   Name: Flexible Work Schedule
@@ -77,10 +80,9 @@ KomachiModVengefulSpiritSe:
     After {Duration} turns, remove {SelfName} and deal double its count as |Accurate| attack damage. 
     {damageDealt} damage will be dealt.
   Brief: |-
-    A status effect that is almost always applied with a duration of three turns. Further applications on an enemy will not change its duration.
+    A status effect that starts with a duration of 3. Further applications on an enemy will not change its duration.
     At the start of the turn, reduce duration of {SelfName} by 1.
-    When this status effect is removed, deal double its current count as |Accurate| attack damage to its owner.
-    Note: This attack damage is affected by damage modifiers on both the enemy and player.
+    When this status effect is removed, deal double its current count as |Accurate| attack damage (affected by modifiers) to its owner.
 
 KomachiModGuidedSpiritSe:
   Name: Guided Spirits

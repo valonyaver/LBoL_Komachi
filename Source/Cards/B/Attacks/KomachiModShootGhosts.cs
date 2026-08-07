@@ -3,7 +3,7 @@ using KomachiMod.Cards.Template;
 using KomachiMod.GunName;
 using KomachiMod.KomachiUlt;
 using KomachiMod.Source.BattleActions.Helpers;
-using KomachiMod.StatusEffects;
+using KomachiMod.Source.StatusEffects.Spirits;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;

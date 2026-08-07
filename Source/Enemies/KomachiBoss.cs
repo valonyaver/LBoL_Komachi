@@ -35,6 +35,7 @@ using static LBoL.EntityLib.EnemyUnits.Opponent.Reimu;
 using static LBoL.EntityLib.EnemyUnits.Opponent.Marisa;
 using static LBoL.EntityLib.EnemyUnits.Character.Siji;
 using KomachiMod.KomachiUlt;
+using KomachiMod.Source.StatusEffects.Spirits;
 
 
 

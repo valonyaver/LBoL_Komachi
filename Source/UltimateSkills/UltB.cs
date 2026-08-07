@@ -13,6 +13,7 @@ using KomachiMod.StatusEffects;
 
 using KomachiMod.BattleActions;
 using LBoL.EntityLib.StatusEffects.Basic;
+using KomachiMod.Source.StatusEffects.Spirits;
 
 namespace KomachiMod.KomachiUlt
 {

@@ -1,3 +1,7 @@
+## 0.5.2
+- Vengeful Spirits and Guided Spirits now show the damage they would deal on an icon.
+- Enemies now show much damage they deal for every distance level.
+
 ## 0.5
 - New card pogchamp new card.
   Name: Oasis of Passing Souls

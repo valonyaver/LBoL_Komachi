@@ -1,5 +1,6 @@
 ﻿using KomachiMod.Cards;
 using KomachiMod.GunName;
+using KomachiMod.Source.StatusEffects.Spirits;
 using KomachiMod.StatusEffects;
 using LBoL.Base;
 using LBoL.Base.Extensions;

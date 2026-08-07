@@ -1,5 +1,6 @@
 using KomachiMod.BattleActions;
 using KomachiMod.Cards;
+using KomachiMod.Source.StatusEffects.Spirits;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;

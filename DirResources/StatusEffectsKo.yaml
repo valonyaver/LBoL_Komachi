@@ -7,6 +7,9 @@ KomachiModDistanceSe:
   Normal: "적당함"
   Far: "멈"
   VeryFar: "매우 멈"
+  Preview: |-
+    거리에 따라 적의 공격 피해량이 달라집니다.
+    현재 거리는 {Level}입니다. 이 거리에서 적은 총 {ownerDamage}의 피해를 줍니다.
 
 KomachiModDistanceBlockSe:
   Name: 탄력적 근무

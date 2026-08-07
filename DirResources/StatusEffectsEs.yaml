@@ -7,6 +7,9 @@ KomachiModDistanceSe:
   Normal: "Distancia normal"
   Far: "Lejos"
   VeryFar: "Muy lejos"
+  Preview: |-
+    El daño del ataque del enemigo varía según la distancia.
+    La distancia actual es {Level}. A esta distancia, el enemigo infligirá un total de {ownerDamage} de daño.
 
 KomachiModDistanceBlockSe:
   Name: Horario de trabajo flexible

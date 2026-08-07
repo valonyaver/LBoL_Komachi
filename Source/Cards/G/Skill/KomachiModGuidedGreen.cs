@@ -1,5 +1,5 @@
 ﻿using KomachiMod.Cards.Template;
-using KomachiMod.StatusEffects;
+using KomachiMod.Source.StatusEffects.Spirits;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;

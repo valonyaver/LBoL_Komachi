@@ -1,17 +1,21 @@
 ﻿using Cysharp.Threading.Tasks.Triggers;
 using KomachiMod.BattleActions;
 using KomachiMod.Cards.Template;
+using KomachiMod.Source.BattleActions.Helpers;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using LBoL.Core.Intentions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using LBoL.Presentation;
 using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.Profiling;
 using UnityEngine;
@@ -185,8 +189,8 @@ namespace KomachiMod.StatusEffects
         /// <param name="unit"></param>
         protected override void OnAdded(Unit unit)
         {
-            base.HandleOwnerEvent<DamageEventArgs>(unit.DamageReceiving, new GameEventHandler<DamageEventArgs>(this.OnDamageReceiving));
-            base.HandleOwnerEvent<DamageDealingEventArgs>(unit.DamageDealing, new GameEventHandler<DamageDealingEventArgs>(this.OnDamageDealing));
+            base.HandleOwnerEvent(unit.DamageReceiving, this.OnDamageReceiving);
+            base.HandleOwnerEvent(unit.DamageDealing, this.OnDamageDealing);
             ClampLevel();
             Debug.Log($"On Added is happening. Clamped Level to (1, 5). Current distance is {Level}");
         }
@@ -227,8 +231,6 @@ namespace KomachiMod.StatusEffects
         /// Happens when the status is added to a unit that already has it. Will clamp the status.
         /// Unused because everything happens through DistanceChangeAction
         /// </summary>
-        /// <param name="other"></param>
-        /// <returns></returns>
         //public override bool Stack(StatusEffect other)
         //{
         //    _level += other.Level;
@@ -299,6 +301,78 @@ namespace KomachiMod.StatusEffects
                         return 1;
                     }
             }
+        }
+        public int ownerDamage => (Owner as EnemyUnit)?.GetCurrentAttackDamage() ?? 0;
+        public string previewDescription
+        {
+            get
+            {
+                string raw = LocalizeProperty("Preview", decorated: true, required: false);
+                return raw?.RuntimeFormat(base.FormatWrapper) ?? string.Empty;
+            }
+        }
+        
+        public static Dictionary<int, int> PreviewDamageByDistanceLevel(EnemyUnit enemy)
+        {
+            var result = new Dictionary<int, int>();
+            if (!enemy.TryGetStatusEffect(out KomachiModDistanceSe distance))
+                return result;
+
+            BattleController battle = enemy.Battle;
+            int savedLevel = distance._level;
+
+            // Attack-type hits: affected by distance, recomputed per hypothetical level below.
+            var scalableHits = new List<(DamageInfo damage, int times)>();
+            // Non-attack (e.g. Kokoro direct) damage: unaffected by distance, computed once.
+            int fixedTotal = 0;
+
+            if (enemy.Intentions != null)
+            {
+                foreach (Intention intention in enemy.Intentions)
+                {
+                    switch (intention)
+                    {
+                        case AttackIntention attack:
+                            scalableHits.Add((attack.Damage, attack.Times ?? 1));
+                            break;
+                        case ExplodeIntention explode:
+                            if (explode.Damage.DamageType == DamageType.Attack)
+                                scalableHits.Add((explode.Damage, 1));
+                            else
+                                fixedTotal += battle.CalculateDamage(enemy, enemy, battle.Player, explode.Damage);
+                            break;
+                        case SpellCardIntention spell when spell.Damage.HasValue:
+                            if (spell.Damage.Value.DamageType == DamageType.Attack)
+                                scalableHits.Add((spell.Damage.Value, spell.Times ?? 1));
+                            else
+                                fixedTotal += battle.CalculateDamage(enemy, enemy, battle.Player, spell.Damage.Value) * (spell.Times ?? 1);
+                            break;
+                        case KokoroDarkIntention kokoro:
+                            fixedTotal += battle.CalculateDamage(enemy, enemy, battle.Player, kokoro.Damage);
+                            break;
+                    }
+                }
+            }
+
+            try
+            {
+                for (int level = 1; level <= 5; level++)
+                {
+                    distance._level = level; // bypass Level setter's NotifyChanged for a silent, non-broadcasting probe
+                    int total = fixedTotal;
+                    foreach (var (damage, times) in scalableHits)
+                    {
+                        total += battle.CalculateDamage(enemy, enemy, battle.Player, damage) * times;
+                    }
+                    result[level] = total;
+                }
+            }
+            finally
+            {
+                distance._level = savedLevel; // guaranteed restore even if CalculateDamage throws
+            }
+
+            return result;
         }
     }
 }

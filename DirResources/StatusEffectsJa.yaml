@@ -6,6 +6,10 @@ KomachiModDistanceSe:
   Normal: "普通の距離"
   Far: "遠い"
   VeryFar: "とても遠い"
+  Preview: |-
+    敵の攻撃ダメージは距離によって変化します。
+    現在の距離: {Level}
+    この距離では、敵の攻撃は合計 {ownerDamage} ダメージになります。
 
 
 KomachiModDistanceBlockSe:

@@ -8,6 +8,7 @@ using LBoL.Core.Battle;
 using LBoL.Core;
 using LBoL.Core.Battle.BattleActions;
 using KomachiMod.StatusEffects;
+using KomachiMod.Source.StatusEffects.Spirits;
 
 namespace KomachiMod.Cards
 {
