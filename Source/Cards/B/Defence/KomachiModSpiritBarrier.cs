@@ -37,8 +37,11 @@ namespace KomachiMod.Cards
             config.Type = CardType.Defense;
             config.TargetType = TargetType.Nobody;
 
-            config.Block = 8;
-            config.UpgradedBlock = 10;
+            config.Block = 4;
+            config.UpgradedBlock = 6;
+
+            config.Shield = 3;
+            config.UpgradedShield = 4;
 
             // Minimum amount of release needed
             config.Value1 = 1;

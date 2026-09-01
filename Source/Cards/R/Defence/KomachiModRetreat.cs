@@ -27,13 +27,14 @@ namespace KomachiMod.Cards
 
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1, Any = 1 };
+            config.UpgradedCost = ManaGroup.Anys(2);
             config.Rarity = Rarity.Common;
 
             config.Type = CardType.Defense;
             config.TargetType = TargetType.SingleEnemy;
 
             config.Block = 12;
-            config.UpgradedBlock = 15;
+            config.UpgradedBlock = 16;
 
             config.Value1 = 1;
             config.UpgradedValue1 = 2;
@@ -57,14 +58,14 @@ namespace KomachiMod.Cards
     public sealed class KomachiModRetreat : KomachiCard
     {
         protected override int BaseValue3 { get => 5; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 5; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 5; }
 
         public override Interaction Precondition()
         {
             // Create list for interaction
             List<Card> list = new List<Card>();
             // make the 2 cards
-            KomachiModRetreat nopush = Library.CreateCard<KomachiModRetreat>();
+            KomachiModManDistance0 nopush = Library.CreateCard<KomachiModManDistance0>();
             KomachiModManDistance push1 = Library.CreateCard<KomachiModManDistance>();
             // indicate them
             nopush.ChoiceCardIndicator = 1; // tells you dont push this guy
@@ -98,6 +99,11 @@ namespace KomachiMod.Cards
             // dk what these do tbh.
             nopush.SetBattle(base.Battle);
             push1.SetBattle(base.Battle);
+
+            nopush.IsExile = false;
+            nopush.IsRetain = false;
+            push1.IsExile = false;
+            push1.IsRetain = false;
             // add em to the list
             list.Add(nopush);
             list.Add(push1);
@@ -109,26 +115,26 @@ namespace KomachiMod.Cards
             // Initial interaction to choose on pushing enemy away
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card singlepushcard = ((miniSelectCardInteraction != null) ? miniSelectCardInteraction.SelectedCard : null);
-            if (singlepushcard != null && singlepushcard.GetType() != typeof(KomachiModRetreat))
+            if (singlepushcard != null && singlepushcard.GetType() != typeof(KomachiModManDistance0))
             {
                 yield return new DistanceChangeAction(selector.SelectedEnemy, singlepushcard.Value1);
             }
 
             // Second interaction
-            if (IsUpgraded && Battle.AllAliveEnemies.Count() > 1)
-            {
-                MiniSelectCardInteraction miniSelectCardInteraction2 = (MiniSelectCardInteraction)Precondition2();
-                yield return new InteractionAction(miniSelectCardInteraction2);
-                Card aoepushcard = ((miniSelectCardInteraction2 != null) ? miniSelectCardInteraction2.SelectedCard : null);
-                if (aoepushcard != null && aoepushcard.GetType() != typeof(KomachiModRetreat))
-                {
-                    foreach (var enemy in Battle.AllAliveEnemies)
-                    {
-                        if (enemy == selector.SelectedEnemy) continue;
-                        yield return new DistanceChangeAction(enemy, aoepushcard.Value1);
-                    }
-                }
-            }
+            //if (IsUpgraded && Battle.AllAliveEnemies.Count() > 1)
+            //{
+            //    MiniSelectCardInteraction miniSelectCardInteraction2 = (MiniSelectCardInteraction)Precondition2();
+            //    yield return new InteractionAction(miniSelectCardInteraction2);
+            //    Card aoepushcard = ((miniSelectCardInteraction2 != null) ? miniSelectCardInteraction2.SelectedCard : null);
+            //    if (aoepushcard != null && aoepushcard.GetType() != typeof(KomachiModRetreat))
+            //    {
+            //        foreach (var enemy in Battle.AllAliveEnemies)
+            //        {
+            //            if (enemy == selector.SelectedEnemy) continue;
+            //            yield return new DistanceChangeAction(enemy, aoepushcard.Value1);
+            //        }
+            //    }
+            //}
 
             yield return DefenseAction(true);
             if (KomachiModDistanceSe.GetDistanceLevel(selector.SelectedEnemy) == Value3)

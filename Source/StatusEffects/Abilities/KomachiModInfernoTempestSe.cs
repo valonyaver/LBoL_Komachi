@@ -116,7 +116,7 @@ namespace KomachiMod.StatusEffects
             }
 
 
-            List<Card> basicMisfortuneList = Battle.ExileZone.Where(card => card.HasKeyword(Keyword.Basic) || card.CardType == CardType.Misfortune).ToList();
+            List<Card> basicMisfortuneList = Battle.ExileZone.Where(card => card.HasKeyword(Keyword.Basic)).ToList();
             foreach(var card in basicMisfortuneList)
             {
                 yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Random);

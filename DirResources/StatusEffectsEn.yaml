@@ -13,7 +13,7 @@ KomachiModDistanceSe:
 
 KomachiModDistanceBlockSe:
   Name: Flexible Work Schedule
-  Description: Each time an enemy's Distance is changed, gain {Level} |Block| for every level of change.
+  Description: Each time an enemy's |Distance| is changed, gain {Level} |Block| for every level of change.
 
 # I'm sorry for this formatting.
 KomachiModDistanceGeneratorSe:
@@ -80,9 +80,9 @@ KomachiModVengefulSpiritSe:
     After {Duration} turns, remove {SelfName} and deal double its count as |Accurate| attack damage. 
     {damageDealt} damage will be dealt.
   Brief: |-
-    A status effect that starts with a duration of 3. Further applications on an enemy will not change its duration.
+    First applied on an enemy with a duration of |e:3|.
     At the start of the turn, reduce duration of {SelfName} by 1.
-    When this status effect is removed, deal double its current count as |Accurate| attack damage (affected by modifiers) to its owner.
+    When removed, deal double its current count as |Accurate| attack damage (affected by modifiers) to its owner.
 
 KomachiModGuidedSpiritSe:
   Name: Guided Spirits
@@ -101,6 +101,7 @@ KomachiModDivineSpiritSe:
   Brief: |-
     At the end of its owner's turn, that unit gains |Barrier| equal to {SelfName}'s level, then halve the level of {SelfName}, rounding down.
 
+# Deprecated now that the card is a skill.
 KomachiModBoundSpiritsOfEarthSe:
   Name: Bound Spirits of the Earth
   Description: |-
@@ -127,7 +128,7 @@ KomachiModTalkativeFerrymanSe:
     At the start of {PlayerName}'s turn, gain {Level} |Guided Spirits|.
 
 KomachiModGuidedGeneratorNextTurnSe:
-  Name: Gain Guided Spirits
+  Name: VERY Talkative Ferryman
   Description: |-
     At the start of {PlayerName}'s next turn, gain {Level} |Guided Spirits|.
 
@@ -202,7 +203,7 @@ KomachiModRiversideViewSe:
   Name: Riverside View
   Description: |-
     At the start of your turn, if there are no |Spider Lilies| in the hand, add a |Spider Lily| to the hand.
-    |Spider Lilies| apply {Count} less |Poison| to the Player.
+    |Spider Lilies| apply only |e:1| |Poison| to the Player.
     After {PlayerName} plays a |Spider Lily|, apply {poisonApply} |Poison| to each enemy, then gain {Level} |Firepower|.
 
 KomachiModPosessedArmamentSe:
@@ -216,6 +217,26 @@ KomachiModPoisonNegativeSe:
   Description: |-
     Lose {Level} |Poison|.
     This should not be shown in gameplay.
+
+KomachiModPilingDeathworkSe:
+  Name: Piling Deathwok
+  Description: |-
+    {SelfName} repeats its effects {Level} times.
+
+KomachiModTiesSe:
+  Name: Ties of the Deceased
+  Description: |-
+    At the start of {PlayerName}'s turn, add a |Copy| of the last {Level} non-|Ability| non-|Copy| card{Level:plural one='' other='s'} played last turn to the hand. {Level:plural one='It' other='They'} temporarily cost{Level:plural one='s' other=''} {Mana} and has |Exile| and |Ethereal|.
+
+KomachiModRecursiveSoulsSe:
+  Name: Recursive Spirits
+  Description: |-
+    Whenever a card is |Exiled|, gain {Level} |Guided Spirits|.
+
+KomachiModSpiritInvitationSe:
+  Name: Spirit Invitation
+  Description: |-
+    Whenever {PlayerName} |Releases|, gain |Barrier| equal to the |Release| amount{Level:plural one='' other=' times {Level}'}, then deal damage to each enemy equal to {PlayerName}'s |Barrier|.
 
 
 #Boss status effects
@@ -249,7 +270,7 @@ KomachiModBossReviveSe:
 KomachiDistanceKeyword:
   Name: Distance
   Brief: |-
-    Distance is a status effect applied to enemies, representing their proximity to the player.
+    |Distance| is a status effect applied to enemies, representing their proximity to the player.
     The closer an enemy is, the more damage they deal and take. The farther they are, the less damage they deal and take.
 
     There are 5 Distance levels (default is 3 if no status is applied):
@@ -262,8 +283,8 @@ KomachiDistanceKeyword:
 KomachiDisplacementKeyword:
   Name: Displace X
   Brief: |-
-    Change the current |Distance| of the target by X. Enemies with no distance have their distance treated as 3.
-    Displacement also refers generally to any instance of changing distance of an enemy.
+    Change the current |Distance| of the target by X. Enemies with no |Distance| have their |Distance| treated as 3.
+    Any instance of changing the |Distance| of an enemy is considered |Displacement|.
 
 KomachiDetonationKeyword:
   Name: Detonate

@@ -33,7 +33,7 @@ namespace KomachiMod.Cards
 
             // Distance manip
             config.Value1 = 2;
-            config.UpgradedValue1 = 4;
+            config.UpgradedValue1 = 3;
 
             // Spirit infliction
             config.Value2 = 3;

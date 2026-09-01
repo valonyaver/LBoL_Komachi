@@ -33,7 +33,7 @@ namespace KomachiMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             base.ReactOwnerEvent<KomachiReleaseEventArgs>
-                (KomachiEventsManager.spiritsReleasing, new EventSequencedReactor<KomachiReleaseEventArgs>(this.OnSpiritsReleasing));
+                (KomachiEventsManager.SpiritsReleasing, new EventSequencedReactor<KomachiReleaseEventArgs>(this.OnSpiritsReleasing));
         }
 
         private IEnumerable<BattleAction> OnSpiritsReleasing(KomachiReleaseEventArgs args)
@@ -41,7 +41,7 @@ namespace KomachiMod.StatusEffects
             if (!base.Battle.BattleShouldEnd)
             {
                 base.NotifyActivating();
-                args.releaseAmount = 0;
+                args.ReleaseAmount = 0;
                 args.AddModifier(this);
             }
             yield break;

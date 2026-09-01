@@ -37,8 +37,7 @@ namespace KomachiMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnPlayerTurnStarted));
-            base.ReactBattleEvent<DieEventArgs>(base.Battle.EnemyDied, new EventSequencedReactor<DieEventArgs>(this.OnEnemyDied));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.OnPlayerTurnStarting));
         }
 
         /// <summary>
@@ -46,26 +45,19 @@ namespace KomachiMod.Exhibits
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        private IEnumerable<BattleAction> OnPlayerTurnStarted(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnStarting(UnitEventArgs args)
         {
             if (base.Battle.Player.TurnCounter == 1)
             {
                 base.NotifyActivating();
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModManDistance>() });
             }
-            yield break;
-        }
+            else if (base.Battle.Player.TurnCounter == 3)
+            {
 
-        /// <summary>
-        /// Adds Spider lily when killing enemy
-        /// </summary>
-        /// <param name="arg"></param>
-        /// <returns></returns>
-        private IEnumerable<BattleAction> OnEnemyDied(DieEventArgs arg)
-        {
-            base.NotifyActivating();
-            yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModSpiderLily>() });
-            yield break;
+                base.NotifyActivating();
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<KomachiModSpiderLily>() });
+            }
         }
 
         #region MONEY MONEY MONEY

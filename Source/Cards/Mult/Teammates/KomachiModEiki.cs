@@ -110,7 +110,7 @@ namespace KomachiMod.Cards.B
         }
         // Searched cards
         protected override int BaseValue3 { get => 1; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 2; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 2; }
 
         //Effect to trigger at the start of the end.
         public override IEnumerable<BattleAction> OnTurnStartedInHand()

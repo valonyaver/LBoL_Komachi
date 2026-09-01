@@ -39,7 +39,7 @@ namespace KomachiMod.Cards
             config.UpgradedValue1 = 3;
 
             // Poison gain
-            config.Value2 = 3;
+            config.Value2 = 2;
 
             config.Mana = new ManaGroup() { Red = 2 };
             config.UpgradedMana = new ManaGroup() { Philosophy = 2 };
@@ -50,11 +50,11 @@ namespace KomachiMod.Cards
 
             config.RelativeEffects = new List<string>()
             {
-                nameof(Poison), nameof(TempFirepower), nameof(KomachiAutoDiscardKeyword)
+                nameof(Poison), nameof(TempFirepower)
             };
             config.UpgradedRelativeEffects = new List<string>()
             {
-                nameof(Poison), nameof(TempFirepower), nameof(KomachiAutoDiscardKeyword)
+                nameof(Poison), nameof(TempFirepower)
             };
 
 
@@ -66,16 +66,23 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModSpiderLilyDef))]
     public sealed class KomachiModSpiderLily : KomachiCard
     {
-        public override bool isAutoDiscard => true;
+        protected override int AdditionalValue2
+        {
+            get
+            {
+                if (Battle != null && Battle.Player.TryGetStatusEffect<KomachiModRiversideViewSe>(out var riversideView))
+                {
+                    // poisonAmount -= riversideView.Count;
+                    return -1;
+                }
+                return 0;
+            }
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
 		{
 			yield return new GainManaAction(base.Mana);
             yield return BuffAction<TempFirepower>(Value1);
             int poisonAmount = Value2;
-            if (Battle.Player.TryGetStatusEffect<KomachiModRiversideViewSe>(out var riversideView))
-            {
-                poisonAmount -= riversideView.Count;
-            }
             if (poisonAmount > 0)
             {
                 yield return new ApplyStatusEffectAction<Poison>(Battle.Player, level: poisonAmount);

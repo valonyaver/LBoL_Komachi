@@ -63,7 +63,7 @@ namespace KomachiMod.Cards
             {
                 return null;
             }
-            List<Card> list = Battle.ExileZone.Where(card => card.Cost.Amount <= Value1).ToList();
+            List<Card> list = Battle.ExileZone.Concat(Battle.DiscardZone).Where(card => card.Cost.Amount <= Value1 && !card.HasKeyword(Keyword.Copy)).ToList();
 
             return new SelectCardInteraction(1, 1, list, SelectedCardHandling.DoNothing);
         }
@@ -81,6 +81,10 @@ namespace KomachiMod.Cards
                 var copy = card.CloneBattleCard();
                 yield return new AddCardsToHandAction(copy);
                 copy.IsTempRetain = true;
+                if (card.CardType == CardType.Ability || card.HasKeyword(Keyword.Exile))
+                {
+                    card.SetKeyword(Keyword.Copy, true);
+                }
             }
 
             yield break;

@@ -24,7 +24,7 @@ namespace KomachiMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Black = 1, Any =1 };
-            config.UpgradedCost = new ManaGroup() { Any = 1 };
+            config.UpgradedCost = new ManaGroup() { Black = 1 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
@@ -60,7 +60,7 @@ namespace KomachiMod.Cards
     {
         // Divine gain
         protected override int BaseValue3 { get => 4; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 4; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 4; }
 
         int draw = 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

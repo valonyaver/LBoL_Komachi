@@ -64,7 +64,7 @@ namespace KomachiMod.Cards
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value3);
         // Release cost
         protected override int BaseValue3 { get => 6; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 6; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 6; }
 
         public override Interaction Precondition()
         {

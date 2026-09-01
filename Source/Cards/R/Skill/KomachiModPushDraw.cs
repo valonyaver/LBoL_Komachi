@@ -30,7 +30,7 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.SingleEnemy;
 
             config.Value1 = 1;
-            config.UpgradedValue1 = 3;
+            config.UpgradedValue1 = 2;
 
             config.Illustrator = "tokoroten (hmmuk)";
 

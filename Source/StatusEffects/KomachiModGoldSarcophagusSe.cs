@@ -93,6 +93,7 @@ namespace KomachiMod.StatusEffects
                             {
                                 yield return new UpgradeCardAction(coffin.chosenCard);
                             }
+                            coffin.chosenCard.SetKeyword(Keyword.Replenish, true);
                             yield return new MoveCardAction(coffin.chosenCard, CardZone.Hand);
                         }
                         coffinedCards.Remove(coffin);

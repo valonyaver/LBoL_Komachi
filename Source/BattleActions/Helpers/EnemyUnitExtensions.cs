@@ -3,6 +3,7 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Intentions;
 using LBoL.Core.Units;
+using LBoL.EntityLib.StatusEffects.Enemy;
 using System;
 using System.Collections.Generic;
 using System.Text;

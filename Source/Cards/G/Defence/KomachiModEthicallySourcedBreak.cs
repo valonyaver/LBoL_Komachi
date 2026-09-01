@@ -23,6 +23,7 @@ namespace KomachiMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Green};
             config.Cost = new ManaGroup() { Green = 1, Any = 2 };
             config.Rarity = Rarity.Uncommon;
+            config.FindInBattle = false;
 
             config.Type = CardType.Defense;
             config.TargetType = TargetType.Nobody;
@@ -60,7 +61,7 @@ namespace KomachiMod.Cards
     {
         // Draw amount
         protected override int BaseValue3 { get => 2; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 3; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 3; }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             Battle.Player.GetView<UnitView>().Chat("Mimimimimimimimi", 2);

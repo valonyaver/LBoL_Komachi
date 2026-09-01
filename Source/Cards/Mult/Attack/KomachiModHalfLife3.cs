@@ -92,7 +92,7 @@ namespace KomachiMod.Cards
         }
         // Spirit Loss
         protected override int BaseValue3 { get => 3; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 0; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 0; }
 
         bool targetingNamed;
         int halfTargetHP;

@@ -23,6 +23,7 @@ namespace KomachiMod.Cards
             config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 7 };
             config.UpgradedCost = new ManaGroup() { Any = 1 };
             config.Rarity = Rarity.Uncommon;
+            config.FindInBattle = false;
 
             config.Type = CardType.Skill;
             config.TargetType = TargetType.Nobody;
@@ -51,7 +52,6 @@ namespace KomachiMod.Cards
     [EntityLogic(typeof(KomachiModQuickNapDef))]
     public sealed class KomachiModQuickNap : KomachiCard
     {
-        
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             Battle.Player.GetView<UnitView>().Chat("Zzzzzz", 2);

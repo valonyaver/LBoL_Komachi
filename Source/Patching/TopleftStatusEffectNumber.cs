@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using LBoL.Core.Battle.BattleActionRecord;
 using LBoL.Core.StatusEffects;
+using LBoL.EntityLib.Adventures.FirstPlace;
 using LBoL.Presentation.UI.Widgets;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,6 @@ namespace KomachiMod.Source.Patching
             TextMeshProUGUI topLeftText = UnityEngine.Object.Instantiate(__instance.upText, __instance.upText.transform.parent);
             topLeftText.name = "TopLeftText";
             topLeftText.outlineColor = Color.black;
-
             RectTransform rt = (RectTransform)topLeftText.transform;
             rt.anchorMin = new Vector2(0f, 1f);
             rt.anchorMax = new Vector2(0f, 1f);

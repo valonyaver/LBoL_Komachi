@@ -7,6 +7,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using System;
 using UnityEngine;
 
 namespace KomachiMod.BattleActions
@@ -18,7 +19,7 @@ namespace KomachiMod.BattleActions
 			Args = new KomachiReleaseEventArgs
             { 
                 Unit = unit,
-                releaseAmount = amount
+                ReleaseAmount = amount
 			};
 		}
 
@@ -31,26 +32,36 @@ namespace KomachiMod.BattleActions
             Args = new KomachiReleaseEventArgs
             {
                 Unit = card.Battle.Player,
-                releaseAmount = amount
+                ReleaseAmount = amount
             };
         }
 
         protected override void PreEventPhase()
         {
-            Trigger(KomachiEventsManager.spiritsReleasing);
+            var player = Args.Unit;
+            if (player.TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var guided))
+            {
+                Args.IntendedGuidedReleaseAmount = Math.Min(guided.Level, Args.ReleaseAmount);
+            }
+            if (player.TryGetStatusEffect<KomachiModDivineSpiritSe>(out var divine))
+            {
+                Args.IntendedDivineReleaseAmount = Math.Min(divine.Level, Args.ReleaseAmount);
+            }
+
+            Trigger(KomachiEventsManager.SpiritsReleasing);
         }
 
         protected override void MainPhase()
         {
             // Check if we have any spirits at all
-            if (!KomachiModUtility.CanReleaseSpirits(Args.Unit, Args.releaseAmount))
+            if (!KomachiModUtility.CanReleaseSpirits(Args.Unit, Args.ReleaseAmount))
             {
-                Debug.LogError($"{Args.Unit.SelfName} doesn't have enough total spirits to release {Args.releaseAmount}.");
+                Debug.LogError($"{Args.Unit.SelfName} doesn't have enough total spirits to release {Args.ReleaseAmount}.");
                 return;
             }
 
-            Args.successful = true;
-            int remainingRelease = Args.releaseAmount;
+            Args.Successful = true;
+            int remainingRelease = Args.ReleaseAmount;
 
             // First try to use Guided Spirits
             if (Args.Unit.TryGetStatusEffect<KomachiModGuidedSpiritSe>(out var guidedSpirits) && guidedSpirits.Level > 0)
@@ -58,7 +69,7 @@ namespace KomachiMod.BattleActions
                 int guidedToRelease = Mathf.Min(guidedSpirits.Level, remainingRelease);
                 guidedSpirits.Level -= guidedToRelease;
                 remainingRelease -= guidedToRelease;
-                Args.guidedSpiritReleaseAmount = guidedToRelease;
+                Args.GuidedSpiritReleaseAmount = guidedToRelease;
 
                 if (guidedSpirits.Level == 0)
                 {
@@ -72,7 +83,7 @@ namespace KomachiMod.BattleActions
             {
                 int divineToRelease = Mathf.Min(divineSpirits.Level, remainingRelease);
                 divineSpirits.Level -= divineToRelease;
-                Args.divineSpiritReleaseAmount = divineToRelease;
+                Args.DivineSpiritReleaseAmount = divineToRelease;
 
                 if (divineSpirits.Level == 0)
                 {
@@ -81,13 +92,13 @@ namespace KomachiMod.BattleActions
                 }
             }
             // If need be, split removed completely into two separate components later.
-            Args.removedCompletely = (Args.guidedSpiritReleaseAmount == Args.releaseAmount) ||
-                                   (Args.divineSpiritReleaseAmount == Args.releaseAmount);
+            Args.RemovedCompletely = (Args.GuidedSpiritReleaseAmount == Args.ReleaseAmount) ||
+                                   (Args.DivineSpiritReleaseAmount == Args.ReleaseAmount);
         }
 
         protected override void PostEventPhase()
         {
-            Trigger(KomachiEventsManager.spiritsReleased);
+            Trigger(KomachiEventsManager.SpiritsReleased);
         }
     }
 }

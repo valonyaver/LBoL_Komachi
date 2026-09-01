@@ -26,7 +26,7 @@ namespace KomachiMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Red };
             config.Cost = new ManaGroup() { Red = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 1 };
-            config.Rarity = Rarity.Common;
+            config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
             config.TargetType = TargetType.SingleEnemy;

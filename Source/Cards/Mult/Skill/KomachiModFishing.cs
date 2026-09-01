@@ -59,8 +59,8 @@ namespace KomachiMod.Cards
             }
         }
         // cost restriction
-        protected override int BaseValue3 { get => 3; }
-        protected override int BaseUpgradedValue3 { get => 4; }
+        protected override int BaseValue3 { get => 2; }
+        protected override int BaseUpgradedValue3 { get => 2; }
 
         public override Interaction Precondition()
         {
@@ -68,7 +68,7 @@ namespace KomachiMod.Cards
             {
                 return null;
             }
-            List<Card> list = Battle.ExileZone.Where(card => card.Cost.Amount < Value3).ToList();
+            List<Card> list = Battle.ExileZone.Where(card => card.Cost.Amount <= Value3).ToList();
 
             return new SelectCardInteraction(0, Value2, list, SelectedCardHandling.DoNothing);
         }

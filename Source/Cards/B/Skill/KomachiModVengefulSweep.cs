@@ -33,8 +33,8 @@ namespace KomachiMod.Cards
             config.TargetType = TargetType.Nobody;
 
             // Spirits inflicted
-            config.Value1 = 6;
-            config.UpgradedValue1 = 8;
+            config.Value1 = 5;
+            config.UpgradedValue1 = 7;
 
             // Release cost
             config.Value2 = 6;
@@ -62,7 +62,7 @@ namespace KomachiMod.Cards
     public sealed class KomachiModVengefulSweep : KomachiCard
     {
         protected override int BaseValue3 { get => Value2 + 3; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => Value2 + 2; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => Value2 + 2; }
         public override bool Triggered
         {
             get

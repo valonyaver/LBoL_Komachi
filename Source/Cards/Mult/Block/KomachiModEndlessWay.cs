@@ -67,7 +67,7 @@ namespace KomachiMod.Cards
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(this, Value2);
         // Release cost 2
         protected override int BaseValue3 { get => 6; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 4; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 4; }
 
         int lockOnAmount = 3;
         // For description

@@ -35,7 +35,6 @@ namespace KomachiMod.StatusEffects
             base.ReactOwnerEvent<UnitEventArgs>(base.Owner.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.OnOwnerTurnStarted));
         }
 
-        // Token: 0x06000032 RID: 50 RVA: 0x00002598 File Offset: 0x00000798
         private IEnumerable<BattleAction> OnOwnerTurnStarted(UnitEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)

@@ -10,9 +10,9 @@ The following arts were specifically requested for this mod by Iced Lemon: https
 -Low Tier Shinigami
 
 Other art in the mod was sourced from already existing fanart:
-Tip of the Reaper: https://www.pixiv.net/en/artworks/5761472
+Reaper's Maw: https://www.pixiv.net/en/artworks/5761472
 Used to Scolding: https://x.com/mirandakeikoku/status/1038729698136621056
-Ghostrick Shot: https://www.pixiv.net/en/artworks/7728020
+Soulbound Shot: https://www.pixiv.net/en/artworks/7728020
 Spirit Backing: https://www.pixiv.net/en/artworks/21177490
 
 Endless Way: https://www.pixiv.net/en/artworks/12977228
@@ -96,6 +96,11 @@ Move!: https://x.com/60mai/status/566193614015852544
 Sanzu Fare: https://x.com/o11_yori/status/1961636129699946822
 Oasis of Passing souls: https://safebooru.org/index.php?page=post&s=view&id=71165
 Short Life Expectancy: https://safebooru.org/index.php?page=post&s=view&id=809535
+Ghostrick Shot: https://www.pixiv.net/en/artworks/131211141
+Tip of the Reaper: https://safebooru.org/index.php?page=post&s=view&id=1172494
+Spirit Invitation: https://safebooru.org/index.php?page=post&s=view&id=2745370
+Ties with the Deceased: https://www.pixiv.net/en/artworks/73568008
+Recursive Souls: https://www.pixiv.net/en/artworks/13758912
 
 
 Everything else is placeholder art by me or the game itself.

@@ -9,6 +9,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.Randoms;
 using LBoL.Core.StatusEffects;
+using LBoL.EntityLib.Cards.Neutral.Black;
 using LBoL.EntityLib.Cards.Neutral.NoColor;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -69,14 +70,16 @@ namespace KomachiMod.Cards
                 ),
                 base.Value2, //Total amount of card to choose from.
                 (CardConfig config) => config.Id != base.Id && config.Colors.Contains(ManaColor.Black) && config.Colors.Contains(ManaColor.White)
-                && config.Colors.Count == 2
-                );
+                && config.Colors.Count == 2 && config.Id != nameof(QingeUpgrade)
+            );
             if (array.Length != 0)
             {
-                Interaction interactionMultiple = new SelectCardInteraction(0, base.Value1, array);
+                SelectCardInteraction interactionMultiple = new SelectCardInteraction(0, base.Value1, array);
                 yield return new InteractionAction(interactionMultiple);
-                IReadOnlyList<Card> cards = ((SelectCardInteraction)interactionMultiple).SelectedCards;
+                IReadOnlyList<Card> cards = interactionMultiple.SelectedCards;
                 yield return new AddCardsToHandAction(cards);
+                var exileCards = array.Where(c => !cards.Contains(c));
+                yield return new AddCardsToExileAction(exileCards);
             }
 
             if (IsUpgraded)

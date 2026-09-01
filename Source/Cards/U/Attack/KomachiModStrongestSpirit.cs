@@ -28,10 +28,9 @@ namespace KomachiMod.Cards
             config.GunName = GunNameID.GetGunFromId(14130);
 
 
-            config.Colors = new List<ManaColor>() { ManaColor.Blue, };
-            config.Cost = new ManaGroup() { Blue = 1, Any = 1 };
-            config.UpgradedCost = new ManaGroup() { Blue = 1};
-            config.Rarity = Rarity.Common;
+            config.Colors = new List<ManaColor>() { ManaColor.Blue };
+            config.Cost = new ManaGroup() { Blue = 1, Any = 2 };
+            config.Rarity = Rarity.Rare;
 
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
@@ -44,7 +43,7 @@ namespace KomachiMod.Cards
             // Firepower gain
             config.Value2 = 9;
 
-            config.UpgradedKeywords = Keyword.Accuracy;
+            config.UpgradedKeywords = Keyword.Retain | Keyword.Accuracy;
 
             config.RelativeEffects = new List<string>() 
             { 
@@ -101,9 +100,18 @@ namespace KomachiMod.Cards
             if (KomachiModUtility.ChoseRelease(releaseChoice))
             {
                 yield return new KomachiReleaseAction(this, Value1);
-                yield return BuffAction<TempFirepower>(Value2);
-                List<Card> list = base.Battle.HandZone.Where((Card card) => card.CardType != CardType.Attack).ToList<Card>();
-                yield return new ExileManyCardAction(list);
+                List<Card> list = base.Battle.HandZone.Where((Card card) => card != this).ToList<Card>();
+                var action = new ExileManyCardAction(list);
+                yield return action;
+                var cardsExiled = action.Cards.Length;
+                for(int i = 0; i <  cardsExiled; i++)
+                {
+                    yield return base.AttackAction(selector, base.GunName);
+                }
+                if (cardsExiled >= Value2)
+                {
+                    yield return BuffAction<Firepower>(Value2);
+                }
             }
             yield break;
         }

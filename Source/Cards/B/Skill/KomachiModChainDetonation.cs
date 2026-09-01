@@ -27,7 +27,7 @@ namespace KomachiMod.Cards
             config.Cost = new ManaGroup() { Black = 2 };
             config.UpgradedCost = new ManaGroup() { Black = 1, Any = 1 };
 
-            config.Rarity = Rarity.Uncommon;
+            config.Rarity = Rarity.Rare;
 
             config.Type = CardType.Skill;
             config.TargetType = TargetType.SingleEnemy;
@@ -60,7 +60,7 @@ namespace KomachiMod.Cards
     {
         // Second Release cost
         protected override int BaseValue3 { get => 8; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 8; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 8; }
         public override bool Triggered => KomachiModUtility.CanReleaseSpirits(Battle.Player, Value2);
         public override Interaction Precondition()
         {

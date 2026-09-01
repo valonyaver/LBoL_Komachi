@@ -3,7 +3,7 @@ KomachiModExhibitR:
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Komachi| are added to the card pool.
     At the start of the first turn each combat, add a |Manipulate Distance| to the hand.
-    When an enemy is defeated, add |Spider Lily| to the hand.
+    At the start of the third turn each combat, add a |Spider Lily| to the hand.
     <sprite="Point" name="Gold"> rewards from combat give {Value1}% more <sprite="Point" name="Gold">.
   FlavorText: Luxury Cruise across the Higan Shores! Limited time offer 10% off.
 # ^Taken from her pofv dialogue in Reimu's route.

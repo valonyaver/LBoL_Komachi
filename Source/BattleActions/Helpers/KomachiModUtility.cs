@@ -163,7 +163,7 @@ namespace KomachiMod.Source.BattleActions.Helpers
         /// Generic interaction for having an optional detonate option. 
         /// Choice card indicator is which extra description you want to use for the detonate choice.
         /// Also when making the if statement you gotta do 
-        /// if (releaseChoice != null && !(releaseChoice.GetType() == typeof(KomachiModManDetonateToken)))
+        /// if (releaseChoice != null and !(releaseChoice.GetType() == typeof(KomachiModManDetonateToken)))
         /// lmao
         /// </summary>
         /// <param name="card"></param>

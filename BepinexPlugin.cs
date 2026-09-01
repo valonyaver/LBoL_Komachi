@@ -81,7 +81,7 @@ namespace KomachiMod
         private void Awake()
         {
             log = Logger;
-            ///Load the custom config entry.
+            // Load the custom config entry.
             enableAct1Boss = Config.Bind(enableAct1BossEntry.Section, enableAct1BossEntry.Key, enableAct1BossEntry.Value, enableAct1BossEntry.Description);
             Debug.Log($"Enabling komachi boss is {enableAct1Boss.Value}");
 

@@ -12,7 +12,7 @@ namespace KomachiMod.Cards.Template
         //For instance, this can be used to give every card a new custom parameter called Value3. 
         //Custom value for display purposes.
         protected virtual int BaseValue3 {get; set;} = 0;
-        protected virtual int BaseUpgradedValue3 {get; set;} = 0; 
+        protected virtual int BaseUpgradedValue3 => BaseValue3;
         public int Value3
         {
             get

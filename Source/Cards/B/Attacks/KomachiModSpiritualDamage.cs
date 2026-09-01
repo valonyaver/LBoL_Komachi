@@ -33,8 +33,8 @@ namespace KomachiMod.Cards
             config.Type = CardType.Attack;
             config.TargetType = TargetType.SingleEnemy;
         
-            config.Damage = 10;
-            config.UpgradedDamage = 13;
+            config.Damage = 8;
+            config.UpgradedDamage = 11;
 
             // duration increase
             config.Value1 = 1;

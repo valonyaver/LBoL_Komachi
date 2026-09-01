@@ -29,7 +29,7 @@ namespace KomachiMod.Cards
 
             // Daily spirit gain
             config.Value1 = 3;
-            config.UpgradedValue1 = 5;
+            config.UpgradedValue1 = 4;
 
             // Release cost
             config.Value2 = 4;
@@ -52,7 +52,7 @@ namespace KomachiMod.Cards
     public sealed class KomachiModTalkativeFerryman : KomachiCard
     {
         protected override int BaseValue3 { get => 8; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 12; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 12; }
 
         public override Interaction Precondition()
         {

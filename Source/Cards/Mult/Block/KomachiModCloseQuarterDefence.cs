@@ -64,7 +64,7 @@ namespace KomachiMod.Cards
         
         // Temp firedown amount
         protected override int BaseValue3 { get => 5; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 7; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 7; }
 
         // This card used to give block rather than apply firepower down. With the assumption that value3 was the block amount.
         // This is all the calculation for it.

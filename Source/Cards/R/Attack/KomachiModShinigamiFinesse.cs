@@ -49,7 +49,7 @@ namespace KomachiMod.Cards
     public sealed class KomachiModShinigamiFinesse : KomachiCard
     {
         int attackGetter = 1;
-        public int attackAmount
+        public int attackTimes
         {
             get
             {
@@ -87,7 +87,7 @@ namespace KomachiMod.Cards
             {
                 accuracy = true;
             }
-            for (int i = 0; i < attackAmount; i++)
+            for (int i = 0; i < attackTimes; i++)
             {
                 yield return base.AttackAction(selector.SelectedEnemy, DamageInfo.Attack(Damage.Damage, accuracy), base.GunName);
             }

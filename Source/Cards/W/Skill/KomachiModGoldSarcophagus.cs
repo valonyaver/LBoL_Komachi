@@ -34,7 +34,7 @@ namespace KomachiMod.Cards
             //8 = B/G
             //9 = R/G
             config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 1};
-            config.UpgradedCost = new ManaGroup() { Any = 1 };
+            config.UpgradedCost = new ManaGroup() { Any = 0 };
             config.Rarity = Rarity.Uncommon;
 
             config.Type = CardType.Skill;
@@ -52,7 +52,7 @@ namespace KomachiMod.Cards
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
 
             config.Keywords = Keyword.Exile;
-            config.UpgradedKeywords = Keyword.Exile | Keyword.Initial | Keyword.Replenish;
+            config.UpgradedKeywords = Keyword.Exile | Keyword.Initial;
 
             config.Unfinished = true;
 

@@ -7,15 +7,34 @@ namespace KomachiMod.BattleActions
 {
     public class KomachiReleaseEventArgs : GameEventArgs
 	{
+        /// <summary>
+        /// Player releasing the spirits
+        /// </summary>
 		public Unit Unit;
-		public int releaseAmount;
-		public int guidedSpiritReleaseAmount;
-		public int divineSpiritReleaseAmount;
-		public bool successful;
-		public bool removedCompletely;
+		public int OriginalReleaseAmount;
+		public int ReleaseAmount;
+
+        /// <summary>
+        /// The virtual amount of Guided Spirits that would be released (ignores Eiki's free release)
+        /// </summary>
+        public int IntendedGuidedReleaseAmount;
+        /// <summary>
+        /// The virtual amount of Divine Spirits that would be released (ignores Eiki's free release)
+        /// </summary>
+        public int IntendedDivineReleaseAmount;
+        /// <summary>
+        /// How many Guided spirits were released by this command
+        /// </summary>
+        public int GuidedSpiritReleaseAmount;
+        /// <summary>
+        /// How many Guided spirits were released by this command
+        /// </summary>
+        public int DivineSpiritReleaseAmount;
+		public bool Successful;
+		public bool RemovedCompletely;
 		protected override string GetBaseDebugString()
 		{
-			return $"Released {releaseAmount} guided spirits.";
+			return $"Released {ReleaseAmount} guided spirits.";
 		}
 	}
 }

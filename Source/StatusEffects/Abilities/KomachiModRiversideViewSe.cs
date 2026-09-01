@@ -26,8 +26,6 @@ namespace KomachiMod.StatusEffects
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.Type = LBoL.Base.StatusEffectType.Positive;
-            config.HasCount = true;
-            config.CountStackType = StackType.Max; // The poison losing decrease does not stack. However, playing an upgraded version applies the higher one.
             config.RelativeEffects = new List<string>
             {
                 nameof(Poison),

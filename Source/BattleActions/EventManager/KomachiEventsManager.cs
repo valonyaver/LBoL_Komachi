@@ -19,8 +19,8 @@ namespace KomachiMod.Source.BattleActions.EventManager
 
         public static GameEvent<DistanceChangedEventArgs> DistanceChanged { get; set; }
         public static GameEvent<ApplyVengefulSpiritEventArgs> AppliedVengefulSpirit;
-        public static GameEvent<KomachiReleaseEventArgs> spiritsReleasing;
-        public static GameEvent<KomachiReleaseEventArgs> spiritsReleased;
+        public static GameEvent<KomachiReleaseEventArgs> SpiritsReleasing;
+        public static GameEvent<KomachiReleaseEventArgs> SpiritsReleased;
         public static GameEvent<DetonateVengefulSpiritEventArgs> DetonatedSpirits;
         public static BattleController Battle;
 
@@ -29,8 +29,8 @@ namespace KomachiMod.Source.BattleActions.EventManager
         {
             DistanceChanged = new GameEvent<DistanceChangedEventArgs>();
             AppliedVengefulSpirit = new GameEvent<ApplyVengefulSpiritEventArgs>();
-            spiritsReleasing = new GameEvent<KomachiReleaseEventArgs>();
-            spiritsReleased = new GameEvent<KomachiReleaseEventArgs>();
+            SpiritsReleasing = new GameEvent<KomachiReleaseEventArgs>();
+            SpiritsReleased = new GameEvent<KomachiReleaseEventArgs>();
             DetonatedSpirits = new GameEvent<DetonateVengefulSpiritEventArgs>();
 
             

@@ -59,7 +59,7 @@ namespace KomachiMod.Cards
     {
         // Poison Lost
         protected override int BaseValue3 { get => 2; set => base.BaseValue3 = value; }
-        protected override int BaseUpgradedValue3 { get => 3; set => base.BaseUpgradedValue3 = value; }
+        protected override int BaseUpgradedValue3 { get => 3; }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (IsUpgraded) {
