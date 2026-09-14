@@ -13,7 +13,7 @@ KomachiModDistanceSe:
 
 KomachiModDistanceBlockSe:
   Name: Horario de trabajo flexible
-  Description: Cada vez que se cambia la Distancia de un enemigo, gana {Level} de |Bloqueo| por cada unidad cambiada.
+  Description: Cada vez que se cambia la |Distancia| de un enemigo, gana {Level} de |Bloqueo| por cada unidad cambiada.
 
 KomachiModDistanceGeneratorSe:
   Name: Esfuerzo de la shinigami
@@ -79,9 +79,9 @@ KomachiModVengefulSpiritSe:
     Después de {Duration} turnos, se remueve {SelfName} e inflige el doble de su valor como daño de ataque |Certero|. 
     Inflige {damageDealt} de daño.
   Brief: |-
-    Un efecto de estado que casi siempre se aplica durante tres turnos. Aplicarlo posteriormente a un enemigo no modificará su duración..
+    Se aplica primero a un enemigo con una duración de |e:3| turnos.
     Al comienzo del turno, reduce la duración de {SelfName} en 1.
-    Cuando se elimina este efecto de estado, inflige el doble de su valor actual como daño de ataque |Certero| a su propietario.
+    Cuando se elimina, inflige el doble de su valor actual como daño de ataque |Certero| a su propietario.
     Nota: Este daño de ataque se ve afectado por los modificadores de daño tanto del enemigo como del jugador.
 
 KomachiModGuidedSpiritSe:
@@ -127,7 +127,7 @@ KomachiModTalkativeFerrymanSe:
     Al comienzo del turno de {PlayerName}, gana {Level} |Espíritus guiados|.
 
 KomachiModGuidedGeneratorNextTurnSe:
-  Name: Gana espíritus guiados
+  Name: Barquera MUY conversadora
   Description: |-
     Al comienzo del siguiente turno de {PlayerName}, gana {Level} |Espíritus guiados|.
 
@@ -202,13 +202,41 @@ KomachiModRiversideViewSe:
   Name: Vistas del río
   Description: |-
     Al comienzo de tu turno, si no hay |Lirios de Araña| en la mano, agrega un |Lirio de Araña| a la mano.
-    Los |Lirios de Araña| aplican {Count} menos de |Veneno| al jugador.
+    Los |Lirios de Araña| aplican solo |e:1| |Veneno| al jugador.
     Después de que {PlayerName} juegue un |Lirio de Araña|, aplica {poisonApply} de |Veneno| a cada enemigo y luego gana {Level} de |Poder|.
     
 KomachiModPosessedArmamentSe:
   Name: Armamento poseído
   Description: |-
     Siempre que {PlayerName} inflige daño de ataque no bloqueado, también aplica {Level} |Espíritu{Level:plural one=' Vengativo' other='s Vengativos'}|.
+
+
+
+KomachiModPilingDeathworkSe:
+  Name: Acumulación letal
+  Description: |-
+    {SelfName} repite sus efectos {Level} veces.
+
+KomachiModTiesSe:
+  Name: Lazos con el difunto
+  Description: |-
+    Al comienzo del turno de {PlayerName}, agrega a la mano una |Copia| de las últimas {Level} cartas jugadas durante el turno anterior que no sean de |Habilidad| ni sea |Copia|. Esta{Level:plural one='' other='s'} cuesta{Level:plural one='' other='n'} temporalmente {Mana} y tiene |Exilio| y |Etéreo|.
+
+KomachiModRecursiveSoulsSe:
+  Name: Espíritus recursivos
+  Description: |-
+    Siempre que una carta sea |Exiliada|, gana {Level} |Espíritu{Level:plural one=' guiado' other='s guiados'}|.
+
+KomachiModSpiritInvitationSe:
+  Name: Invitación espiritual
+  Description: |-
+    Siempre que {PlayerName} |Libera|, gana |Barrera| igual a la cantidad de Liberada{Level:plural one='' other=' multiplicado por %'}, luego inflige daño a cada enemigo igual a la |Barrera| de {PlayerName}.
+
+
+
+
+
+
 
 KomachiModPoisonNegativeSe:
   Name: Perder veneno
@@ -246,7 +274,7 @@ KomachiModBossReviveSe:
 KomachiDistanceKeyword:
   Name: Distancia
   Brief: |-
-    La distancia es un efecto de estado que se aplica a los enemigos y representa su proximidad al jugador.
+    La |distancia| es un efecto de estado que se aplica a los enemigos y representa su proximidad al jugador.
     Cuanto más cerca esté un enemigo, más daño infligirá y recibirá. Cuanto más lejos esté, menos daño infligirá y recibirá.
 
     Hay 5 niveles de distancia (el valor predeterminado es 3 si no se aplica ningún estado):
@@ -259,8 +287,8 @@ KomachiDistanceKeyword:
 KomachiDisplacementKeyword:
   Name: Desplazar X
   Brief: |-
-    Cambia la |Distancia| actual del objetivo en X. Los enemigos sin distancia tienen su distancia tratada como 3
-    El desplazamiento también se refiere en general a cualquier instancia de cambio de distancia de un enemigo.
+    Cambia la |Distancia| actual del objetivo en X. Los enemigos sin |distancia| tienen su |distancia| tratada como 3
+    Cualquier instancia de cambio de la |Distancia| de un enemigo se considera |Desplazamiento|.
 
 KomachiDetonationKeyword:
   Name: Detonar

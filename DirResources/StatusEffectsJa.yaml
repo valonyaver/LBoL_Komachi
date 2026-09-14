@@ -82,10 +82,10 @@ KomachiModVengefulSpiritSe:
     {Duration}ターン後、{SelfName}を除去し、そのカウントの2倍の|精密|攻撃ダメージを与える。
     {damageDealt}のダメージが発生する。
   Brief: |-
-    ほぼ常に3ターンの持続で付与されるステータス効果。敵に再度付与しても持続ターンは変わらない。
-    ターン開始時に{SelfName}の残りターンを1減らす。
-    この効果が解除されると、その時点のカウントの2倍の|精密|攻撃ダメージを所有者に与える。
-    ※この攻撃ダメージは敵とプレイヤー両方のダメージ補正の影響を受ける。
+    最初に付与した時点では|e:3|の持続時間を持つ。
+    ターン開始時、{SelfName}の持続時間を1減らす。
+    解除された時、その現在のカウントの2倍の|精密|攻撃ダメージを、その所有者に与える（各種補正の影響を受ける）。
+
 
 KomachiModGuidedSpiritSe:
   Name: 導霊
@@ -130,7 +130,7 @@ KomachiModTalkativeFerrymanSe:
     {PlayerName}のターン開始時、|導霊|{Level}を得る。
 
 KomachiModGuidedGeneratorNextTurnSe:
-  Name: 導霊増加
+  Name: とてもおしゃべりな渡し守
   Description: |-
     {PlayerName}の次のターン開始時、|導霊|{Level}を得る。
 
@@ -209,9 +209,30 @@ KomachiModDisplaceNextTurnSe:
 KomachiModRiversideViewSe:
   Name: 川辺の景色
   Description: |-
-    自分のターン開始時、手札に|彼岸花|がない場合、|彼岸花|を1枚手札に加える。
-    |彼岸花|がプレイヤーに付与する|毒|を{Count}減らす。
-    {PlayerName}が|彼岸花|をプレイした後、敵全体に{poisonApply}の|毒|を与え、その後|火力|{Level}を得る。
+    自分のターン開始時、手札に|彼岸花|が1枚もない場合、手札に|彼岸花|を1枚加える。
+    |彼岸花|がプレイヤーに付与する|毒|は|e:1|のみになる。
+    {PlayerName}が|彼岸花|をプレイした後、敵全員に|毒|{poisonApply}与え、|火力|{Level}得る。
+
+KomachiModPilingDeathworkSe:
+    Name: 積み重なる死仕事
+    Description: |-
+        {SelfName}の効果を{Level}回繰り返す。
+
+KomachiModTiesSe:
+    Name: 死者の縁
+    Description: |-
+        {PlayerName}のターン開始時、前のターンに最後にプレイした|能力|でも|コピー|でもないカード{Level}枚の|コピー|を手札に加える。{Level one='そのカード' other='それらのカード'}のコストは一時的に{Mana}になり、|廃棄|と|虚無|を持つ。
+
+KomachiModRecursiveSoulsSe:
+    Name: 巡る霊魂
+    Description: |-
+        カードが|廃棄|されるたび、|導霊|{Level}得る。
+
+KomachiModSpiritInvitationSe:
+    Name: 霊の招待
+    Description: |-
+        {PlayerName}が|解放|するたび、|解放|量と同じ値の|バリア|を{Level}回得て、、その後、{PlayerName}の|バリア|と同じ値のダメージを敵全員に与える。
+
 
 KomachiModPosessedArmamentSe:
   Name: 憑霊兵器
@@ -256,8 +277,8 @@ KomachiModBossReviveSe:
 KomachiDistanceKeyword:
   Name: 距離
   Brief: |-
-    距離は敵に付与されるステータス効果で、プレイヤーからの接近度を表す。
-    敵が近いほど、与えるダメージも受けるダメージも増加し、遠いほど与えるダメージも受けるダメージも減少する。
+    |距離|は敵に付与されるステータス効果で、プレイヤーとの距離を表す。
+    敵が近いほど、敵が与えるダメージと受けるダメージが増加する。遠いほど、敵が与えるダメージと受けるダメージが減少する。
     
     距離には5段階のレベルがあり(ステータス未適用時のデフォルトは3):
 
@@ -271,8 +292,9 @@ KomachiDistanceKeyword:
 KomachiDisplacementKeyword:
   Name: 変位 X
   Brief: |-
-    対象の現在の|距離|をXだけ変化させる。距離が設定されていない敵は距離3として扱う。
-    変位は一般的に、敵の距離を変更するすべての行為を指す。
+    対象の現在の|距離|をX変化させる。|距離|を持たない敵は、|距離|が3として扱われる。
+    敵の|距離|を変化させる行為はすべて|変位|として扱われる。
+
 
 KomachiDetonationKeyword:
   Name: 爆破

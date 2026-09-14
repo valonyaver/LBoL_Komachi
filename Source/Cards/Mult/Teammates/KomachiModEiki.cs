@@ -183,9 +183,20 @@ namespace KomachiMod.Cards.B
                 {
                     yield break;
                 }
-                var interaction = new MiniSelectCardInteraction(list);
-                yield return new InteractionAction(interaction);
-                Card card = interaction.SelectedCard;
+                Card card;
+                if (list.Count > 5)
+                {
+                    var interaction = new SelectHandInteraction(1, 1, list);
+                    yield return new InteractionAction(interaction);
+                    card = interaction.SelectedCards.FirstOrDefault();
+                }
+                else
+                {
+                    var interaction = new MiniSelectCardInteraction(list);
+                    yield return new InteractionAction(interaction);
+                    card = interaction.SelectedCard;
+                }
+                if (card == null) yield break;
                 ManaGroup newCost;
                 if (IsUpgraded) newCost = Mana;
                 else newCost = new ManaGroup() { Any = card.Cost.Any };

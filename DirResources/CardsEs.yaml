@@ -93,7 +93,6 @@ KomachiModSpiderLily:
     Gana {Mana}.
     Gana {Value1} de |Poder temporal|.
     Gana {Value2} de |Poison|.
-    |Auto-Descarte|.
   FlavorText: |-
     Llévate todos los rencores de la humanidad dentro de ti.
 
@@ -114,28 +113,22 @@ KomachiModShootAndMove:
   Name: Dispara y muévete
   Description: |-
     Inflige {Damage} de daño. 
-    Puedes |Desplazar| en +/-{Value1}.
+    |Opcional|: |Desplazar| en +/-{Value1}.
   UpgradedDescription: |-
     Inflige {Damage} de daño. 
-    Puedes |Desplazar| hasta +/-{Value1}.
+    |Opcional|: |Desplazar| hasta +/-{Value1}.
   FlavorText: |-
-    This was an earlier version of Move and shoot. Switched up because move and shoot lets act1 komachi be less defensive. Undraftable ingame.
+    Esta era una versión anterior de «Moverse y disparar». Se cambió porque «Moverse y disparar» permite que Komachi en el Acto 1 adopte una estrategia menos defensiva. No se puede seleccionar en el draft dentro del juego.
 
 
 KomachiModMoveAndShoot:
   Name: Muévete y dispara
   Description: |-
-    Puedes |Desplazar| en +/-{Value1}.
+    |Opcional|: |Desplazar| en +/-{Value1}.
     Inflige {Damage} de daño. 
   UpgradedDescription: |-
-    Puedes |Desplazar| hasta +/-{Value1}.
+    |Opcional|: |Desplazar| hasta +/-{Value1}.
     Inflige {Damage} de daño. 
-  NonbattleBaseDescription: |-
-    Puedes |Desplazar| en +/-{Value1}.
-    Inflige {Damage} de daño.
-  UpgradedNonbattleBaseDescription: |-
-    Puedes |Desplazar| hasta +/-{Value1}.
-    Inflige {Damage} de daño.
   ExtraDescription1: |-
     Inflige VALUE de daño.
   FlavorText: |-
@@ -147,11 +140,11 @@ KomachiModMoveAndShoot:
 KomachiModRetreat:
   Name: Retiro práctico
   Description: |-
-    Puedes |Desplazar| en +{Value1}.
+    |Opcional|: |Desplazar| en +{Value1}.
     Gana {Block} de |Bloqueo|.
     Si la |Distancia| es {Value3}, agrega un |Manipular distancia| a la mano.
   UpgradedDescription: |-
-    Puedes |Desplazar| en +{Value1}. Luego, puedes |Desplazar| a todos los demás enemigos en +{Value2}.
+    |Opcional|: |Desplazar| hasta +{Value1}.
     Gana {Block} de |Bloqueo|.
     Si la |Distancia| es {Value3}, agrega un |Manipular distancia| a la mano.
   ExtraDescription1: No desplaza el objetivo.
@@ -164,7 +157,7 @@ KomachiModEndlessWay:
   Description: |-
     |Desplaza| en +{Value1}. Remueve toda la |Evasión| del objetivo.
     Gana {Block} de |Bloqueo|.
-    |Libera| {Value2} o {Value3}: Aplica {lockOnAmount} |Marcado| por cada {Value2} espiritus liberados.
+    |Libera| {Value2} o {Value3}: Aplica {lockOnAmount} |Marcado| por cada {Value2} espíritus liberados.
   ExtraDescription1: |-
     |Libera| {Value2}: Aplica {lockOnAmount} |Marcado|.
   ExtraDescription2: |-
@@ -200,12 +193,12 @@ KomachiModTasteOfDeath:
     Es un gusto adquirido. Normalmente, la gente solo lo prueba una vez.
 
 KomachiModPushDraw:
-  Name: Retroceso y Robo
+  Name: Robo de Represalia
   Description: |-
-    Puedes |Desplazar| en +{Value1}.
+    |Opcional|: |Desplazar| en +{Value1}.
     Roba cartas igual a la |Distancia| de ese enemigo.
   UpgradedDescription: |-
-    Puedes |Desplazar| hasta +{Value1}.
+    |Opcional|: |Desplazar| hasta +{Value1}.
     Roba cartas igual a la |Distancia| de ese enemigo.
   ExtraDescription1: "No puedes |Desplazar|."
   FlavorText: |-
@@ -219,6 +212,8 @@ KomachiModQuickNap:
     Finaliza el turno de {PlayerName}.
   FlavorText: |-
       Zzz...
+  DetailText: |-
+    {SelfName} no puede generarse aleatoriamente en combate y no puede copiarse.
 
 KomachiModDistanceAttack:
   Name: Guadaña de la segadora
@@ -249,23 +244,23 @@ KomachiModScytheFinalJudgment:
 KomachiModShinigamiFinesse:
   Name: La elegancia de la shinigami
   Description: |-
-   Inflige {Damage} de daño {attackAmount} {attackAmount:plural one='vez' other='veces'}.
-   La cantidad de veces que esta carta ataca es igual al nivel de distancia del objetivo.
-   Si la distancia del objetivo <b>es menor<b> a {three}, este ataque se vuelve |Certero|.
+   Inflige {Damage} de daño {attackTimes} {attackTimes:plural one='vez' other='veces'}.
+   La cantidad de veces que esta carta ataca es igual al nivel de |distancia| del objetivo.
+   Si la |distancia| del objetivo <b>es menor</b> a {three}, este ataque se vuelve |Certero|.
   UpgradedDescription: |-
-   Inflige {Damage} de daño {attackAmount} {attackAmount:plural one='vez' other='veces'}.
-   La cantidad de veces que esta carta ataca es igual al nivel de distancia del objetivo +1.
-   Si la distancia del objetivo <b>es menor</b> a {three}, este ataque se vuelve |Certero|.
+   Inflige {Damage} de daño {attackTimes} {attackTimes:plural one='vez' other='veces'}.
+   La cantidad de veces que esta carta ataca es igual al nivel de |distancia| del objetivo +1.
+   Si la |distancia| del objetivo <b>es menor</b> a {three}, este ataque se vuelve |Certero|.
 
 KomachiModDistanceBlock:
   Name: Horario de trabajo flexible
   Description: |-
-    Cada vez que un enemigo es |Desplazado|, gana {Value1} de |Bloqueo| por cada nivel de distancia modificado.
+    Cada vez que un enemigo es |Desplazado|, gana {Value1} de |Bloqueo| por cada nivel de |distancia| modificado.
   FlavorText: |-
     "Trabajar de 9 a 5 no está tan mal cuando puedes echarte una siesta durante la mayor parte del tiempo."
 
 KomachiModDistanceGenerator:
-  Name: Esfuerzo del shinigami
+  Name: Shinigami trabajadora
   Description: |-
     Al comienzo del turno de {PlayerName}, si no hay |Manipular distancias| en la mano, agrega {Value1} |Manipular distancia| a la mano.
   UpgradedDescription: |-
@@ -276,7 +271,7 @@ KomachiModDistanceFlow:
   Name: Flujo del río Sanzu
   Description: |-
     Cada vez que un enemigo es |Desplazado|:
-    - Si se incremento la distancia, gana {Value1} |Espiritu temporal|
+    - Si se incrementó la distancia, gana {Value1} |Espíritu temporal|
     - Si se redujo la distancia, gana {Value1} |Poder temporal|
   FlavorText: |-
     Si ves dos peces peleando en el agua, puedes estar seguro de que una taoísta pasó por allí hace cinco minutos.
@@ -295,24 +290,24 @@ KomachiModReviveCard:
   Name: Diosa de la muerte
   Description: |-
     La próxima vez que {PlayerName} sea derrotado en este combate, se curará a la mitad de su vida máxima y gana {Value2} de |Perfección| en su lugar.
-    Se remueve {SelfName} de la biblioteca al activarse. Solo se puede revivir una vez por combate con este efecto.
+    Se remueve {SelfName} de la biblioteca al activarse. {PlayerName} solo puede revivir una vez por combate con este efecto.
     Al derrotar a un enemigo, si fue una invocación, gana {Value1} de |Barrera|. De lo contrario, cura {Value1} de vida.
   DetailText: |-
     {SelfName} no se puede generar aleatoriamente en combate y no se puede copiar.
     Sólo el primer {SelfName} jugado será eliminado de la biblioteca.
 
 KomachiModRiversideGarden:
-  Name: Jardin de la ribera
+  Name: Jardín de la ribera
   Description: |-
-    Agrega {Value1} |Lirio de Araña| a la mano, pila de robo,y pila de descarte.
+    Agrega {Value1} |Lirio de Araña| a la mano, pila de robo y pila de descarte.
     Siempre que {PlayerName} agregue |Lirios de araña| durante este combate, se |Mejora|.
     Al final del combate, cura {Value2} de vida por cada |Lirio de araña| en el |Campo de batalla|. (hasta la vida actual de {PlayerName} + {maxHeal}).
 
 KomachiModShinigamiTactics:
   Name: Tácticas de shinigami
   Description: |-
-    Siempre que se juegue |Manipular distancias| si redujo la distancia, agrega una carta de ataque aleatoria a la mano. Si incrementa la distancia, agrega una carta de defensa aleatoria a la mano.
-    Su reduce su |coste temporalmente| a {Mana} y tiene |Exilio| y |Etéreo|.
+    Siempre que se juegue |Manipular distancias| si se redujo la |distancia|, agrega una carta de ataque aleatoria a la mano. Si incrementa la |distancia|, agrega una carta de defensa aleatoria a la mano.
+    Se reduce su |coste temporalmente| a {Mana} y tiene |Exilio| y |Etéreo|.
     Agrega {Value2} |Manipular distancias| a la mano.
 
 KomachiModLowTierShinigami:
@@ -348,10 +343,10 @@ KomachiModIgnoreNagging:
   Name: Ignorando quejas
   Description: |-
     Desplaza en -{Value1}.
-    Gana {Value2} de |Evasión| por cada enemigo cuya |Distancia| sea 1 o 2.
+    Gana {Value2} de |Evasión| por cada enemigo cuya |Distancia| es |2| o menos.
   UpgradedDescription: |-
     Desplaza hasta -{Value1}.
-    Gana {Value2} de |Evasión| por cada enemigo cuya |Distancia| sea 1 o 2.
+    Gana {Value2} de |Evasión| por cada enemigo cuya |Distancia| es |2| o menos.
 
 KomachiModRetreatBoat:
   Name: Barco protector del Sanzu
@@ -370,10 +365,10 @@ KomachiModWorkFocus:
   Name: Enfocarse en el trabajo
   Description: |-
     |Exilia| hasta {Value1} cartas de la mano, agrega esa misma cantidad de |Manipular distancia| a la mano.
-    Si una carta |mejorada| fue exiliada de esta manera, agrega un |Lirio de araña| a tu mano.
+    Si una carta |mejorada| fue |exiliada| de esta manera, agrega un |Lirio de araña| a tu mano.
   UpgradedDescription: |-
     |Exilia| hasta {Value1} cartas de la mano, pila de robo y pila de descarte, agrega esa misma cantidad de |Manipular distancia| a la mano.
-    Si una carta |mejorada| fue exiliada de esta manera, agrega un |Lirio de araña| a tu mano.
+    Si una carta |mejorada| fue |exiliada| de esta manera, agrega un |Lirio de araña| a tu mano.
 
 KomachiModSpySpirit:
   Name: Espíritu espía acompañante
@@ -394,14 +389,15 @@ KomachiModEqualizeDistance:
   Description: |-
     |Desplaza| hasta que la distancia sea {three}.
     Roba {Value1:plural one='% carta' other='% cartas'} por cada nivel desplazado. 
-    Si la distancia del objetivo ya era |3|, roba {Value2} cartas, luego descarta {Value3} cartas en su lugar.
+    Si la |distancia| del objetivo ya era |3|, roba {Value2} cartas, luego descarta {Value3} cartas en su lugar.
 
 KomachiModRitualOfEcstasy:
   Name: Rito de éxtasis
   Description: |-
-    Invierte la |Distancia| del objetivo y luego aplica 1 de los siguientes efectos.
-    Si la distancia del objetivo es {three}, puedes elegir el efecto en su lugar.
-    Si la distancia se redujo, roba {Value1} cartas. Si se incremento, gana {Value2} evasión y {Block} de bloqueo.
+    Invierte la |Distancia| del objetivo.
+    Si se aumentó, gana {Value2} |Evasión| y |Bloqueo| de {Block} .
+    Si se redujo, roba {Value1} cartas.
+    Si la |Distancia| del objetivo es {three}, se puede elegir el efecto en su lugar. 
   ExtraDescription1: |-
     Roba {Value1} cartas.
   ExtraDescription2: |-
@@ -418,7 +414,7 @@ KomachiModRitualOfEcstasy:
 KomachiModExchangeLife:
   Name: Intercambio de vida
   Description: |-
-    Si la |Vida actual| del objetivo es igual o menor que tu |Vida máxima| actual, intercambia sus vidas actuales.
+    Si la |Vida actual| del objetivo es igual o menor que la |Vida máxima| actual de {PlayerName}, intercambia sus vidas actuales.
     Si se juega {SelfName} para curar a {PlayerName}, se retira del combate y de la biblioteca.
     |Overflow|: Gana {PlentifulMana}.
   DetailText: |-
@@ -439,7 +435,7 @@ KomachiModDefendDetonate:
   Description: |-
     Gana {Block} de |Bloqueo|.
     Aplica {Value1} |Espíritus vengativos|.
-    Se puede |Detonar| al objetivo y, si se hace, aplica {Value2} |Reducción de poder temporal| por cada {Value3} |Espíritu vengativo| que tenga el objetivo.
+    |Opcional|: |Detona| el objetivo, luego se aplica {Value2} |Reducción de poder temporal| por cada {Value3} |Espíritu vengativo| que tenga el objetivo.
   ExtraDescription1: "No se puede |Detonar|"
   ExtraDescription2: "|Detonar|"
 
@@ -447,18 +443,18 @@ KomachiModBWBridge:
   Name: Ministerio del Trabajo
   Description: |-
     Gana {Mana}. Al comienzo del turno de {PlayerName}, gana {Mana}.
-    Elige hasta {Value1} de {Value2} cartas hibridas blanco/negras aleatorias para agregarlo a la mano.
+    Elige hasta {Value1} de {Value2} cartas hibridas blanco/negras aleatorias para agregarlo a la mano. Luego se |Exilia| el resto.
   UpgradedDescription: |-
     Gana {Mana}. Agrega un |Resplandor| a la mano.
     Al comienzo del turno de {PlayerName}, gana {Mana}.
-    Elige hasta {Value1} de {Value2} cartas hibridas blanco/negras aleatorias para agregarlo a la mano.
+    Elige hasta {Value1} de {Value2} cartas hibridas blanco/negras aleatorias para agregarlo a la mano. Luego se |Exilia| el resto.
   DetailText: |-
     Estas |e:cartas alternativas| ignoran las restricciones del maná y color.
 
 KomachiModFishing:
   Name: Doble anzuelo
   Description: |-
-    Descarta {Value1} carta, luego elige hasta {Value2} cartas del |Exilio| cuyo coste total sea menor a {Value3} cada una; devuelve la primera a la mano y la segunda a la pila de descarte.
+    Descarta {Value1} carta, luego elige hasta {Value2} cartas del |Exilio| cuyo coste total sea igual o menor que {Value3} cada una; devuelve la primera a la mano y la segunda a la pila de descarte.
     |Cuestan temporalmente| {Mana}.
 
 KomachiModGuidingSanzu:
@@ -519,7 +515,7 @@ KomachiModVengefulerSweep:
     ¡Barrido vengatizador!
 
 KomachiModFreeTrauma:
-  Name: ¡¿Trauma Gratis?!
+  Name: ¡¿Trauma gratis?!
   Description: |-
     Inflige {Value3} |Espíritus vengativos|.
     Gana {Mana}.
@@ -529,34 +525,32 @@ KomachiModFreeTrauma:
   ExtraDescription2: |-
     |Liberar| {Value2}: Gana {Mana}{Mana}.
   FlavorText: |-
-    ¿En esta economia?
+    ¿En esta economía?
 
 KomachiModSpiritBarrier:
   Name: Barrera espiritual
   Description: |-
-    Gana {Block} de |Bloqueo|.
+    Gana {Shield} de |Barrera|.
     |Liberar| todo: Gana {Value2} de |Barrera| por cada espíritu que ha sido liberado.
   ExtraDescription1: |-
-    |Liberar| todo: Gana {Value2} |Barrier| por cada espíritu que ha sido liberado.
+    |Liberar| todo: Gana {Value2} |Barrera| por cada espíritu que ha sido liberado.
   FlavorText: |-
     ¡Protegida por el poder de la amistad!
 
 KomachiModScytheHeal:
   Name: Guadaña drenadora de espíritus
   Description: |-
-    Inflige {Damage} de daño.
-    Aplica |Espíritus vengativos| igual a la cantidad de daño infligido.
-    Puede |Detonar|. Luego, cura {Value1} de vida por cada {Value2} |Espíritu vengativo| detonado.
-  ExtraDescription1: |-
-    No puedes |Detonar|.
-  ExtraDescription2: |-
-    |Detonar|. Luego, cura {Value1} de vida por cada {Value2} |Espíritu vengativo| detonado.
+    Inflige {Damage} de daño {Value1} veces.
+    Aplica {Value2} |Espíritus vengativos| por cada golpe.
+    Cura {Value3} de vida por cada golpe no golpeado.
+  DetailText: |-
+    {SelfName} no puede generarse aleatoriamente en combate y no puede copiarse.
 
 KomachiModBoundSpiritsOfEarth:
   Name: Espíritus ligados a la tierra
   Description: |-
     Aplica {Value1} |Espíritus vengativos| a cada enemigo.
-    Al final del turno de {PlayerName}, aplica {Value2} |Espíritus vengativos| a cada enemigo que tenga |Espíritus vengativos|.
+    Cambia la duración de |Espíritus Vengativos| en cada enemigo a 1.
 
 KomachiModLonelyBoundSpirit:
   Name: Espíritu solitario atado
@@ -570,19 +564,19 @@ KomachiModScytheRedLily:
   Name: Guadaña de exorcismo
   Description: |-
     Inflige {Damage} de daño.
-    Puedes |Detonar|, entonces, si detonaste {Value1} o más |Espíritus vengativos|, agrega un |Lirio de araña| a la mano.
+    |Opcional|: |Detona|, luego si {Value1} o más |Espíritus vengativos| fueron |Detonados|, agrega un |Lirio de araña| a la mano.
     |Liberar| {Value2}: Aplica {Value1} |Espíritus vengativos| antes de la detonación. Gana {one} |Amuleto|.
   ExtraDescription1: |-
-    |Release| {Value2}: Aplica {Value1} |Espíritus vengativos| antes de la detonación. Gana {one} |Amuleto|.
+    |Liberar| {Value2}: Aplica {Value1} |Espíritus vengativos| antes de la detonación. Gana {one} |Amuleto|.
   ExtraDescription2: |-
-    Puedes |Detonar|, entonces, si detonaste {Value1} o más |Espíritus vengativos|, agrega un |Lirio de araña| a la mano.
+    |Opcional|: |Detona|, luego si {Value1} o más |Espíritus vengativos| fueron |Detonados|, agrega un |Lirio de araña| a la mano.
 
 KomachiModDetonateFirepower:
   Name: El rencor de los muertos
   Description: |-
     Siempre que los |Espíritus vengativos| son |Detonados|, gana {Value2} de |Poder|.
     Aplica {Value1} |Espíritus vengativos| a cada enemigo.
-    Puedes |Detonar| todos los enemigos.
+    |Opcional|: |Detona| todos los enemigos.
   ExtraDescription1: |-
     |Detonar| a todos los enemigos.
 
@@ -597,7 +591,7 @@ KomachiModDetonateInfinite:
   Name: Cancelado para siempre
   Description: |-
     Aplica {Value1} |Espíritus vengativos|.
-    Cada vez que un |Espíritus vengativos| es |Detonado|, aplica la mitad de la cantidad detonada (redondeando al hacia arriba) a ese objetivo.
+    Cada vez que un |Espíritus vengativos| es |Detonado|, aplica la mitad de la cantidad detonada (redondeando hacia arriba) a ese objetivo.
 
 
 KomachiModSpiritualDamage:
@@ -652,18 +646,18 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: Retorno de los espíritus
   Description: |-
-    Al comienzo del turno de {PlayerName}, agrega a la mano hasta 1 carta de la pila del |Exilio| con un coste total <b>menor</b> a 2. Cuesta {Mana} más y se retira del combate al jugarla.
+    Al comienzo del turno de {PlayerName}, agrega a la mano hasta |e:1| carta de la pila del |Exilio| con un coste total de 1 o menos. Cuesta {Mana} más y se retira del combate al jugarla.
 
 KomachiModAfterlifePassage:
   Name: Pasaje del más allá
   Description: |-
     Exilia {Value1} cartas de la mano.
-    Gana {Value2} |Espíritus guiados| por cada carta de |Desgracia|, |Estado|, o |Basica| exiliada.
-    Gana {Value2} |Espíritus divinos| por cada otra carta exiliada.
+    Gana {Value2} |Espíritus guiados| por cada carta de |Desgracia|, |Estado|, o |Basica| |exiliada|.
+    Gana {Value2} |Espíritus divinos| por cada otra carta |exiliada|.
   UpgradedDescription: |-
     Exilia hasta {Value1} cartas de la mano o pila de descarte.
-    Gana {Value2} |Espíritus guiados| por cada carta de |Desgracia|, |Estado|, o |Basica| exiliada.
-    Gana {Value2} |Espíritus divinos| por cada otra carta exiliada.
+    Gana {Value2} |Espíritus guiados| por cada carta de |Desgracia|, |Estado|, o |Basica| |exiliada|.
+    Gana {Value2} |Espíritus divinos| por cada otra carta |exiliada|.
 
 KomachiModReapersDue:
   Name: La deuda de la segadora
@@ -683,11 +677,11 @@ KomachiModHalfLife3:
   Name: Corta esperanza de vida
   Description: |-
     |Liberar| {Value1}: Inflige la mitad de la vida actual del objetivo ({Damage}) como daño.
-    Si el objetivo tiene un nombre conocido, se debe |Liberar| {Value2} en su lugar.
+    Si el objetivo tiene un nombre conocido, {Value2} debe ser |Liberado| en su lugar.
     Pierde {Value3} de |Espíritu|.
   UpgradedDescription: |-
     |Liberar| {Value1}: Inflige la mitad de la vida actual del objetivo ({Damage}) como daño.
-    Si el objetivo tiene un nombre conocido, se debe |Liberar| {Value2} en su lugar.
+    Si el objetivo tiene un nombre conocido, {Value2} debe ser |Liberado| en su lugar.
   ExtraDescription1: |-
     |Liberar| {releaseValue}: Inflige la mitad de la vida actual del objetivo como daño.
   FlavorText: |-
@@ -713,19 +707,19 @@ KomachiModEthicallySourcedBreak:
     Después de eso, al comienzo del siguiente turno de {PlayerName}, gana {Mana}, y roba {Value3} cartas.
   FlavorText: |-
     "ZZZZzzzzzzzz...."
+  DetailText: |-
+    {SelfName} no puede generarse aleatoriamente en combate y no puede copiarse.
 
 KomachiModInfernoTempest:
-  Name: Almas al final del camino
+  Name: Almas del final del camino
   Description: |-
-    |Exilia| todas las cartas de tu mano, pila de robo y pila de descarte.
-    Gana {Value3} |Espíritu{Value3:plural one=' divino' other='s divinos'}| por cada carta exiliada de la mano.
-    Gana {Value1} |Espíritu{Value1:plural one=' guiado' other='s guiados'}| por cada carta exiliada de la pila de robo.
-    Inflict {Value1} |Espíritu{Value1:plural one=' vengativo' other='s vengativos'}| a cada enemigo por cada carta exiliada de la pila de descarte.
-    Al comienzo del siguiente turno de {PlayerName}, elige hasta {Value2} cartas exiliadas que no sean |Básicas|. Regrésalas aleatoriamente a tu mano, pila de robo y pila de descarte. Luego, regresa todas las cartas |Básicas| y |Desgracia| exiliadas a tu pila de robo.
+    |Exilia| todas las cartas de la mano, pila de robo y pila de descarte.
+    Gana {Value3} |Espíritu{Value3:plural one=' divino' other='s divinos'}| por cada carta exiliada de la mano. Gana {Value1} |Espíritu{Value1:plural one=' guiado' other='s guiados'}| por cada carta exiliada de la pila de robo. Aplica {Value1} |Espíritu{Value1:plural one=' vengativo' other='s vengativos'}| a cada enemigo por cada carta exiliada de la pila de descarte.
+    Al comienzo del siguiente turno de {PlayerName}, elige hasta {Value2} cartas exiliadas que no sean |Básicas|. Devuélvelas aleatoriamente entre la mano, pila de robo y pila de descarte. Luego, devuelve todas las cartas exiliadas |Básicas| a la pila de robo.
   DetailText: |-
     Habrá al menos 1 carta devuelta en cada una: la mano, pila de robo y pila de descarte.
   FlavorText: |-
-    ¿Espera donde esta mi mazo?
+    ¿Espera, donde esta mi mazo?
 
 KomachiModGuidedGreen:
   Name: Espíritus de una vida pasada
@@ -748,21 +742,21 @@ KomachiModHellFreeze:
   Description: |-
     Inflige {Damage} de daño.
     Cada vez que se detonan |Espíritus vengativos| a ese objetivo, también se le aplica |Frío|. (Este efecto no se acumula).
-    Puedes |Detonar|, y si lo haces, gana {Value1} de |Armadura de escarcha| por cada {Value2} |Espíritus vengativos| detonados.
+    |Opcional|: |Detona|, luego gana {Value1} de |Armadura de escarcha| por cada {Value2} |Espíritus vengativos| |detonados|.
   ExtraDescription1: |-
     No puede |Detonar|
   ExtraDescription2: |-
-    |Detonar|, y si lo haces, gana {Value1} de |Armadura de escarcha| por cada {Value2} |Espíritus vengativos| detonados.
-  FlavorText: "Incluso el infierno hay temporadas de tormento."
+    |Detona|, luego gana {Value1} de |Armadura de escarcha| por cada {Value2} |Espíritus vengativos| |detonados|.
+  FlavorText: "Incluso en el infierno hay temporadas de tormento."
 
 KomachiModStrongestSpirit:
   Name: ¡El espíritu más fuerte!
   Description: |-
     Inflige {Damage} de daño.
     Aplica |Espíritus vengativos | igual a la cantidad de daño infligido que no ha bloqueado de esta manera.
-    |Liberar| {Value1}: Gana {Value2} de |Poder temporal|. |Exilia| todas las cartas que no sean de ataque de la mano.
+    |Liberar| {Value1}: |Exilia| todas las demás cartas de la mano. Por cada |Exilio|, ataca de nuevo. Si {Value2} cartas mas fueron |Exiliadas| de esta manera, gana {Value2} |Poder|.
   ExtraDescription1: |-
-    |Liberar| {Value1}: Gana {Value2} de |Poder temporal|. |Exilia| todas las cartas que no sean de ataque de la mano.
+    |Liberar| {Value1}: |Exilia| todas las demás cartas de la mano. Por cada |Exilio|, ataca de nuevo. Si {Value2} cartas mas fueron |Exiliadas| de esta manera, gana {Value2} |Poder|.
   FlavorText: "Después de superar su crisis existencial al enterarse de que el sol explotará dentro de 5 mil millones de años, la hada del hielo se volvió más fuerte que nunca."
 
 
@@ -783,7 +777,7 @@ KomachiModLifespanEnd:
   UpgradedDescription: |-
     Finaliza el turno de {PlayerName}. Luego, toma un turno extra.
     |Bloqueo| no se pierde durante este turno extra.
-    |Al comienzo del turno extra|: Roba {Value2} cartas, Gana {Mana}.
+    |Al comienzo del turno extra|: Roba {Value2} cartas y Gana {Mana}.
     |Al final del turno|: Recibe {Value1} de daño.
   FlavorText: |-
     ¡Un momento! ¡¿De quién se supone que termina la vida aquí?!
@@ -792,7 +786,7 @@ KomachiModGoldSarcophagus:
   Name: Sarcófago-Galera de oro
   Description: |-
     Elige 1 carta de la pila de robo y se |Exilia|.
-    Al comienzo de tu segundo turno después de que se juegue esta carta, agrega esa carta a la mano y se |Mejora|.
+    Al comienzo de tu segundo turno después de que se juegue esta carta, agrega esa carta a la mano, se |Mejora| y tiene |Reponer|.
 
 KomachiModExileDoppelganger:
   Name: Fauna extinta del río Sanzu
@@ -807,10 +801,10 @@ KomachiModExileDoppelganger:
     ¿Por qué a nadie se le ha ocurrido vender los raros peces del Sanzu para obtener ganancias?
 
 KomachiModSpiritDraw:
-  Name: Guía turística del más allá
+  Name: Guía turística del inframundo
   Description: |-
     Roba {draw} cartas.
-    Aplica {Value1} |Espíritus Vengativos| en cada enemigo por cada carta Común, gana {Value2} |Espíritus guiados| por cada carta No Común, and Gain {Value3} |Espíritus divinos| por cada carta Rara, que ha sido robada de esta manera.
+    Aplica {Value1} |Espíritus Vengativos| en cada enemigo por cada carta Común, gana {Value2} |Espíritus guiados| por cada carta No Común y gana {Value3} |Espíritus divinos| por cada carta Rara, que ha sido robada de esta manera.
   FlavorText: |-
     Eslabón 1 Perderse en los Sueños, objetivo Entierro prematuro. Eslabón 2 Entierro prematuro, objetivo Perderse en los sueños.
 
@@ -825,7 +819,7 @@ KomachiModEiki:
   UpgradedExtraDescription1: |-
     {ActiveCostIcon}Elige una carta de la mano. |Cuesta temporalmente| {Mana} y se |Mejora|.
   ExtraDescription3: |-
-    {UltimateCostIcon}Elige hasta {Value3} carta{Value3:plural one='' other='s'} en el |campo de batalla| y agrega{Value3:plural one='' other='los'} a la mano. Su coste se convierte en {Mana} en este combate. No se paga el costo de |Liberar| las cartas en este combate.
+    {UltimateCostIcon}Elige hasta {Value3} carta{Value3:plural one='' other='s'} en el |campo de batalla| y agr{Value3:plural one='ega' other='égalas'} a la mano. Su coste se convierte en {Mana} en este combate. No se paga el costo de |Liberar| las cartas en este combate.
   DetailText: |-
     El efecto pasivo nunca elegirá una carta con 0 de maná.
   FlavorText: |-
@@ -863,43 +857,31 @@ KomachiModStygianReel:
   Name: Carro de la Estigia
   Description: |-
     Inflige {Damage} de daño.
-    |Displaza| en -{Value1}.
-    Al comienzo del turno de ese enemigo, se |Displaza| en +{Value1}.
+    |Desplaza| en -{Value1}.
+    Al comienzo del turno de ese enemigo, se |Desplaza| en +{Value1}.
 
 KomachiModRiversideView:
   Name: Vistas del río
   Description: |-
-    Al comienzo de tu turno, si no hay |Lirios de araña| en la mano, agrega un |Lirio de araña| a la mano.
-    Los |Lirios de araña| aplican {Value3} menos de |Veneno| al jugador. Los dos efectos anteriores no se acumulan.
-    Después de que {PlayerName} juegue un |Lirio de araña|, aplica {Value2} de |Veneno| to each enemy y luego gana {Value1} de |Poder|.
+    Al comienzo del turno de {PlayerName}, si no hay |Lirios de araña| en la mano, agrega un |Lirio de araña| a la mano. Este efecto no se acumula.
+    Los |Lirios de araña| solo aplican |e:1| |Veneno| a {PlayerName}.
+    Después de que {PlayerName} juegue un |Lirio de araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
   UpgradedDescription: |-
     Agrega un |Lirio de araña| a la mano.
-    Al comienzo de tu turno, si no hay |Lirios de araña| en la mano, agrega un |Lirio de araña| a la mano.
-    Los |Lirios de araña| aplican {Value3} menos de |Veneno| al jugador. Los dos efectos anteriores no se acumulan.
-    Después de que {PlayerName} juegue un |Lirio de araña|, aplica {Value2} de |Veneno| to each enemy y luego gana {Value1} de |Poder|.
+    Al comienzo del turno de {PlayerName}, si no hay |Lirios de araña| en la mano, agrega un |Lirio de araña| a la mano. Este efecto no se acumula.
+    Los |Lirios de araña| solo aplican |e:1| |Veneno| a {PlayerName}.
+    Después de que {PlayerName} juegue un |Lirio de araña|, aplica {Value2} de |Veneno| a cada enemigo y luego gana {Value1} de |Poder|.
 
 KomachiModRedLilyStorm:
   Name: Tormenta de los muertos afligidos
   Description: |-
-    Puedes exiliar todos los |e:Lirios de araña| de tu mano y pila de descarte.
-    |Por cada ||e:Lirio de araña|| exiliado|: Gana |Poder temporal| igual a la cantidad que se ganaría al jugarlos e inflige {Damage} de daño.
     |Por cada {Mana} gastado|: Inflige {Damage} de daño y luego gana {Value1} de |Poder Temporal|.
-    Si se gastaron al menos 3 maná, agrega un |e:Lirio de araña| a la pila de descarte.
+    Si se gastaron al menos 3 maná, agrega un |Lirio de araña| a la pila de descarte.
   UpgradedDescription: |-
-    Puedes exiliar todos los |e:Lirios de araña| de tu mano y pila de descarte.
-    |Por cada ||e:Lirio de araña|| exiliado|: Gana |Poder temporal| igual a la cantidad que se ganaría al jugarlos e inflige {Damage} de daño.
     |Por cada {Mana} gastado|: Inflige {Damage} de daño y luego gana {Value1} de |Poder Temporal|.
-    Agrega un |e:Lirio de araña| a la pila de descarte.
+    Agrega un |Lirio de araña| a la pila de descarte.
   DetailText: |-
-    El Poder de los Lirios de araña se obtiene al instante antes de cualquier ataque.
-  ExtraDescription1: |-
-    No se exilia los |Lirios de araña|.
-  ExtraDescription2: |-
-    Exilia todos los |e:Lirios Araña| de la mano y la pila de descarte.
-    |Por cada ||e:Lirio de araña|| exiliada|: Gana |Poder temporal| igual a la cantidad que ganarías al jugarlas e inflige {Damage} de daño.
-  UpgradedExtraDescription2: |-
-    Exilia todos los |e:Lirios Araña| de la mano y la pila de descarte.
-    |Por cada ||e:Lirio de araña|| exiliada|: Gana |Poder temporal| igual a la cantidad que ganarías al jugarlas e inflige {Damage} de daño dos veces.
+    El poder se gana una vez que se han realizado todos los ataques.
 
 
 KomachiModPosessedArmament:
@@ -913,22 +895,60 @@ KomachiModParasiticPollen:
   Name: Polen parasitario
   Description: |-
     Inflige {Damage} de daño {Value1} veces.
-    Si el objetivo está |Envenenado|, agrega un |Lirio de araña| a la mano. De lo contrario, aplica {Value2} de |Veneno|. 
-    Si {PlayerName} esta |Envenenada|, pierde {Value2} de |Veneno| y aplica |Veneno| igual al daño no bloqueado infligido.
+    Agrega una |Lirio de araña| a la pila de robo.
+    Si {PlayerName} está |Envenenado|, pierde {Value2} |Veneno| y luego aplica |Veneno| equivalente al doble de la cantidad perdida.
   FlavorText: |-
     Una fiebre inexplicable justo en su día libre.
 
 KomachiModOasis:
   Name: Oasis de alma pasajeras
   Description: |-
-    Elige |e:1| carta en el |Exilio| cuyo coste total de mana sea igual o menor a {Value1}. Agrega una |Copia| de ella a la mano. Se |Retiene| este turno.
+    Elige |e:1| carta en el |Exilio| de la pila de descarte cuyo coste total de mana sea igual o menor a {Value1}. Agrega una |Copia| de ella a la mano. Se |Retiene| este turno. Si el objetivo es una carta de |Habilidad| o tiene |Exilio|, se convierte en una |Copia|.
+
+KomachiModTip:
+  Name: Moneda de la segadora
+  Description: |-
+    Inflige {Damage} de daño.
+    |Cuando es exiliado|: Agrega un |Manipular distancia| a la mano.
+  FlavorText: "Es una puñalada."
+
+KomachiModGhostrickShot:
+  Name: Disparo fantastruco
+  Description: |-
+    Aplica {Value1} |Espíritu Vengativo{Value1:plural one='' other='s'}|.
+    |Cuando es exiliado|: Aplica {Value2} |Espíritu Vengativo{Value2:plural one='' other='s'}| a cada enemigo.
+  FlavorText: |-
+    ¡Voltea al Jiangshi por 20 turnos para ganar el juego!
+
+KomachiModRecursiveSouls:
+  Name: Almas recursivas
+  Description: |-
+    Siempre que una carta sea |Exiliada|, gana {Value1} |Espíritu {Value1:plural one=' guiado' other='s guiados'}|.
+
+KomachiModSpiritInvitation:
+  Name: Invitación espiritual
+  Description: |-
+    Gana {Value1} |Espíritus guiados| y {Value2} |Espíritus divinos|.
+    Cada vez que {PlayerName} |Libera|, gana |Barrera| igual a la cantidad |Liberada|, luego inflige daño a cada enemigo igual a la |Barrera| de {PlayerName}.
+
+KomachiModPilingDeathwork:
+  Name: Acumulación letal
+  Description: |-
+    Inflige {Damage} de daño {attackTimes} ve{attackTimes one='z' other='ces'}.
+    Aplica {Value1} |Espíritus Vengativos| {attackTimes} ve{attackTimes one='z' other='ces'}.
+    |Al ser exiliado|: Durante el resto del combate, {SelfName} repite una vez más los efectos anteriores.
+    Al comienzo del turno de {PlayerName}, esta carta |Exiliada| regresa a la pila de robo.
+
+KomachiModTies:
+  Name: Lazos con el difunto
+  Description: |-
+    Al comienzo del turno de {PlayerName}, agrega a la mano una |Copia| de la última carta que no sea |Habilidad| ni |Copia| jugada en el turno anterior. Cuesta temporalmente {Mana} y tiene |Exiliar| y |Etéreo|.
 
     
 # basic cards
 KomachiModAttackR:
-  Name: Moneda de la segadora
+  Name: Fauces de la segadora
   Description: Inflige {Damage} de daño.
-   FlavorText: "Es una puñalada."
 
 KomachiModBlockR:
   Name: Acostumbrado a los regaños
@@ -937,10 +957,8 @@ KomachiModBlockR:
     La fortaleza mental ganada al sobrevivir a un sinfín de sermones.
 
 KomachiModAttackB:
-  Name: Disparo fantastruco
+  Name: Disparo vinculado al alma
   Description: Inflige {Damage} de daño.
-  FlavorText: |-
-    ¡Voltea al Jiangshi por 20 turnos para ganar el juego!
 
 KomachiModBlockB:
   Name: Respaldo de espíritus
@@ -964,17 +982,17 @@ KomachiModSanzuFare:
 KomachiModMoveToken:
   Name: ¡Muevete!
   Description: |-
-    |Displaza| a cada enemigo en +/-{Value1}.
+    |Desplaza| a cada enemigo en +/-{Value1}.
     |Por cada carta usada en este turno|: Esta carta cuesta {Mana} más (Máx.: 1).
   UpgradedDescription: |-
-    |Displace| a cada enemigo en +/-{Value2}.
+    |Desplaza| a cada enemigo en +/-{Value2}.
     |Por cada carta usada en este turno|: Esta carta cuesta {Mana} más (Máx.: 1).
   ExtraDescription1: |-
     ¡Acercate!
-    |Displaza| en -{displaceAmount}.
+    |Desplaza| en -{displaceAmount}.
   ExtraDescription2: |-
     ¡Huye!
-    |Displaza| en +{displaceAmount}.
+    |Desplaza| en +{displaceAmount}.
   FlavorText: |-
     Why are you running?
 # Leave in english because it sounds funny.
@@ -983,7 +1001,6 @@ KomachiModWeatheredLily:
   Name: Lirio desgastado
   Description: |-
     Gana {Mana}.
-    |Al final del turno|: Gana {Value1} de |Veneno|.
     |Al final del turno|: Gana {Value1} de |Veneno|.
   FlavorText: |-
     Toma todos los pecados de la humanidad dentro de ti.

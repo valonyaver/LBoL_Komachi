@@ -13,6 +13,7 @@ namespace KomachiMod.Localization
         public static string UltimateSkills = "UltimateSkills";
         public static string StatusEffects = "StatusEffects";
         public static string Intention = "Intention";
+        public static string Bgm = "Bgm";
 
         public static BatchLocalization CardsBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(CardTemplate), Cards);
         public static BatchLocalization ExhibitsBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(ExhibitTemplate), Exhibits);
@@ -22,19 +23,7 @@ namespace KomachiMod.Localization
         public static BatchLocalization UltimateSkillsBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(UltimateSkillTemplate), UltimateSkills);
         public static BatchLocalization StatusEffectsBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(StatusEffectTemplate), StatusEffects);
         public static BatchLocalization IntentionBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(IntentionTemplate), Intention);
+        public static BatchLocalization BgmBatchLoc = new BatchLocalization(BepinexPlugin.directorySource, typeof(BgmTemplate), Bgm);
 
-
-        // maybe it's better to have controlled file discovery tah
-        public static void Init()
-        {
-            CardsBatchLoc.DiscoverAndLoadLocFiles(Cards);
-            ExhibitsBatchLoc.DiscoverAndLoadLocFiles(Exhibits);
-            PlayerUnitBatchLoc.DiscoverAndLoadLocFiles(PlayerUnit);
-            EnemiesUnitBatchLoc.DiscoverAndLoadLocFiles(EnemiesUnit);
-            UnitModelBatchLoc.DiscoverAndLoadLocFiles(UnitModel);
-            UltimateSkillsBatchLoc.DiscoverAndLoadLocFiles(UltimateSkills);
-            StatusEffectsBatchLoc.DiscoverAndLoadLocFiles(StatusEffects);
-            IntentionBatchLoc.DiscoverAndLoadLocFiles(Intention);
-        }
     }
 }

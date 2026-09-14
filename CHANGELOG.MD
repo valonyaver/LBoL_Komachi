@@ -1,3 +1,7 @@
+## 0.6.1
+Updated to 1.8.1
+Fixed issues with card selection with Eiki and Extinct Fauna.
+
 ## 0.6.0
 
 ### Renamed/Reworded Cards

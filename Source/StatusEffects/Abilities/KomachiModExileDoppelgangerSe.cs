@@ -60,12 +60,12 @@ namespace KomachiMod.StatusEffects
                 // You can select one of those cards, and if you do, add it to yer hand.
                 // It can be canceled rn but may be nerfed to be uncancellable.
                 base.NotifyActivating();
-                var interaction = new MiniSelectCardInteraction(sameCardList);
+                var interaction = new SelectCardInteraction(0, 1, sameCardList);
                 yield return new InteractionAction(interaction, canCancel: true) { Source = this };
-                if (!interaction.IsCanceled)
+                if (!interaction.IsCanceled || interaction.SelectedCards.Count > 0)
                 {
                     yield return PerformAction.Sfx("二重身回合开始", 0f);
-                    yield return new MoveCardAction(interaction.SelectedCard, CardZone.Hand);
+                    yield return new MoveCardAction(interaction.SelectedCards.FirstOrDefault(), CardZone.Hand);
                     effectUse = 2; // if you want it to disappear even if the player cancels, put it outside the if
                 }
             }

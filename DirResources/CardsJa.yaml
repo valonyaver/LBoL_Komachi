@@ -93,7 +93,6 @@ KomachiModSpiderLily:
     {Mana}を得る。
     |臨時火力|{Value1}を得る。
     |毒|{Value2}を得る。
-    |自動捨札|。
   FlavorText: |-
     人類のあらゆる怨念を自らの内に宿せ。
 
@@ -151,7 +150,7 @@ KomachiModRetreat:
     {Block}|ブロック|を得る。
     もし対象の|距離|が{Value3}ならば、手札に|距離操作|を1枚加える。
   UpgradedDescription: |-
-    |変位|可能 +{Value1}。それ以外の全ての敵に|変位|可能 +{Value2}。
+    |変位|可能 +{Value1}まで。
     {Block}|ブロック|を得る。
     もし対象の|距離|が{Value3}ならば、手札に|距離操作|を1枚加える。
   ExtraDescription1: 対象を変位しない。
@@ -251,12 +250,12 @@ KomachiModScytheFinalJudgment:
 KomachiModShinigamiFinesse:
   Name: 死神の妙技
   Description: |-
-   {Damage}ダメージを{attackAmount}回与える。
-   攻撃回数は対象の距離レベルに等しい。
+   {Damage}ダメージを{attackTimes}回与える。
+   攻このカードの攻撃回数は、対象の|距離|と同じになる。
    対象の距離が{three}<b>未満の場合</b>、この攻撃は|精密|になる。
   UpgradedDescription: |-
-   {Damage}ダメージを{attackAmount}回与える。
-   攻撃回数は対象の距離レベル+1に等しい。
+   {Damage}ダメージを{attackTimes}回与える。
+   このカードの攻撃回数は、対象の|距離|+1と同じになる。
    対象の距離が{three}<b>未満の場合</b>、この攻撃は|精密|になる。
 
 KomachiModDistanceBlock:
@@ -297,8 +296,8 @@ KomachiModReviveCard:
   Name: 死の神
   Description: |-
     次に{PlayerName}がこの戦闘で倒される時、代わりに最大HPの半分まで回復し、|天衣無縫|{Value2}を得る。  
-    この効果が適用されたら、{SelfName}をデッキから除外する。この効果による復活は戦闘中1回のみ。  
-    敵が倒されるたび、もしそれが召喚されたものなら、{Value1}の|バリア|を得る。  
+    この効果が適用されたら、{SelfName}をデッキから除外する。{PlayerName}はこの効果で1戦闘につき1回のみ復活できる。
+    敵が倒されるたび、もしそれが召喚されたものなら、{Value1}|バリア|を得る。
     それ以外の場合は、{Value1}のライフを得る。
   DetailText: |-
     {SelfName}は戦闘中にランダム生成されず、コピーもできない。
@@ -355,10 +354,10 @@ KomachiModIgnoreNagging:
   Name: 小言聞き流し
   Description: |-
     |変位| -{Value1}。
-    |距離|が1か2の敵1体ごとに、|グレイズ|{Value2}を得る。
+    |距離|が|2|以下の敵1体につき、|グレイズ|{Value2}得る。
   UpgradedDescription: |-
     |変位| 最大-{Value1}まで。
-    |距離|が1か2の敵1体ごとに、|グレイズ|{Value2}を得る。
+    |距離|が|2|以下の敵1体につき、|グレイズ|{Value2}得る。
 
 KomachiModRetreatBoat:
   Name: 三途の舟
@@ -406,9 +405,10 @@ KomachiModEqualizeDistance:
 KomachiModRitualOfEcstasy:
   Name: 脱魂の儀
   Description: |-
-    対象の|距離|を反転させ、以下の効果のうち1つを適用する。
-    対象の距離が{three}の場合、効果を選択できる。
-    距離が減少した場合、カードを{Value1}枚引く。距離が増加した場合、|グレイズ|{Value2}と{Block}|ブロック|を得る。
+    対象の|距離|を反転させる。
+    |距離|が増加した場合、|グレイズ|{Value2}と{Block}|ブロック|得る。
+    |距離|が減少した場合、カードを{Value1}枚引く。
+    対象の|距離|が{three}の場合、代わりに効果を選択できる。
   ExtraDescription1: |-
     カードを{Value1}枚引く。
   ExtraDescription2: |-
@@ -425,7 +425,7 @@ KomachiModRitualOfEcstasy:
 KomachiModExchangeLife:
   Name: 換命「不惜身命、可惜身命」
   Description: |-
-    対象の|現在のライフ|があなたの|最大ライフ|以下の場合、現在のライフを交換する。
+    対象の|現在のライフ|が{PlayerName}の|最大ライフ|以下の場合、互いの現在ライフを入れ替える。
     {SelfName}が{PlayerName}を回復するために使用された場合、このカードは戦闘とデッキから除外される。
     |充填|: {PlentifulMana}を得る。
   DetailText: |-
@@ -455,19 +455,21 @@ KomachiModBWBridge:
   Description: |-
     {Mana}を得る。 {PlayerName}のターン開始時、{Mana}を得る。
     ランダムな白/黒のハイブリッドカード{Value2}枚の中から{Value1}枚まで選び、手札に加える。
+    その後、残りを|廃棄|する。
   UpgradedDescription: |-
     {Mana}を得る。 手札に|光明|を1枚加える。
     {PlayerName}のターン開始時、{Mana}を得る。
     ランダムな白/黒のハイブリッドカード{Value2}枚の中から{Value1}枚まで選び、手札に加える。
+    その後、残りを|廃棄|する。
   DetailText: |-
     これらの|e:代替カード|は総マナとマナ色の制限を無視する。
 
 KomachiModFishing:
   Name: 二重釣り
   Description: |-
-    カードを{Value1}枚捨て、|廃棄場|にあるコストがそれぞれ{Value3}<b>未満</b>のカードを{Value2}枚まで対象とする。
-    最初のカードは手札に、2枚目のカードは捨て札に戻す。それらの|臨時コスト|は一時的に{Mana}になる。
-
+    カードを{Value1}枚捨てる。
+    その後、|廃棄場|にあるカードのうち、合計コストがそれぞれ{Value3}以下のカードを最大{Value2}枚対象にする。
+    1枚目を手札に戻し、2枚目を捨て札に戻す。 それらの|臨時コスト|は{Mana}になる。
 KomachiModGuidingSanzu:
   Name: 三途の導き
   Description: |-
@@ -554,19 +556,18 @@ KomachiModSpiritBarrier:
 KomachiModScytheHeal:
   Name: 吸魂の鎌
   Description: |-
-    {Damage}ダメージを与える。
-    与えたダメージ量に等しい|怨霊|を与える。
-    |爆破|できる。その後、爆破された|怨霊|{Value2}ごとにライフを{Value1}得る。
-  ExtraDescription1: |-
-    |爆破|しない。
-  ExtraDescription2: |-
-    |爆破|する。その後、爆破された|怨霊|{Value2}ごとにライフを{Value1}得る。
+    {Damage}ダメージを{Value1}回与える。
+    攻撃が当たるたび、|怨霊|{Value2}を与える。
+    |ブロック|されなかった攻撃1回につき、ライフを{Value3}得る。
+  DetailText: |-
+    {SelfName}は戦闘中にランダム生成されず、コピーもできない。
+
 
 KomachiModBoundSpiritsOfEarth:
   Name: 浮かばれない地縛霊
   Description: |-
     敵全体に|怨霊|{Value1}を与える。
-    {PlayerName}のターン終了時、|怨霊|を持つ敵全体に|怨霊|{Value2}を与える。
+    敵全員の|怨霊|の持続時間を1にする。
 
 KomachiModLonelyBoundSpirit:
   Name: 寂しがり屋の緊縛霊
@@ -661,19 +662,19 @@ KomachiModDivineSpiritDefence:
 KomachiModSpiritReturn:
   Name: 魂還り
   Description: |-
-    {PlayerName}のターン開始時、|廃棄場|から合計コストが<b>2未満</b>のカードを最大1枚手札に加える。それはコストが {Mana} 多くなり、使用後はこの戦闘から除外される。
+    {PlayerName}のターン開始時、|廃棄場|から合計コストが1以下のカードを最大|e:1|枚手札に加える。そのカードのコストは{Mana}増加し、プレイした時に戦闘から削除される。
 
 
 KomachiModAfterlifePassage:
   Name: 冥途の渡し
   Description: |-
-    手札からカードを{Value1}枚廃棄する。
-    廃棄された|厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
-    廃棄されたその他のカード1枚ごとに|神霊|{Value2}を得る。
+    手札からカードを{Value1}枚|廃棄|する。
+    |廃棄された||厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
+    |廃棄された|その他のカード1枚ごとに|神霊|{Value2}を得る。
   UpgradedDescription: |-
-    手札または捨て札からカードを{Value1}枚まで廃棄する。
-    廃棄された|厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
-    廃棄されたその他のカード1枚ごとに|神霊|{Value2}を得る。
+    手札または捨て札からカードを{Value1}枚まで|廃棄|する。
+    |廃棄された||厄災|、|状態異常|、または|基本|カード1枚ごとに|導霊|{Value2}を得る。
+    |廃棄された|その他のカード1枚ごとに|神霊|{Value2}を得る。
 
 KomachiModReapersDue:
   Name: 死神の徴税
@@ -693,11 +694,11 @@ KomachiModHalfLife3:
   Name: 薄命「余命幾許も無し」
   Description: |-
     |解放|{Value1}: 対象の現在ライフの半分({Damage})をダメージとして与える。
-    対象が既知の名前を持つ場合、代わりに|解放|{Value2}する必要がある。
+    対象に固有の名前がある場合、わりに{Value2}を|解放|しなければならない。
     |霊力|{Value3}を失う。
   UpgradedDescription: |-
     |解放|{Value1}: 対象の現在ライフの半分({Damage})をダメージとして与える。
-    対象が既知の名前を持つ場合、代わりに|解放|{Value2}する必要がある。
+    対象に固有の名前がある場合、代代わりに{Value2}を|解放|しなければならない。
   ExtraDescription1: |-
     |解放|{releaseValue}: 対象の現在ライフの半分をダメージとして与える。
   FlavorText: |-
@@ -725,6 +726,11 @@ KomachiModEthicallySourcedBreak:
     その次の{PlayerName}のターン開始時、{Mana}を得て、カードを{Value3}枚引く。
   FlavorText: |-
     "ZZZZzzzzzzzz...."
+  DetailText: |-
+    {SelfName}は戦闘中にランダム生成されず、コピーもできない。
+
+
+
 # Like quick nap's flavor text but longer
 
 KomachiModInfernoTempest:
@@ -734,7 +740,7 @@ KomachiModInfernoTempest:
     手札から廃棄されたカード1枚ごとに|神霊|{Value3}得る。
     山札から廃棄されたカード1枚ごとに|導霊|{Value1}を得る。
     捨て札から廃棄されたカード1枚ごとに敵全体に|怨霊|{Value1}を与える。
-    {PlayerName}の次のターン開始時、廃棄された|基本|でないカードを{Value2}枚まで選び、手札、山札、捨て札にランダムに戻す。その後、廃棄された全ての|基本|と|厄災|カードを山札に戻す。
+    {PlayerName}の次のターン開始時、廃棄された|基本|でないカードを最大{Value2}枚まで選び、手札、山札、捨て札にランダムに戻す。その後、|追放|されたすべての|基本|カードを山札に戻す。
   DetailText: |-
     手札、山札、捨て札のそれぞれに少なくとも1枚のカードが戻される。
   FlavorText: |-
@@ -775,10 +781,12 @@ KomachiModStrongestSpirit:
   Name: 最強の霊！
   Description: |-
     {Damage}ダメージを与える。
-    この方法で与えたブロックされなかったダメージ量に等しい|怨霊|を与える。
-    |解放|{Value1}: |臨時火力|{Value2}を得る。手札から攻撃以外の全てのカードを|廃棄|する。
+    この方法で与えた|ブロック|されなかったダメージと同じ数の|怨霊|を与える。
+    |解放|{Value1}：手札にある他のすべてのカードを|廃棄|する。|廃棄|したカード1枚につき、追加で1回攻撃する。
+    この方法で{Value2}枚以上のカードを|廃棄|した場合、|火力|{Value2}得る。
   ExtraDescription1: |-
-    |解放|{Value1}: |臨時火力|{Value2}を得る。手札から攻撃以外の全てのカードを|廃棄|する。
+    |解放| {Value1}：手札にある他のすべてのカードを|廃棄|する。|廃棄|したカード1枚につき、追加で1回攻撃する。
+    この方法で{Value2}枚以上のカードを|廃棄|した場合、|火力|{Value2}得る。
   FlavorText: "50億年後に太陽が爆発すると知った時の実存的危機を乗り越えた後、氷の妖精はかつてないほど強くなった。"
 
 KomachiModExchangeDrawExile:
@@ -805,10 +813,10 @@ KomachiModLifespanEnd:
 # Komachi asking whoever named the card why she is taking the damage.
 
 KomachiModGoldSarcophagus:
-  Name: 黄金の石棺船
+  Name: 黄金の棺船
   Description: |-
     山札からカードを1枚選び、|廃棄|する。
-    このカードを使用してから2ターン目の開始時、そのカードを手札に加え、|アップグレード|する
+    このカードをプレイしてから2ターン目の開始時、そのカードを手札に加え、|アップグレード|し、|充填|を付与する。
 
 KomachiModExileDoppelganger:
   Name: 三途川の絶えた魂獣
@@ -824,7 +832,7 @@ KomachiModExileDoppelganger:
 # The sanzu river contains extinct fish from the outside world.
 
 KomachiModSpiritDraw:
-  Name: あの世へのツアーガイド
+  Name: 冥途へのツアーガイド
   Description: |-
     カードを{draw}枚引く。
     この方法で引いたコモンカード1枚ごとに敵全体に|怨霊|{Value1}を与え、アンコモンカード1枚ごとに|導霊|{Value2}を得て、レアカード1枚ごとに|神霊|{Value3}を得る。
@@ -886,40 +894,34 @@ KomachiModStygianReel:
     |変位| -{Value1}。
     その敵のターン開始時、彼らを|変位|+{Value1}。
 
+
+# 小町のテーマ
 KomachiModRiversideView:
   Name: 川辺の景色
   Description: |-
-    ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
-    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。これらの効果は重複しない。
-    {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
+    {PlayerName}のターン開始時、手札に|彼岸花|が1枚もない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
+    |彼岸花|が{PlayerName}に付与する|毒|は|e:1|のみになる。
+    {PlayerName}が|彼岸花|をプレイした後、敵全員に|毒|{Value2}を与え、その後|火力|{Value1}得る。
   UpgradedDescription: |-
     手札に|彼岸花|を1枚加える。
-    ターン開始時、手札に|彼岸花|がない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
-    |彼岸花|がプレイヤーに与える|毒|は{Value3}少なくなる。これらの効果は重複しない。
-    {PlayerName}が|彼岸花|を使用した後、敵全体に|毒|{Value2}を与え、その後|火力|{Value1}を得る。
+    {PlayerName}のターン開始時、手札に|彼岸花|が1枚もない場合、手札に|彼岸花|を1枚加える。この効果は重複しない。
+    |彼岸花|が{PlayerName}に付与する|毒|は|e:1|のみになる。
+    {PlayerName}が|彼岸花|をプレイした後、敵全員に|毒|{Value2}を与え、その後|火力|{Value1}得る。
+
+
 
 KomachiModRedLilyStorm:
   Name: 哀悼の嵐
   Description: |-
-    手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
-    |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを与える。
-    |{Mana}を1点消費するごと|：{Damage}のダメージを与え、{Value1}の|臨時火力|を得る。
-    消費したマナが3点以上なら、|e:彼岸花|を捨て札に1枚加える。
+    |{Mana}を1つ支払うたび|：{Damage}ダメージを与え、その後|臨時火力|{Value1}得る。
+    {Mana}を3つ以上支払った場合、捨て札に|彼岸花|を1枚加える。
   UpgradedDescription: |-
-    手札と捨て札にある全ての|e:彼岸花|を廃棄できる。
-    |廃棄した||e:彼岸花||1枚ごと|：プレイした場合に得られる分だけ|臨時火力|を得て、{Damage}のダメージを2回与える。
-    |{Mana}を1点消費するごと|：{Damage}のダメージを与え、{Value1}の|臨時火力|を得る。
-    |e:彼岸花|を捨て札に1枚加える。
+    |{Mana}を1つ支払うたび|：{Damage}ダメージを与え、その後|臨時火力|{Value1}得る。
+    捨て札に|彼岸花|を1枚加える。
   DetailText: |-
-    彼岸花による火力上昇は、すべての攻撃より前にまとめて得る。
-  ExtraDescription1: |-
-    |彼岸花|を|廃棄|しない。
-  ExtraDescription2: |-
-    手札と捨て札のすべての|e:彼岸花|を|廃棄|する。
-    |廃棄された||e:彼岸花||1枚につき|: 本来それを使用した時に得られる量の|臨時火力|を得て、{Damage}ダメージを与える。
-  UpgradedExtraDescription2: |-
-    手札と捨て札のすべての|e:彼岸花|を|廃棄|する。
-    |廃棄された||e:彼岸花||1枚につき|: 本来それを使用した時に得られる量の|臨時火力|を得て、{Damage}ダメージを2回与える。
+    |火力|はすべての攻撃を行った後に得る。
+
+
   
 KomachiModPosessedArmament:
   Name: 憑霊兵器
@@ -934,8 +936,8 @@ KomachiModParasiticPollen:
   Name: 寄生胞子
   Description: |-
     {Damage}ダメージを{Value1}回与える。
-    対象が|毒|状態の場合、|彼岸花|を手札に1枚加える。そうでない場合、|毒|{Value2}を付与する。
-    {PlayerName}が|毒|状態の場合、|毒|{Value2}を失い、その後、この方法で与えたブロックされなかったダメージ分の|毒|を付与する。
+    山札に|彼岸花|を1枚加える。
+    {PlayerName}が|毒|状態の場合、|毒|{Value2}失い、その後、失った量の2倍の|毒|を付与する。
   FlavorText: |-
     せっかくの休みの日に限って、原因不明の発熱。
 # The lbol card "Unexplained fever". "her" being komachi.
@@ -945,8 +947,56 @@ KomachiModParasiticPollen:
 KomachiModOasis:
   Name: 竜魂の幻泉
   Description: |-
-    |廃棄場|から合計コストが{Value1}以下のカードを|e:1|枚選ぶ。
-    その|コピー|を手札に加える。このターン、そのカードに|保留|を与える。
+    |廃棄場|または|捨て札|から、合計コストが{Value1}以下のカードを|e:1|枚選ぶ。
+    その|コピー|を手札に加える。このターン中、そのカードを|保留|する。
+    対象のカードが|能力|または|廃棄|を持つ場合、それは|コピー|になる。
+
+# Reference to a yugioh card with the same name
+KomachiModGhostrickShot:
+  Name: ゴーストリック・ショット
+  Description: |-
+    |怨霊|{Value1}を与える。
+    |廃棄された時|：敵全員に|怨霊|{Value2}を与える。
+  FlavorText: |-
+    20ターンの間、ゴーストリック・ジャンシーを反転させ続ければ勝てる！
+
+# Reference to a strategy that ghostrick decks in yugioh utilized Ghostrick Jiangshi's flip effect to mill out the opponent.
+
+
+
+KomachiModTip:
+  Name: 死神の一振り
+  Description: |-
+    {Damage}ダメージを与える。
+    |廃棄された時|：手札に|距離操作|を1枚加える。
+  FlavorText: "刺さる。"
+
+KomachiModPilingDeathwork:
+  Name: 積み重なる死仕事
+  Description: |-
+    {Damage}ダメージを{attackTimes}回与える。
+    |怨霊|{Value1}を{attackTimes}回与える。
+    |廃棄された時|：戦闘終了まで、{SelfName}は上記の効果を追加でもう1回繰り返す。
+    {PlayerName}のターン開始時、この|廃棄|されたカードを山札に戻す。
+
+KomachiModTies:
+  Name: 死者の縁
+  Description: |-
+    {PlayerName}のターン開始時、前のターンに最後にプレイした|能力|でも|コピー|でもないカードの|コピー|を手札に加える。
+    そのカードのコストは一時的に{Mana}になり、|廃棄|と|虚無|を持つ。
+
+KomachiModRecursiveSouls:
+  Name: 巡る霊魂
+  Description: |-
+    カードが|廃棄|されるたび、|導霊|{Value1}を得る。
+
+KomachiModSpiritInvitation:
+  Name: 霊の招待
+  Description: |-
+    |導霊|{Value1}、|神霊|{Value2}得る。
+    {PlayerName}が|解放|するたび、|解放|量と同じ値の|バリア|を得て、その後、{PlayerName}の|バリア|と同じ値のダメージを敵全員に与える。
+
+
 
 
 # basic cards
@@ -963,21 +1013,22 @@ KomachiModBlockR:
     終わりなき説教を耐え抜いて得た精神力。
 
 KomachiModAttackB:
-  Name: ゴーストリックショット
+  Name: 魂の一撃
   Description: "{Damage}ダメージを与える。"
   FlavorText: |-
     ジャンシーを20ターンひっくり返せば勝利！
 
 KomachiModBlockB:
-  Name: 霊の援護
+  Name: 霊のバックアップ
   Description: "{Block}|ブロック|を得る。"
+  FlavorText: "天上の雲に霊をバックアップ！月額たったの2マナ！"
   
 ## cards during komachi's boss fight
   
 KomachiModSanzuFare:
   Name: 三途の川の運賃
   Description: |-
-    {MoneyCost} <sprite="Point" name="Gold"> を支払う。
+    <sprite="Point" name="Gold">{MoneyCost}を支払う。
     <color=#e58c27>小町</color>はこの戦闘を少し手加減してくれる。
   FlavorText: |-
     "お金を集めれば、永遠寺に仕事をしてると思わせられる。

@@ -21,6 +21,7 @@ namespace KomachiMod.GunName
             // The Only thing that matters for the guns themselves is the id. Everything else is in the pieces.
             config.Id = 444002;
             config.Name = "KomachiModTipReaper";
+            config.ForceHitTime = 1;
             return config;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using KomachiMod.Localization;
 using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
@@ -24,22 +25,23 @@ namespace KomachiMod.Source.Enemies.Music
             );
         }
 
+        public override LocalizationOption LoadLocalization()
+        {
+            return KomachiLocalization.BgmBatchLoc.AddEntity(this);
+        }
+
         public override BgmConfig MakeConfig()
         {
             var config = new BgmConfig(
                 ID: GetId(),
                 No: BepinexPlugin.sequenceTable.Next(typeof(BgmConfig)),
-                Name: "Komachi Boss Theme",
                 Folder: "",
                 Path: "",
                 Volume: 1f,
                 LoopStart: 1.4f,
                 LoopEnd: null,
                 ExtraDelay: null,
-                TrackName: "Higan Retour ~ Riverside View",
-                Artist: "Rowster ツ",
-                Original: "ZUN",
-                Comment: ""
+                Artist: "Rowster ツ"
             );
             return config;
         }

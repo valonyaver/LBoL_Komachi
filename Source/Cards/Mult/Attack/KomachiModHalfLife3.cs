@@ -173,6 +173,8 @@ namespace KomachiMod.Cards
                 yield return PerformAction.Spell(Battle.Player, "KomachiModUltHalfLife");
                 yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, gun1, 2.5f);
                 yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, gun2, 2);
+
+                yield return new KomachiReleaseAction(this, releaseValue);
                 float occupationTime = 1.5f;
                 float decreaseTime = 0.1f;
                 if (!targetingNamed) decreaseTime = 0.2f;
@@ -181,7 +183,6 @@ namespace KomachiMod.Cards
                 {
                     Debug.Log(poem[poemIndex]);
                     poemIndex++;
-                    yield return new KomachiReleaseAction(this, 1);
                     yield return PerformAction.Gun(Battle.Player, selector.SelectedEnemy, gun3, occupationTime);
                     if (occupationTime > 0.1f) occupationTime -= 0.1f;
                 }

@@ -3,7 +3,7 @@ KomachiModExhibitR:
   Description: |-
     Agrega {BaseMana} al maná base. Cartas exclusivas de |Koamchi| se agregan al grupo de cartas.
     Al comienzo del primer turno de cada combate, agrega una |Manipular Distancia| a la mano.
-    Cuando un enemigo es derrotado, agrega |Lirio de Araña| a la mano.
+    Al comienzo del tercer turno de cada combate, agrega un |Lirio de araña| a la mano.
     Las recompensas de <sprite="Point" name="Gold"> del combate otorgan {Value1}% más de <sprite="Point" name="Gold">.
   FlavorText: ¡Crucero de lujo por las costas del Higan! ¡Oferta por tiempo limitado con un 10 % de descuento!
 
