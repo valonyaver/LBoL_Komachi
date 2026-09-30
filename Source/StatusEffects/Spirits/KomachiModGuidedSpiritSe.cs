@@ -85,7 +85,7 @@ namespace KomachiMod.Source.StatusEffects.Spirits
          
         public string targetName
         {
-            get => target.SelfName;
+            get => target.SelfName.ToString();
         }
 
 

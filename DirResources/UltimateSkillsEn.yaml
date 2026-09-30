@@ -3,7 +3,7 @@ KomachiModUltA:
   Content: Higan Retour
   Description: |-
     |Displace| all enemies to have {Value1} |Distance|.
-    Add a |Manipulate Distance| to your hand for each enemy.
+    Add |e:1| |Manipulate Distance| to your hand for each enemy.
     Deal {Damage} damage to each enemy. |Accurate|
 
 KomachiModUltB:

@@ -44,7 +44,7 @@ namespace KomachiMod.StatusEffects
                 {
                     // Replace placeholders in the template
                     string coffinString = ExtraDescription
-                        .Replace("CARDNAME", KomachiModUtility.GetColoredText(coffin.chosenCard.SelfName, keywordColor))
+                        .Replace("CARDNAME", KomachiModUtility.GetColoredText(coffin.chosenCard.SelfName.ToString(), keywordColor))
                         .Replace("DURATION", KomachiModUtility.GetColoredText(coffin.duration.ToString(), valueColor));
 
                     result += "\n" + coffinString;

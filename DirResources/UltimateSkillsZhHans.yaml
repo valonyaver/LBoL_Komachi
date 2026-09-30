@@ -1,0 +1,37 @@
+KomachiModUltA:
+  Title: 死神
+  Content: 彼岸归航
+  Description: |-
+    |移位| 所有敌人，使其 |距离| 为 {Value1}。
+    每有一个敌人，将|e:1|张 |操纵距离| 加入手牌。
+    对每个敌人造成 {Damage} 点 |精准| 的伤害。
+
+KomachiModUltB:
+  Title: 灵符
+  Content: 古老的地缚灵之复苏
+  Description: |-
+    移除每个敌人身上的所有 |护身符|。
+    对每个敌人施加 {Value1} 层 |怨灵|。
+    |引爆| 所有敌人。
+    获得等同于引爆 |怨灵| 数量的 |神灵|。
+
+KomachiModUltHalfLife:
+  Title: 薄命
+  Content: 余命无几许
+  Description: |-
+    使敌人的当前生命值减半。
+
+KomachiModUltShootGhosts:
+  Title: 魂符
+  Content: 生魂流离的镰刀
+  Description: |-
+    造成 {Damage} 点伤害。目标身上每有一层 |怨灵|，{SelfName} 额外造成 {Value1} 点伤害。
+    如果目标被击败，则对其他每个敌人施加等同于该敌人所拥有的 |怨灵| 数量。
+
+KomachiModUltFinalJudgement:
+  Title: 死符
+  Content: 区别死者的镰刀
+  Description: |-
+    |移位| 任意距离。
+    造成 {Damage} 点伤害。远距离的伤害减免改为使此牌伤害增加两倍该值。
+    当使用 {SelfName} 击败敌人时，将一张 |彼岸花| 加入手牌。

@@ -1,0 +1,1041 @@
+﻿# Tokens and choice cards
+
+# IMPORTANT NOTE REGARDING DISPLACE WORDING:
+# If a card says "You can displace" (by x or up to x), that means you can choose not to displace.
+# If a card simply says "Displace by X" or "Displace up to X", that means you must displace, 
+KomachiModManDistance:
+  Name: 操纵距离
+  Description: "|移位| +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: |-
+    |移位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |移位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    多走一里。
+
+KomachiModManDistance2:
+  Name: 操纵距离 2
+  Description: "|移位| +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: |-
+    |移位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |移位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    多走十里。
+
+KomachiModManDistance3:
+  Name: 操纵距离 3
+  Description: "|移位| +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: |-
+    |移位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |移位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    多走百里。
+
+KomachiModManDistance4:
+  Name: 操纵距离 4
+  Description: "|移位| +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: |-
+    |移位| -{Value1}。 {extraDescriptionAddition}
+  ExtraDescription2: |-
+    |移位| +{Value1}。 {extraDescriptionAddition}
+  FlavorText: |-
+    多走千里。
+
+KomachiModManDistance0:
+  Name: 不操纵距离
+  Description: "|移位| {Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: "不|移位|。 {extraDescriptionAddition}"
+  ExtraDescription2: "不|移位|。 {extraDescriptionAddition}"
+  FlavorText: |-
+    多笑一笑 :)
+
+KomachiModManDistance1AllExcept:
+  Name: 操纵距离 B
+  Description: "|移位| 目标以外的每个敌人 +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: "|移位| 其他所有敌人 -{Value1}。"
+  ExtraDescription2: "|移位| 其他所有敌人 +{Value1}。"
+  FlavorText: |-
+    绕远一里。
+
+
+KomachiModManDistance2AllExcept:
+  Name: 操纵距离 B2
+  Description: "|移位| 目标以外的每个敌人 +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: "|移位| 其他所有敌人 -{Value1}。"
+  ExtraDescription2: "|移位| 其他所有敌人 +{Value1}。"
+  FlavorText: |-
+    绕远十里。
+
+KomachiModManDistance3AllExcept:
+  Name: 操纵距离 B3
+  Description: "|移位| 目标以外的每个敌人 +/-{Value1}。"
+  UpgradedDescription: "|移位| 最多+/-{Value2}。"
+  ExtraDescription1: "|移位| 其他所有敌人 -{Value1}。"
+  ExtraDescription2: "|移位| 其他所有敌人 +{Value1}。"
+  FlavorText: |-
+    绕远百里。
+
+KomachiModReleaseNone:
+  Name: 不解放灵
+  Description: |-
+    |解放| 不解放任何灵
+  FlavorText: |-
+    "按我自己的步调。按我自己的步调。"
+
+KomachiModSpiderLily:
+  Name: 彼岸花
+  Description: |-
+    获得 {Mana}。
+    获得 {Value1} 点 |暂得火力|。
+    获得 {Value2} 点 |中毒|。
+  FlavorText: |-
+    承载人类所有的怨念。
+
+KomachiModDetonateToken:
+  Name: 引爆
+  Description: |-
+    |引爆| 一个敌人。
+    抽 |e:1| 张牌。
+  ExtraDescription1: |-
+    不|引爆|。
+  ExtraDescription2: |-
+    |引爆|。
+  FlavorText: |-
+    足够的TNT能让游戏卡顿。
+
+## Findable cards
+
+#This card is shown in the collection but isn't draftable ingame
+KomachiModShootAndMove:
+  Name: 射击移动
+  Description: |-
+    造成 {Damage} 点伤害。 
+    |可选|：|移位| +/-{Value1}。
+  UpgradedDescription: |-
+    造成 {Damage} 点伤害。 
+    |可选|：|移位| 最多+/-{Value1}。
+  FlavorText: |-
+    这是早期版本的"移动射击"。之所以改掉，是因为"移动射击"会让第一章的小町防御性太弱。游戏内不可选取。
+
+
+KomachiModMoveAndShoot:
+  Name: 移动射击
+  Description: |-
+    |可选|：|移位| +/-{Value1}。
+    造成 {Damage} 点伤害。 
+  UpgradedDescription: |-
+    |可选|：|移位| 最多+/-{Value1}。
+    造成 {Damage} 点伤害。 
+  ExtraDescription1: |-
+    造成 VALUE 点伤害。
+  FlavorText: |-
+    "动一下我就射击！
+    搞错了。
+    我是说，射击完我就动。马上。
+    （我不是认真的）"
+
+KomachiModRetreat:
+  Name: 灵巧后撤
+  Description: |-
+    |可选|：|移位| +{Value1}。
+    获得 {Block} 点|格挡|。
+    如果目标的 |距离| 为 {Value3}，则将一张 |操纵距离| 加入手牌。
+  UpgradedDescription: |-
+    |可选|：|移位| 最多+{Value1}。 
+    获得 {Block} 点|格挡|。
+    如果目标的 |距离| 为 {Value3}，则将一张 |操纵距离| 加入手牌。
+  ExtraDescription1: 不移位目标。
+  ExtraDescription2: 不移位其他敌人。
+  FlavorText: |-
+    记得保持社交距离。
+
+# One of her soku skills
+KomachiModEndlessWay:
+  Name: 无间之道
+  Description: |-
+    |移位| +{Value1}。从该目标身上移除所有|闪避|。
+    获得 {Block} 点|格挡|。
+    |解放| {Value2} 或 {Value3}：每解放 {Value2} 个灵，施加 {lockOnAmount} 层|锁定|。
+  ExtraDescription1: |-
+    |解放| {Value2}：施加 {lockOnAmount} 层|锁定|。
+  ExtraDescription2: |-
+    |解放| {Value3}：施加 {lockOnAmount2} 层|锁定|
+  FlavorText: |-
+    注意避开永动机。
+
+KomachiModSweep:
+  Name: 横扫之镰
+  Description: |-
+    |移位| 每个敌人 -{Value1}。
+    对每个敌人造成 {Damage} 点伤害。 
+    将 {Value2:plural one='一张 |操纵距离|' other='% |操纵距离|'} 加入手牌。
+  FlavorText: |-
+    横扫！
+
+KomachiModDistanceTax:
+  Name: 距离税
+  Description: |-
+    根据每个敌人的 |距离| 对其施加以下效果：
+    1-2：{Value1} 层|虚弱|。
+    3：{Value2} 层|锁定|和|暂得火力下降|。
+    4-5：{Value3} 层|易伤|。
+  FlavorText: |-
+    死亡和税收是必然的，但阎魔厅还要另收运费和手续费。
+
+# One of her soku skills
+KomachiModTasteOfDeath:
+  Name: 死亡之味
+  Description: |-
+    |移位| -{Value1}。
+    造成 {Damage} 点伤害。
+  FlavorText: |-
+    这是需要慢慢习惯的味道。通常人们只会尝试一次。
+
+KomachiModPushDraw:
+  Name: 抽身后撤
+  Description: |-
+    |可选|：|移位| +{Value1}。
+    抽等同于该敌人 |距离| 的牌。
+  UpgradedDescription: |-
+    |可选|：|移位| 最多+{Value1}。
+    抽等同于该敌人 |距离| 的牌。
+  ExtraDescription1: "不|移位|。"
+  FlavorText: |-
+    我发现从局势中抽身确实能帮我得出更好的结论。
+
+KomachiModQuickNap:
+  Name: 小憩
+  Description: |-
+    获得 {Value1} 点生命。 
+    在 {PlayerName} 的下个回合开始时，获得 {Mana}。
+    结束 {PlayerName} 的回合。
+  FlavorText: |-
+    Zzz...
+  DetailText: |-
+    {SelfName} 不能在战斗中被随机生成，也不能被复制。
+
+# One of her soku skills
+KomachiModDistanceAttack:
+  Name: 死神的大镰
+  Description: |-
+    造成 {Damage} 点伤害。 
+    每当敌人的 |距离| 发生变化时，将 {SelfName} 从弃牌堆返回手牌。
+  FlavorText: |-
+    地面连招接236B。空中连招接236B。角落压制接236B。长眠接236B。
+
+# one of her soku spellcards
+KomachiModScytheFinalJudgment:
+  Name: 区别死者的镰刀
+  Description: |-
+    |移位| 到任意距离。
+    对每个敌人造成 {Damage} 点伤害。远距离的伤害减免改为使此牌伤害增加两倍该值。
+    当使用 {SelfName} 击败敌人时，将一张 |彼岸花| 加入手牌。
+  UpgradedDescription: |-
+    |移位| 到任意距离。
+    对每个敌人造成 {Damage} 点伤害。远距离的伤害减免改为使此牌伤害增加两倍该值。
+    当使用 {SelfName} 击败敌人时，将 2 张 |彼岸花| 加入手牌。
+  ExtraDescription1: |-
+    对该敌人造成 VALUE 点伤害。
+  DetailText: |-
+    此牌的伤害在距离 4 和 5 时分别增加 30% 和 60%。
+    伤害将针对每个敌人单独计算。
+  FlavorText: |-
+    "映姬大人请病假的时候，我就得兼任法官、陪审团和刽子手。这对我的<s>睡眠</s>日程来说太麻烦了。而且还不给加班费！"
+
+KomachiModShinigamiFinesse:
+  Name: 死神妙技
+  Description: |-
+   造成 {Damage} 点伤害 {attackTimes} {attackTimes:plural one='次' other='次'}。
+   此牌的攻击次数等同于目标的 |距离|。
+   如果目标的 |距离| <b>小于</b> {three}，攻击具有|精准|。
+  UpgradedDescription: |-
+   造成 {Damage} 点伤害 {attackTimes} {attackTimes:plural one='次' other='次'}。
+   此牌的攻击次数等同于目标的 |距离|+1。
+   如果目标的 |距离| <b>小于</b> {three}，攻击具有|精准|。
+
+KomachiModDistanceBlock:
+  Name: 弹性工时
+  Description: |-
+    每当敌人被|移位|时，每改变一级 |距离| 获得 {Value1} 点|格挡|。
+  FlavorText: |-
+   "朝九晚五也没那么糟，只要你大部分时间能打瞌睡。"
+
+KomachiModDistanceGenerator:
+  Name: 勤勉死神
+  Description: |-
+    在 {PlayerName} 的回合开始时，如果手牌中没有 |操纵距离|，则将 {Value1} 张 |操纵距离| 加入手牌。
+  UpgradedDescription: |-
+    将一张 |操纵距离| 加入手牌。
+    在 {PlayerName} 的回合开始时，如果手牌中没有 |操纵距离|，则将 {Value1} 张 |操纵距离| 加入手牌。
+
+
+KomachiModDistanceFlow:
+  Name: 三途川之流
+  Description: |-
+    每当敌人被|移位|时：
+    - 如果距离增加，获得 {Value1} 点|暂得灵力|。
+    - 如果距离减少，获得 {Value1} 点|暂得火力|。
+  FlavorText: |-
+    如果你看到两条鱼在水里打架，那肯定是五分钟前有道士路过。
+
+KomachiModPushNPull:
+  Name: 推拒与牵引
+  Description: |-
+    在 {PlayerName} 的回合开始时，|移位| 每个敌人 -{Value1}。
+    在 {PlayerName} 的回合结束时，|移位| 每个敌人 {Value1}。
+  UpgradedDescription: |-
+    将一张 |操纵距离| 加入手牌。
+    在 {PlayerName} 的回合开始时，|移位| 每个敌人 -{Value1}。
+    在 {PlayerName} 的回合结束时，|移位| 每个敌人 {Value1}。
+
+KomachiModReviveCard:
+  Name: 死之神
+  Description: |-
+    下次 {PlayerName} 在此战斗中将被击败时，改为恢复至最大生命值的一半并获得 {Value2} 层|天衣无缝|。
+    当此效果触发时，从牌库中移除 {SelfName}。{PlayerName} 每场战斗只能通过此效果复活一次。
+    每当敌人被击败时，如果它是召唤物，获得 {Value1} 点|护盾|。否则，获得 {Value1} 点生命。
+  DetailText: |-
+    {SelfName} 不能在战斗中被随机生成，也不能被复制。
+    只有第一张打出的 {SelfName} 会从牌库中移除。
+
+KomachiModRiversideGarden:
+  Name: 河畔花圃
+  Description: |-
+    每当 {PlayerName} 在此战斗中添加入 |彼岸花| 时，|升级| 它。
+    将 {Value1} 张 |彼岸花| 加入手牌、抽牌堆和弃牌堆。
+    在战斗结束时，每有一张 |彼岸花| 在 |战场| 上，获得 {Value2} 点生命（最多为 {PlayerName} 当前生命 + {maxHeal}）。
+
+
+# Note that it "reduces" the cost, not changes it. To imply that 0 cost cards do not get more expensive (since mana here is 1)
+KomachiModShinigamiTactics:
+  Name: 死神战法
+  Description: |-
+    在打出 |操纵距离| 后，如果它减少了 |距离|，则将一张随机攻击牌加入手牌。如果它增加了 |距离|，则将一张随机防御牌加入手牌。
+    其费用|暂时降低为| {Mana} 并获得|放逐|和|虚无|。
+    将 {Value2} 张 |操纵距离| 加入手牌。
+
+KomachiModLowTierShinigami:
+  Name: 低阶死神
+  Description: |-
+    造成 {Damage} 点伤害。
+    施加 {Value1} 层|易伤|。
+  FlavorText: "要我说多少遍？你自杀也不会有人在乎的。"
+
+KomachiModWeedCutter:
+  Name: 快刀乱麻
+  Description: |-
+    造成 {Damage} 点伤害。 
+    抽 {Value1} 张牌。
+    将一张 |操纵距离| 加入手牌。
+  FlavorText: "如果你把敌人当成植物，镰刀就不再是不实用的武器了。"
+
+KomachiModParry:
+  Name: 镰刀招架
+  Description: |-
+    获得 {Block} 点|格挡|。
+    获得 {Value1} 点|反射|。
+    将一张 |操纵距离| 加入手牌。
+
+KomachiModCoinThrow:
+  Name: 投钱
+  Description: |-
+    对每个敌人造成 {Damage} 点伤害。
+    失去 {Value1} <sprite="Point" name="Gold">。
+  FlavorText: "这可真是有钱没处花的人啊。"
+
+KomachiModIgnoreNagging:
+  Name: 充耳不闻
+  Description: |-
+    |移位| -{Value1}。
+    每有一个 |距离| 为 |2| 或更少的敌人，获得 {Value2} 点|闪避|。
+  UpgradedDescription: |-
+    |移位| 最多-{Value1}。
+    每有一个 |距离| 为 |2| 或更少的敌人，获得 {Value2} 点|闪避|。
+
+KomachiModRetreatBoat:
+  Name: 三途护舟
+  Description: |-
+    |移位| +{Value1}。
+    获得 {Block} 点|格挡|。
+    获得等于该目标 |距离| {Value2} 倍的|护盾|。
+
+KomachiModManipDefence:
+  Name: 移动防御
+  Description: |-
+    获得 {Block} 点|格挡|。
+    每有一个 |距离| 为 {Value1} 或更多的敌人，将一张 |操纵距离| 加入手牌。
+
+KomachiModWorkFocus:
+  Name: 全神贯注
+  Description: |-
+    |放逐| 手中最多 {Value1} 张牌。将等量的 |操纵距离| 加入手牌。
+    如果以此方式|放逐|了一张|升级|牌，则将一张 |彼岸花| 加入手牌。
+  UpgradedDescription: |-
+    |放逐| 手牌、抽牌堆或弃牌堆中最多 {Value1} 张牌。将等量的 |操纵距离| 加入手牌。
+    如果以此方式|放逐|了一张|升级|牌，则将一张 |彼岸花| 加入手牌。
+
+KomachiModSpySpirit:
+  Name: 同行侦查灵
+  Description: |-
+    造成 {Damage} 点伤害。 
+    每当该敌人被|移位|时，获得 {Value1} 点|护盾|。
+  FlavorText: |-
+    无薪实习生。至少它还挺喜欢这份工作的。
+
+KomachiModSliceOfHigan:
+  Name: 彼岸之刃
+  Description: |-
+    造成 {Damage} 点伤害 {Value1} 次。
+    |在手牌中时|：每当敌人被|移位|时，此战斗中每改变一级距离，{SelfName} 的伤害增加 {Value2}。
+
+KomachiModEqualizeDistance:
+  Name: 平均距离
+  Description: |-
+    |移位| 直到距离为 {three}。
+    每移位一级，抽 {Value1:plural one='% 张牌' other='% 张牌'}。 
+    如果目标的 |距离| 已经是 |3|，则改为抽 {Value2} 张牌，然后弃 {Value3} 张牌。
+
+KomachiModRitualOfEcstasy:
+  Name: 极乐之仪
+  Description: |-
+    反转目标的 |距离|。
+    如果增加，获得 {Value2} 点|闪避|和 {Block} 点|格挡|。
+    如果减少，抽 {Value1} 张牌。
+    如果目标的 |距离| 为 {three}，则可以选择效果。
+  ExtraDescription1: |-
+    抽 {Value1} 张牌。
+  ExtraDescription2: |-
+    获得 {Value2} 点|闪避|和 {Block} 点|格挡|。
+  DetailText: |-
+    围绕距离 3 反转距离。
+    即，移位将如下进行：
+    - 等级 1：移位至等级 5。
+    - 等级 2：移位至等级 4。
+    - 等级 3：无变化。
+    - 等级 4：移位至等级 2。
+    - 等级 5：移位至等级 1。
+
+KomachiModExchangeLife:
+  Name: 不惜身命，可惜身命
+  Description: |-
+    如果目标的 |当前生命| 等于或低于 {PlayerName} 的当前 |最大生命|，则交换他们的当前生命。
+    如果 {SelfName} 被用于治疗 {PlayerName}，则从战斗和牌库中移除。
+    |充盈|：获得 {PlentifulMana}。
+  DetailText: |-
+    生命较低的一方被治疗，生命较高的一方失去生命。
+    {SelfName} 不能在战斗中被随机生成，也不能被复制。
+  
+KomachiModGrudgingStrike:
+  Name: 怨灵打击
+  Description: |-
+    造成 {Damage} 点伤害。
+    施加 {Value1} 层|怨灵|。
+    |解放| {Value2}：将 |引爆| 加入手牌。
+  ExtraDescription1: |-
+    |解放| {Value2}：将 |引爆| 加入手牌。
+
+KomachiModDefendDetonate:
+  Name: 并无恶意
+  Description: |-
+    获得 {Block} 点|格挡|。
+    施加 {Value1} 层|怨灵|。
+    |可选|：|引爆| 目标，然后每该目标拥有的 {Value3} 层|怨灵|，施加 {Value2} 层|暂得火力下降|。
+  ExtraDescription1: "不|引爆|"
+  ExtraDescription2: "|引爆|"
+
+KomachiModBWBridge:
+  Name: 阎魔厅公务
+  Description: |-
+    获得 {Mana}。在 {PlayerName} 的回合开始时，获得 {Mana}。
+    从 {Value2} 张随机白黑混合牌中选择最多 {Value1} 张加入手牌。然后|放逐|其余的。
+  UpgradedDescription: |-
+    获得 {Mana}。将 |光芒| 加入手牌。
+    在 {PlayerName} 的回合开始时，获得 {Mana}。
+    从 {Value2} 张随机白黑混合牌中选择最多 {Value1} 张加入手牌。然后|放逐|其余的。
+  DetailText: |-
+    这些 |e:替代卡牌| 忽略总法力和法力颜色限制。
+
+# References a yugioh card of the same name
+KomachiModFishing:
+  Name: 双重钓取
+  Description: |-
+    弃 {Value1} 张牌，然后以 |放逐| 区中最多 {Value2} 张总费用各自等于 {Value3} 或更少的牌为目标；将第一张返回手牌，将第二张返回弃牌堆。
+    它们|暂塑|为 {Mana}。
+
+KomachiModGuidingSanzu:
+  Name: 三途指引
+  Description: |-
+    获得 {Value1} 层|引导灵|。
+
+KomachiModBoomBenefits:
+  Name: 塞壬恩赐
+  Description: |-
+    |引爆| 一个敌人，然后|选择|：
+    - 每引爆 {Value1} 层|怨灵|，获得 |e:1| 层|引导灵|。
+    - 每引爆 {Value2} 层|怨灵|，抽 |e:1| 张牌。
+  ExtraDescription1: 每引爆 {Value1} 层|怨灵|，获得 |e:1| 层|引导灵|。
+  ExtraDescription2: 每引爆 {Value2} 层|怨灵|，抽 |e:1| 张牌。
+
+# Soku spell
+KomachiModShootGhosts:
+  Name: 彷徨灵魂之镰
+  Description: |-
+    造成 {Damage} 点伤害。目标身上每有一层|怨灵|，{SelfName} 额外造成 {Value1} 点伤害。
+    如果目标被击败，则对其他所有敌人施加等同于该敌人所拥有的|怨灵|数量。
+
+# Soku skill
+KomachiModSpiritDefence:
+  Name: 偶然路过的人灵
+  Description: |-
+    获得 {Block} 点|格挡|。
+    获得 {Value1} 层|引导灵|。
+
+# Soku
+KomachiModVengefulSweep:
+  Name: 无惑而生的人灵
+  Description: |-
+    对每个敌人施加 {Value1} 层|怨灵|。
+    |解放| {Value2}：对所有那些敌人再施加 {Value1} 层|怨灵|。
+    |解放| {Value3}：执行上述效果，然后将 |引爆| 加入手牌。
+  ExtraDescription1: |-
+    |解放| {Value2}：对每个敌人再施加 {Value1} 层|怨灵|。
+  ExtraDescription2: |-
+    |解放| {Value3}：对每个敌人再施加 {Value1} 层|怨灵|，然后将 |引爆| 加入手牌。
+  FlavorText: |-
+    怨念横扫！
+
+# Soku
+KomachiModVengefulerSweep:
+  Name: 到处都是的浮游灵
+  Description: |-
+    对每个敌人造成 {Damage} 点伤害。
+    对每个敌人施加 {Value1} 层|怨灵|。
+    |解放| {releaseCost1}：|选择|：此攻击变为|精准|或对每个敌人再施加 {Value1} 层|怨灵|。
+    |解放| {releaseCost2}：对每个敌人造成 {Damage2} 点|精准|伤害 {attackTimes} 次，然后改为对每个敌人施加 {Value2} 层|怨灵|。
+  ExtraDescription1: |-
+    |解放| {releaseCost1}：|选择|：此攻击变为|精准|或对每个敌人再施加 {Value1} 层|怨灵|。
+  ExtraDescription2: |-
+    |解放| {releaseCost2}：对每个敌人造成 {Damage2} 点|精准|伤害 {attackTimes} 次，然后对每个敌人施加 {Value2} 层|怨灵|。
+  ExtraDescription3: |-
+    此攻击变为|精准|。
+  ExtraDescription4: |-
+    对每个敌人再施加 {Value1} 层|怨灵|。
+  FlavorText: |-
+    超级怨念横扫！
+
+KomachiModFreeTrauma:
+  Name: 免费创伤？！
+  Description: |-
+    施加 {Value3} 层|怨灵|。
+    获得 {Mana}。
+    |解放| {Value1} 或 {Value2}：每解放 {Value1} 个灵，额外获得 {Mana}。
+  ExtraDescription1: |-
+    |解放| {Value1}：获得 {Mana}。
+  ExtraDescription2: |-
+    |解放| {Value2}：获得 {Mana}{Mana}。
+  FlavorText: |-
+    在这种经济环境下？
+
+KomachiModSpiritBarrier:
+  Name: 灵魂壁垒
+  Description: |-
+    获得 {Block} 点|格挡|。
+    获得 {Shield} 点|护盾|。
+    |解放| 全部：每解放一个灵，获得 {Value2} 点|护盾|。
+  ExtraDescription1: |-
+    |解放| 全部：每解放一个灵，获得 {Value2} 点|护盾|。
+  FlavorText: |-
+    被友情的力量保护着！
+
+KomachiModScytheHeal:
+  Name: 吸魂之镰
+  Description: |-
+    造成 {Damage} 点伤害 {Value1} 次。
+    每次命中施加 {Value2} 层|怨灵|。
+    每次未被格挡的命中获得 {Value3} 点生命。
+  DetailText: |-
+    {SelfName} 不能在战斗中被随机生成，也不能被复制。
+
+
+
+# Soku
+KomachiModBoundSpiritsOfEarth:
+  Name: 上天无路的地缚灵
+  Description: |-
+    对每个敌人施加 {Value1} 层|怨灵|。
+    将每个敌人身上|怨灵|的持续时间改为 1。
+
+KomachiModLonelyBoundSpirit:
+  Name: 寂寞之人的紧缚灵
+  Description: |-
+    造成 {Damage} 点伤害。
+    施加 |寂寞之人的紧缚灵|。
+  FlavorText: |-
+    寂寞的灵刚找到朋友，就一起爆炸了。
+
+# Soku
+KomachiModScytheRedLily:
+  Name: 离魂之镰
+  Description: |-
+    造成 {Damage} 点伤害。
+    |可选|：|引爆|，然后如果|引爆|了 {Value1} 层或更多|怨灵|，则将一张 |彼岸花| 加入手牌。
+    |解放| {Value2}：在引爆前施加 {Value1} 层|怨灵|。获得 {one} 点|护身符|。
+  ExtraDescription1: |-
+    |解放| {Value2}：在引爆前施加 {Value1} 层|怨灵|。获得 {one} 点|护身符|。
+  ExtraDescription2: |-
+    |可选|：|引爆|，然后如果|引爆|了 {Value1} 层或更多|怨灵|，则将一张 |彼岸花| 加入手牌。
+
+KomachiModDetonateFirepower:
+  Name: 死者的怨念
+  Description: |-
+    每当|怨灵|被|引爆|时，获得 {Value2} 点|火力|。
+    对每个敌人施加 {Value1} 层|怨灵|。
+    |可选|：|引爆|所有敌人。
+  ExtraDescription1: |-
+    |引爆|所有敌人。
+
+KomachiModTalkativeFerryman:
+  Name: 健谈的摆渡人
+  Description: |-
+    在 {PlayerName} 的回合开始时，获得 {Value1} 层|引导灵|。
+    |解放| {Value2}：在 {PlayerName} 的下个回合开始时，获得 {Value3} 层|引导灵|。
+  ExtraDescription1: "|解放| {Value2}：在 {PlayerName} 的下个回合开始时，获得 {Value3} 层|引导灵|。"
+
+# Play on internet cancelling of people lol
+KomachiModDetonateInfinite:
+  Name: 永久封杀
+  Description: |-
+    施加 {Value1} 层|怨灵|。
+    每当敌人的|怨灵|被|引爆|时，将引爆数量的一半（向上取整）再施加到该敌人身上。
+
+# Can also mean mental damage
+KomachiModSpiritualDamage:
+  Name: 灵魂伤害
+  Description: |-
+    造成 {Damage} 点伤害。
+    施加等同于以此方式造成的未被格挡伤害数量的|怨灵|。
+    该目标身上|怨灵|的持续时间增加 {Value1}。
+
+# Reference to an sts card named catalyst
+KomachiModSpiritCatalyst:
+  Name: 灵媒
+  Description: |-
+    使目标的|怨灵|翻倍。
+    将该敌人身上|怨灵|的持续时间增加 3。
+
+KomachiModEyeOfTheStorm:
+  Name: 风暴之眼
+  Description: |-
+    获得 {Block} 点|格挡|。
+    对每个敌人施加 {Value1} 层|怨灵|。
+    获得 {Value2} 层|引导灵|。
+    |解放| {Value3}：获得 {Shield} 点|护盾|。
+  ExtraDescription1: "|解放| {Value3}：获得 {Shield} 点|护盾|。"
+
+KomachiModChainDetonation:
+  Name: 链式反应
+  Description: |-
+    施加 {Value1} 层|怨灵|。
+    |引爆|该敌人。
+    施加等同于引爆数量的|怨灵|。
+    |解放| {Value2}：再次|引爆|该目标。
+    |解放| {Value3}：再次施加等同于引爆数量的|怨灵|。
+  ExtraDescription1: "|解放| {Value2}：再次|引爆|该目标。"
+  ExtraDescription2: "|解放| {Value3}：再次|引爆|该目标，然后再次施加等同于引爆数量的|怨灵|。"
+  FlavorText: |-
+    冥界的买一送一大酬宾。
+
+KomachiModResidualAether:
+  Name: 残留以太
+  Description: |-
+    获得 {totalMana}。
+    |在手牌中时|：每当敌人被|引爆|时，{SelfName} 额外提供 {ManaReal}。
+
+KomachiModDivineSpiritDefence:
+  Name: 死神的加护
+  Description: |-
+    获得 {Block} 点|格挡|。
+    获得 {Value1} 层|神灵|。
+    |解放| {Value2}：额外获得 {Value1} 层|神灵|。
+  ExtraDescription1: "|解放| {Value2}：额外获得 {Value1} 层|神灵|。"
+
+KomachiModSpiritReturn:
+  Name: 还魂
+  Description: |-
+    在 {PlayerName} 的回合开始时，从 |放逐| 区将最多 |e:1| 张总费用为 1 或更少的牌加入手牌。其费用增加 {Mana}，打出时从战斗中移除。
+
+KomachiModAfterlifePassage:
+  Name: 冥途引渡
+  Description: |-
+    |放逐| 手牌中的 {Value1} 张牌。
+    每|放逐|一张|厄运|、|状态|或|基础|牌，获得 {Value2} 层|引导灵|。
+    每|放逐|一张其他牌，获得 {Value2} 层|神灵|。
+  UpgradedDescription: |-
+    |放逐| 手牌或弃牌堆中最多 {Value1} 张牌。
+    每|放逐|一张|厄运|、|状态|或|基础|牌，获得 {Value2} 层|引导灵|。
+    每|放逐|一张其他牌，获得 {Value2} 层|神灵|。
+
+KomachiModReapersDue:
+  Name: 死神的征税
+  Description: |-
+    |每消耗 {Mana}|：获得 {Value1} 层|引导灵|。（{anyManaSpirits}）
+    |每消耗 {WhiteMana}|：获得 {Value2} 层|神灵|。（{whiteManaSpirits}）
+    |每消耗 {BlackMana}|：对每个敌人施加 {Value2} 层|怨灵|。（{blackManaSpirits}）
+
+KomachiModCloseQuarterDefence:
+  Name: 近身战法
+  Description: |-
+    获得 {Block} 点|格挡|。
+    施加 {Value1} 层|怨灵|。
+    如果目标的 |距离| <b>小于</b> {distanceLimit}：施加 {Value3} 层|暂得火力下降|并获得 {Value2} 层|引导灵|。
+
+# Soku
+KomachiModHalfLife3:
+  Name: 余命无几许
+  Description: |-
+    |解放| {Value1}：造成目标当前生命值一半（{Damage}）的伤害。
+    如果目标有已知名称，则必须改为|解放| {Value2}。
+    失去 {Value3} 点|灵力|。
+  UpgradedDescription: |-
+    |解放| {Value1}：造成目标当前生命值一半（{Damage}）的伤害。
+    如果目标有已知名称，则必须改为|解放| {Value2}。
+  ExtraDescription1: |-
+    |解放| {releaseValue}：造成目标当前生命值一半的伤害。
+  FlavorText: |-
+    由于现代医学的突破、饮食的改善，以及最近一位司掌"永远"的神明被解封，稗田家的寿命已不再那么短暂了。
+
+# Soku
+KomachiModDistanceCloser:
+  Name: 八重雾中渡
+  Description: |-
+    |移位| 最多 -{Value1}。
+    每级|移位|施加 {Value2} 层|怨灵|。
+    |解放| {releaseCost}：该目标每有 {firepowerCond} 层|怨灵|，获得 {firepowerValue} 点|暂得火力|。
+  ExtraDescription1: |-
+    |解放| {releaseCost}：该目标每有 {firepowerCond} 层|怨灵|，获得 {firepowerValue} 点|暂得火力|。
+  DetailText: |-
+    施加的|怨灵|数量等于实际移位量，而非选择的值。
+
+KomachiModEthicallySourcedBreak:
+  Name: 正当的小憩
+  Description: |-
+    获得 {Shield} 点|护盾|。获得 {Value1} 点生命和 {Value2} 点火力。
+    结束 {PlayerName} 的回合。 
+    在 {PlayerName} 的下个回合开始时，结束 {PlayerName} 的回合。
+    在那之后 {PlayerName} 的下个回合开始时，获得 {Mana}，并抽 {Value3} 张牌。
+  FlavorText: |-
+    "ZZZZzzzzzzzz...."
+  DetailText: |-
+    {SelfName} 不能在战斗中被随机生成，也不能被复制。
+
+KomachiModInfernoTempest:
+  Name: 穷途之魂
+  Description: |-
+    |放逐| 手牌、抽牌堆和弃牌堆中的每张牌。
+    每张手牌获得 {Value3} 层|神灵|。每张抽牌堆中的牌获得 {Value1} 层|引导灵|。每张弃牌堆中的牌对每个敌人施加 {Value1} 层|怨灵|。
+    在 {PlayerName} 的下个回合开始时，选择最多 {Value2} 张非|基础|放逐牌。将它们随机返回手牌、抽牌堆和弃牌堆。然后，将所有放逐的|基础|牌返回抽牌堆。
+  DetailText: |-
+    手牌、抽牌堆和弃牌堆中至少各有 1 张牌会被返回。
+  FlavorText: |-
+    等等，我的牌库呢？
+
+KomachiModGuidedGreen:
+  Name: 前世之灵
+  Description: |-
+    获得 {Value1} 层|引导灵|。
+    抽 {Value2} 张牌。
+  FlavorText: |-
+    "我只能希望你前世的工作态度好一点。"
+
+KomachiModMidsummerLily:
+  Name: 孤独的彼岸花
+  Description: |-
+    在 {PlayerName} 打出 |彼岸花| 后，将 {Value1} 张 |盛夏之花| 加入手牌。
+    将 {Value2} 张 |彼岸花| 加入抽牌堆顶。
+  FlavorText: |-
+    一个孤独的孤儿，还没意识到自己已经死了，就附身在了那朵花上。
+
+KomachiModHellFreeze:
+  Name: 地狱的冰封之暖
+  Description: |-
+    造成 {Damage} 点伤害。
+    每当该目标身上的|怨灵|被|引爆|时，对该目标施加|寒冷|。（此效果不叠加）
+    |可选|：|引爆|，然后每|引爆| {Value2} 层|怨灵|，获得 {Value1} 点|霜甲|。
+  ExtraDescription1: |-
+    不|引爆|
+  ExtraDescription2: |-
+    |引爆|，然后每|引爆| {Value2} 层|怨灵|，获得 {Value1} 点|霜甲|。
+  FlavorText: "即使是地狱也有煎熬的季节。"
+
+KomachiModStrongestSpirit:
+  Name: 最强之灵！
+  Description: |-
+    造成 {Damage} 点伤害。
+    施加等同于以此方式造成的未被格挡伤害数量的|怨灵|。
+    |解放| {Value1}：|放逐|手牌中的所有其他牌。每|放逐|一张，再次攻击。如果以此方式|放逐|了 {Value2} 张或更多牌，获得 {Value2} 点|火力|。
+  ExtraDescription1: |-
+    |解放| {Value1}：|放逐|手牌中的所有其他牌。每|放逐|一张，再次攻击。如果以此方式|放逐|了 {Value2} 张或更多牌，获得 {Value2} 点|火力|。
+  FlavorText: "在克服了得知太阳将在50亿年后爆炸的存在危机后，冰之妖精变得前所未有地强大。"
+
+
+KomachiModExchangeDrawExile:
+  Name: 生与死的交换
+  Description: |-
+    |放逐| 抽牌堆顶的牌。然后，从放逐区将最多 {Value1} 张相同卡牌类型的其他牌返回手牌。
+    如果放逐区中没有可选择的牌，则改为抽 {Value2} 张牌。
+  DetailText: |-
+    卡牌类型指的是该牌是攻击、防御、技能、能力等。
+
+KomachiModLifespanEnd:
+  Name: 生之终结
+  Description: |-
+    结束 {PlayerName} 的回合。然后，获得一个额外回合。
+    在此额外回合中不会失去|格挡|。
+    |在回合结束时|：受到 {Value1} 点伤害。
+  UpgradedDescription: |-
+    结束 {PlayerName} 的回合。然后，获得一个额外回合。
+    在此额外回合中不会失去|格挡|。
+    |在该额外回合开始时|：抽 {Value2} 张牌并获得 {Mana}。
+    |在回合结束时|：受到 {Value1} 点伤害。
+  FlavorText: |-
+    等等，这到底是谁的寿命要结束了？！
+
+# Reference to the yugioh card gold sarcophagus. Try to put a ship pun in there if you can, otherwise just name it gold sarcophagus.
+KomachiModGoldSarcophagus:
+  Name: 封印之黄金船
+  Description: |-
+    从抽牌堆中选择 1 张牌；|放逐|它。
+    在打出此牌后的第二回合开始时，将该牌加入手牌，|升级|它，并给予它|填充|。
+
+# Note that it "reduces" the cost, not changes it. To imply that 0 cost cards do not get more expensive (since mana here is 1)
+KomachiModExileDoppelganger:
+  Name: 三途川灭绝魂兽
+  Description: |-
+    每当 {PlayerName} 打出一张牌时：
+    - |如果放逐区中没有同名牌|：将它的|复制|加入放逐区。其费用降低为 {Mana}，打出后从战斗中移除。
+    - |如果放逐区中有同名牌|：你可以将它加入手牌。
+    每回合只能使用 {SelfName} 的每个效果一次。
+  DetailText: |-
+    复制牌不能通过第一个效果被复制。
+  FlavorText: |-
+    为什么没人想过把三途川的稀有鱼拿来卖钱呢？
+
+# Reference to the yugioh card tour guide from the underworld
+KomachiModSpiritDraw:
+  Name: 由现世到彼岸的死亡导游
+  Description: |-
+    抽 {draw} 张牌。
+    以此方式每抽到一张普通牌，对每个敌人施加 {Value1} 层|怨灵|；每抽到一张罕见牌，获得 {Value2} 层|引导灵|；每抽到一张稀有牌，获得 {Value3} 层|神灵|。
+  FlavorText: |-
+    连锁1 迷失乐园指定过早埋葬。连锁2 过早埋葬指定迷失乐园
+
+KomachiModEiki:
+  Name: 乐园的最高裁判长四季映姬
+  Description: |-
+    {Indent}获得 {RawShield} 层|神灵|。
+    {PassiveCostIcon}从手牌中随机选择 {Value1} 张牌：|如果它是厄运或状态牌|：|放逐|它，然后获得 {Value2} 层|引导灵|。 
+    |否则|：获得等同于其法力费用的|引导灵|。其|暂塑|为少 1 点随机法力。
+  ExtraDescription1: |-
+    {ActiveCostIcon}选择手牌中的一张牌。它|暂时失去|所有有色法力费用。|升级|它。
+  UpgradedExtraDescription1: |-
+    {ActiveCostIcon}选择手牌中的一张牌。它|暂塑|为 {Mana}。|升级|它。
+  ExtraDescription3: |-
+    {UltimateCostIcon}从|战场|中选择最多 {Value3} 张牌并将它们加入手牌。它们的费用在此战斗中变为 {Mana}。此战斗中 {PlayerName} 不支付卡牌的|解放|费用。
+  DetailText: |-
+    被动效果永远不会选择 0 法力的牌。
+  EikiAltWinChat1: |- # PK
+    好的好的，映姬——我是说，尊敬的映姬大人。
+  EikiAltWinChat2: |- # PK
+    <size=90%>我明白您的意思，我会更加努力的！但我保证这次我真的没有偷懒！您误会了！
+  EikiAltWinChat3: |- # PK
+    <size=90%>我没有偷任何展品！我在找真正的犯人，并且尽力为辉夜小姐找回它们！
+  EikiAltWinChat4: |- # E
+    哼！真是这样吗？
+  EikiAltWinChat5: |- # E
+    好吧，我想你这次冒险中<i>确实</i>在好好引导一些灵魂。
+  EikiAltWinChat5.5: |- # E
+    （终于不是只在小船上睡大觉了……）
+  EikiAltWinChat6: |- # E
+    好吧，这次就放你一马。允许你继续调查。
+  EikiAltWinChat7: |- # PK
+    太好了！:D
+  EikiAltWinChat8: |- # E
+    但之后还有21个未渡的灵魂等着你。不许打瞌睡。
+  EikiAltWinChat9: |- # PK
+    啊——我是说，好吧。我……保证之后上班不睡觉。
+  FlavorText: |-
+    "如果你终于决定好好工作了，我就放你走。"
+
+# Embrace or hug
+KomachiModLilyHug:
+  Name: 彼岸花之拥
+  Description: |-
+    将一张 |彼岸花| 加入手牌。
+    在 {PlayerName} 打出 |彼岸花| 后，获得 {Value2} 点|护身符|。
+  FlavorText: |-
+    太春了，だよ...
+
+KomachiModStygianReel:
+  Name: 冥府卷线
+  Description: |-
+    造成 {Damage} 点伤害。
+    |移位| -{Value1}。
+    在该敌人的回合开始时，|移位|它们 +{Value1}。
+
+# Komachi's theme
+KomachiModRiversideView:
+  Name: 岸边景色
+  Description: |-
+    在 {PlayerName} 的回合开始时，如果手牌中没有 |彼岸花|，则将一张 |彼岸花| 加入手牌。此效果不叠加。
+    |彼岸花| 只对 {PlayerName} 施加 |e:1| 层|中毒|。
+    在 {PlayerName} 打出 |彼岸花| 后，对每个敌人施加 {Value2} 层|中毒|，然后获得 {Value1} 点|火力|。
+  UpgradedDescription: |-
+    将一张 |彼岸花| 加入手牌。
+    在 {PlayerName} 的回合开始时，如果手牌中没有 |彼岸花|，则将一张 |彼岸花| 加入手牌。此效果不叠加。
+    |彼岸花| 只对 {PlayerName} 施加 |e:1| 层|中毒|。
+    在 {PlayerName} 打出 |彼岸花| 后，对每个敌人施加 {Value2} 层|中毒|，然后获得 {Value1} 点|火力|。
+
+KomachiModRedLilyStorm:
+  Name: 哀悼之岚
+  Description: |-
+    |每消耗 {Mana}|：造成 {Damage} 点伤害，然后获得 {Value1} 点|暂得火力|。
+    如果至少消耗了 3 点法力，则将一张 |彼岸花| 加入弃牌堆。
+  UpgradedDescription: |-
+    |每消耗 {Mana}|：造成 {Damage} 点伤害，然后获得 {Value1} 点|暂得火力|。
+    将一张 |彼岸花| 加入弃牌堆。
+  DetailText: |-
+    火力在所有攻击完成后获得。
+  
+KomachiModPosessedArmament:
+  Name: 附灵兵器
+  Description: |-
+    每当 {PlayerName} 造成未被格挡的攻击伤害时，也施加 {Value1} 层|怨灵|。
+  FlavorText: |-
+    如果被附灵了，不应该自动战斗吗？
+
+KomachiModParasiticPollen:
+  Name: 寄生孢子
+  Description: |-
+    造成 {Damage} 点伤害 {Value1} 次。
+    将一张 |彼岸花| 加入抽牌堆。 
+    如果 {PlayerName} 处于|中毒|状态，失去 {Value2} 层|中毒|，然后施加两倍于失去量的|中毒|。
+  FlavorText: |-
+    偏偏在她休息日发起了原因不明的高烧。
+
+# Reference to the yugioh card, oasis of dragon souls.
+KomachiModOasis:
+  Name: 游魂之幻泉
+  Description: |-
+    从 |放逐| 区或弃牌堆选择 |e:1| 张总费用等于 {Value1} 或更少的牌。将它的|复制|加入手牌。此回合|保留|它。如果目标牌是|能力|或具有|放逐|，它变为|复制|。
+    
+
+
+KomachiModTip:
+  Name: 死神一挥
+  Description: |-
+    造成 {Damage} 点伤害。
+    |放逐时|：将一张 |操纵距离| 加入手牌。
+  FlavorText: "它会刺人。"
+
+
+# Reference to a yugioh card with the same name
+KomachiModGhostrickShot:
+  Name: 鬼计曲线球
+  Description: |-
+    施加 {Value1} 层|怨灵|。
+    |放逐时|：对每个敌人施加 {Value2} 层|怨灵|。
+  FlavorText: |-
+    把僵尸翻面20回合就能赢！
+
+KomachiModRecursiveSouls:
+  Name: 轮回之魂
+  Description: |-
+    每当一张牌被|放逐|时，获得 {Value1} 层|引导灵|。
+
+    
+KomachiModSpiritInvitation:
+  Name: 魂之招待
+  Description: |-
+    获得 {Value1} 层|引导灵|和 {Value2} 层|神灵|。
+    每当 {PlayerName} |解放|时，获得等同于|解放|数量的|护盾|，然后对每个敌人造成等同于 {PlayerName} |护盾|的伤害。
+
+KomachiModPilingDeathwork:
+  Name: 层叠死役
+  Description: |-
+    造成 {Damage} 点伤害 {attackTimes} 次。
+    施加 {Value1} 层|怨灵| {attackTimes} 次。
+    |放逐时|：在战斗剩余时间内，{SelfName} 额外重复上述效果一次。
+    在 {PlayerName} 的回合开始时，这张|放逐|牌返回抽牌堆。
+
+KomachiModTies:
+  Name: 死者之缘
+  Description: |-
+    在 {PlayerName} 的回合开始时，将上一回合最后打出的非|能力|非|复制|牌的|复制|加入手牌。它暂塑为 {Mana} 并获得|放逐|和|虚无|。
+
+
+## basic cards
+KomachiModAttackR:
+  Name: 死神之颚
+  Description: 造成 {Damage} 点伤害。
+
+# The dot is accidental but intentionally kept in lol
+KomachiModBlockR:
+  Name: 习惯挨骂。
+  Description: 获得 {Block} 点|格挡|。
+  FlavorText: |-
+    从忍受无尽说教中获得的精神韧性。
+
+KomachiModAttackB:
+  Name: 魂缚射击
+  Description: 造成 {Damage} 点伤害。
+
+KomachiModBlockB:
+  Name: 灵魂后盾
+  Description: 获得 {Block} 点|格挡|。
+  FlavorText: "把灵魂备份到天堂云端，每月只需2点法力！"
+
+## cards during komachi's boss fight
+KomachiModSanzuFare:
+  Name: 三途渡费
+  Description: |-
+    支付 {MoneyCost} <sprite="Point" name="Gold">。
+    <color=#e58c27>小町</color> 会在此战斗中对你手下留情。
+  FlavorText: |-
+    "如果我收了钱，映姬就会以为我在干活。
+    所以你付钱的话，我就对你手下留情。"
+  CardDialogue1: "保证把你送到对岸。"
+  CardDialogue2: "你可真大方。我会在阎魔大人面前替你说几句好话，让你能上天堂。"
+
+KomachiModMoveToken:
+  Name: 动起来！
+  Description: |-
+    |移位| 每个敌人 +/-{Value1}。
+    |本回合每使用一张牌|：此牌费用增加 {Mana}（最多：1）。 
+  UpgradedDescription: |-
+    |移位| 每个敌人最多 +/-{Value2}。
+    |本回合每使用一张牌|：此牌费用增加 {Mana}（最多：1）。
+  ExtraDescription1: |-
+    靠近！
+    |移位| -{displaceAmount}。
+  ExtraDescription2: |-
+    逃跑！
+    |移位| +{displaceAmount}。
+  FlavorText: |-
+    Why are you running?
+
+KomachiModWeatheredLily:
+  Name: 风化的彼岸花
+  Description: |-
+    获得 {Mana}。
+    |在回合结束时|：获得 {Value1} 层|中毒|。
+  FlavorText: |-
+    承载人类所有的罪孽。

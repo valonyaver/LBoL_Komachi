@@ -1,0 +1,10 @@
+KomachiMod:
+  Default: 小野冢小町
+  Short: 小町
+
+KomachiModDivineSpiritEnemy:
+  Name: "神灵"
+  Default: '神灵'
+
+KomachiModVengefulSpiritEnemy:
+  Default: '怨灵'

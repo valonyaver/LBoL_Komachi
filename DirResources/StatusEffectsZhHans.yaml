@@ -1,0 +1,301 @@
+KomachiModDistanceSe:
+  Name: "距离 {Level}：{DistanceString}"
+  Description: 此敌人造成和受到的攻击伤害变化为 {MultiplierDescription}。
+  # The distance strings depending on the level.
+  VeryClose: "极近"
+  Close: "近"
+  Normal: "普通"
+  Far: "远"
+  VeryFar: "极远"
+  Preview: |- 
+    距离会改变敌人的攻击伤害。
+    当前距离为 {Level}。该敌人在此距离下将造成总计 {ownerDamage} 点伤害。
+
+KomachiModDistanceBlockSe:
+  Name: 弹性工时
+  Description: 每当敌人的 |距离| 发生变化时，每变化一级获得 {Level} 点|格挡|。
+
+# I'm sorry for this formatting.
+KomachiModDistanceGeneratorSe:
+  Name: 勤勉死神
+  Description: '在 {PlayerName} 的回合开始时，如果手牌中的 |操纵距离| {Level:plural one=''没有'' other=''少于 %''}，则将 {Level:plural one=''一张 |操纵距离|'' other=''|操纵距离s|''} 加入手牌{Level:plural one=''。'' other=''直到达到 %。''}'
+  Brief: '在 {PlayerName} 的回合开始时，如果手牌中的 |操纵距离| 少于一定数量，则将 |操纵距离s| 加入手牌，直到达到该数量。'
+
+KomachiModDistanceFlowSe:
+  Name: 三途川之流
+  Description: |-
+    每当敌人被|位移|时：
+    - 如果 |距离| 增加，获得 {Level} 点|临时灵力|
+    - 如果 |距离| 减少，获得 {Level} 点|临时火力|
+
+KomachiModReviveSe:
+  Name: 死神
+  Description: |-
+    下次 {PlayerName} 在此战斗中将被击败时，改为恢复至最大生命值的一半并获得 {flawlessTurns} 层 |天衣无缝|。
+    当此效果触发时，从你的牌库中移除 {SelfName}。
+    每当敌人被击败时，如果它是召唤物，获得 {Level} 点|护盾|。否则，获得 {Level} 点生命。
+  ExtraDescription: |-
+    {PlayerName} 已被此效果复活过。
+    每当敌人被击败时，如果它是召唤物，获得 {Level} 点|护盾|。否则，获得 {Level} 点生命。
+
+KomachiModPushNPullSe:
+  Name: 推拒与牵引
+  Description: |-
+    在 {PlayerName} 的回合开始时，|位移| 所有敌人 -{Level}。
+    在 {PlayerName} 的回合结束时，|位移| 所有敌人 {Level}。
+
+KomachiModSpySpiritSe:
+  Name: 侦查灵
+  Description: |-
+    当 {OwnerName} 的 |距离| 发生变化时，{PlayerName} 获得 {Level} 点|护盾|。
+
+KomachiModRiversideGardenSe:
+  Name: 河畔花圃
+  Description: |-
+    每当 {PlayerName} 在此战斗中添加入 |彼岸花| 时，|升级| 它。
+    在战斗结束时，每有一张 |彼岸花| 在 |战场| 上，获得 {Level} 点生命，最多 {healCeiling} 点生命。
+    当前 |战场| 上有 {SpiderLilyCount} 张 |彼岸花|。
+
+KomachiModShinigamiTacticsSe:
+  Name: 死神战法
+  Description: |-
+    在打出 |操纵距离| 后：
+    - 如果它减少了距离，则将 {Level} 张随机攻击牌加入手牌。
+    - 如果它增加了距离，则将 {Level} 张随机防御牌加入手牌。
+    {Level:plural one=''其费用'' other=''其费用''} |暂塑|为 {Mana}，并获得|放逐|和|虚无|。
+
+KomachiModBWBridgeSe:
+  Name: 阎魔厅公务
+  Description: 在 {PlayerName} 的回合开始时，获得 {Level} 点 {Mana}。
+  Brief: 在 {PlayerName} 的回合开始时，获得 {Mana}。
+
+KomachiModVengefulSpiritSe:
+  Name: 怨灵
+  Description: |-
+    在 {OwnerName} 的回合开始时，将 {SelfName} 的持续时间减少 1。
+    {Duration} 回合后，移除 {SelfName} 并造成其层数两倍的|精准|攻击伤害。
+    将造成 {damageDealt} 点伤害。
+  Brief: |-
+    首次施加于敌人时持续时间为 |e:3|。
+    在回合开始时，将 {SelfName} 的持续时间减少 1。
+    移除时，对其拥有者造成其当前层数两倍的|精准|攻击伤害（受修正影响）。
+
+KomachiModGuidedSpiritSe:
+  Name: 引导灵
+  Description: |-
+    在 {OwnerName} 的回合结束时，对生命值最低的敌人（{targetName}）造成 {damageDealt} 点|精准|攻击伤害，然后失去 1 层 {SelfName}。
+  Brief: |-
+    在其拥有者的回合结束时，对生命值最低的敌人造成等同于 {SelfName} 层数的攻击伤害，然后失去 1 层 {SelfName}。
+    如果此状态效果的拥有者是玩家，此伤害变为|精准|。
+  EnemyDescription: |-
+    在 {OwnerName} 的回合结束时，对 {PlayerName} 造成 {damageDealt} 点攻击伤害，然后失去 1 层 {SelfName}。
+
+KomachiModDivineSpiritSe:
+  Name: 神灵
+  Description: |-
+    在 {PlayerName} 的回合结束时，获得 {Level} 点|护盾|，然后将 {SelfName} 的层数减半（向下取整）。
+  Brief: |-
+    在其拥有者的回合结束时，该单位获得等同于 {SelfName} 层数的|护盾|，然后将 {SelfName} 的层数减半（向下取整）。
+
+# Deprecated now that the card is a skill.
+KomachiModBoundSpiritsOfEarthSe:
+  Name: 上天无路的地缚灵
+  Description: |-
+    在 {PlayerName} 的回合结束时，对每个拥有|怨灵|的敌人施加 {Level} 层|怨灵|。
+
+KomachiModLonelyBoundSpiritSe:
+  Name: 寂寞之人的紧缚灵
+  Description: |-
+    每当|怨灵|被施加到 {OwnerName} 身上时，将 |Lonely Bound Spirit| 的层数增加相同数量 * {Level}。
+    |Lonely Bound Spirit| 只会在 |怨灵| 因卡牌效果在 {OwnerName} 身上被引爆时引爆，造成 {damageDealt} 点伤害。
+  Brief: |-
+    每当|怨灵|被施加到其拥有者身上时，将 |Lonely Bound Spirit| 的层数增加相同数量。
+    |Lonely Bound Spirit| 只会在 |怨灵| 因卡牌效果在其拥有者身上被|引爆|时引爆。
+    如果 |Lonely Bound Spirit| 与 |怨灵| 同时被引爆，计算引爆灵数量的效果将同时计入两者。
+
+KomachiModDetonateFirepowerSe:
+  Name: 死者的怨念
+  Description: |-
+    每当|怨灵|被|引爆|时，获得 {Level} 点|火力|。
+
+KomachiModTalkativeFerrymanSe:
+  Name: 健谈的摆渡人
+  Description: |-
+    在 {PlayerName} 的回合开始时，获得 {Level} 层|引导灵|。
+
+KomachiModGuidedGeneratorNextTurnSe:
+  Name: 非常健谈的摆渡人
+  Description: |-
+    在 {PlayerName} 的下个回合开始时，获得 {Level} 层|引导灵|。
+
+KomachiModDetonateInfiniteSe:
+  Name: 永久封杀
+  Description: |-
+    每当敌人的|怨灵|被|引爆|时，对该目标施加等同于 |e:{multiplier}| 倍数量（向上取整）的|怨灵|。
+
+KomachiModSpiritReturnSe:
+  Name: 还魂
+  Description: |-
+    在 {PlayerName} 的回合开始时，从 |放逐| 区将最多 {Level} 张总费用低于 2 的牌加入手牌。其费用增加 {Mana}，打出时从战斗中移除。
+
+KomachiModEthicallySourcedBreakSe:
+  Name: 正当的小憩
+  Description: |-
+    在 {PlayerName} 的下个回合开始时，跳过 {PlayerName} 的回合。
+    在那之后 {PlayerName} 的下个回合开始时，获得 {manaAmount} 点法力并抽 {Count} 张牌。
+
+KomachiModInfernoTempestSe:
+  Name: 穷途之魂
+  Description: |-
+    在 {PlayerName} 的下个回合开始时，选择最多 {Value2} 张非基础放逐牌。将它们随机加入你的手牌、抽牌堆和弃牌堆。
+
+KomachiModHellFreezeSe:
+  Name: 地狱的冰封之暖
+  Description: |-
+    每当 {OwnerName} 身上的|怨灵|被|引爆|时，对 {OwnerName} 施加|寒冷|。（此效果不叠加）
+
+KomachiModMidsummerLilySe:
+  Name: 孤独的彼岸花
+  Description: |-
+    在 {PlayerName} 打出 |彼岸花| 后，将 {Level} 张 |Midsummer Flower{Level:plural one='' other='s'}| 加入手牌。
+
+KomachiModLifespanEndSe:
+  Name: 生之终结
+  Description: |-
+    在回合结束时：受到 {Level} 点伤害。
+
+KomachiModGoldSarcophagus:
+  Name: 封印之黄金船
+  Description: |-
+    在 {PlayerName} 的回合开始时，减少 {SelfName} 中每张牌的持续时间。当某张牌的持续时间变为 {returnTime} 时，将其加入 {PlayerName} 的手牌，|升级| 它，并给予它 |填充|。
+    {SelfName} 中的牌：{SarcophagusContent}
+  ExtraDescription: |-
+    - CARDNAME：将在 DURATION 回合后返回手牌。
+
+KomachiModExileDoppelgangerSe:
+  Name: 三途川灭绝魂兽
+  Description: |-
+    每当 {PlayerName} 打出一张牌时：
+    - |如果放逐区中没有同名牌|：将它的|复制|加入放逐区。其费用降低为 {Mana}，打出后从战斗中移除。（你本回合还可以使用此效果 {Count} 次。）
+    - |如果放逐区中有同名牌|：你可以将它加入手牌。（你本回合还可以使用此效果 {count2} 次。）
+    每回合只能使用 {SelfName} 的每个效果 {Level:ordinal one='一次' two='两次' few='三次' other='% 次'}。
+
+KomachiModEikiSe:
+  Name: 被说教的死神
+  Description: |-
+    {PlayerName} 不支付卡牌的|解放|费用。
+
+KomachiModLilyHugSe:
+  Name: 彼岸花之拥
+  Description: |-
+    在 {PlayerName} 打出 |彼岸花| 后，获得 {Level} 点|护身符|。
+
+KomachiModDisplaceNextTurnSe:
+  Name: 下回合位移
+  Description: |-
+    在 {OwnerName} 的下个回合开始时，将其位移 {displaceAmount}。
+
+KomachiModRiversideViewSe:
+  Name: 岸边景色
+  Description: |-
+    在你的回合开始时，如果手牌中没有 |彼岸花|，则将一张 |彼岸花| 加入手牌。
+    |彼岸花| 只对玩家施加 |e:1| 层|中毒|。
+    在 {PlayerName} 打出 |彼岸花| 后，对每个敌人施加 {poisonApply} 层|中毒|，然后获得 {Level} 点|火力|。
+
+KomachiModPosessedArmamentSe:
+  Name: 附灵兵器
+  Description: |-
+    每当 {PlayerName} 造成未被格挡的攻击伤害时，施加 {Level} 层|怨灵|。
+  
+
+KomachiModPoisonNegativeSe:
+  Name: 失去中毒
+  Description: |-
+    失去 {Level} 层|中毒|。
+    此内容不应在游戏中显示。
+
+KomachiModPilingDeathworkSe:
+  Name: 层叠死役
+  Description: |-
+    {SelfName} 将其效果重复 {Level} 次。
+
+KomachiModTiesSe:
+  Name: 死者之缘
+  Description: |-
+    在 {PlayerName} 的回合开始时，将上一回合最后打出的 {Level} 张非|能力|非|复制|牌的|复制|加入手牌。{Level:plural one=''它'' other=''它们''}暂塑为 {Mana}，并获得|放逐|和|虚无|。
+
+KomachiModRecursiveSoulsSe:
+  Name: 轮回之魂
+  Description: |-
+    每当一张牌被|放逐|时，获得 {Level} 层|引导灵|。
+
+KomachiModSpiritInvitationSe:
+  Name: 魂之招待
+  Description: |-
+    每当 {PlayerName} |解放|时，获得等同于|解放|数量的|护盾|{Level:plural one='' other=''，重复 {Level} 次''}，然后对每个敌人造成等同于 {PlayerName} |护盾|的伤害。
+
+
+#Boss status effects
+KomachiModBossDistanceGeneratorSe:
+  Name: 移动
+  Description: '在 {PlayerName} 的回合开始时，如果手牌中的 |Move!| {Level:plural one=''没有'' other=''少于 %''}，则将 {Level:plural one=''一张 |Move!|'' other=''|Move!|''} 加入手牌{Level:plural one=''。'' other=''直到达到 %。''}'
+
+KomachiModBossTempFirepowerSe:
+  Name: 下回合暂得火力
+  Description: |-
+    在回合开始时，{OwnerName} 获得 {Level} 点|临时火力|。
+
+KomachiModBossGuidedEndTurnSe:
+  Name: 获得引导灵
+  Description: |-
+    在 {OwnerName} 的回合结束时，获得 {Level} 层|引导灵|。
+
+KomachiModBossReviveSe:
+  Name: 死之神
+  Description: |-
+    {OwnerName} 是一名死神。她将根据其下一个行动使用她的力量来操控战斗的距离。
+  ExtraDescription: |-
+    {OwnerName} 利用她作为死神的力量暂时欺骗了死亡！
+    她将在本回合进行最后的抵抗，然后离开战斗。
+
+
+#Keywords
+
+KomachiDistanceKeyword:
+  Name: 距离
+  Brief: |-
+    |距离| 是施加于敌人的状态效果，代表其与玩家的接近程度。
+    敌人越近，造成和受到的伤害越多。越远，造成和受到的伤害越少。
+
+    共有 5 个距离等级（若未施加状态则默认为 3）：
+    - 极近（1）：造成和受到的攻击伤害 +100%。
+    - 近（2）：造成和受到的攻击伤害 +50%。
+    - 普通（3）：无伤害修正（默认）。
+    - 远（4）：造成和受到的攻击伤害 -15%。
+    - 极远（5）：造成和受到的攻击伤害 -30%。
+
+KomachiDisplacementKeyword:
+  Name: 位移 X
+  Brief: |-
+    将目标的当前 |距离| 改变 X。没有 |距离| 的敌人的 |距离| 视为 3。
+    任何改变敌人 |距离| 的行为都被视为 |位移|。
+
+KomachiDetonationKeyword:
+  Name: 引爆
+  Brief: |-
+    从敌人身上移除 |怨灵|，对其造成对应伤害。
+
+KomachiModReleaseKeyword:
+  Name: 解放 X
+  Brief: |-
+    在打出此牌时，从 {PlayerName} 身上移除 X 层|引导灵|和/或|神灵|，以选择性地激活此效果。
+    优先消耗|引导灵|。
+    你必须在打出此牌前拥有所需数量的灵。
+
+KomachiAutoDiscardKeyword:
+  Name: 自动弃牌
+  Brief: |-
+    当你即将超过手牌上限时，|丢弃| 此牌。
+    手牌中最左侧带有 |自动丢弃| 的牌会优先被|丢弃|。
+    |自动放逐| 牌会先于 |自动丢弃| 牌处理。
+# Fixed Auto discard so that it works exactly like auto exile.

@@ -88,7 +88,7 @@ namespace KomachiMod.Source.StatusEffects.Spirits
         public string TopLeftText => damageDealt;
         public string OwnerName
         {
-            get => Owner.SelfName;
+            get => Owner.SelfName.ToString();
         }
 
         protected override void OnAdded(Unit unit)

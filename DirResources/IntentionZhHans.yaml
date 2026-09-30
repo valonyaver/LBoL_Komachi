@@ -1,0 +1,14 @@
+KomachiBossDisplaceIntention:
+  Name: 移位
+  Description: |-
+    {OwnerName} 将要移动未知距离。
+  PositiveDisplacementDescription: |-
+    {OwnerName} 将要向前移动 {displacementAmount} 级距离。
+  NegativeDisplacementDescription: |-
+    {OwnerName} 将要向后移动 {displacementAmount} 级距离。
+
+KomachiBossDistanceTaxIntention:
+  Name: 距离税
+  Description: |-
+    {OwnerName} 将要对 {PlayerName} 施加|负面效果|。
+    此负面效果将取决于 {OwnerName} 与 {PlayerName} 的距离。

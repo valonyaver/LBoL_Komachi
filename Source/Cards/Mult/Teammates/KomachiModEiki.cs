@@ -11,6 +11,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.Stations;
 using LBoL.Core.Units;
+using LBoL.EntityLib.Cards.Neutral.Black;
 using LBoL.EntityLib.EnemyUnits.Character;
 using LBoL.EntityLib.EnemyUnits.Normal;
 using LBoL.EntityLib.Stages;

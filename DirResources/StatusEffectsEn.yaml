@@ -65,8 +65,8 @@ KomachiModShinigamiTacticsSe:
   Description: |-
     After a |Manipulate Distance| is played: 
     - If it reduced distance, add {Level} random attack card{Level:plural one='' other='s'} to the hand. 
-    - If it increased distance, add {Level} random defence card{Level:plural one='' other='s'} to the hand.
-    {Level:plural one='Their cost' other='Their cost'} is |temporarily reduced| to {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
+    - If it increased distance, add {Level} random defense card{Level:plural one='' other='s'} to the hand.
+    {Level:plural one='Its cost' other='Their cost'} is |temporarily reduced| to {Mana}, ha{Level:plural one='s' other='ve'} |Exile| and |Ethereal|.
 
 KomachiModBWBridgeSe:
   Name: Ministry Work
@@ -171,7 +171,7 @@ KomachiModLifespanEndSe:
 KomachiModGoldSarcophagusSe:
   Name: Gold Sarcopha-Galley
   Description: |-
-    At the start of {PlayerName}'s turn, reduce the duration of each card in the {SelfName}. When the duration of a card becomes {returnTime}, add it to {PlayerName}'s hand and upgrade it.
+    At the start of {PlayerName}'s turn, reduce the duration of each card in the {SelfName}. When the duration of a card becomes {returnTime}, add it to {PlayerName}'s hand,  |Upgrade| it, and give it |Replenish|.
     Cards in the {SelfName}: {SarcophagusContent}
   ExtraDescription: |-
     - CARDNAME: returns to the hand in DURATION turns.
@@ -296,7 +296,7 @@ KomachiModReleaseKeyword:
   Brief: |-
     Remove X amount of |Guided Spirits| and/or |Divine Spirits| from {PlayerName} when playing this card to optionally activate this effect.
     |Guided Spirits| are prioritized first.
-    You must have the required amount before playing the card.
+    The required amount must be had before playing the card.
 
 KomachiAutoDiscardKeyword:
   Name: Auto Discard

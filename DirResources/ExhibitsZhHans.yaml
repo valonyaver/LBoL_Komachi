@@ -1,0 +1,19 @@
+KomachiModExhibitR:
+  Name: 泰坦尼克号
+  Description: |-
+    提供基础法力 {Mana} 。|小町| 的专属卡牌会加入卡池。
+    第一回合开始时，将 1 张 |操纵距离| 加入手中。
+    第三回合开始时，将 1 张 |彼岸花| 加入手中。
+    战斗奖励中获得的 <sprite="Point" name="Gold"> 增加 {Value1}% 。
+  FlavorText: 通向彼岸的豪华客船！限时九折优惠。
+# ^Taken from her pofv dialogue in Reimu's route.
+
+KomachiModExhibitB:
+  Name: 死神之眼
+  Description: |-
+    提供基础法力 {Mana} 。|小町| 的专属卡牌会加入卡池。
+    第一回合开始时，获得 {Value1} 点 |灵力|， 随后移除所有 "|灵|" 敌人身上的 |护身符| 并对它们施加 {Value3} 层 |虚弱| 和 |易伤| 。
+    {PlayerName} 的第三回合结束时，失去 {Value1} 点 |灵力| 并对所有敌人施加 {Value2} 层 |易伤| 。
+  FlavorText: 以一半寿命为代价，你将能看见所有遇见之人的姓名与死期。
+# ^Obvious death note reference.
+# "Spirit" enemies, are Shenling and Guihou in the game's code. Check the localization file of the base game for what they are called and try to mention them both in the effect if they are different.

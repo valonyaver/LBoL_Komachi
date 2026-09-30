@@ -1,0 +1,48 @@
+KomachiMod:
+  Name: '小野冢小町'
+  Title: '三途河的引航人'
+  Move:
+  - '上天无路的地缚灵'
+  - '死神的大镰'
+  - '死之味'
+  - '怠惰的一击'
+  - '小憩'
+  - '距离税'
+  - '死符'
+  - '区别死者的镰刀'
+  - 'Last Word - 死神'
+  - '彼岸归航'
+  KomaEscape1: |-
+    好！做到这一步，应该足够让映姬大人相信我真的尽力阻止过你了。
+  KomaEscape2: |-
+    那我差不多该走了 <size=50%>，午睡时间到了<size=100%>。希望你能找到犯人，拜<size=90%>拜<size=80%>~<size=70%>~<size=60%>~<size=50%>~<size=40%>~
+# These sizes at the end of her "Byeee" are meant to be echoes as she runs away.
+  LastWordChat1: |-
+    真是的～你让我干活也太过分了吧！
+  LastWordChat2: |-
+    不过，这种事我可不能放过！
+# Mirror Koma (MK)
+  EikiMirrorChat1: |-
+    <size=85%>我期待着以最高效率执行我的死神职责，并提交适当的战后报告供您审阅，映姬大人！
+# player koma (PK)
+  EikiMirrorChat2: |-
+    我才不会这样讲话！谁会期待写文书工作啊？
+# Eiki (E)
+  EikiMirrorChat3: |-
+    那才是死神该有的样子。你多少也该学着点。
+#Alt win chat moved to the Eiki teaammate card.
+
+KomachiModDivineSpiritEnemy:
+  Name: "神灵"
+  Default: '神灵'
+  FlawlessMove: "菩萨之眠"
+  Move:
+  - '炫目闪光'
+
+KomachiModVengefulSpiritEnemy:
+  Name: '怨灵'
+  Default: '怨灵'
+  Move:
+  - '恶焰'
+  - '削弱'
+  - '自爆'
